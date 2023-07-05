@@ -18,5 +18,10 @@
 		"typescript": "^5.1.6",
 		"vite": "^4.3.9"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@tiptap/core": "^2.0.3",
+		"@tiptap/pm": "^2.0.3",
+		"@tiptap/starter-kit": "^2.0.3"
+	}
 }
