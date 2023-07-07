@@ -15,8 +15,8 @@ dependencies:
     specifier: ^2.0.3
     version: 2.0.3(@tiptap/pm@2.0.3)
   lucide-svelte:
-    specifier: ^0.258.0
-    version: 0.258.0(svelte@4.0.5)
+    specifier: ^0.259.0
+    version: 0.259.0(svelte@4.0.5)
 
 devDependencies:
   '@sveltejs/adapter-cloudflare':
@@ -32,8 +32,8 @@ devDependencies:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.25)
   daisyui:
-    specifier: ^3.1.10
-    version: 3.1.10(postcss@8.4.25)
+    specifier: ^3.1.11
+    version: 3.1.11(postcss@8.4.25)
   postcss:
     specifier: ^8.4.25
     version: 8.4.25
@@ -1377,8 +1377,8 @@ packages:
     hasBin: true
     dev: true
 
-  /daisyui@3.1.10(postcss@8.4.25):
-    resolution: {integrity: sha512-Q6+zf60LROgSZb3+0d3jcQu3uUbfWPpEgHWrY2vw5XS7ekyI/WJo9E4R7148PdOt/OQNOGM4w9Z31DRklzByZg==}
+  /daisyui@3.1.11(postcss@8.4.25):
+    resolution: {integrity: sha512-TAtdjV3VgqVUf7PSRdwU0cBPgvtlPvQJgXQAHw+E+2+3IbZFLRuOgFCMdBk9B5MGqaJMTkT7AXMkGPIDSCfX1A==}
     engines: {node: '>=16.9.0'}
     peerDependencies:
       postcss: ^8
@@ -1773,8 +1773,8 @@ packages:
     dependencies:
       yallist: 3.1.1
 
-  /lucide-svelte@0.258.0(svelte@4.0.5):
-    resolution: {integrity: sha512-rb31yWJA86A0kvKLlBtDtCThXUETR+XQU6zMrrhF0NStmX3Pg0BCz5E7dwsE3Q59BhY4LvyrTOruwEo/G1BrZA==}
+  /lucide-svelte@0.259.0(svelte@4.0.5):
+    resolution: {integrity: sha512-OlPkP3wCTA27j2Qdkgf8QruWTNkTFT8vpS7ZviyiHpcTV9RJsJVRzC6EYcnLxvxB3xCyyQ6WE3FW7lCAlR+jIQ==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
