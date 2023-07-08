@@ -5,6 +5,6 @@
 
 <Navbar />
 
-<main class="p-6 max-w-7xl mx-auto">
+<main class="py-2 max-w-7xl mx-auto">
 	<slot />
 </main>
