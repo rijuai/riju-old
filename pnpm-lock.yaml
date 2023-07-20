@@ -15,8 +15,8 @@ dependencies:
     specifier: ^2.0.4
     version: 2.0.4(@tiptap/pm@2.0.4)
   lucide-svelte:
-    specifier: ^0.261.0
-    version: 0.261.0(svelte@4.1.0)
+    specifier: ^0.262.0
+    version: 0.262.0(svelte@4.1.0)
 
 devDependencies:
   '@sveltejs/adapter-cloudflare':
@@ -1054,7 +1054,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001517
-      electron-to-chromium: 1.4.464
+      electron-to-chromium: 1.4.466
       node-releases: 2.0.13
       update-browserslist-db: 1.0.11(browserslist@4.21.9)
 
@@ -1230,8 +1230,8 @@ packages:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
     dev: true
 
-  /electron-to-chromium@1.4.464:
-    resolution: {integrity: sha512-guZ84yoou4+ILNdj0XEbmGs6DEWj6zpVOWYpY09GU66yEb0DSYvP/biBPzHn0GuW/3RC/pnaYNUWlQE1fJYtgA==}
+  /electron-to-chromium@1.4.466:
+    resolution: {integrity: sha512-TSkRvbXRXD8BwhcGlZXDsbI2lRoP8dvqR7LQnqQNk9KxXBc4tG8O+rTuXgTyIpEdiqSGKEBSqrxdqEntnjNncA==}
 
   /entities@3.0.1:
     resolution: {integrity: sha512-WiyBqoomrwMdFG1e0kqvASYfnlb0lp8M5o5Fw2OFq1hNZxxcNk8Ik0Xm7LxzBhuidnZB/UtBqVCgUz3kBOP51Q==}
@@ -1551,8 +1551,8 @@ packages:
     dependencies:
       yallist: 3.1.1
 
-  /lucide-svelte@0.261.0(svelte@4.1.0):
-    resolution: {integrity: sha512-bDJQXDdNj8lP88e0+c3/XOAc1TYQPvjPsXVN5viYvgO2qWHkyzIi3lcwojQ4a85RL9XawSWRfL4mK95zgQMfQg==}
+  /lucide-svelte@0.262.0(svelte@4.1.0):
+    resolution: {integrity: sha512-ah5T8I+foTHi74dGMxH37qIjLNbe0Pb5rERu9NW332XXPh3LbN2QRtyrT22LwpPzjrQv8/lVVPoa7HsntOhPEg==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
@@ -2122,8 +2122,8 @@ packages:
       min-indent: 1.0.1
     dev: true
 
-  /sucrase@3.33.0:
-    resolution: {integrity: sha512-ARGC7vbufOHfpvyGcZZXFaXCMZ9A4fffOGC5ucOW7+WHDGlAe8LJdf3Jts1sWhDeiI1RSWrKy5Hodl+JWGdW2A==}
+  /sucrase@3.34.0:
+    resolution: {integrity: sha512-70/LQEZ07TEcxiU2dz51FKaE6hCTWC6vr7FOk3Gr0U60C3shtAN+H+BFr9XlYe5xqf3RA8nrc+VIwzCfnxuXJw==}
     engines: {node: '>=8'}
     hasBin: true
     dependencies:
@@ -2276,7 +2276,7 @@ packages:
       postcss-nested: 6.0.1(postcss@8.4.26)
       postcss-selector-parser: 6.0.13
       resolve: 1.22.2
-      sucrase: 3.33.0
+      sucrase: 3.34.0
     transitivePeerDependencies:
       - ts-node
     dev: true
