@@ -1,7 +1,7 @@
 <script lang="ts">
-	import TipTap from '$lib/TipTap.svelte';
+	import TipTap from '$lib/components/TipTap.svelte';
 </script>
 
-<div class="rounded-md prose max-w-4xl mx-auto">
+<div class="max-w-4xl mx-auto rounded-md prose bg-base-300 col-span-5 gap-4">
 	<TipTap />
 </div>
