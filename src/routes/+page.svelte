@@ -1,15 +1,17 @@
 <script lang="ts">
-	export const prerender = true;
+	import Navbar from '$lib/ui/Navbar.svelte';
 </script>
+
+<Navbar />
 
 <section class="text-center py-8">
 	<hgroup>
 		<h1>Create Presentation In Seconds!</h1>
-		<p>
+		<p class="mb-6">
 			Riju is the super-fast way to create presentations without the hassle of
 			drag-and-drop, alignment, etc.
 		</p>
-		<a href="/" role="button">Sign up (Waiting List)</a>
+		<a href="/" role="button">Sign Up (waiting list)</a>
 		<a class="secondar outline" href="/dashboard" role="button">Dashboard</a>
 	</hgroup>
 
