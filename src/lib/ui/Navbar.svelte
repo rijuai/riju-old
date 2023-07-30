@@ -5,8 +5,5 @@
 	<ul>
 		<li><a href="/docs">Docs</a></li>
 		<li><a href="/contact-us">Contact Us</a></li>
-		<li>
-			<a href="/dashboard/login" role="button">Login</a>
-		</li>
 	</ul>
 </nav>
