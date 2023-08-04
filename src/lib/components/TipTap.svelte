@@ -3,32 +3,34 @@
 	import { Editor } from '@tiptap/core';
 	import StarterKit from '@tiptap/starter-kit';
 	import Image from '@tiptap/extension-image';
+	import HardBreak from '@tiptap/extension-hard-break';
+	import { outputJsonStore } from '$lib/stores/output_json';
 
 	let element: HTMLDivElement;
 
 	let editor: Editor;
 
-	$: () => {
-		editor = editor;
-		save();
-	};
-
 	onMount(() => {
 		editor = new Editor({
 			element: element,
-			extensions: [StarterKit, Image.configure({ inline: true })],
-			content: `<h1>Hi Company!</h1>
-			</br>
-			</br>
-			</br>
-			</br>
-			</br>
-			</br>
-			<p>This is a <a href="https://www.tiptap.dev" target="_blank" rel="noopener noreferrer">tiptap</a> editor.</p>
+			extensions: [
+				StarterKit.configure({
+					hardBreak: false,
+				}),
+				Image.configure(),
+				HardBreak,
+			],
+			autofocus: true,
+			content: `
+			<h1>Title!</h1>
+			<p>This is a description text.</p>
 			`,
-			onTransaction: () => {
-				// force re-render so `editor.isActive` works as expected
-				editor = editor;
+			// onTransaction: () => {
+			// 	// force re-render so `editor.isActive` works as expected
+			// 	outputJsonStore.set(editor.getJSON().content);
+			// },
+			onUpdate: ({ editor }) => {
+				outputJsonStore.set(editor.getJSON().content);
 			},
 		});
 
@@ -37,10 +39,6 @@
 			fileInput.addEventListener('change', handleFileInput);
 		}
 	});
-
-	function save() {
-		console.log(editor.getJSON());
-	}
 
 	let imageUrl: string, fileInput: HTMLInputElement;
 
@@ -52,13 +50,13 @@
 		const reader = new FileReader();
 
 		reader.onloadend = () => {
-			imageUrl = reader.result as string; // This is the data URL of the selected image
+			imageUrl = reader.result as string;
 			const transaction = editor
 				.chain()
 				.focus()
 				.setImage({ src: imageUrl })
 				.run();
-			fileInput.value = ''; // Reset the file input value after handling the image
+			fileInput.value = '';
 		};
 
 		reader.readAsDataURL(file);
@@ -68,6 +66,12 @@
 		if (editor) {
 			editor.destroy();
 		}
+	});
+
+	let outputJson: string;
+
+	outputJsonStore.subscribe((value: any) => {
+		outputJson = value;
 	});
 </script>
 
@@ -107,10 +111,11 @@
 	</div>
 {/if}
 
-<div class="editor p-5 rounded-md bg-gray-800" bind:this={element} />
+<div class="editor p-5 rounded-md bg-zinc-800" bind:this={element} />
 
-<style>
+<style lang="postcss">
 	button.active {
+		@apply bg-zinc-600;
 		background: black;
 		color: white;
 	}
