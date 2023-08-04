@@ -1,5 +1,5 @@
 @tailwind utilities;
 
 :root {
-	@apply bg-zinc-800;
+	@apply bg-stone-900;
 }
