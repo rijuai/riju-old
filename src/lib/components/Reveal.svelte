@@ -1,7 +1,9 @@
 <script lang="ts">
+	import { outputJsonStore } from '$lib/stores/output_json';
+	import { onMount } from 'svelte';
 	import Reveal from 'reveal.js';
 	import 'reveal.js/dist/reveal.css';
-	import { onMount } from 'svelte';
+	import 'reveal.js/dist/theme/white.css';
 
 	onMount(() => {
 		let deck = new Reveal({
@@ -16,27 +18,54 @@
 
 		deck.initialize();
 	});
+
+	let output: unknown = [];
+	let htmlOutput: string = '<section>';
+
+	outputJsonStore.subscribe((value) => {
+		output = value;
+
+		output.forEach(
+			(item: {
+				type: string;
+				content: any[];
+				attrs: { start: any };
+				text: any;
+			}) => {
+				console.log('Item in output foreach', item);
+
+				if (item.type === 'paragraph' && item.content === undefined) {
+					htmlOutput += `</section><section>`;
+				} else {
+					if (item.type === 'heading') {
+						htmlOutput += `<h1 class="text-4xl text-red-500">${item.content[0].text}</h1>`;
+					} else if (item.type === 'paragraph') {
+						htmlOutput += `<p>${item.content[0].text}</p>`;
+					} else if (item.type === 'orderedList') {
+						htmlOutput += `<ol start=${item.attrs.start}>`;
+						item.content.forEach(
+							(listItem: { content: { content: { text: any }[] }[] }) => {
+								htmlOutput += `<li>${listItem.content[0].content[0].text}</li>`;
+							},
+						);
+						htmlOutput += `</ol>`;
+					} else {
+						htmlOutput += `<p>${item.text}</p>`;
+					}
+				}
+			},
+		);
+	});
 </script>
 
-<section
-	class="presentation reveal aspect-video bg-gradient-to-tr from-blue-300 to-blue-600"
->
+<main class="reveal aspect-video">
 	<div class="slides">
-		<section>
-			<h2>Riju</h2>
-			<p>A PowerPoint alternative.</p>
-		</section>
-		<section>
-			<h2 class="text-left">Why use Riju?</h2>
-			<ol class="text-left list-decimal">
-				<li>Easy to use</li>
-				<li>Super fast to build</li>
-				<li>Super affordable</li>
-				<li>Very polished product</li>
-			</ol>
-		</section>
+		{@html htmlOutput}
 	</div>
-</section>
+</main>
 
 <style>
+	section {
+		@apply bg-red-400;
+	}
 </style>
