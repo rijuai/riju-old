@@ -5,7 +5,7 @@
 <Navbar />
 
 <section class="text-center py-8">
-	<hgroup>
+	<hgroup class="mb-10">
 		<h1>Create Presentation In Seconds!</h1>
 		<p class="mb-6">
 			Riju is the super-fast way to create presentations without the hassle of
@@ -16,11 +16,14 @@
 	</hgroup>
 
 	<iframe
-		class="w-full max-w-2xl h-80 mx-auto mt-8"
-		src="https://www.youtube-nocookie.com/embed/H5Gj1W32Qao"
-		title="YouTube video player"
-		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		allowfullscreen
+		class="h-80 aspect-video"
+		title="as"
+		src="https://customer-m033z5x00ks6nunl.cloudflarestream.com/b236bde30eb07b9d01318940e5fc3eda/iframe?poster=https%3A%2F%2Fcustomer-m033z5x00ks6nunl.cloudflarestream.com%2Fb236bde30eb07b9d01318940e5fc3eda%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+		style="border: none;"
+		allow="autoplay; encrypted-media;"
 	/>
 </section>
+
+<style>
+	@import 'https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.0-alpha1/css/pico.min.css';
+</style>
