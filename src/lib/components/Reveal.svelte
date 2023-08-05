@@ -9,7 +9,7 @@
 		let deck = new Reveal({
 			controls: true,
 			progress: true,
-			history: true,
+			history: false,
 			center: true,
 			transition: 'slide',
 			embedded: true,
@@ -19,7 +19,7 @@
 		deck.initialize();
 	});
 
-	let output: unknown = [];
+	let output: any = [];
 	let htmlOutput: string = '<section>';
 
 	outputJsonStore.subscribe((value) => {
@@ -36,22 +36,20 @@
 
 				if (item.type === 'paragraph' && item.content === undefined) {
 					htmlOutput += `</section><section>`;
+				} else if (item.type === 'heading') {
+					htmlOutput += `<h1>${item.content[0].text}</h1>`;
+				} else if (item.type === 'paragraph') {
+					htmlOutput += `<p>${item.content[0].text}</p>`;
+				} else if (item.type === 'orderedList') {
+					htmlOutput += `<ol start=${item.attrs.start}>`;
+					item.content.forEach(
+						(listItem: { content: { content: { text: any }[] }[] }) => {
+							htmlOutput += `<li>${listItem.content[0].content[0].text}</li>`;
+						},
+					);
+					htmlOutput += `</ol>`;
 				} else {
-					if (item.type === 'heading') {
-						htmlOutput += `<h1 class="text-4xl text-red-500">${item.content[0].text}</h1>`;
-					} else if (item.type === 'paragraph') {
-						htmlOutput += `<p>${item.content[0].text}</p>`;
-					} else if (item.type === 'orderedList') {
-						htmlOutput += `<ol start=${item.attrs.start}>`;
-						item.content.forEach(
-							(listItem: { content: { content: { text: any }[] }[] }) => {
-								htmlOutput += `<li>${listItem.content[0].content[0].text}</li>`;
-							},
-						);
-						htmlOutput += `</ol>`;
-					} else {
-						htmlOutput += `<p>${item.text}</p>`;
-					}
+					htmlOutput += `<p>${item.text}</p>`;
 				}
 			},
 		);
@@ -65,7 +63,4 @@
 </main>
 
 <style>
-	section {
-		@apply bg-red-400;
-	}
 </style>
