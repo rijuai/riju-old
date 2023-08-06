@@ -27,6 +27,9 @@
 			`,
 			onTransaction: () => {
 				// force re-render so `editor.isActive` works as expected
+
+				editor = editor;
+
 				outputJsonStore.set(editor.getJSON().content);
 			},
 		});
@@ -108,12 +111,10 @@
 	</div>
 {/if}
 
-<div class="editor p-5 rounded-md bg-zinc-800" bind:this={element} />
+<div class="editor p-5 rounded-md bg-gray-800" bind:this={element} />
 
 <style lang="postcss">
 	button.active {
-		@apply bg-zinc-600;
-		background: black;
-		color: white;
+		@apply bg-gray-800;
 	}
 </style>
