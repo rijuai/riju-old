@@ -7,13 +7,13 @@
 <svelte:head>
 	<link
 		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.0-alpha1/css/pico.classless.min.css"
+		href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.0-alpha1/css/pico.min.css"
 	/>
 </svelte:head>
 
 <Navbar />
 
-<main>
+<main class="px-4">
 	<article class="card max-w-sm mx-auto">
 		<header>
 			<h1 class="text">Sign up / Login</h1>
