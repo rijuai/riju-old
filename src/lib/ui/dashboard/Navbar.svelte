@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { LayoutDashboard, PenBox, Play } from 'lucide-svelte';
+	import { LayoutDashboard, PenBox, Play, UserCircle2 } from 'lucide-svelte';
 </script>
 
 <nav class="container-fluid">
@@ -7,7 +7,12 @@
 		<li><a href="/">Riju</a></li>
 		<li>
 			<a class="secondary" href="/dashboard">
-				<LayoutDashboard size="20" />
+				<UserCircle2 size="24" />
+			</a>
+		</li>
+		<li>
+			<a class="secondary" href="/dashboard">
+				<LayoutDashboard size="24" />
 			</a>
 		</li>
 	</ul>
@@ -17,12 +22,12 @@
 		</li>
 		<li>
 			<a class="secondary" href="/present">
-				<Play size="20" />
+				<Play size="24" />
 			</a>
 		</li>
 		<li>
 			<a class="primary" href="/dashboard/presentation" role="button">
-				<PenBox size="20" />
+				<PenBox size="24" />
 				Create</a
 			>
 		</li>
