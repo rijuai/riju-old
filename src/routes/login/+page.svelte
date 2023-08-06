@@ -7,7 +7,7 @@
 <svelte:head>
 	<link
 		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.0-alpha1/css/pico.min.css"
+		href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.0-alpha1/css/pico.classless.min.css"
 	/>
 </svelte:head>
 
