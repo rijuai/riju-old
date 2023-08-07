@@ -14,12 +14,11 @@
 </script>
 
 <section>
-	<h1>Dashboard</h1>
-	<div class="grid gap-4">
+	<div class="grid grid-cols-5 gap-6">
 		{#each presentations as presentation}
 			<a class="rounded-md no-underline" href="/dashboard/presentation">
-				<img class="h-32 rounded-md" src={presentation.img_src} alt="" />
-				<p class="text-xs font-semibold text-ellipsis text-zinc-300 pt-4">
+				<img class="w-full rounded-md" src={presentation.img_src} alt="" />
+				<p class="text-xs font-semibold truncate text-zinc-400 pt-4">
 					{presentation.title}
 				</p>
 			</a>
