@@ -1,3 +1,17 @@
+@import 'https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.0-alpha1/css/pico.min.css';
+
 /* @tailwind base; */
 @tailwind utilities;
 @tailwind components;
+
+.reveal {
+	@apply bg-red-500;
+}
+
+.reveal h1 {
+	@apply text-6xl font-semibold;
+}
+
+.reveal p {
+	@apply text-2xl;
+}
