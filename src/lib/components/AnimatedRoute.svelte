@@ -4,7 +4,7 @@
 </script>
 
 {#key $page.url}
-	<main in:fade={{ duration: 400 }}>
+	<main in:fade={{ duration: 250 }}>
 		<slot />
 	</main>
 {/key}
