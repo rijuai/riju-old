@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
-	import { Editor } from '@tiptap/core';
-	import StarterKit from '@tiptap/starter-kit';
-	import Image from '@tiptap/extension-image';
-	import HardBreak from '@tiptap/extension-hard-break';
 	import { outputJsonStore } from '$lib/stores/output_json';
+	import { Editor } from '@tiptap/core';
+	import HardBreak from '@tiptap/extension-hard-break';
+	import Image from '@tiptap/extension-image';
+	import StarterKit from '@tiptap/starter-kit';
+	import { onDestroy, onMount } from 'svelte';
 
 	let element: HTMLDivElement;
 

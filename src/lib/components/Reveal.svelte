@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { outputJsonStore } from '$lib/stores/output_json';
-	import { onMount } from 'svelte';
 	import Reveal from 'reveal.js';
 	import 'reveal.js/dist/reveal.css';
 	import 'reveal.js/dist/theme/white.css';
+	import { onMount } from 'svelte';
 
 	onMount(() => {
 		let deck = new Reveal({
