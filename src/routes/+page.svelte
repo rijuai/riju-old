@@ -2,13 +2,6 @@
 	import Navbar from '$lib/ui/Navbar.svelte';
 </script>
 
-<svelte:head>
-	<link
-		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.0-alpha1/css/pico.min.css"
-	/>
-</svelte:head>
-
 <Navbar />
 
 <section class="text-center py-8">
@@ -27,7 +20,3 @@
 		allow="encrypted-media;"
 	/>
 </section>
-
-<style>
-	/* @import 'https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.0-alpha1/css/pico.min.css'; */
-</style>
