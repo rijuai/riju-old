@@ -15,7 +15,7 @@ const config = {
 		paths: {
 			base: '/dashboard', // This sets the base URL for your app
 		},
-		appDir: 'dashboard',
+		// appDir: 'dashboard',
 	}
 };
 
