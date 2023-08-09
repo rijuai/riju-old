@@ -54,6 +54,8 @@
 			},
 		);
 	});
+
+	let revealClass = 'bg-gray-800';
 </script>
 
 <main class="reveal aspect-video">
@@ -61,6 +63,3 @@
 		{@html htmlOutput}
 	</div>
 </main>
-
-<style>
-</style>

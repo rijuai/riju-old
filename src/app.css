@@ -3,15 +3,3 @@
 /* @tailwind base; */
 @tailwind utilities;
 @tailwind components;
-
-.reveal {
-	@apply bg-red-500;
-}
-
-.reveal h1 {
-	@apply text-6xl font-semibold;
-}
-
-.reveal p {
-	@apply text-2xl;
-}
