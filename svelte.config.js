@@ -7,10 +7,11 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+		// appDir: 'dashboard',
 		paths: {
-			base: '/dashboard', // This sets the base URL for your app
+			base: '/dashboard',
+			assets: '/dashboard'
 		},
-		appDir: 'dashboard',
 	}
 };
 
