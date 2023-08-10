@@ -1,4 +1,4 @@
-<section class="p-2 lg:p-6">
+<section class="p-4">
 	<article class="max-w-md mx-auto">
 		<header>
 			<hgroup>
