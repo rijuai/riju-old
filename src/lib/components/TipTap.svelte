@@ -25,12 +25,14 @@
 			<h1>Title!</h1>
 			<p>This is a description text.</p>
 			`,
+
 			onTransaction: () => {
 				// force re-render so `editor.isActive` works as expected
-
 				editor = editor;
 
-				outputJsonStore.set(editor.getJSON().content);
+				console.log('editor', editor.getJSON().content);
+
+				$outputJsonStore = editor.getJSON().content;
 			},
 		});
 
