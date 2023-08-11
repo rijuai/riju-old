@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { outputJsonStore } from '$lib/stores/output_json';
 	import Reveal from 'reveal.js';
 	import 'reveal.js/dist/reveal.css';
 	import { onMount } from 'svelte';
@@ -19,13 +18,11 @@
 		deck.initialize();
 	});
 
-	let output: any = [];
+	export let content: any = [];
 	let htmlOutput: string = '<section>';
 
-	output = $outputJsonStore;
-
-	if (output !== undefined) {
-		output.forEach(
+	if (content !== undefined) {
+		content.forEach(
 			(item: {
 				type: string;
 				content: any[];
