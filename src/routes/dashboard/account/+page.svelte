@@ -30,10 +30,6 @@
 		</form>
 		<footer>
 			<input type="submit" value="Save Changes" />
-
-			<p>
-				Facing problems with Riju? <a href="/contact-us">Contact Us</a>
-			</p>
 		</footer>
 	</article>
 </main>
