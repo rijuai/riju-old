@@ -2,12 +2,12 @@
 	import { outputJsonStore } from '$lib/stores/output_json';
 	import Reveal from 'reveal.js';
 	import 'reveal.js/dist/reveal.css';
-	import 'reveal.js/dist/theme/white.css';
 	import { onMount } from 'svelte';
+	import '../../presentation.css';
 
 	onMount(() => {
 		let deck = new Reveal({
-			controls: true,
+			controls: false,
 			progress: true,
 			history: false,
 			center: true,
@@ -22,18 +22,16 @@
 	let output: any = [];
 	let htmlOutput: string = '<section>';
 
-	outputJsonStore.subscribe((value) => {
-		output = value;
+	output = $outputJsonStore;
 
+	if (output !== undefined) {
 		output.forEach(
 			(item: {
 				type: string;
 				content: any[];
-				attrs: { start: any };
-				text: any;
+				attrs: { start: number; src: string };
+				text: string;
 			}) => {
-				console.log('Item in output foreach', item);
-
 				if (item.type === 'paragraph' && item.content === undefined) {
 					htmlOutput += `</section><section>`;
 				} else if (item.type === 'heading') {
@@ -48,17 +46,25 @@
 						},
 					);
 					htmlOutput += `</ol>`;
+				} else if (item.type === 'bulletList') {
+					htmlOutput += `<ul>`;
+					item.content.forEach(
+						(listItem: { content: { content: { text: any }[] }[] }) => {
+							htmlOutput += `<li>${listItem.content[0].content[0].text}</li>`;
+						},
+					);
+					htmlOutput += `</ul>`;
+				} else if (item.type === 'image') {
+					htmlOutput += `<img src=${item.attrs.src} />`;
 				} else {
 					htmlOutput += `<p>${item.text}</p>`;
 				}
 			},
 		);
-	});
-
-	let revealClass = 'bg-gray-800';
+	}
 </script>
 
-<main class="reveal aspect-video">
+<main class="reveal aspect-video text-left">
 	<div class="slides">
 		{@html htmlOutput}
 	</div>
