@@ -74,22 +74,22 @@
 	<div role="group">
 		<button
 			class="secondary outline"
-			on:click={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
 			class:active={editor.isActive('heading', { level: 1 })}
+			on:click={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
 		>
 			H1
 		</button>
 		<button
 			class="secondary outline"
-			on:click={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
 			class:active={editor.isActive('heading', { level: 2 })}
+			on:click={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
 		>
 			H2
 		</button>
 		<button
 			class="secondary outline"
-			on:click={() => editor.chain().focus().setParagraph().run()}
 			class:active={editor.isActive('paragraph')}
+			on:click={() => editor.chain().focus().setParagraph().run()}
 		>
 			P
 		</button>
