@@ -1,0 +1,20 @@
+.reveal {
+	@apply bg-blue-500;
+	background: linear-gradient(to right, #aa00ff, #ff00aa);
+}
+
+.reveal h1 {
+	@apply text-left text-5xl mb-6;
+}
+
+.reveal h2 {
+	@apply text-left text-4xl mb-4;
+}
+
+.reveal p {
+	@apply text-left text-xl mb-4;
+}
+
+.reveal ol li {
+	@apply text-left text-2xl font-semibold mb-4;
+}
