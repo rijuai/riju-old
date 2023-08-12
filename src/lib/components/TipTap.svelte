@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { outputJsonStore } from '$lib/stores/output_json';
+	import { outputJsonStore } from '$lib/stores/output-json';
 	import { Editor } from '@tiptap/core';
 	import { HardBreak } from '@tiptap/extension-hard-break';
 	import { Image } from '@tiptap/extension-image';
