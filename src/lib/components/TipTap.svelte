@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { outputJsonStore } from '$lib/stores/output_json';
 	import { Editor } from '@tiptap/core';
-	import HardBreak from '@tiptap/extension-hard-break';
-	import Image from '@tiptap/extension-image';
-	import StarterKit from '@tiptap/starter-kit';
+	import { HardBreak } from '@tiptap/extension-hard-break';
+	import { Image } from '@tiptap/extension-image';
+	import { StarterKit } from '@tiptap/starter-kit';
 	import { onDestroy, onMount } from 'svelte';
 
 	let element: HTMLDivElement;
-
 	let editor: Editor;
 
 	onMount(() => {
@@ -17,10 +16,10 @@
 				StarterKit.configure({
 					hardBreak: false,
 				}),
-				Image.configure(),
+				Image,
 				HardBreak,
 			],
-			autofocus: true,
+
 			content: `
 			<h1>Title!</h1>
 			<p>This is a description text.</p>
@@ -68,12 +67,6 @@
 		if (editor) {
 			editor.destroy();
 		}
-	});
-
-	let outputJson: string;
-
-	outputJsonStore.subscribe((value: any) => {
-		outputJson = value;
 	});
 </script>
 
