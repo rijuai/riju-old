@@ -21,9 +21,3 @@
 		/>
 	</article>
 </section>
-
-<style lang="postcss">
-	:root {
-		@apply bg-black;
-	}
-</style>
