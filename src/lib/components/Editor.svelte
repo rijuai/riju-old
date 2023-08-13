@@ -101,7 +101,7 @@
 			on:change={handleFileInput}
 		/>
 		<button class="secondary outline" on:click={() => fileInput.click()}
-			>Upload Image</button
+			>Image</button
 		>
 	</div>
 {/if}
