@@ -1,6 +1,10 @@
 <script lang="ts">
 </script>
 
+<svelte:head>
+	<title>Riju | Account</title>
+</svelte:head>
+
 <main class="px-4">
 	<article class="card max-w-sm mx-auto">
 		<header>

@@ -4,6 +4,10 @@
 	let email: String, password: String;
 </script>
 
+<svelte:head>
+	<title>Riju | Signup/Login</title>
+</svelte:head>
+
 <Navbar />
 
 <main class="px-4">
