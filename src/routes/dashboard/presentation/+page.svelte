@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TipTap from '$lib/components/TipTap.svelte';
+	import TipTap from '$lib/components/Editor.svelte';
 </script>
 
 <svelte:head>
