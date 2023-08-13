@@ -6,7 +6,7 @@
 <Navbar />
 
 <AnimatedRoute>
-	<div class="px-8 py-2">
+	<div class="px-4 lg:px-8 py-2">
 		<slot />
 	</div>
 </AnimatedRoute>
