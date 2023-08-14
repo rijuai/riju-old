@@ -13,6 +13,10 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Riju | Dashboard</title>
+</svelte:head>
+
 <section>
 	<div class="grid grid-cols-5 gap-6">
 		{#each presentations as presentation}
