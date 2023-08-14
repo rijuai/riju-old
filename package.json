@@ -11,7 +11,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-cloudflare": "^2.3.2",
-		"@sveltejs/kit": "^1.22.5",
+		"@sveltejs/kit": "^1.22.6",
 		"@types/reveal.js": "^4.4.2",
 		"autoprefixer": "^10.4.15",
 		"postcss": "^8.4.27",
