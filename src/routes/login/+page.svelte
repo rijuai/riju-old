@@ -1,7 +1,5 @@
 <script lang="ts">
 	import Navbar from '$lib/ui/Navbar.svelte';
-
-	let email: String, password: String;
 </script>
 
 <svelte:head>
@@ -10,10 +8,10 @@
 
 <Navbar />
 
-<main class="px-4">
-	<article class="card max-w-sm mx-auto">
+<main class="p-4 max-w-sm mx-auto">
+	<article>
 		<header>
-			<h1 class="text">Sign up / Login</h1>
+			<h1>Sign up / Login</h1>
 		</header>
 		<form>
 			<fieldset>
@@ -21,8 +19,7 @@
 					Email
 					<input
 						type="email"
-						name="email"
-						placeholder="ram@example.com"
+						placeholder="mahesh@example.com"
 						autocomplete="email"
 					/>
 				</label>
@@ -32,7 +29,7 @@
 			<input type="submit" value="Send Magic Link" />
 
 			<p>
-				Facing problems with Riju? <a href="/contact-us">Contact Us</a>
+				Facing problems? <a href="/contact-us">Contact Us</a>
 			</p>
 		</footer>
 	</article>
