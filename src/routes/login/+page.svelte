@@ -1,12 +1,6 @@
-<script lang="ts">
-	import Navbar from '$lib/ui/Navbar.svelte';
-</script>
-
 <svelte:head>
 	<title>Riju | Signup/Login</title>
 </svelte:head>
-
-<Navbar />
 
 <main class="p-4 max-w-sm mx-auto">
 	<article>
