@@ -1,9 +1,6 @@
 <script lang="ts">
 	import AnimatedRoute from '$lib/components/AnimatedRoute.svelte';
-	import Navbar from '$lib/ui/dashboard/Navbar.svelte';
 </script>
-
-<Navbar />
 
 <AnimatedRoute>
 	<div class="px-4 lg:px-8 py-2">
