@@ -1,3 +1,8 @@
+<svelte:head>
+	<title>Riju | Contact</title>
+	<meta name="description" content="To contact us send us an email here" />
+</svelte:head>
+
 <article>
 	<header>
 		<h1>Contact</h1>

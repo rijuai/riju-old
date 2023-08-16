@@ -3,6 +3,7 @@
 
 <svelte:head>
 	<title>Riju | Account</title>
+	<meta name="description" content="Your account details" />
 </svelte:head>
 
 <main class="px-4">

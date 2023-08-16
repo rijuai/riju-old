@@ -1,3 +1,11 @@
+<svelte:head>
+	<title>Riju | Terms and Conditions</title>
+	<meta
+		name="description"
+		content="These terms and conditions outline the rules and regulations for the use of Riju's Website, located at https://riju.page."
+	/>
+</svelte:head>
+
 <article class="max-w-2xl mx-auto">
 	<h2><strong>Terms and Conditions</strong></h2>
 
