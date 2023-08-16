@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import AnimatedRoute from '$lib/components/AnimatedRoute.svelte';
 	import DashboardNavbar from '$lib/ui/DashboardNavbar.svelte';
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte';
 	import PresentViewNavbar from '$lib/ui/PresentViewNavbar.svelte';
@@ -14,6 +15,8 @@
 	<HomePageNavbar />
 {/if}
 
-<main class="p-4">
-	<slot />
-</main>
+<AnimatedRoute>
+	<main class="p-4">
+		<slot />
+	</main>
+</AnimatedRoute>

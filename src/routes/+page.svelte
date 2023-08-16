@@ -1,23 +1,37 @@
-<section class="p-4">
-	<article class="max-w-md mx-auto">
-		<header>
-			<hgroup>
-				<h1 class="mb-4">Riju - coming soon</h1>
-				<p class="mb-6">Create presentations in seconds</p>
-				<form role="group">
-					<input type="email" placeholder="Enter your email" />
-					<input type="submit" value="Sign up" />
-				</form>
-			</hgroup>
-		</header>
+<script>
+	import Footer from '$lib/ui/Footer.svelte';
+</script>
 
-		<iframe
-			class="w-full aspect-video"
-			src="https://www.youtube-nocookie.com/embed/Qah9sSIXJqk"
-			title="YouTube video player"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-			allowfullscreen
-		/>
-	</article>
+<section class="text-center max-w-2xl mx-auto space-y-14 mt-24 mb-44">
+	<hgroup class="mb-14">
+		<h1>Create Presentations in Seconds</h1>
+		<p>
+			You write thats all! Riju turns it all into stunning presentation. Our
+			smart tech blends beauty and impact, perfect for impressing clients or
+			inspiring students.
+		</p>
+	</hgroup>
+
+	<div
+		class="max-w-xs mx-auto flex gap-3
+	"
+	>
+		<a href="/login" role="button">Create Account</a>
+		<a class="secondary outline" href="/dashboard" role="button">Dashboard</a>
+	</div>
 </section>
+
+<!-- Video -->
+<section class="flex mb-32">
+	<video
+		class="max-w-2xl mx-auto"
+		src="https://www.screen.studio/videos/hero/hero-demo.mp4"
+		controls
+		autoplay
+	>
+		<track kind="captions" src="path/to/captions.vtt" label="English" />
+	</video>
+	<track kind="captions" src="path/to/captions.vtt" label="English" />
+</section>
+
+<Footer />
