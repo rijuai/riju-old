@@ -13,7 +13,7 @@
 					<Menu />
 				</summary>
 				<ul dir="rtl">
-					<li><a href="/documentation">Documentation</a></li>
+					<li><a href="/dashboard">Dashboard</a></li>
 					<li><a href="/changelog">Changelog</a></li>
 					<li><a href="/contact">Contact</a></li>
 				</ul>
