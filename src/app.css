@@ -7,3 +7,7 @@
 article {
 	@apply max-w-sm mx-auto;
 }
+
+html {
+	@apply scroll-smooth;
+}
