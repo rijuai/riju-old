@@ -1,4 +1,4 @@
-<section class="max-w-2xl mx-auto">
+<article class="max-w-2xl mx-auto">
 	<h2><strong>Terms and Conditions</strong></h2>
 
 	<p>Welcome to Riju!</p>
@@ -285,4 +285,4 @@
 		provided free of charge, we will not be liable for any loss or damage of any
 		nature.
 	</p>
-</section>
+</article>

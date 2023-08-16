@@ -2,7 +2,7 @@
 	<title>Riju | Signup / Login</title>
 </svelte:head>
 
-<article>
+<article class="max-w-sm mx-auto">
 	<header>
 		<h1>Sign up / Login</h1>
 	</header>

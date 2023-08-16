@@ -4,10 +4,6 @@
 @tailwind utilities;
 @tailwind components;
 
-article {
-	@apply max-w-sm mx-auto;
-}
-
 html {
 	@apply scroll-smooth;
 }
