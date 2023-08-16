@@ -1,3 +1,11 @@
+<svelte:head>
+	<title>Riju | Privacy Policy</title>
+	<meta
+		name="description"
+		content="At Riju, accessible from https://riju.page, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Riju and how we use it."
+	/>
+</svelte:head>
+
 <article class="max-w-2xl mx-auto">
 	<h1>Privacy Policy for Riju</h1>
 
