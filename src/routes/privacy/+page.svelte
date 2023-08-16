@@ -1,4 +1,4 @@
-<section class="max-w-2xl mx-auto">
+<article class="max-w-2xl mx-auto">
 	<h1>Privacy Policy for Riju</h1>
 
 	<p>
@@ -223,4 +223,4 @@
 		If you have any questions or suggestions about our Privacy Policy, do not
 		hesitate to contact us.
 	</p>
-</section>
+</article>
