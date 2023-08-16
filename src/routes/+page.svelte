@@ -2,7 +2,7 @@
 	import Footer from '$lib/ui/Footer.svelte';
 </script>
 
-<section class="text-center max-w-2xl mx-auto space-y-14 mt-24 mb-44">
+<section class="text-center max-w-2xl mx-auto space-y-14 mt-24 mb-28">
 	<hgroup class="mb-14">
 		<h1>Create Presentations in Seconds</h1>
 		<p>
@@ -13,7 +13,7 @@
 	</hgroup>
 
 	<div
-		class="max-w-xs mx-auto flex gap-3
+		class="flex justify-center gap-3
 	"
 	>
 		<a href="/login" role="button">Create Account</a>
@@ -22,9 +22,9 @@
 </section>
 
 <!-- Video -->
-<section class="flex mb-32">
+<section class="flex mb-20 lg:mb-32">
 	<video
-		class="max-w-2xl mx-auto"
+		class="w-full max-w-2xl mx-auto"
 		src="https://www.screen.studio/videos/hero/hero-demo.mp4"
 		controls
 		autoplay
