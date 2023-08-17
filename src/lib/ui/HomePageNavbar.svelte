@@ -1,5 +1,5 @@
 <script>
-	import { IconMenu } from '@tabler/icons-svelte';
+	import { IconMenu2 } from '@tabler/icons-svelte';
 </script>
 
 <nav class="container-fluid">
@@ -10,7 +10,7 @@
 		<li>
 			<details class="dropdown">
 				<summary>
-					<IconMenu />
+					<IconMenu2 />
 				</summary>
 				<ul dir="rtl">
 					<li><a href="/dashboard">Dashboard</a></li>
