@@ -1,5 +1,6 @@
 <script>
 	import Footer from '$lib/ui/Footer.svelte';
+	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte';
 </script>
 
 <svelte:head>
@@ -9,6 +10,8 @@
 		content="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 	/>
 </svelte:head>
+
+<HomePageNavbar />
 
 <section class="text-center max-w-2xl mx-auto space-y-14 mt-24 mb-28">
 	<hgroup class="mb-14">
