@@ -39,6 +39,8 @@
 		src="https://www.screen.studio/videos/hero/hero-demo.mp4"
 		controls
 		autoplay
+		muted
+		loop
 	>
 		<track kind="captions" src="path/to/captions.vtt" label="English" />
 	</video>
