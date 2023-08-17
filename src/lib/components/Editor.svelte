@@ -106,10 +106,10 @@
 	</div>
 {/if}
 
-<div class="editor p-5 rounded-md bg-gray-800" bind:this={element} />
+<div class="editor p-5 rounded-md bg-slate-800" bind:this={element} />
 
 <style lang="postcss">
 	button.active {
-		@apply bg-gray-800;
+		@apply bg-slate-800;
 	}
 </style>
