@@ -2,24 +2,30 @@
 	import { page } from '$app/stores';
 	import ChangeThemeModal from '$lib/components/ChangeThemeModal.svelte';
 	import { isModalOpenStore } from '$lib/stores/modal_store';
-	import { ArrowLeft, PenBox, Play } from 'lucide-svelte';
+	import {
+		IconLayoutDashboard,
+		IconPencil,
+		IconPlayerPlayFilled,
+		IconSparkles,
+		IconUserCircle,
+	} from '@tabler/icons-svelte';
 </script>
 
 <nav class="container-fluid">
 	<ul>
-		<li><a class="text-2xl" href="/">Riju</a></li>
-		<!-- <li>
+		<li><a class="text-xl" href="/">Riju</a></li>
+		<li>
 			<a class="secondary" href="/dashboard/account" title="Account Settings">
-				<Settings />
+				<IconUserCircle />
 			</a>
-		</li> -->
-		{#if $page.url.pathname === '/dashboard/account'}
-			<li>
-				<a class="secondary outline" href="/dashboard" title="Go Back">
-					<ArrowLeft />
-				</a>
-			</li>
-		{/if}
+		</li>
+		<!-- {#if $page.url.pathname === '/dashboard/account'} -->
+		<li>
+			<a class="secondary outline" href="/dashboard" title="Go Back">
+				<IconLayoutDashboard />
+			</a>
+		</li>
+		<!-- {/if} -->
 	</ul>
 	<ul>
 		{#if $page.url.pathname === '/dashboard/presentation'}
@@ -30,12 +36,15 @@
 					title="Open Theme Modal"
 					on:click={() => {
 						$isModalOpenStore = true;
-					}}>Theme</a
+					}}
+				>
+					<IconSparkles />
+					Theme</a
 				>
 			</li>
 			<li>
 				<a class="secondary" href="/present" title="Present">
-					<Play />
+					<IconPlayerPlayFilled />
 				</a>
 			</li>
 		{/if}
@@ -47,7 +56,7 @@
 					role="button"
 					title="Create Presentation"
 				>
-					<PenBox />
+					<IconPencil />
 					Create</a
 				>
 			</li>
