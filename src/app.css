@@ -3,9 +3,3 @@
 html {
 	@apply scroll-smooth;
 }
-
-@media (prefers-color-scheme: dark), (prefers-color-scheme: light) {
-	html {
-		@apply bg-slate-900;
-	}
-}
