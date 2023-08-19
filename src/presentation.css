@@ -1,5 +1,4 @@
 .reveal {
-	@apply bg-blue-500;
 	background: linear-gradient(to right, #aa00ff, #ff00aa);
 }
 
