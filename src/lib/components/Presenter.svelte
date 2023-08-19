@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { currentBackgroundCssStore } from '$lib/stores/current_background_css';
 	import Reveal from 'reveal.js';
 	import 'reveal.js/dist/reveal.css';
 	import { onMount } from 'svelte';
@@ -61,7 +62,7 @@
 	}
 </script>
 
-<main class="reveal aspect-video text-left">
+<main class="reveal aspect-video text-left" style={$currentBackgroundCssStore}>
 	<div class="slides">
 		{@html htmlOutput}
 	</div>
