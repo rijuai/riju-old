@@ -12,8 +12,8 @@
 		</a>
 	</div>
 	<div class="flex justify-center gap-4 text-sm">
-		<a class="secondary" href="/contact">Contact</a>
-		<a class="secondary" href="/privacy">Privacy Policy</a>
-		<a class="secondary" href="/terms">Terms</a>
+		<a class="secondary" href="/docs/contact">Contact</a>
+		<a class="secondary" href="/docs/privacy">Privacy Policy</a>
+		<a class="secondary" href="/docs/terms">Terms</a>
 	</div>
 </footer>
