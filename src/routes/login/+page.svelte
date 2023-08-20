@@ -1,3 +1,7 @@
+<script lang="ts">
+	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte';
+</script>
+
 <svelte:head>
 	<title>Riju | Signup / Login</title>
 	<meta
@@ -6,23 +10,23 @@
 	/>
 </svelte:head>
 
+<HomePageNavbar />
+
 <article class="max-w-sm mx-auto">
 	<header>
 		<h1>Sign up / Login</h1>
 	</header>
 	<form>
 		<fieldset>
-			<input
-				type="email"
-				placeholder="Email"
-				autocomplete="email"
-				aria-label="Email"
-			/>
+			<label>
+				Email
+				<input type="email" autocomplete="email" aria-label="Email" />
+			</label>
 		</fieldset>
 	</form>
 	<input type="submit" value="Send Magic Link" />
 
 	<p>
-		Facing problems? <a href="/contact-us">Contact Us</a>
+		Facing problems? <a href="/docs/contact">Contact</a>
 	</p>
 </article>
