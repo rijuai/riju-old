@@ -14,22 +14,12 @@
 		<form>
 			<fieldset>
 				<label>
-					Full Name
-					<input
-						type="text"
-						name="Full Name"
-						placeholder="Harish Srinivasan"
-						autocomplete="name"
-					/>
+					Full name
+					<input type="text" name="Full Name" autocomplete="name" />
 				</label>
 				<label>
 					Email
-					<input
-						type="email"
-						name="email"
-						placeholder="abc@example.com"
-						autocomplete="email"
-					/>
+					<input type="email" name="email" autocomplete="email" />
 				</label>
 			</fieldset>
 		</form>
