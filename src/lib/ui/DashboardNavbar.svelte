@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import ChangeThemeModal from '$lib/components/ChangeThemeModal.svelte';
-	import { isModalOpenStore } from '$lib/stores/modal_store';
+	import { isModalOpenStore } from '$lib/stores/modalStore';
 	import {
 		IconLayoutDashboard,
 		IconPencil,

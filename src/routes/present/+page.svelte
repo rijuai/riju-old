@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Reveal from '$lib/components/Presenter.svelte';
-	import { outputJsonStore } from '$lib/stores/output-json';
+	import { outputJsonStore } from '$lib/stores/outputJson';
 </script>
 
 <svelte:head>

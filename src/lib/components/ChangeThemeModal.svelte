@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { backgroundCssListStore } from '$lib/stores/background_css_list';
-	import { currentBackgroundCssStore } from '$lib/stores/current_background_css';
-	import { isModalOpenStore } from '$lib/stores/modal_store';
-	import { outputJsonStore } from '$lib/stores/output-json';
+	import { backgroundCssListStore } from '$lib/stores/backgroundCssList';
+	import { currentBackgroundCssStore } from '$lib/stores/currentBackgroundCss';
+	import { isModalOpenStore } from '$lib/stores/modalStore';
+	import { outputJsonStore } from '$lib/stores/outputJson';
 	import Reveal from './Presenter.svelte';
 </script>
 
