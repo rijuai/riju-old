@@ -3,7 +3,7 @@
 	<meta name="description" content="To contact us send us an email here" />
 </svelte:head>
 
-<article>
+<article class="max-w-md mx-auto">
 	<header>
 		<h1>Contact</h1>
 	</header>
