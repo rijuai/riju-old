@@ -1,5 +1,1 @@
 @tailwind utilities;
-
-html {
-	@apply scroll-smooth;
-}
