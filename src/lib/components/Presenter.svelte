@@ -1,9 +1,9 @@
 <script lang="ts">
+	import '$lib/assets/presentation.css';
 	import { currentBackgroundCssStore } from '$lib/stores/currentBackgroundCss';
 	import Reveal from 'reveal.js';
 	import 'reveal.js/dist/reveal.css';
 	import { onMount } from 'svelte';
-	import '../../presentation.css';
 
 	onMount(() => {
 		let deck = new Reveal({
