@@ -2,7 +2,7 @@
 	import { IconMenu2 } from '@tabler/icons-svelte';
 </script>
 
-<nav class="container-fluid">
+<nav>
 	<ul>
 		<li><a class="text-xl" href="/">Riju</a></li>
 	</ul>
