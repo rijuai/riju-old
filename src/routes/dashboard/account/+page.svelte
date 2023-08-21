@@ -23,8 +23,6 @@
 				</label>
 			</fieldset>
 		</form>
-		<footer>
-			<input type="submit" value="Save Changes" />
-		</footer>
+		<input type="submit" value="Save Changes" />
 	</article>
 </main>
