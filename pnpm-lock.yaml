@@ -9,8 +9,8 @@ dependencies:
     specifier: ^2.32.0
     version: 2.32.0
   '@tabler/icons-svelte':
-    specifier: ^2.31.0
-    version: 2.31.0(svelte@4.2.0)
+    specifier: ^2.32.0
+    version: 2.32.0(svelte@4.2.0)
   '@tiptap/core':
     specifier: ^2.1.6
     version: 2.1.6(@tiptap/pm@2.1.6)
@@ -79,8 +79,8 @@ packages:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.19
 
-  /@cloudflare/workers-types@4.20230814.0:
-    resolution: {integrity: sha512-+jHiGjZg2UpULZSSHmHLqUG45TLg1s+uppSMlGvMn0u/xyFsRX9HX6b8Ydg/oHSp3jfSuPtX05GSvtgRAmrWTg==}
+  /@cloudflare/workers-types@4.20230821.0:
+    resolution: {integrity: sha512-lVQSyr5E4CEkQw7WIdsrMTj+kHjsm28mJ0B5AhNFByKR+16KTFsU/RW/nGLKHHW2jxT5lvYI+HjNQMzC9QR8Ng==}
     dev: true
 
   /@esbuild/android-arm64@0.18.20:
@@ -383,8 +383,8 @@ packages:
       - encoding
     dev: false
 
-  /@supabase/realtime-js@2.7.3:
-    resolution: {integrity: sha512-c7TzL81sx2kqyxsxcDduJcHL9KJdCOoKimGP6lQSqiZKX42ATlBZpWbyy9KFGFBjAP4nyopMf5JhPi2ZH9jyNw==}
+  /@supabase/realtime-js@2.7.4:
+    resolution: {integrity: sha512-FzSzs1k9ruh/uds5AJ95Nc3beiMCCIhougExJ3O98CX1LMLAKUKFy5FivKLvcNhXnNfUEL0XUfGMb4UH2J7alg==}
     dependencies:
       '@types/phoenix': 1.6.0
       '@types/websocket': 1.0.5
@@ -407,7 +407,7 @@ packages:
       '@supabase/functions-js': 2.1.2
       '@supabase/gotrue-js': 2.47.0
       '@supabase/postgrest-js': 1.8.0
-      '@supabase/realtime-js': 2.7.3
+      '@supabase/realtime-js': 2.7.4
       '@supabase/storage-js': 2.5.1
       cross-fetch: 3.1.8
     transitivePeerDependencies:
@@ -420,7 +420,7 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@cloudflare/workers-types': 4.20230814.0
+      '@cloudflare/workers-types': 4.20230821.0
       '@sveltejs/kit': 1.22.6(svelte@4.2.0)(vite@4.4.9)
       esbuild: 0.18.20
       worktop: 0.8.0-next.15
@@ -441,7 +441,7 @@ packages:
       devalue: 4.3.2
       esm-env: 1.0.0
       kleur: 4.1.5
-      magic-string: 0.30.2
+      magic-string: 0.30.3
       mime: 3.0.0
       sade: 1.8.1
       set-cookie-parser: 2.6.0
@@ -453,8 +453,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte-inspector@1.0.3(@sveltejs/vite-plugin-svelte@2.4.5)(svelte@4.2.0)(vite@4.4.9):
-    resolution: {integrity: sha512-Khdl5jmmPN6SUsVuqSXatKpQTMIifoQPDanaxC84m9JxIibWvSABJyHpyys0Z+1yYrxY5TTEQm+6elh0XCMaOA==}
+  /@sveltejs/vite-plugin-svelte-inspector@1.0.4(@sveltejs/vite-plugin-svelte@2.4.5)(svelte@4.2.0)(vite@4.4.9):
+    resolution: {integrity: sha512-zjiuZ3yydBtwpF3bj0kQNV0YXe+iKE545QGZVTaylW3eAzFr+pJ/cwK8lZEaRp4JtaJXhD5DyWAV4AxLh6DgaQ==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
       '@sveltejs/vite-plugin-svelte': ^2.2.0
@@ -476,11 +476,11 @@ packages:
       svelte: ^3.54.0 || ^4.0.0
       vite: ^4.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 1.0.3(@sveltejs/vite-plugin-svelte@2.4.5)(svelte@4.2.0)(vite@4.4.9)
+      '@sveltejs/vite-plugin-svelte-inspector': 1.0.4(@sveltejs/vite-plugin-svelte@2.4.5)(svelte@4.2.0)(vite@4.4.9)
       debug: 4.3.4
       deepmerge: 4.3.1
       kleur: 4.1.5
-      magic-string: 0.30.2
+      magic-string: 0.30.3
       svelte: 4.2.0
       svelte-hmr: 0.15.3(svelte@4.2.0)
       vite: 4.4.9
@@ -489,17 +489,17 @@ packages:
       - supports-color
     dev: true
 
-  /@tabler/icons-svelte@2.31.0(svelte@4.2.0):
-    resolution: {integrity: sha512-Q1j8mfY6TDCqcopcpMg7SsnqMr3UWHvOXkK3kC8kzhumZ3ErIjuxEmnRFhCkFm3YGwsQahPY7ZT0gKgepgu5jQ==}
+  /@tabler/icons-svelte@2.32.0(svelte@4.2.0):
+    resolution: {integrity: sha512-hqJnogb6uRuVdq6iVgaItR2+VRixtGgPHiLh/TSx7R1Uljz8VwL+CLibaAJkg53KZBhlTrq3nqpUvoAPJBJhPw==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
-      '@tabler/icons': 2.31.0
+      '@tabler/icons': 2.32.0
       svelte: 4.2.0
     dev: false
 
-  /@tabler/icons@2.31.0:
-    resolution: {integrity: sha512-vueOF4rjM0wcYAHOq7gcQB3fU04EAfHIwP0i/DVQdopXv84uu62DvOFHhYj9d0OBiM4O0PPoXEvsT8IVZDrYXw==}
+  /@tabler/icons@2.32.0:
+    resolution: {integrity: sha512-w1oNvrnqFipoBEy2/0X4/IHo2aLsijuz4QRi/HizxqiaoMfmWG5X2DpEYTw9WnGvFmixpu/rtQsQAr7Wr0Mc2w==}
     dev: false
 
   /@tiptap/core@2.1.6(@tiptap/pm@2.1.6):
@@ -684,7 +684,7 @@ packages:
       prosemirror-inputrules: 1.2.1
       prosemirror-keymap: 1.2.2
       prosemirror-markdown: 1.11.2
-      prosemirror-menu: 1.2.3
+      prosemirror-menu: 1.2.4
       prosemirror-model: 1.19.3
       prosemirror-schema-basic: 1.2.2
       prosemirror-schema-list: 1.3.0
@@ -800,8 +800,8 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.10
-      caniuse-lite: 1.0.30001521
-      fraction.js: 4.2.0
+      caniuse-lite: 1.0.30001522
+      fraction.js: 4.2.1
       normalize-range: 0.1.2
       picocolors: 1.0.0
       postcss: 8.4.28
@@ -841,8 +841,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001521
-      electron-to-chromium: 1.4.496
+      caniuse-lite: 1.0.30001522
+      electron-to-chromium: 1.4.498
       node-releases: 2.0.13
       update-browserslist-db: 1.0.11(browserslist@4.21.10)
     dev: true
@@ -876,8 +876,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /caniuse-lite@1.0.30001521:
-    resolution: {integrity: sha512-fnx1grfpEOvDGH+V17eccmNjucGUnCbP6KL+l5KqBIerp26WK/+RQ7CIDE37KGJjaPyqWXXlFUyKiWmvdNNKmQ==}
+  /caniuse-lite@1.0.30001522:
+    resolution: {integrity: sha512-TKiyTVZxJGhsTszLuzb+6vUZSjVOAhClszBr2Ta2k9IwtNBT/4dzmL6aywt0HCgEZlmwJzXJd8yNiob6HgwTRg==}
     dev: true
 
   /case-anything@2.1.13:
@@ -897,7 +897,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /code-red@1.0.4:
@@ -1007,8 +1007,8 @@ packages:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
     dev: true
 
-  /electron-to-chromium@1.4.496:
-    resolution: {integrity: sha512-qeXC3Zbykq44RCrBa4kr8v/dWzYJA8rAwpyh9Qd+NKWoJfjG5vvJqy9XOJ9H4P/lqulZBCgUWAYi+FeK5AuJ8g==}
+  /electron-to-chromium@1.4.498:
+    resolution: {integrity: sha512-4LODxAzKGVy7CJyhhN5mebwe7U2L29P+0G+HUriHnabm0d7LSff8Yn7t+Wq+2/9ze2Fu1dhX7mww090xfv7qXQ==}
     dev: true
 
   /entities@3.0.1:
@@ -1128,16 +1128,16 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /fraction.js@4.2.0:
-    resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
+  /fraction.js@4.2.1:
+    resolution: {integrity: sha512-/KxoyCnPM0GwYI4NN0Iag38Tqt+od3/mLuguepLgCAKPn0ZhC544nssAW0tG2/00zXEYl9W+7hwAIpLHo6Oc7Q==}
     dev: true
 
   /fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
 
-  /fsevents@2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+  /fsevents@2.3.3:
+    resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
@@ -1307,8 +1307,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /magic-string@0.30.2:
-    resolution: {integrity: sha512-lNZdu7pewtq/ZvWUp9Wpf/x7WzMTsR26TWV03BRZrXFsv+BI6dy8RAiKgm1uM/kyR0rCfUcqvOlXKG66KhIGug==}
+  /magic-string@0.30.3:
+    resolution: {integrity: sha512-B7xGbll2fG/VjP+SWg4sX3JynwIU0mjoTc6MPpKNuIvftk6u6vqhDnk1R80b8C2GBR6ywqy+1DcKBrevBg+bmw==}
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
@@ -1656,8 +1656,8 @@ packages:
       prosemirror-model: 1.19.3
     dev: false
 
-  /prosemirror-menu@1.2.3:
-    resolution: {integrity: sha512-13H9+XvdJiUt2vQVMqCveFbc7YfEKR3g70pUwuQdQLwuvNfVGTzMHr1y5dwdY5vOBQbzhmjgnWUnclKzMdnlJA==}
+  /prosemirror-menu@1.2.4:
+    resolution: {integrity: sha512-S/bXlc0ODQup6aiBbWVsX/eM+xJgCTAfMq/nLqaO5ID/am4wS0tTCIkzwytmao7ypEtjj39i7YbJjAgO20mIqA==}
     dependencies:
       crelt: 1.0.6
       prosemirror-commands: 1.5.2
@@ -1790,7 +1790,7 @@ packages:
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /rope-sequence@1.3.4:
@@ -1976,7 +1976,7 @@ packages:
       estree-walker: 3.0.3
       is-reference: 3.0.1
       locate-character: 3.0.0
-      magic-string: 0.30.2
+      magic-string: 0.30.3
       periscopic: 3.1.0
 
   /tailwindcss@3.3.3:
@@ -2143,7 +2143,7 @@ packages:
       postcss: 8.4.28
       rollup: 3.28.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /vitefu@0.2.4(vite@4.4.9):
