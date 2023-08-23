@@ -10,8 +10,8 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-cloudflare": "^2.3.2",
-		"@sveltejs/kit": "^1.22.6",
+		"@sveltejs/adapter-cloudflare": "^2.3.3",
+		"@sveltejs/kit": "^1.23.0",
 		"@types/reveal.js": "^4.4.2",
 		"autoprefixer": "^10.4.15",
 		"postcss": "^8.4.28",
@@ -24,7 +24,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@supabase/supabase-js": "^2.33.0",
+		"@supabase/supabase-js": "^2.33.1",
 		"@tabler/icons-svelte": "^2.32.0",
 		"@tiptap/core": "^2.1.6",
 		"@tiptap/extension-hard-break": "^2.1.6",
