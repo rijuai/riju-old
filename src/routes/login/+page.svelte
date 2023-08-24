@@ -8,6 +8,12 @@
 		name="description"
 		content="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 	/>
+
+	<!-- Pico CSS -->
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.0-alpha1/css/pico.min.css"
+	/>
 </svelte:head>
 
 <HomePageNavbar />
