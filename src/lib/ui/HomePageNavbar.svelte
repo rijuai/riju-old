@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <nav>
 	<ul>
 		<li><a class="text-xl" href="/">Riju</a></li>
