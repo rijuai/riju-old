@@ -1,5 +1,4 @@
 <script>
-	import { IconMenu2 } from '@tabler/icons-svelte';
 </script>
 
 <nav>
@@ -9,9 +8,7 @@
 	<ul>
 		<li>
 			<details class="dropdown">
-				<summary>
-					<IconMenu2 />
-				</summary>
+				<summary>Menu</summary>
 				<ul dir="rtl">
 					<li><a href="/dashboard">Dashboard</a></li>
 					<li><a href="/changelog">Changelog</a></li>

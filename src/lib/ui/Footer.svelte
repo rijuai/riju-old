@@ -1,14 +1,8 @@
-<script>
-	import { IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-svelte';
-</script>
-
 <footer class="flex flex-col justify-center gap-6 py-6">
 	<div class="flex justify-center gap-6">
-		<a href="https://twitter.com/RijuPage">
-			<IconBrandTwitter />
-		</a>
+		<a href="https://twitter.com/RijuPage"> Twitter </a>
 		<a href="https://www.youtube.com/channel/UCqCC3zl-WFdSujoAyKANCUg">
-			<IconBrandYoutube />
+			YouTube
 		</a>
 	</div>
 	<div class="flex justify-center gap-4 text-xs">
