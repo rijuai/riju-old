@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@picocss/pico':
-    specifier: 2.0.0-alpha1
-    version: 2.0.0-alpha1
   '@supabase/supabase-js':
     specifier: ^2.33.1
     version: 2.33.1
@@ -332,10 +329,6 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
     dev: true
-
-  /@picocss/pico@2.0.0-alpha1:
-    resolution: {integrity: sha512-DIMBG+ssQHVKEkQuwUs3mfBqNotxIH59xCmrMA8jCtm0CyRmc8p+VfMW1YeBZpeEY/WiKNw8GTefpoLBFvdpug==}
-    dev: false
 
   /@polka/url@1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
