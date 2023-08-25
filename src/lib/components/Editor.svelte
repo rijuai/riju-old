@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { outputJsonStore } from '$lib/stores/outputJson';
 	import { Editor } from '@tiptap/core';
-	import { HardBreak } from '@tiptap/extension-hard-break';
 	import { Image } from '@tiptap/extension-image';
 	import { StarterKit } from '@tiptap/starter-kit';
 	import { onDestroy, onMount } from 'svelte';
@@ -12,13 +11,7 @@
 	onMount(() => {
 		editor = new Editor({
 			element: element,
-			extensions: [
-				StarterKit.configure({
-					hardBreak: false,
-				}),
-				Image,
-				HardBreak,
-			],
+			extensions: [StarterKit, Image],
 
 			content: `
 			<h1>Title!</h1>
@@ -105,6 +98,18 @@
 		>
 			P
 		</button>
+		<button
+			class="secondary outline"
+			class:active={editor.isActive('bulletList')}
+			on:click={() => editor.chain().focus().toggleBulletList().run()}
+			>Bullet</button
+		>
+		<button
+			class="secondary outline"
+			class:active={editor.isActive('orderedList')}
+			on:click={() => editor.chain().focus().toggleOrderedList().run()}
+			>Ordered</button
+		>
 		<input
 			type="file"
 			id="imageInput"
@@ -118,14 +123,14 @@
 	</div>
 {/if}
 
-<div class="editor p-5 rounded-md" bind:this={element} />
+<div class="editor p-6 rounded-lg" bind:this={element} />
 
 <style lang="postcss">
 	.editor {
-		background-color: #202632;
+		background-color: var(--pico-card-background-color);
 	}
 
 	button.active {
-		background: #202632;
+		background-color: var(--pico-card-background-color);
 	}
 </style>
