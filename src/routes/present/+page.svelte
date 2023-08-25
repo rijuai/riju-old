@@ -1,7 +1,10 @@
 <script lang="ts">
 	import Reveal from '$lib/components/Presenter.svelte';
 	import { outputJsonStore } from '$lib/stores/outputJson';
+	import PresenterNavbar from '$lib/ui/PresenterNavbar.svelte';
 </script>
+
+<PresenterNavbar />
 
 <svelte:head>
 	<title>Riju | Present</title>
