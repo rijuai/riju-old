@@ -6,7 +6,9 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		let deck = new Reveal({
+		let deck = new Reveal();
+
+		deck.initialize({
 			controls: false,
 			progress: true,
 			history: false,
@@ -14,9 +16,8 @@
 			transition: 'slide',
 			embedded: true,
 			autoAnimate: true,
+			backgroundTransition: 'slide',
 		});
-
-		deck.initialize();
 	});
 
 	export let content: any = [];
