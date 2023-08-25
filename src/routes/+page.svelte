@@ -48,19 +48,6 @@
 		<track kind="captions" src="path/to/captions.vtt" label="English" />
 	</section>
 
-	<!-- a -->
-	<section class="max-w-4xl mx-auto">
-		<article>
-			<header>
-				<h2>Lorem ipsum dolor sit amet.</h2>
-			</header>
-			<video
-				class="w-full"
-				src="https://www.screen.studio/videos/features/recording-widget.mp4"
-			/>
-		</article>
-	</section>
-
 	<!-- Cards -->
 	<section class="flex max-w-4xl mx-auto">
 		<article>
