@@ -5,8 +5,10 @@
 	import 'reveal.js/dist/reveal.css';
 	import { onMount } from 'svelte';
 
+	let deck: Reveal.Api;
+
 	onMount(() => {
-		let deck = new Reveal();
+		deck = new Reveal();
 
 		deck.initialize({
 			controls: false,
