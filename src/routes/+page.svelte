@@ -15,14 +15,7 @@
 	<HomePageNavbar />
 
 	<section class="text-center max-w-2xl mx-auto space-y-14 mt-24 mb-28">
-		<hgroup class="mb-14">
-			<h1>Create Presentations in Seconds</h1>
-			<p>
-				You write thats all! Riju turns it all into stunning presentation. Our
-				smart tech blends beauty and impact, perfect for impressing clients or
-				inspiring students.
-			</p>
-		</hgroup>
+		<h1>Create presentations in seconds</h1>
 
 		<div
 			class="flex justify-center gap-3
@@ -33,53 +26,42 @@
 		</div>
 	</section>
 
-	<!-- Video -->
-	<section class="flex mb-20 lg:mb-32">
-		<video
-			class="w-full max-w-2xl mx-auto"
-			src="https://www.screen.studio/videos/hero/hero-demo.mp4"
-			controls
-			autoplay
-			muted
-			loop
-		>
-			<track kind="captions" src="path/to/captions.vtt" label="English" />
-		</video>
-		<track kind="captions" src="path/to/captions.vtt" label="English" />
-	</section>
-
 	<!-- Cards -->
-	<section class="flex max-w-4xl mx-auto">
-		<article>
-			<video
-				class="w-full"
-				src="https://www.screen.studio/videos/features/background-and-spacing.mp4"
-				muted
-				autoplay
-				loop
-			/>
-		</article>
-		<article class="bg-sky-600">
-			<h2 class="text-center mb-14">Features</h2>
-			<p>
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure fuga,
-				eum. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-			</p>
-		</article>
-	</section>
-	<section class="flex max-w-4xl mx-auto">
-		<article class="bg-sky-600">
-			<h2 class="text-center mb-14">Features</h2>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis non
-				nam impedit rem exercitationem. Lorem ipsum, dolor sit amet consectetur
-				adipisicing elit.
-			</p>
-		</article>
+	<section class="max-w-2xl mx-auto">
 		<article>
 			<video
 				class="w-full"
 				src="https://www.screen.studio/videos/features/auto-zoom-on-clicks.mp4"
+				muted
+				autoplay
+				loop
+			/>
+			<footer>
+				<h2>Riju: the next-gen presentation builder.</h2>
+				<p>
+					You write content; thats all! Riju turns it all into stunning
+					presentation(PPT). Our smart tech blends beauty and impact, perfect
+					for impressing clients or inspiring students.
+				</p>
+			</footer>
+		</article>
+	</section>
+	<section class="flex max-w-2xl mx-auto">
+		<article>
+			<header>
+				<h2>Features</h2>
+				<ul>
+					<li>
+						Super fast: create presentation in seconds (not hours😀). Just write
+						your content.
+					</li>
+					<li>Beautiful: Riju turns your words into stunning presentations.</li>
+					<li>Super affordable: at just $19/year its the first of its kind.</li>
+				</ul>
+			</header>
+			<video
+				class="w-full"
+				src="https://www.screen.studio/videos/features/background-and-spacing.mp4"
 				muted
 				autoplay
 				loop
