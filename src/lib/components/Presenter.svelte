@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '$lib/assets/presentation.css';
+	import '$lib/assets/presenter.css';
 	import { currentBackgroundCssStore } from '$lib/stores/currentBackgroundCss';
 	import Reveal from 'reveal.js';
 	import 'reveal.js/dist/reveal.css';
