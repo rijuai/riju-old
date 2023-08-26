@@ -19,6 +19,7 @@
 			embedded: true,
 			autoAnimate: true,
 			backgroundTransition: 'slide',
+			overview: false,
 		});
 	});
 
