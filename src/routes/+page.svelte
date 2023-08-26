@@ -9,12 +9,18 @@
 		name="description"
 		content="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 	/>
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+	/>
 </svelte:head>
 
 <main class="container-fluid">
 	<HomePageNavbar />
 
-	<section class="text-center max-w-2xl mx-auto space-y-14 mt-24 mb-28">
+	<section
+		class="text-center max-w-2xl mx-auto space-y-14 mt-24 mb-28 animate__animated animate__fadeInDown"
+	>
 		<h1>Create presentations in seconds</h1>
 
 		<div
@@ -27,15 +33,9 @@
 	</section>
 
 	<!-- Cards -->
-	<section class="max-w-2xl mx-auto">
+	<section class="max-w-2xl mx-auto animate__animated animate__fadeIn">
 		<article>
-			<video
-				class="w-full"
-				src="https://www.screen.studio/videos/features/auto-zoom-on-clicks.mp4"
-				muted
-				autoplay
-				loop
-			/>
+			<video class="w-full" src="/videos/demo.mp4" muted autoplay loop />
 			<footer>
 				<h2>Riju: the next-gen presentation builder.</h2>
 				<p>
