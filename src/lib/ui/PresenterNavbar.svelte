@@ -10,8 +10,6 @@
 
 		console.log('Current background color:', $currentBackgroundCssStore);
 	}
-
-	let showFullScreen = false;
 </script>
 
 <nav class="container-fluid fixed z-50 w-full">
@@ -21,35 +19,6 @@
 		</li>
 	</ul>
 	<ul>
-		<li>
-			<details class="dropdown">
-				<summary
-					><svg
-						xmlns="http://www.w3.org/2000/svg"
-						class="icon icon-tabler icon-tabler-dots-vertical"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						stroke-width="2"
-						stroke="currentColor"
-						fill="none"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					>
-						<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-						<path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-						<path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-						<path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-					</svg></summary
-				>
-				<ul dir="rtl">
-					<li>
-						<a href="#full-screen">Full Screen</a>
-					</li>
-					<li><a href="?print-pdf">PDF</a></li>
-				</ul>
-			</details>
-		</li>
 		<li>
 			<a class="secondary" href="#change-theme" on:click={changeThemeColor}
 				><svg
