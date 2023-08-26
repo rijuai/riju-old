@@ -65,7 +65,7 @@
 	}
 </script>
 
-<main class="reveal aspect-video text-left" style={$currentBackgroundCssStore}>
+<main class="reveal" style={$currentBackgroundCssStore}>
 	<div class="slides">
 		{@html htmlOutput}
 	</div>
