@@ -230,7 +230,7 @@
 	</div>
 {/if}
 
-<div class="editor p-6 rounded-lg" bind:this={element} />
+<div class="editor p-6 rounded-lg mb-8" bind:this={element} />
 
 <style lang="postcss">
 	.editor {
