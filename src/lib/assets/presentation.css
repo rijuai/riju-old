@@ -1,11 +1,12 @@
 .reveal {
-	@apply aspect-video bg-gradient-to-br from-pink-500 to-purple-600;
+	@apply text-left aspect-video;
 }
 
 .reveal h1,
 .reveal h2,
 .reveal p,
-.reveal ol li {
+.reveal ol li,
+.reveal ul li {
 	@apply text-gray-300;
 }
 
