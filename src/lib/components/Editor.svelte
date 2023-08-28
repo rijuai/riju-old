@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { outputJsonStore } from '$lib/stores/outputJson';
+	import { editorOutput } from '$lib/stores/editor';
 	import { Editor } from '@tiptap/core';
 	import { Image } from '@tiptap/extension-image';
 	import { StarterKit } from '@tiptap/starter-kit';
@@ -30,7 +30,7 @@
 
 				console.log('editor', editor.getJSON().content);
 
-				$outputJsonStore = editor.getJSON().content;
+				$editorOutput = editor.getJSON().content!;
 			},
 		});
 

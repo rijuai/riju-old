@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Reveal from '$lib/components/Presenter.svelte';
-	import { outputJsonStore } from '$lib/stores/outputJson';
+	import { editorOutput } from '$lib/stores/editor';
 	import PresenterNavbar from '$lib/ui/PresenterNavbar.svelte';
 </script>
 
@@ -14,4 +14,4 @@
 
 <PresenterNavbar />
 
-<Reveal content={$outputJsonStore} />
+<Reveal content={$editorOutput} />
