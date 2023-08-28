@@ -33,7 +33,7 @@
 				</a>
 			</li>
 		{/if}
-		{#if $page.url.pathname === '/dashboard/editor'}
+		{#if $page.url.pathname === '/dashboard'}
 			<li>
 				<a
 					class="primary"
