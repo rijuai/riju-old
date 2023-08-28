@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '$lib/assets/presenter.css';
-	import { currentBackgroundCssStore } from '$lib/stores/currentBackgroundCss';
+	import { currentTheme } from '$lib/stores/presenter';
+
 	import Reveal from 'reveal.js';
 	import 'reveal.js/dist/reveal.css';
 	import { onMount } from 'svelte';
@@ -66,7 +67,7 @@
 	}
 </script>
 
-<main class="reveal" style={$currentBackgroundCssStore}>
+<main class="reveal" style={$currentTheme}>
 	<div class="slides">
 		{@html htmlOutput}
 	</div>

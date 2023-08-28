@@ -1,14 +1,12 @@
 <script lang="ts">
-	import { backgroundCssListStore } from '$lib/stores/backgroundCssList';
-	import { currentBackgroundCssStore } from '$lib/stores/currentBackgroundCss';
+	import { currentTheme, themes } from '$lib/stores/presenter';
 
 	function changeThemeColor() {
-		const bgCssList = $backgroundCssListStore;
+		const bgCssList = $themes;
 
-		$currentBackgroundCssStore =
-			bgCssList[Math.floor(Math.random() * bgCssList.length)];
+		$currentTheme = bgCssList[Math.floor(Math.random() * bgCssList.length)];
 
-		console.log('Current background color:', $currentBackgroundCssStore);
+		console.log('Current background color:', $currentTheme);
 	}
 </script>
 
