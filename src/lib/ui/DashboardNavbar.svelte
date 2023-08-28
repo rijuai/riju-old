@@ -7,7 +7,7 @@
 		<li><a class="text-xl" href="/">Riju</a></li>
 	</ul>
 	<ul>
-		{#if $page.url.pathname === '/dashboard/presentation'}
+		{#if $page.url.pathname === '/dashboard/editor'}
 			<li>
 				<a class="secondary" href="/present" title="Present">
 					<!-- Present Icon -->
@@ -33,11 +33,11 @@
 				</a>
 			</li>
 		{/if}
-		{#if $page.url.pathname === '/dashboard'}
+		{#if $page.url.pathname === '/editor'}
 			<li>
 				<a
 					class="primary"
-					href="/dashboard/presentation"
+					href="/dashboard/editor"
 					role="button"
 					title="Create Presentation"
 				>

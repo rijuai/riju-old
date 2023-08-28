@@ -39,7 +39,7 @@
 			>
 		</li>
 		<li>
-			<a class="secondary" href="/dashboard/presentation"
+			<a class="secondary" href="/dashboard/editor"
 				><svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="icon icon-tabler icon-tabler-x"
