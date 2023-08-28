@@ -1,4 +1,5 @@
 <script>
+	import demo from '$lib/assets/videos/demo.mp4';
 	import Footer from '$lib/ui/Footer.svelte';
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte';
 </script>
@@ -15,9 +16,9 @@
 	/>
 </svelte:head>
 
-<main class="container-fluid">
-	<HomePageNavbar />
+<HomePageNavbar />
 
+<main class="mx-auto max-w-2xl">
 	<section
 		class="text-center max-w-2xl mx-auto space-y-14 mt-24 mb-28 animate__animated animate__fadeInDown"
 	>
@@ -33,9 +34,9 @@
 	</section>
 
 	<!-- Cards -->
-	<section class="max-w-2xl mx-auto animate__animated animate__fadeIn">
+	<section class="animate__animated animate__fadeIn">
 		<article>
-			<video class="w-full" src="/videos/demo.mp4" muted autoplay loop />
+			<video class="w-full" src={demo} muted autoplay loop />
 			<footer>
 				<h2>Riju: the next-gen presentation builder.</h2>
 				<p>
@@ -46,7 +47,7 @@
 			</footer>
 		</article>
 	</section>
-	<section class="flex max-w-2xl mx-auto">
+	<section>
 		<article>
 			<header>
 				<h2>Features</h2>
