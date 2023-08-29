@@ -1,13 +1,5 @@
 <script lang="ts">
-	import { currentTheme, themes } from '$lib/stores/presenter';
-
-	function changeThemeColor() {
-		const bgCssList = $themes;
-
-		$currentTheme = bgCssList[Math.floor(Math.random() * bgCssList.length)];
-
-		console.log('Current background color:', $currentTheme);
-	}
+	import { changeTheme } from '$lib/stores/presenter';
 </script>
 
 <nav class="container-fluid fixed z-50 w-full">
@@ -18,7 +10,7 @@
 	</ul>
 	<ul>
 		<li>
-			<a class="secondary" href="#change-theme" on:click={changeThemeColor}
+			<a class="secondary" href="#change-theme" on:click={changeTheme}
 				><svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="icon icon-tabler icon-tabler-sparkles"
