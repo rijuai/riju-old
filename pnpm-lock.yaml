@@ -24,8 +24,8 @@ dependencies:
     specifier: ^2.1.7
     version: 2.1.7(@tiptap/pm@2.1.7)
   lucide-svelte:
-    specifier: ^0.272.0
-    version: 0.272.0(svelte@4.2.0)
+    specifier: ^0.274.0
+    version: 0.274.0(svelte@4.2.0)
   reveal.js:
     specifier: ^4.5.0
     version: 4.5.0
@@ -1301,8 +1301,8 @@ packages:
   /locate-character@3.0.0:
     resolution: {integrity: sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA==}
 
-  /lucide-svelte@0.272.0(svelte@4.2.0):
-    resolution: {integrity: sha512-roIR+7q9Wf8NEqMfABT3pUBV1sozU5ixovc7b/IX6NJM8krjY3baBi80MIEjkJBmb5J5nbi+4plDiguu1HwX9g==}
+  /lucide-svelte@0.274.0(svelte@4.2.0):
+    resolution: {integrity: sha512-+8bKZyOdadiaksrGOftNRfz52PMcddSmNDd1invTrqLTaAg00mrVrHuh6hHypFCpQhZLKrsEHqHl/TwITe/VsA==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
