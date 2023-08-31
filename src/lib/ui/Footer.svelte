@@ -1,8 +1,12 @@
+<script>
+	import { Twitter, Youtube } from 'lucide-svelte';
+</script>
+
 <footer class="flex flex-col justify-center gap-6 py-6">
 	<div class="flex justify-center gap-6">
-		<a href="https://twitter.com/RijuPage"> Twitter </a>
-		<a href="https://www.youtube.com/channel/UCqCC3zl-WFdSujoAyKANCUg">
-			YouTube
+		<a href="https://twitter.com/RijuPage"><Twitter /></a>
+		<a href="https://www.youtube.com/channel/UCqCC3zl-WFdSujoAyKANCUg"
+			><Youtube />
 		</a>
 	</div>
 	<div class="flex justify-center gap-4 text-xs">
