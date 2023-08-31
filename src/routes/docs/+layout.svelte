@@ -3,9 +3,9 @@
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte';
 </script>
 
-<main class="container-fluid">
-	<HomePageNavbar />
+<HomePageNavbar />
 
+<main class="container-fluid">
 	<slot />
 
 	<Footer />
