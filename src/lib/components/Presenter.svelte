@@ -2,15 +2,14 @@
 	import '$lib/assets/presenter.css';
 	import { editorOutput } from '$lib/stores/editor';
 	import { currentTheme } from '$lib/stores/presenter';
-	import type { JSONContent } from '@tiptap/core';
 
 	import Reveal from 'reveal.js';
 	import 'reveal.js/dist/reveal.css';
 	import { onMount } from 'svelte';
 
 	let deck: Reveal.Api;
-	let content: JSONContent = $editorOutput;
-	let htmlOutput: string = '<section>';
+	let content = $editorOutput;
+	let htmlOutput = '<section>';
 
 	onMount(() => {
 		deck = new Reveal();
@@ -45,7 +44,7 @@
 				} else if (item.type === 'orderedList') {
 					htmlOutput += `<ol start=${item.attrs.start}>`;
 					item.content.forEach(
-						(listItem: { content: { content: { text: any }[] }[] }) => {
+						(listItem: { content: { content: { text: string }[] }[] }) => {
 							htmlOutput += `<li>${listItem.content[0].content[0].text}</li>`;
 						},
 					);
@@ -53,7 +52,7 @@
 				} else if (item.type === 'bulletList') {
 					htmlOutput += `<ul>`;
 					item.content.forEach(
-						(listItem: { content: { content: { text: any }[] }[] }) => {
+						(listItem: { content: { content: { text: string }[] }[] }) => {
 							htmlOutput += `<li>${listItem.content[0].content[0].text}</li>`;
 						},
 					);
