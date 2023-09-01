@@ -121,10 +121,7 @@
 	</div>
 {/if}
 
-<div
-	class="editor p-8 bg-slate-800 rounded-lg w-full mb-8"
-	bind:this={element}
-/>
+<div class="editor p-8 rounded-lg w-full mb-8" bind:this={element} />
 
 <style lang="postcss">
 	.editor {
@@ -136,7 +133,7 @@
 		position: fixed;
 		top: 50%;
 		transform: translateY(-50%);
-		@apply left-6;
+		@apply left-4;
 	}
 
 	.menu button {
