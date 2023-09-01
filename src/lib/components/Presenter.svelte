@@ -1,12 +1,16 @@
 <script lang="ts">
 	import '$lib/assets/presenter.css';
+	import { editorOutput } from '$lib/stores/editor';
 	import { currentTheme } from '$lib/stores/presenter';
+	import type { JSONContent } from '@tiptap/core';
 
 	import Reveal from 'reveal.js';
 	import 'reveal.js/dist/reveal.css';
 	import { onMount } from 'svelte';
 
 	let deck: Reveal.Api;
+	let content: JSONContent = $editorOutput;
+	let htmlOutput: string = '<section>';
 
 	onMount(() => {
 		deck = new Reveal();
@@ -23,9 +27,6 @@
 			overview: false,
 		});
 	});
-
-	export let content: any = [];
-	let htmlOutput: string = '<section>';
 
 	if (content !== undefined) {
 		content.forEach(
