@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TipTap from '$lib/components/Editor.svelte';
+	import Editor from '$lib/components/Editor.svelte';
 </script>
 
 <svelte:head>
@@ -8,5 +8,5 @@
 </svelte:head>
 
 <div class="max-w-3xl mx-auto">
-	<TipTap />
+	<Editor />
 </div>
