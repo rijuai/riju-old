@@ -3,14 +3,8 @@
 	import { Editor } from '@tiptap/core'
 	import { Image } from '@tiptap/extension-image'
 	import { StarterKit } from '@tiptap/starter-kit'
-	import {
-		Heading1,
-		Heading2,
-		ImageIcon,
-		List,
-		ListOrdered,
-	} from 'lucide-svelte'
 	import { onDestroy, onMount } from 'svelte'
+	import EditorMenu from './EditorMenu.svelte'
 
 	let element: HTMLDivElement
 	let editor: Editor
@@ -48,32 +42,32 @@
 		}
 
 		// Initialize the FileReader once the component is mounted
-		if (fileInput) {
-			fileInput.addEventListener('change', handleFileInput)
-		}
+		// if (fileInput) {
+		// 	fileInput.addEventListener('change', handleFileInput)
+		// }
 	})
 
 	let imageUrl: string, fileInput: HTMLInputElement
 
-	function handleFileInput(event: Event) {
-		const target = event.target as HTMLInputElement
-		if (!target.files || target.files.length === 0) return
+	// function handleFileInput(event: Event) {
+	// 	const target = event.target as HTMLInputElement
+	// 	if (!target.files || target.files.length === 0) return
 
-		const file = target.files[0]
-		const reader = new FileReader()
+	// 	const file = target.files[0]
+	// 	const reader = new FileReader()
 
-		reader.onloadend = () => {
-			imageUrl = reader.result as string
-			const transaction = editor
-				.chain()
-				.focus()
-				.setImage({ src: imageUrl })
-				.run()
-			fileInput.value = ''
-		}
+	// 	reader.onloadend = () => {
+	// 		imageUrl = reader.result as string
+	// 		const transaction = editor
+	// 			.chain()
+	// 			.focus()
+	// 			.setImage({ src: imageUrl })
+	// 			.run()
+	// 		fileInput.value = ''
+	// 	}
 
-		reader.readAsDataURL(file)
-	}
+	// 	reader.readAsDataURL(file)
+	// }
 
 	onDestroy(() => {
 		if (editor) {
@@ -83,64 +77,16 @@
 </script>
 
 {#if editor}
-	<div class="menu z-50 flex flex-col gap-2 p-2 rounded-md">
-		<button
-			class="secondary"
-			on:click={() => {
-				editor.chain().focus().toggleHeading({ level: 1 }).run()
-			}}><Heading1 /></button
-		>
-		<button
-			class="secondary"
-			on:click={() => {
-				editor.chain().focus().toggleHeading({ level: 2 }).run()
-			}}><Heading2 /></button
-		>
-		<button
-			class="secondary"
-			on:click={() => {
-				editor.chain().focus().toggleBulletList().run()
-			}}><List /></button
-		>
-		<button
-			class="secondary"
-			on:click={() => {
-				editor.chain().focus().toggleOrderedList().run()
-			}}><ListOrdered /></button
-		>
-		<input
-			type="file"
-			id="imageInput"
-			style="display: none;"
-			bind:this={fileInput}
-			on:change={handleFileInput}
-		/>
-		<button class="secondary" on:click={() => fileInput.click()}
-			><ImageIcon /></button
-		>
-	</div>
+	<EditorMenu {editor} />
 {/if}
 
 <div
-	class="editor p-8 rounded-lg w-full mb-8 border-2 border-zinc-800"
+	class="editor p-8 rounded-lg w-full mb-8 border-2 border-slate-800"
 	bind:this={element}
 />
 
 <style lang="postcss">
 	.editor {
 		background-color: var(--pico-card-background-color);
-	}
-
-	.menu {
-		background-color: var(--pico-card-background-color);
-		position: fixed;
-		top: 50%;
-		transform: translateY(-50%);
-		@apply left-4;
-	}
-
-	.menu button {
-		background-color: var(--pico-card-background-color);
-		@apply hover:bg-slate-700 border-0;
 	}
 </style>
