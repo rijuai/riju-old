@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
-
 	import '$lib/assets/presenter.css'
+	import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
 	import { editorOutput } from '$lib/stores/editor'
 	import { currentTheme } from '$lib/stores/presenter'
-
 	import Reveal from 'reveal.js'
 	import 'reveal.js/dist/reveal.css'
 	import { onMount } from 'svelte'
