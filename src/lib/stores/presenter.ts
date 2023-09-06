@@ -1,6 +1,6 @@
-import { readable, writable } from 'svelte/store';
+import { readable, writable } from 'svelte/store'
 
-export let currentTheme = writable('background: #5900FF;');
+export let currentTheme = writable('background: #5900FF;')
 
 export const themes = readable([
 	'background: linear-gradient(to bottom right, #FF08A1, #FF3852)',
@@ -9,10 +9,10 @@ export const themes = readable([
 	'background: linear-gradient(to bottom right, #8300FF, #E600DE);',
 	'background: linear-gradient(to top right, #E600DE, #FF08A1);',
 	'background: linear-gradient(to bottom right, #BC00FF, #E600DE);',
-]);
+])
 
 export let changeTheme = () => {
 	themes.subscribe((value) => {
-		currentTheme.set(value[Math.floor(Math.random() * value.length)]);
-	});
-};
+		currentTheme.set(value[Math.floor(Math.random() * value.length)])
+	})
+}

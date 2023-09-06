@@ -1,5 +1,5 @@
 <script>
-	import { Twitter, Youtube } from 'lucide-svelte';
+	import { Twitter, Youtube } from 'lucide-svelte'
 </script>
 
 <footer class="flex flex-col justify-center gap-6 py-6">

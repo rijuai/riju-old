@@ -1,5 +1,5 @@
 <script>
-	import { Menu } from 'lucide-svelte';
+	import { Menu } from 'lucide-svelte'
 </script>
 
 <nav class="container-fluid">

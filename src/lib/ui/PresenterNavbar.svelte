@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { changeTheme } from '$lib/stores/presenter';
-	import { Sparkles, X } from 'lucide-svelte';
+	import { changeTheme } from '$lib/stores/presenter'
+	import { Sparkles, X } from 'lucide-svelte'
 </script>
 
 <nav class="container-fluid fixed z-50 w-full">
