@@ -11,11 +11,11 @@
 }
 
 .reveal h1 {
-	@apply text-left text-6xl mb-10;
+	@apply text-left text-5xl mb-10;
 }
 
 .reveal h2 {
-	@apply text-left text-5xl mb-8;
+	@apply text-left text-4xl mb-8;
 }
 
 .reveal p {
