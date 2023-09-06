@@ -24,7 +24,6 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 						htmlOutput += `<p>${item.content[0].text}</p>`
 						break
 				}
-				// htmlOutput += `<h1>${item.content[0].text}</h1>`
 			} else if (item.type === 'paragraph') {
 				htmlOutput += `<p>${item.content[0].text}</p>`
 			} else if (item.type === 'orderedList') {
