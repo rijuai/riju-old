@@ -9,7 +9,7 @@
 
 	let deck: Reveal.Api
 	let content = $editorOutput
-	let htmlOutput = '<section>'
+	let htmlOutput: string
 
 	onMount(() => {
 		deck = new Reveal()
