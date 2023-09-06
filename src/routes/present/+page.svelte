@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Reveal from '$lib/components/Presenter.svelte';
-	import PresenterNavbar from '$lib/ui/PresenterNavbar.svelte';
+	import Presenter from '$lib/components/Presenter.svelte'
+	import PresenterNavbar from '$lib/ui/PresenterNavbar.svelte'
 </script>
 
 <svelte:head>
@@ -13,4 +13,4 @@
 
 <PresenterNavbar />
 
-<Reveal />
+<Presenter />
