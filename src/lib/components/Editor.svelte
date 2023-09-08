@@ -84,7 +84,6 @@
 
 <style lang="postcss">
 	.editor {
-		background-color: #23262c;
-		background-color: #202632;
+		background-color: var(--pico-card-sectioning-background-color);
 	}
 </style>
