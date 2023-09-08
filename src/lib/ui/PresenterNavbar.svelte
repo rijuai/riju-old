@@ -1,9 +1,22 @@
 <script>
 	import { changeTheme } from '$lib/stores/presenter'
-	import { Sparkles, X } from 'lucide-svelte'
+	import { Expand, Sparkles, X } from 'lucide-svelte'
+
+	const showFullScreen = () => {
+		const doc = window.document
+		const docEl = document.querySelector('.reveal')
+
+		const requestFullScreen =
+			docEl.requestFullscreen ||
+			docEl.mozRequestFullScreen ||
+			docEl.webkitRequestFullScreen ||
+			docEl.msRequestFullscreen
+
+		requestFullScreen.call(docEl)
+	}
 </script>
 
-<nav class="container-fluid fixed z-50 w-full">
+<nav class="container-fluid w-full">
 	<ul>
 		<li class="text-xl">
 			<a class="text-xl" href="/">Riju</a>
@@ -11,7 +24,12 @@
 	</ul>
 	<ul>
 		<li>
-			<a class="secondary" href="#change-theme" on:click={changeTheme}
+			<a class="secondary" href="#full_screen=true" on:click={showFullScreen}
+				><Expand /></a
+			>
+		</li>
+		<li>
+			<a class="secondary" href="#change_theme=true" on:click={changeTheme}
 				><Sparkles /> Theme</a
 			>
 		</li>
