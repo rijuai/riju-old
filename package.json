@@ -6,14 +6,15 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+		"check": "standard --fix && svelte-kit sync && svelte-check",
+		"check:watch": "svelte-kit sync && svelte-check --watch"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-cloudflare": "^2.3.3",
 		"@sveltejs/kit": "^1.24.1",
 		"autoprefixer": "^10.4.15",
 		"postcss": "^8.4.29",
+		"standard": "^17.1.0",
 		"svelte": "^4.2.0",
 		"svelte-check": "^3.5.1",
 		"tailwindcss": "^3.3.3",
