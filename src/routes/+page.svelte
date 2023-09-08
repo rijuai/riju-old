@@ -29,7 +29,9 @@
 	"
 		>
 			<a href="/login" role="button">Create Account</a>
-			<a class="secondary outline" href="/dashboard" role="button">Live Demo</a>
+			<a class="secondary outline" href="/dashboard/editor" role="button"
+				>Live Demo</a
+			>
 		</div>
 	</section>
 
