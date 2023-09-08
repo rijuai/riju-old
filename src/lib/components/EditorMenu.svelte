@@ -1,7 +1,7 @@
-<script lang="ts">
+<script>
 	import { Heading1, Heading2, List, ListOrdered } from 'lucide-svelte'
 
-	export let editor: any
+	export let editor
 </script>
 
 <div class="menu z-50 flex flex-col gap-2 p-1 rounded-md">
@@ -52,6 +52,6 @@
 
 	.menu button {
 		background-color: var(--pico-card-sectioning-background-color);
-		@apply hover:bg-slate-700 border-0;
+		border-width: 0;
 	}
 </style>

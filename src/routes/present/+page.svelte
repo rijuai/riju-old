@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import Presenter from '$lib/components/Presenter.svelte'
 	import PresenterNavbar from '$lib/ui/PresenterNavbar.svelte'
 </script>

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import AnimatedRoute from '$lib/components/AnimatedRoute.svelte'
 	import DashboardNavbar from '$lib/ui/DashboardNavbar.svelte'
 </script>

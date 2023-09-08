@@ -1,11 +1,12 @@
-<script lang="ts">
+<script>
 	import { supabase } from '$lib/config/supabase'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 
-	let email: string
+	let email
 	let emailSent = false
+	let loading = false
 
-	const signInWithMagicLink = async (email: string) => {
+	const signInWithMagicLink = async (email) => {
 		let { data, error } = await supabase.auth.signInWithOtp({
 			email: email,
 			options: {
@@ -40,8 +41,10 @@
 				<h1>Sign up / Login</h1>
 			</header>
 			<form
+				class="card-body"
 				on:submit={() => {
-					signInWithMagicLink(email)
+					loading = true;
+					signInWithMagicLink(email);
 				}}
 			>
 				<fieldset>
@@ -57,17 +60,22 @@
 					<input
 						type="submit"
 						value="Continue"
-						aria-busy={emailSent}
+						aria-busy={loading}
 						aria-label="Please wait…"
 					/>
 					<small>
-						By continuing, you agree to our <a href="/docs/terms">Terms</a> and
+						By clicking on continue, you agree to our <a href="/docs/terms"
+							>Terms</a
+						>
+						and
 						<a href="/docs/privacy">Privacy Policy</a>.</small
 					>
 				</fieldset>
-				<p>
-					Facing problems? <a href="/docs/contact">Contact</a>
-				</p>
+				<footer>
+					<p>
+						Facing problems? <a href="/docs/contact">Contact</a>
+					</p>
+				</footer>
 			</form>
 		</article>
 	{:else}
