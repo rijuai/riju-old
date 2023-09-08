@@ -47,7 +47,7 @@
 		// }
 	})
 
-	let imageUrl: string, fileInput: HTMLInputElement
+	// let imageUrl: string, fileInput: HTMLInputElement
 
 	// function handleFileInput(event: Event) {
 	// 	const target = event.target as HTMLInputElement
@@ -80,13 +80,11 @@
 	<EditorMenu {editor} />
 {/if}
 
-<div
-	class="editor p-8 rounded-lg w-full mb-8 border-2 border-slate-800"
-	bind:this={element}
-/>
+<div class="editor p-8 rounded-lg w-full mb-8" bind:this={element} />
 
 <style lang="postcss">
 	.editor {
-		background-color: var(--pico-card-background-color);
+		background-color: #23262c;
+		background-color: #202632;
 	}
 </style>
