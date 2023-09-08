@@ -1,7 +1,7 @@
 <script>
-	import demo from '$lib/assets/videos/demo.mp4';
-	import Footer from '$lib/ui/Footer.svelte';
-	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte';
+	import demo from '$lib/assets/videos/demo.mp4'
+	import Footer from '$lib/ui/Footer.svelte'
+	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 </script>
 
 <svelte:head>
