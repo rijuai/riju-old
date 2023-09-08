@@ -23,13 +23,13 @@
 	</ul>
 	<ul>
 		<li>
-			<a class="secondary" href="#full_screen=true" on:click={showFullScreen}
-				><Expand /></a
+			<a class="secondary" href="#change_theme=true" on:click={changeTheme}
+				><Sparkles /> Theme</a
 			>
 		</li>
 		<li>
-			<a class="secondary" href="#change_theme=true" on:click={changeTheme}
-				><Sparkles /> Theme</a
+			<a class="secondary" href="#full_screen=true" on:click={showFullScreen}
+				><Expand /></a
 			>
 		</li>
 		<li>
