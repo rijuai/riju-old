@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import { changeTheme } from '$lib/stores/presenter'
 	import { Sparkles, X } from 'lucide-svelte'
 </script>
