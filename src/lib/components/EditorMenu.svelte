@@ -43,7 +43,7 @@
 
 <style lang="postcss">
 	.menu {
-		background-color: #202632;
+		background-color: var(--pico-card-sectioning-background-color);
 		position: fixed;
 		top: 50%;
 		transform: translateY(-50%);
@@ -51,7 +51,7 @@
 	}
 
 	.menu button {
-		background-color: #202632;
+		background-color: var(--pico-card-sectioning-background-color);
 		@apply hover:bg-slate-700 border-0;
 	}
 </style>
