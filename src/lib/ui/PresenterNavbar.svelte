@@ -3,16 +3,15 @@
 	import { Expand, Sparkles, X } from 'lucide-svelte'
 
 	const showFullScreen = () => {
-		const doc = window.document
-		const docEl = document.querySelector('.reveal')
+		const element = document.querySelector('.reveal')
 
 		const requestFullScreen =
-			docEl.requestFullscreen ||
-			docEl.mozRequestFullScreen ||
-			docEl.webkitRequestFullScreen ||
-			docEl.msRequestFullscreen
+			element.requestFullscreen ||
+			element.mozRequestFullScreen ||
+			element.webkitRequestFullScreen ||
+			element.msRequestFullscreen
 
-		requestFullScreen.call(docEl)
+		requestFullScreen.call(element)
 	}
 </script>
 
