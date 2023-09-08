@@ -1,12 +1,12 @@
-<script lang="ts">
+<script>
 	import { page } from '$app/stores'
-	import { PencilLine, Play, Settings } from 'lucide-svelte'
+	import { PencilLine, Play } from 'lucide-svelte'
 </script>
 
 <nav class="container-fluid">
 	<ul>
 		<li><a class="text-xl" href="/">Riju</a></li>
-			</ul>
+	</ul>
 	<ul>
 		{#if $page.url.pathname === '/dashboard/editor'}
 			<li>
