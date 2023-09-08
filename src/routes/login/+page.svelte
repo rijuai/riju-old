@@ -43,8 +43,8 @@
 			<form
 				class="card-body"
 				on:submit={() => {
-					loading = true;
-					signInWithMagicLink(email);
+					loading = true
+					signInWithMagicLink(email)
 				}}
 			>
 				<fieldset>
