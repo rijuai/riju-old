@@ -33,13 +33,14 @@
 	/>
 </svelte:head>
 
+<HomePageNavbar />
+
 <main class="container-fluid">
-	<HomePageNavbar />
 	{#if emailSent === false}
-		<article class="max-w-sm mx-auto">
-			<header>
-				<h1>Sign up / Login</h1>
-			</header>
+		<article>
+			<!-- <hgroup> -->
+			<h1>Sign In</h1>
+			<!-- </hgroup> -->
 			<form
 				class="card-body"
 				on:submit={() => {
@@ -73,15 +74,21 @@
 				</fieldset>
 				<footer>
 					<p>
-						Facing problems? <a href="/docs/contact">Contact</a>
+						Facing problems? <a href="/docs/contact">Contact Us</a>
 					</p>
 				</footer>
 			</form>
 		</article>
 	{:else}
-		<article class="max-w-sm mx-auto">
+		<article>
 			<header>Note</header>
 			<p>Click on the link sent to your email.</p>
 		</article>
 	{/if}
 </main>
+
+<style lang="postcss">
+	article {
+		@apply max-w-sm mx-auto;
+	}
+</style>
