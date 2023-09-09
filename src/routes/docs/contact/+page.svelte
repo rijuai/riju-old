@@ -4,9 +4,10 @@
 </svelte:head>
 
 <article class="max-w-md mx-auto">
-	<header>
-		<h1>Contact</h1>
-	</header>
+	<h1>Contact Us</h1>
 
-	<p>To contact us send us an email here namaste@riju.page</p>
+	<p>
+		If you have any queries or want to contact us just send us an email at
+		namaste[at]riju.page
+	</p>
 </article>
