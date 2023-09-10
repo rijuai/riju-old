@@ -1,12 +1,12 @@
-<script>
+<script lang="ts">
 	import { supabase } from '$lib/config/supabase'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 
-	let email
+	let email: string
 	let emailSent = false
 	let loading = false
 
-	const signInWithMagicLink = async (email) => {
+	const signInWithMagicLink = async (email: string) => {
 		let { data, error } = await supabase.auth.signInWithOtp({
 			email: email,
 			options: {
@@ -38,9 +38,7 @@
 <main class="container-fluid">
 	{#if emailSent === false}
 		<article>
-			<!-- <hgroup> -->
 			<h1>Sign In</h1>
-			<!-- </hgroup> -->
 			<form
 				class="card-body"
 				on:submit={() => {

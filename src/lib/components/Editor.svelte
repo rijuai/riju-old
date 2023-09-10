@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { editorOutput } from '$lib/stores/editor'
 	import { Editor } from '@tiptap/core'
 	import { Image } from '@tiptap/extension-image'
@@ -6,8 +6,8 @@
 	import { onDestroy, onMount } from 'svelte'
 	import EditorMenu from './EditorMenu.svelte'
 
-	let element
-	let editor
+	let element: HTMLDivElement
+	let editor: Editor
 
 	onMount(() => {
 		editor = new Editor({
@@ -31,13 +31,13 @@
 
 				console.log('editor', editor.getJSON().content)
 
-				$editorOutput = editor.getJSON().content
+				$editorOutput = editor.getJSON().content!
 			},
 		})
 
 		if (localStorage.getItem('editorContent')) {
 			editor.commands.setContent(
-				JSON.parse(localStorage.getItem('editorContent')),
+				JSON.parse(localStorage.getItem('editorContent') || ''),
 			)
 		}
 

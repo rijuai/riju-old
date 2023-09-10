@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
+	import type { Editor } from '@tiptap/core'
 	import { Heading1, Heading2, List, ListOrdered } from 'lucide-svelte'
 
-	export let editor
+	export let editor: Editor
 </script>
 
 <div class="menu z-50 flex flex-col gap-2 p-1 rounded-md">

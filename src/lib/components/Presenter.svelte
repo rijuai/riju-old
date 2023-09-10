@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '$lib/assets/presenter.css'
 	import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
 	import { editorOutput } from '$lib/stores/editor'
@@ -7,9 +7,9 @@
 	import 'reveal.js/dist/reveal.css'
 	import { onMount } from 'svelte'
 
-	let deck
+	let deck: Reveal.Api
 	let content = $editorOutput
-	let htmlOutput
+	let htmlOutput: string
 
 	onMount(() => {
 		deck = new Reveal()

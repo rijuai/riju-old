@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { Twitter, Youtube } from 'lucide-svelte'
 </script>
 

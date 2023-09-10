@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores'
 	import { PencilLine, Play } from 'lucide-svelte'
 </script>

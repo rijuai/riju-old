@@ -20,12 +20,21 @@ dependencies:
   '@tiptap/starter-kit':
     specifier: ^2.1.8
     version: 2.1.8(@tiptap/pm@2.1.8)
+  '@types/reveal.js':
+    specifier: ^4.4.2
+    version: 4.4.2
   lucide-svelte:
     specifier: ^0.274.0
     version: 0.274.0(svelte@4.2.0)
   reveal.js:
     specifier: ^4.5.0
     version: 4.5.0
+  tslib:
+    specifier: ^2.6.2
+    version: 2.6.2
+  typescript:
+    specifier: ^5.2.2
+    version: 5.2.2
 
 devDependencies:
   '@sveltejs/adapter-cloudflare':
@@ -795,6 +804,10 @@ packages:
   /@types/pug@2.0.6:
     resolution: {integrity: sha512-SnHmG9wN1UVmagJOnyo/qkk0Z7gejYxOYYmaAwr5u2yFYfsupN3sg10kyzN8Hep/2zbHxCnsumxOoRIRMBwKCg==}
     dev: true
+
+  /@types/reveal.js@4.4.2:
+    resolution: {integrity: sha512-z+lVPEWGPFrPv3S9Mx2qLKXA4zT+Mo3GxvW68OR7lbUcCmqjn4vjaQJ2qCW+xNkBUgfR8d3fzLWHmu1PIfRiIA==}
+    dev: false
 
   /@types/throttle-debounce@2.1.0:
     resolution: {integrity: sha512-5eQEtSCoESnh2FsiLTxE121IiE60hnMqcb435fShf4bpLRjEu1Eoekht23y6zXS9Ts3l+Szu3TARnTsA0GkOkQ==}
@@ -3456,6 +3469,10 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
+  /tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+    dev: false
+
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
@@ -3534,7 +3551,6 @@ packages:
     resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /uc.micro@1.0.6:
     resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}

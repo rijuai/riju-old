@@ -1,15 +1,15 @@
-<script>
+<script lang="ts">
 	import { changeTheme } from '$lib/stores/presenter'
 	import { Expand, Sparkles, X } from 'lucide-svelte'
 
-	const showFullScreen = () => {
-		const element = document.querySelector('.reveal')
+	const showFullScreen = (element: HTMLDivElement) => {
+		// const element = document.querySelector('.reveal')
 
 		const requestFullScreen =
 			element.requestFullscreen ||
-			element.mozRequestFullScreen ||
-			element.webkitRequestFullScreen ||
-			element.msRequestFullscreen
+			(element as any).mozRequestFullScreen ||
+			(element as any).webkitRequestFullScreen ||
+			(element as any).msRequestFullscreen
 
 		requestFullScreen.call(element)
 	}
@@ -28,8 +28,12 @@
 			>
 		</li>
 		<li>
-			<a class="secondary" href="#full_screen=true" on:click={showFullScreen}
-				><Expand /></a
+			<a
+				class="secondary"
+				href="#full_screen=true"
+				on:click={() => {
+					showFullScreen(document.querySelector('.reveal'))
+				}}><Expand /></a
 			>
 		</li>
 		<li>
