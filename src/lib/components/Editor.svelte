@@ -2,6 +2,7 @@
 	import { editorOutput } from '$lib/stores/editor'
 	import { Editor } from '@tiptap/core'
 	import { Image } from '@tiptap/extension-image'
+	import { Placeholder } from '@tiptap/extension-placeholder'
 	import { StarterKit } from '@tiptap/starter-kit'
 	import { onDestroy, onMount } from 'svelte'
 	import EditorMenu from './EditorMenu.svelte'
@@ -12,18 +13,23 @@
 	onMount(() => {
 		editor = new Editor({
 			element: element,
-			extensions: [StarterKit, Image],
+			extensions: [
+				StarterKit,
+				Image,
+				Placeholder.configure({
+					emptyEditorClass: 'is-editor-empty',
+					placeholder: 'Start typing...',
+				}),
+			],
 
-			content: `
-			<h1>Title!</h1>
-			<p>This is a description text.</p>
-			`,
+			// content: `
+			// <h1>Title!</h1>
+			// <p>This is a description text.</p>
+			// `,
 
-			onTransaction: () => {
-				// force re-render so `editor.isActive` works as expected
+			onUpdate: () => {
 				editor = editor
 
-				// Store the editor content in local storage
 				localStorage.setItem(
 					'editorContent',
 					JSON.stringify(editor.getJSON().content),
@@ -40,6 +46,8 @@
 				JSON.parse(localStorage.getItem('editorContent') || ''),
 			)
 		}
+
+		$editorOutput = editor.getJSON().content!
 
 		// Initialize the FileReader once the component is mounted
 		// if (fileInput) {
@@ -80,10 +88,25 @@
 	<EditorMenu {editor} />
 {/if}
 
-<div class="editor p-8 rounded-lg w-full mb-8" bind:this={element} />
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div
+	class="editor p-8 rounded-lg w-full mb-8 h-screen"
+	bind:this={element}
+	on:click={() => editor?.commands.focus()}
+/>
 
 <style lang="postcss">
 	.editor {
 		background-color: var(--pico-card-sectioning-background-color);
+	}
+
+	/* Placeholder (at the top) */
+	:global(.tiptap p.is-editor-empty:first-child::before) {
+		color: #adb5bd;
+		content: attr(data-placeholder);
+		float: left;
+		height: 0;
+		pointer-events: none;
 	}
 </style>
