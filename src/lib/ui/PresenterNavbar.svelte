@@ -2,9 +2,7 @@
 	import { changeTheme } from '$lib/stores/presenter'
 	import { Expand, Sparkles, X } from 'lucide-svelte'
 
-	const showFullScreen = (element: HTMLDivElement) => {
-		// const element = document.querySelector('.reveal')
-
+	const showFullScreen = (element: Element) => {
 		const requestFullScreen =
 			element.requestFullscreen ||
 			(element as any).mozRequestFullScreen ||
@@ -32,7 +30,11 @@
 				class="secondary"
 				href="#full_screen=true"
 				on:click={() => {
-					showFullScreen(document.querySelector('.reveal'))
+					let element = document.querySelector('.reveal')
+
+					if (element !== null) {
+						showFullScreen(element)
+					}
 				}}><Expand /></a
 			>
 		</li>
