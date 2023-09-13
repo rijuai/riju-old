@@ -1,0 +1,16 @@
+@use "pico/scss/pico" with (
+    $enable-semantic-container: true,
+    $modules: (
+        "themes/default": true,
+        
+        // Layout
+        'layout/grid': false,
+        "layout/document": true,
+    ),
+);
+
+@use 'pico/scss/custom-theme/default';
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/utilities';
+@import 'tailwindcss/components';
