@@ -1,11 +1,7 @@
 @use "pico/scss/pico" with (
-    $enable-semantic-container: true,
     $modules: (
-        "themes/default": true,
-
         // Layout
         'layout/grid': false,
-        "layout/document": true,
     ),
 );
 
