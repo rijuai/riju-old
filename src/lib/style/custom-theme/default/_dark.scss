@@ -9,7 +9,7 @@
   #{$✨}background-color: $zinc-900;
 
   // Text color
-  #{$✨}color: white;
+  #{$✨}color: #{$zinc-250};
 
   // Text selection color
   #{$✨}text-selection-color: #{rgba($jade-350, 0.1875)};
@@ -32,26 +32,26 @@
 
   // Secondary colors
   #{$✨}secondary: #{$zinc-350};
-  #{$✨}secondary-background: #{$slate-600};
+  #{$✨}secondary-background: #{$zinc-600};
   #{$✨}secondary-border: var(#{$✨}secondary-background);
   #{$✨}secondary-underline: #{rgba($zinc-350, 0.5)};
   #{$✨}secondary-hover: #{$zinc-250};
-  #{$✨}secondary-hover-background: #{$slate-550};
+  #{$✨}secondary-hover-background: #{$zinc-550};
   #{$✨}secondary-hover-border: var(#{$✨}secondary-hover-background);
   #{$✨}secondary-hover-underline: var(#{$✨}secondary-hover);
   #{$✨}secondary-focus: #{rgba($slate-350, 0.25)};
   #{$✨}secondary-inverse: #{$white};
 
   // Contrast colors
-  #{$✨}contrast: #{$slate-100};
-  #{$✨}contrast-background: #{$slate-50};
+  #{$✨}contrast: #{$zinc-100};
+  #{$✨}contrast-background: #{$zinc-50};
   #{$✨}contrast-border: var(#{$✨}contrast-background);
-  #{$✨}contrast-underline: #{rgba($slate-100, 0.5)};
+  #{$✨}contrast-underline: #{rgba($zinc-100, 0.5)};
   #{$✨}contrast-hover: #{$white};
   #{$✨}contrast-hover-background: #{$white};
   #{$✨}contrast-hover-border: var(#{$✨}contrast-hover-background);
   #{$✨}contrast-hover-underline: var(#{$✨}contrast-hover);
-  #{$✨}contrast-focus: #{rgba($slate-150, 0.25)};
+  #{$✨}contrast-focus: #{rgba($zinc-150, 0.25)};
   #{$✨}contrast-inverse: #{$black};
 
   // Box shadow
