@@ -55,4 +55,9 @@
 		background-color: var(--pico-card-sectioning-background-color);
 		border-width: 0;
 	}
+
+	.menu button:hover,
+	.menu button:active {
+		background-color: var(--pico-card-background-color);
+	}
 </style>
