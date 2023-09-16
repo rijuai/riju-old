@@ -40,7 +40,6 @@
 		<article>
 			<h1>Sign In</h1>
 			<form
-				class="card-body"
 				on:submit={() => {
 					loading = true
 					signInWithMagicLink(email)
