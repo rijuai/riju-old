@@ -1,6 +1,5 @@
 import type { HTMLContent, JSONContent } from '@tiptap/core'
 
-
 export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 	let htmlOutput = `<section>`
 
