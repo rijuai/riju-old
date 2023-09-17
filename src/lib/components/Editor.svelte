@@ -1,4 +1,9 @@
 <script lang="ts">
+	import { page } from '$app/stores'
+	import {
+		getPresentationContent,
+		updatePresentation,
+	} from '$lib/db/presentation'
 	import { editorOutput } from '$lib/stores/editor'
 	import { Editor } from '@tiptap/core'
 	import { Image } from '@tiptap/extension-image'
@@ -9,45 +14,17 @@
 
 	let element: HTMLDivElement
 	let editor: Editor
+	let presentationId: string | null
+	let presentationContent: string
 
-	onMount(() => {
-		editor = new Editor({
-			element: element,
-			extensions: [
-				StarterKit,
-				Image,
-				Placeholder.configure({
-					emptyEditorClass: 'is-editor-empty',
-					placeholder: 'Start typing...',
-				}),
-			],
+	onMount(async () => {
+		initializeEditor(element)
 
-			// content: `
-			// <h1>Title!</h1>
-			// <p>This is a description text.</p>
-			// `,
-
-			onUpdate: () => {
-				editor = editor
-
-				localStorage.setItem(
-					'editorContent',
-					JSON.stringify(editor.getJSON().content),
-				)
-
-				console.log('editor', editor.getJSON().content)
-
-				$editorOutput = editor.getJSON().content!
-			},
-		})
-
-		if (localStorage.getItem('editorContent')) {
-			editor.commands.setContent(
-				JSON.parse(localStorage.getItem('editorContent') || ''),
-			)
-		}
-
-		$editorOutput = editor.getJSON().content!
+		// if (localStorage.getItem('editorContent')) {
+		// 	editor.commands.setContent(
+		// 		JSON.parse(localStorage.getItem('editorContent') || ''),
+		// 	)
+		// }
 
 		// Initialize the FileReader once the component is mounted
 		// if (fileInput) {
@@ -77,10 +54,52 @@
 	// 	reader.readAsDataURL(file)
 	// }
 
+	const initializeEditor = (element: HTMLDivElement) => {
+		editor = new Editor({
+			element: element,
+			extensions: [
+				StarterKit,
+				Image,
+				Placeholder.configure({
+					emptyEditorClass: 'is-editor-empty',
+					placeholder: 'Start typing...',
+				}),
+			],
+
+			onCreate: async () => {
+				presentationId = getPresentationId()
+				presentationContent = await getPresentationContent(presentationId!)
+				editor.commands.setContent(presentationContent)
+			},
+
+			onUpdate: () => {
+				editor = editor
+
+				localStorage.setItem(
+					'editorContent',
+					JSON.stringify(editor.getJSON().content),
+				)
+
+				console.log('editor', editor.getJSON().content)
+				$editorOutput = editor.getJSON().content!
+				updatePresentation(presentationId!, $editorOutput)
+			},
+		})
+	}
+
+	const getPresentationId = () => {
+		const presentationId = $page.url.searchParams.get('presentation_id')
+		return presentationId
+	}
+
 	onDestroy(() => {
 		if (editor) {
 			editor.destroy()
 		}
+
+		$editorOutput = {}
+
+		localStorage.setItem('editorContent', '')
 	})
 </script>
 
@@ -91,7 +110,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="editor p-8 rounded-lg w-full mb-8 h-screen"
+	class="editor p-8 rounded-lg w-full min-h-screen mb-8"
 	bind:this={element}
 	on:click={() => editor?.commands.focus()}
 />
@@ -102,7 +121,7 @@
 	}
 
 	/* Placeholder (at the top) */
-	:global(.tiptap p.is-editor-empty:first-child::before) {
+	:global(.tiptap .is-editor-empty:first-child::before) {
 		color: #adb5bd;
 		content: attr(data-placeholder);
 		float: left;
