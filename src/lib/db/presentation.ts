@@ -32,25 +32,24 @@ export const createPresentation = async (
 
 export const getPresentationContent = async (
 	presentation_id: string,
-): Promise<{ content: any } | undefined> => {
+): Promise<any> => {
 	const { data, error } = await supabase
 		.from('presentations')
 		.select('content')
 		.eq('presentation_id', presentation_id)
 
-	if (error) return
-
-	return data[0]
+	if (error) console.log(error)
+	return data![0].content
 }
 
 export const updatePresentation = async (
-	presentation_id: string,
+	presentationId: string,
 	content: JSONContent,
 ) => {
 	const { error } = await supabase
 		.from('presentations')
 		.update({ content: content })
-		.eq('presentation_id', presentation_id)
+		.eq('presentation_id', presentationId)
 
-	if (error) return console.log(error)
+	if (error) return console.error(error)
 }
