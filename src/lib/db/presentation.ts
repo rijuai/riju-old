@@ -38,17 +38,18 @@ export const getPresentationContent = async (
 		.select('content')
 		.eq('presentation_id', presentation_id)
 
-	if (error) console.log(error)
+	if (error) return console.log(error)
 	return data![0].content
 }
 
 export const updatePresentation = async (
 	presentationId: string,
+	title: string,
 	content: JSONContent,
 ) => {
 	const { error } = await supabase
 		.from('presentations')
-		.update({ content: content })
+		.update({ title: title, content: content })
 		.eq('presentation_id', presentationId)
 
 	if (error) return console.error(error)

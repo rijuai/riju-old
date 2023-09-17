@@ -14,7 +14,7 @@
 
 	let element: HTMLDivElement
 	let editor: Editor
-	let presentationId: string | null
+	let presentationId: string
 	let presentationContent: string
 
 	onMount(async () => {
@@ -81,15 +81,23 @@
 				)
 
 				console.log('editor', editor.getJSON().content)
+
 				$editorOutput = editor.getJSON().content!
-				updatePresentation(presentationId!, $editorOutput)
+				let title = getTitle()
+
+				updatePresentation(presentationId!, title, $editorOutput)
 			},
 		})
 	}
 
 	const getPresentationId = () => {
-		const presentationId = $page.url.searchParams.get('presentation_id')
+		const presentationId = $page.url.searchParams.get('presentation_id') ?? ''
 		return presentationId
+	}
+
+	const getTitle = () => {
+		const title = editor.getJSON().content![0].content![0].text ?? ''
+		return title
 	}
 
 	onDestroy(() => {
@@ -98,7 +106,6 @@
 		}
 
 		$editorOutput = {}
-
 		localStorage.setItem('editorContent', '')
 	})
 </script>
