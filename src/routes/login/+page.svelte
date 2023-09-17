@@ -1,32 +1,14 @@
 <script lang="ts">
-	import { supabase } from '$lib/config/supabase'
+	import { signInWithMagicLink } from '$lib/db/auth'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 
 	let email: string
-	let emailSent = false
-	let loading = false
-
-	const signInWithMagicLink = async (email: string) => {
-		let { data, error } = await supabase.auth.signInWithOtp({
-			email: email,
-			options: {
-				emailRedirectTo: 'https://riju.page/dashboard?userLoggedIn=true',
-			},
-		})
-
-		if (error) {
-			console.log(error)
-			return
-		} else {
-			console.log('SUCCESS')
-			console.log(data)
-			emailSent = true
-		}
-	}
+	let isEmailSent = false
+	let showLoader = false
 </script>
 
 <svelte:head>
-	<title>Riju | Signup / Login</title>
+	<title>Riju | Sign In</title>
 	<meta
 		name="description"
 		content="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
@@ -36,15 +18,10 @@
 <HomePageNavbar />
 
 <main class="container-fluid">
-	{#if emailSent === false}
+	{#if isEmailSent === false}
 		<article>
 			<h1>Sign In</h1>
-			<form
-				on:submit={() => {
-					loading = true
-					signInWithMagicLink(email)
-				}}
-			>
+			<form>
 				<fieldset>
 					<label>
 						Email
@@ -55,12 +32,15 @@
 							bind:value={email}
 						/>
 					</label>
-					<input
-						type="submit"
-						value="Continue"
-						aria-busy={loading}
-						aria-label="Please wait…"
-					/>
+					<button
+						class="w-full"
+						aria-busy={showLoader}
+						aria-label={showLoader ? 'Please wait' : 'Continue'}
+						on:click={async () => {
+							showLoader = true
+							isEmailSent = await signInWithMagicLink(email)
+						}}>{showLoader ? 'Please wait' : 'Continue'}</button
+					>
 					<small>
 						By clicking on continue, you agree to our <a href="/docs/terms"
 							>Terms</a
@@ -78,8 +58,7 @@
 		</article>
 	{:else}
 		<article>
-			<header>Note</header>
-			<p>Click on the link sent to your email.</p>
+			<p>Please click on the link sent to you email.</p>
 		</article>
 	{/if}
 </main>
