@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/stores'
 	import { getUserData } from '$lib/db/user'
-	import { isUserLoggedIn, userId } from '$lib/stores/user'
+	import { isUserSignedIn, userId } from '$lib/stores/user'
 	import { onMount } from 'svelte'
 
 	onMount(async () => {
 		const user = await getUserData()
 
 		if (user !== undefined) {
-			$isUserLoggedIn = true
+			$isUserSignedIn = true
 			$userId = user.id
 
 			console.log('USER ID', $userId)
@@ -17,7 +17,7 @@
 </script>
 
 {#key $page.url}
-	{#if $isUserLoggedIn}
+	{#if $isUserSignedIn}
 		<slot />
 	{:else}
 		<article class="max-w-sm mx-auto">
