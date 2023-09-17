@@ -6,7 +6,7 @@
 
 // Default: Dark theme
 @mixin theme {
-  #{$✨}background-color: $zinc-900;
+  #{$✨}background-color: $zinc-850;
 
   // Text color
   #{$✨}color: #{$zinc-250};
@@ -159,10 +159,10 @@
 
     // Card (<article>)
     @if map.get($modules, "components/card") {
-      #{$✨}card-background-color: #{$zinc-850};
+      #{$✨}card-background-color: #{$zinc-800};
       #{$✨}card-border-color: var(#{$✨}card-background-color);
       #{$✨}card-box-shadow: var(#{$✨}box-shadow);
-      #{$✨}card-sectioning-background-color: #{mix($zinc-800, $zinc-850, 75%)};
+      #{$✨}card-sectioning-background-color: #{mix($zinc-750, $zinc-800, 75%)};
     }
 
     // Dropdown (details.dropdown)
