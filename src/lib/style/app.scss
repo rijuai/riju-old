@@ -10,3 +10,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/utilities';
 @import 'tailwindcss/components';
+
+[contenteditable] {
+    @apply outline-none;
+}
