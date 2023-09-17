@@ -3,22 +3,20 @@
 	import { onMount } from 'svelte'
 
 	let presentations: {
-		preview_img_url: string
-		title: string
 		presentation_id: string
+		title: string
+		preview_img_url: string
 	}[] = []
 
 	onMount(async () => {
 		let data = await getPresentations()
 
-		// console.log('Presentations List', data)
-
 		if (data) {
 			data.forEach((presentation) => {
 				presentations.push({
-					preview_img_url: presentation.preview_img_url,
-					title: presentation.title,
 					presentation_id: presentation.presentation_id,
+					title: presentation.title,
+					preview_img_url: presentation.preview_img_url,
 				})
 			})
 
@@ -44,7 +42,7 @@
 					src="https://source.unsplash.com/random/800x600"
 					alt={presentation.title}
 				/>
-				<div class="text-base">{presentation.title}</div>
+				<small class="block truncate">{presentation.title}</small>
 			</a>
 		{/each}
 	{/if}
