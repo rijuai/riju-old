@@ -30,20 +30,27 @@
 	<meta name="description" content="Your presentations" />
 </svelte:head>
 
-<section class="grid grid-cols-5 gap-8">
-	{#if presentations.length}
-		{#each presentations as presentation}
-			<a
-				class="contrast no-underline"
-				href="/dashboard/editor?presentation_id={presentation.presentation_id}"
-			>
-				<img
-					class="w-full h-24 max-h-24 bg-slate-300 rounded mb-4"
-					src="https://source.unsplash.com/random/800x600"
-					alt={presentation.title}
-				/>
-				<small class="block truncate">{presentation.title}</small>
-			</a>
-		{/each}
+<section class="h-full">
+	{#if presentations.length > 0}
+		<div class="grid grid-cols-5 gap-8">
+			{#each presentations as presentation}
+				<a
+					class="contrast no-underline"
+					href="/dashboard/editor?presentation_id={presentation.presentation_id}"
+				>
+					<img
+						class="w-full h-24 max-h-24 bg-slate-300 rounded mb-4"
+						src="https://source.unsplash.com/random/800x600"
+						alt={presentation.title}
+					/>
+					<small class="block truncate">{presentation.title}</small>
+				</a>
+			{/each}
+		</div>
+	{:else}
+		<p class="max-w-sm mx-auto text-center">
+			No presentations found. Click on the "Create" button to create a new
+			presentation.
+		</p>
 	{/if}
 </section>
