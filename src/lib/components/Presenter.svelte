@@ -8,7 +8,6 @@
 	import { onMount } from 'svelte'
 
 	let deck: Reveal.Api
-	let content = $editorOutput
 	let htmlOutput: string
 
 	onMount(() => {
@@ -24,9 +23,9 @@
 			autoAnimate: true,
 			overview: false,
 		})
-	})
 
-	if (content !== undefined) htmlOutput = convertContentToHtml(content)
+		if ($editorOutput) htmlOutput = convertContentToHtml($editorOutput)
+	})
 </script>
 
 <main class="reveal w-full aspect-video" style={$currentTheme}>

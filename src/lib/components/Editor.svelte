@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores'
+	import '$lib/assets/editor.css'
 	import {
 		getPresentationContent,
 		updatePresentation,
@@ -71,7 +72,8 @@
 				presentationId = getPresentationId()
 				presentationContent = await getPresentationContent(presentationId!)
 				editor.commands.setContent(presentationContent)
-							},
+				$editorOutput = editor.getJSON().content!
+			},
 
 			onUpdate: () => {
 				editor = editor
@@ -81,12 +83,10 @@
 					JSON.stringify(editor.getJSON().content),
 				)
 
-				console.log('editor', editor.getJSON().content)
-
 				$editorOutput = editor.getJSON().content!
+
 				let title = getTitle()
 				let currentTime = getCurrentTime()
-
 				updatePresentation(presentationId!, currentTime, title, $editorOutput)
 			},
 		})
@@ -110,9 +110,6 @@
 		if (editor) {
 			editor.destroy()
 		}
-
-		$editorOutput = {}
-		localStorage.setItem('editorContent', '')
 	})
 </script>
 
