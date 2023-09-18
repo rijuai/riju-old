@@ -29,6 +29,7 @@
 		"@tiptap/pm": "^2.1.10",
 		"@tiptap/starter-kit": "^2.1.10",
 		"@types/reveal.js": "^4.4.2",
+		"dayjs": "^1.11.9",
 		"lucide-svelte": "^0.279.0",
 		"reveal.js": "^4.6.1",
 		"tslib": "^2.6.2",

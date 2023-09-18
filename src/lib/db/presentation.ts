@@ -44,12 +44,13 @@ export const getPresentationContent = async (
 
 export const updatePresentation = async (
 	presentationId: string,
+	updatedAt: string,
 	title: string,
 	content: JSONContent,
 ) => {
 	const { error } = await supabase
 		.from('presentations')
-		.update({ title: title, content: content })
+		.update({ updated_at: updatedAt, title: title, content: content })
 		.eq('presentation_id', presentationId)
 
 	if (error) return console.error(error)

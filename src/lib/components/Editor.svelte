@@ -9,6 +9,7 @@
 	import { Image } from '@tiptap/extension-image'
 	import { Placeholder } from '@tiptap/extension-placeholder'
 	import { StarterKit } from '@tiptap/starter-kit'
+	import dayjs from 'dayjs'
 	import { onDestroy, onMount } from 'svelte'
 	import EditorMenu from './EditorMenu.svelte'
 
@@ -70,7 +71,7 @@
 				presentationId = getPresentationId()
 				presentationContent = await getPresentationContent(presentationId!)
 				editor.commands.setContent(presentationContent)
-			},
+							},
 
 			onUpdate: () => {
 				editor = editor
@@ -84,8 +85,9 @@
 
 				$editorOutput = editor.getJSON().content!
 				let title = getTitle()
+				let currentTime = getCurrentTime()
 
-				updatePresentation(presentationId!, title, $editorOutput)
+				updatePresentation(presentationId!, currentTime, title, $editorOutput)
 			},
 		})
 	}
@@ -98,6 +100,10 @@
 	const getTitle = () => {
 		const title = editor.getJSON().content![0].content![0].text ?? ''
 		return title
+	}
+
+	const getCurrentTime = () => {
+		return dayjs().format()
 	}
 
 	onDestroy(() => {
