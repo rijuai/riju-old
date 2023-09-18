@@ -10,8 +10,6 @@
 		if (user !== undefined) {
 			$isUserSignedIn = true
 			$userId = user.id
-
-			console.log('USER ID', $userId)
 		}
 	})
 </script>
