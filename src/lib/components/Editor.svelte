@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/stores'
-	import '$lib/assets/editor.css'
 	import {
 		getPresentationContent,
 		updatePresentation,
