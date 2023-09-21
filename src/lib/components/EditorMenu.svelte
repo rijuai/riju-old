@@ -1,6 +1,7 @@
 <script lang="ts">
+	import { showDeleteModal } from '$lib/stores/editor'
 	import type { Editor } from '@tiptap/core'
-	import { Heading1, Heading2, List, ListOrdered } from 'lucide-svelte'
+	import { Heading1, Heading2, List, ListOrdered, Trash2 } from 'lucide-svelte'
 
 	export let editor: Editor
 </script>
@@ -36,6 +37,13 @@
 			editor.chain().focus().toggleOrderedList().run()
 		}}><ListOrdered /></button
 	>
+	<button
+		class="secondary"
+		on:click={() => {
+			$showDeleteModal = true
+		}}><Trash2 /></button
+	>
+
 	<!-- <input
 		type="file"
 		id="imageInput"

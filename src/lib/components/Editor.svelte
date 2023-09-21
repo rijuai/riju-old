@@ -4,7 +4,11 @@
 		getPresentationContent,
 		updatePresentation,
 	} from '$lib/db/presentation'
-	import { editorOutput } from '$lib/stores/editor'
+	import {
+		currentPresentationId,
+		currentPresentationTitle,
+		editorOutput,
+	} from '$lib/stores/editor'
 	import { Editor } from '@tiptap/core'
 	import { Image } from '@tiptap/extension-image'
 	import { Placeholder } from '@tiptap/extension-placeholder'
@@ -72,6 +76,9 @@
 				presentationContent = await getPresentationContent(presentationId!)
 				editor.commands.setContent(presentationContent)
 				$editorOutput = editor.getJSON().content!
+
+				$currentPresentationId = presentationId!
+				$currentPresentationTitle = getTitle()
 			},
 
 			onUpdate: () => {

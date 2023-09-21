@@ -55,3 +55,18 @@ export const updatePresentation = async (
 
 	if (error) return console.error(error)
 }
+
+export const deletePresentation = async (
+	presentationId: string,
+): Promise<boolean> => {
+	const { error } = await supabase
+		.from('presentations')
+		.delete()
+		.eq('presentation_id', presentationId)
+
+	if (error) {
+		console.log(error)
+		return false
+	}
+	return true
+}
