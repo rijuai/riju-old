@@ -1,4 +1,5 @@
 <script lang="ts">
+	import DeleteModal from '$lib/components/DeleteModal.svelte'
 	import Editor from '$lib/components/Editor.svelte'
 </script>
 
@@ -9,4 +10,5 @@
 
 <div class="max-w-3xl mx-auto">
 	<Editor />
+	<DeleteModal />
 </div>
