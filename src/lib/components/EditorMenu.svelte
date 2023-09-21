@@ -21,6 +21,12 @@
 	<button
 		class="secondary"
 		on:click={() => {
+			editor.chain().focus().setParagraph().run()
+		}}>P</button
+	>
+	<button
+		class="secondary"
+		on:click={() => {
 			editor.chain().focus().toggleBulletList().run()
 		}}><List /></button
 	>
