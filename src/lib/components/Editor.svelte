@@ -24,40 +24,7 @@
 
 	onMount(async () => {
 		initializeEditor(element)
-
-		// if (localStorage.getItem('editorContent')) {
-		// 	editor.commands.setContent(
-		// 		JSON.parse(localStorage.getItem('editorContent') || ''),
-		// 	)
-		// }
-
-		// Initialize the FileReader once the component is mounted
-		// if (fileInput) {
-		// 	fileInput.addEventListener('change', handleFileInput)
-		// }
 	})
-
-	// let imageUrl: string, fileInput: HTMLInputElement
-
-	// function handleFileInput(event: Event) {
-	// 	const target = event.target as HTMLInputElement
-	// 	if (!target.files || target.files.length === 0) return
-
-	// 	const file = target.files[0]
-	// 	const reader = new FileReader()
-
-	// 	reader.onloadend = () => {
-	// 		imageUrl = reader.result as string
-	// 		const transaction = editor
-	// 			.chain()
-	// 			.focus()
-	// 			.setImage({ src: imageUrl })
-	// 			.run()
-	// 		fileInput.value = ''
-	// 	}
-
-	// 	reader.readAsDataURL(file)
-	// }
 
 	const initializeEditor = (element: HTMLDivElement) => {
 		editor = new Editor({
