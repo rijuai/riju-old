@@ -8,8 +8,6 @@ export const getPresentations = async () => {
 		.order('updated_at', { ascending: false })
 
 	if (error) return
-
-	console.log('DATA', data)
 	return data
 }
 
@@ -26,7 +24,6 @@ export const createPresentation = async (
 		.select('presentation_id')
 
 	if (error) console.log(error)
-
 	return data![0].presentation_id
 }
 
