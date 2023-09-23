@@ -17,10 +17,10 @@
 	import { onDestroy, onMount } from 'svelte'
 	import EditorMenu from './EditorMenu.svelte'
 
-	let element: HTMLDivElement
-	let editor: Editor
-	let presentationId: string
-	let presentationContent: string
+	let element: HTMLDivElement,
+		editor: Editor,
+		presentationId: string,
+		presentationContent: string
 
 	onMount(async () => {
 		initializeEditor(element)
