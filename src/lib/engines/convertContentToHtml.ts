@@ -1,54 +1,87 @@
 import type { HTMLContent, JSONContent } from '@tiptap/core'
 
+type Item = {
+	type: string
+	content: any[]
+	attrs: {
+		start: number
+		src: string
+		level: number
+	}
+	text: string
+}
+
 export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 	let htmlOutput = `<section>`
 
-	content.forEach(
-		(item: {
-			type: string
-			content: any[]
-			attrs: { start: number; src: string; level: number }
-			text: string
-		}) => {
-			if (item.type === 'paragraph' && item.content === undefined) {
-				htmlOutput += `</section><section>`
-			} else if (item.type === 'heading') {
-				switch (item.attrs.level) {
-					case 1:
-						htmlOutput += `<h1>${item.content[0].text}</h1>`
-						break
-					case 2:
-						htmlOutput += `<h2>${item.content[0].text}</h2>`
-						break
-					default:
-						htmlOutput += `<p>${item.content[0].text}</p>`
-						break
-				}
-			} else if (item.type === 'paragraph') {
-				htmlOutput += `<p>${item.content[0].text}</p>`
-			} else if (item.type === 'orderedList') {
-				htmlOutput += `<ol start=${item.attrs.start}>`
-				item.content.forEach(
-					(listItem: { content: { content: { text: string }[] }[] }) => {
-						htmlOutput += `<li>${listItem.content[0].content[0].text}</li>`
-					},
-				)
-				htmlOutput += `</ol>`
-			} else if (item.type === 'bulletList') {
-				htmlOutput += `<ul>`
-				item.content.forEach(
-					(listItem: { content: { content: { text: string }[] }[] }) => {
-						htmlOutput += `<li>${listItem.content[0].content[0].text}</li>`
-					},
-				)
-				htmlOutput += `</ul>`
-			} else if (item.type === 'image') {
-				htmlOutput += `<img src=${item.attrs.src} />`
-			} else {
-				htmlOutput += `<p>${item.text}</p>`
-			}
-		},
-	)
+	content.forEach((item: Item) => {
+		if (item.type === 'paragraph' && item.content === undefined) {
+			return (htmlOutput += `</section><section>`)
+		}
+
+		if (item.type === 'heading') {
+			return (htmlOutput += getHeading(item))
+		}
+
+		if (item.type === 'paragraph') {
+			return (htmlOutput += getParagraph(item))
+		}
+
+		if (item.type === 'orderedList') {
+			return (htmlOutput += getOrderedList(item))
+		}
+
+		if (item.type === 'bulletList') {
+			return (htmlOutput += getBulletList(item))
+		}
+
+		if (item.type === 'image') {
+			return (htmlOutput += getImage(item))
+		}
+
+		return (htmlOutput += getParagraph(item))
+	})
 
 	return htmlOutput
+}
+
+const getHeading = (item: Item): string => {
+	const level = item.attrs.level
+	const text = item.content[0].text
+	return `<h${level}>${text}</h${level}>`
+}
+
+const getParagraph = (item: Item): string => {
+	const text = item.content[0].text
+	return `<p>${text}</p>`
+}
+
+const getOrderedList = (item: Item): string => {
+	let orderedList = ''
+	orderedList += `<ol start=${item.attrs.start}>`
+	item.content.forEach(
+		(listItem: { content: { content: { text: string }[] }[] }) => {
+			let text = listItem.content[0].content[0].text
+			orderedList += `<li>${text}</li>`
+		},
+	)
+	orderedList += `</ol>`
+	return orderedList
+}
+
+const getBulletList = (item: Item): string => {
+	let bulletList = '<ul>'
+	item.content.forEach(
+		(listItem: { content: { content: { text: string }[] }[] }) => {
+			let text = listItem.content[0].content[0].text
+			bulletList += `<li>${text}</li>`
+		},
+	)
+	bulletList += `</ul>`
+	return bulletList
+}
+
+const getImage = (item: Item): string => {
+	const src = item.attrs.src
+	return `<img src=${src} />`
 }
