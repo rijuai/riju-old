@@ -51,11 +51,6 @@
 			onUpdate: () => {
 				editor = editor
 
-				localStorage.setItem(
-					'editorContent',
-					JSON.stringify(editor.getJSON().content),
-				)
-
 				$editorOutput = editor.getJSON().content!
 
 				let title = getTitle()
