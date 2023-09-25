@@ -11,10 +11,19 @@ type Item = {
 	text: string
 }
 
+type ListItem = {
+	content: {
+		content: {
+			text: string
+		}[]
+	}[]
+}
+
 export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 	let htmlOutput = `<section>`
 
 	content.forEach((item: Item) => {
+		let itemContents = ''
 		if (item.type === 'paragraph' && item.content === undefined) {
 			return (htmlOutput += `</section><section>`)
 		}
@@ -57,27 +66,26 @@ const getParagraph = (item: Item): string => {
 }
 
 const getOrderedList = (item: Item): string => {
-	let orderedList = ''
-	orderedList += `<ol start=${item.attrs.start}>`
-	item.content.forEach(
-		(listItem: { content: { content: { text: string }[] }[] }) => {
-			let text = listItem.content[0].content[0].text
-			orderedList += `<li>${text}</li>`
-		},
-	)
+	let orderedList = `<ol start=${item.attrs.start}>`
+
+	item.content.forEach((listItem: ListItem) => {
+		let text = listItem.content[0].content[0].text
+		orderedList += `<li>${text}</li>`
+	})
 	orderedList += `</ol>`
+
 	return orderedList
 }
 
 const getBulletList = (item: Item): string => {
 	let bulletList = '<ul>'
-	item.content.forEach(
-		(listItem: { content: { content: { text: string }[] }[] }) => {
-			let text = listItem.content[0].content[0].text
-			bulletList += `<li>${text}</li>`
-		},
-	)
+
+	item.content.forEach((listItem: ListItem) => {
+		let text = listItem.content[0].content[0].text
+		bulletList += `<li>${text}</li>`
+	})
 	bulletList += `</ul>`
+
 	return bulletList
 }
 
