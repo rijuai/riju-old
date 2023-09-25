@@ -11,7 +11,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-cloudflare": "^2.3.3",
-		"@sveltejs/kit": "^1.25.0",
+		"@sveltejs/kit": "^1.25.1",
 		"autoprefixer": "^10.4.16",
 		"postcss": "^8.4.30",
 		"sass": "^1.68.0",
