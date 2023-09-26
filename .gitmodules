@@ -1,4 +1,0 @@
-[submodule "src/lib/style/pico"]
-	path = src/lib/style/pico
-	url = https://github.com/picocss/pico.git
-	branch = v2
