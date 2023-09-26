@@ -1,29 +1,11 @@
 import type { HTMLContent, JSONContent } from '@tiptap/core'
 
-type Item = {
-	type: string
-	content: any[]
-	attrs: {
-		start: number
-		src: string
-		level: number
-	}
-	text: string
-}
-
-type ListItem = {
-	content: {
-		content: {
-			text: string
-		}[]
-	}[]
-}
-
 export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 	let htmlOutput = `<section>`
 
 	content.forEach((item: Item) => {
 		let itemContents = ''
+
 		if (item.type === 'paragraph' && item.content === undefined) {
 			return (htmlOutput += `</section><section>`)
 		}
@@ -36,12 +18,8 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 			return (htmlOutput += getParagraph(item))
 		}
 
-		if (item.type === 'orderedList') {
-			return (htmlOutput += getOrderedList(item))
-		}
-
-		if (item.type === 'bulletList') {
-			return (htmlOutput += getBulletList(item))
+		if (item.type === 'orderedList' || item.type === 'bulletList') {
+			return (htmlOutput += getList(item))
 		}
 
 		if (item.type === 'image') {
@@ -65,28 +43,17 @@ const getParagraph = (item: Item): string => {
 	return `<p>${text}</p>`
 }
 
-const getOrderedList = (item: Item): string => {
-	let orderedList = `<ol start=${item.attrs.start}>`
+const getList = (item: Item): string => {
+	let listType = item.type === 'orderedList' ? 'ol' : 'ul'
+	let list = `<${listType}>`
 
 	item.content.forEach((listItem: ListItem) => {
 		let text = listItem.content[0].content[0].text
-		orderedList += `<li>${text}</li>`
+		list += `<li>${text}</li>`
 	})
-	orderedList += `</ol>`
+	list += `</${listType}>`
 
-	return orderedList
-}
-
-const getBulletList = (item: Item): string => {
-	let bulletList = '<ul>'
-
-	item.content.forEach((listItem: ListItem) => {
-		let text = listItem.content[0].content[0].text
-		bulletList += `<li>${text}</li>`
-	})
-	bulletList += `</ul>`
-
-	return bulletList
+	return list
 }
 
 const getImage = (item: Item): string => {
