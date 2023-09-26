@@ -44,7 +44,9 @@
 	})
 </script>
 
-<div class="menu z-50 flex flex-col gap-2 p-1 rounded-md">
+<div
+	class="menu z-50 flex flex-col gap-2 p-1 rounded-md fixed left-4 top-1/2 transform -translate-y-1/2"
+>
 	<button
 		class="secondary"
 		on:click={() => {
@@ -96,10 +98,6 @@
 <style lang="postcss">
 	.menu {
 		background-color: var(--pico-card-sectioning-background-color);
-		position: fixed;
-		top: 50%;
-		transform: translateY(-50%);
-		@apply left-4;
 	}
 
 	.menu button {
