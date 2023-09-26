@@ -12,8 +12,7 @@
 	import { onMount } from 'svelte'
 
 	export let editor: Editor
-	let fileInput: HTMLInputElement
-	let imageUrl: string
+	let fileInput: HTMLInputElement, imageUrl: string
 
 	function handleImage(event: Event) {
 		const target = event.target as HTMLInputElement
