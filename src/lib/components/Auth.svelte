@@ -1,21 +1,17 @@
 <script lang="ts">
 	import { page } from '$app/stores'
-	import { getUserData } from '$lib/db/user'
-	import { isUserSignedIn, userId } from '$lib/stores/user'
+	import { getUserSignInStatus } from '$lib/db/auth'
 	import { onMount } from 'svelte'
 
-	onMount(async () => {
-		const user = await getUserData()
+	let isUserSignedIn = false
 
-		if (user !== undefined) {
-			$isUserSignedIn = true
-			$userId = user.id
-		}
+	onMount(async () => {
+		isUserSignedIn = await getUserSignInStatus()
 	})
 </script>
 
 {#key $page.url}
-	{#if $isUserSignedIn}
+	{#if isUserSignedIn}
 		<slot />
 	{:else}
 		<article class="max-w-sm mx-auto">
