@@ -24,3 +24,13 @@ export const getUserSignInStatus = async (): Promise<boolean> => {
 export const signOut = async (): Promise<void> => {
 	supabase.auth.signOut()
 }
+
+export const getUserId = async (): Promise<string> => {
+	const { data, error } = await supabase.auth.getSession()
+
+	if (data.session) {
+		const userId = data.session.user.id
+		return userId
+	}
+	return error!.message
+}

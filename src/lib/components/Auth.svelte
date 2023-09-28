@@ -1,12 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/stores'
-	import { getUserSignInStatus } from '$lib/db/auth'
+	import { getUserId, getUserSignInStatus } from '$lib/db/auth'
+	import { userId } from '$lib/stores/user'
 	import { onMount } from 'svelte'
 
 	let isUserSignedIn = false
 
 	onMount(async () => {
 		isUserSignedIn = await getUserSignInStatus()
+		$userId = await getUserId()
 	})
 </script>
 
