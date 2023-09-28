@@ -1,6 +1,6 @@
 import { supabase } from '$lib/config/supabase'
 
-export const signInWithMagicLink = async (email: string) => {
+export const signInWithMagicLink = async (email: string): Promise<boolean> => {
 	let { error } = await supabase.auth.signInWithOtp({
 		email: email,
 		options: {
@@ -21,6 +21,6 @@ export const getUserSignInStatus = async (): Promise<boolean> => {
 	return false
 }
 
-export const signOut = async () => {
+export const signOut = async (): Promise<void> => {
 	supabase.auth.signOut()
 }
