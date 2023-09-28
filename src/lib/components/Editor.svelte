@@ -9,11 +9,11 @@
 		currentPresentationTitle,
 		editorOutput,
 	} from '$lib/stores/editor'
+	import { getCurrentTime } from '$lib/utils'
 	import { Editor } from '@tiptap/core'
 	import { Image } from '@tiptap/extension-image'
 	import { Placeholder } from '@tiptap/extension-placeholder'
 	import { StarterKit } from '@tiptap/starter-kit'
-	import dayjs from 'dayjs'
 	import { onDestroy, onMount } from 'svelte'
 	import EditorMenu from './EditorMenu.svelte'
 
@@ -68,10 +68,6 @@
 	const getTitle = () => {
 		const title = editor.getJSON().content![0].content![0].text ?? ''
 		return title
-	}
-
-	const getCurrentTime = () => {
-		return dayjs().format()
 	}
 
 	onDestroy(() => {
