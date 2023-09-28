@@ -20,3 +20,7 @@ export const getUserSignInStatus = async (): Promise<boolean> => {
 	}
 	return false
 }
+
+export const signOut = async () => {
+	supabase.auth.signOut()
+}
