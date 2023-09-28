@@ -28,7 +28,7 @@
 		"@tiptap/extension-placeholder": "^2.1.11",
 		"@tiptap/pm": "^2.1.11",
 		"@tiptap/starter-kit": "^2.1.11",
-		"@types/reveal.js": "^4.4.2",
+		"@types/reveal.js": "^4.4.3",
 		"dayjs": "^1.11.10",
 		"lucide-svelte": "^0.279.0",
 		"reveal.js": "^4.6.1",
