@@ -4,8 +4,6 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 	let htmlOutput = `<section>`
 
 	content.forEach((item: Item) => {
-		let itemContents = ''
-
 		if (item.type === 'paragraph' && item.content === undefined) {
 			return (htmlOutput += `</section><section>`)
 		}
