@@ -9,8 +9,8 @@
 </script>
 
 <dialog open={$showDeleteModal}>
-	<article>
-		<h2>Confirm to delete presentation</h2>
+	<article class="max-w-md">
+		<h2>Are you sure?</h2>
 		<p>
 			This is permanent! Are you sure you want to delete <b
 				>{$currentPresentationTitle}</b
