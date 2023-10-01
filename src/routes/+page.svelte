@@ -18,7 +18,7 @@
 	<!-- hero -->
 	<section class="text-center max-w-2xl mx-auto space-y-14 mt-24 mb-28">
 		<hgroup>
-			<h1>Create Presentation in Seconds 😎</h1>
+			<h1>Create Presentation in Seconds</h1>
 			<p>
 				Just write content, Riju will convert it into beautiful presentation.
 			</p>
