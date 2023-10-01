@@ -36,7 +36,7 @@
 			{#each presentations as presentation}
 				<a
 					class="contrast no-underline"
-					href="/dashboard/editor?presentation_id={presentation.presentation_id}"
+					href="/dashboard/editor?id={presentation.presentation_id}"
 				>
 					<img
 						class="w-full h-24 max-h-24 bg-slate-300 rounded mb-4"

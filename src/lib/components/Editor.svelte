@@ -61,7 +61,7 @@
 	}
 
 	const getPresentationId = () => {
-		const presentationId = $page.url.searchParams.get('presentation_id') ?? ''
+		const presentationId = $page.url.searchParams.get('id') ?? ''
 		return presentationId
 	}
 

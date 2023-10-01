@@ -38,7 +38,7 @@
 							'Untitled Presentation',
 						)
 
-						goto(`/dashboard/editor?presentation_id=${presentationId}`)
+						goto(`/dashboard/editor?id=${presentationId}`)
 					}}
 				>
 					<PencilLine />
