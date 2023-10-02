@@ -15,8 +15,6 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 
 		if (type === 'orderedList' || 'bulletList')
 			return (htmlOutput += getList(item))
-
-		if (type === 'image') return (htmlOutput += getImage(item))
 	})
 
 	return htmlOutput
@@ -44,9 +42,4 @@ const getList = (item: Item): string => {
 	list += `</${listType}>`
 
 	return list
-}
-
-const getImage = (item: Item): string => {
-	const src = item.attrs.src
-	return `<img src=${src} />`
 }

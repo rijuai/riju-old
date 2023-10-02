@@ -11,7 +11,6 @@
 	} from '$lib/stores/editor'
 	import { getCurrentTime } from '$lib/utils'
 	import { Editor } from '@tiptap/core'
-	import { Image } from '@tiptap/extension-image'
 	import { Placeholder } from '@tiptap/extension-placeholder'
 	import { StarterKit } from '@tiptap/starter-kit'
 	import { onDestroy, onMount } from 'svelte'
@@ -31,7 +30,6 @@
 			element: element,
 			extensions: [
 				StarterKit,
-				Image,
 				Placeholder.configure({
 					emptyEditorClass: 'is-editor-empty',
 					placeholder: 'Start typing...',
