@@ -15,9 +15,8 @@ export const signInWithMagicLink = async (email: string): Promise<boolean> => {
 export const getUserSignInStatus = async (): Promise<boolean> => {
 	const user = (await supabase.auth.getSession()).data.session?.user
 
-	if (user) {
-		return true
-	}
+	if (user) return true
+
 	return false
 }
 
