@@ -9,6 +9,9 @@
 </svelte:head>
 
 <div class="max-w-3xl mx-auto">
+	<div class="w-full text-center">
+		<p>Note: Leave a blank line for new slide.</p>
+	</div>
 	<Editor />
 	<DeletePresentationModal />
 </div>
