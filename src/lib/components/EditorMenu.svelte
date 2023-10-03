@@ -39,7 +39,6 @@
 			editor.chain().focus().toggleOrderedList().run()
 		}}><ListOrdered /></button
 	>
-
 	<button
 		class="secondary"
 		on:click={() => {
