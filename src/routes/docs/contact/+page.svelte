@@ -8,6 +8,6 @@
 
 	<p>
 		If you have any queries or want to contact us just send us an email at
-		namaste[at]riju.page
+		namaste@riju.page
 	</p>
 </article>
