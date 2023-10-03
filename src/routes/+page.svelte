@@ -28,10 +28,7 @@
 			class="flex justify-center gap-3
 	"
 		>
-			<a href="/login" role="button">Create Account</a>
-			<a class="secondary outline" href="/dashboard/editor" role="button"
-				>Live Demo</a
-			>
+			<a href="/login" role="button">Create Account (Its Free)</a>
 		</div>
 	</section>
 
@@ -61,10 +58,6 @@
 						for all your presentations.
 					</p>
 				</main>
-				<footer>
-					<h3>⚡️ Super Affordable</h3>
-					<p>Riju is just $19 per year! (Yes, for a whole year).</p>
-				</footer>
 			</article>
 		</div>
 	</section>
