@@ -69,10 +69,7 @@
 			<h3 class="text-center">(you won't regret it)</h3>
 		</hgroup>
 		<div class="flex justify-center gap-3">
-			<a href="/login" role="button">Create Account</a>
-			<a class="secondary outline" href="/dashboard/editor" role="button"
-				>Live Demo</a
-			>
+			<a href="/login" role="button">Create Account (It's Free)</a>
 		</div>
 	</section>
 
