@@ -18,7 +18,7 @@
 		</p>
 		<footer>
 			<button
-				class="secondary"
+				class="secondary outline"
 				on:click={() => {
 					$showDeleteModal = false
 				}}>Cancel</button
