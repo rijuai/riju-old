@@ -82,14 +82,14 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="editor p-8 rounded-lg w-full min-h-screen mb-8"
+	class="editor p-8 rounded-lg w-full min-h-screen mb-8 border-4 border-zinc-500 bg-zinc-100"
 	bind:this={element}
 	on:click={() => editor?.commands.focus()}
 />
 
 <style lang="postcss">
 	.editor {
-		background-color: var(--pico-card-sectioning-background-color);
+		/* background-color: var(--pico-card-sectioning-background-color); */
 	}
 
 	/* Placeholder (at the top) */
