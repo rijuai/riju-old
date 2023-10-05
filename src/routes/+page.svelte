@@ -65,7 +65,7 @@
 	<!-- cta -->
 	<section>
 		<hgroup>
-			<h2 class="text-center">Don't think. Just do!</h2>
+			<h2 class="text-center">Don't think. Just do It!</h2>
 			<h3 class="text-center">(you won't regret it)</h3>
 		</hgroup>
 		<div class="flex justify-center gap-3">
