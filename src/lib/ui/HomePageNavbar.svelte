@@ -31,10 +31,12 @@
 				</details>
 			</li>
 		{:else}
-			<li><a href="/docs/pricing">Pricing</a></li>
-			<li><a href="/docs/contact">Contact</a></li>
+			<li><a class="secondary" href="/docs/pricing">Pricing</a></li>
+			<li><a class="secondary" href="/docs/contact">Contact</a></li>
 			<li>
-				<a class="secondary" href="/dashboard" role="button">Dashboard</a>
+				<a class="secondary outline" href="/dashboard" role="button"
+					>Dashboard</a
+				>
 			</li>
 		{/if}
 	</ul>
