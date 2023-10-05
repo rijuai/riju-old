@@ -1,5 +1,5 @@
 <script>
-	import demo from '$lib/assets/videos/demo.mp4'
+	import demo from '$lib/assets/videos/riju-demo-05-10-2023.mp4'
 	import Footer from '$lib/ui/Footer.svelte'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 </script>
