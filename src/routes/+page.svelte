@@ -33,7 +33,7 @@
 	</section>
 
 	<!-- demo -->
-	<section class="animate__animated animate__fadeIn">
+	<section>
 		<article>
 			<video class="w-full" src={demo} muted autoplay loop />
 		</article>
