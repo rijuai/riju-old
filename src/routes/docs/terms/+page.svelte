@@ -1,10 +1,11 @@
-<svelte:head>
-	<title>Riju | Terms and Conditions</title>
-	<meta
-		name="description"
-		content="These terms and conditions outline the rules and regulations for the use of Riju's Website, located at https://riju.page."
-	/>
-</svelte:head>
+<script>
+	import MetaDetails from '$lib/components/MetaDetails.svelte'
+</script>
+
+<MetaDetails
+	title="Riju | Terms and Conditions"
+	description="These terms and conditions outline the rules and regulations for the use of Riju's Website, located at https://riju.page."
+/>
 
 <article class="max-w-2xl mx-auto">
 	<h2><strong>Terms and Conditions</strong></h2>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import MetaDetails from '$lib/components/MetaDetails.svelte'
 	import { getPresentations } from '$lib/db/presentation'
 	import { onMount } from 'svelte'
 
@@ -25,10 +26,7 @@
 	})
 </script>
 
-<svelte:head>
-	<title>Riju | Dashboard</title>
-	<meta name="description" content="Your presentations" />
-</svelte:head>
+<MetaDetails title="Riju | Dashboard" description="Your presentations" />
 
 <section class="h-full">
 	{#if presentations.length > 0}

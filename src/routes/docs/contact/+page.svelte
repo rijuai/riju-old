@@ -1,7 +1,11 @@
-<svelte:head>
-	<title>Riju | Contact</title>
-	<meta name="description" content="To contact us send us an email here" />
-</svelte:head>
+<script>
+	import MetaDetails from '$lib/components/MetaDetails.svelte'
+</script>
+
+<MetaDetails
+	title="Riju | Contact"
+	description="To contact us send us an email here"
+/>
 
 <article class="max-w-md mx-auto">
 	<h1>Contact Us</h1>

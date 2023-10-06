@@ -1,4 +1,5 @@
 <script lang="ts">
+	import MetaDetails from '$lib/components/MetaDetails.svelte'
 	import { signInWithMagicLink } from '$lib/db/auth'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 
@@ -7,13 +8,7 @@
 	let showLoader = false
 </script>
 
-<svelte:head>
-	<title>Riju | Sign In</title>
-	<meta
-		name="description"
-		content="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
-	/>
-</svelte:head>
+<MetaDetails title="Riju | Sign In" description="Sign In" />
 
 <HomePageNavbar />
 

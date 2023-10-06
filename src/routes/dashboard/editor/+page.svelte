@@ -1,12 +1,13 @@
 <script lang="ts">
 	import DeletePresentationModal from '$lib/components/DeletePresentationModal.svelte'
 	import Editor from '$lib/components/Editor.svelte'
+	import MetaDetails from '$lib/components/MetaDetails.svelte'
 </script>
 
-<svelte:head>
-	<title>Riju | Presentation</title>
-	<meta name="description" content="Create and edit presentations with Riju." />
-</svelte:head>
+<MetaDetails
+	title="Riju | Presentation"
+	description="Create and edit presentations with Riju."
+/>
 
 <div class="max-w-3xl mx-auto">
 	<div class="w-full text-center">
