@@ -9,7 +9,7 @@
 		currentPresentationTitle,
 		editorOutput,
 	} from '$lib/stores/editor'
-	import { getCurrentTime } from '$lib/utils'
+	import { getCurrentTime } from '$lib/utils/time'
 	import { Editor } from '@tiptap/core'
 	import { Placeholder } from '@tiptap/extension-placeholder'
 	import { StarterKit } from '@tiptap/starter-kit'
