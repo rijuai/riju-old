@@ -1,11 +1,11 @@
 <script>
 	import demo from '$lib/assets/videos/riju-demo-05-10-2023.mp4'
-	import MetaDetails from '$lib/components/MetaDetails.svelte'
+	import MetaData from '$lib/components/MetaData.svelte'
 	import Footer from '$lib/ui/Footer.svelte'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 </script>
 
-<MetaDetails
+<MetaData
 	title="Riju | Create presentations super fast"
 	description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
