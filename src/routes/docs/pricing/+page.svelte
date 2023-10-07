@@ -1,8 +1,8 @@
 <script>
-	import MetaDetails from '$lib/components/MetaDetails.svelte'
+	import MetaData from '$lib/components/MetaData.svelte'
 </script>
 
-<MetaDetails title="Riju | Pricing" description="Pricing" />
+<MetaData title="Riju | Pricing" description="Pricing" />
 
 <section>
 	<article class="max-w-sm mx-auto">

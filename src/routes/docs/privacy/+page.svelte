@@ -1,8 +1,8 @@
 <script>
-	import MetaDetails from '$lib/components/MetaDetails.svelte'
+	import MetaData from '$lib/components/MetaData.svelte'
 </script>
 
-<MetaDetails title="Riju | Privacy Policy" description="Privacy Policy" />
+<MetaData title="Riju | Privacy Policy" description="Privacy Policy" />
 
 <article class="max-w-2xl mx-auto">
 	<h1>Privacy Policy for Riju</h1>

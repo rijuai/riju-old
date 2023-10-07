@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MetaDetails from '$lib/components/MetaDetails.svelte'
+	import MetaData from '$lib/components/MetaData.svelte'
 	import { signInWithMagicLink } from '$lib/db/auth'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 
@@ -8,7 +8,7 @@
 	let showLoader = false
 </script>
 
-<MetaDetails title="Riju | Sign In" description="Sign In" />
+<MetaData title="Riju | Sign In" description="Sign In" />
 
 <HomePageNavbar />
 

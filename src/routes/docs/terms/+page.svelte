@@ -1,8 +1,8 @@
 <script>
-	import MetaDetails from '$lib/components/MetaDetails.svelte'
+	import MetaData from '$lib/components/MetaData.svelte'
 </script>
 
-<MetaDetails
+<MetaData
 	title="Riju | Terms and Conditions"
 	description="These terms and conditions outline the rules and regulations for the use of Riju's Website, located at https://riju.page."
 />

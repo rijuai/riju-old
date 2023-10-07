@@ -1,8 +1,8 @@
 <script>
-	import MetaDetails from '$lib/components/MetaDetails.svelte'
+	import MetaData from '$lib/components/MetaData.svelte'
 </script>
 
-<MetaDetails
+<MetaData
 	title="Riju | Contact"
 	description="To contact us send us an email here"
 />

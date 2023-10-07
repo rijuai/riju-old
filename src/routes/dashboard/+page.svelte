@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MetaDetails from '$lib/components/MetaDetails.svelte'
+	import MetaData from '$lib/components/MetaData.svelte'
 	import { getPresentations } from '$lib/db/presentation'
 	import { onMount } from 'svelte'
 
@@ -26,7 +26,7 @@
 	})
 </script>
 
-<MetaDetails title="Riju | Dashboard" description="Your presentations" />
+<MetaData title="Riju | Dashboard" description="Your presentations" />
 
 <section class="h-full">
 	{#if presentations.length > 0}

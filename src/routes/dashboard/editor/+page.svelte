@@ -1,10 +1,10 @@
 <script lang="ts">
 	import DeletePresentationModal from '$lib/components/DeletePresentationModal.svelte'
 	import Editor from '$lib/components/Editor.svelte'
-	import MetaDetails from '$lib/components/MetaDetails.svelte'
+	import MetaData from '$lib/components/MetaData.svelte'
 </script>
 
-<MetaDetails
+<MetaData
 	title="Riju | Presentation"
 	description="Create and edit presentations with Riju."
 />
