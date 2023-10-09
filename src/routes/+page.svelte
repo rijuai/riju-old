@@ -1,6 +1,7 @@
 <script>
 	import demo from '$lib/assets/videos/riju-demo-05-10-2023.mp4'
 	import MetaData from '$lib/components/MetaData.svelte'
+	import Banner from '$lib/ui/Banner.svelte'
 	import Footer from '$lib/ui/Footer.svelte'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 </script>
@@ -8,6 +9,11 @@
 <MetaData
 	title="Riju | Create presentations super fast"
 	description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
+/>
+
+<Banner
+	message="Riju is still in alpha so, you may experience bugs. Lot more AI themes, more
+		features coming soon."
 />
 
 <HomePageNavbar />

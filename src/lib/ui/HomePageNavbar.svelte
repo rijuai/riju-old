@@ -14,7 +14,6 @@
 	})
 </script>
 
-<Banner />
 <nav class="container-fluid">
 	<ul>
 		<li><a class="text-xl" href="/">Riju</a></li>

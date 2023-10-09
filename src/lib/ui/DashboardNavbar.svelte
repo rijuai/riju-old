@@ -4,10 +4,9 @@
 	import { createPresentation } from '$lib/db/presentation'
 	import { userId } from '$lib/stores/user'
 	import { PencilLine, Play, Settings } from 'lucide-svelte'
+	import { onMount } from 'svelte'
 	import Banner from './Banner.svelte'
 </script>
-
-<Banner />
 
 <nav class="container-fluid">
 	<ul>
