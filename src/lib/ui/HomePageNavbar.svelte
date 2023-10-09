@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Menu } from 'lucide-svelte'
 	import { onMount } from 'svelte'
-	import Banner from './Banner.svelte'
 
 	let isMobile: boolean
 	let deviceWidth = window.innerWidth
