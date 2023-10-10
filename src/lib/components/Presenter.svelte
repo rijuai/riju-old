@@ -42,4 +42,8 @@
 	<div class="slides">
 		{@html htmlOutput}
 	</div>
+
+	<small class="bg-white rounded-md fixed bottom-4 right-4 p-2">
+		Created in Riju
+	</small>
 </main>
