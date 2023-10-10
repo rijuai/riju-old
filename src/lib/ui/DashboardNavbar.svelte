@@ -4,6 +4,18 @@
 	import { createPresentation } from '$lib/db/presentation'
 	import { userId } from '$lib/stores/user'
 	import { PencilLine, Play, Settings } from 'lucide-svelte'
+	import { onMount } from 'svelte'
+
+	const getPresentationId = () => {
+		const presentationId = $page.url.searchParams.get('id') ?? ''
+		return presentationId
+	}
+
+	let presentationId: string
+
+	onMount(() => {
+		presentationId = getPresentationId()
+	})
 </script>
 
 <nav class="container-fluid">
@@ -16,7 +28,11 @@
 	<ul>
 		{#if $page.url.pathname === '/dashboard/editor'}
 			<li>
-				<a class="secondary" href="/present" title="Present">
+				<a
+					class="secondary"
+					href="/present?id={presentationId}"
+					title="Present"
+				>
 					<Play />
 				</a>
 			</li>

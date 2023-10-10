@@ -1,19 +1,26 @@
 <script lang="ts">
+	import { page } from '$app/stores'
 	import '$lib/assets/presenter.css'
+	import { getPresentationContent } from '$lib/db/presentation'
 	import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
-	import { editorOutput } from '$lib/stores/editor'
 	import { currentTheme } from '$lib/stores/presenter'
+	import type { JSONContent } from '@tiptap/core'
 	import Reveal from 'reveal.js'
 	import 'reveal.js/dist/reveal.css'
 	import { onMount } from 'svelte'
 
-	let deck: Reveal.Api
-	let htmlOutput: string
+	let reveal: Reveal.Api, htmlOutput: string, presentationContent: JSONContent
 
-	onMount(() => {
-		deck = new Reveal()
+	onMount(async () => {
+		const presentationId = getPresentationId()
+		presentationContent = await getPresentationContent(presentationId!)
 
-		deck.initialize({
+		if (presentationContent)
+			htmlOutput = convertContentToHtml(presentationContent)
+
+		reveal = new Reveal()
+
+		reveal.initialize({
 			controls: false,
 			progress: true,
 			history: false,
@@ -23,9 +30,12 @@
 			autoAnimate: true,
 			overview: false,
 		})
-
-		if ($editorOutput) htmlOutput = convertContentToHtml($editorOutput)
 	})
+
+	const getPresentationId = () => {
+		const id = $page.url.searchParams.get('id') ?? ''
+		return id
+	}
 </script>
 
 <main class="reveal w-full aspect-video" style={$currentTheme}>
