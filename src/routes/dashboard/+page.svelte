@@ -36,11 +36,7 @@
 					class="contrast no-underline"
 					href="/dashboard/editor?id={presentation.presentation_id}"
 				>
-					<img
-						class="w-full h-24 max-h-24 bg-slate-300 rounded mb-4"
-						src="https://source.unsplash.com/random/800x600"
-						alt={presentation.title}
-					/>
+					<div class="w-full h-24 bg-zinc-200 rounded mb-2" />
 					<small class="block truncate">{presentation.title}</small>
 				</a>
 			{/each}
