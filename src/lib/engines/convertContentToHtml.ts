@@ -4,16 +4,16 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 	let htmlOutput = `<section>`
 
 	content.forEach((item: Item) => {
-		let type = item.type
+		let itemType = item.type
 
-		if (type === 'paragraph' && item.content === undefined)
+		if (itemType === 'paragraph' && item.content === undefined)
 			return (htmlOutput += `</section><section>`)
 
-		if (type === 'heading') return (htmlOutput += getHeading(item))
+		if (itemType === 'heading') return (htmlOutput += getHeading(item))
 
-		if (type === 'paragraph') return (htmlOutput += getParagraph(item))
+		if (itemType === 'paragraph') return (htmlOutput += getParagraph(item))
 
-		if (type === 'orderedList' || 'bulletList')
+		if (itemType === 'orderedList' || 'bulletList')
 			return (htmlOutput += getList(item))
 	})
 
