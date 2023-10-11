@@ -1,6 +1,7 @@
 <script lang="ts">
 	import MetaData from '$lib/components/MetaData.svelte'
 	import { signInWithMagicLink } from '$lib/db/auth'
+	import Card from '$lib/ui/Card.svelte'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 
 	let email: string
@@ -12,54 +13,45 @@
 
 <HomePageNavbar />
 
-<main class="container-fluid">
+<main class="container-fluid mx-auto max-w-md">
 	{#if isEmailSent === false}
-		<article>
-			<h1>Sign In</h1>
+		<Card title="Sign In">
 			<form>
-				<fieldset>
-					<label>
-						Email
-						<input
-							type="email"
-							autocomplete="email"
-							aria-label="Email"
-							bind:value={email}
-						/>
-					</label>
-					<button
-						class="w-full"
-						aria-busy={showLoader}
-						aria-label={showLoader ? 'Please wait' : 'Continue'}
-						on:click={async () => {
-							showLoader = true
-							isEmailSent = await signInWithMagicLink(email)
-						}}>{showLoader ? 'Please wait' : 'Continue'}</button
+				<label>
+					Email
+					<input
+						type="email"
+						autocomplete="email"
+						aria-label="Email"
+						bind:value={email}
+					/>
+				</label>
+				<button
+					class="w-full"
+					aria-busy={showLoader}
+					aria-label={showLoader ? 'Please wait' : 'Continue'}
+					on:click={async () => {
+						showLoader = true
+						isEmailSent = await signInWithMagicLink(email)
+					}}>{showLoader ? 'Please wait' : 'Continue'}</button
+				>
+				<small>
+					By clicking on continue, you agree to our <a href="/docs/terms"
+						>Terms</a
 					>
-					<small>
-						By clicking on continue, you agree to our <a href="/docs/terms"
-							>Terms</a
-						>
-						and
-						<a href="/docs/privacy">Privacy Policy</a>.</small
-					>
-				</fieldset>
-				<footer>
-					<p>
-						Facing problems? <a href="/docs/contact">Contact Us</a>
-					</p>
-				</footer>
+					and
+					<a href="/docs/privacy">Privacy Policy</a>.</small
+				>
 			</form>
-		</article>
+			<footer>
+				<p>
+					Facing problems? <a href="/docs/contact">Contact Us</a>
+				</p>
+			</footer>
+		</Card>
 	{:else}
-		<article>
-			<p>Please click on the link sent to you email.</p>
-		</article>
+		<Card title="Success!">
+			<p>Please click on the link sent to your email.</p>
+		</Card>
 	{/if}
 </main>
-
-<style lang="postcss">
-	article {
-		@apply max-w-sm mx-auto;
-	}
-</style>
