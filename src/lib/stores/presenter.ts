@@ -1,25 +1,38 @@
 import { readable, writable } from 'svelte/store'
 
-export const currentTheme = writable('background: #5900FF;')
+export const currentTheme = writable(
+	'background-image: radial-gradient(circle at center right, rgb(0,233,236),rgb(130,183,255));',
+)
 
 export const themes = readable([
-	'background: linear-gradient(to bottom right, #FF08A1, #FF3852)',
-	'background: #5900FF;',
-	'background: linear-gradient(to bottom right, #00A8FF, #2E3BFF);',
-	'background: linear-gradient(to bottom right, #8300FF, #E600DE);',
-	'background: linear-gradient(to top right, #E600DE, #FF08A1);',
-	'background: linear-gradient(to bottom right, #BC00FF, #E600DE);',
-	'background: linear-gradient(to right, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));',
-	'background: linear-gradient(to right, rgb(29, 78, 216), rgb(30, 64, 175), rgb(17, 24, 39));',
-	'background: inear-gradient(rgb(17, 24, 39), rgb(88, 28, 135), rgb(124, 58, 237));',
-	'background: linear-gradient(rgb(234, 179, 8), rgb(168, 85, 247), rgb(59, 130, 246));',
-	'background: conic-gradient(at left center, rgb(14, 165, 233), rgb(254, 215, 170), rgb(202, 138, 4));',
-	'background: conic-gradient(at center top, rgb(17, 24, 39), rgb(243, 244, 246), rgb(17, 24, 39));',
-	'background: linear-gradient(to left bottom, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));',
+	'background-image: linear-gradient(45deg, rgb(177,140,255) 0%,rgb(200, 215, 253) 75%,rgb(143, 230, 243) 100%);',
+	'background-image: linear-gradient(157.5deg, rgb(95, 97, 179) 0%, rgb(95, 97, 179) 16%,rgb(115, 120, 184) 16%, rgb(115, 120, 184) 20%,rgb(135, 142, 188) 20%, rgb(135, 142, 188) 32%,rgb(155, 165, 193) 32%, rgb(155, 165, 193) 38%,rgb(175, 187, 198) 38%, rgb(175, 187, 198) 48%,rgb(195, 210, 203) 48%, rgb(195, 210, 203) 51%,rgb(215, 232, 207) 51%, rgb(215, 232, 207) 59%,rgb(235, 255, 212) 59%, rgb(235, 255, 212) 100%),linear-gradient(135deg, rgb(95, 97, 179) 0%, rgb(95, 97, 179) 16%,rgb(115, 120, 184) 16%, rgb(115, 120, 184) 20%,rgb(135, 142, 188) 20%, rgb(135, 142, 188) 32%,rgb(155, 165, 193) 32%, rgb(155, 165, 193) 38%,rgb(175, 187, 198) 38%, rgb(175, 187, 198) 48%,rgb(195, 210, 203) 48%, rgb(195, 210, 203) 51%,rgb(215, 232, 207) 51%, rgb(215, 232, 207) 59%,rgb(235, 255, 212) 59%, rgb(235, 255, 212) 100%),linear-gradient(112.5deg, rgb(95, 97, 179) 0%, rgb(95, 97, 179) 16%,rgb(115, 120, 184) 16%, rgb(115, 120, 184) 20%,rgb(135, 142, 188) 20%, rgb(135, 142, 188) 32%,rgb(155, 165, 193) 32%, rgb(155, 165, 193) 38%,rgb(175, 187, 198) 38%, rgb(175, 187, 198) 48%,rgb(195, 210, 203) 48%, rgb(195, 210, 203) 51%,rgb(215, 232, 207) 51%, rgb(215, 232, 207) 59%,rgb(235, 255, 212) 59%, rgb(235, 255, 212) 100%),linear-gradient(90deg, rgb(236, 151, 145),rgb(201, 243, 43)); background-blend-mode:overlay,overlay,overlay,normal;',
+	'background-image: linear-gradient(90deg, rgba(243,114,209, 0.16) 0%,rgba(44,19,241, 0.11) 100%);',
+	'background-image: linear-gradient(90deg, rgba(225,17,255, 0.58),rgba(255,94,214, 0.56));',
+	'background-image: linear-gradient(338deg, rgb(68, 202, 201) 0%,rgb(252, 255, 114) 100%);',
+	'background-image: radial-gradient(circle at top right, rgb(47, 245, 202),rgb(94,172,255));',
+	'background-image: linear-gradient(45deg, rgb(254, 236, 230),rgba(33,185,232, 0.48),rgb(180, 219, 231),rgb(107, 202, 231));',
+	'background-image: linear-gradient(90deg, rgb(209, 209, 209),rgb(207, 207, 207)),linear-gradient(45deg, rgb(177, 223, 206) 0%, rgb(177, 223, 206) 46%,rgb(147, 192, 214) 46%, rgb(147, 192, 214) 56%,rgb(117, 162, 222) 56%, rgb(117, 162, 222) 61%,rgb(86, 131, 229) 61%, rgb(86, 131, 229) 64%,rgb(56, 101, 237) 64%, rgb(56, 101, 237) 82%,rgb(26, 70, 245) 82%, rgb(26, 70, 245) 100%),linear-gradient(135deg, rgb(177, 223, 206) 0%, rgb(177, 223, 206) 46%,rgb(147, 192, 214) 46%, rgb(147, 192, 214) 56%,rgb(117, 162, 222) 56%, rgb(117, 162, 222) 61%,rgb(86, 131, 229) 61%, rgb(86, 131, 229) 64%,rgb(56, 101, 237) 64%, rgb(56, 101, 237) 82%,rgb(26, 70, 245) 82%, rgb(26, 70, 245) 100%); background-blend-mode:overlay,overlay,normal;',
+	'background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.04),rgba(0,0,0,0.08),rgba(0,0,0,0.05),rgba(0,0,0,0.04),rgba(0,0,0,0.01),rgba(0,0,0,0.1),rgba(0,0,0,0.09),rgba(0,0,0,0.1),rgba(0,0,0,0.03),transparent,rgba(0,0,0,0.07),rgba(0,0,0,0.03),rgba(0,0,0,0.06) 4px),linear-gradient(90deg, rgb(193, 255, 253),rgba(59,104,247, 0.46));',
 ])
+
+const previousNumbers = new Set<number>()
+
+export const getRandomNumber = (length: number): number => {
+	const maxNumber = length
+	let randomNumber: number
+	do {
+		randomNumber = Math.floor(Math.random() * maxNumber)
+	} while (previousNumbers.has(randomNumber))
+	previousNumbers.add(randomNumber)
+	if (previousNumbers.size > 3) {
+		previousNumbers.delete(Array.from(previousNumbers)[1])
+	}
+	return randomNumber
+}
 
 export const changeTheme = () => {
 	themes.subscribe((value) => {
-		currentTheme.set(value[Math.floor(Math.random() * value.length)])
+		currentTheme.set(value[getRandomNumber(value.length)])
 	})
 }
