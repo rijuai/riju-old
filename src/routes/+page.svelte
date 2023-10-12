@@ -1,8 +1,9 @@
 <script>
-	import demo from '$lib/assets/videos/riju-demo-05-10-2023.mp4'
+	import DemoVideo from '$lib/assets/videos/riju-demo-05-10-2023.mp4'
 	import MetaData from '$lib/components/MetaData.svelte'
 	import Banner from '$lib/ui/Banner.svelte'
 	import Footer from '$lib/ui/Footer.svelte'
+	import BeautifulThemesVideo from '$lib/assets/videos/beautiful-themes.mp4'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 </script>
 
@@ -39,7 +40,7 @@
 	<!-- demo -->
 	<section>
 		<article>
-			<video class="w-full" src={demo} muted autoplay loop />
+			<video class="w-full rounded" src={DemoVideo} muted loop autoplay />
 		</article>
 	</section>
 
@@ -56,6 +57,13 @@
 					</p>
 				</header>
 				<main>
+					<video
+						class="w-full rounded mb-6"
+						src={BeautifulThemesVideo}
+						muted
+						loop
+						autoplay
+					/>
 					<h3>👌 Beautiful Themes</h3>
 					<p>
 						Unique AI generated beautiful themes. Now no more same old themes
