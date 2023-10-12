@@ -12,7 +12,7 @@
 	let reveal: Reveal.Api, htmlOutput: string, presentationContent: JSONContent
 
 	onMount(async () => {
-		const presentationId = getPresentationId()
+		let presentationId = getPresentationId()
 		presentationContent = await getPresentationContent(presentationId!)
 
 		if (presentationContent)
