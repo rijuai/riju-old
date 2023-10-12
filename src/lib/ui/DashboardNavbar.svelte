@@ -6,16 +6,16 @@
 	import { PencilLine, Play, Settings } from 'lucide-svelte'
 	import { onMount } from 'svelte'
 
-	const getPresentationId = () => {
-		const presentationId = $page.url.searchParams.get('id') ?? ''
-		return presentationId
-	}
-
 	let presentationId: string
 
 	onMount(() => {
 		presentationId = getPresentationId()
 	})
+
+	const getPresentationId = () => {
+		let presentationId = $page.url.searchParams.get('id') ?? ''
+		return presentationId
+	}
 </script>
 
 <nav class="container-fluid">
@@ -32,8 +32,9 @@
 					class="secondary"
 					href="/present?id={presentationId}"
 					title="Present"
+					data-sveltekit-preload-data
 				>
-					<Play />
+					<Play /> Present
 				</a>
 			</li>
 		{/if}
