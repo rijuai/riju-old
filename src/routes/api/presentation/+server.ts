@@ -3,6 +3,10 @@ import { json } from '@sveltejs/kit'
 import type { JSONContent } from '@tiptap/core'
 
 export const POST = async ({ request }) => {
+	// res.header('Access-Control-Allow-Origin', 'https://example.com')
+	// res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
+	// res.header('Access-Control-Allow-Headers', 'Content-Type')
+
 	const body: {
 		title: string
 		content?: JSONContent
@@ -24,7 +28,17 @@ export const POST = async ({ request }) => {
 		})
 	}
 
-	return json({
-		presentation_id: data![0].presentation_id,
-	})
+	return json(
+		{
+			presentation_id: data![0].presentation_id,
+		},
+		{
+			headers: {
+				'Access-Control-Allow-Origin':
+					'https://*.atlassian.net, https://*.riju.page',
+				'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+				'Access-Control-Allow-Headers': 'Content-Type',
+			},
+		},
+	)
 }
