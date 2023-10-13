@@ -3,13 +3,9 @@ import { json } from '@sveltejs/kit'
 import type { JSONContent } from '@tiptap/core'
 
 export const POST = async ({ request }) => {
-	// res.header('Access-Control-Allow-Origin', 'https://example.com')
-	// res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
-	// res.header('Access-Control-Allow-Headers', 'Content-Type')
-
 	const body: {
 		title: string
-		content?: JSONContent
+		content: JSONContent
 	} = await request.json()
 
 	const { data, error } = await supabase
@@ -21,7 +17,6 @@ export const POST = async ({ request }) => {
 		.select('presentation_id')
 
 	if (error) {
-		console.log(error)
 		return json({
 			success: false,
 			error: error.message,
@@ -34,10 +29,8 @@ export const POST = async ({ request }) => {
 		},
 		{
 			headers: {
-				'Access-Control-Allow-Origin':
-					'https://*.atlassian.net, https://*.riju.page',
+				'Access-Control-Allow-Origin': 'https://*.atlassian.net',
 				'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
-				'Access-Control-Allow-Headers': 'Content-Type',
 			},
 		},
 	)
