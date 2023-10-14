@@ -4,15 +4,8 @@
 	import { createPresentation } from '$lib/db/presentation'
 	import { userId } from '$lib/stores/user'
 	import { PencilLine, Play, Settings } from 'lucide-svelte'
-	import { onMount } from 'svelte'
 
-	let presentationId: string
-
-	onMount(() => {
-		presentationId = getPresentationId()
-	})
-
-	const getPresentationId = () => {
+	const getPresentationId = (): string => {
 		let presentationId = $page.url.searchParams.get('id') ?? ''
 		return presentationId
 	}
@@ -28,11 +21,17 @@
 	<ul>
 		{#if $page.url.pathname === '/dashboard/editor'}
 			<li>
+				<!-- svelte-ignore a11y-missing-attribute -->
+				<!-- svelte-ignore a11y-interactive-supports-focus -->
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<!-- svelte-ignore a11y-no-static-element-interactions -->
 				<a
-					class="secondary"
-					href="/present?id={presentationId}"
+					class="secondary outline"
 					title="Present"
-					data-sveltekit-preload-data
+					on:click={() => {
+						let presentationId = getPresentationId()
+						goto(`/present?id=${presentationId}`)
+					}}
 				>
 					<Play /> Present
 				</a>
