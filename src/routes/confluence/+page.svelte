@@ -62,11 +62,9 @@
 <PresenterNavbar />
 
 <main class="reveal w-full aspect-video" style={$currentTheme}>
-	{#if presentationContent}
-		<div class="slides">
-			{@html htmlOutput}
-		</div>
-	{/if}
+	<div class="slides">
+		{@html htmlOutput}
+	</div>
 
 	<small class="bg-white rounded-md fixed bottom-4 right-4 p-2">
 		Created in Riju
