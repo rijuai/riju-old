@@ -21,13 +21,19 @@
 	</ul>
 	<ul>
 		<li>
-			<a class="secondary" href="#change_theme=true" on:click={changeTheme}
-				><Sparkles /> Theme</a
+			<a
+				class="secondary"
+				data-tooltip="Change Theme"
+				data-placement="bottom"
+				href="#change_theme=true"
+				on:click={changeTheme}><Sparkles /> Theme</a
 			>
 		</li>
 		<li>
 			<a
 				class="secondary"
+				data-tooltip="View Fullscreen"
+				data-placement="bottom"
 				href="#full_screen=true"
 				on:click={() => {
 					let element = document.querySelector('.reveal')
@@ -44,6 +50,8 @@
 			<!-- svelte-ignore a11y-missing-attribute -->
 			<a
 				class="secondary cursor-pointer"
+				data-tooltip="Exit"
+				data-placement="bottom"
 				on:click={() => {
 					history.back()
 				}}><X /></a
