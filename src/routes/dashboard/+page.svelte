@@ -3,11 +3,7 @@
 	import { getPresentations } from '$lib/db/presentation'
 	import { onMount } from 'svelte'
 
-	let presentations: {
-		presentation_id: string
-		title: string
-		preview_img_url: string
-	}[] = []
+	let presentations: Presentations = []
 
 	onMount(async () => {
 		let data = await getPresentations()

@@ -26,6 +26,12 @@ declare global {
 			}[]
 		}[]
 	}
+
+	type Presentations = {
+		presentation_id: string
+		title: string
+		preview_img_url: string
+	}[]
 }
 
 export {}
