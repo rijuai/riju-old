@@ -9,7 +9,7 @@ export const POST = async ({ request }) => {
 	} = await request.json()
 
 	const { data, error } = await supabase
-		.from('public_presentations')
+		.from('confluence_presentations')
 		.insert({
 			title: body.title,
 			content: body.content,
