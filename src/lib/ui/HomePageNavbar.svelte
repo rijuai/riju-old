@@ -15,7 +15,7 @@
 
 <nav class="container-fluid">
 	<ul>
-		<li><a class="text-xl" href="/">Riju</a></li>
+		<li><a class="text-xl" href="/">Riju.ai</a></li>
 	</ul>
 	<ul>
 		{#if isMobile}
@@ -32,9 +32,7 @@
 			<li><a class="secondary" href="/docs/pricing">Pricing</a></li>
 			<li><a class="secondary" href="/docs/contact">Contact</a></li>
 			<li>
-				<a class="secondary outline" href="/dashboard" role="button"
-					>Dashboard</a
-				>
+				<a class="secondary" href="/dashboard" role="button">Dashboard</a>
 			</li>
 		{/if}
 	</ul>
