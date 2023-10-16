@@ -14,6 +14,7 @@ declare global {
 		attrs: {
 			start: number
 			src: string
+			alt: string
 			level: number
 		}
 		text: string
