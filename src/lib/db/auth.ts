@@ -4,7 +4,7 @@ export const signInWithMagicLink = async (email: string): Promise<boolean> => {
 	let { error } = await supabase.auth.signInWithOtp({
 		email: email,
 		options: {
-			emailRedirectTo: 'https://riju.page/dashboard?userLoggedIn=true',
+			emailRedirectTo: 'https://riju.ai/dashboard?userLoggedIn=true',
 		},
 	})
 
