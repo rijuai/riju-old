@@ -81,7 +81,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="editor p-8 rounded-md w-full min-h-screen mb-8 bg-zinc-100"
+	class="editor p-6 rounded-md w-full min-h-screen mb-8 bg-zinc-100"
 	bind:this={element}
 	on:click={() => editor?.commands.focus()}
 />
