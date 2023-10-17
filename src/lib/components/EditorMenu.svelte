@@ -97,8 +97,10 @@
 		bind:this={fileInput}
 		on:change={handleImage}
 	/>
-	<button class="secondary outline" on:click={() => fileInput.click()}
-		><Image /></button
+	<button
+		data-tooltip="Image"
+		data-placement="right"
+		on:click={() => fileInput.click()}><Image /></button
 	>
 	<button
 		data-tooltip="Delete Presentation"
