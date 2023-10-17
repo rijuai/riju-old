@@ -13,8 +13,10 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 
 		if (itemType === 'paragraph') return (htmlOutput += getParagraph(item))
 
-		if (itemType === 'orderedList' || 'bulletList')
+		if (itemType === 'orderedList' || itemType === 'bulletList')
 			return (htmlOutput += getList(item))
+
+		if (itemType === 'image') return (htmlOutput += getImage(item))
 	})
 
 	return htmlOutput
@@ -42,4 +44,10 @@ const getList = (item: Item): string => {
 	list += `</${listType}>`
 
 	return list
+}
+
+const getImage = (item: Item): string => {
+	const src = item.attrs.src
+	const alt = item.attrs.alt ?? ''
+	return `<img src=${src} alt=${alt} />`
 }

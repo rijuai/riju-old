@@ -1,9 +1,55 @@
 <script lang="ts">
 	import { showDeleteModal } from '$lib/stores/editor'
 	import type { Editor } from '@tiptap/core'
-	import { Heading1, Heading2, List, ListOrdered, Trash2 } from 'lucide-svelte'
+	import {
+		Heading1,
+		Heading2,
+		Image,
+		List,
+		ListOrdered,
+		Trash2,
+	} from 'lucide-svelte'
 
 	export let editor: Editor
+	let fileInput: HTMLInputElement
+
+	const handleImage = async (event: Event) => {
+		const target = event.target as HTMLInputElement
+		if (!target.files || target.files.length === 0) return
+		const file = target.files[0]
+
+		const imageUrl = await uploadImageToR2(file)
+
+		editor.chain().focus().setImage({ src: imageUrl }).run()
+		fileInput.value = ''
+	}
+
+	const uploadImageToR2 = async (file: File): Promise<string> => {
+		const getPresignedUrlResponse = await fetch('/api/upload-image', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				fileName: file.name,
+				fileType: file.type,
+			}),
+		})
+
+		if (!getPresignedUrlResponse.ok) console.log('Failed to get presigned URL')
+
+		const { presignedUrl, objectKey } = await getPresignedUrlResponse.json()
+
+		const uploadToR2Response = await fetch(presignedUrl, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': file.type,
+			},
+			body: file,
+		})
+
+		return `https://assets.riju.ai/${objectKey}`
+	}
 </script>
 
 <div
@@ -43,6 +89,16 @@
 		on:click={() => {
 			editor.chain().focus().toggleOrderedList().run()
 		}}><ListOrdered /></button
+	>
+	<input
+		type="file"
+		id="imageInput"
+		style="display: none;"
+		bind:this={fileInput}
+		on:change={handleImage}
+	/>
+	<button class="secondary outline" on:click={() => fileInput.click()}
+		><Image /></button
 	>
 	<button
 		data-tooltip="Delete Presentation"

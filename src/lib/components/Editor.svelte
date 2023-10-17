@@ -4,6 +4,7 @@
 		getPresentationContent,
 		updatePresentation,
 	} from '$lib/db/presentation'
+	import { Image } from '@tiptap/extension-image'
 	import {
 		currentPresentationId,
 		currentPresentationTitle,
@@ -34,6 +35,7 @@
 					emptyEditorClass: 'is-editor-empty',
 					placeholder: 'Start typing...',
 				}),
+				Image,
 			],
 
 			onCreate: async () => {
@@ -48,7 +50,6 @@
 
 			onUpdate: () => {
 				editor = editor
-
 				$editorOutput = editor.getJSON().content!
 
 				let title = getTitle()
@@ -80,7 +81,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="editor p-8 rounded-lg w-full min-h-screen mb-8 bg-zinc-100"
+	class="editor p-8 rounded-md w-full min-h-screen mb-8 bg-zinc-100"
 	bind:this={element}
 	on:click={() => editor?.commands.focus()}
 />
