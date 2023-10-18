@@ -10,11 +10,8 @@
 
 <dialog open={$showDeleteModal}>
 	<article class="max-w-md">
-		<h2>Are you sure?</h2>
 		<p>
-			This is permanent! Are you sure you want to delete <b
-				>{$currentPresentationTitle}</b
-			>?
+			Are you sure you want to delete <b>{$currentPresentationTitle}</b>?
 		</p>
 		<footer>
 			<button
