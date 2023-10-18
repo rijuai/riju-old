@@ -1,5 +1,4 @@
 <script>
-	import AnimatedRoute from '$lib/components/AnimatedRoute.svelte'
 	import Auth from '$lib/components/Auth.svelte'
 	import Banner from '$lib/ui/Banner.svelte'
 	import DashboardNavbar from '$lib/ui/DashboardNavbar.svelte'
@@ -13,9 +12,7 @@
 <DashboardNavbar />
 
 <Auth>
-	<AnimatedRoute>
-		<main class="container-fluid">
-			<slot />
-		</main>
-	</AnimatedRoute>
+	<main class="container-fluid">
+		<slot />
+	</main>
 </Auth>
