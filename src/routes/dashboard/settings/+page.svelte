@@ -1,14 +1,31 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import MetaData from '$lib/components/MetaData.svelte'
-	import { signOut } from '$lib/db/auth'
+	import { getUserEmail, signOut } from '$lib/db/auth'
 	import Card from '$lib/ui/Card.svelte'
+	import { onMount } from 'svelte'
+
+	let userEmail: string
+
+	onMount(async () => {
+		userEmail = await getUserEmail()
+	})
 </script>
 
 <MetaData title="Riju | Settings" description="Settings" />
 
-<section class="mx-auto max-w-sm">
+<main class="mx-auto max-w-md">
 	<Card title="Settings">
+		<label>
+			Email
+			<input
+				type="email"
+				autocomplete="email"
+				aria-label="Email"
+				disabled
+				bind:value={userEmail}
+			/>
+		</label>
 		<div class="flex justify-end">
 			<button
 				class="secondary"
@@ -19,4 +36,4 @@
 			>
 		</div>
 	</Card>
-</section>
+</main>

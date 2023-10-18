@@ -33,3 +33,13 @@ export const getUserId = async (): Promise<string> => {
 	}
 	return error!.message
 }
+
+export const getUserEmail = async (): Promise<string> => {
+	const { data, error } = await supabase.auth.getSession()
+
+	if (data.session) {
+		const userEmail = data.session.user.email ?? ''
+		return userEmail
+	}
+	return error!.message
+}
