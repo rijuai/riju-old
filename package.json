@@ -12,7 +12,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-cloudflare": "^2.3.3",
-		"@sveltejs/kit": "^1.25.2",
+		"@sveltejs/kit": "^1.26.0",
 		"autoprefixer": "^10.4.16",
 		"postcss": "^8.4.31",
 		"svelte": "^4.2.1",
@@ -31,7 +31,7 @@
 		"@tiptap/extension-placeholder": "^2.1.12",
 		"@tiptap/pm": "^2.1.12",
 		"@tiptap/starter-kit": "^2.1.12",
-		"@types/reveal.js": "^4.4.3",
+		"@types/reveal.js": "^4.4.4",
 		"dayjs": "^1.11.10",
 		"lucide-svelte": "^0.288.0",
 		"reveal.js": "^4.6.1",
