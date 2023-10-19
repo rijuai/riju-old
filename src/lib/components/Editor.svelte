@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores'
+	import '$lib/assets/editor.css'
 	import {
 		getPresentationContent,
 		updatePresentation,
@@ -82,14 +83,15 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="editor p-6 rounded-md w-full min-h-screen mb-8 bg-zinc-100"
+	class="editor p-6 rounded-md min-h-screen w-full mb-8"
 	bind:this={element}
-	on:click={() => editor?.commands.focus()}
+	on:click={() => {
+		editor?.commands.focus()
+	}}
 />
 
 <style lang="postcss">
-	/* Placeholder (at the top) */
-	:global(.tiptap .is-editor-empty:first-child::before) {
+	:global(.tiptap p.is-empty::before) {
 		color: #adb5bd;
 		content: attr(data-placeholder);
 		float: left;

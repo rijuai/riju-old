@@ -1,0 +1,17 @@
+.editor h1,
+h2,
+p {
+	@apply text-zinc-700;
+}
+
+.editor h1 {
+	@apply text-xl;
+}
+
+.editor h2 {
+	@apply text-lg;
+}
+
+.editor p {
+	@apply text-sm mb-2;
+}
