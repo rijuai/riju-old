@@ -5,7 +5,7 @@
 
 <HomePageNavbar />
 
-<main class="container-fluid">
+<main class="container-fluid max-w-2xl mx-auto">
 	<slot />
 
 	<Footer />
