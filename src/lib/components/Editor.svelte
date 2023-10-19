@@ -53,6 +53,7 @@
 				$editorOutput = editor.getJSON().content!
 
 				let title = getTitle()
+				$currentPresentationTitle = title
 				let currentTime = getCurrentTime()
 				updatePresentation(presentationId!, currentTime, title, $editorOutput)
 			},
