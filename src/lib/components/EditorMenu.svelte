@@ -7,6 +7,7 @@
 		Image,
 		List,
 		ListOrdered,
+		Plus,
 		Trash2,
 	} from 'lucide-svelte'
 
@@ -53,7 +54,7 @@
 </script>
 
 <div
-	class="menu z-50 flex flex-col gap-2 p-1 rounded-md fixed left-4 top-1/2 transform -translate-y-1/2 bg-zinc-100"
+	class="menu z-50 flex flex-col gap-2 p-1 min-w-fit rounded fixed left-0 top-1/2 transform -translate-y-1/2 bg-zinc-50"
 >
 	<button
 		data-tooltip="Heading 1"
@@ -113,11 +114,11 @@
 
 <style lang="postcss">
 	.menu button {
-		@apply bg-zinc-100 text-zinc-800 border-0;
+		@apply bg-zinc-50 text-zinc-800 border-0 rounded-sm;
 	}
 
 	.menu button:hover,
 	.menu button:active {
-		background-color: var(--pico-card-background-color);
+		@apply bg-zinc-200;
 	}
 </style>
