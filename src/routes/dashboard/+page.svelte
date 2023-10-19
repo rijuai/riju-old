@@ -24,8 +24,10 @@
 
 <MetaData title="Riju | Dashboard" description="Your presentations" />
 
-<section class="h-full">
-	{#if presentations.length > 0}
+{#await getPresentations()}
+	<p class="text-center mt-4" aria-busy="true">Loading...</p>
+{:then presentations}
+	{#if presentations !== undefined && presentations.length > 0}
 		<div class="grid grid-cols-5 gap-8">
 			{#each presentations as presentation}
 				<a
@@ -43,4 +45,6 @@
 			presentation.
 		</p>
 	{/if}
-</section>
+{:catch error}
+	<p>Error: {error.message}</p>
+{/await}
