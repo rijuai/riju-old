@@ -9,7 +9,7 @@
 	description="Create and edit presentations with Riju."
 />
 
-<div class="max-w-3xl mx-auto">
+<div class="max-w-2xl mx-auto">
 	<Editor />
 	<DeletePresentationModal />
 </div>
