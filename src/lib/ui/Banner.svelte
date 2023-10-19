@@ -2,11 +2,8 @@
 	export let message: string
 </script>
 
-<div
-	class="w-full p-2"
-	style="background-color: var(--pico-secondary-background);"
->
-	<small class="text-center mb-0 flex justify-center text-white">
+<div class="w-full p-2 bg-amber-300">
+	<small class="text-center mb-0 flex justify-center text-zinc-800">
 		{message}
 	</small>
 </div>
