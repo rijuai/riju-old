@@ -2,7 +2,6 @@
 /* Can be forced with data-theme="light" */
 [data-theme=light],
 :root:not([data-theme=dark]) {
-    --pico-font-family: 'Roboto', sans-serif;
     --pico-text-selection-color: rgba(148, 134, 225, 0.25);
     --pico-primary: #655cd6;
     --pico-primary-background: #524ed2;
