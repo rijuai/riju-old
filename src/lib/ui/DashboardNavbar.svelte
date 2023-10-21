@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import { page } from '$app/stores'
+	import Button from '$lib/components/ui/button/button.svelte'
 	import { createPresentation } from '$lib/db/presentation'
 	import { userId } from '$lib/stores/user'
 	import { PencilLine, Play, Settings } from 'lucide-svelte'
@@ -11,22 +12,18 @@
 	}
 </script>
 
-<nav class="container-fluid">
-	<ul>
-		<li><a class="text-xl" href="/dashboard">Riju</a></li>
+<nav class="flex justify-between items-center px-4 py-3 gap-4">
+	<ul class="flex items-center gap-4">
+		<li><a class="text-2xl" href="/dashboard">Riju</a></li>
 		<li>
 			<a class="secondary" href="/dashboard/settings"><Settings /></a>
 		</li>
 	</ul>
-	<ul>
+	<ul class="flex gap-4">
 		{#if $page.url.pathname === '/dashboard/editor'}
 			<li>
-				<!-- svelte-ignore a11y-missing-attribute -->
-				<!-- svelte-ignore a11y-interactive-supports-focus -->
-				<!-- svelte-ignore a11y-click-events-have-key-events -->
-				<!-- svelte-ignore a11y-no-static-element-interactions -->
-				<a
-					class="secondary outline"
+				<Button
+					variant="ghost"
 					title="Present"
 					on:click={() => {
 						let presentationId = getPresentationId()
@@ -34,17 +31,12 @@
 					}}
 				>
 					<Play /> Present
-				</a>
+				</Button>
 			</li>
 		{/if}
 		{#if $page.url.pathname === '/dashboard'}
 			<li>
-				<!-- svelte-ignore a11y-missing-attribute -->
-				<!-- svelte-ignore a11y-interactive-supports-focus -->
-				<!-- svelte-ignore a11y-click-events-have-key-events -->
-				<a
-					class="primary"
-					role="button"
+				<Button
 					on:click={async () => {
 						const presentationId = await createPresentation(
 							$userId,
@@ -54,8 +46,8 @@
 						goto(`/dashboard/editor?id=${presentationId}`)
 					}}
 				>
-					<PencilLine />
-					Create</a
+					<PencilLine class="mr-2 h-5 w-5" />
+					Create</Button
 				>
 			</li>
 		{/if}

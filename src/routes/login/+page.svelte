@@ -1,7 +1,11 @@
 <script lang="ts">
 	import MetaData from '$lib/components/MetaData.svelte'
+	import * as Alert from '$lib/components/ui/alert'
+	import Button from '$lib/components/ui/button/button.svelte'
+	import * as Card from '$lib/components/ui/card'
+	import Input from '$lib/components/ui/input/input.svelte'
+	import Label from '$lib/components/ui/label/label.svelte'
 	import { signInWithMagicLink } from '$lib/db/auth'
-	import Card from '$lib/ui/Card.svelte'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 
 	let email: string,
@@ -14,44 +18,39 @@
 <HomePageNavbar />
 
 <main class="container-fluid mx-auto max-w-md">
-	{#if isEmailSent === false}
-		<Card title="Sign In">
-			<form>
-				<label>
-					Email
-					<input
-						type="email"
-						autocomplete="email"
-						aria-label="Email"
-						bind:value={email}
-					/>
-				</label>
-				<button
-					class="w-full"
-					aria-busy={showLoader}
-					aria-label={showLoader ? 'Please wait' : 'Continue'}
-					on:click={async () => {
-						showLoader = true
-						isEmailSent = await signInWithMagicLink(email)
-					}}>{showLoader ? 'Please wait' : 'Continue'}</button
-				>
-				<small>
-					By clicking on continue, you agree to our <a href="/docs/terms"
-						>Terms</a
-					>
-					and
-					<a href="/docs/privacy">Privacy Policy</a>.</small
-				>
-			</form>
-			<footer>
-				<p>
-					Facing problems? <a href="/docs/contact">Contact Us</a>
-				</p>
-			</footer>
-		</Card>
-	{:else}
-		<Card title="Success!">
-			<p>Please click on the link sent to your email.</p>
-		</Card>
+	<Card.Root class="max-w-md mx-auto">
+		<Card.Header>
+			<Card.Title tag="h1">Sign In</Card.Title>
+			<Card.Description
+				>You can login and signup from this same page.</Card.Description
+			>
+		</Card.Header>
+		<Card.Content>
+			<Input
+				type="email"
+				placeholder="Email"
+				disabled={isEmailSent}
+				bind:value={email}
+			/>
+		</Card.Content>
+		<Card.Footer>
+			<Button
+				class="w-full"
+				disabled={isEmailSent}
+				on:click={async () => {
+					isEmailSent = await signInWithMagicLink(email)
+				}}>Continue</Button
+			>
+		</Card.Footer>
+	</Card.Root>
+
+	{#if isEmailSent}
+		<Alert.Root class="mt-4">
+			<Alert.Title>Success!</Alert.Title>
+			<Alert.Description>
+				An email has been sent for verification. Please click on that email link
+				to acccess dashboard.
+			</Alert.Description>
+		</Alert.Root>
 	{/if}
 </main>

@@ -2,8 +2,12 @@
 	import { goto } from '$app/navigation'
 	import MetaData from '$lib/components/MetaData.svelte'
 	import { getUserEmail, signOut } from '$lib/db/auth'
-	import Card from '$lib/ui/Card.svelte'
+	import * as Card from '$lib/components/ui/card'
 	import { onMount } from 'svelte'
+	import Footer from '$lib/ui/Footer.svelte'
+	import { Label } from '$lib/components/ui/label'
+	import { Input } from '$lib/components/ui/input'
+	import { Button } from '$lib/components/ui/button'
 
 	let userEmail: string
 
@@ -14,26 +18,26 @@
 
 <MetaData title="Riju | Settings" description="Settings" />
 
-<main class="mx-auto max-w-md">
-	<Card title="Settings">
-		<label>
-			Email
-			<input
-				type="email"
-				autocomplete="email"
-				aria-label="Email"
-				disabled
-				bind:value={userEmail}
-			/>
-		</label>
-		<div class="flex justify-end">
-			<button
-				class="secondary"
-				on:click={async () => {
-					await signOut()
-					goto('/')
-				}}>Sign Out</button
-			>
-		</div>
-	</Card>
-</main>
+<Card.Root class="max-w-md mx-auto">
+	<Card.Header>
+		<Card.Title>Settings</Card.Title>
+	</Card.Header>
+	<Card.Content>
+		<Label>Email</Label>
+		<Input
+			type="email"
+			autocomplete="email"
+			aria-label="Email"
+			disabled
+			bind:value={userEmail}
+		/>
+	</Card.Content>
+	<Card.Footer class="flex justify-end">
+		<Button
+			on:click={async () => {
+				await signOut()
+				goto('/')
+			}}>Sign Out</Button
+		>
+	</Card.Footer>
+</Card.Root>

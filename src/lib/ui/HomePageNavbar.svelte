@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Button from '$lib/components/ui/button/button.svelte'
 	import { Menu } from 'lucide-svelte'
 	import { onMount } from 'svelte'
 
@@ -13,27 +14,15 @@
 	})
 </script>
 
-<nav class="container-fluid">
+<nav class="flex justify-between px-3 py-2.5">
 	<ul>
-		<li><a class="text-xl" href="/">Riju.ai</a></li>
+		<li><a class="text-2xl" href="/">Riju</a></li>
 	</ul>
-	<ul>
-		{#if isMobile}
-			<li class="lg:hidden">
-				<details class="dropdown block md::hidden">
-					<summary><Menu /></summary>
-					<ul dir="rtl">
-						<li><a href="/dashboard">Dashboard</a></li>
-						<li><a href="/docs/contact">Contact</a></li>
-					</ul>
-				</details>
-			</li>
-		{:else}
-			<li><a class="secondary" href="/docs/pricing">Pricing</a></li>
-			<li><a class="secondary" href="/docs/contact">Contact</a></li>
-			<li>
-				<a class="secondary" href="/dashboard" role="button">Dashboard</a>
-			</li>
-		{/if}
+	<ul class="flex gap-4 items-center">
+		<li><a class="secondary" href="/docs/pricing">Pricing</a></li>
+		<li><a class="secondary" href="/docs/contact">Contact</a></li>
+		<li>
+			<Button variant="outline" href="/dashboard" role="button">Dashboard</Button>
+		</li>
 	</ul>
 </nav>

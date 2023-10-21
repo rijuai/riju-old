@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { showDeleteModal } from '$lib/stores/editor'
+	import { currentPresentationId, showDeleteModal } from '$lib/stores/editor'
 	import type { Editor } from '@tiptap/core'
 	import {
 		Heading1,
@@ -7,9 +7,12 @@
 		Image,
 		List,
 		ListOrdered,
-		Plus,
 		Trash2,
 	} from 'lucide-svelte'
+	import Button from './ui/button/button.svelte'
+	import * as AlertDialog from '$lib/components/ui/alert-dialog'
+	import { deletePresentation } from '$lib/db/presentation'
+	import { goto } from '$app/navigation'
 
 	export let editor: Editor
 	let fileInput: HTMLInputElement
@@ -54,42 +57,47 @@
 </script>
 
 <div
-	class="menu z-50 flex flex-col gap-2 p-1 min-w-fit rounded fixed left-0 top-1/2 transform -translate-y-1/2 bg-zinc-50"
+	class="menu z-50 flex flex-col gap-3 p-3 min-w-fit rounded fixed left-0 top-1/2 transform -translate-y-1/2 bg-primary-foreground"
 >
-	<button
+	<Button
+		variant="outline"
 		data-tooltip="Heading 1"
 		data-placement="right"
 		on:click={() => {
 			editor.chain().focus().toggleHeading({ level: 1 }).run()
-		}}><Heading1 /></button
+		}}><Heading1 /></Button
 	>
-	<button
+	<Button
+		variant="outline"
 		data-tooltip="Heading 2"
 		data-placement="right"
 		on:click={() => {
 			editor.chain().focus().toggleHeading({ level: 2 }).run()
-		}}><Heading2 /></button
+		}}><Heading2 /></Button
 	>
-	<button
+	<Button
+		variant="outline"
 		data-tooltip="Paragraph"
 		data-placement="right"
 		on:click={() => {
 			editor.chain().focus().setParagraph().run()
-		}}>P</button
+		}}>P</Button
 	>
-	<button
+	<Button
+		variant="outline"
 		data-tooltip="Bullet List"
 		data-placement="right"
 		on:click={() => {
 			editor.chain().focus().toggleBulletList().run()
-		}}><List /></button
+		}}><List /></Button
 	>
-	<button
+	<Button
+		variant="outline"
 		data-tooltip="Ordered List"
 		data-placement="right"
 		on:click={() => {
 			editor.chain().focus().toggleOrderedList().run()
-		}}><ListOrdered /></button
+		}}><ListOrdered /></Button
 	>
 	<input
 		type="file"
@@ -98,27 +106,44 @@
 		bind:this={fileInput}
 		on:change={handleImage}
 	/>
-	<button
+	<Button
+		variant="outline"
 		data-tooltip="Image"
 		data-placement="right"
-		on:click={() => fileInput.click()}><Image /></button
+		on:click={() => fileInput.click()}><Image /></Button
 	>
-	<button
-		data-tooltip="Delete Presentation"
-		data-placement="right"
-		on:click={() => {
-			$showDeleteModal = true
-		}}><Trash2 /></button
-	>
+	<AlertDialog.Root>
+		<AlertDialog.Trigger asChild let:builder>
+			<Button
+				builders={[builder]}
+				variant="outline"
+				on:click={() => {
+					$showDeleteModal = true
+				}}><Trash2 /></Button
+			>
+		</AlertDialog.Trigger>
+		<AlertDialog.Content>
+			<AlertDialog.Header>
+				<AlertDialog.Title>Are you absolutely sure?</AlertDialog.Title>
+				<AlertDialog.Description>
+					This action cannot be undone. This will permanently delete your
+					account and remove your data from our servers.
+				</AlertDialog.Description>
+			</AlertDialog.Header>
+			<AlertDialog.Footer>
+				<AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
+				<AlertDialog.Action
+					on:click={async () => {
+						let result = await deletePresentation($currentPresentationId)
+
+						if (result) {
+							console.log('Successfully deleted presentation')
+							$showDeleteModal = false
+							goto('/dashboard')
+						}
+					}}>Continue</AlertDialog.Action
+				>
+			</AlertDialog.Footer>
+		</AlertDialog.Content>
+	</AlertDialog.Root>
 </div>
-
-<style lang="postcss">
-	.menu button {
-		@apply bg-zinc-50 text-zinc-800 border-0 rounded-sm;
-	}
-
-	.menu button:hover,
-	.menu button:active {
-		@apply bg-zinc-200;
-	}
-</style>

@@ -1,6 +1,6 @@
 <script>
 	import MetaData from '$lib/components/MetaData.svelte'
-	import Card from '$lib/ui/Card.svelte'
+	import * as Card from '$lib/components/ui/card'
 </script>
 
 <MetaData
@@ -8,9 +8,14 @@
 	description="To contact us send us an email here"
 />
 
-<Card title="Contact">
-	<p>
-		If you have any queries or want to contact us just send us an email at
-		namaste@riju.page
-	</p>
-</Card>
+<Card.Root>
+	<Card.Header>
+		<Card.Title>Contact</Card.Title>
+	</Card.Header>
+	<Card.Content>
+		<p>
+			If you have any queries or want to contact us just send us an email at
+			namaste@riju.page
+		</p>
+	</Card.Content>
+</Card.Root>

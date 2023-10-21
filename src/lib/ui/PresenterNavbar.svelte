@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Button from '$lib/components/ui/button/button.svelte'
 	import { changeTheme } from '$lib/stores/presenter'
 	import { Expand, Sparkles, X } from 'lucide-svelte'
 
@@ -13,25 +14,25 @@
 	}
 </script>
 
-<nav class="container-fluid w-full">
-	<ul>
-		<li class="text-xl">
-			<a class="text-xl" href="/">Riju</a>
-		</li>
-	</ul>
+<nav class="flex items-center justify-between px-3 py-2">
 	<ul>
 		<li>
-			<a
-				class="secondary"
+			<a href="/">Riju</a>
+		</li>
+	</ul>
+	<ul class="flex gap-2">
+		<li>
+			<Button
+				variant="ghost"
 				data-tooltip="Change Theme"
 				data-placement="bottom"
 				href="#change_theme=true"
-				on:click={changeTheme}><Sparkles /> Theme</a
+				on:click={changeTheme}><Sparkles /> Change Theme</Button
 			>
 		</li>
 		<li>
-			<a
-				class="secondary"
+			<Button
+				variant="ghost"
 				data-tooltip="View Fullscreen"
 				data-placement="bottom"
 				href="#full_screen=true"
@@ -41,20 +42,17 @@
 					if (element !== null) {
 						showFullScreen(element)
 					}
-				}}><Expand /></a
+				}}><Expand /></Button
 			>
 		</li>
 		<li>
-			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<!-- svelte-ignore a11y-missing-attribute -->
-			<a
-				class="secondary cursor-pointer"
+			<Button
+				variant="ghost"
 				data-tooltip="Exit"
 				data-placement="bottom"
 				on:click={() => {
 					history.back()
-				}}><X /></a
+				}}><X /></Button
 			>
 		</li>
 	</ul>
