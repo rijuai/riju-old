@@ -4,9 +4,9 @@
 	import Card from '$lib/ui/Card.svelte'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 
-	let email: string
-	let isEmailSent = false
-	let showLoader = false
+	let email: string,
+		isEmailSent = false,
+		showLoader = false
 </script>
 
 <MetaData title="Riju | Sign In" description="Sign In" />
