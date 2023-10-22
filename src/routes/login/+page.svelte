@@ -8,8 +8,7 @@
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 
 	let email: string,
-		isEmailSent = false,
-		showLoader = false
+		isEmailSent = false
 </script>
 
 <MetaData title="Riju | Sign In" description="Sign In" />
@@ -31,6 +30,12 @@
 				disabled={isEmailSent}
 				bind:value={email}
 			/>
+			<p class="text-sm text-muted-foreground">
+				By clicking below, you agree to the Riju <a href="/docs/terms"
+					>Terms of Service</a
+				>
+				and <a href="/docs/privacy">Privacy Policy</a>.
+			</p>
 		</Card.Content>
 		<Card.Footer>
 			<Button
@@ -38,15 +43,16 @@
 				class="w-full"
 				disabled={isEmailSent}
 				on:click={async () => {
+					isEmailSent = true
 					isEmailSent = await signInWithMagicLink(email)
 				}}
-				>Continue
+				>{isEmailSent ? 'Loading...' : 'Continue'}
 			</Button>
 		</Card.Footer>
 	</Card.Root>
 
 	{#if isEmailSent}
-		<Alert.Root class="mt-4">
+		<Alert.Root class="mt-6">
 			<Alert.Title>Success!</Alert.Title>
 			<Alert.Description>
 				An email has been sent for verification. Please click on that email link
