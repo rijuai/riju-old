@@ -13,6 +13,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-cloudflare": "^2.3.3",
 		"@sveltejs/kit": "^1.26.0",
+		"@tailwindcss/typography": "^0.5.10",
 		"autoprefixer": "^10.4.16",
 		"postcss": "^8.4.31",
 		"svelte": "^4.2.2",
@@ -27,6 +28,7 @@
 		"@aws-sdk/s3-request-presigner": "^3.433.0",
 		"@supabase/supabase-js": "^2.38.2",
 		"@tiptap/core": "^2.1.12",
+		"@tiptap/extension-horizontal-rule": "^2.1.12",
 		"@tiptap/extension-image": "^2.1.12",
 		"@tiptap/extension-placeholder": "^2.1.12",
 		"@tiptap/pm": "^2.1.12",
