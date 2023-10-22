@@ -24,13 +24,7 @@
 	</Card.Header>
 	<Card.Content>
 		<Label>Email</Label>
-		<Input
-			type="email"
-			autocomplete="email"
-			aria-label="Email"
-			disabled
-			bind:value={userEmail}
-		/>
+		<Input type="email" disabled bind:value={userEmail} />
 	</Card.Content>
 	<Card.Footer class="flex justify-end">
 		<Button

@@ -4,7 +4,6 @@
 	import Button from '$lib/components/ui/button/button.svelte'
 	import * as Card from '$lib/components/ui/card'
 	import Input from '$lib/components/ui/input/input.svelte'
-	import Label from '$lib/components/ui/label/label.svelte'
 	import { signInWithMagicLink } from '$lib/db/auth'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 
@@ -17,10 +16,10 @@
 
 <HomePageNavbar />
 
-<main class="container-fluid mx-auto max-w-md">
-	<Card.Root class="max-w-md mx-auto">
+<section class="max-w-md mx-auto mt-8">
+	<Card.Root>
 		<Card.Header>
-			<Card.Title tag="h1">Sign In</Card.Title>
+			<Card.Title>Sign In</Card.Title>
 			<Card.Description
 				>You can login and signup from this same page.</Card.Description
 			>
@@ -35,12 +34,14 @@
 		</Card.Content>
 		<Card.Footer>
 			<Button
+				size="lg"
 				class="w-full"
 				disabled={isEmailSent}
 				on:click={async () => {
 					isEmailSent = await signInWithMagicLink(email)
-				}}>Continue</Button
-			>
+				}}
+				>Continue
+			</Button>
 		</Card.Footer>
 	</Card.Root>
 
@@ -53,4 +54,4 @@
 			</Alert.Description>
 		</Alert.Root>
 	{/if}
-</main>
+</section>

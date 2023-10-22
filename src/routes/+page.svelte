@@ -19,19 +19,17 @@
 <main class="mx-auto max-w-3xl">
 	<!-- hero -->
 	<section class="text-center max-w-2xl mx-auto mt-24 mb-28">
-		<hgroup class="mb-14 space-y-4">
-			<h1 class="text-4xl font-semibold">Create presentations in seconds</h1>
-			<p class="text-lg">
-				Just write content, Riju will convert it into beautiful presentation.
-				Just like magic!
-			</p>
-		</hgroup>
+		<h1 class="mb-4">Create presentations in seconds</h1>
+		<p class="mb-12">
+			Just write content, Riju will convert it into beautiful presentation. Just
+			like magic!
+		</p>
 
 		<div
 			class="flex justify-center gap-3
 	"
 		>
-			<Button href="/login">Create Account (Its Free)</Button>
+			<Button size="lg" href="/login">Create Account (Its Free)</Button>
 		</div>
 	</section>
 
@@ -43,17 +41,6 @@
 			</Card.Header>
 		</Card.Root>
 	</section>
-
-	<!-- cta -->
-	<!-- <section class="my-24">
-		<hgroup class="mb-8">
-			<h2 class="text-center">Don't think. Just do It!</h2>
-			<p class="text-center">(you won't regret it)</p>
-		</hgroup>
-		<div class="flex justify-center gap-3">
-			<Button href="/login">Create Account (It's Free)</Button>
-		</div>
-	</section> -->
 
 	<Footer />
 </main>

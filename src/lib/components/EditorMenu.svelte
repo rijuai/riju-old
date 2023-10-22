@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { currentPresentationId, showDeleteModal } from '$lib/stores/editor'
+	import { currentPresentationId } from '$lib/stores/editor'
 	import type { Editor } from '@tiptap/core'
 	import {
 		Heading1,
@@ -7,6 +7,7 @@
 		Image,
 		List,
 		ListOrdered,
+		Plus,
 		Trash2,
 	} from 'lucide-svelte'
 	import Button from './ui/button/button.svelte'
@@ -57,26 +58,30 @@
 </script>
 
 <div
-	class="menu z-50 flex flex-col gap-3 p-3 min-w-fit rounded fixed left-0 top-1/2 transform -translate-y-1/2 bg-primary-foreground"
+	class="menu z-50 flex flex-col gap-4 p-2 min-w-fit rounded fixed left-0 top-1/2 transform -translate-y-1/2 bg-primary-foreground"
 >
 	<Button
-		variant="outline"
-		data-tooltip="Heading 1"
-		data-placement="right"
+		variant="ghost"
+		on:click={async () => {
+			editor.chain().focus().setHorizontalRule().run()
+		}}
+	>
+		<Plus />
+	</Button>
+	<Button
+		variant="ghost"
 		on:click={() => {
 			editor.chain().focus().toggleHeading({ level: 1 }).run()
 		}}><Heading1 /></Button
 	>
 	<Button
-		variant="outline"
-		data-tooltip="Heading 2"
-		data-placement="right"
+		variant="ghost"
 		on:click={() => {
 			editor.chain().focus().toggleHeading({ level: 2 }).run()
 		}}><Heading2 /></Button
 	>
 	<Button
-		variant="outline"
+		variant="ghost"
 		data-tooltip="Paragraph"
 		data-placement="right"
 		on:click={() => {
@@ -84,7 +89,7 @@
 		}}>P</Button
 	>
 	<Button
-		variant="outline"
+		variant="ghost"
 		data-tooltip="Bullet List"
 		data-placement="right"
 		on:click={() => {
@@ -92,7 +97,7 @@
 		}}><List /></Button
 	>
 	<Button
-		variant="outline"
+		variant="ghost"
 		data-tooltip="Ordered List"
 		data-placement="right"
 		on:click={() => {
@@ -107,27 +112,21 @@
 		on:change={handleImage}
 	/>
 	<Button
-		variant="outline"
+		variant="ghost"
 		data-tooltip="Image"
 		data-placement="right"
 		on:click={() => fileInput.click()}><Image /></Button
 	>
 	<AlertDialog.Root>
 		<AlertDialog.Trigger asChild let:builder>
-			<Button
-				builders={[builder]}
-				variant="outline"
-				on:click={() => {
-					$showDeleteModal = true
-				}}><Trash2 /></Button
-			>
+			<Button builders={[builder]} variant="ghost"><Trash2 /></Button>
 		</AlertDialog.Trigger>
 		<AlertDialog.Content>
 			<AlertDialog.Header>
 				<AlertDialog.Title>Are you absolutely sure?</AlertDialog.Title>
 				<AlertDialog.Description>
-					This action cannot be undone. This will permanently delete your
-					account and remove your data from our servers.
+					This action cannot be undone. This will permanently delete this
+					presentation.
 				</AlertDialog.Description>
 			</AlertDialog.Header>
 			<AlertDialog.Footer>
@@ -138,7 +137,6 @@
 
 						if (result) {
 							console.log('Successfully deleted presentation')
-							$showDeleteModal = false
 							goto('/dashboard')
 						}
 					}}>Continue</AlertDialog.Action

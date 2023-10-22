@@ -6,6 +6,7 @@
 		updatePresentation,
 	} from '$lib/db/presentation'
 	import { Image } from '@tiptap/extension-image'
+	import { HorizontalRule } from '@tiptap/extension-horizontal-rule'
 	import {
 		currentPresentationId,
 		currentPresentationTitle,
@@ -37,6 +38,7 @@
 					placeholder: 'Start typing...',
 				}),
 				Image,
+				HorizontalRule,
 			],
 
 			onCreate: async () => {
@@ -57,6 +59,7 @@
 				$currentPresentationTitle = title
 				let currentTime = getCurrentTime()
 				updatePresentation(presentationId!, currentTime, title, $editorOutput)
+				console.log($editorOutput)
 			},
 		})
 	}
@@ -83,7 +86,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="editor p-6 rounded-md min-h-screen w-full mb-8"
+	class="editor p-6 rounded-md min-h-screen mb-8 max-w-4xl mx-auto prose"
 	bind:this={element}
 	on:click={() => {
 		editor?.commands.focus()

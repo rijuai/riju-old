@@ -6,7 +6,7 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 	content.forEach((item: Item) => {
 		let itemType = item.type
 
-		if (itemType === 'paragraph' && item.content === undefined)
+		if (itemType === 'horizontalRule')
 			return (htmlOutput += `</section><section>`)
 
 		if (itemType === 'heading') return (htmlOutput += getHeading(item))
