@@ -12,17 +12,22 @@
 	}
 </script>
 
-<nav class="flex justify-between items-center px-4 py-3 gap-4">
-	<ul class="flex items-center gap-4">
-		<li><a class="text-2xl" href="/dashboard">Riju</a></li>
+<nav class="flex justify-between items-center p-2 gap-1">
+	<ul class="flex items-center gap-1">
 		<li>
-			<a class="secondary" href="/dashboard/settings"><Settings /></a>
+			<Button variant="link" class="text-2xl" href="/dashboard">Riju</Button>
+		</li>
+		<li>
+			<Button variant="ghost" size="icon" href="/dashboard/settings"
+				><Settings class="h-5 w-5" /></Button
+			>
 		</li>
 	</ul>
-	<ul class="flex gap-4">
+	<ul class="flex gap-1">
 		{#if $page.url.pathname === '/dashboard/editor'}
 			<li>
 				<Button
+					data-sveltekit-preload-data
 					variant="ghost"
 					title="Present"
 					on:click={() => {
@@ -30,13 +35,14 @@
 						goto(`/present?id=${presentationId}`)
 					}}
 				>
-					<Play /> Present
+					<Play class="h-5 w-5 mr-1" /> Present
 				</Button>
 			</li>
 		{/if}
 		{#if $page.url.pathname === '/dashboard'}
 			<li>
 				<Button
+					data-sveltekit-preload-data
 					on:click={async () => {
 						const presentationId = await createPresentation(
 							$userId,

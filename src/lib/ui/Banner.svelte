@@ -2,8 +2,8 @@
 	export let message: string
 </script>
 
-<div class="w-full p-2 bg-amber-200">
-	<small class="text-center mb-0 flex justify-center text-zinc-800">
+<div class="w-full p-1.5 bg-amber-200">
+	<small class="text-center flex justify-center">
 		{message}
 	</small>
 </div>

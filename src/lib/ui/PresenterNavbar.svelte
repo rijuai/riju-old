@@ -14,28 +14,22 @@
 	}
 </script>
 
-<nav class="flex items-center justify-between px-3 py-2">
+<nav class="flex items-center justify-between p-2">
 	<ul>
 		<li>
-			<a href="/">Riju</a>
+			<Button variant="link" class="text-xl" href="/">Riju</Button>
 		</li>
 	</ul>
 	<ul class="flex gap-2">
 		<li>
-			<Button
-				variant="ghost"
-				data-tooltip="Change Theme"
-				data-placement="bottom"
-				href="#change_theme=true"
-				on:click={changeTheme}><Sparkles /> Change Theme</Button
+			<Button variant="ghost" on:click={changeTheme}
+				><Sparkles /> Change Theme</Button
 			>
 		</li>
 		<li>
 			<Button
 				variant="ghost"
-				data-tooltip="View Fullscreen"
-				data-placement="bottom"
-				href="#full_screen=true"
+				size="icon"
 				on:click={() => {
 					let element = document.querySelector('.reveal')
 
@@ -48,8 +42,7 @@
 		<li>
 			<Button
 				variant="ghost"
-				data-tooltip="Exit"
-				data-placement="bottom"
+				size="icon"
 				on:click={() => {
 					history.back()
 				}}><X /></Button

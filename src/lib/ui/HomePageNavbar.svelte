@@ -14,15 +14,16 @@
 	})
 </script>
 
-<nav class="flex justify-between px-3 py-2.5">
+<nav class="flex justify-between p-2">
 	<ul>
-		<li><a class="text-2xl" href="/">Riju</a></li>
+		<li><Button variant="link" class="text-2xl" href="/">Riju.ai</Button></li>
 	</ul>
-	<ul class="flex gap-4 items-center">
-		<li><a class="secondary" href="/docs/pricing">Pricing</a></li>
-		<li><a class="secondary" href="/docs/contact">Contact</a></li>
+	<ul class="flex gap-1 items-center">
+		<li><Button variant="link" href="/docs/contact">Contact</Button></li>
 		<li>
-			<Button variant="outline" href="/dashboard" role="button">Dashboard</Button>
+			<Button variant="outline" href="/dashboard" role="button"
+				>Dashboard</Button
+			>
 		</li>
 	</ul>
 </nav>
