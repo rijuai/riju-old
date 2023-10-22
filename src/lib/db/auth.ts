@@ -16,7 +16,6 @@ export const getUserSignInStatus = async (): Promise<boolean> => {
 	const user = (await supabase.auth.getSession()).data.session?.user
 
 	if (user) return true
-
 	return false
 }
 
