@@ -37,7 +37,7 @@
 	})
 </script>
 
-<main class="reveal aspect-video" style={$currentTheme}>
+<main class="reveal max-w-4xl rounded-md" style={$currentTheme}>
 	<div class="slides">
 		{#if htmlOutput === undefined}
 			<p class="flex justify-center items-center">Loading...</p>
@@ -46,5 +46,5 @@
 		{/if}
 	</div>
 
-	<WaterMark />
+	<WaterMark text="Created in Riju.ai" />
 </main>
