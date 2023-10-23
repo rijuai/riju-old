@@ -18,6 +18,7 @@
 	import { onDestroy, onMount } from 'svelte'
 	import EditorMenu from './EditorMenu.svelte'
 	import '$lib/assets/css/editor.css'
+	import { Document } from '@tiptap/extension-document'
 
 	let element: HTMLDivElement,
 		editor: Editor,
@@ -28,14 +29,26 @@
 		initializeEditor(element)
 	})
 
+	const CustomDocument = Document.extend({
+		content: 'heading block*',
+	})
+
 	const initializeEditor = (element: HTMLDivElement) => {
 		editor = new Editor({
 			element: element,
 			extensions: [
-				StarterKit,
+				CustomDocument,
+				StarterKit.configure({
+					document: false,
+				}),
 				Placeholder.configure({
-					emptyEditorClass: 'is-editor-empty',
-					placeholder: 'Start typing...',
+					placeholder: ({ node }) => {
+						if (node.type.name === 'heading') {
+							return 'What is the title?'
+						}
+
+						return 'Write your content here...'
+					},
 				}),
 				Image,
 				HorizontalRule,
@@ -94,8 +107,8 @@
 />
 
 <style lang="postcss">
-	:global(.tiptap p.is-empty::before) {
-		@apply text-slate-400 h-0 float-left pointer-events-none;
+	:global(.tiptap .is-empty::before) {
+		@apply float-left pointer-events-none h-0 text-gray-400;
 		content: attr(data-placeholder);
 	}
 </style>
