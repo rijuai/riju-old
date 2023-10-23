@@ -25,7 +25,7 @@
 			progress: true,
 			history: false,
 			center: true,
-			transition: 'slide',
+			transition: 'fade',
 			embedded: true,
 			autoAnimate: true,
 			overview: false,
