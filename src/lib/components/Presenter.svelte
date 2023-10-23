@@ -37,7 +37,7 @@
 	})
 </script>
 
-<main class="reveal max-w-4xl rounded-md" style={$currentTheme}>
+<main class="reveal" style={$currentTheme}>
 	<div class="slides">
 		{#if htmlOutput === undefined}
 			<p class="flex justify-center items-center">Loading...</p>

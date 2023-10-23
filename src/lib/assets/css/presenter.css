@@ -1,5 +1,5 @@
 .reveal {
-	@apply h-60 w-full aspect-video;
+	@apply w-full aspect-video;
 }
 
 .reveal h1,
