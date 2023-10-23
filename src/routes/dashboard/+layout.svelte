@@ -8,7 +8,7 @@
 <Banner
 	message="Riju is still in alpha so, you may experience bugs. Lot more AI themes, more
 		features coming soon."
-/> -->
+/>
 
 <DashboardNavbar />
 
