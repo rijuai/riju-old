@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Separator from '$lib/components/ui/separator/separator.svelte'
 	import { Linkedin, Twitter, Youtube } from 'lucide-svelte'
 </script>
 
@@ -9,7 +8,7 @@
 		<a href="https://www.youtube.com/channel/UCqCC3zl-WFdSujoAyKANCUg"
 			><Youtube />
 		</a>
-		<a href="/"><Linkedin /></a>
+		<a href="https://www.linkedin.com/company/rijuai"><Linkedin /></a>
 	</div>
 	<div class="flex justify-center gap-6 text-xs text-muted-foreground">
 		<a href="/docs/contact">Contact</a>
