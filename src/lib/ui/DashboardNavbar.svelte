@@ -12,18 +12,13 @@
 	}
 </script>
 
-<nav class="flex justify-between items-center p-2 gap-1">
-	<ul class="flex items-center gap-1">
+<nav class="flex justify-between items-center px-2.5 py-2 gap-1">
+	<ul>
 		<li>
 			<Button variant="link" class="text-2xl" href="/dashboard">Riju</Button>
 		</li>
-		<li>
-			<Button variant="ghost" size="icon" href="/dashboard/settings"
-				><Settings class="h-5 w-5" /></Button
-			>
-		</li>
 	</ul>
-	<ul class="flex gap-1">
+	<ul class="flex gap-3">
 		{#if $page.url.pathname === '/dashboard/editor'}
 			<li>
 				<Button
@@ -41,8 +36,12 @@
 		{/if}
 		{#if $page.url.pathname === '/dashboard'}
 			<li>
+				<Button variant="ghost" size="icon" href="/dashboard/settings"
+					><Settings class="h-5 w-5" /></Button
+				>
+			</li>
+			<li>
 				<Button
-					data-sveltekit-preload-data
 					on:click={async () => {
 						const presentationId = await createPresentation(
 							$userId,
@@ -52,7 +51,7 @@
 						goto(`/dashboard/editor?id=${presentationId}`)
 					}}
 				>
-					<PencilLine class="mr-2 h-5 w-5" />
+					<PencilLine class="h-5 w-5 mr-2" />
 					Create</Button
 				>
 			</li>
