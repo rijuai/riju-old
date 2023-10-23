@@ -15,3 +15,7 @@ p {
 .editor p {
 	@apply text-sm mb-2;
 }
+
+.editor hr {
+	@apply border-slate-300;
+}
