@@ -4,7 +4,6 @@
 	import Button from '$lib/components/ui/button/button.svelte'
 	import * as Card from '$lib/components/ui/card'
 	import Input from '$lib/components/ui/input/input.svelte'
-	import Separator from '$lib/components/ui/separator/separator.svelte'
 	import { signInWithGooogle, signInWithMagicLink } from '$lib/db/auth'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 
