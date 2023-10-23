@@ -4,7 +4,8 @@
 	import Button from '$lib/components/ui/button/button.svelte'
 	import * as Card from '$lib/components/ui/card'
 	import Input from '$lib/components/ui/input/input.svelte'
-	import { signInWithMagicLink } from '$lib/db/auth'
+	import Separator from '$lib/components/ui/separator/separator.svelte'
+	import { signInWithGooogle, signInWithMagicLink } from '$lib/db/auth'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 
 	let email: string,
@@ -37,7 +38,7 @@
 				and <a href="/docs/privacy">Privacy Policy</a>.
 			</p>
 		</Card.Content>
-		<Card.Footer>
+		<Card.Footer class="grid grid-cols-1 gap-4">
 			<Button
 				size="lg"
 				class="w-full"
@@ -48,6 +49,13 @@
 				}}
 				>{isEmailSent ? 'Loading...' : 'Continue'}
 			</Button>
+			<p class="text-center">OR</p>
+			<Button
+				variant="destructive"
+				on:click={async () => {
+					signInWithGooogle()
+				}}>Sign in with Google</Button
+			>
 		</Card.Footer>
 	</Card.Root>
 

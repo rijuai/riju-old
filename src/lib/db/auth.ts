@@ -12,6 +12,15 @@ export const signInWithMagicLink = async (email: string): Promise<boolean> => {
 	return true
 }
 
+export const signInWithGooogle = async () => {
+	const { data, error } = await supabase.auth.signInWithOAuth({
+		provider: 'google',
+		options: {
+			redirectTo: 'https://riju.ai/dashboard?userLoggedIn=true',
+		},
+	})
+}
+
 export const getUserSignInStatus = async (): Promise<boolean> => {
 	const user = (await supabase.auth.getSession()).data.session?.user
 
