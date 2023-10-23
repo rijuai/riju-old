@@ -17,6 +17,7 @@
 	import { StarterKit } from '@tiptap/starter-kit'
 	import { onDestroy, onMount } from 'svelte'
 	import EditorMenu from './EditorMenu.svelte'
+	import '$lib/assets/css/editor.css'
 
 	let element: HTMLDivElement,
 		editor: Editor,
@@ -85,7 +86,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="editor p-2 min-h-screen mb-8 max-w-4xl mx-auto prose prose-sm prose-h1:font-medium prose-h2:font-medium"
+	class="editor p-2 min-h-screen mb-8 max-w-2xl mx-auto prose prose-sm prose-h1:font-medium prose-h2:font-medium"
 	bind:this={element}
 	on:click={() => {
 		editor?.commands.focus()
