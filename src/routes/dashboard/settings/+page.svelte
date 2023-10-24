@@ -23,7 +23,7 @@
 		<Card.Title>Settings</Card.Title>
 	</Card.Header>
 	<Card.Content>
-		<Label>Email</Label>
+		<Label>Email Address</Label>
 		<Input type="email" disabled bind:value={userEmail} />
 	</Card.Content>
 	<Card.Footer class="flex justify-end">
