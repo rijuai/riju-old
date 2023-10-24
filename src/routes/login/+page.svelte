@@ -31,16 +31,15 @@
 				bind:value={email}
 			/>
 			<p class="text-sm text-muted-foreground">
-				By clicking below, you agree to the Riju <a href="/docs/terms"
-					>Terms of Service</a
+				By clicking below, you agree to the Riju <a
+					class="underline"
+					href="/docs/terms">Terms of Service</a
 				>
-				and <a href="/docs/privacy">Privacy Policy</a>.
+				and <a class="underline" href="/docs/privacy">Privacy Policy</a>.
 			</p>
 		</Card.Content>
 		<Card.Footer class="grid grid-cols-1 gap-4">
 			<Button
-				size="lg"
-				class="w-full"
 				disabled={isEmailSent}
 				on:click={async () => {
 					isEmailSent = true
