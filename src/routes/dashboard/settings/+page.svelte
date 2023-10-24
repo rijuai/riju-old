@@ -4,7 +4,6 @@
 	import { getUserEmail, signOut } from '$lib/db/auth'
 	import * as Card from '$lib/components/ui/card'
 	import { onMount } from 'svelte'
-	import Footer from '$lib/ui/Footer.svelte'
 	import { Label } from '$lib/components/ui/label'
 	import { Input } from '$lib/components/ui/input'
 	import { Button } from '$lib/components/ui/button'
