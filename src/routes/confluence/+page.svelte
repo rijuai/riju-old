@@ -1,5 +1,6 @@
 <script lang="ts">
 	import MetaData from '$lib/components/MetaData.svelte'
+	import '$lib/assets/css/presenter.css'
 	import { page } from '$app/stores'
 	import { currentTheme } from '$lib/stores/presenter'
 	import Reveal from 'reveal.js'
@@ -29,7 +30,9 @@
 			.eq('presentation_id', presentation_id)
 
 		if (error) return console.log(error)
-		return data![0]
+
+		console.log(data[0].content)
+		return data![0].content
 	}
 
 	onMount(async () => {
