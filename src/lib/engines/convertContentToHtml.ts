@@ -29,8 +29,11 @@ const getHeading = (item: Item): string => {
 }
 
 const getParagraph = (item: Item): string => {
-	const text = item.content[0].text
-	return `<p>${text}</p>`
+	if (item.content !== undefined) {
+		const text = item.content[0].text
+		return `<p>${text}</p>`
+	}
+	return ''
 }
 
 const getList = (item: Item): string => {
@@ -38,8 +41,10 @@ const getList = (item: Item): string => {
 	let list = `<${listType}>`
 
 	item.content.forEach((listItem: ListItem) => {
-		let text = listItem.content[0].content[0].text
-		list += `<li>${text}</li>`
+		if (listItem.content[0].content !== undefined) {
+			let text = listItem.content[0].content[0].text ?? ''
+			list += `<li>${text}</li>`
+		}
 	})
 	list += `</${listType}>`
 
