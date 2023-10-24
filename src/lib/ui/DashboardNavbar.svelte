@@ -12,7 +12,7 @@
 	}
 </script>
 
-<nav class="flex justify-between items-center px-2.5 py-2 gap-1">
+<nav class="flex justify-between items-center p-2.5 gap-1">
 	<ul>
 		<li>
 			<Button variant="link" class="text-2xl" href="/dashboard">Riju</Button>
