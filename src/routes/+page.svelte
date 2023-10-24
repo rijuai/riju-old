@@ -1,12 +1,10 @@
 <script>
 	import DemoVideo from '$lib/assets/videos/riju-demo-05-10-2023.mp4'
 	import MetaData from '$lib/components/MetaData.svelte'
-	import Banner from '$lib/ui/Banner.svelte'
 	import Footer from '$lib/ui/Footer.svelte'
-	import BeautifulThemesVideo from '$lib/assets/videos/beautiful-themes.mp4'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
-	import Button from '$lib/components/ui/button/button.svelte'
 	import * as Card from '$lib/components/ui/card'
+	import { Button } from '$lib/components/ui/button'
 </script>
 
 <MetaData
@@ -16,11 +14,11 @@
 
 <HomePageNavbar />
 
-<main class="mx-auto max-w-3xl">
+<main class="mx-auto max-w-4xl p-4">
 	<!-- hero -->
-	<section class="text-center max-w-2xl mx-auto mt-24 mb-28">
-		<h1 class="mb-4">Create presentations in seconds</h1>
-		<p class="mb-12">
+	<section class="text-center max-w-4xl mx-auto">
+		<h1 class="text-5xl mb-4">Create presentation in seconds</h1>
+		<p class="mb-12 text-muted-foreground text-lg tracking-wide">
 			Just write content, Riju will convert it into beautiful presentation. Just
 			like magic!
 		</p>
@@ -29,7 +27,9 @@
 			class="flex justify-center gap-3
 	"
 		>
-			<Button size="lg" href="/login">Create Account (Its Free)</Button>
+			<Button size="lg" href="/login" data-sveltekit-preload-data
+				>Create Account (Its Free)</Button
+			>
 		</div>
 	</section>
 
@@ -44,3 +44,9 @@
 
 	<Footer />
 </main>
+
+<style lang="postcss">
+	section {
+		@apply my-40;
+	}
+</style>
