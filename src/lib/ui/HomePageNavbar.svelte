@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/button/button.svelte'
-	import { onMount } from 'svelte'
 </script>
 
 <nav class="flex justify-between p-2.5">
