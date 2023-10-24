@@ -26,3 +26,11 @@
 .reveal ul li {
 	@apply text-xl mb-6;
 }
+
+.reveal ol {
+	@apply list-decimal pl-8;
+}
+
+.reveal ul {
+	@apply list-disc pl-8;
+}
