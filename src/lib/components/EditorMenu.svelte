@@ -10,10 +10,10 @@
 		Plus,
 		Trash2,
 	} from 'lucide-svelte'
-	import Button from './ui/button/button.svelte'
 	import * as AlertDialog from '$lib/components/ui/alert-dialog'
 	import { deletePresentation } from '$lib/db/presentation'
 	import { goto } from '$app/navigation'
+	import { Button } from '$lib/components/ui/button'
 
 	export let editor: Editor
 	let fileInput: HTMLInputElement

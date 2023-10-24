@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import { page } from '$app/stores'
-	import Button from '$lib/components/ui/button/button.svelte'
+	import { Button } from '$lib/components/ui/button'
 	import { createPresentation } from '$lib/db/presentation'
 	import { userId } from '$lib/stores/user'
 	import { PencilLine, Play, Settings } from 'lucide-svelte'

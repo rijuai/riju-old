@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button/button.svelte'
+	import { Button } from '$lib/components/ui/button'
 	import { changeTheme } from '$lib/stores/presenter'
 	import { Expand, Sparkles, X } from 'lucide-svelte'
 
@@ -14,10 +14,10 @@
 	}
 </script>
 
-<nav class="flex items-center justify-between p-2">
+<nav class="flex items-center justify-between px-2.5 py-2">
 	<ul>
 		<li>
-			<Button variant="link" class="text-xl" href="/">Riju</Button>
+			<Button variant="link" class="text-2xl" href="/">Riju</Button>
 		</li>
 	</ul>
 	<ul class="flex gap-2">
