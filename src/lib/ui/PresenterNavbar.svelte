@@ -14,7 +14,7 @@
 	}
 </script>
 
-<nav class="flex items-center justify-between px-2.5 py-2">
+<nav class="fixed w-full z-50 flex items-center justify-between px-2.5 py-2">
 	<ul>
 		<li>
 			<Button variant="link" class="text-2xl" href="/">Riju</Button>
