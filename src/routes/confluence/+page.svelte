@@ -61,7 +61,7 @@
 	description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
 
-<PresenterNavbar />
+<PresenterNavbar {presentationId} />
 
 <main class="reveal w-full aspect-video" style={$currentTheme}>
 	<div class="slides">
