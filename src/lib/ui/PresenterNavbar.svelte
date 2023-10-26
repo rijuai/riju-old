@@ -1,7 +1,10 @@
 <script lang="ts">
+	import { goto } from '$app/navigation'
 	import { Button } from '$lib/components/ui/button'
 	import { changeTheme } from '$lib/stores/presenter'
 	import { Expand, Sparkles, X } from 'lucide-svelte'
+
+	export let presentationId: string
 
 	const showFullScreen = (element: Element) => {
 		const requestFullScreen =
@@ -14,7 +17,9 @@
 	}
 </script>
 
-<nav class="fixed w-full z-50 flex items-center justify-between px-2.5 py-2">
+<nav
+	class="fixed w-full z-50 flex items-center justify-between px-2.5 py-2 bg-transparen bg-opacity-90 backdrop-blur-lg"
+>
 	<ul>
 		<li>
 			<Button variant="link" class="text-2xl" href="/">Riju</Button>
@@ -45,6 +50,7 @@
 				size="icon"
 				on:click={() => {
 					history.back()
+					goto(`/dashboard/editor?id=${presentationId}`)
 				}}><X /></Button
 			>
 		</li>
