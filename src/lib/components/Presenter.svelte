@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '$lib/assets/css/presenter.css'
+	import { onDestroy, onMount } from 'svelte'
 	import { getPresentationContent } from '$lib/db/presentation'
 	import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
 	import { currentTheme } from '$lib/stores/presenter'
@@ -7,7 +7,8 @@
 	import type { JSONContent } from '@tiptap/core'
 	import Reveal from 'reveal.js'
 	import 'reveal.js/dist/reveal.css'
-	import { onDestroy, onMount } from 'svelte'
+	// import presenter.css ONLY after reveal.css
+	import '$lib/assets/css/presenter.css'
 
 	export let presentationId: string
 	let reveal: Reveal.Api, htmlOutput: string, presentationContent: JSONContent
@@ -22,13 +23,13 @@
 
 		reveal.initialize({
 			controls: false,
+			overview: false,
 			progress: true,
 			history: false,
 			center: true,
-			transition: 'fade',
+			// transition: 'zoom',
 			embedded: true,
 			autoAnimate: true,
-			overview: false,
 		})
 	})
 
