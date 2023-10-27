@@ -13,48 +13,38 @@
 </script>
 
 <nav class="flex justify-between items-center p-2.5 gap-1">
-	<ul>
-		<li>
-			<Button variant="link" class="text-2xl" href="/dashboard">Riju</Button>
-		</li>
-	</ul>
-	<ul class="flex gap-3">
+	<Button variant="link" class="text-2xl" href="/dashboard">Riju</Button>
+	<div class="flex gap-3">
 		{#if $page.url.pathname === '/dashboard/editor'}
-			<li>
-				<Button
-					data-sveltekit-preload-data
-					variant="ghost"
-					title="Present"
-					on:click={() => {
-						let presentationId = getPresentationId()
-						goto(`/present?id=${presentationId}`)
-					}}
-				>
-					<Play class="h-5 w-5 mr-1" /> Present
-				</Button>
-			</li>
+			<Button
+				data-sveltekit-preload-data
+				variant="ghost"
+				title="Present"
+				on:click={() => {
+					let presentationId = getPresentationId()
+					goto(`/present?id=${presentationId}`)
+				}}
+			>
+				<Play class="h-5 w-5 mr-1" /> Present
+			</Button>
 		{/if}
 		{#if $page.url.pathname === '/dashboard'}
-			<li>
-				<Button variant="ghost" size="icon" href="/dashboard/settings"
-					><Settings class="h-5 w-5" /></Button
-				>
-			</li>
-			<li>
-				<Button
-					on:click={async () => {
-						const presentationId = await createPresentation(
-							$userId,
-							'Untitled Presentation',
-						)
+			<Button variant="ghost" size="icon" href="/dashboard/settings"
+				><Settings class="h-5 w-5" /></Button
+			>
+			<Button
+				on:click={async () => {
+					const presentationId = await createPresentation(
+						$userId,
+						'Untitled Presentation',
+					)
 
-						goto(`/dashboard/editor?id=${presentationId}`)
-					}}
-				>
-					<PencilLine class="h-5 w-5 mr-2" />
-					Create</Button
-				>
-			</li>
+					goto(`/dashboard/editor?id=${presentationId}`)
+				}}
+			>
+				<PencilLine class="h-5 w-5 mr-2" />
+				Create</Button
+			>
 		{/if}
-	</ul>
+	</div>
 </nav>
