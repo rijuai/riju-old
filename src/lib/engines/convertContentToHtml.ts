@@ -26,9 +26,12 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 }
 
 const getHeading = (item: Item): string => {
-	const level = item.attrs.level
-	const text = item.content[0].text
-	return `<h${level}>${text}</h${level}>`
+	if (item.content !== undefined) {
+		const level = item.attrs.level
+		const text = item.content[0].text
+		return `<h${level}>${text}</h${level}>`
+	}
+	return ''
 }
 
 const getParagraph = (item: Item): string => {
