@@ -7,7 +7,6 @@
 	import type { JSONContent } from '@tiptap/core'
 	import Reveal from 'reveal.js'
 	import 'reveal.js/dist/reveal.css'
-	// import presenter.css ONLY after reveal.css
 	import '$lib/assets/css/presenter.css'
 
 	export let presentationId: string
@@ -22,13 +21,13 @@
 		reveal = new Reveal()
 
 		reveal.initialize({
+			embedded: true,
 			controls: false,
 			overview: false,
 			progress: true,
 			history: false,
 			center: true,
-			// transition: 'zoom',
-			embedded: true,
+			transition: 'slide',
 			autoAnimate: true,
 		})
 	})
@@ -38,7 +37,7 @@
 	})
 </script>
 
-<main class="reveal" style={$currentTheme}>
+<div class="reveal" style={$currentTheme}>
 	<div class="slides">
 		{#if htmlOutput === undefined}
 			<p class="flex justify-center items-center">Loading...</p>
@@ -46,6 +45,12 @@
 			{@html htmlOutput}
 		{/if}
 	</div>
+</div>
 
-	<WaterMark text="Created in Riju.ai" />
-</main>
+<WaterMark text="Created in Riju.ai" />
+
+<style lang="postcss">
+	.reveal {
+		@apply h-screen w-full;
+	}
+</style>
