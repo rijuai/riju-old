@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onDestroy, onMount } from 'svelte'
+	import '$lib/assets/css/presenter.css'
 	import { getPresentationContent } from '$lib/db/presentation'
 	import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
 	import { currentTheme } from '$lib/stores/presenter'
@@ -7,7 +7,7 @@
 	import type { JSONContent } from '@tiptap/core'
 	import Reveal from 'reveal.js'
 	import 'reveal.js/dist/reveal.css'
-	import '$lib/assets/css/presenter.css'
+	import { onDestroy, onMount } from 'svelte'
 
 	export let presentationId: string
 	let reveal: Reveal.Api, htmlOutput: string, presentationContent: JSONContent
@@ -27,7 +27,7 @@
 			progress: true,
 			history: false,
 			center: true,
-			transition: 'slide',
+			transition: 'zoom',
 			autoAnimate: true,
 		})
 	})
@@ -46,6 +46,10 @@
 		{/if}
 	</div>
 </div>
+
+<footer class="fixed bottom-0 w-full py-4 bg-black">
+	<!-- <WaterMark text="Created in Riju.ai" /> -->
+</footer>
 
 <WaterMark text="Created in Riju.ai" />
 

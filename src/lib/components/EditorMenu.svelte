@@ -1,4 +1,8 @@
 <script lang="ts">
+	import { goto } from '$app/navigation'
+	import * as AlertDialog from '$lib/components/ui/alert-dialog'
+	import { Button } from '$lib/components/ui/button'
+	import { deletePresentation } from '$lib/db/presentation'
 	import { currentPresentationId } from '$lib/stores/editor'
 	import type { Editor } from '@tiptap/core'
 	import {
@@ -10,10 +14,6 @@
 		Plus,
 		Trash2,
 	} from 'lucide-svelte'
-	import * as AlertDialog from '$lib/components/ui/alert-dialog'
-	import { deletePresentation } from '$lib/db/presentation'
-	import { goto } from '$app/navigation'
-	import { Button } from '$lib/components/ui/button'
 
 	export let editor: Editor
 	let fileInput: HTMLInputElement

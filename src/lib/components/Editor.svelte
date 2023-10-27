@@ -1,11 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores'
+	import '$lib/assets/css/editor.css'
 	import {
 		getPresentationContent,
 		updatePresentation,
 	} from '$lib/db/presentation'
-	import { Image } from '@tiptap/extension-image'
-	import { HorizontalRule } from '@tiptap/extension-horizontal-rule'
 	import {
 		currentPresentationId,
 		currentPresentationTitle,
@@ -13,12 +12,13 @@
 	} from '$lib/stores/editor'
 	import { getCurrentTime } from '$lib/utils/time'
 	import { Editor } from '@tiptap/core'
+	import { Document } from '@tiptap/extension-document'
+	import { HorizontalRule } from '@tiptap/extension-horizontal-rule'
+	import { Image } from '@tiptap/extension-image'
 	import { Placeholder } from '@tiptap/extension-placeholder'
 	import { StarterKit } from '@tiptap/starter-kit'
 	import { onDestroy, onMount } from 'svelte'
 	import EditorMenu from './EditorMenu.svelte'
-	import '$lib/assets/css/editor.css'
-	import { Document } from '@tiptap/extension-document'
 
 	let element: HTMLDivElement,
 		editor: Editor,

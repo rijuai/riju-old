@@ -25,7 +25,7 @@
 <MetaData title="Riju | Dashboard" description="Your presentations" />
 
 {#await getPresentations()}
-	<p class="text-center mt-4" aria-busy="true">Loading...</p>
+	<p class="text-center mt-4">Loading...</p>
 {:then presentations}
 	{#if presentations !== undefined && presentations.length > 0}
 		<div class="grid grid-cols-5 gap-8">

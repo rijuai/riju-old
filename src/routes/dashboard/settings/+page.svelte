@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import MetaData from '$lib/components/MetaData.svelte'
-	import { getUserEmail, signOut } from '$lib/db/auth'
-	import * as Card from '$lib/components/ui/card'
-	import { onMount } from 'svelte'
-	import { Label } from '$lib/components/ui/label'
-	import { Input } from '$lib/components/ui/input'
 	import { Button } from '$lib/components/ui/button'
+	import * as Card from '$lib/components/ui/card'
+	import { Input } from '$lib/components/ui/input'
+	import { Label } from '$lib/components/ui/label'
+	import { getUserEmail, signOut } from '$lib/db/auth'
+	import { onMount } from 'svelte'
 
 	let userEmail: string
 

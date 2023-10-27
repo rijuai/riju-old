@@ -1,10 +1,10 @@
 <script>
 	import DemoVideo from '$lib/assets/videos/riju-demo-05-10-2023.mp4'
 	import MetaData from '$lib/components/MetaData.svelte'
+	import { Button } from '$lib/components/ui/button'
+	import * as Card from '$lib/components/ui/card'
 	import Footer from '$lib/ui/Footer.svelte'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
-	import * as Card from '$lib/components/ui/card'
-	import { Button } from '$lib/components/ui/button'
 </script>
 
 <MetaData
@@ -23,10 +23,7 @@
 			like magic!
 		</p>
 
-		<div
-			class="flex justify-center gap-3
-	"
-		>
+		<div class="flex justify-center gap-3">
 			<Button size="lg" href="/login" data-sveltekit-preload-data
 				>Create Account (Its Free)</Button
 			>
