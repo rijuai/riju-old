@@ -1,17 +1,16 @@
 <script lang="ts">
-	import QRCode from 'qrcode'
-	import { onMount } from 'svelte'
-	import { saveAs } from 'file-saver'
 	import MetaData from '$lib/components/MetaData.svelte'
-	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
-	import * as Card from '$lib/components/ui/card'
 	import Button from '$lib/components/ui/button/button.svelte'
+	import * as Card from '$lib/components/ui/card'
 	import Input from '$lib/components/ui/input/input.svelte'
 	import Label from '$lib/components/ui/label/label.svelte'
+	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
+	import { saveAs } from 'file-saver'
+	import QRCode from 'qrcode'
+	import { onMount } from 'svelte'
 
 	let text = 'https://riju.ai',
-		canvasEl: HTMLCanvasElement,
-		downloadType: string = 'svg'
+		canvasEl: HTMLCanvasElement
 
 	const getQrCode = (canvasEl: HTMLElement, string: string) => {
 		QRCode.toCanvas(canvasEl, string, {
