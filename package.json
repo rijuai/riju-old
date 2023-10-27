@@ -26,9 +26,9 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@aws-sdk/client-s3": "^3.436.0",
-		"@aws-sdk/s3-request-presigner": "^3.436.0",
-		"@supabase/supabase-js": "^2.38.3",
+		"@aws-sdk/client-s3": "^3.437.0",
+		"@aws-sdk/s3-request-presigner": "^3.437.0",
+		"@supabase/supabase-js": "^2.38.4",
 		"@tiptap/core": "^2.1.12",
 		"@tiptap/extension-document": "^2.1.12",
 		"@tiptap/extension-horizontal-rule": "^2.1.12",
@@ -37,7 +37,7 @@
 		"@tiptap/pm": "^2.1.12",
 		"@tiptap/starter-kit": "^2.1.12",
 		"@types/reveal.js": "^4.4.5",
-		"bits-ui": "^0.8.0",
+		"bits-ui": "^0.8.3",
 		"clsx": "^2.0.0",
 		"dayjs": "^1.11.10",
 		"file-saver": "^2.0.5",
@@ -46,7 +46,7 @@
 		"qrcode": "^1.5.3",
 		"reveal.js": "^4.6.1",
 		"tailwind-merge": "^1.14.0",
-		"tailwind-variants": "^0.1.16",
+		"tailwind-variants": "^0.1.17",
 		"tslib": "^2.6.2",
 		"typescript": "^5.2.2"
 	}
