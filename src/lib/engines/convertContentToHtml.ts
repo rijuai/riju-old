@@ -57,5 +57,5 @@ const getList = (item: Item): string => {
 const getImage = (item: Item): string => {
 	const src = item.attrs.src
 	const alt = item.attrs.alt ?? ''
-	return `<img data-src=${src} alt=${alt} />`
+	return `<img class="r-stretch" data-src=${src} alt=${alt} />`
 }
