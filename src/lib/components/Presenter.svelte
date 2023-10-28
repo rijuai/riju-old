@@ -47,10 +47,6 @@
 	</div>
 </div>
 
-<footer class="fixed bottom-0 w-full py-4 bg-black">
-	<!-- <WaterMark text="Created in Riju.ai" /> -->
-</footer>
-
 <WaterMark text="Created in Riju.ai" />
 
 <style lang="postcss">
