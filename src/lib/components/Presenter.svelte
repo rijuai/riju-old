@@ -2,7 +2,7 @@
 	import '$lib/assets/css/presenter.css'
 	import { getPresentationContent } from '$lib/db/presentation'
 	import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
-	import { currentTheme } from '$lib/stores/presenter'
+	import { currentTheme, transitionType } from '$lib/stores/presenter'
 	import WaterMark from '$lib/ui/WaterMark.svelte'
 	import type { JSONContent } from '@tiptap/core'
 	import Reveal from 'reveal.js'
@@ -31,6 +31,14 @@
 			autoAnimate: true,
 		})
 	})
+
+	$: {
+		if (reveal) {
+			reveal.configure({
+				transition: $transitionType,
+			})
+		}
+	}
 
 	onDestroy(() => {
 		reveal.destroy()

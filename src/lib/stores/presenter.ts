@@ -4,6 +4,16 @@ export const currentTheme = writable(
 	'background-image: radial-gradient(circle at center right, rgb(0,233,236),rgb(130,183,255));',
 )
 
+export enum TransitionType {
+	None = 'none',
+	Slide = 'slide',
+	Zoom = 'zoom',
+	Concave = 'concave',
+	Convex = 'convex',
+}
+
+export let transitionType = writable<TransitionType>(TransitionType.Slide)
+
 export const themes = readable([
 	'background-image: linear-gradient(45deg, rgb(177,140,255) 0%,rgb(200, 215, 253) 75%,rgb(143, 230, 243) 100%);',
 	'background-image: linear-gradient(157.5deg, rgb(95, 97, 179) 0%, rgb(95, 97, 179) 16%,rgb(115, 120, 184) 16%, rgb(115, 120, 184) 20%,rgb(135, 142, 188) 20%, rgb(135, 142, 188) 32%,rgb(155, 165, 193) 32%, rgb(155, 165, 193) 38%,rgb(175, 187, 198) 38%, rgb(175, 187, 198) 48%,rgb(195, 210, 203) 48%, rgb(195, 210, 203) 51%,rgb(215, 232, 207) 51%, rgb(215, 232, 207) 59%,rgb(235, 255, 212) 59%, rgb(235, 255, 212) 100%),linear-gradient(135deg, rgb(95, 97, 179) 0%, rgb(95, 97, 179) 16%,rgb(115, 120, 184) 16%, rgb(115, 120, 184) 20%,rgb(135, 142, 188) 20%, rgb(135, 142, 188) 32%,rgb(155, 165, 193) 32%, rgb(155, 165, 193) 38%,rgb(175, 187, 198) 38%, rgb(175, 187, 198) 48%,rgb(195, 210, 203) 48%, rgb(195, 210, 203) 51%,rgb(215, 232, 207) 51%, rgb(215, 232, 207) 59%,rgb(235, 255, 212) 59%, rgb(235, 255, 212) 100%),linear-gradient(112.5deg, rgb(95, 97, 179) 0%, rgb(95, 97, 179) 16%,rgb(115, 120, 184) 16%, rgb(115, 120, 184) 20%,rgb(135, 142, 188) 20%, rgb(135, 142, 188) 32%,rgb(155, 165, 193) 32%, rgb(155, 165, 193) 38%,rgb(175, 187, 198) 38%, rgb(175, 187, 198) 48%,rgb(195, 210, 203) 48%, rgb(195, 210, 203) 51%,rgb(215, 232, 207) 51%, rgb(215, 232, 207) 59%,rgb(235, 255, 212) 59%, rgb(235, 255, 212) 100%),linear-gradient(90deg, rgb(236, 151, 145),rgb(201, 243, 43)); background-blend-mode:overlay,overlay,overlay,normal;',
@@ -16,10 +26,10 @@ export const themes = readable([
 	'background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.04),rgba(0,0,0,0.08),rgba(0,0,0,0.05),rgba(0,0,0,0.04),rgba(0,0,0,0.01),rgba(0,0,0,0.1),rgba(0,0,0,0.09),rgba(0,0,0,0.1),rgba(0,0,0,0.03),transparent,rgba(0,0,0,0.07),rgba(0,0,0,0.03),rgba(0,0,0,0.06) 4px),linear-gradient(90deg, rgb(193, 255, 253),rgba(59,104,247, 0.46));',
 ])
 
-const previousNumbers = new Set<number>()
-
 export const getRandomNumber = (length: number): number => {
-	const maxNumber = length
+	const previousNumbers = new Set<number>(),
+		maxNumber = length
+
 	let randomNumber: number
 	do {
 		randomNumber = Math.floor(Math.random() * maxNumber)
