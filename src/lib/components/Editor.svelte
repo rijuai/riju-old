@@ -31,13 +31,11 @@
 		showLoader = true
 
 	onMount(async () => {
+		initializeEditor(element)
 		presentationId = getPresentationId()
 		presentationContent = await getPresentationContent(presentationId!)
-		if (presentationContent) {
-			showLoader = false
-			initializeEditor(element)
-			editor.commands.setContent(presentationContent)
-		}
+		editor.commands.setContent(presentationContent)
+		showLoader = false
 	})
 
 	const CustomDocument = Document.extend({
