@@ -6,8 +6,6 @@
 	<Button variant="link" class="text-2xl" href="/">Riju.ai</Button>
 	<div class="flex gap-1.5 items-center">
 		<Button variant="link" href="/docs/contact">Contact</Button>
-		<Button variant="secondary" href="/dashboard" role="button"
-			>Dashboard</Button
-		>
+		<Button variant="secondary" href="/dashboard">Dashboard</Button>
 	</div>
 </nav>
