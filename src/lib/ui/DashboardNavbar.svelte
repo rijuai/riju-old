@@ -19,13 +19,12 @@
 			<Button
 				data-sveltekit-preload-data
 				variant="ghost"
-				title="Present"
 				on:click={() => {
 					let presentationId = getPresentationId()
 					goto(`/present?id=${presentationId}`)
 				}}
 			>
-				<Play class="h-5 w-5 mr-1" /> Present
+				<Play class="h-5 w-5 mr-1" />Present
 			</Button>
 		{/if}
 		{#if $page.url.pathname === '/dashboard'}
@@ -38,7 +37,6 @@
 						$userId,
 						'Untitled Presentation',
 					)
-
 					goto(`/dashboard/editor?id=${presentationId}`)
 				}}
 			>
