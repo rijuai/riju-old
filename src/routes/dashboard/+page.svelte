@@ -1,6 +1,7 @@
 <script lang="ts">
 	import MetaData from '$lib/components/MetaData.svelte'
 	import { getPresentations } from '$lib/db/presentation'
+	import { Loader } from 'lucide-svelte'
 	import { onMount } from 'svelte'
 
 	let presentations: Presentations = []
@@ -25,7 +26,7 @@
 <MetaData title="Riju | Dashboard" description="Your presentations" />
 
 {#await getPresentations()}
-	<p class="text-center mt-4">Loading...</p>
+	<Loader class="mx-auto animate-spin mt-8" />
 {:then presentations}
 	{#if presentations !== undefined && presentations.length > 0}
 		<div class="grid grid-cols-5 gap-8">

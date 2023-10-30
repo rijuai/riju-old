@@ -12,21 +12,32 @@
 	} from '$lib/stores/editor'
 	import { getCurrentTime } from '$lib/utils/time'
 	import { Editor } from '@tiptap/core'
+	import BubbleMenu from '@tiptap/extension-bubble-menu'
 	import { Document } from '@tiptap/extension-document'
-	import { HorizontalRule } from '@tiptap/extension-horizontal-rule'
 	import { Image } from '@tiptap/extension-image'
 	import { Placeholder } from '@tiptap/extension-placeholder'
+
+	import Underline from '@tiptap/extension-underline'
 	import { StarterKit } from '@tiptap/starter-kit'
+	import { Loader } from 'lucide-svelte'
 	import { onDestroy, onMount } from 'svelte'
 	import EditorMenu from './EditorMenu.svelte'
 
 	let element: HTMLDivElement,
+		bubbleMenu: HTMLElement,
 		editor: Editor,
 		presentationId: string,
-		presentationContent: string
+		presentationContent: string,
+		showLoader = true
 
 	onMount(async () => {
-		initializeEditor(element)
+		presentationId = getPresentationId()
+		presentationContent = await getPresentationContent(presentationId!)
+		if (presentationContent) {
+			showLoader = false
+			initializeEditor(element)
+			editor.commands.setContent(presentationContent)
+		}
 	})
 
 	const CustomDocument = Document.extend({
@@ -46,18 +57,17 @@
 						if (node.type.name === 'heading') {
 							return 'What is the title?'
 						}
-
 						return 'Write your content here...'
 					},
 				}),
 				Image,
-				HorizontalRule,
+				Underline,
+				BubbleMenu.configure({
+					element: bubbleMenu,
+				}),
 			],
 
 			onCreate: async () => {
-				presentationId = getPresentationId()
-				presentationContent = await getPresentationContent(presentationId!)
-				editor.commands.setContent(presentationContent)
 				$editorOutput = editor.getJSON().content!
 
 				$currentPresentationId = presentationId!
@@ -96,10 +106,16 @@
 	<EditorMenu {editor} />
 {/if}
 
+{#if showLoader}
+	<Loader class="mx-auto mt-4 animate-spin" />
+{/if}
+
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="editor p-2 min-h-screen mb-8 max-w-2xl mx-auto prose prose-sm prose-h1:font-medium prose-h2:font-medium"
+	class="editor p-2 min-h-screen mb-8 max-w-2xl mx-auto prose prose-sm prose-h1:font-medium prose-h2:font-medium {showLoader
+		? 'none'
+		: 'block'}"
 	bind:this={element}
 	on:click={() => {
 		editor?.commands.focus()

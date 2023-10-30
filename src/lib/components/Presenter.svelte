@@ -5,18 +5,24 @@
 	import { currentTheme, transitionType } from '$lib/stores/presenter'
 	import WaterMark from '$lib/ui/WaterMark.svelte'
 	import type { JSONContent } from '@tiptap/core'
+	import { Loader } from 'lucide-svelte'
 	import Reveal from 'reveal.js'
 	import 'reveal.js/dist/reveal.css'
 	import { onDestroy, onMount } from 'svelte'
 
 	export let presentationId: string
-	let reveal: Reveal.Api, htmlOutput: string, presentationContent: JSONContent
+	let reveal: Reveal.Api,
+		htmlOutput: string,
+		presentationContent: JSONContent,
+		showLoader = true
 
 	onMount(async () => {
 		presentationContent = await getPresentationContent(presentationId!)
 
-		if (presentationContent)
+		if (presentationContent) {
 			htmlOutput = convertContentToHtml(presentationContent)
+			showLoader = false
+		}
 
 		reveal = new Reveal()
 
@@ -47,8 +53,8 @@
 
 <div class="reveal" style={$currentTheme}>
 	<div class="slides">
-		{#if htmlOutput === undefined}
-			<p class="flex justify-center items-center">Loading...</p>
+		{#if showLoader}
+			<Loader class="fixed left-1/2 top-1/2 animate-spin" />
 		{:else}
 			{@html htmlOutput}
 		{/if}
