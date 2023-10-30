@@ -60,8 +60,8 @@ dependencies:
     specifier: ^1.5.3
     version: 1.5.3
   reveal.js:
-    specifier: ^5.0.0
-    version: 5.0.0
+    specifier: ^5.0.1
+    version: 5.0.1
   tailwind-merge:
     specifier: ^2.0.0
     version: 2.0.0
@@ -78,10 +78,10 @@ dependencies:
 devDependencies:
   '@sveltejs/adapter-cloudflare':
     specifier: ^2.3.3
-    version: 2.3.3(@sveltejs/kit@1.27.1)
+    version: 2.3.3(@sveltejs/kit@1.27.2)
   '@sveltejs/kit':
-    specifier: ^1.27.1
-    version: 1.27.1(svelte@4.2.2)(vite@4.5.0)
+    specifier: ^1.27.2
+    version: 1.27.2(svelte@4.2.2)(vite@4.5.0)
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.3.5)
@@ -1558,19 +1558,19 @@ packages:
       - supports-color
     dev: false
 
-  /@sveltejs/adapter-cloudflare@2.3.3(@sveltejs/kit@1.27.1):
+  /@sveltejs/adapter-cloudflare@2.3.3(@sveltejs/kit@1.27.2):
     resolution: {integrity: sha512-bbcm6kq4dEluFtFJZed3KSRG4f5GUElYkVfOmnPruTqZ29nTElPJTomAu5QCp7GLkwA26O3h1Dk7+d9yLTQEXg==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
       '@cloudflare/workers-types': 4.20231025.0
-      '@sveltejs/kit': 1.27.1(svelte@4.2.2)(vite@4.5.0)
+      '@sveltejs/kit': 1.27.2(svelte@4.2.2)(vite@4.5.0)
       esbuild: 0.18.20
       worktop: 0.8.0-next.15
     dev: true
 
-  /@sveltejs/kit@1.27.1(svelte@4.2.2)(vite@4.5.0):
-    resolution: {integrity: sha512-nYkOUJKbeI8fcwvt/cyhTdz6VG4kT6XVprNnzfIwif+IZ8RvxvJuPhPhYjz14ASIcMLpq8xC6D3X4xH3bvWi+Q==}
+  /@sveltejs/kit@1.27.2(svelte@4.2.2)(vite@4.5.0):
+    resolution: {integrity: sha512-2w2VbPpK8DI3QCSVa2UNAv5sKNks1LT8GsEdpk41ffOyO2znGx2ZwcRWacsqlvh3d9lncZuDdANvCbTbuKvy3Q==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -3243,9 +3243,9 @@ packages:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
 
-  /reveal.js@5.0.0:
-    resolution: {integrity: sha512-GXbW7GVJxgJh5szlh/jnifAMt9KBDh7Q4Or+v0q1hIaddn6vr4cvUFxoYsAfa5Hmw2G+6fIwZCDf3firB5FJHg==}
-    engines: {node: '>=10.0.0'}
+  /reveal.js@5.0.1:
+    resolution: {integrity: sha512-cgbEasV/Yh8QIRyCCiOHRtio6uxAwmOAhyr80vegX2P69/iwE1FX77EXJ9NAPvcODxoIyYrgvxAaPxR5TKcsFw==}
+    engines: {node: '>=18.0.0'}
     dev: false
 
   /rimraf@2.7.1:
