@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores'
 	import '$lib/assets/css/editor.css'
+	import EditorMenu from '$lib/components/EditorMenu.svelte'
 	import {
 		getPresentationContent,
 		updatePresentation,
@@ -12,19 +13,24 @@
 	} from '$lib/stores/editor'
 	import { getCurrentTime } from '$lib/utils/time'
 	import { Editor } from '@tiptap/core'
-	import BubbleMenu from '@tiptap/extension-bubble-menu'
+	import { BubbleMenu } from '@tiptap/extension-bubble-menu'
 	import { Document } from '@tiptap/extension-document'
 	import { Image } from '@tiptap/extension-image'
 	import { Placeholder } from '@tiptap/extension-placeholder'
-
 	import Underline from '@tiptap/extension-underline'
 	import { StarterKit } from '@tiptap/starter-kit'
-	import { Loader } from 'lucide-svelte'
+	import {
+		Bold,
+		Italic,
+		Loader,
+		Strikethrough,
+		UnderlineIcon,
+	} from 'lucide-svelte'
 	import { onDestroy, onMount } from 'svelte'
-	import EditorMenu from './EditorMenu.svelte'
+	import { Button } from './ui/button'
 
 	let element: HTMLDivElement,
-		bubbleMenu: HTMLElement,
+		contextMenu: HTMLElement,
 		editor: Editor,
 		presentationId: string,
 		presentationContent: string,
@@ -61,7 +67,7 @@
 				Image,
 				Underline,
 				BubbleMenu.configure({
-					element: bubbleMenu,
+					element: contextMenu,
 				}),
 			],
 
@@ -103,6 +109,41 @@
 {#if editor}
 	<EditorMenu {editor} />
 {/if}
+
+<!-- bubble menu -->
+<div
+	class="flex gap-1 p-0.5 bg-primary-foreground shadow rounded-lg text-xs"
+	bind:this={contextMenu}
+>
+	<Button
+		variant="ghost"
+		size="sm"
+		on:click={() => {
+			editor.chain().focus().toggleBold().run()
+		}}><Bold /></Button
+	>
+	<Button
+		variant="ghost"
+		size="sm"
+		on:click={() => {
+			editor.chain().focus().toggleItalic().run()
+		}}><Italic /></Button
+	>
+	<Button
+		variant="ghost"
+		size="sm"
+		on:click={() => {
+			editor.chain().focus().toggleUnderline().run()
+		}}><UnderlineIcon /></Button
+	>
+	<Button
+		variant="ghost"
+		size="sm"
+		on:click={() => {
+			editor.chain().focus().toggleStrike().run()
+		}}><Strikethrough /></Button
+	>
+</div>
 
 {#if showLoader}
 	<Loader class="mx-auto mt-4 animate-spin" />

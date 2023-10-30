@@ -9,6 +9,7 @@ declare global {
 	}
 
 	type Item = {
+		[x: string]: undefined
 		type: string
 		content: any[]
 		attrs: {
@@ -17,15 +18,25 @@ declare global {
 			alt: string
 			level: number
 		}
+
 		text: string
 	}
 
 	type ListItem = {
+		type: string
 		content: {
+			type: string
+			marks: Marks[]
+			text: string
 			content: {
 				text: string
+				marks: Marks[]
 			}[]
 		}[]
+	}
+
+	type Marks = {
+		type: string
 	}
 
 	type Presentations = {

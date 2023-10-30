@@ -25,18 +25,27 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 const getHeading = (item: Item): string => {
 	if (item.content !== undefined) {
 		const level = item.attrs.level
-		const text = item.content[0].text
+		let text = ''
+		item.content.forEach((element) => {
+			if (element.marks !== undefined) {
+				text += applyMarks(element.text, element.marks)
+			} else text += element.text
+		})
 		return `<h${level}>${text}</h${level}>`
 	}
 	return ''
 }
 
 const getParagraph = (item: Item): string => {
+	let text = ''
 	if (item.content !== undefined) {
-		const text = item.content[0].text
-		return `<p>${text}</p>`
+		item.content.forEach((element) => {
+			if (element.marks !== undefined) {
+				text += applyMarks(element.text, element.marks)
+			} else text += element.text
+		})
 	}
-	return ''
+	return `<p>${text}</p>`
 }
 
 const getList = (item: Item): string => {
@@ -45,8 +54,17 @@ const getList = (item: Item): string => {
 
 	item.content.forEach((listItem: ListItem) => {
 		if (listItem.content[0].content !== undefined) {
-			let text = listItem.content[0].content[0].text ?? ''
-			list += `<li>${text}</li>`
+			listItem.content.forEach((content) => {
+				if (content.type === 'paragraph') {
+					let text = ''
+					content.content.forEach((element) => {
+						if (element.marks !== undefined) {
+							text += applyMarks(element.text, element.marks)
+						} else text += element.text
+					})
+					list += `<li>${text}</li>`
+				}
+			})
 		}
 	})
 	list += `</${listType}>`
@@ -58,4 +76,27 @@ const getImage = (item: Item): string => {
 	const src = item.attrs.src
 	const alt = item.attrs.alt ?? ''
 	return `<img class="r-stretch" data-src=${src} alt=${alt} />`
+}
+
+const applyMarks = (text: string, marks: Marks[]): string => {
+	let html = ''
+	let openTags: string[] = []
+	for (const mark of marks) {
+		if (mark.type === 'bold') openTags.push('<strong>')
+		if (mark.type === 'italic') openTags.push('<em>')
+		if (mark.type === 'underline') openTags.push('<u>')
+		if (mark.type === 'strike') openTags.push('<s>')
+	}
+
+	openTags.forEach((tag) => {
+		html += tag
+	})
+
+	html += text
+
+	openTags.reverse().forEach((tag) => {
+		html += tag.replace('<', '</')
+	})
+
+	return html
 }
