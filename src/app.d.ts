@@ -44,15 +44,6 @@ declare global {
 		title: string
 		preview_img_url: string
 	}[]
-
-	enum TransitionType {
-		None = 'none',
-		Slide = 'slide',
-		Fade = 'fade',
-		Zoom = 'zoom',
-		Concave = 'concave',
-		Convex = 'convex',
-	}
 }
 
 export {}

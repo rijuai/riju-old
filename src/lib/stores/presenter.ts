@@ -4,6 +4,15 @@ export const currentTheme = writable(
 	'background-image: radial-gradient(circle at center right, rgb(0,233,236),rgb(130,183,255));',
 )
 
+enum TransitionType {
+	None = 'none',
+	Slide = 'slide',
+	Fade = 'fade',
+	Zoom = 'zoom',
+	Concave = 'concave',
+	Convex = 'convex',
+}
+
 export let transitionType: Writable<TransitionType> = writable(
 	TransitionType.Zoom,
 )
