@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import * as AlertDialog from '$lib/components/ui/alert-dialog'
-	import { Button } from '$lib/components/ui/button'
+	import { Button, buttonVariants } from '$lib/components/ui/button'
 	import { deletePresentation } from '$lib/db/presentation'
 	import { currentPresentationId } from '$lib/stores/editor'
 	import type { Editor } from '@tiptap/core'
@@ -45,7 +45,7 @@
 
 		const { presignedUrl, objectKey } = await getPresignedUrlResponse.json()
 
-		const uploadToR2Response = await fetch(presignedUrl, {
+		await fetch(presignedUrl, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': file.type,
@@ -132,6 +132,7 @@
 			<AlertDialog.Footer>
 				<AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
 				<AlertDialog.Action
+					class={buttonVariants({ variant: 'destructive' })}
 					on:click={async () => {
 						let result = await deletePresentation($currentPresentationId)
 
@@ -139,7 +140,7 @@
 							console.log('Successfully deleted presentation')
 							goto('/dashboard')
 						}
-					}}>Continue</AlertDialog.Action
+					}}>Delete</AlertDialog.Action
 				>
 			</AlertDialog.Footer>
 		</AlertDialog.Content>
