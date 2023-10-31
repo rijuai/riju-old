@@ -4,4 +4,4 @@
 	export let text: string
 </script>
 
-<Badge class="fixed bottom-4 right-4 z-50 px-4 py-2 text-base">{text}</Badge>
+<Badge class="fixed bottom-4 right-4 z-50 px-3 py-1 text-base">{text}</Badge>
