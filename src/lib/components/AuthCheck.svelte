@@ -9,7 +9,7 @@
 	onMount(async () => {
 		isUserSignedIn = await getUserSignInStatus()
 		$userId = await getUserId()
-		if (isUserSignedIn === false) goto('/login')
+		if (!isUserSignedIn === false) goto('/login')
 	})
 </script>
 
