@@ -1,18 +1,12 @@
-import { readable, writable } from 'svelte/store'
+import { readable, writable, type Writable } from 'svelte/store'
 
 export const currentTheme = writable(
 	'background-image: radial-gradient(circle at center right, rgb(0,233,236),rgb(130,183,255));',
 )
 
-export enum TransitionType {
-	None = 'none',
-	Slide = 'slide',
-	Zoom = 'zoom',
-	Concave = 'concave',
-	Convex = 'convex',
-}
-
-export let transitionType = writable<TransitionType>(TransitionType.Slide)
+export let transitionType: Writable<TransitionType> = writable(
+	TransitionType.Zoom,
+)
 
 export const themes = readable([
 	'background-image: linear-gradient(45deg, rgb(177,140,255) 0%,rgb(200, 215, 253) 75%,rgb(143, 230, 243) 100%);',
