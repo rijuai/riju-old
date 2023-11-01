@@ -25,7 +25,12 @@
 
 		const imageUrl = await uploadImageToR2(file)
 
-		editor.chain().focus().setImage({ src: imageUrl }).run()
+		editor
+			.chain()
+			.focus()
+			.setImage({ src: imageUrl })
+			.createParagraphNear()
+			.run()
 		fileInput.value = ''
 	}
 
