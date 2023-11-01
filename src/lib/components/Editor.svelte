@@ -152,9 +152,8 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="editor p-2 min-h-screen mb-8 max-w-2xl mx-auto prose prose-sm prose-h1:font-medium prose-h2:font-medium {showLoader
-		? 'none'
-		: 'block'}"
+	class="editor p-2 min-h-screen mb-8 max-w-2xl mx-auto prose prose-sm prose-h1:font-medium prose-h2:font-medium"
+	class:hidden={showLoader}
 	bind:this={element}
 	on:click={() => {
 		editor?.commands.focus()
