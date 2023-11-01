@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import { page } from '$app/stores'
-	import { Button } from '$lib/components/ui/button'
+	import { Button, buttonVariants } from '$lib/components/ui/button'
+	import * as Dialog from '$lib/components/ui/dialog'
 	import { createPresentation } from '$lib/db/presentation'
 	import { userId } from '$lib/stores/user'
 	import { PencilLine, Play, Settings } from 'lucide-svelte'
@@ -15,6 +16,27 @@
 <nav class="flex justify-between items-center p-2.5 gap-1">
 	<Button variant="link" class="text-2xl" href="/dashboard">Riju</Button>
 	<div class="flex gap-3">
+		<Dialog.Root>
+			<Dialog.Trigger class={buttonVariants({ variant: 'outline' })}
+				>Give Feedback</Dialog.Trigger
+			>
+			<Dialog.Content>
+				<Dialog.Header>
+					<Dialog.Title>Feedback</Dialog.Title>
+					<Dialog.Description>
+						<iframe
+							class="w-full"
+							height="600"
+							title="Feedback Form"
+							src="https://docs.google.com/forms/d/e/1FAIpQLSfksa49Eg1EXJh5UsHAPQfe_DwM-edRwn3sm186_K8RQX-9Fg/viewform?embedded=true"
+							frameborder="0"
+							marginheight="0"
+							marginwidth="0">Loading…</iframe
+						>
+					</Dialog.Description>
+				</Dialog.Header>
+			</Dialog.Content>
+		</Dialog.Root>
 		{#if $page.url.pathname === '/dashboard/editor'}
 			<Button
 				data-sveltekit-preload-data
