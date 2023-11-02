@@ -27,6 +27,7 @@
 		UnderlineIcon,
 	} from 'lucide-svelte'
 	import { onDestroy, onMount } from 'svelte'
+	import HelpDialog from './HelpDialog.svelte'
 	import { Button } from './ui/button'
 
 	let element: HTMLDivElement,
@@ -148,6 +149,8 @@
 {#if showLoader}
 	<Loader class="mx-auto mt-4 animate-spin" />
 {/if}
+
+<HelpDialog />
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
