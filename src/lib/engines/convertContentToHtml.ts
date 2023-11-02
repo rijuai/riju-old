@@ -48,13 +48,13 @@ const getParagraph = (item: Item): string => {
 	return `<p>${text}</p>`
 }
 
-const getList = (item: Item): string => {
+const getList = (item: Item | Content): string => {
 	let listType = item.type === 'orderedList' ? 'ol' : 'ul'
 	let list = `<${listType}>`
 
 	item.content.forEach((listItem: ListItem) => {
 		if (listItem.content[0].content !== undefined) {
-			listItem.content.forEach((content) => {
+			listItem.content.forEach((content: Content) => {
 				if (content.type === 'paragraph') {
 					let text = ''
 					content.content.forEach((element) => {
@@ -63,6 +63,11 @@ const getList = (item: Item): string => {
 						} else text += element.text
 					})
 					list += `<li>${text}</li>`
+				} else if (
+					content.type === 'orderedList' ||
+					content.type === 'bulletList'
+				) {
+					list += getList(content)
 				}
 			})
 		}

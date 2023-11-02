@@ -18,7 +18,6 @@ declare global {
 			alt: string
 			level: number
 		}
-
 		text: string
 	}
 
@@ -37,6 +36,16 @@ declare global {
 
 	type Marks = {
 		type: string
+	}
+
+	type Content = {
+		type: string
+		marks: Marks[]
+		text: string
+		content: {
+			text: string
+			marks: Marks[]
+		}[]
 	}
 
 	type Presentations = {
