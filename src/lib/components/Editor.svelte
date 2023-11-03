@@ -124,28 +124,28 @@
 >
 	<Button
 		variant="ghost"
-		size="sm"
+		size="icon"
 		on:click={() => {
 			editor.chain().focus().toggleBold().run()
 		}}><Bold /></Button
 	>
 	<Button
 		variant="ghost"
-		size="sm"
+		size="icon"
 		on:click={() => {
 			editor.chain().focus().toggleItalic().run()
 		}}><Italic /></Button
 	>
 	<Button
 		variant="ghost"
-		size="sm"
+		size="icon"
 		on:click={() => {
 			editor.chain().focus().toggleUnderline().run()
 		}}><UnderlineIcon /></Button
 	>
 	<Button
 		variant="ghost"
-		size="sm"
+		size="icon"
 		on:click={() => {
 			editor.chain().focus().toggleStrike().run()
 		}}><Strikethrough /></Button
@@ -173,5 +173,9 @@
 	:global(.tiptap .is-empty::before) {
 		@apply float-left pointer-events-none h-0 text-gray-400;
 		content: attr(data-placeholder);
+	}
+
+	:global(svg) {
+		@apply h-5 w-5;
 	}
 </style>
