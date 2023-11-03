@@ -1,7 +1,7 @@
 import type { HTMLContent, JSONContent } from '@tiptap/core'
 
 export const convertContentToHtml = (content: JSONContent): HTMLContent => {
-	let htmlOutput = '',
+	let outputHtml = '',
 		count = 0,
 		temphtml = '',
 		blocks: string[] = [],
@@ -44,20 +44,20 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 					blocksHtml += `<div>${block}</div>`
 				})
 
-				htmlOutput += `<section><div class="grid grid-cols-2 gap-16 justify-around">${blocksHtml}</div></section>`
+				outputHtml += `<section><div class="grid grid-cols-2 gap-16">${blocksHtml}</div></section>`
 
 				addSubSection = false
 				blocks.length = 0
 			} else {
-				htmlOutput += `<section>${temphtml}</section>`
+				outputHtml += `<section>${temphtml}</section>`
 			}
 
 			temphtml = ''
 		}
 	})
 
-	console.log(htmlOutput)
-	return htmlOutput
+	console.log(outputHtml)
+	return outputHtml
 }
 
 const getHeading = (item: Item): string => {
@@ -118,7 +118,7 @@ const getList = (item: Item | Content): string => {
 const getImage = (item: Item): string => {
 	const src = item.attrs.src
 	const alt = item.attrs.alt ?? 'image'
-	return `<img class="h-full w-full" data-src=${src} alt=${alt} />`
+	return `<img class="r-fit" data-src=${src} alt=${alt} />`
 }
 
 const applyMarks = (text: string, marks: Marks[]): string => {
