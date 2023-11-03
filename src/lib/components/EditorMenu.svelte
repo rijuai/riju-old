@@ -11,6 +11,7 @@
 		Image,
 		List,
 		ListOrdered,
+		MoveHorizontal,
 		Plus,
 		Trash2,
 	} from 'lucide-svelte'
@@ -73,6 +74,12 @@
 	>
 		<Plus />
 	</Button>
+	<Button
+		variant="ghost"
+		on:click={() => {
+			editor.chain().focus().setSubSection().run()
+		}}><MoveHorizontal /></Button
+	>
 	<Button
 		variant="ghost"
 		on:click={() => {

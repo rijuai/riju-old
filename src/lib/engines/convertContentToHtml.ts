@@ -1,24 +1,62 @@
 import type { HTMLContent, JSONContent } from '@tiptap/core'
 
 export const convertContentToHtml = (content: JSONContent): HTMLContent => {
-	let htmlOutput = `<section>`
+	let htmlOutput = '',
+		count = 0,
+		temphtml = '',
+		blocks: string[] = [],
+		addSubSection = false,
+		images = []
 
 	content.forEach((item: Item) => {
 		let itemType = item.type
+		count++
 
-		if (itemType === 'horizontalRule')
-			return (htmlOutput += `</section><section>`)
+		if (itemType === 'heading') {
+			temphtml += getHeading(item)
+		}
 
-		if (itemType === 'heading') return (htmlOutput += getHeading(item))
+		if (itemType === 'paragraph') {
+			temphtml += getParagraph(item)
+		}
 
-		if (itemType === 'paragraph') return (htmlOutput += getParagraph(item))
+		if (itemType === 'orderedList' || itemType === 'bulletList') {
+			temphtml += getList(item)
+		}
 
-		if (itemType === 'orderedList' || itemType === 'bulletList')
-			return (htmlOutput += getList(item))
+		if (itemType === 'image') {
+			temphtml += getImage(item)
+			images.push(getImage(item))
+		}
 
-		if (itemType === 'image') return (htmlOutput += getImage(item))
+		if (itemType === 'subSection') {
+			addSubSection = true
+			blocks.push(temphtml)
+			temphtml = ''
+		}
+
+		if (itemType === 'horizontalRule' || count === content.length) {
+			if (addSubSection) {
+				let blocksHtml = ''
+				blocks.push(temphtml)
+
+				blocks.forEach((block) => {
+					blocksHtml += `<div>${block}</div>`
+				})
+
+				htmlOutput += `<section><div class="grid grid-cols-2 gap-16 justify-around">${blocksHtml}</div></section>`
+
+				addSubSection = false
+				blocks.length = 0
+			} else {
+				htmlOutput += `<section>${temphtml}</section>`
+			}
+
+			temphtml = ''
+		}
 	})
 
+	console.log(htmlOutput)
 	return htmlOutput
 }
 
@@ -79,8 +117,8 @@ const getList = (item: Item | Content): string => {
 
 const getImage = (item: Item): string => {
 	const src = item.attrs.src
-	const alt = item.attrs.alt ?? ''
-	return `<img class="r-stretch" data-src=${src} alt=${alt} />`
+	const alt = item.attrs.alt ?? 'image'
+	return `<img class="h-full w-full" data-src=${src} alt=${alt} />`
 }
 
 const applyMarks = (text: string, marks: Marks[]): string => {

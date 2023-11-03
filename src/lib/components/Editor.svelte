@@ -2,10 +2,13 @@
 	import { page } from '$app/stores'
 	import '$lib/assets/css/editor.css'
 	import EditorMenu from '$lib/components/EditorMenu.svelte'
+	import HelpDialog from '$lib/components/HelpDialog.svelte'
+	import { Button } from '$lib/components/ui/button'
 	import {
 		getPresentationContent,
 		updatePresentation,
 	} from '$lib/db/presentation'
+	import { SubSection } from '$lib/engines/subSection'
 	import {
 		currentPresentationId,
 		currentPresentationTitle,
@@ -17,7 +20,7 @@
 	import { Document } from '@tiptap/extension-document'
 	import { Image } from '@tiptap/extension-image'
 	import { Placeholder } from '@tiptap/extension-placeholder'
-	import Underline from '@tiptap/extension-underline'
+	import { Underline } from '@tiptap/extension-underline'
 	import { StarterKit } from '@tiptap/starter-kit'
 	import {
 		Bold,
@@ -27,8 +30,6 @@
 		UnderlineIcon,
 	} from 'lucide-svelte'
 	import { onDestroy, onMount } from 'svelte'
-	import HelpDialog from './HelpDialog.svelte'
-	import { Button } from './ui/button'
 
 	let element: HTMLDivElement,
 		contextMenu: HTMLElement,
@@ -67,6 +68,11 @@
 				}),
 				Image,
 				Underline,
+				SubSection.configure({
+					HTMLAttributes: {
+						class: 'border-b border-dashed w-1/4',
+					},
+				}),
 				BubbleMenu.configure({
 					element: contextMenu,
 				}),
@@ -155,7 +161,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="editor p-2 min-h-screen mb-8 max-w-2xl mx-auto prose prose-sm prose-h1:font-medium prose-h2:font-medium"
+	class="editor p-2 min-h-screen mb-8 max-w-2xl mx-auto prose prose-sm prose-h1:font-medium prose-h2:font-medium prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg"
 	class:hidden={showLoader}
 	bind:this={element}
 	on:click={() => {
