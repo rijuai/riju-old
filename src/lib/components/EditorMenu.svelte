@@ -6,6 +6,7 @@
 	import { currentPresentationId } from '$lib/stores/editor'
 	import type { Editor } from '@tiptap/core'
 	import {
+		CaseSensitive,
 		Heading1,
 		Heading2,
 		Image,
@@ -98,7 +99,7 @@
 		data-placement="right"
 		on:click={() => {
 			editor.chain().focus().setParagraph().run()
-		}}>P</Button
+		}}><CaseSensitive /></Button
 	>
 	<Button
 		variant="ghost"
