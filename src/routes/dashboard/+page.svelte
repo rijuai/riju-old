@@ -14,7 +14,7 @@
 				presentations.push({
 					presentation_id: presentation.presentation_id,
 					title: presentation.title,
-					preview_img_url: presentation.preview_img_url,
+					thumbnail: presentation.thumbnail,
 				})
 			})
 

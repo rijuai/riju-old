@@ -4,7 +4,7 @@ import type { JSONContent } from '@tiptap/core'
 export const getPresentations = async () => {
 	const { data, error } = await supabase
 		.from('presentations')
-		.select('presentation_id, title, preview_img_url')
+		.select('presentation_id, title, thumbnail')
 		.order('updated_at', { ascending: false })
 
 	if (error) return
