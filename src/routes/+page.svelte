@@ -16,7 +16,7 @@
 <main class="mx-auto max-w-3xl">
 	<!-- hero -->
 	<section class="text-center">
-		<h1 class="text-5xl mb-6">Hyper Fast Presentation Builder.</h1>
+		<h1 class="text-5xl mb-6">Hyper Fast Presentation Builder</h1>
 		<p class="px-16 text-muted-foreground text-xl leading-normal mb-8">
 			Riju is a hyper fast presentation builder that allows you to create
 			stunning presentations in seconds. No more boring Drag-&-Drop, choose from
