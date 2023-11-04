@@ -69,7 +69,7 @@
 	<Button
 		variant="ghost"
 		on:click={async () => {
-			editor.chain().focus().setHorizontalRule().run()
+			editor.chain().focus().enter().setHorizontalRule().run()
 		}}
 	>
 		<Plus />
@@ -77,7 +77,7 @@
 	<Button
 		variant="ghost"
 		on:click={() => {
-			editor.chain().focus().setSubSection().run()
+			editor.chain().focus().enter().setSubSection().run()
 		}}><MoveHorizontal /></Button
 	>
 	<Button
