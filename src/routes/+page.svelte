@@ -13,15 +13,18 @@
 
 <HomePageNavbar />
 
-<main class="mx-auto max-w-3xl">
+<main class="mx-auto max-w-4xl">
 	<!-- hero -->
 	<section class="text-center">
-		<h1 class="text-5xl mb-6">Hyper Fast Presentation Builder</h1>
-		<p class="px-16 text-muted-foreground text-xl leading-normal mb-8">
-			Riju is a hyper fast presentation builder that allows you to create
-			stunning presentations in seconds. No more boring Drag-&-Drop, choose from
-			100+ stunning themes and much more. Its an easy-to-use alternative to
-			Microsoft PowerPoint.
+		<h1 class="text-5xl mb-6">
+			Super fast & easy-to-use alternative to <span class="text-destructive"
+				>Microsoft PowerPoint</span
+			>
+		</h1>
+		<p class="px-4 lg:px-12 text-muted-foreground text-xl leading-normal mb-8">
+			Riju is a hyper-fast presentation builder that lets you create stunning
+			presentations in seconds. Say goodbye to boring drag-and-drop and choose
+			from over 100 stunning themes.
 		</p>
 
 		<div class="flex justify-center gap-3 mb-2">
@@ -47,7 +50,7 @@
 			src={DemoVideo}
 			muted
 			loop
-			autoplay
+			controls
 		/>
 	</section>
 
@@ -65,10 +68,11 @@
 		</p>
 
 		<p>
-			Hours of hackathon experience drove the creation of Riju, a product born
-			from my need for efficient presentation-building. Winning six of thirteen
-			hackathons highlighted the pivotal role of impactful presentations for
-			innovative ideas.
+			Hey there! I'm super excited to tell you about Riju, a product that I
+			created after spending countless hours at hackathons. I needed a way to
+			build presentations quickly and efficiently, and Riju was born. Winning
+			six out of thirteen hackathons showed me just how important impactful
+			presentations are for innovative ideas.
 		</p>
 
 		<p>
