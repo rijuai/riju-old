@@ -99,8 +99,6 @@ export const SubSection = Node.create<SubSectionOptions>({
 
 	addKeyboardShortcuts() {
 		return {
-			'Ctrl+Alt+.': () => this.editor.commands.setSubSection(),
-			'Cmd+Alt+.': () => this.editor.commands.setSubSection(),
 			'...': () => this.editor.commands.setSubSection(),
 		}
 	},
