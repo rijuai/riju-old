@@ -1,5 +1,4 @@
 <script lang="ts">
-	import ChatBot from '$lib/components/ChatBot.svelte'
 	import Editor from '$lib/components/Editor.svelte'
 	import HelpDialog from '$lib/components/HelpDialog.svelte'
 	import MetaData from '$lib/components/MetaData.svelte'
@@ -12,4 +11,3 @@
 
 <Editor />
 <HelpDialog />
-<ChatBot />
