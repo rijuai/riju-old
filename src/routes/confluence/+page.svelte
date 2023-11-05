@@ -1,16 +1,16 @@
 <script lang="ts">
-	import MetaData from '$lib/components/MetaData.svelte'
-	import '$lib/assets/css/presenter.css'
 	import { page } from '$app/stores'
+	import '$lib/assets/css/presenter.css'
+	import MetaData from '$lib/components/MetaData.svelte'
+	import { supabase } from '$lib/config/supabase'
+	import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
 	import { currentTheme } from '$lib/stores/presenter'
+	import PresenterNavbar from '$lib/ui/PresenterNavbar.svelte'
+	import WaterMark from '$lib/ui/WaterMark.svelte'
+	import type { JSONContent } from '@tiptap/core/dist/packages/core/src/types'
 	import Reveal from 'reveal.js'
 	import 'reveal.js/dist/reveal.css'
 	import { onMount } from 'svelte'
-	import { supabase } from '$lib/config/supabase'
-	import PresenterNavbar from '$lib/ui/PresenterNavbar.svelte'
-	import WaterMark from '$lib/ui/WaterMark.svelte'
-	import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
-	import type { JSONContent } from '@tiptap/core/dist/packages/core/src/types'
 
 	export let presentationId: string
 
