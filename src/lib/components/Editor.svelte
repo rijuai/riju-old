@@ -170,7 +170,7 @@
 
 <style lang="postcss">
 	:global(.tiptap .is-empty::before) {
-		@apply float-left pointer-events-none h-0 text-gray-400;
+		@apply float-left pointer-events-none h-0 text-slate-400;
 		content: attr(data-placeholder);
 	}
 
