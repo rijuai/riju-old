@@ -13,7 +13,7 @@
 
 <HomePageNavbar />
 
-<main class="mx-auto max-w-4xl">
+<main class="p-8 mx-auto max-w-4xl">
 	<!-- hero -->
 	<section class="text-center">
 		<h1 class="text-5xl mb-6">
@@ -21,13 +21,13 @@
 				>Microsoft PowerPoint</span
 			>
 		</h1>
-		<p class="px-4 lg:px-12 text-muted-foreground text-xl leading-normal mb-8">
+		<p class="lg:px-12 text-muted-foreground text-xl leading-normal mb-8">
 			Riju is a hyper-fast presentation builder that lets you create stunning
 			presentations in seconds. Say goodbye to boring drag-and-drop and choose
 			from over 100 stunning themes.
 		</p>
 
-		<div class="flex justify-center gap-3 mb-2">
+		<div class="flex flex-col md:flex-row justify-center gap-4 mb-2">
 			<Button size="lg" class="text-lg py-6" href="/login">
 				Get started (its free)</Button
 			>
@@ -142,6 +142,6 @@
 
 <style lang="postcss">
 	section {
-		@apply my-32;
+		@apply my-16 lg:my-32;
 	}
 </style>
