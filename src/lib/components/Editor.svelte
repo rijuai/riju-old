@@ -2,7 +2,6 @@
 	import { page } from '$app/stores'
 	import '$lib/assets/css/editor.css'
 	import EditorMenu from '$lib/components/EditorMenu.svelte'
-	import HelpDialog from '$lib/components/HelpDialog.svelte'
 	import { Button } from '$lib/components/ui/button'
 	import {
 		getPresentationContent,
@@ -18,6 +17,7 @@
 	import { Editor } from '@tiptap/core'
 	import { BubbleMenu } from '@tiptap/extension-bubble-menu'
 	import { Document } from '@tiptap/extension-document'
+	import Gapcursor from '@tiptap/extension-gapcursor'
 	import { Image } from '@tiptap/extension-image'
 	import { Placeholder } from '@tiptap/extension-placeholder'
 	import { Underline } from '@tiptap/extension-underline'
@@ -73,6 +73,7 @@
 						class: 'border-b border-dashed w-1/4',
 					},
 				}),
+				Gapcursor,
 				BubbleMenu.configure({
 					element: contextMenu,
 				}),
@@ -155,8 +156,6 @@
 {#if showLoader}
 	<Loader class="mx-auto mt-4 animate-spin" />
 {/if}
-
-<HelpDialog />
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
