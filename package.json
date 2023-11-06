@@ -12,7 +12,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-cloudflare": "^2.3.3",
-		"@sveltejs/kit": "^1.27.2",
+		"@sveltejs/kit": "^1.27.3",
 		"@tailwindcss/typography": "^0.5.10",
 		"@types/file-saver": "^2.0.6",
 		"@types/qrcode": "^1.5.4",
