@@ -45,8 +45,8 @@ dependencies:
     specifier: ^4.4.5
     version: 4.4.5
   bits-ui:
-    specifier: ^0.8.5
-    version: 0.8.5(svelte@4.2.2)
+    specifier: ^0.9.1
+    version: 0.9.1(svelte@4.2.2)
   clsx:
     specifier: ^2.0.0
     version: 2.0.0
@@ -2115,8 +2115,8 @@ packages:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
 
-  /bits-ui@0.8.5(svelte@4.2.2):
-    resolution: {integrity: sha512-Gsb49sDaVy0bjY5jLkGhJyGT+wPKUXC2zh3/rcZ6CynlZjdL7jvmhDuLCaXsWO5JEYrzFpGBXwGW+hnxwAVlsg==}
+  /bits-ui@0.9.1(svelte@4.2.2):
+    resolution: {integrity: sha512-cpA2eMtPwBewEKWbouV9fAesha5xXBUC4bNpFmMtPPHgPqadtqu6TUk5Q2Ywi2a4lsQOYeNz7wJObPt7d9e+BA==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:
