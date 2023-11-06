@@ -15,7 +15,7 @@
 </script>
 
 <nav
-	class="sticky top-0 z-50 w-full flex gap-1 justify-between items-center p-2.5 bg-transparent backdrop-blur-xl"
+	class="sticky top-0 z-50 w-full flex gap-1 justify-between items-center p-2 bg-background/60 backdrop-blur"
 >
 	<Button variant="link" class="text-2xl" href="/dashboard">Riju</Button>
 	<div class="flex gap-3">
