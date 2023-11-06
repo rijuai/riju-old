@@ -39,7 +39,7 @@
 		"@tiptap/pm": "^2.1.12",
 		"@tiptap/starter-kit": "^2.1.12",
 		"@types/reveal.js": "^4.4.5",
-		"bits-ui": "^0.8.5",
+		"bits-ui": "^0.9.1",
 		"clsx": "^2.0.0",
 		"dayjs": "^1.11.10",
 		"file-saver": "^2.0.5",
