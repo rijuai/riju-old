@@ -9,8 +9,8 @@ dependencies:
     specifier: ^3.438.0
     version: 3.438.0
   '@aws-sdk/s3-request-presigner':
-    specifier: ^3.438.0
-    version: 3.438.0
+    specifier: ^3.441.0
+    version: 3.441.0
   '@supabase/supabase-js':
     specifier: ^2.38.4
     version: 2.38.4
@@ -589,8 +589,8 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@aws-sdk/s3-request-presigner@3.438.0:
-    resolution: {integrity: sha512-fVJIeNuSZsVX0eiF+cvcPPn1jpbGY54xignn3mDcYDiAw1+qkkYEDHjnR4e4JPlx3zkR3hsTT3b1GzgjQ+1sSQ==}
+  /@aws-sdk/s3-request-presigner@3.441.0:
+    resolution: {integrity: sha512-EUVsmy92imURMLoA/MX+PL1SIONQ8YSi424BHJA6xGEoaqvQiaVKlv8jJfCqJ6qQ8oLiCLe2hOBSBTY1XZiy/g==}
     engines: {node: '>=14.0.0'}
     dependencies:
       '@aws-sdk/signature-v4-multi-region': 3.437.0
