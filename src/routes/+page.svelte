@@ -107,19 +107,19 @@
 			accessible to individuals and businesses alike.
 		</p>
 
+		<p>I hope you enjoy Riju.</p>
+
+		<p>Sincerely,</p>
+
+		<p>Vignesh Aithal</p>
+
 		<p>
-			P.S: As an indie-hacker, I am passionate about delivering a product that
+			P.S. As an indie-hacker, I am passionate about delivering a product that
 			simplifies the presentation creation process, helping individuals and
 			teams make their ideas shine. Riju is not just a tool; it's a solution to
 			the challenges that arise when presenting ideas in a competitive
 			landscape.
 		</p>
-
-		<p>I hope you enjoy Riju.</p>
-
-		<p>Sincerely,</p>
-
-		<p><strong>Vignesh Aithal</strong></p>
 	</section>
 
 	<!-- cta -->
@@ -136,6 +136,6 @@
 
 <style lang="postcss">
 	section {
-		@apply my-16 lg:my-32;
+		@apply my-16 lg:my-24;
 	}
 </style>
