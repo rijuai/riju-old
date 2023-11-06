@@ -1,5 +1,5 @@
 <script>
-	import DemoVideo from '$lib/assets/videos/riju-demo-05-10-2023.mp4'
+	import DemoVideo from '$lib/assets/videos/riju-demo-muted.mp4'
 	import MetaData from '$lib/components/MetaData.svelte'
 	import { Button } from '$lib/components/ui/button'
 	import Footer from '$lib/ui/Footer.svelte'
@@ -31,12 +31,6 @@
 			<Button size="lg" class="text-lg py-6" href="/login">
 				Get started (its free)</Button
 			>
-			<Button
-				variant="secondary"
-				size="lg"
-				class="text-lg py-6"
-				href="/live-demo">Live demo</Button
-			>
 		</div>
 		<p class="text-muted-foreground">
 			No credit card required. Saves 90% of your time.
@@ -50,7 +44,7 @@
 			src={DemoVideo}
 			muted
 			loop
-			controls
+			autoplay
 		/>
 	</section>
 
