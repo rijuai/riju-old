@@ -61,28 +61,38 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 }
 
 const getHeading = (item: Item): string => {
-	if (item.content !== undefined) {
-		const level = item.attrs.level
-		let text = ''
-		item.content.forEach((element) => {
-			if (element.marks !== undefined) {
-				text += applyMarks(element.text, element.marks)
-			} else text += element.text
-		})
-		return `<h${level}>${text}</h${level}>`
+	if (!item.content) {
+		return ''
 	}
-	return ''
+
+	const level = item.attrs.level
+	let text = ''
+
+	for (const element of item.content) {
+		if (element.marks) {
+			text += applyMarks(element.text, element.marks)
+		} else {
+			text += element.text
+		}
+	}
+
+	return `<h${level}>${text}</h${level}>`
 }
 
 const getParagraph = (item: Item): string => {
-	let text = ''
-	if (item.content !== undefined) {
-		item.content.forEach((element) => {
-			if (element.marks !== undefined) {
-				text += applyMarks(element.text, element.marks)
-			} else text += element.text
-		})
+	if (!item.content) {
+		return ''
 	}
+
+	let text = ''
+	for (const element of item.content) {
+		if (element.marks) {
+			text += applyMarks(element.text, element.marks)
+		} else {
+			text += element.text
+		}
+	}
+
 	return `<p>${text}</p>`
 }
 
