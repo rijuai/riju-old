@@ -1,5 +1,4 @@
 <script>
-	import AnimatedRoute from '$lib/components/AnimatedRoute.svelte'
 	import AuthCheck from '$lib/components/AuthCheck.svelte'
 	import Banner from '$lib/ui/Banner.svelte'
 	import DashboardNavbar from '$lib/ui/DashboardNavbar.svelte'
@@ -12,10 +11,8 @@
 
 <DashboardNavbar />
 
-<AnimatedRoute>
-	<AuthCheck>
-		<main class="px-6 py-4">
-			<slot />
-		</main>
-	</AuthCheck>
-</AnimatedRoute>
+<AuthCheck>
+	<main class="px-6 py-4">
+		<slot />
+	</main>
+</AuthCheck>
