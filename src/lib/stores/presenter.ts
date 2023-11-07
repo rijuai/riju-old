@@ -1,6 +1,6 @@
 import { readable, writable, type Writable } from 'svelte/store'
 
-export const currentTheme = writable('background-color: #DBD5B5;')
+export const currentTheme = writable('background-color: #FFF6E0;')
 
 enum TransitionType {
 	None = 'none',
@@ -16,12 +16,18 @@ export let transitionType: Writable<TransitionType> = writable(
 )
 
 export const themes = readable([
-	'background-color: #43BCCD;', // blue
-	'background-color: #E0E0E0;', // light blue
-	'background-color: #CAB7A2;',
-	'background-color: #BEB7DF;', // light purple
-	'background-color: #D4F2D2;', // light green
-	'background-color: #91F9E5;',
+	'background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);',
+	'background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);',
+	'background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);',
+	'background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);',
+	'background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);',
+	'background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);',
+	'background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);',
+	'background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);',
+	'background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);',
+	'background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);',
+	'background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);',
+	'background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);',
 ])
 
 export const getRandomNumber = (length: number): number => {
