@@ -7,7 +7,7 @@
 </script>
 
 <MetaData
-	title="Riju | Create presentations super fast"
+	title="Super fast and easy-to-use alternative to Microsoft PowerPoint"
 	description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
 
