@@ -1,8 +1,14 @@
 <script>
 	import AnimatedRoute from '$lib/components/AnimatedRoute.svelte'
 	import AuthCheck from '$lib/components/AuthCheck.svelte'
+	import Banner from '$lib/ui/Banner.svelte'
 	import DashboardNavbar from '$lib/ui/DashboardNavbar.svelte'
 </script>
+
+<Banner
+	message="Riju is still in alpha so, you may experience bugs. Lot more
+		features coming soon."
+/>
 
 <DashboardNavbar />
 
