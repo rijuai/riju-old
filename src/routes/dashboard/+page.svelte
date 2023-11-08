@@ -2,25 +2,6 @@
 	import MetaData from '$lib/components/MetaData.svelte'
 	import { getPresentations } from '$lib/db/presentation'
 	import { Loader } from 'lucide-svelte'
-	import { onMount } from 'svelte'
-
-	let presentations: Presentations = []
-
-	onMount(async () => {
-		let data = await getPresentations()
-
-		if (data) {
-			data.forEach((presentation) => {
-				presentations.push({
-					presentation_id: presentation.presentation_id,
-					title: presentation.title,
-					thumbnail: presentation.thumbnail,
-				})
-			})
-
-			presentations = presentations
-		}
-	})
 </script>
 
 <MetaData title="Riju | Dashboard" description="Your presentations" />
