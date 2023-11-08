@@ -2,9 +2,8 @@
 	import { goto } from '$app/navigation'
 	import FeedbackDialog from '$lib/components/FeedbackDialog.svelte'
 	import { Button } from '$lib/components/ui/button'
-	import { changeTheme } from '$lib/stores/presenter'
-	import { Expand, Sparkles, X } from 'lucide-svelte'
-	import PresentationSettings from './PresentationSettings.svelte'
+	import { Expand, X } from 'lucide-svelte'
+	import ThemeSettingsPopup from './ThemeSettingsPopup.svelte'
 
 	export let presentationId: string
 
@@ -23,12 +22,9 @@
 	class="fixed top-0 w-full z-10 flex place-items-cente items-center justify-between px-2.5 py-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
 >
 	<Button variant="link" class="text-2xl" href="/">Riju</Button>
-	<div class="flex gap-2">
+	<div class="flex gap-3">
 		<FeedbackDialog />
-		<PresentationSettings />
-		<Button variant="ghost" on:click={changeTheme}
-			><Sparkles class="mr-2" />Change Theme</Button
-		>
+		<ThemeSettingsPopup />
 		<Button
 			variant="ghost"
 			size="icon"
