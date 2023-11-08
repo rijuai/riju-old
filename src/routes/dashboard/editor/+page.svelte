@@ -10,4 +10,5 @@
 />
 
 <Editor />
+
 <HelpDialog />
