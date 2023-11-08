@@ -1,17 +1,12 @@
 <script lang="ts">
 	import GoogleLogo from '$lib/assets/images/google-logo.svg'
-	import MicrosoftLogo from '$lib/assets/images/microsoft-logo.svg'
 	import MetaData from '$lib/components/MetaData.svelte'
 	import * as Alert from '$lib/components/ui/alert'
 	import Button from '$lib/components/ui/button/button.svelte'
 	import * as Card from '$lib/components/ui/card'
 	import Input from '$lib/components/ui/input/input.svelte'
 	import { Label } from '$lib/components/ui/label'
-	import {
-		signInWithGooogle,
-		signInWithMagicLink,
-		signInWithMicrosoft,
-	} from '$lib/db/auth'
+	import { signInWithGooogle, signInWithMagicLink } from '$lib/db/auth'
 	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
 
 	let email: string,
@@ -48,17 +43,6 @@
 						}}
 						><img class="h-5 w-5 mr-2" src={GoogleLogo} alt="Google logo" />Sign
 						in with Google</Button
-					>
-					<Button
-						variant="outline"
-						on:click={async () => {
-							signInWithMicrosoft()
-						}}
-						><img
-							class="h-5 w-5 mr-2"
-							src={MicrosoftLogo}
-							alt="Google logo"
-						/>Sign in with Microsoft</Button
 					>
 				</div>
 				<div class="relative">
