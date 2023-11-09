@@ -21,6 +21,15 @@ export const signInWithGooogle = async () => {
 	})
 }
 
+export const signInWithMicrosoft = async () => {
+	const { data, error } = await supabase.auth.signInWithOAuth({
+		provider: 'azure',
+		options: {
+			redirectTo: 'https://riju.ai/dashboard',
+		},
+	})
+}
+
 export const getUserSignInStatus = async (): Promise<boolean> => {
 	const user = (await supabase.auth.getSession()).data.session?.user
 
