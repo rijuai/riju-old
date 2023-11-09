@@ -11,10 +11,10 @@
 {:then presentations}
 	{#if presentations !== undefined && presentations.length > 0}
 		<div class="grid grid-cols-5 gap-8">
-			{#each presentations as presentation}
-				<a href="/dashboard/editor?id={presentation.presentation_id}">
+			{#each presentations as { presentation_id, title }}
+				<a href="/dashboard/editor?id={presentation_id}">
 					<div class="w-full h-32 bg-zinc-200 rounded mb-2.5" />
-					<p class="block truncate text-[14px]">{presentation.title}</p>
+					<p class="truncate text-[14px]">{title}</p>
 				</a>
 			{/each}
 		</div>
