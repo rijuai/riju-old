@@ -61,7 +61,7 @@
 	</div>
 </div>
 
-<WaterMark text="Created in Riju.ai" />
+<WaterMark text="Made in Riju.ai" />
 
 <style lang="postcss">
 	.reveal {
