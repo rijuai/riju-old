@@ -17,10 +17,12 @@
 					<p class="truncate text-[14px]">{title}</p>
 				</a>
 			{:else}
-				<p class="fixed left-1/2 top-1/2 max-w-md mx-auto text-center text-sm">
+				<div
+					class="fixed top-1/2 left-1/2 transform -translate-x-1/2 text-sm text-muted-foreground"
+				>
 					No presentations found. Click on the "Create" button to create a new
 					presentation.
-				</p>
+				</div>
 			{/each}
 		</div>
 	{/if}
