@@ -24,6 +24,18 @@
 					}}>Generate Random</Button
 				>
 
+				<div class="col-span-2 flex gap-2">
+					<button class="h-5 w-5 bg-red-400 rounded-full" />
+					<button class="h-5 w-5 bg-purple-300 rounded-full" />
+					<button class="h-5 w-5 bg-red-500 rounded-full" />
+					<button class="h-5 w-5 bg-red-500 rounded-full" />
+					<button class="h-5 w-5 bg-red-500 rounded-full" />
+					<button class="h-5 w-5 bg-red-500 rounded-full" />
+					<button class="h-5 w-5 bg-red-500 rounded-full" />
+					<button class="h-5 w-5 bg-red-500 rounded-full" />
+					<button class="h-5 w-5 bg-red-500 rounded-full" />
+				</div>
+
 				<Label>Tranisition Type</Label>
 				<Select.Root
 					selected={$transitionType}
