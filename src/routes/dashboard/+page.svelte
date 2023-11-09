@@ -7,7 +7,7 @@
 <MetaData title="Riju | Dashboard" description="Your presentations" />
 
 {#await getPresentations()}
-	<Loader class="mx-auto animate-spin mt-8" />
+	<Loader class="fixed left-1/2 top-1/2 animate-spin" />
 {:then presentations}
 	{#if presentations !== undefined}
 		<div class="grid grid-cols-5 gap-8">
@@ -17,7 +17,7 @@
 					<p class="truncate text-[14px]">{title}</p>
 				</a>
 			{:else}
-				<p class="max-w-md mx-auto text-center text-sm">
+				<p class="fixed left-1/2 top-1/2 max-w-md mx-auto text-center text-sm">
 					No presentations found. Click on the "Create" button to create a new
 					presentation.
 				</p>
