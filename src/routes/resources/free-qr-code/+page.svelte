@@ -50,8 +50,8 @@
 </script>
 
 <MetaData
-	title="Riju | Free QR Code Generator"
-	description="Free QR Code Generator"
+	title="Free QR Code Generator"
+	description="Free QR Code Generator, 100% free and download QR codes in PNG, JPG and SVG."
 />
 
 <HomePageNavbar />
