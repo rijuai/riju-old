@@ -154,7 +154,7 @@
 </div>
 
 {#if showLoader}
-	<Loader class="mx-auto mt-4 animate-spin" />
+	<Loader class="fixed left-1/2 top-1/2 animate-spin" />
 {/if}
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
