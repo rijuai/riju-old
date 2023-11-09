@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button'
+	import * as Tooltip from '$lib/components/ui/tooltip'
 	import type { Editor } from '@tiptap/core'
 	import {
 		CaseSensitive,
@@ -63,20 +64,36 @@
 <div
 	class="menu z-50 flex flex-col gap-4 p-2 min-w-fit rounded fixed left-0 top-1/2 transform -translate-y-1/2 bg-primary-foreground"
 >
-	<Button
-		variant="ghost"
-		on:click={async () => {
-			editor.chain().focus().enter().setHorizontalRule().run()
-		}}
-	>
-		<Plus />
-	</Button>
-	<Button
-		variant="ghost"
-		on:click={() => {
-			editor.chain().focus().enter().setSubSection().run()
-		}}><MoveHorizontal /></Button
-	>
+	<Tooltip.Root openDelay="150">
+		<Tooltip.Trigger>
+			<Button
+				variant="ghost"
+				on:click={async () => {
+					editor.chain().focus().enter().setHorizontalRule().run()
+				}}
+			>
+				<Plus />
+			</Button>
+		</Tooltip.Trigger>
+		<Tooltip.Content>
+			<p>New slide</p>
+		</Tooltip.Content>
+	</Tooltip.Root>
+	<Tooltip.Root openDelay="150">
+		<Tooltip.Trigger>
+			<Button
+				variant="ghost"
+				on:click={async () => {
+					editor.chain().focus().enter().setSubSection().run()
+				}}
+			>
+				<MoveHorizontal />
+			</Button>
+		</Tooltip.Trigger>
+		<Tooltip.Content>
+			<p>Split Slide</p>
+		</Tooltip.Content>
+	</Tooltip.Root>
 	<Button
 		variant="ghost"
 		on:click={() => {
