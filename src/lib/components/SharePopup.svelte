@@ -28,7 +28,7 @@
 	<Popover.Content class="w-fi">
 		<div class="flex flex-col gap-6">
 			<div class="grid grid-cols-2 gap-2 items-center">
-				<Label>Make Public</Label>
+				<Label>Make public</Label>
 				<div class="flex items-center gap-2">
 					<Switch bind:checked={isPresentationPublic} />
 					{#if isPresentationPublic}
