@@ -29,14 +29,14 @@ export const createPresentation = async (
 
 export const getPresentationContent = async (
 	presentation_id: string,
-): Promise<any> => {
+): Promise<{ content: JSON[]; is_public: boolean } | void> => {
 	const { data, error } = await supabase
 		.from('presentations')
-		.select('content')
+		.select('content, is_public')
 		.eq('presentation_id', presentation_id)
 
 	if (error) return console.log(error)
-	return data![0].content
+	return data![0]
 }
 
 export const updatePresentation = async (
@@ -66,4 +66,16 @@ export const deletePresentation = async (
 		return false
 	}
 	return true
+}
+
+export const updatePresentationPublicStatus = async (
+	presentationId: string,
+	isPublic: boolean,
+): Promise<any> => {
+	const { error } = await supabase
+		.from('presentations')
+		.update({ is_public: isPublic })
+		.eq('presentation_id', presentationId)
+
+	if (error) return console.error(error)
 }

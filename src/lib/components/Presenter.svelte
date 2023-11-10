@@ -1,24 +1,19 @@
 <script lang="ts">
 	import '$lib/assets/css/presenter.css'
-	import { getPresentationContent } from '$lib/db/presentation'
 	import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
 	import { currentTheme, transitionType } from '$lib/stores/presenter'
 	import WaterMark from '$lib/ui/WaterMark.svelte'
-	import type { JSONContent } from '@tiptap/core'
 	import { Loader } from 'lucide-svelte'
 	import Reveal from 'reveal.js'
 	import 'reveal.js/dist/reveal.css'
 	import { onDestroy, onMount } from 'svelte'
 
-	export let presentationId: string
+	export let presentationContent: JSON[] | void
 	let reveal: Reveal.Api,
 		htmlOutput: string,
-		presentationContent: JSONContent,
 		showLoader = true
 
 	onMount(async () => {
-		presentationContent = await getPresentationContent(presentationId!)
-
 		if (presentationContent) {
 			htmlOutput = convertContentToHtml(presentationContent)
 			showLoader = false
