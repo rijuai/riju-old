@@ -1,6 +1,7 @@
 <script lang="ts">
 	import GoogleLogo from '$lib/assets/images/google-logo.svg'
 	import MicrosoftLogo from '$lib/assets/images/microsoft-logo.svg'
+	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
 	import MetaData from '$lib/components/MetaData.svelte'
 	import * as Alert from '$lib/components/ui/alert'
 	import Button from '$lib/components/ui/button/button.svelte'
@@ -12,7 +13,6 @@
 		signInWithMagicLink,
 		signInWithMicrosoft,
 	} from '$lib/db/auth'
-	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
 
 	let email: string,
 		isEmailSent = false
