@@ -42,7 +42,11 @@
 		initializeEditor(element)
 		presentationId = getPresentationId()
 		presentationContent = await getPresentationContent(presentationId!)
-		editor.commands.setContent(presentationContent)
+		console.log(presentationContent, 'Content')
+
+		if (presentationContent) {
+			editor.commands.setContent(presentationContent)
+		}
 		showLoader = false
 	})
 
