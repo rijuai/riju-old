@@ -4,7 +4,7 @@
 	import * as Card from '$lib/components/ui/card'
 	import Input from '$lib/components/ui/input/input.svelte'
 	import Label from '$lib/components/ui/label/label.svelte'
-	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
+	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
 	import { saveAs } from 'file-saver'
 	import QRCode from 'qrcode'
 	import { onMount } from 'svelte'

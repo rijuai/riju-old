@@ -12,7 +12,7 @@
 		signInWithMagicLink,
 		signInWithMicrosoft,
 	} from '$lib/db/auth'
-	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
+	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
 
 	let email: string,
 		isEmailSent = false

@@ -1,6 +1,6 @@
 <script>
 	import AuthCheck from '$lib/components/AuthCheck.svelte'
-	import DashboardNavbar from '$lib/ui/DashboardNavbar.svelte'
+	import DashboardNavbar from '$lib/components/DashboardNavbar.svelte'
 </script>
 
 <DashboardNavbar />

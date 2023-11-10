@@ -2,7 +2,7 @@
 	import '$lib/assets/css/presenter.css'
 	import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
 	import { currentTheme, transitionType } from '$lib/stores/presenter'
-	import WaterMark from '$lib/ui/WaterMark.svelte'
+	import WaterMark from '$lib/components/WaterMark.svelte'
 	import { Loader } from 'lucide-svelte'
 	import Reveal from 'reveal.js'
 	import 'reveal.js/dist/reveal.css'

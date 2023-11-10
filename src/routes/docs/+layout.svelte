@@ -1,6 +1,6 @@
 <script>
-	import Footer from '$lib/ui/Footer.svelte'
-	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
+	import Footer from '$lib/components/Footer.svelte'
+	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
 </script>
 
 <HomePageNavbar />

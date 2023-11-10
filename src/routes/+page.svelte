@@ -2,8 +2,8 @@
 	import DemoVideo from '$lib/assets/videos/riju-demo-muted.mp4'
 	import MetaData from '$lib/components/MetaData.svelte'
 	import { Button } from '$lib/components/ui/button'
-	import Footer from '$lib/ui/Footer.svelte'
-	import HomePageNavbar from '$lib/ui/HomePageNavbar.svelte'
+	import Footer from '$lib/components/Footer.svelte'
+	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
 </script>
 
 <MetaData

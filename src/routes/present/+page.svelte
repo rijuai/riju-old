@@ -3,7 +3,7 @@
 	import MetaData from '$lib/components/MetaData.svelte'
 	import Presenter from '$lib/components/Presenter.svelte'
 	import { getPresentation } from '$lib/db/presentation'
-	import PresenterNavbar from '$lib/ui/PresenterNavbar.svelte'
+	import PresenterNavbar from '$lib/components/PresenterNavbar.svelte'
 	import { Loader } from 'lucide-svelte'
 	import { onMount } from 'svelte'
 
