@@ -2,7 +2,7 @@
 	import { page } from '$app/stores'
 	import MetaData from '$lib/components/MetaData.svelte'
 	import Presenter from '$lib/components/Presenter.svelte'
-	import { getPresentationContent } from '$lib/db/presentation'
+	import { getPresentation } from '$lib/db/presentation'
 	import PresenterNavbar from '$lib/ui/PresenterNavbar.svelte'
 	import { Loader } from 'lucide-svelte'
 	import { onMount } from 'svelte'
@@ -19,7 +19,7 @@
 
 	onMount(async () => {
 		presentationId = getPresentationId()
-		presentation = await getPresentationContent(presentationId!)
+		presentation = await getPresentation(presentationId!)
 
 		if (presentation) {
 			presentationContent = presentation.content

@@ -27,7 +27,7 @@ export const createPresentation = async (
 	return data![0].presentation_id
 }
 
-export const getPresentationContent = async (
+export const getPresentation = async (
 	presentation_id: string,
 ): Promise<{ content: JSON[]; is_public: boolean } | void> => {
 	const { data, error } = await supabase
@@ -37,6 +37,18 @@ export const getPresentationContent = async (
 
 	if (error) return console.log(error)
 	return data![0]
+}
+
+export const getPresentationContent = async (
+	presentation_id: string,
+): Promise<any> => {
+	const { data, error } = await supabase
+		.from('presentations')
+		.select('content')
+		.eq('presentation_id', presentation_id)
+
+	if (error) return console.log(error)
+	return data![0].content
 }
 
 export const updatePresentation = async (
