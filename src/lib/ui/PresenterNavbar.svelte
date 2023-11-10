@@ -28,7 +28,7 @@
 </script>
 
 <nav
-	class="fixed top-0 w-full z-10 flex place-items-cente items-center justify-between px-2.5 py-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+	class="fixed top-0 w-full z-10 flex items-center justify-between px-2.5 py-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
 >
 	<Button variant="link" class="text-2xl" href="/">Riju</Button>
 	<div class="flex gap-4">
