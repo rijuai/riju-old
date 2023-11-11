@@ -11,7 +11,7 @@
 	let userEmail: string
 
 	onMount(async () => {
-		userEmail = await getUserEmail()
+		userEmail = (await getUserEmail()) ?? ''
 	})
 </script>
 
