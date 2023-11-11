@@ -124,7 +124,7 @@ const getList = (item: Item | Content): string => {
 const getImage = (item: Item): string => {
 	const src = item.attrs.src
 	const alt = item.attrs.alt ?? 'image'
-	return `<img class="h-full max-h-screen" data-src=${src} alt=${alt} />`
+	return `<img class="object-cover" data-src=${src} alt=${alt} />`
 }
 
 const applyMarks = (text: string, marks: Marks[]): string => {
