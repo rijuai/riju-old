@@ -1,14 +1,13 @@
 import { supabase } from '$lib/config/supabase'
 import type { JSONContent } from '@tiptap/core'
 
-export const getPresentations = async () => {
-	const { data, error } = await supabase
+export const getPresentations = async (): Promise<Presentations | null> => {
+	const { data } = await supabase
 		.from('presentations')
 		.select('presentation_id, title, thumbnail')
 		.order('updated_at', { ascending: false })
 
-	if (error) return
-	return data
+	return data ? data : null
 }
 
 export const createPresentation = async (
@@ -23,8 +22,7 @@ export const createPresentation = async (
 		})
 		.select('presentation_id')
 
-	if (error) console.log(error)
-	return data![0].presentation_id
+	return error ? console.error(error) : data![0].presentation_id
 }
 
 export const getPresentation = async (
@@ -35,8 +33,7 @@ export const getPresentation = async (
 		.select('content, is_public')
 		.eq('presentation_id', presentation_id)
 
-	if (error) return console.log(error)
-	return data![0]
+	return error ? console.error(error) : data![0]
 }
 
 export const getPresentationContent = async (
@@ -62,7 +59,7 @@ export const updatePresentation = async (
 		.update({ updated_at: updatedAt, title: title, content: content })
 		.eq('presentation_id', presentationId)
 
-	if (error) return console.error(error)
+	return error ? console.error(error) : true
 }
 
 export const deletePresentation = async (
@@ -73,11 +70,7 @@ export const deletePresentation = async (
 		.delete()
 		.eq('presentation_id', presentationId)
 
-	if (error) {
-		console.log(error)
-		return false
-	}
-	return true
+	return error ? false : true
 }
 
 export const updatePresentationPublicStatus = async (
@@ -89,5 +82,5 @@ export const updatePresentationPublicStatus = async (
 		.update({ is_public: isPublic })
 		.eq('presentation_id', presentationId)
 
-	if (error) return console.error(error)
+	return error ? console.error(error) : true
 }
