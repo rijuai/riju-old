@@ -61,9 +61,7 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 }
 
 const getHeading = (item: Item): string => {
-	if (!item.content) {
-		return ''
-	}
+	if (!item.content) return ''
 
 	const level = item.attrs.level
 	let text = ''
@@ -80,9 +78,7 @@ const getHeading = (item: Item): string => {
 }
 
 const getParagraph = (item: Item): string => {
-	if (!item.content) {
-		return ''
-	}
+	if (!item.content) return ''
 
 	let text = ''
 	for (const element of item.content) {
@@ -128,7 +124,7 @@ const getList = (item: Item | Content): string => {
 const getImage = (item: Item): string => {
 	const src = item.attrs.src
 	const alt = item.attrs.alt ?? 'image'
-	return `<img class="r-fit" data-src=${src} alt=${alt} />`
+	return `<img class="h-full max-h-screen" data-src=${src} alt=${alt} />`
 }
 
 const applyMarks = (text: string, marks: Marks[]): string => {
