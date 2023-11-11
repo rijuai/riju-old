@@ -5,13 +5,9 @@
 	import FeedbackDialog from '$lib/components/FeedbackDialog.svelte'
 	import { Button } from '$lib/components/ui/button'
 	import { createPresentation } from '$lib/db/presentation'
+	import { presentationId } from '$lib/stores/presenter'
 	import { userId } from '$lib/stores/user'
 	import { PencilLine, Play, Settings } from 'lucide-svelte'
-
-	const getPresentationId = (): string => {
-		let presentationId = $page.url.searchParams.get('id') ?? ''
-		return presentationId
-	}
 </script>
 
 <nav
@@ -25,8 +21,7 @@
 			<Button
 				variant="ghost"
 				on:click={() => {
-					let presentationId = getPresentationId()
-					goto(`/present?id=${presentationId}`)
+					goto(`/present?id=${$presentationId}`)
 				}}
 			>
 				<Play class="h-5 w-5 mr-1" />Present
@@ -38,11 +33,11 @@
 			>
 			<Button
 				on:click={async () => {
-					const presentationId = await createPresentation(
+					const createdPresentationId = await createPresentation(
 						$userId,
 						'Untitled Presentation',
 					)
-					goto(`/dashboard/editor?id=${presentationId}`)
+					goto(`/dashboard/editor?id=${createdPresentationId}`)
 				}}
 			>
 				<PencilLine class="h-5 w-5 mr-2" />
