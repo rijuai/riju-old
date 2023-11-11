@@ -64,7 +64,7 @@
 <div
 	class="menu z-50 flex flex-col gap-4 p-2 min-w-fit rounded fixed left-0 top-1/2 transform -translate-y-1/2 bg-primary-foreground"
 >
-	<Tooltip.Root openDelay="150">
+	<Tooltip.Root openDelay={150}>
 		<Tooltip.Trigger>
 			<Button
 				variant="ghost"
@@ -79,7 +79,7 @@
 			<p>New slide</p>
 		</Tooltip.Content>
 	</Tooltip.Root>
-	<Tooltip.Root openDelay="150">
+	<Tooltip.Root openDelay={150}>
 		<Tooltip.Trigger>
 			<Button
 				variant="ghost"
