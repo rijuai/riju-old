@@ -1,22 +1,17 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import { supabase } from '$lib/config/supabase'
-	import type { AuthSession } from '@supabase/supabase-js'
+	import { isUserSignedIn } from '$lib/stores/user'
 	import { onMount } from 'svelte'
-
-	let session: AuthSession | null
 
 	onMount(async () => {
 		supabase.auth.onAuthStateChange(async (event, session) => {
-			session = session
-
 			if (!session) goto('/login')
+			if (session && session.user) $isUserSignedIn = true
 		})
 	})
 </script>
 
-{#if session}
+{#if $isUserSignedIn}
 	<slot />
-{:else}
-	<p>Not logged in</p>
 {/if}
