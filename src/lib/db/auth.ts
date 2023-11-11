@@ -45,11 +45,11 @@ export const signOut = async (): Promise<boolean> => {
 	return error ? false : true
 }
 
-export const getUserId = async (): Promise<string | false> => {
+export const getUserId = async (): Promise<string> => {
 	const { data } = await supabase.auth.getSession()
 	const userId = data.session?.user.id
 
-	return userId ? userId : false
+	return userId ?? ''
 }
 
 export const getUserEmail = async (): Promise<string | false> => {

@@ -6,8 +6,8 @@
 
 	onMount(async () => {
 		$isUserSignedIn = await isUserAuthenticated()
+		if ($isUserSignedIn) $userId = await getUserId()
 
-		$userId = await getUserId()
 		if ($isUserSignedIn === false) goto('/login')
 	})
 </script>
