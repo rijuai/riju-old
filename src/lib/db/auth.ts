@@ -8,55 +8,53 @@ export const signInWithMagicLink = async (email: string): Promise<boolean> => {
 		},
 	})
 
-	if (error) return false
-	return true
+	return error ? false : true
 }
 
-export const signInWithGooogle = async () => {
-	const { data, error } = await supabase.auth.signInWithOAuth({
+export const signInWithGooogle = async (): Promise<boolean> => {
+	const { error } = await supabase.auth.signInWithOAuth({
 		provider: 'google',
 		options: {
 			redirectTo: 'https://riju.ai/dashboard',
 		},
 	})
+
+	return error ? false : true
 }
 
 export const signInWithMicrosoft = async () => {
-	const { data, error } = await supabase.auth.signInWithOAuth({
+	const { error } = await supabase.auth.signInWithOAuth({
 		provider: 'azure',
 		options: {
 			redirectTo: 'https://riju.ai/dashboard',
 		},
 	})
+
+	return error ? false : true
 }
 
-export const getUserSignInStatus = async (): Promise<boolean> => {
+export const isUserAuthenticated = async (): Promise<boolean> => {
 	const user = (await supabase.auth.getSession()).data.session?.user
 
-	if (user) return true
-	return false
+	return user ? true : false
 }
 
-export const signOut = async (): Promise<void> => {
-	supabase.auth.signOut()
+export const signOut = async (): Promise<boolean> => {
+	let { error } = await supabase.auth.signOut()
+
+	return error ? false : true
 }
 
-export const getUserId = async (): Promise<string> => {
-	const { data, error } = await supabase.auth.getSession()
+export const getUserId = async (): Promise<string | false> => {
+	const { data } = await supabase.auth.getSession()
+	const userId = data.session?.user.id
 
-	if (data.session) {
-		const userId = data.session.user.id
-		return userId
-	}
-	return error!.message
+	return userId ? userId : false
 }
 
-export const getUserEmail = async (): Promise<string> => {
-	const { data, error } = await supabase.auth.getSession()
+export const getUserEmail = async (): Promise<string | false> => {
+	const { data } = await supabase.auth.getSession()
+	const userEmail = data.session?.user.email
 
-	if (data.session) {
-		const userEmail = data.session.user.email ?? ''
-		return userEmail
-	}
-	return error!.message
+	return userEmail ? userEmail : false
 }
