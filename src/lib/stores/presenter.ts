@@ -1,6 +1,10 @@
 import { readable, writable, type Writable } from 'svelte/store'
 
 export const currentTheme = writable('background-color: #FFF6E0;')
+export let presentationId = writable(''),
+	presentationContent = writable(''),
+	presentationTheme = writable({}),
+	isPresentationPublic = writable(false)
 
 enum TransitionType {
 	None = 'none',

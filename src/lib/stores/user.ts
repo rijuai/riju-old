@@ -1,3 +1,4 @@
-import { writable } from 'svelte/store'
+import { writable, type Writable } from 'svelte/store'
 
-export let userId = writable('')
+export let userId: Writable<string> = writable('')
+export let isUserSignedIn = writable(false)
