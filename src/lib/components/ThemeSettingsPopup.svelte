@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/button/button.svelte'
+	import { Input } from '$lib/components/ui/input'
 	import Label from '$lib/components/ui/label/label.svelte'
 	import * as Popover from '$lib/components/ui/popover'
 	import * as Select from '$lib/components/ui/select'
@@ -24,16 +25,13 @@
 					}}>Generate Random</Button
 				>
 
-				<div class="col-span-2 flex gap-2">
-					<button class="h-5 w-5 bg-red-400 rounded-full" />
-					<button class="h-5 w-5 bg-purple-300 rounded-full" />
-					<button class="h-5 w-5 bg-red-500 rounded-full" />
-					<button class="h-5 w-5 bg-red-500 rounded-full" />
-					<button class="h-5 w-5 bg-red-500 rounded-full" />
-					<button class="h-5 w-5 bg-red-500 rounded-full" />
-					<button class="h-5 w-5 bg-red-500 rounded-full" />
-					<button class="h-5 w-5 bg-red-500 rounded-full" />
-					<button class="h-5 w-5 bg-red-500 rounded-full" />
+				<div class="col-span-2 flex items-center gap-3">
+					<button class="colours-btn bg-blue-200" />
+					<button class="colours-btn bg-violet-300" />
+					<button class="colours-btn bg-orange-200" />
+					<button class="colours-btn bg-slate-300" />
+					<button class="colours-btn bg-lime-200" />
+					<Input class="px-1 py-1 w-8 h-8 rounded-full" type="color" />
 				</div>
 
 				<Label>Tranisition Type</Label>
@@ -61,4 +59,7 @@
 </Popover.Root>
 
 <style lang="postcss">
+	.colours-btn {
+		@apply h-7 w-7 hover:ring rounded-full;
+	}
 </style>
