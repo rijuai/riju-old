@@ -52,9 +52,9 @@ export const getUserId = async (): Promise<string> => {
 	return userId ?? ''
 }
 
-export const getUserEmail = async (): Promise<string | false> => {
+export const getUserEmail = async (): Promise<string | null> => {
 	const { data } = await supabase.auth.getSession()
 	const userEmail = data.session?.user.email
 
-	return userEmail ? userEmail : false
+	return userEmail ? userEmail : null
 }
