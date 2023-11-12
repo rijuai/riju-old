@@ -8,10 +8,10 @@
 	import { getUserEmail, signOut } from '$lib/db/auth'
 	import { onMount } from 'svelte'
 
-	let userEmail: string
+	let email: string
 
 	onMount(async () => {
-		userEmail = (await getUserEmail()) ?? ''
+		email = (await getUserEmail()) ?? ''
 	})
 </script>
 
@@ -23,7 +23,7 @@
 	</Card.Header>
 	<Card.Content>
 		<Label>Email Address</Label>
-		<Input type="email" disabled bind:value={userEmail} />
+		<Input type="email" disabled bind:value={email} />
 	</Card.Content>
 	<Card.Footer class="flex justify-end">
 		<Button
