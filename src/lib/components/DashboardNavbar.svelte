@@ -5,7 +5,6 @@
 	import FeedbackDialog from '$lib/components/FeedbackDialog.svelte'
 	import { Button } from '$lib/components/ui/button'
 	import { createPresentation } from '$lib/db/presentation'
-	import { userId } from '$lib/stores/user'
 	import { PencilLine, Play, Settings } from 'lucide-svelte'
 </script>
 
@@ -33,7 +32,6 @@
 			>
 			<Button
 				on:click={async () => {
-					console.log(`$userId: ${$userId}`)
 					const createdPresentationId = await createPresentation(
 						'Untitled Presentation',
 					)
