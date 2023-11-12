@@ -19,7 +19,8 @@
 			<Button
 				variant="ghost"
 				on:click={() => {
-					let presentationId = $page.params.presentation_id
+					const presentationId = $page.params.presentation_id
+
 					goto(`/presenter/${presentationId}`)
 				}}
 			>
@@ -32,10 +33,10 @@
 			>
 			<Button
 				on:click={async () => {
-					const createdPresentationId = await createPresentation(
+					const presentationId = await createPresentation(
 						'Untitled Presentation',
 					)
-					goto(`/dashboard/editor/${createdPresentationId}`)
+					goto(`/dashboard/editor/${presentationId}`)
 				}}
 			>
 				<PencilLine class="h-5 w-5 mr-2" />
