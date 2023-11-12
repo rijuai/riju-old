@@ -18,7 +18,10 @@
 		isEmailSent = false
 </script>
 
-<MetaData title="Riju | Sign In" description="Sign In" />
+<MetaData
+	title="Riju | Create account or Sign in"
+	description="Create a new account or Sign in if you are a existing user."
+/>
 
 <HomePageNavbar />
 
@@ -34,9 +37,9 @@
 	{:else}
 		<Card.Root>
 			<Card.Header class="space-y-1">
-				<Card.Title class="text-2xl">Create an account</Card.Title>
+				<Card.Title class="text-2xl">Create account | Sign in</Card.Title>
 				<Card.Description>
-					You can also sign in from this same page.
+					Tip: You can also sign in from this same page.
 				</Card.Description>
 			</Card.Header>
 			<Card.Content class="grid gap-4">
@@ -96,7 +99,7 @@
 					on:click={async () => {
 						isEmailSent = true
 						isEmailSent = await signInWithMagicLink(email)
-					}}>{isEmailSent ? 'Loading...' : 'Create account'}</Button
+					}}>{isEmailSent ? 'Loading...' : 'Continue'}</Button
 				>
 			</Card.Footer>
 		</Card.Root>

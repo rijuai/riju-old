@@ -28,7 +28,7 @@
 		</p>
 
 		<div class="flex flex-col md:flex-row justify-center gap-4 mb-2">
-			<Button size="lg" class="text-lg py-6" href="/login">
+			<Button size="lg" class="text-lg py-6" href="/signin">
 				Get started (its free)</Button
 			>
 		</div>
@@ -126,7 +126,7 @@
 	<section class="max-w-lg mx-auto text-center">
 		<h2 class="text-destructive">Ready to ditch PowerPoint?</h2>
 		<h2 class="mb-6">Try it now!</h2>
-		<Button size="lg" class="text-lg py-6" href="/login">
+		<Button size="lg" class="text-lg py-6" href="/signin">
 			Get started (its free)</Button
 		>
 	</section>

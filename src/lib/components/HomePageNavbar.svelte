@@ -9,8 +9,8 @@
 		<Button variant="link" class="text-3xl font-semibold" href="/">Riju</Button>
 		<div class="flex gap-2.5 items-center">
 			<Button variant="ghost" href="/docs/contact">Contact</Button>
-			<Button variant="ghost" href="/login">Sign In</Button>
-			<Button href="/login">Get started</Button>
+			<Button variant="ghost" href="/signin">Sign In</Button>
+			<Button href="/signin">Get started</Button>
 		</div>
 	</div>
 </nav>
