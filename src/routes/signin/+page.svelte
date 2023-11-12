@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation'
 	import GoogleLogo from '$lib/assets/images/google-logo.svg'
 	import MicrosoftLogo from '$lib/assets/images/microsoft-logo.svg'
 	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
@@ -9,13 +10,19 @@
 	import Input from '$lib/components/ui/input/input.svelte'
 	import { Label } from '$lib/components/ui/label'
 	import {
+		isUserAuthenticated,
 		signInWithGooogle,
 		signInWithMagicLink,
 		signInWithMicrosoft,
 	} from '$lib/db/auth'
+	import { onMount } from 'svelte'
 
 	let email: string,
 		isEmailSent = false
+
+	onMount(async () => {
+		if (await isUserAuthenticated()) goto('/dashboard')
+	})
 </script>
 
 <MetaData
