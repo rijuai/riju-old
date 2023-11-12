@@ -5,7 +5,6 @@
 	import FeedbackDialog from '$lib/components/FeedbackDialog.svelte'
 	import { Button } from '$lib/components/ui/button'
 	import { createPresentation } from '$lib/db/presentation'
-	import { presentationId } from '$lib/stores/presenter'
 	import { userId } from '$lib/stores/user'
 	import { PencilLine, Play, Settings } from 'lucide-svelte'
 </script>
@@ -16,12 +15,13 @@
 	<Button variant="link" class="text-2xl" href="/dashboard">Riju</Button>
 	<div class="flex gap-3">
 		<FeedbackDialog />
-		{#if $page.url.pathname === '/dashboard/editor'}
+		{#if $page.url.pathname.includes('/editor')}
 			<ChatBot />
 			<Button
 				variant="ghost"
 				on:click={() => {
-					goto(`/present?id=${$presentationId}`)
+					let presentationId = $page.params.presentation_id
+					goto(`/presenter/${presentationId}`)
 				}}
 			>
 				<Play class="h-5 w-5 mr-1" />Present
@@ -33,11 +33,11 @@
 			>
 			<Button
 				on:click={async () => {
+					console.log(`$userId: ${$userId}`)
 					const createdPresentationId = await createPresentation(
-						$userId,
 						'Untitled Presentation',
 					)
-					goto(`/dashboard/editor?id=${createdPresentationId}`)
+					goto(`/dashboard/editor/${createdPresentationId}`)
 				}}
 			>
 				<PencilLine class="h-5 w-5 mr-2" />

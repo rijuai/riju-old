@@ -10,14 +10,10 @@ export const getPresentations = async (): Promise<Presentations | null> => {
 	return data ? data : null
 }
 
-export const createPresentation = async (
-	userId: string,
-	title: string,
-): Promise<string> => {
+export const createPresentation = async (title: string): Promise<string> => {
 	const { data, error } = await supabase
 		.from('presentations')
 		.insert({
-			user_id: userId,
 			title: title,
 		})
 		.select('presentation_id')
@@ -27,13 +23,13 @@ export const createPresentation = async (
 
 export const getPresentation = async (
 	presentation_id: string,
-): Promise<{ content: JSON[]; is_public: boolean } | void> => {
+): Promise<{ content: any; is_public: any } | null> => {
 	const { data, error } = await supabase
 		.from('presentations')
 		.select('content, is_public')
 		.eq('presentation_id', presentation_id)
 
-	return error ? console.error(error) : data![0]
+	return error ? null : data![0]
 }
 
 export const getPresentationContent = async (
@@ -44,8 +40,7 @@ export const getPresentationContent = async (
 		.select('content')
 		.eq('presentation_id', presentation_id)
 
-	if (error) return console.log(error)
-	return data![0].content
+	return error ? null : data![0].content
 }
 
 export const updatePresentation = async (
@@ -53,13 +48,13 @@ export const updatePresentation = async (
 	updatedAt: string,
 	title: string,
 	content: JSONContent,
-) => {
+): Promise<boolean> => {
 	const { error } = await supabase
 		.from('presentations')
-		.update({ updated_at: updatedAt, title: title, content: content })
+		.update({ title: title, content: content, updated_at: updatedAt })
 		.eq('presentation_id', presentationId)
 
-	return error ? console.error(error) : true
+	return error ? false : true
 }
 
 export const deletePresentation = async (
@@ -76,11 +71,11 @@ export const deletePresentation = async (
 export const updatePresentationPublicStatus = async (
 	presentationId: string,
 	isPublic: boolean,
-): Promise<any> => {
+): Promise<boolean> => {
 	const { error } = await supabase
 		.from('presentations')
 		.update({ is_public: isPublic })
 		.eq('presentation_id', presentationId)
 
-	return error ? console.error(error) : true
+	return error ? false : true
 }
