@@ -3,15 +3,16 @@
 	import Editor from '$lib/components/Editor.svelte'
 	import HelpDialog from '$lib/components/HelpDialog.svelte'
 	import MetaData from '$lib/components/MetaData.svelte'
-	import { presentationId } from '$lib/stores/presenter'
 	import { onMount } from 'svelte'
 
+	let presentationId: string
+
 	onMount(() => {
-		$presentationId = getPresentationId()
+		presentationId = getPresentationId()
 	})
 
 	const getPresentationId = () => {
-		return $page.url.searchParams.get('id') ?? ''
+		return $page.params.presentation_id
 	}
 </script>
 
@@ -20,6 +21,6 @@
 	description="Create and edit presentations with Riju."
 />
 
-<Editor />
+<Editor {presentationId} />
 
 <HelpDialog />

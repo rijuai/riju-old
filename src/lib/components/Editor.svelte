@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/stores'
 	import '$lib/assets/css/editor.css'
 	import EditorMenu from '$lib/components/EditorMenu.svelte'
 	import { Button } from '$lib/components/ui/button'
@@ -8,16 +7,12 @@
 		updatePresentation,
 	} from '$lib/db/presentation'
 	import { SubSection } from '$lib/engines/subSection'
-	import {
-		currentPresentationId,
-		currentPresentationTitle,
-		editorOutput,
-	} from '$lib/stores/editor'
+	import { editorOutput } from '$lib/stores/editor'
 	import { getCurrentTime } from '$lib/utils/time'
 	import { Editor } from '@tiptap/core'
 	import { BubbleMenu } from '@tiptap/extension-bubble-menu'
 	import { Document } from '@tiptap/extension-document'
-	import Gapcursor from '@tiptap/extension-gapcursor'
+	import { Gapcursor } from '@tiptap/extension-gapcursor'
 	import { Image } from '@tiptap/extension-image'
 	import { Placeholder } from '@tiptap/extension-placeholder'
 	import { Underline } from '@tiptap/extension-underline'
@@ -31,23 +26,16 @@
 	} from 'lucide-svelte'
 	import { onDestroy, onMount } from 'svelte'
 
+	export let presentationId: string
+
 	let element: HTMLDivElement,
 		contextMenu: HTMLElement,
 		editor: Editor,
-		presentationId: string,
 		presentationContent: string,
 		showLoader = true
 
 	onMount(async () => {
 		initializeEditor(element)
-		presentationId = getPresentationId()
-		presentationContent = await getPresentationContent(presentationId!)
-		console.log(presentationContent, 'Content')
-
-		if (presentationContent) {
-			editor.commands.setContent(presentationContent)
-		}
-		showLoader = false
 	})
 
 	const CustomDocument = Document.extend({
@@ -86,8 +74,11 @@
 			onCreate: async () => {
 				$editorOutput = editor.getJSON().content!
 
-				$currentPresentationId = presentationId!
-				$currentPresentationTitle = getTitle()
+				presentationContent = await getPresentationContent(presentationId)
+				if (presentationContent) {
+					editor.commands.setContent(presentationContent)
+				}
+				showLoader = false
 			},
 
 			onUpdate: () => {
@@ -95,21 +86,15 @@
 				$editorOutput = editor.getJSON().content!
 
 				let title = getTitle()
-				$currentPresentationTitle = title
 				let currentTime = getCurrentTime()
-				updatePresentation(presentationId!, currentTime, title, $editorOutput)
-				console.log($editorOutput)
+				updatePresentation(presentationId, currentTime, title, $editorOutput)
 			},
 		})
 	}
 
-	const getPresentationId = () => {
-		const presentationId = $page.url.searchParams.get('id') ?? ''
-		return presentationId
-	}
-
 	const getTitle = () => {
 		const title = editor.getJSON().content![0].content![0].text ?? ''
+
 		return title
 	}
 
