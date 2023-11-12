@@ -25,7 +25,7 @@
 
 <HomePageNavbar />
 
-<section class="max-w-md mx-auto mt-8">
+<section class="max-w-md mx-auto mt-16">
 	{#if isEmailSent}
 		<Alert.Root class="mt-6">
 			<Alert.Title class="text-xl">Success!</Alert.Title>
