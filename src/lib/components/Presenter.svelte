@@ -1,24 +1,16 @@
 <script lang="ts">
 	import '$lib/assets/css/presenter.css'
-	import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
-	import { currentTheme, transitionType } from '$lib/stores/presenter'
 	import WaterMark from '$lib/components/WaterMark.svelte'
-	import { Loader } from 'lucide-svelte'
+	import { currentTheme, transitionType } from '$lib/stores/presentation'
 	import Reveal from 'reveal.js'
 	import 'reveal.js/dist/reveal.css'
 	import { onDestroy, onMount } from 'svelte'
 
-	export let presentationContent: JSON[] | void
-	let reveal: Reveal.Api,
-		htmlOutput: string,
-		showLoader = true
+	export let htmlOutput: string
+
+	let reveal: Reveal.Api
 
 	onMount(async () => {
-		if (presentationContent) {
-			htmlOutput = convertContentToHtml(presentationContent)
-			showLoader = false
-		}
-
 		reveal = new Reveal()
 
 		reveal.initialize({
@@ -48,11 +40,7 @@
 
 <div class="reveal" style={$currentTheme}>
 	<div class="slides">
-		{#if showLoader}
-			<Loader class="fixed left-1/2 top-1/2 animate-spin" />
-		{:else}
-			{@html htmlOutput}
-		{/if}
+		{@html htmlOutput}
 	</div>
 </div>
 

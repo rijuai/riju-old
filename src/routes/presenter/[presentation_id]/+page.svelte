@@ -3,28 +3,17 @@
 	import MetaData from '$lib/components/MetaData.svelte'
 	import Presenter from '$lib/components/Presenter.svelte'
 	import PresenterNavbar from '$lib/components/PresenterNavbar.svelte'
-	import { getPresentation } from '$lib/db/presentation'
+	import { getPresentationContent } from '$lib/db/presentation'
+	import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
 	import { Loader } from 'lucide-svelte'
 	import { onMount } from 'svelte'
 
-	let presentationId: string,
-		presentation: { content: JSON[]; is_public: boolean } | void,
-		presentationContent: JSON[] | void,
-		is_public = false
-
-	const getPresentationId = () => {
-		const id = $page.url.searchParams.get('id') ?? ''
-		return id
-	}
+	let presentationId: string, htmlOutput: string
 
 	onMount(async () => {
-		presentationId = getPresentationId()
-		presentation = await getPresentation(presentationId!)
-
-		if (presentation) {
-			presentationContent = presentation.content
-			is_public = presentation.is_public
-		}
+		presentationId = $page.params.presentation_id
+		let content = await getPresentationContent(presentationId)
+		htmlOutput = convertContentToHtml(content)
 	})
 </script>
 
@@ -33,10 +22,10 @@
 	description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
 
-<PresenterNavbar {presentationId} isPresentationPublic={is_public} />
+<PresenterNavbar {presentationId} />
 
-{#if presentationContent}
-	<Presenter {presentationContent} />
+{#if htmlOutput}
+	<Presenter {htmlOutput} />
 {:else}
 	<Loader class="fixed left-1/2 top-1/2 animate-spin" />
 {/if}

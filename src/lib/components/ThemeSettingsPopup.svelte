@@ -4,7 +4,7 @@
 	import Label from '$lib/components/ui/label/label.svelte'
 	import * as Popover from '$lib/components/ui/popover'
 	import * as Select from '$lib/components/ui/select'
-	import { changeTheme, transitionType } from '$lib/stores/presenter'
+	import { transitionType } from '$lib/stores/presentation'
 	import { Sparkles } from 'lucide-svelte'
 </script>
 
