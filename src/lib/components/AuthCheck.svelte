@@ -6,7 +6,7 @@
 
 	onMount(async () => {
 		supabase.auth.onAuthStateChange(async (event, session) => {
-			if (!session) goto('/login')
+			if (!session) goto('/signin')
 			if (session && session.user) $isUserSignedIn = true
 		})
 	})
