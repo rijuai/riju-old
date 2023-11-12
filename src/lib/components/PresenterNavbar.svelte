@@ -4,9 +4,12 @@
 	import SharePopup from '$lib/components/SharePopup.svelte'
 	import ThemeSettingsPopup from '$lib/components/ThemeSettingsPopup.svelte'
 	import { Button } from '$lib/components/ui/button'
-	import { presentationId } from '$lib/stores/presenter'
-	import { isUserSignedIn } from '$lib/stores/user'
+	import { isUserAuthenticated } from '$lib/db/auth'
 	import { Expand, X } from 'lucide-svelte'
+	import { onMount } from 'svelte'
+
+	export let presentationId: string,
+		isUserSignedIn = false
 
 	const showFullScreen = (element: Element) => {
 		const requestFullScreen =
@@ -17,6 +20,10 @@
 
 		requestFullScreen.call(element)
 	}
+
+	onMount(async () => {
+		isUserSignedIn = await isUserAuthenticated()
+	})
 </script>
 
 <nav
@@ -25,7 +32,7 @@
 	<Button variant="link" class="text-2xl" href="/">Riju</Button>
 	<div class="flex gap-4">
 		<FeedbackDialog />
-		{#if $isUserSignedIn}
+		{#if isUserSignedIn}
 			<SharePopup />
 			<ThemeSettingsPopup />
 		{/if}
@@ -40,12 +47,12 @@
 				}
 			}}><Expand /></Button
 		>
-		{#if $isUserSignedIn}
+		{#if isUserSignedIn}
 			<Button
 				variant="ghost"
 				size="icon"
 				on:click={() => {
-					goto(`/dashboard/editor?id=${$presentationId}`)
+					goto(`/dashboard/editor/${presentationId}`)
 				}}><X /></Button
 			>
 		{/if}
