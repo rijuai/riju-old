@@ -1,10 +1,21 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
+	import { page } from '$app/stores'
 	import * as AlertDialog from '$lib/components/ui/alert-dialog'
 	import { Button, buttonVariants } from '$lib/components/ui/button'
 	import { deletePresentation } from '$lib/db/presentation'
-	import { currentPresentationId } from '$lib/stores/editor'
 	import { Trash2 } from 'lucide-svelte'
+	import { onMount } from 'svelte'
+
+	let presentationId: string
+
+	onMount(() => {
+		presentationId = getPresentationId()
+	})
+
+	const getPresentationId = () => {
+		return $page.params.presentation_id
+	}
 </script>
 
 <AlertDialog.Root>
@@ -24,7 +35,7 @@
 			<AlertDialog.Action
 				class={buttonVariants({ variant: 'destructive' })}
 				on:click={async () => {
-					let result = await deletePresentation($currentPresentationId)
+					let result = await deletePresentation(presentationId)
 
 					if (result) {
 						console.log('Successfully deleted presentation')
