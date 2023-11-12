@@ -7,7 +7,7 @@
 		updatePresentation,
 	} from '$lib/db/presentation'
 	import { SubSection } from '$lib/engines/subSection'
-	import { editorOutput } from '$lib/stores/editor'
+	import { editorOutput } from '$lib/stores/presentation'
 	import { getCurrentTime } from '$lib/utils/time'
 	import { Editor } from '@tiptap/core'
 	import { BubbleMenu } from '@tiptap/extension-bubble-menu'
