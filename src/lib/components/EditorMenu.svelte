@@ -34,7 +34,7 @@
 	}
 
 	const uploadImageToR2 = async (file: File): Promise<string> => {
-		const getPresignedUrlResponse = await fetch('/api/upload-image', {
+		const getPresignedUrlResponse = await fetch('/api/image', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

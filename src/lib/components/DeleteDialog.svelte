@@ -4,6 +4,7 @@
 	import * as AlertDialog from '$lib/components/ui/alert-dialog'
 	import { Button, buttonVariants } from '$lib/components/ui/button'
 	import { deletePresentation } from '$lib/db/presentation'
+	import { editorOutput } from '$lib/stores/presentation'
 	import { Trash2 } from 'lucide-svelte'
 	import { onMount } from 'svelte'
 
@@ -15,6 +16,33 @@
 
 	const getPresentationId = () => {
 		return $page.params.presentation_id
+	}
+
+	const deleteImagesInR2 = async (objectKeys: string[]) => {
+		const result = await fetch('/api/image', {
+			method: 'DELETE',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ objectKeys }),
+		})
+
+		return result
+	}
+
+	const deleteImages = async () => {
+		const imagesToDelete: string[] = []
+
+		$editorOutput.forEach((item: Item) => {
+			if (item.type === 'image') {
+				const url = item.attrs.src
+				const path = url.split('/').pop() ?? ''
+
+				imagesToDelete.push(path)
+			}
+		})
+
+		await deleteImagesInR2(imagesToDelete)
 	}
 </script>
 
@@ -35,8 +63,9 @@
 			<AlertDialog.Action
 				class={buttonVariants({ variant: 'destructive' })}
 				on:click={async () => {
-					let result = await deletePresentation(presentationId)
+					await deleteImages()
 
+					let result = await deletePresentation(presentationId)
 					if (result) {
 						console.log('Successfully deleted presentation')
 						goto('/dashboard')
