@@ -28,6 +28,8 @@
 	"dependencies": {
 		"@aws-sdk/client-s3": "^3.449.0",
 		"@aws-sdk/s3-request-presigner": "^3.449.0",
+		"@supabase/auth-ui-shared": "^0.1.8",
+		"@supabase/auth-ui-svelte": "^0.2.8",
 		"@supabase/supabase-js": "^2.38.4",
 		"@tiptap/core": "^2.1.12",
 		"@tiptap/extension-bubble-menu": "^2.1.12",

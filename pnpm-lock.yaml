@@ -11,6 +11,12 @@ dependencies:
   '@aws-sdk/s3-request-presigner':
     specifier: ^3.449.0
     version: 3.449.0
+  '@supabase/auth-ui-shared':
+    specifier: ^0.1.8
+    version: 0.1.8(@supabase/supabase-js@2.38.4)
+  '@supabase/auth-ui-svelte':
+    specifier: ^0.2.8
+    version: 0.2.8(@supabase/supabase-js@2.38.4)
   '@supabase/supabase-js':
     specifier: ^2.38.4
     version: 2.38.4
@@ -1515,6 +1521,29 @@ packages:
       '@smithy/abort-controller': 2.0.12
       '@smithy/types': 2.4.0
       tslib: 2.6.2
+    dev: false
+
+  /@stitches/core@1.2.8:
+    resolution: {integrity: sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==}
+    dev: false
+
+  /@supabase/auth-ui-shared@0.1.8(@supabase/supabase-js@2.38.4):
+    resolution: {integrity: sha512-ouQ0DjKcEFg+0gZigFIEgu01V3e6riGZPzgVD0MJsCBNsMsiDT74+GgCEIElMUpTGkwSja3xLwdFRFgMNFKcjg==}
+    peerDependencies:
+      '@supabase/supabase-js': ^2.21.0
+    dependencies:
+      '@supabase/supabase-js': 2.38.4
+    dev: false
+
+  /@supabase/auth-ui-svelte@0.2.8(@supabase/supabase-js@2.38.4):
+    resolution: {integrity: sha512-yzxo1fljuwx66JUysOYdiBhhjdU2ubVDBLbsbLGiIcRhZXyzSSqaDvmboZGOddQazHHRN5tr/zBXnSGv+1gC0A==}
+    peerDependencies:
+      '@supabase/supabase-js': ^2.21.0
+    dependencies:
+      '@stitches/core': 1.2.8
+      '@supabase/auth-ui-shared': 0.1.8(@supabase/supabase-js@2.38.4)
+      '@supabase/supabase-js': 2.38.4
+      svelte: 3.59.2
     dev: false
 
   /@supabase/functions-js@2.1.5:
@@ -3640,6 +3669,11 @@ packages:
       svelte: 4.2.3
       typescript: 5.2.2
     dev: true
+
+  /svelte@3.59.2:
+    resolution: {integrity: sha512-vzSyuGr3eEoAtT/A6bmajosJZIUWySzY2CzB3w2pgPvnkUjGqlDnsNnA0PMO+mMAhuyMul6C2uuZzY6ELSkzyA==}
+    engines: {node: '>= 8'}
+    dev: false
 
   /svelte@4.2.3:
     resolution: {integrity: sha512-sqmG9KC6uUc7fb3ZuWoxXvqk6MI9Uu4ABA1M0fYDgTlFYu1k02xp96u6U9+yJZiVm84m9zge7rrA/BNZdFpOKw==}
