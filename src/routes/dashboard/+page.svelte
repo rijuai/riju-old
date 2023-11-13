@@ -17,14 +17,14 @@
 						<div class="w-full h-40 bg-zinc-200 rounded-md mb-2.5" />
 						<p class="truncate text-[14px]">{title}</p>
 					</a>
+				{:else}
+					<div
+						class="fixed top-1/2 left-1/2 transform -translate-x-1/2 text-sm text-muted-foreground"
+					>
+						No presentations found. Click on the "Create" button to create a new
+						presentation.
+					</div>
 				{/each}
-			</div>
-		{:else}
-			<div
-				class="fixed top-1/2 left-1/2 transform -translate-x-1/2 text-sm text-muted-foreground"
-			>
-				No presentations found. Click on the "Create" button to create a new
-				presentation.
 			</div>
 		{/if}
 	{:catch error}
