@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
+	import { PUBLIC_SUPABASE_URL } from '$env/static/public'
 	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
 	import MetaData from '$lib/components/MetaData.svelte'
 	import * as Card from '$lib/components/ui/card'
@@ -34,6 +35,7 @@
 				supabaseClient={supabase}
 				view="magic_link"
 				providers={['google', 'azure']}
+				redirectTo={`${PUBLIC_SUPABASE_URL}/auth/callback`}
 				showLinks={false}
 				appearance={{
 					theme: ThemeSupa,
