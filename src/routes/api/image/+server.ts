@@ -73,8 +73,7 @@ export const DELETE: RequestHandler = async ({ request }) => {
 		const command = new DeleteObjectsCommand(deleteParams)
 		const response = await S3.send(command)
 
-		console.log('Deleted objects:', response.Deleted)
-		console.log('Successfully deleted objects from S3.')
+		console.log('Successfully deleted objects from S3.', response)
 
 		return json({ success: true })
 	} catch (error) {
