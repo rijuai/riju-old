@@ -72,18 +72,22 @@
 			],
 
 			onCreate: async () => {
-				$editorOutput = editor.getJSON().content!
-
 				presentationContent = await getPresentationContent(presentationId)
 				if (presentationContent) {
 					editor.commands.setContent(presentationContent)
 				}
+
+				$editorOutput = editor.getJSON().content!
+				$editorOutput = $editorOutput
+				console.log(`Editor Output `, $editorOutput)
+
 				showLoader = false
 			},
 
 			onUpdate: () => {
 				editor = editor
 				$editorOutput = editor.getJSON().content!
+				console.log(`Editor Output `, $editorOutput)
 
 				let title = getTitle()
 				let currentTime = getCurrentTime()
