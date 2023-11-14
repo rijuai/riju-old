@@ -1,4 +1,4 @@
-import { PUBLIC_S3_BUCKET_NAME } from '$env/static/public'
+import { PUBLIC_R2_BUCKET_NAME } from '$env/static/public'
 import { S3 } from '$lib/config/r2'
 import { DeleteObjectsCommand, PutObjectCommand } from '@aws-sdk/client-s3'
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner'
@@ -36,7 +36,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	const presignedUrl = await getSignedUrl(
 		S3,
 		new PutObjectCommand({
-			Bucket: PUBLIC_S3_BUCKET_NAME,
+			Bucket: PUBLIC_R2_BUCKET_NAME,
 			Key: objectKey,
 			ContentType: fileType,
 			ACL: 'public-read',
@@ -61,7 +61,7 @@ export const DELETE: RequestHandler = async ({ request }) => {
 		}
 
 		const deleteParams = {
-			Bucket: PUBLIC_S3_BUCKET_NAME,
+			Bucket: PUBLIC_R2_BUCKET_NAME,
 			Delete: {
 				Objects: objectKeys.map((Key) => ({ Key })),
 				Quiet: false,
