@@ -68,8 +68,6 @@ export const DELETE: RequestHandler = async ({ request }) => {
 			},
 		}
 
-		console.log('Deleting objects from S3...', deleteParams)
-
 		const command = new DeleteObjectsCommand(deleteParams)
 		const response = await S3.send(command)
 
