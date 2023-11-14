@@ -32,7 +32,8 @@
 		contextMenu: HTMLElement,
 		editor: Editor,
 		presentationContent: string,
-		showLoader = true
+		showLoader = true,
+		debounceTimer: NodeJS.Timeout
 
 	onMount(async () => {
 		initializeEditor(element)
@@ -91,7 +92,13 @@
 
 				let title = getTitle()
 				let currentTime = getCurrentTime()
-				updatePresentation(presentationId, currentTime, title, $editorOutput)
+
+				// debounce the update - saves the presentation after user stops typing for 1 second
+				clearTimeout(debounceTimer)
+				debounceTimer = setTimeout(() => {
+					console.log(`Saving presentation...`)
+					updatePresentation(presentationId, currentTime, title, $editorOutput)
+				}, 1000)
 			},
 		})
 	}
