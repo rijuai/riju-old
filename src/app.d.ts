@@ -53,6 +53,15 @@ declare global {
 		title: string
 		thumbnail: string
 	}[]
+
+	enum TransitionType {
+		None = 'none',
+		Slide = 'slide',
+		Fade = 'fade',
+		Zoom = 'zoom',
+		Concave = 'concave',
+		Convex = 'convex',
+	}
 }
 
 export {}

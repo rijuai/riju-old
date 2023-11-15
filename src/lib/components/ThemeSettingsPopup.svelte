@@ -3,8 +3,15 @@
 	import Label from '$lib/components/ui/label/label.svelte'
 	import * as Popover from '$lib/components/ui/popover'
 	import * as Select from '$lib/components/ui/select'
-	import { changeTheme, transitionType } from '$lib/stores/presentation'
+	import { savePresentationTheme } from '$lib/db/presentation'
+	import {
+		changeTheme,
+		currentTheme,
+		transitionType,
+	} from '$lib/stores/presentation'
 	import { Sparkles } from 'lucide-svelte'
+
+	export let presentationId: string
 
 	let transitionTypes = [
 		{
@@ -46,8 +53,14 @@
 					variant="outline"
 					size="sm"
 					class="text-xs"
-					on:click={() => {
+					on:click={async () => {
 						changeTheme()
+						const response = await savePresentationTheme(presentationId, {
+							backgroundCss: $currentTheme,
+							transitionType: $transitionType,
+						})
+						console.log(response)
+						console.log($currentTheme)
 					}}>Generate Random</Button
 				>
 			</div>
@@ -56,8 +69,12 @@
 				<Label>Tranisition Type</Label>
 				<Select.Root
 					selected={$transitionType}
-					onSelectedChange={(value) => {
+					onSelectedChange={async (value) => {
 						$transitionType = value?.value
+						await savePresentationTheme(presentationId, {
+							backgroundCss: $currentTheme,
+							transitionType: $transitionType,
+						})
 					}}
 				>
 					<Select.Trigger>

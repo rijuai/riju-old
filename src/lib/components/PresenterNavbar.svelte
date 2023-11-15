@@ -34,7 +34,7 @@
 		<FeedbackDialog />
 		{#if isUserSignedIn}
 			<SharePopup />
-			<ThemeSettingsPopup />
+			<ThemeSettingsPopup {presentationId} />
 		{/if}
 		<Button
 			variant="ghost"

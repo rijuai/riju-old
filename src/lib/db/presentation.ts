@@ -23,7 +23,11 @@ export const createPresentation = async (title: string): Promise<string> => {
 
 export const getFullPresentation = async (
 	presentation_id: string,
-): Promise<{ content: JSON[]; theme: string; is_public: boolean }> => {
+): Promise<{
+	content: JSON[]
+	theme: { backgroundCss: string; transitionType: TransitionType }
+	is_public: boolean
+}> => {
 	const { data } = await supabase
 		.from('presentations')
 		.select('content, theme, is_public')
@@ -63,6 +67,21 @@ export const deletePresentation = async (
 	const { error } = await supabase
 		.from('presentations')
 		.delete()
+		.eq('presentation_id', presentationId)
+
+	return error ? false : true
+}
+
+export const savePresentationTheme = async (
+	presentationId: string,
+	theme: {
+		backgroundCss: string
+		transitionType: string
+	},
+): Promise<boolean> => {
+	const { error } = await supabase
+		.from('presentations')
+		.update({ theme: theme })
 		.eq('presentation_id', presentationId)
 
 	return error ? false : true
