@@ -1,10 +1,8 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/button/button.svelte'
-	import { Input } from '$lib/components/ui/input'
 	import Label from '$lib/components/ui/label/label.svelte'
 	import * as Popover from '$lib/components/ui/popover'
-	import * as Select from '$lib/components/ui/select'
-	import { transitionType } from '$lib/stores/presentation'
+	import { changeTheme } from '$lib/stores/presentation'
 	import { Sparkles } from 'lucide-svelte'
 </script>
 
@@ -13,7 +11,7 @@
 		><Sparkles />Theme</Popover.Trigger
 	>
 	<Popover.Content>
-		<div class="flex flex-col gap-2">
+		<div class="flex flex-col gap-6">
 			<div class="grid grid-cols-2 items-center gap-3">
 				<Label>Theme</Label>
 				<Button
@@ -24,16 +22,9 @@
 						changeTheme()
 					}}>Generate Random</Button
 				>
+			</div>
 
-				<div class="col-span-2 flex items-center gap-3">
-					<button class="colours-btn bg-blue-200" />
-					<button class="colours-btn bg-violet-300" />
-					<button class="colours-btn bg-orange-200" />
-					<button class="colours-btn bg-slate-300" />
-					<button class="colours-btn bg-lime-200" />
-					<Input class="px-1 py-1 w-8 h-8 rounded-full" type="color" />
-				</div>
-
+			<!-- <div class="grid grid-cols-2 items-center gap-3">
 				<Label>Tranisition Type</Label>
 				<Select.Root
 					selected={$transitionType}
@@ -53,13 +44,10 @@
 						<Select.Item value="convex">Convex</Select.Item>
 					</Select.Content>
 				</Select.Root>
-			</div>
+			</div> -->
+
+			<!-- use this for new rows -->
+			<!-- <div class="grid grid-cols-2 items-center gap-3" /> -->
 		</div>
 	</Popover.Content>
 </Popover.Root>
-
-<style lang="postcss">
-	.colours-btn {
-		@apply h-7 w-7 hover:ring rounded-full;
-	}
-</style>
