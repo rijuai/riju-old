@@ -57,8 +57,8 @@ dependencies:
     specifier: ^2.0.0
     version: 2.0.0
   cmdk-sv:
-    specifier: ^0.0.10
-    version: 0.0.10(svelte@4.2.5)
+    specifier: ^0.0.12
+    version: 0.0.12(svelte@4.2.5)
   dayjs:
     specifier: ^1.11.10
     version: 1.11.10
@@ -2288,8 +2288,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /cmdk-sv@0.0.10(svelte@4.2.5):
-    resolution: {integrity: sha512-oFKbh+MXRNRMe/14hiuakU7voFX7NfhMHNIoiJnuuJh1TisiNOkOd8RGt//XE2vA/Uxo8wgZ8cKuyyxL7j/Qzw==}
+  /cmdk-sv@0.0.12(svelte@4.2.5):
+    resolution: {integrity: sha512-d+eILSOb2W+/3U/j7xGTgGRrZkFB/z4Xlvj0ADrWhf34y9YLzJon3JCGP2hMil5IrVm0P/+IFIeCF5l3//kcjA==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:
