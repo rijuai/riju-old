@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import { page } from '$app/stores'
-	import ChatBot from '$lib/components/ChatBot.svelte'
 	import FeedbackDialog from '$lib/components/FeedbackDialog.svelte'
 	import { Button } from '$lib/components/ui/button'
 	import { createPresentation } from '$lib/db/presentation'
@@ -15,7 +14,6 @@
 	<div class="flex gap-3">
 		<FeedbackDialog />
 		{#if $page.url.pathname.includes('/editor')}
-			<ChatBot />
 			<Button
 				variant="ghost"
 				on:click={() => {
