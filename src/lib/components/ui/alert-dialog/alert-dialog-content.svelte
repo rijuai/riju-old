@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { cn, flyAndScale } from '$lib/utils'
 	import { AlertDialog as AlertDialogPrimitive } from 'bits-ui'
 	import * as AlertDialog from '.'
-	import { cn, flyAndScale } from '$lib/utils'
 
 	type $$Props = AlertDialogPrimitive.ContentProps
 
