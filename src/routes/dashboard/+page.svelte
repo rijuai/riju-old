@@ -14,7 +14,7 @@
 <MetaData title="Riju | Dashboard" description="Your presentations" />
 
 <div class="w-full max-w-4xl mx-auto">
-	<h4 class="mb-4 font-semibold">Templates</h4>
+	<h5 class="mb-4 font-semibold text-muted-foreground">Templates</h5>
 	<div class="grid grid-cols-4 gap-4 mb-8">
 		{#each templates as { title, content }}
 			<Button
@@ -37,6 +37,9 @@
 		<Loader class="fixed left-1/2 top-1/2 animate-spin" />
 	{:then presentations}
 		{#if presentations}
+			<h5 class="mb-4 font-semibold text-muted-foreground">
+				Your presentations
+			</h5>
 			<div class="max-w-4xl mx-auto">
 				<Table.Root>
 					<Table.Caption>A list of your recent presentations.</Table.Caption>
