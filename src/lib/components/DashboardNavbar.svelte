@@ -8,14 +8,14 @@
 </script>
 
 <nav
-	class="sticky top-0 z-10 w-full flex gap-1 justify-between items-center p-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+	class="sticky top-0 z-10 w-full flex gap-1 justify-between items-center p-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b"
 >
 	<Button variant="link" class="text-2xl" href="/dashboard">Riju</Button>
 	<div class="flex gap-3">
 		<FeedbackDialog />
 		{#if $page.url.pathname.includes('/editor')}
 			<Button
-				variant="ghost"
+				variant="secondary"
 				on:click={() => {
 					const presentationId = $page.params.presentation_id
 
