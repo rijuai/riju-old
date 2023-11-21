@@ -26,8 +26,6 @@ export const themes = readable([
 	'background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);',
 	'background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);',
 	'background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);',
-	'background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);',
-	'background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);',
 	'background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);',
 	'background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);',
 	'background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);',
