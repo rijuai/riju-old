@@ -1,30 +1,63 @@
 <script lang="ts">
+	import { goto } from '$app/navigation'
 	import MetaData from '$lib/components/MetaData.svelte'
-	import { getPresentations } from '$lib/db/presentation'
+	import Button from '$lib/components/ui/button/button.svelte'
+	import * as Table from '$lib/components/ui/table'
+	import {
+		createPresentationUsingTemplate,
+		getPresentations,
+	} from '$lib/db/presentation'
+	import { templates } from '$lib/utils/template'
 	import { Loader } from 'lucide-svelte'
 </script>
 
 <MetaData title="Riju | Dashboard" description="Your presentations" />
 
-<div class="ml- w-full">
+<div class="w-full max-w-4xl mx-auto">
+	<h4 class="mb-4 font-semibold">Templates</h4>
+	<div class="grid grid-cols-4 gap-4 mb-8">
+		{#each templates as { title, content }}
+			<Button
+				variant="outline"
+				class="h-24"
+				on:click={async () => {
+					const presentationId = await createPresentationUsingTemplate(
+						title,
+						content,
+					)
+
+					goto(`/dashboard/editor/${presentationId}`)
+				}}
+			>
+				{title}
+			</Button>
+		{/each}
+	</div>
 	{#await getPresentations()}
 		<Loader class="fixed left-1/2 top-1/2 animate-spin" />
 	{:then presentations}
 		{#if presentations}
-			<div class="grid grid-cols-4 gap-6">
-				{#each presentations as { presentation_id, title }}
-					<a href="/dashboard/editor/{presentation_id}">
-						<div class="w-full h-40 bg-zinc-200 rounded-md mb-2.5" />
-						<p class="truncate text-[14px]">{title}</p>
-					</a>
-				{:else}
-					<div
-						class="fixed top-1/2 left-1/2 transform -translate-x-1/2 text-sm text-muted-foreground"
-					>
-						No presentations found. Click on the "Create" button to create a new
-						presentation.
-					</div>
-				{/each}
+			<div class="max-w-4xl mx-auto">
+				<Table.Root>
+					<Table.Caption>A list of your recent presentations.</Table.Caption>
+					<Table.Header>
+						<Table.Row>
+							<Table.Head class="w-[100px]">Sl. no.</Table.Head>
+							<Table.Head>Title</Table.Head>
+						</Table.Row>
+					</Table.Header>
+					<Table.Body>
+						{#each presentations as { presentation_id, title }, index}
+							<Table.Row
+								class="cursor-pointer"
+								on:click={() => goto(`/dashboard/editor/${[presentation_id]}`)}
+							>
+								<Table.Cell class="font-medium">{++index}</Table.Cell>
+								<Table.Cell>{title}</Table.Cell>
+							</Table.Row>
+						{/each}
+					</Table.Body>
+				</Table.Root>
 			</div>
 		{/if}
 	{:catch error}

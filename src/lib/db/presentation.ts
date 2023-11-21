@@ -21,6 +21,21 @@ export const createPresentation = async (title: string): Promise<string> => {
 	return error ? console.error(error) : data![0].presentation_id
 }
 
+export const createPresentationUsingTemplate = async (
+	title: string,
+	content: JSON,
+): Promise<string> => {
+	const { data, error } = await supabase
+		.from('presentations')
+		.insert({
+			title: title,
+			content: content,
+		})
+		.select('presentation_id')
+
+	return error ? console.error(error) : data![0].presentation_id
+}
+
 export const getFullPresentation = async (
 	presentation_id: string,
 ): Promise<{
