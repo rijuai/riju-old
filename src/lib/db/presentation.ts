@@ -23,7 +23,7 @@ export const createPresentation = async (title: string): Promise<string> => {
 
 export const createPresentationUsingTemplate = async (
 	title: string,
-	content: JSON,
+	content: any,
 ): Promise<string> => {
 	const { data, error } = await supabase
 		.from('presentations')
