@@ -30,7 +30,7 @@
 		<Card.Header>
 			<Card.Title>Keyword Shortcuts</Card.Title>
 			<Card.Description
-				>To use it just enter the keyword in new line and press after the
+				>To use it just enter the keyword in new line and press space after the
 				keyword.</Card.Description
 			>
 		</Card.Header>
