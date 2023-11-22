@@ -10,12 +10,8 @@
 	let presentationId: string
 
 	onMount(() => {
-		presentationId = getPresentationId()
+		presentationId = $page.params.presentation_id
 	})
-
-	const getPresentationId = () => {
-		return $page.params.presentation_id
-	}
 </script>
 
 <MetaData
