@@ -2,6 +2,7 @@
 	import { goto } from '$app/navigation'
 	import { page } from '$app/stores'
 	import FeedbackDialog from '$lib/components/FeedbackDialog.svelte'
+	import { Badge } from '$lib/components/ui/badge'
 	import { Button } from '$lib/components/ui/button'
 	import { createPresentation } from '$lib/db/presentation'
 	import { PencilLine, Play, Settings } from 'lucide-svelte'
@@ -10,7 +11,12 @@
 <nav
 	class="sticky top-0 z-10 w-full flex gap-1 justify-between items-center p-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b"
 >
-	<Button variant="link" class="text-2xl" href="/dashboard">Riju</Button>
+	<Button variant="link" class="text-2xl" href="/dashboard"
+		>Riju
+		<Badge variant="secondary" class="bg-amber-200 ml-2"
+			>Currently in alpha</Badge
+		>
+	</Button>
 	<div class="flex gap-3">
 		<FeedbackDialog />
 		{#if $page.url.pathname.includes('/editor')}
