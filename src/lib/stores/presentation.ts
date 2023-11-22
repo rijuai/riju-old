@@ -24,6 +24,7 @@ export let transitionType: Writable<TransitionType> = writable(
 
 export const themes = readable([
 	'background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);',
+	'background: linear-gradient(90deg, rgba(135,206,235,1) 0%, rgba(240,248,255,1) 100%);',
 	'background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);',
 	'background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);',
 	'background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);',
