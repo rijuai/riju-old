@@ -48,7 +48,7 @@
 		"dayjs": "^1.11.10",
 		"file-saver": "^2.0.5",
 		"frappe-charts": "^1.6.2",
-		"lucide-svelte": "^0.292.0",
+		"lucide-svelte": "^0.293.0",
 		"openai": "^4.20.0",
 		"qrcode": "^1.5.3",
 		"reveal.js": "^5.0.2",
