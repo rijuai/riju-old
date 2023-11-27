@@ -21,7 +21,7 @@
 				>Microsoft PowerPoint</span
 			>
 		</h1>
-		<p class="lg:px-12 text-muted-foreground text-xl leading-normal mb-8">
+		<p class="lg:px-12 text-muted-foreground text-xl leading-normal mb-12">
 			Riju is a hyper-fast presentation builder that lets you create stunning
 			presentations in seconds. Say goodbye to boring drag-and-drop and choose
 			from over 100 stunning themes.
@@ -35,6 +35,18 @@
 		<p class="text-muted-foreground">
 			No credit card required. Saves 90% of your time.
 		</p>
+		<a
+			class="flex justify-center mt-12"
+			href="https://www.producthunt.com/posts/riju?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-riju"
+			target="_blank"
+			><img
+				src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=427150&theme=light"
+				alt="Riju - Super&#0032;fast&#0032;&#0038;&#0032;easy&#0045;to&#0045;use&#0032;alternative&#0032;to&#0032;Microsoft&#0032;PowerPoint | Product Hunt"
+				style="width: 250px; height: 54px;"
+				width="250"
+				height="54"
+			/></a
+		>
 	</section>
 
 	<!-- demo -->
