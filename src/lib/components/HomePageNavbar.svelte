@@ -8,6 +8,11 @@
 	<div class="max-w-6xl mx-auto flex justify-between">
 		<Button variant="link" class="text-3xl font-semibold" href="/">Riju</Button>
 		<div class="flex gap-2.5 items-center">
+			<Button
+				variant="ghost"
+				href="https://giant-anise-fba.notion.site/Riju-Change-log-327736186a0c4a4b92621a104569917f"
+				>Change Log</Button
+			>
 			<Button variant="ghost" href="/docs/contact">Contact</Button>
 			<Button variant="ghost" href="/signin">Sign In</Button>
 			<Button href="/signin">Get started</Button>
