@@ -15,7 +15,7 @@
 	<Card.Content>
 		<p>
 			If you have any queries or want to contact us just send us an email at
-			namaste@riju.page
+			namaste@riju.ai
 		</p>
 	</Card.Content>
 </Card.Root>
