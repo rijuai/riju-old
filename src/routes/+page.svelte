@@ -136,11 +136,11 @@
 
 	<!-- cta -->
 	<section class="max-w-lg mx-auto text-center">
-		<h2 class="text-destructive">Ready to ditch PowerPoint?</h2>
-		<h2 class="mb-6">Try it now!</h2>
-		<div class="flex flex-col md:flex-row justify-center gap-4 mb-2">
+		<h1 class="text-destructive mb-2">Ready to ditch PowerPoint?</h1>
+		<h2 class="mb-8">Switch for a new change!</h2>
+		<div class="flex flex-col md:flex-row justify-center gap-4 mb-4">
 			<Button size="lg" class="text-lg py-6" href="/signin">
-				Get started (its free)</Button
+				Get Started (its free)</Button
 			>
 		</div>
 		<p class="text-muted-foreground">
