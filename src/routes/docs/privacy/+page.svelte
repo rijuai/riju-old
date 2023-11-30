@@ -5,7 +5,7 @@
 
 <MetaData title="Riju | Privacy Policy" description="Privacy Policy" />
 
-<Card.Root>
+<Card.Root class="prose">
 	<Card.Header>
 		<Card.Title>Privacy Policy for Riju</Card.Title>
 	</Card.Header>

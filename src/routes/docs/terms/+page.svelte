@@ -8,7 +8,7 @@
 	description="These terms and conditions outline the rules and regulations for the use of Riju's Website, located at https://riju.page."
 />
 
-<Card.Root>
+<Card.Root class="prose">
 	<Card.Header>
 		<Card.Title>Terms and Conditions</Card.Title>
 	</Card.Header>
