@@ -55,7 +55,7 @@
 						{#each presentations as { presentation_id, title }, index}
 							<Table.Row
 								class="cursor-pointer"
-								on:click={() => goto(`/dashboard/editor/${[presentation_id]}`)}
+								on:click={() => goto(`/dashboard/editor/${presentation_id}`)}
 							>
 								<Table.Cell class="font-medium">{++index}</Table.Cell>
 								<Table.Cell>{title}</Table.Cell>
