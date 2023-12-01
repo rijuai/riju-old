@@ -44,7 +44,6 @@
 			</h4>
 			<div class="max-w-4xl mx-auto">
 				<Table.Root>
-					<Table.Caption>A list of your recent presentations.</Table.Caption>
 					<Table.Header>
 						<Table.Row>
 							<Table.Head class="w-[100px]">#</Table.Head>
