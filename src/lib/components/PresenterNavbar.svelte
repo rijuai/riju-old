@@ -4,7 +4,7 @@
 	import ThemeSettingsPopup from '$lib/components/ThemeSettingsPopup.svelte'
 	import { Button } from '$lib/components/ui/button'
 	import { isUserAuthenticated } from '$lib/db/auth'
-	import { Expand, X } from 'lucide-svelte'
+	import { Expand, Maximize, X } from 'lucide-svelte'
 	import { onMount } from 'svelte'
 
 	export let presentationId: string,
@@ -44,7 +44,7 @@
 				if (element !== null) {
 					showFullScreen(element)
 				}
-			}}><Expand /></Button
+			}}><Maximize class="h-5 w-5" /></Button
 		>
 		{#if isUserSignedIn}
 			<Button
@@ -52,7 +52,7 @@
 				size="icon"
 				on:click={() => {
 					goto(`/dashboard/editor/${presentationId}`)
-				}}><X /></Button
+				}}><X class="h-5 w-5" /></Button
 			>
 		{/if}
 	</div>
