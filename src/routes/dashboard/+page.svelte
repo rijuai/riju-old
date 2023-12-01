@@ -47,7 +47,7 @@
 					<Table.Caption>A list of your recent presentations.</Table.Caption>
 					<Table.Header>
 						<Table.Row>
-							<Table.Head class="w-[100px]">Sl. no.</Table.Head>
+							<Table.Head class="w-[100px]">#</Table.Head>
 							<Table.Head>Title</Table.Head>
 						</Table.Row>
 					</Table.Header>
