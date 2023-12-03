@@ -17,9 +17,8 @@
 
 	onMount(async () => {
 		presentationId = $page.params.presentation_id
-		const { content, theme, is_public } = await getFullPresentation(
-			presentationId,
-		)
+		const { content, theme, is_public } =
+			await getFullPresentation(presentationId)
 
 		if (theme === null) {
 			$currentTheme = 'background-color: #fff;'
@@ -27,7 +26,9 @@
 			$currentTheme = theme.backgroundCss
 			$transitionType = theme.transitionType
 		}
+
 		$isPresentationPublic = is_public
+		console.log($isPresentationPublic, 'PRESENTER is_public')
 
 		htmlOutput = convertContentToHtml(content)
 	})

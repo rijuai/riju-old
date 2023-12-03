@@ -3,13 +3,15 @@
 	import { Button } from '$lib/components/ui/button'
 	import Label from '$lib/components/ui/label/label.svelte'
 	import * as Popover from '$lib/components/ui/popover'
+	import { Switch } from '$lib/components/ui/switch'
+	import { updatePresentationPublicStatus } from '$lib/db/presentation'
+	import { isPresentationPublic } from '$lib/stores/presentation'
 
-	// export let isPresentationPublic = false,
-	// 	presentationId: string
+	export let presentationId: string
 
-	// $: {
-	// updatePresentationPublicStatus($presentationId, isPresentationPublic)
-	// }
+	$: {
+		updatePresentationPublicStatus(presentationId, $isPresentationPublic)
+	}
 
 	const getPageUrl = () => {
 		return String($page.url)
@@ -28,17 +30,17 @@
 			<div class="grid grid-cols-2 gap-2 items-center">
 				<Label>Make public</Label>
 				<div class="flex items-center gap-2">
-					<!-- <Switch bind:checked={isPresentationPublic} /> -->
-					<!-- {#if isPresentationPublic} -->
-					<Button
-						variant="outline"
-						size="sm"
-						class="text-xs h-full px-1.5 py-0.5"
-						on:click={() => {
-							copyUrlToClipboard()
-						}}>Copy URL</Button
-					>
-					<!-- {/if} -->
+					<Switch bind:checked={$isPresentationPublic} />
+					{#if $isPresentationPublic}
+						<Button
+							variant="outline"
+							size="sm"
+							class="text-xs h-full px-1.5 py-0.5"
+							on:click={() => {
+								copyUrlToClipboard()
+							}}>Copy URL</Button
+						>
+					{/if}
 				</div>
 			</div>
 		</div>

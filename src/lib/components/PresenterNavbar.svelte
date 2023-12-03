@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import FeedbackDialog from '$lib/components/FeedbackDialog.svelte'
+	import SharePopup from '$lib/components/SharePopup.svelte'
 	import ThemeSettingsPopup from '$lib/components/ThemeSettingsPopup.svelte'
 	import { Button } from '$lib/components/ui/button'
 	import { isUserAuthenticated } from '$lib/db/auth'
-	import { Expand, Maximize, X } from 'lucide-svelte'
+	import { Maximize, X } from 'lucide-svelte'
 	import { onMount } from 'svelte'
 
 	export let presentationId: string,
@@ -32,7 +33,7 @@
 	<div class="flex gap-4">
 		<FeedbackDialog />
 		{#if isUserSignedIn}
-			<!-- <SharePopup /> -->
+			<SharePopup {presentationId} />
 			<ThemeSettingsPopup {presentationId} />
 		{/if}
 		<Button
