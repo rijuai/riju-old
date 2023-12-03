@@ -56,7 +56,6 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 		}
 	})
 
-	console.log(outputHtml)
 	return outputHtml
 }
 
