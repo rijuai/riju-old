@@ -72,8 +72,8 @@ dependencies:
     specifier: ^1.6.2
     version: 1.6.2
   lucide-svelte:
-    specifier: ^0.293.0
-    version: 0.293.0(svelte@4.2.8)
+    specifier: ^0.294.0
+    version: 0.294.0(svelte@4.2.8)
   openai:
     specifier: ^4.20.1
     version: 4.20.1
@@ -2831,8 +2831,8 @@ packages:
       get-func-name: 2.0.2
     dev: true
 
-  /lucide-svelte@0.293.0(svelte@4.2.8):
-    resolution: {integrity: sha512-nQ6QO6anjjiVoipw3dNptzI6NWuiArlhysVtRpoAWICSQVMR3ybwVf6piUUqbjGe+RfGufLzCl93C/yhsS+p4w==}
+  /lucide-svelte@0.294.0(svelte@4.2.8):
+    resolution: {integrity: sha512-jqQDL9bfZm3DzEhulRdPWWw88qQpS/w/fDAdgTsYXjij5I81HYFFxbDHpnSHes2oH9Eri5M3QQDgqV9xtqkyig==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
