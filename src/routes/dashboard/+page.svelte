@@ -38,7 +38,7 @@
 	{#await getPresentations()}
 		<Loader class="fixed left-1/2 top-1/2 animate-spin" />
 	{:then presentations}
-		{#if presentations}
+		{#if presentations && presentations.length > 0}
 			<h4 class="mb-4 font-semibold text-muted-foreground tracking-wide">
 				Your presentations
 			</h4>
@@ -63,6 +63,8 @@
 					</Table.Body>
 				</Table.Root>
 			</div>
+		{:else}
+			<p class="text-center">No presentations to show.</p>
 		{/if}
 	{:catch error}
 		<p>Error: {error.message}</p>
