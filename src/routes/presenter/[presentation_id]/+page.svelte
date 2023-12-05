@@ -22,7 +22,8 @@
 			await getFullPresentation(presentationId)
 
 		if (theme === null) {
-			$currentTheme = 'background-color: #fff;'
+			$currentTheme =
+				'background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);'
 		} else {
 			$currentTheme = theme.backgroundCss
 			$transitionType = theme.transitionType
