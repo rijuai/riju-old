@@ -2,11 +2,11 @@
 	import DemoVideo from '$lib/assets/videos/riju-demo-muted.mp4'
 	import Footer from '$lib/components/Footer.svelte'
 	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
-	import MetaData from '$lib/components/MetaData.svelte'
+	import MetaTags from '$lib/components/MetaTags.svelte'
 	import { Button } from '$lib/components/ui/button'
 </script>
 
-<MetaData
+<MetaTags
 	title="Super fast and easy-to-use alternative to Microsoft PowerPoint"
 	description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />

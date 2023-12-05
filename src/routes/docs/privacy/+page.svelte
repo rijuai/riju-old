@@ -1,9 +1,9 @@
 <script>
-	import MetaData from '$lib/components/MetaData.svelte'
+	import MetaTags from '$lib/components/MetaTags.svelte'
 	import * as Card from '$lib/components/ui/card'
 </script>
 
-<MetaData title="Riju | Privacy Policy" description="Privacy Policy" />
+<MetaTags title="Riju | Privacy Policy" description="Privacy Policy" />
 
 <Card.Root class="prose">
 	<Card.Header>

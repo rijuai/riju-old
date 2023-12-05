@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
-	import MetaData from '$lib/components/MetaData.svelte'
+	import MetaTags from '$lib/components/MetaTags.svelte'
 	import { Button } from '$lib/components/ui/button'
 	import * as Card from '$lib/components/ui/card'
 	import { Input } from '$lib/components/ui/input'
@@ -15,7 +15,7 @@
 	})
 </script>
 
-<MetaData title="Riju | Settings" description="Settings" />
+<MetaTags title="Riju | Settings" description="Settings" />
 
 <Card.Root class="max-w-md mx-auto">
 	<Card.Header>

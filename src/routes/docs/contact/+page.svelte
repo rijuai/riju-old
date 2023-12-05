@@ -1,9 +1,9 @@
 <script>
-	import MetaData from '$lib/components/MetaData.svelte'
+	import MetaTags from '$lib/components/MetaTags.svelte'
 	import * as Card from '$lib/components/ui/card'
 </script>
 
-<MetaData
+<MetaTags
 	title="Riju | Contact"
 	description="To contact us send us an email here"
 />

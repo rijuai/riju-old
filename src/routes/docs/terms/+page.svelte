@@ -1,9 +1,9 @@
 <script>
-	import MetaData from '$lib/components/MetaData.svelte'
+	import MetaTags from '$lib/components/MetaTags.svelte'
 	import * as Card from '$lib/components/ui/card'
 </script>
 
-<MetaData
+<MetaTags
 	title="Riju | Terms and Conditions"
 	description="These terms and conditions outline the rules and regulations for the use of Riju's Website, located at https://riju.page."
 />

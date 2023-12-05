@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
-	import MetaData from '$lib/components/MetaData.svelte'
+	import MetaTags from '$lib/components/MetaTags.svelte'
 	import Button from '$lib/components/ui/button/button.svelte'
 	import * as Table from '$lib/components/ui/table'
 	import {
@@ -11,7 +11,7 @@
 	import { Loader } from 'lucide-svelte'
 </script>
 
-<MetaData title="Riju | Dashboard" description="Your presentations" />
+<MetaTags title="Riju | Dashboard" description="Your presentations" />
 
 <div class="w-full max-w-4xl mx-auto">
 	<h4 class="mb-4 font-semibold text-muted-foreground tracking-wide">

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
-	import MetaData from '$lib/components/MetaData.svelte'
+	import MetaTags from '$lib/components/MetaTags.svelte'
 	import * as Card from '$lib/components/ui/card'
 	import { supabase } from '$lib/config/supabase'
 	import { isUserAuthenticated } from '$lib/db/auth'
@@ -14,7 +14,7 @@
 	})
 </script>
 
-<MetaData
+<MetaTags
 	title="Riju | Create account or Sign in"
 	description="Create a new account or Sign in if you are a existing user."
 />

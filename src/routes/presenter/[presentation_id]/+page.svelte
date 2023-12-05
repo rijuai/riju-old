@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores'
-	import MetaData from '$lib/components/MetaData.svelte'
+	import MetaTags from '$lib/components/MetaTags.svelte'
 	import Presenter from '$lib/components/Presenter.svelte'
 	import PresenterNavbar from '$lib/components/PresenterNavbar.svelte'
 	import { getFullPresentation } from '$lib/db/presentation'
@@ -39,7 +39,7 @@
 	})
 </script>
 
-<MetaData
+<MetaTags
 	title="Riju | Present"
 	description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />

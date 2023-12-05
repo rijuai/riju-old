@@ -1,6 +1,6 @@
 <script lang="ts">
 	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
-	import MetaData from '$lib/components/MetaData.svelte'
+	import MetaTags from '$lib/components/MetaTags.svelte'
 	import Button from '$lib/components/ui/button/button.svelte'
 	import * as Card from '$lib/components/ui/card'
 	import Input from '$lib/components/ui/input/input.svelte'
@@ -49,7 +49,7 @@
 	})
 </script>
 
-<MetaData
+<MetaTags
 	title="Free QR Code Generator"
 	description="Free QR Code Generator, 100% free and download QR codes in PNG, JPG and SVG."
 />

@@ -2,7 +2,7 @@
 	import { page } from '$app/stores'
 	import Editor from '$lib/components/Editor.svelte'
 	import HelpDialog from '$lib/components/HelpDialog.svelte'
-	import MetaData from '$lib/components/MetaData.svelte'
+	import MetaTags from '$lib/components/MetaTags.svelte'
 	import { onMount } from 'svelte'
 
 	let presentationId: string
@@ -12,7 +12,7 @@
 	})
 </script>
 
-<MetaData
+<MetaTags
 	title="Riju | Presentation"
 	description="Create and edit presentations with Riju."
 />
