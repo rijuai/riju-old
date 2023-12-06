@@ -33,7 +33,7 @@
 			<Auth
 				supabaseClient={supabase}
 				view="magic_link"
-				providers={['google', 'azure']}
+				providers={['google']}
 				redirectTo="https://riju.ai/dashboard"
 				showLinks={false}
 				appearance={{
