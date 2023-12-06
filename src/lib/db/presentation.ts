@@ -4,7 +4,7 @@ import type { JSONContent } from '@tiptap/core'
 export const getPresentations = async (): Promise<Presentations | null> => {
 	const { data } = await supabase
 		.from('presentations')
-		.select('id, title, thumbnail')
+		.select('id, title')
 		.order('updated_at', { ascending: false })
 
 	return data ? data : null
@@ -30,6 +30,7 @@ export const createPresentationUsingTemplate = async (
 		.insert({
 			title: title,
 			content: content,
+			updated_at: new Date().toISOString(),
 		})
 		.select('id')
 

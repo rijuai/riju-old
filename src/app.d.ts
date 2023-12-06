@@ -51,7 +51,6 @@ declare global {
 	type Presentations = {
 		id: string
 		title: string
-		thumbnail: string
 	}[]
 
 	enum TransitionType {
