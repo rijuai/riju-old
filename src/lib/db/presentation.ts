@@ -4,7 +4,7 @@ import type { JSONContent } from '@tiptap/core'
 export const getPresentations = async (): Promise<Presentations | null> => {
 	const { data } = await supabase
 		.from('presentations')
-		.select('presentation_id, title, thumbnail')
+		.select('id, title, thumbnail')
 		.order('updated_at', { ascending: false })
 
 	return data ? data : null
@@ -16,9 +16,9 @@ export const createPresentation = async (title: string): Promise<string> => {
 		.insert({
 			title: title,
 		})
-		.select('presentation_id')
+		.select('id')
 
-	return error ? console.error(error) : data![0].presentation_id
+	return error ? console.error(error) : data![0].id
 }
 
 export const createPresentationUsingTemplate = async (
@@ -31,9 +31,9 @@ export const createPresentationUsingTemplate = async (
 			title: title,
 			content: content,
 		})
-		.select('presentation_id')
+		.select('id')
 
-	return error ? console.error(error) : data![0].presentation_id
+	return error ? console.error(error) : data![0].id
 }
 
 export const getFullPresentation = async (
@@ -46,18 +46,18 @@ export const getFullPresentation = async (
 	const { data } = await supabase
 		.from('presentations')
 		.select('content, theme, is_public')
-		.eq('presentation_id', presentation_id)
+		.eq('id', presentation_id)
 
 	return data![0]
 }
 
 export const getPresentationContent = async (
-	presentation_id: string,
+	presentationId: string,
 ): Promise<any> => {
 	const { data, error } = await supabase
 		.from('presentations')
 		.select('content')
-		.eq('presentation_id', presentation_id)
+		.eq('id', presentationId)
 
 	return error ? null : data![0].content
 }
@@ -71,7 +71,7 @@ export const updatePresentation = async (
 	const { error } = await supabase
 		.from('presentations')
 		.update({ title: title, content: content, updated_at: updatedAt })
-		.eq('presentation_id', presentationId)
+		.eq('id', presentationId)
 
 	return error ? false : true
 }
@@ -82,7 +82,7 @@ export const deletePresentation = async (
 	const { error } = await supabase
 		.from('presentations')
 		.delete()
-		.eq('presentation_id', presentationId)
+		.eq('id', presentationId)
 
 	return error ? false : true
 }
@@ -97,7 +97,7 @@ export const savePresentationTheme = async (
 	const { error } = await supabase
 		.from('presentations')
 		.update({ theme: theme })
-		.eq('presentation_id', presentationId)
+		.eq('id', presentationId)
 
 	return error ? false : true
 }
@@ -109,7 +109,7 @@ export const updatePresentationPublicStatus = async (
 	const { error } = await supabase
 		.from('presentations')
 		.update({ is_public: isPublic })
-		.eq('presentation_id', presentationId)
+		.eq('id', presentationId)
 
 	return error ? false : true
 }

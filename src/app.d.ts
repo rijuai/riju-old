@@ -49,7 +49,7 @@ declare global {
 	}
 
 	type Presentations = {
-		presentation_id: string
+		id: string
 		title: string
 		thumbnail: string
 	}[]
