@@ -3,10 +3,7 @@
 	import MetaTags from '$lib/components/MetaTags.svelte'
 	import Button from '$lib/components/ui/button/button.svelte'
 	import * as Table from '$lib/components/ui/table'
-	import {
-		createPresentationUsingTemplate,
-		getPresentations,
-	} from '$lib/db/presentation'
+	import { createPresentation, getPresentations } from '$lib/db/presentation'
 	import { templates } from '$lib/utils/template'
 	import { Loader } from 'lucide-svelte'
 </script>
@@ -23,10 +20,11 @@
 				variant="outline"
 				class="h-24"
 				on:click={async () => {
-					const presentationId = await createPresentationUsingTemplate(
-						title,
-						content,
-					)
+					const presentationId = await createPresentation(title, content, {
+						backgroundCss:
+							'background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);',
+						transitionType: 'zoom',
+					})
 
 					goto(`/dashboard/editor/${presentationId}`)
 				}}

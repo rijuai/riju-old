@@ -10,27 +10,17 @@ export const getPresentations = async (): Promise<Presentations | null> => {
 	return data ? data : null
 }
 
-export const createPresentation = async (title: string): Promise<string> => {
-	const { data, error } = await supabase
-		.from('presentations')
-		.insert({
-			title: title,
-		})
-		.select('id')
-
-	return error ? console.error(error) : data![0].id
-}
-
-export const createPresentationUsingTemplate = async (
+export const createPresentation = async (
 	title: string,
-	content: any,
+	content: JSONContent = [],
+	theme: {} = {},
 ): Promise<string> => {
 	const { data, error } = await supabase
 		.from('presentations')
 		.insert({
 			title: title,
 			content: content,
-			updated_at: new Date().toISOString(),
+			theme: theme,
 		})
 		.select('id')
 
