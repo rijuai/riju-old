@@ -88,7 +88,6 @@
 			onUpdate: () => {
 				editor = editor
 				$editorOutput = editor.getJSON().content!
-				console.log(`Editor Output `, $editorOutput)
 
 				let title = getTitle()
 				let currentTime = getCurrentTime()
