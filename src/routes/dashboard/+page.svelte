@@ -86,7 +86,7 @@
 								class="cursor-pointer"
 								on:click={() => goto(`/dashboard/editor/${id}`)}
 							>
-								<Table.Cell class="font-medium">{++index}</Table.Cell>
+								<Table.Cell class="font-normal">{++index}</Table.Cell>
 								<Table.Cell>{title}</Table.Cell>
 								<Table.Cell
 									class="text-right"
