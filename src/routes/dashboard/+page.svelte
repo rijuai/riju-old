@@ -12,7 +12,7 @@
 	} from '$lib/db/presentation'
 	import { templates } from '$lib/utils/template'
 	import type { JSONContent } from '@tiptap/core'
-	import { Loader, MoreVertical } from 'lucide-svelte'
+	import { ExternalLink, Loader, MoreVertical, Trash2 } from 'lucide-svelte'
 
 	const deleteImagesInR2 = async (objectKeys: string[]) => {
 		const result = await fetch('/api/image', {
@@ -103,7 +103,8 @@
 												<DropdownMenu.Item
 													on:click={() => {
 														window.open(`/dashboard/editor/${id}`, '_blank')
-													}}>Open in new tab</DropdownMenu.Item
+													}}
+													><ExternalLink class="h-4 w-4 mr-2" />Open in new tab</DropdownMenu.Item
 												>
 												<DropdownMenu.Item
 													class="text-destructive"
@@ -116,7 +117,10 @@
 															console.log('Successfully deleted presentation')
 															location.reload()
 														}
-													}}>Delete</DropdownMenu.Item
+													}}
+													><Trash2
+														class="h-4 w-4 mr-2"
+													/>Delete</DropdownMenu.Item
 												>
 											</DropdownMenu.Group>
 										</DropdownMenu.Content>
