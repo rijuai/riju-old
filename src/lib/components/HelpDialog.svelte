@@ -8,7 +8,7 @@
 <Dialog.Root>
 	<Dialog.Trigger
 		class="fixed bottom-4 left-2 {buttonVariants({ variant: 'link' })}"
-		><HelpCircle /></Dialog.Trigger
+		><HelpCircle class="h-5 w-5" /></Dialog.Trigger
 	>
 	<Dialog.Content>
 		<Dialog.Header>
