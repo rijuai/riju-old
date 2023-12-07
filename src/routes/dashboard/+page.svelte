@@ -96,7 +96,7 @@
 								>
 									<DropdownMenu.Root>
 										<DropdownMenu.Trigger>
-											<MoreVertical class="h-5 w-5" />
+											<MoreVertical class="h-4 w-4" />
 										</DropdownMenu.Trigger>
 										<DropdownMenu.Content>
 											<DropdownMenu.Group>
