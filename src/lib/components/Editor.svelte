@@ -69,6 +69,9 @@
 				Gapcursor,
 				BubbleMenu.configure({
 					element: contextMenu,
+					tippyOptions: {
+						offset: [0, 16],
+					},
 				}),
 			],
 
@@ -119,12 +122,13 @@
 
 <!-- bubble menu -->
 <div
-	class="flex gap-1 p-0.5 bg-primary-foreground shadow rounded-lg text-xs"
+	class="flex gap-0.5 p-1 bg-white border rounded-lg shadow-md shadow-slate-400"
 	bind:this={contextMenu}
 >
 	<Button
 		variant="ghost"
 		size="icon"
+		class="h-8 bg-white"
 		on:click={() => {
 			editor.chain().focus().toggleBold().run()
 		}}><Bold /></Button
@@ -132,6 +136,7 @@
 	<Button
 		variant="ghost"
 		size="icon"
+		class="h-8 bg-white"
 		on:click={() => {
 			editor.chain().focus().toggleItalic().run()
 		}}><Italic /></Button
@@ -139,6 +144,7 @@
 	<Button
 		variant="ghost"
 		size="icon"
+		class="h-8"
 		on:click={() => {
 			editor.chain().focus().toggleUnderline().run()
 		}}><UnderlineIcon /></Button
@@ -146,6 +152,7 @@
 	<Button
 		variant="ghost"
 		size="icon"
+		class="h-8 bg-white"
 		on:click={() => {
 			editor.chain().focus().toggleStrike().run()
 		}}><Strikethrough /></Button
@@ -174,6 +181,6 @@
 	}
 
 	:global(svg) {
-		@apply h-5 w-5;
+		@apply h-4 w-4;
 	}
 </style>
