@@ -122,7 +122,7 @@
 
 <!-- bubble menu -->
 <div
-	class="flex gap-0.5 p-1 bg-white border rounded-lg shadow-md shadow-slate-400"
+	class="context-menu flex gap-0.5 p-1 bg-white border rounded-lg shadow-md shadow-slate-400"
 	bind:this={contextMenu}
 >
 	<Button
@@ -180,7 +180,7 @@
 		content: attr(data-placeholder);
 	}
 
-	:global(svg) {
+	:global(.context-menu svg) {
 		@apply h-4 w-4;
 	}
 </style>
