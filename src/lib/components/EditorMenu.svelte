@@ -61,7 +61,7 @@
 </script>
 
 <div
-	class="menu z-50 flex flex-col gap-4 p-2 min-w-fit rounded fixed left-0 top-1/2 transform -translate-y-1/2 bg-primary-foreground"
+	class="menu z-50 flex flex-col gap-4 p-1 min-w-fit rounded fixed left-0 top-1/2 transform -translate-y-1/2 bg-primary-foreground border"
 >
 	<Tooltip.Root openDelay={150}>
 		<Tooltip.Trigger>
@@ -71,7 +71,7 @@
 					editor.chain().focus().enter().setHorizontalRule().run()
 				}}
 			>
-				<Plus />
+				<Plus class="h-5 w-5" />
 			</Button>
 		</Tooltip.Trigger>
 		<Tooltip.Content>
@@ -86,7 +86,7 @@
 					editor.chain().focus().enter().setSubSection().run()
 				}}
 			>
-				<MoveHorizontal />
+				<MoveHorizontal class="h-5 w-5" />
 			</Button>
 		</Tooltip.Trigger>
 		<Tooltip.Content>
@@ -97,37 +97,31 @@
 		variant="ghost"
 		on:click={() => {
 			editor.chain().focus().toggleHeading({ level: 1 }).run()
-		}}><Heading1 /></Button
+		}}><Heading1 class="h-5 w-5" /></Button
 	>
 	<Button
 		variant="ghost"
 		on:click={() => {
 			editor.chain().focus().toggleHeading({ level: 2 }).run()
-		}}><Heading2 /></Button
+		}}><Heading2 class="h-5 w-5" /></Button
 	>
 	<Button
 		variant="ghost"
-		data-tooltip="Paragraph"
-		data-placement="right"
 		on:click={() => {
 			editor.chain().focus().setParagraph().run()
-		}}><CaseSensitive /></Button
+		}}><CaseSensitive class="h-5 w-5" /></Button
 	>
 	<Button
 		variant="ghost"
-		data-tooltip="Bullet List"
-		data-placement="right"
 		on:click={() => {
 			editor.chain().focus().toggleBulletList().run()
-		}}><List /></Button
+		}}><List class="h-5 w-5" /></Button
 	>
 	<Button
 		variant="ghost"
-		data-tooltip="Ordered List"
-		data-placement="right"
 		on:click={() => {
 			editor.chain().focus().toggleOrderedList().run()
-		}}><ListOrdered /></Button
+		}}><ListOrdered class="h-5 w-5" /></Button
 	>
 	<input
 		type="file"
@@ -136,10 +130,7 @@
 		bind:this={fileInput}
 		on:change={handleImage}
 	/>
-	<Button
-		variant="ghost"
-		data-tooltip="Image"
-		data-placement="right"
-		on:click={() => fileInput.click()}><Image /></Button
+	<Button variant="ghost" on:click={() => fileInput.click()}
+		><Image class="h-5 w-5" /></Button
 	>
 </div>
