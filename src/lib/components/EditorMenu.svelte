@@ -12,7 +12,6 @@
 		MoveHorizontal,
 		Plus,
 	} from 'lucide-svelte'
-	import DeleteDialog from './DeleteDialog.svelte'
 
 	export let editor: Editor
 	let fileInput: HTMLInputElement
@@ -143,5 +142,4 @@
 		data-placement="right"
 		on:click={() => fileInput.click()}><Image /></Button
 	>
-	<DeleteDialog />
 </div>

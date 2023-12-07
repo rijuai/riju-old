@@ -2,10 +2,42 @@
 	import { goto } from '$app/navigation'
 	import MetaTags from '$lib/components/MetaTags.svelte'
 	import Button from '$lib/components/ui/button/button.svelte'
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu'
 	import * as Table from '$lib/components/ui/table'
-	import { createPresentation, getPresentations } from '$lib/db/presentation'
+	import {
+		createPresentation,
+		deletePresentation,
+		getPresentationContent,
+		getPresentations,
+	} from '$lib/db/presentation'
 	import { templates } from '$lib/utils/template'
-	import { Loader } from 'lucide-svelte'
+	import type { JSONContent } from '@tiptap/core'
+	import { Loader, MoreVertical } from 'lucide-svelte'
+
+	const deleteImagesInR2 = async (objectKeys: string[]) => {
+		const result = await fetch('/api/image', {
+			method: 'DELETE',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ objectKeys }),
+		})
+	}
+
+	const deleteImages = async (editorOutput: JSONContent) => {
+		const imagesToDelete: string[] = []
+
+		editorOutput.forEach((item: Item) => {
+			if (item.type === 'image') {
+				const url = item.attrs.src
+				const path = url.split('/').pop() ?? ''
+
+				imagesToDelete.push(path)
+			}
+		})
+
+		await deleteImagesInR2(imagesToDelete)
+	}
 </script>
 
 <MetaTags title="Riju | Dashboard" description="Your presentations" />
@@ -49,13 +81,47 @@
 						</Table.Row>
 					</Table.Header>
 					<Table.Body>
-						{#each presentations as { id, title }, index}
+						{#each presentations as { id, title }, index (id)}
 							<Table.Row
 								class="cursor-pointer"
 								on:click={() => goto(`/dashboard/editor/${id}`)}
 							>
 								<Table.Cell class="font-medium">{++index}</Table.Cell>
 								<Table.Cell>{title}</Table.Cell>
+								<Table.Cell
+									class="text-right"
+									on:click={(e) => {
+										e.stopPropagation()
+									}}
+								>
+									<DropdownMenu.Root>
+										<DropdownMenu.Trigger>
+											<MoreVertical class="h-5 w-5" />
+										</DropdownMenu.Trigger>
+										<DropdownMenu.Content>
+											<DropdownMenu.Group>
+												<DropdownMenu.Item
+													on:click={() => {
+														window.open(`/dashboard/editor/${id}`, '_blank')
+													}}>Open in new tab</DropdownMenu.Item
+												>
+												<DropdownMenu.Item
+													class="text-destructive"
+													on:click={async () => {
+														let editorOutput = await getPresentationContent(id)
+														await deleteImages(editorOutput)
+
+														let result = await deletePresentation(id)
+														if (result) {
+															console.log('Successfully deleted presentation')
+															location.reload()
+														}
+													}}>Delete</DropdownMenu.Item
+												>
+											</DropdownMenu.Group>
+										</DropdownMenu.Content>
+									</DropdownMenu.Root>
+								</Table.Cell>
 							</Table.Row>
 						{/each}
 					</Table.Body>
