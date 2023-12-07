@@ -5,7 +5,7 @@
 
 <Dialog.Root>
 	<Dialog.Trigger class={buttonVariants({ variant: 'outline' })}
-		>Give Feedback</Dialog.Trigger
+		>Feedback</Dialog.Trigger
 	>
 	<Dialog.Content>
 		<Dialog.Header>
