@@ -52,11 +52,13 @@
 				variant="outline"
 				class="h-24"
 				on:click={async () => {
-					const presentationId = await createPresentation(title, content, {
+					const theme = {
 						backgroundCss:
 							'background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);',
 						transitionType: 'zoom',
-					})
+					}
+
+					const presentationId = await createPresentation(title, content, theme)
 
 					goto(`/dashboard/editor/${presentationId}`)
 				}}
