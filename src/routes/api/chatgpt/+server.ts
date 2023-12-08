@@ -18,5 +18,14 @@ export const POST: RequestHandler = async ({ request }) => {
 
 	let message = completion.choices[0].message.content
 
-	return json({ message: message })
+	return json(
+		{ message: message },
+		{
+			headers: {
+				'Access-Control-Allow-Origin': 'https://riju.ai',
+				'Access-Control-Allow-Methods': 'POST',
+				'Access-Control-Allow-Headers': 'Content-Type',
+			},
+		},
+	)
 }
