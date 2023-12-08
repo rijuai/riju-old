@@ -65,9 +65,6 @@ dependencies:
   file-saver:
     specifier: ^2.0.5
     version: 2.0.5
-  frappe-charts:
-    specifier: ^1.6.2
-    version: 1.6.2
   lucide-svelte:
     specifier: ^0.294.0
     version: 0.294.0(svelte@4.2.8)
@@ -2500,10 +2497,6 @@ packages:
   /fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
     dev: true
-
-  /frappe-charts@1.6.2:
-    resolution: {integrity: sha512-9TC3/+YVUi84yYoEbxFiSqu+1FQ5If/ydUNj6i8FRpwynd08t6a7RkS+IRJozAk6NfdL8/LVTTE1DUOjjKZZxg==}
-    dev: false
 
   /fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}

@@ -44,7 +44,6 @@
 		"cmdk-sv": "^0.0.12",
 		"dayjs": "^1.11.10",
 		"file-saver": "^2.0.5",
-		"frappe-charts": "^1.6.2",
 		"lucide-svelte": "^0.294.0",
 		"openai": "^4.20.1",
 		"pexels": "^1.4.0",
