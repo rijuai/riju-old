@@ -40,6 +40,17 @@ export const getFullPresentation = async (
 	return data ? data[0] : null
 }
 
+export const getPresentationContent = async (
+	presentationId: string,
+): Promise<any> => {
+	const { data, error } = await supabase
+		.from('presentations')
+		.select('content')
+		.eq('id', presentationId)
+
+	return error ? null : data![0].content
+}
+
 export const updatePresentation = async (
 	presentationId: string,
 	updatedAt: string,
