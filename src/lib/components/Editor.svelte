@@ -122,7 +122,7 @@
 
 <!-- bubble menu -->
 <div
-	class="context-menu flex gap-0.5 p-1 bg-white border rounded-lg shadow-md shadow-slate-400"
+	class="context-menu flex gap-0.5 p-1 bg-white border rounded shadow-md shadow-slate-300"
 	bind:this={contextMenu}
 >
 	<Button
