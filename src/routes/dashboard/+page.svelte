@@ -10,7 +10,7 @@
 		getPresentationContent,
 		getPresentations,
 	} from '$lib/db/presentation'
-	import { templates } from '$lib/utils/template'
+	import { templates } from '$lib/utils/templates'
 	import type { JSONContent } from '@tiptap/core'
 	import { ExternalLink, Loader, MoreVertical, Trash2 } from 'lucide-svelte'
 
