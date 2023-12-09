@@ -83,7 +83,6 @@
 
 				$editorOutput = editor.getJSON().content!
 				$editorOutput = $editorOutput
-				console.log(`Editor Output `, $editorOutput)
 
 				showLoader = false
 			},
