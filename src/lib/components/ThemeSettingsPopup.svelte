@@ -45,14 +45,13 @@
 	<Popover.Trigger class="flex items-center gap-1.5"
 		><Sparkles class="h-5 w-5" />Theme</Popover.Trigger
 	>
-	<Popover.Content>
+	<Popover.Content class="w-80">
 		<div class="flex flex-col gap-6">
 			<div class="grid grid-cols-2 items-center gap-3">
 				<Label>Theme</Label>
 				<Button
 					variant="outline"
 					size="sm"
-					class="text-xs"
 					on:click={async () => {
 						changeTheme()
 						const response = await savePresentationTheme(presentationId, {
@@ -61,8 +60,9 @@
 						})
 						console.log(response)
 						console.log($currentTheme)
-					}}>Generate Random</Button
-				>
+					}}
+					>Change
+				</Button>
 			</div>
 
 			<div class="grid grid-cols-2 items-center gap-3">
