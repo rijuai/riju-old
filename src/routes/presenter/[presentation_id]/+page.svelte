@@ -11,7 +11,7 @@
 		transitionType,
 	} from '$lib/stores/presentation'
 	import { Loader } from 'lucide-svelte'
-	import { onDestroy, onMount } from 'svelte'
+	import { onMount } from 'svelte'
 
 	let presentationId: string, htmlOutput: string
 
@@ -21,6 +21,8 @@
 		const { content, theme, is_public } =
 			await getFullPresentation(presentationId)
 
+		$isPresentationPublic = is_public
+
 		if (theme === null) {
 			$currentTheme =
 				'background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);'
@@ -29,14 +31,7 @@
 			$transitionType = theme.transitionType
 		}
 
-		$isPresentationPublic = is_public
-
 		htmlOutput = convertContentToHtml(content)
-	})
-
-	onDestroy(() => {
-		$currentTheme = ''
-		$isPresentationPublic = false
 	})
 </script>
 
