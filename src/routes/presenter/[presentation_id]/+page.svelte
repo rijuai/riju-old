@@ -21,6 +21,10 @@
 		const { content, theme, is_public } =
 			await getFullPresentation(presentationId)
 
+		console.log(
+			`is_public: ${is_public}, isPresentationPublic: ${isPresentationPublic}`,
+		)
+
 		$isPresentationPublic = is_public
 
 		if (theme === null) {
