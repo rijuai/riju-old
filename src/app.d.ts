@@ -12,7 +12,7 @@ declare global {
 	type Item = {
 		[x: string]: undefined
 		type: string
-		content: any[]
+		content: Content[]
 		attrs: {
 			start: number
 			src: string
