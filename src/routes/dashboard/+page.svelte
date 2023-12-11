@@ -1,3 +1,7 @@
+<script context="module" lang="ts">
+	const presentations = await getPresentations()
+</script>
+
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import MetaTags from '$lib/components/MetaTags.svelte'
@@ -41,7 +45,6 @@
 </script>
 
 <MetaTags title="Riju | Dashboard" description="Your presentations" />
-
 <div class="w-full max-w-4xl mx-auto">
 	<h4 class="mb-4 font-semibold text-muted-foreground tracking-wide">
 		Templates
@@ -67,7 +70,7 @@
 			</Button>
 		{/each}
 	</div>
-	{#await getPresentations()}
+	{#await presentations}
 		<Loader class="fixed left-1/2 top-1/2 animate-spin" />
 	{:then presentations}
 		{#if presentations && presentations.length > 0}
