@@ -1,8 +1,9 @@
 import { Node, mergeAttributes, nodeInputRule } from '@tiptap/core'
 import { NodeSelection, TextSelection } from '@tiptap/pm/state'
+import type { HTMLAttributes } from 'svelte/elements'
 
 export interface SubSectionOptions {
-	HTMLAttributes: React.HTMLAttributes<HTMLDivElement>
+	HTMLAttributes: HTMLAttributes<HTMLDivElement>
 }
 
 declare module '@tiptap/core' {
