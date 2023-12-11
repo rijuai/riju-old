@@ -1,15 +1,15 @@
 import type { HTMLContent, JSONContent } from '@tiptap/core'
 
 export const convertContentToHtml = (content: JSONContent): HTMLContent => {
-	let outputHtml = '',
-		count = 0,
-		temphtml = '',
-		blocks: string[] = [],
-		addSubSection = false,
-		images = []
+	let outputHtml = ''
+	let count = 0
+	let temphtml = ''
+	const blocks: string[] = []
+	let addSubSection = false
+	const images = []
 
 	content.forEach((item: Item) => {
-		let itemType = item.type
+		const itemType = item.type
 		count++
 
 		if (itemType === 'heading') {
@@ -92,7 +92,7 @@ const getParagraph = (item: Item): string => {
 }
 
 const getList = (item: Item | Content): string => {
-	let listType = item.type === 'orderedList' ? 'ol' : 'ul'
+	const listType = item.type === 'orderedList' ? 'ol' : 'ul'
 	let list = `<${listType}>`
 
 	item.content.forEach((listItem: ListItem) => {
@@ -128,7 +128,7 @@ const getImage = (item: Item): string => {
 
 const applyMarks = (text: string, marks: Marks[]): string => {
 	let html = ''
-	let openTags: string[] = []
+	const openTags: string[] = []
 	for (const mark of marks) {
 		if (mark.type === 'bold') openTags.push('<strong>')
 		if (mark.type === 'italic') openTags.push('<em>')
