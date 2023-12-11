@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import DemoVideo from '$lib/assets/videos/riju-demo-muted.mp4'
 	import Footer from '$lib/components/Footer.svelte'
 	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'

@@ -1,8 +1,8 @@
-import { mergeAttributes, Node, nodeInputRule } from '@tiptap/core'
+import { Node, mergeAttributes, nodeInputRule } from '@tiptap/core'
 import { NodeSelection, TextSelection } from '@tiptap/pm/state'
 
 export interface SubSectionOptions {
-	HTMLAttributes: Record<string, any>
+	HTMLAttributes: React.HTMLAttributes<HTMLDivElement>
 }
 
 declare module '@tiptap/core' {

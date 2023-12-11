@@ -2,7 +2,7 @@ import { PUBLIC_R2_BUCKET_NAME } from '$env/static/public'
 import { S3 } from '$lib/config/r2'
 import { DeleteObjectsCommand, PutObjectCommand } from '@aws-sdk/client-s3'
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner'
-import { json, type RequestHandler } from '@sveltejs/kit'
+import { type RequestHandler, json } from '@sveltejs/kit'
 
 const slugifyString = (str: string) => {
 	return str

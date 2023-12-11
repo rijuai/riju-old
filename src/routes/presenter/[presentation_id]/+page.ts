@@ -7,9 +7,8 @@ import type { PageLoad } from './$types'
 export const load: PageLoad = async ({ params }) => {
 	console.log('load')
 	const presentationId = params.presentation_id
-	const { content, theme, is_public } = await getFullPresentation(
-		presentationId,
-	)
+	const { content, theme, is_public } =
+		await getFullPresentation(presentationId)
 	console.log(content)
 	return {
 		content,

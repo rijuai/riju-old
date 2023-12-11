@@ -1,5 +1,5 @@
 import { Dialog as SheetPrimitive } from 'bits-ui'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 import Content from './sheet-content.svelte'
 import Description from './sheet-description.svelte'

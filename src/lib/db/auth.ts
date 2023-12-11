@@ -14,7 +14,7 @@ export const getUserEmail = async (): Promise<string | null> => {
 }
 
 export const signOut = async (): Promise<boolean> => {
-	let { error } = await supabase.auth.signOut()
+	const { error } = await supabase.auth.signOut()
 
 	return error ? false : true
 }
