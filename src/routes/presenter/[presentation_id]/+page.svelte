@@ -3,7 +3,6 @@
 	import MetaTags from '$lib/components/MetaTags.svelte'
 	import Presenter from '$lib/components/Presenter.svelte'
 	import PresenterNavbar from '$lib/components/PresenterNavbar.svelte'
-	import { getFullPresentation } from '$lib/db/presentation'
 	import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
 	import {
 		currentTheme,
@@ -12,21 +11,15 @@
 	} from '$lib/stores/presentation'
 	import { Loader } from 'lucide-svelte'
 	import { onMount } from 'svelte'
+	import type { PageData } from './$types'
 
 	let presentationId: string, htmlOutput: string
+	export let data: PageData
+	const { content, theme, isPublic } = data
 
 	onMount(async () => {
 		presentationId = $page.params.presentation_id
-
-		const { content, theme, is_public } =
-			await getFullPresentation(presentationId)
-
-		console.log(
-			`is_public: ${is_public}, isPresentationPublic:`,
-			isPresentationPublic,
-		)
-
-		$isPresentationPublic = is_public
+		$isPresentationPublic = isPublic
 
 		if (theme === null) {
 			$currentTheme =
