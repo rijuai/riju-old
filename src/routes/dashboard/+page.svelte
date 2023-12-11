@@ -8,11 +8,14 @@
 		createPresentation,
 		deletePresentation,
 		getPresentationContent,
-		getPresentations,
 	} from '$lib/db/presentation'
 	import { templates } from '$lib/utils/templates'
 	import type { JSONContent } from '@tiptap/core'
-	import { ExternalLink, Loader, MoreVertical, Trash2 } from 'lucide-svelte'
+	import { ExternalLink, MoreVertical, Trash2 } from 'lucide-svelte'
+	import type { PageData } from './$types'
+
+	export let data: PageData
+	const presentations = data.presentations
 
 	const deleteImagesInR2 = async (objectKeys: string[]) => {
 		const result = await fetch('/api/image', {
@@ -66,76 +69,70 @@
 			</Button>
 		{/each}
 	</div>
-	{#await getPresentations()}
-		<Loader class="fixed left-1/2 top-1/2 animate-spin" />
-	{:then presentations}
-		{#if presentations && presentations.length > 0}
-			<h4 class="mb-4 font-semibold text-muted-foreground tracking-wide">
-				Your presentations
-			</h4>
-			<div class="max-w-4xl mx-auto">
-				<Table.Root>
-					<Table.Header>
-						<Table.Row>
-							<Table.Head class="w-[100px]">#</Table.Head>
-							<Table.Head>Title</Table.Head>
-						</Table.Row>
-					</Table.Header>
-					<Table.Body>
-						{#each presentations as { id, title }, index (id)}
-							<Table.Row
-								class="cursor-pointer"
-								on:click={() => goto(`/dashboard/editor/${id}`)}
+	{#if presentations && presentations.length > 0}
+		<h4 class="mb-4 font-semibold text-muted-foreground tracking-wide">
+			Your presentations
+		</h4>
+		<div class="max-w-4xl mx-auto">
+			<Table.Root>
+				<Table.Header>
+					<Table.Row>
+						<Table.Head class="w-[100px]">#</Table.Head>
+						<Table.Head>Title</Table.Head>
+					</Table.Row>
+				</Table.Header>
+				<Table.Body>
+					{#each presentations as { id, title }, index (id)}
+						<Table.Row
+							class="cursor-pointer"
+							on:click={() => goto(`/dashboard/editor/${id}`)}
+						>
+							<Table.Cell class="font-normal">{++index}</Table.Cell>
+							<Table.Cell>{title}</Table.Cell>
+							<Table.Cell
+								class="text-right"
+								on:click={(e) => {
+									e.stopPropagation()
+								}}
 							>
-								<Table.Cell class="font-normal">{++index}</Table.Cell>
-								<Table.Cell>{title}</Table.Cell>
-								<Table.Cell
-									class="text-right"
-									on:click={(e) => {
-										e.stopPropagation()
-									}}
-								>
-									<DropdownMenu.Root>
-										<DropdownMenu.Trigger>
-											<MoreVertical class="h-4 w-4" />
-										</DropdownMenu.Trigger>
-										<DropdownMenu.Content>
-											<DropdownMenu.Group>
-												<DropdownMenu.Item
-													on:click={() => {
-														window.open(`/dashboard/editor/${id}`, '_blank')
-													}}
-													><ExternalLink class="h-4 w-4 mr-2" />Open in new tab</DropdownMenu.Item
-												>
-												<DropdownMenu.Item
-													class="text-destructive"
-													on:click={async () => {
-														let editorOutput = await getPresentationContent(id)
-														await deleteImages(editorOutput)
+								<DropdownMenu.Root>
+									<DropdownMenu.Trigger>
+										<MoreVertical class="h-4 w-4" />
+									</DropdownMenu.Trigger>
+									<DropdownMenu.Content>
+										<DropdownMenu.Group>
+											<DropdownMenu.Item
+												on:click={() => {
+													window.open(`/dashboard/editor/${id}`, '_blank')
+												}}
+												><ExternalLink class="h-4 w-4 mr-2" />Open in new tab</DropdownMenu.Item
+											>
+											<DropdownMenu.Item
+												class="text-destructive"
+												on:click={async () => {
+													let editorOutput = await getPresentationContent(id)
+													await deleteImages(editorOutput)
 
-														let result = await deletePresentation(id)
-														if (result) {
-															console.log('Successfully deleted presentation')
-															location.reload()
-														}
-													}}
-													><Trash2
-														class="h-4 w-4 mr-2"
-													/>Delete</DropdownMenu.Item
-												>
-											</DropdownMenu.Group>
-										</DropdownMenu.Content>
-									</DropdownMenu.Root>
-								</Table.Cell>
-							</Table.Row>
-						{/each}
-					</Table.Body>
-				</Table.Root>
-			</div>
-		{:else}
-			<p class="text-center">No presentations to show.</p>
-		{/if}
-	{:catch error}
-		<p>Error: {error.message}</p>
-	{/await}
+													let result = await deletePresentation(id)
+													if (result) {
+														console.log('Successfully deleted presentation')
+														location.reload()
+													}
+												}}
+												><Trash2
+													class="h-4 w-4 mr-2"
+												/>Delete</DropdownMenu.Item
+											>
+										</DropdownMenu.Group>
+									</DropdownMenu.Content>
+								</DropdownMenu.Root>
+							</Table.Cell>
+						</Table.Row>
+					{/each}
+				</Table.Body>
+			</Table.Root>
+		</div>
+	{:else}
+		<p class="text-center">No presentations to show.</p>
+	{/if}
 </div>
