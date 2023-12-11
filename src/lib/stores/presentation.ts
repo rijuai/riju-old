@@ -1,7 +1,7 @@
 import type { JSONContent } from '@tiptap/core'
 import { readable, writable, type Writable } from 'svelte/store'
 
-export let editorOutput = writable({} as JSONContent),
+export const editorOutput = writable({} as JSONContent),
 	presentationId = writable(''),
 	presentationContent = writable({} as JSONContent),
 	presentationTheme = writable({}),
@@ -18,6 +18,7 @@ enum TransitionType {
 	Convex = 'convex',
 }
 
+// biome-ignore lint/style/useConst: <explanation>
 export let transitionType: Writable<TransitionType> = writable(
 	TransitionType.Zoom,
 )
@@ -37,8 +38,8 @@ export const themes = readable([
 ])
 
 export const getRandomNumber = (length: number): number => {
-	const previousNumbers = new Set<number>(),
-		maxNumber = length
+	const previousNumbers = new Set<number>()
+	const maxNumber = length
 
 	let randomNumber: number
 	do {
