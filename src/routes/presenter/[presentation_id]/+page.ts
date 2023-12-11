@@ -2,7 +2,7 @@ export const ssr = false
 import { getFullPresentation } from '$lib/db/presentation'
 // ! DON'T PRE-RENDER THIS PAGE
 
-import type { PageLoad } from '../$types'
+import type { PageLoad } from './$types'
 
 export const load: PageLoad = async ({ params }) => {
 	console.log('load')
