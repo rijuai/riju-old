@@ -1,7 +1,3 @@
-<script context="module" lang="ts">
-	const presentations = await getPresentations()
-</script>
-
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import MetaTags from '$lib/components/MetaTags.svelte'
@@ -70,7 +66,7 @@
 			</Button>
 		{/each}
 	</div>
-	{#await presentations}
+	{#await getPresentations()}
 		<Loader class="fixed left-1/2 top-1/2 animate-spin" />
 	{:then presentations}
 		{#if presentations && presentations.length > 0}
