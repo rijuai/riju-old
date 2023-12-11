@@ -48,7 +48,7 @@ export const getPresentationContent = async (
 		.select('content')
 		.eq('id', presentationId)
 
-	return error ? null : data![0].content
+	return data ? data[0].content : null
 }
 
 export const updatePresentation = async (
