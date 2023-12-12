@@ -11,7 +11,7 @@
 	} from '$lib/db/presentation'
 	import { templates } from '$lib/utils/templates'
 	import type { JSONContent } from '@tiptap/core'
-	import { ExternalLink, MoreVertical, Trash2 } from 'lucide-svelte'
+	import { ExternalLink, MoreHorizontal, Trash2 } from 'lucide-svelte'
 	import type { PageData } from './$types'
 
 	export let data: PageData
@@ -97,7 +97,7 @@
 							>
 								<DropdownMenu.Root>
 									<DropdownMenu.Trigger>
-										<MoreVertical class="h-4 w-4" />
+										<MoreHorizontal class="h-4 w-4" />
 									</DropdownMenu.Trigger>
 									<DropdownMenu.Content>
 										<DropdownMenu.Group>
