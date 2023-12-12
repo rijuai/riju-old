@@ -7,7 +7,6 @@
 	import { onDestroy, onMount } from 'svelte'
 
 	export let htmlOutput: string
-
 	let reveal: Reveal.Api
 
 	onMount(async () => {
