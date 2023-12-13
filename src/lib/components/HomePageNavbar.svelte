@@ -6,7 +6,7 @@
 	class="sticky top-0 z-50 w-full py-2.5 px-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b"
 >
 	<div class="max-w-6xl mx-auto flex justify-between">
-		<Button variant="link" class="text-3xl font-semibold" href="/">Riju</Button>
+		<Button variant="link" class="text-2xl font-semibold" href="/">Riju</Button>
 		<div class="flex gap-2.5 items-center">
 			<Button
 				variant="ghost"
@@ -19,7 +19,7 @@
 			<Button variant="ghost" href="/signin" class="hidden md:block"
 				>Sign In</Button
 			>
-			<Button href="/signin" class="">Get Started</Button>
+			<Button href="/signin" class="gap-2">Get Started</Button>
 		</div>
 	</div>
 </nav>
