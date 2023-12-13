@@ -96,10 +96,10 @@ devDependencies:
     version: 1.4.1
   '@sveltejs/adapter-cloudflare':
     specifier: ^2.3.4
-    version: 2.3.4(@sveltejs/kit@1.30.0)
+    version: 2.3.4(@sveltejs/kit@1.30.1)
   '@sveltejs/kit':
-    specifier: ^1.30.0
-    version: 1.30.0(svelte@4.2.8)(vite@4.5.1)
+    specifier: ^1.30.1
+    version: 1.30.1(svelte@4.2.8)(vite@4.5.1)
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.3.6)
@@ -1683,19 +1683,19 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@sveltejs/adapter-cloudflare@2.3.4(@sveltejs/kit@1.30.0):
+  /@sveltejs/adapter-cloudflare@2.3.4(@sveltejs/kit@1.30.1):
     resolution: {integrity: sha512-+5Msbm7svrZjaBt0KapNh2zEaMRfrhbTRBWRXrFa+w+KFRQnHjFIPvWz/NQ11XKVu7dRe7mkzqvqieL2b0hpJw==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
       '@cloudflare/workers-types': 4.20231121.0
-      '@sveltejs/kit': 1.30.0(svelte@4.2.8)(vite@4.5.1)
+      '@sveltejs/kit': 1.30.1(svelte@4.2.8)(vite@4.5.1)
       esbuild: 0.18.20
       worktop: 0.8.0-next.15
     dev: true
 
-  /@sveltejs/kit@1.30.0(svelte@4.2.8)(vite@4.5.1):
-    resolution: {integrity: sha512-HK7XE8ZAL7cGreRRxCCVEpcNA3x2KM0mfJlDv7geEyCElYjJsdBoANEb00HcYlvs/2ShNAsX8lY/A60s9Xdfew==}
+  /@sveltejs/kit@1.30.1(svelte@4.2.8)(vite@4.5.1):
+    resolution: {integrity: sha512-N4hMFTRmnkB0q1uB93wfM8As2q4zYI2FQ01K8dQOCAWbm2y6mB0pmF12ILO+zbEim13csBLO0JyAWJRSd101hQ==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -2123,7 +2123,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.22.2
-      caniuse-lite: 1.0.30001568
+      caniuse-lite: 1.0.30001570
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -2185,7 +2185,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001568
+      caniuse-lite: 1.0.30001570
       electron-to-chromium: 1.4.611
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
@@ -2209,8 +2209,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /caniuse-lite@1.0.30001568:
-    resolution: {integrity: sha512-vSUkH84HontZJ88MiNrOau1EBrCqEQYgkC5gIySiDlpsm8sGVrhU7Kx4V6h0tnqaHzIHZv08HlJIwPbL4XL9+A==}
+  /caniuse-lite@1.0.30001570:
+    resolution: {integrity: sha512-+3e0ASu4sw1SWaoCtvPeyXp+5PsjigkSt8OXZbF9StH5pQWbxEjLAZE3n8Aup5udop1uRiKA7a4utUk/uoSpUw==}
     dev: true
 
   /case-anything@2.1.13:
