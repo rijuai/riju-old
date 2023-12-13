@@ -24,6 +24,6 @@
 	<!-- <meta property="og: image" content="https://shipfa.st/shareMain png" /> -->
 	<meta property="og:url" content={url} />
 	<!-- <meta name="twitter:card" content="summary_large_image" /> -->
-	<meta name="twitter:creator" content="@_vigneshaithal" />
+	<!-- <meta name="twitter:creator" content="@_vigneshaithal" /> -->
 	<link rel="canonical" href={url} />
 </svelte:head>
