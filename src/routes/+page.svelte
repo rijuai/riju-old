@@ -1,9 +1,11 @@
 <script lang="ts">
 	import DemoVideo from '$lib/assets/videos/riju-demo-muted.mp4'
+	import CallToAction from '$lib/components/CallToAction.svelte'
 	import Footer from '$lib/components/Footer.svelte'
 	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
 	import MetaTags from '$lib/components/MetaTags.svelte'
 	import { Button } from '$lib/components/ui/button'
+	import { ChevronRight } from 'lucide-svelte'
 </script>
 
 <MetaTags
@@ -11,48 +13,44 @@
 	description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
 
-<HomePageNavbar />
+<main class="mx-auto max-w-6xl">
+	<HomePageNavbar />
 
-<main class="p-8 mx-auto max-w-4xl">
-	<!-- hero -->
-	<section class="text-center">
-		<a
-			class="flex justify-center mb-6"
-			href="https://www.producthunt.com/posts/riju?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-riju"
-			target="_blank"
-			><img
+	<!-- ** HERO SECTION ** -->
+	<section class="text-center max-w-4xl mx-auto">
+		<div class="flex justify-center mb-6">
+			<img
 				src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=427150&theme=light"
 				alt="Riju - Super&#0032;fast&#0032;&#0038;&#0032;easy&#0045;to&#0045;use&#0032;alternative&#0032;to&#0032;Microsoft&#0032;PowerPoint | Product Hunt"
 				style="width: 250px; height: 54px;"
 				width="250"
 				height="54"
-			/></a
-		>
-		<h1 class="text-5xl leading-tight mb-6">
-			Super fast & easy-to-use alternative to <span class="text-destructive"
-				>Microsoft PowerPoint</span
+			/>
+		</div>
+		<h1 class="text-5xl leading-tight font-extrabold mb-6">
+			Super Fast & Super Simple <span class="text-destructive"
+				>Presentation Creator</span
 			>
 		</h1>
 		<p class="lg:px-12 text-muted-foreground text-xl leading-normal mb-12">
-			Riju is a hyper-fast presentation builder that lets you create stunning
+			Riju is a super-fast presentation builder that lets you create stunning
 			presentations in seconds. Say goodbye to boring drag-and-drop and choose
-			from over 100 stunning themes.
+			from over 100+ stunning themes.
 		</p>
 
 		<div class="flex flex-col md:flex-row justify-center gap-4 mb-2">
-			<Button size="lg" class="text-lg py-6" href="/signin">
-				Get started (its free)</Button
+			<Button size="lg" class="text-lg py-6" href="/signin"
+				>Get Started<ChevronRight class="ml-2" /></Button
 			>
 		</div>
-		<p class="text-muted-foreground">
-			No credit card required. Saves 90% of your time.
-		</p>
+		<p class="text-muted-foreground">Saves 90% of your time</p>
 	</section>
 
-	<!-- demo -->
-	<section>
+	<!-- ** DEMO VIDEO ** -->
+	<section class="max-w-4xl mx-auto">
 		<video
-			class="w-full rounded-lg shadow-lg"
+			id="demo-video"
+			class="rounded-lg shadow-xl"
 			src={DemoVideo}
 			muted
 			loop
@@ -134,19 +132,7 @@
 		</p>
 	</section>
 
-	<!-- cta -->
-	<section class="max-w-lg mx-auto text-center">
-		<h1 class="text-destructive mb-2">Ready to ditch PowerPoint?</h1>
-		<h2 class="mb-8">Switch for a new change!</h2>
-		<div class="flex flex-col md:flex-row justify-center gap-4 mb-4">
-			<Button size="lg" class="text-lg py-6" href="/signin">
-				Get Started (its free)</Button
-			>
-		</div>
-		<p class="text-muted-foreground">
-			No credit card required. Saves 90% of your time.
-		</p>
-	</section>
+	<CallToAction />
 
 	<Footer />
 </main>
