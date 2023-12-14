@@ -1,5 +1,6 @@
 import { supabase } from '$lib/config/supabase'
 import type { JSONContent } from '@tiptap/core'
+import type { Json } from '../../schema'
 
 export const getPresentations = async (): Promise<
 	{ id: string; title: string | null }[] | null
@@ -14,8 +15,9 @@ export const getPresentations = async (): Promise<
 
 export const createPresentation = async (
 	title: string,
-	content: JSONContent = [],
-	theme: {} = {},
+	content = [],
+	theme = {},
+	// biome-ignore lint/suspicious/noConfusingVoidType: <explanation>
 ): Promise<string | void> => {
 	const { data, error } = await supabase
 		.from('presentations')
@@ -26,12 +28,16 @@ export const createPresentation = async (
 		})
 		.select('id')
 
-	return error ? console.error(error) : data![0].id
+	return data ? data[0].id : console.error(error)
 }
 
 export const getFullPresentation = async (
 	presentationId: string,
-): Promise<any> => {
+): Promise<{
+	content: Json
+	theme: Json
+	is_public: boolean | null
+} | null> => {
 	const { data } = await supabase
 		.from('presentations')
 		.select('content, theme, is_public')
@@ -42,7 +48,7 @@ export const getFullPresentation = async (
 
 export const getPresentationContent = async (
 	presentationId: string,
-): Promise<any> => {
+): Promise<Json | null> => {
 	const { data, error } = await supabase
 		.from('presentations')
 		.select('content')
