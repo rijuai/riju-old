@@ -78,7 +78,7 @@
 				<Table.Header>
 					<Table.Row>
 						<Table.Head class="w-[100px]">#</Table.Head>
-						<Table.Head>Title</Table.Head>
+						<Table.Head colspan={2}>Title</Table.Head>
 					</Table.Row>
 				</Table.Header>
 				<Table.Body>
