@@ -61,7 +61,7 @@
 </script>
 
 <div
-	class="menu z-50 flex flex-col gap-4 p-1 min-w-fit fixed left-0 top-1/2 transform -translate-y-1/2 bg-primary-foreground border rounded-r"
+	class="menu z-50 flex flex-col gap-3 p-1.5 min-w-fit fixed left-0 top-1/2 transform -translate-y-1/2 bg-primary-foreground border rounded-r"
 >
 	<Tooltip.Root openDelay={150}>
 		<Tooltip.Trigger>
