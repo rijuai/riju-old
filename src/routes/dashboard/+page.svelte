@@ -82,7 +82,7 @@
 					</Table.Row>
 				</Table.Header>
 				<Table.Body>
-					{#each presentations as { id, title }, index (id)}
+					{#each presentations as { id, title }, index}
 						<Table.Row
 							class="cursor-pointer"
 							on:click={() => goto(`/dashboard/editor/${id}`)}
