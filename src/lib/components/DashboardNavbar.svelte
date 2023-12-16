@@ -19,33 +19,35 @@
 	</Button>
 	<div class="flex gap-3">
 		<FeedbackDialog />
-		{#if $page.url.pathname.includes('/editor')}
-			<Button
-				variant="secondary"
-				on:click={() => {
-					const presentationId = $page.params.presentation_id
+		{#key $page.url.pathname}
+			{#if $page.url.pathname.includes('/editor')}
+				<Button
+					variant="secondary"
+					on:click={() => {
+						const presentationId = $page.params.presentation_id
 
-					goto(`/presenter/${presentationId}`)
-				}}
-			>
-				<Play class="h-5 w-5 mr-1" />Present
-			</Button>
-		{/if}
-		{#if $page.url.pathname === '/dashboard'}
-			<Button variant="ghost" size="icon" href="/dashboard/settings"
-				><Settings class="h-5 w-5" /></Button
-			>
-			<Button
-				on:click={async () => {
-					const presentationId = await createPresentation(
-						'Untitled Presentation',
-					)
-					goto(`/dashboard/editor/${presentationId}`)
-				}}
-			>
-				<PencilLine class="h-5 w-5 mr-2" />
-				Create</Button
-			>
-		{/if}
+						goto(`/presenter/${presentationId}`)
+					}}
+				>
+					<Play class="h-5 w-5 mr-1" />Present
+				</Button>
+			{/if}
+			{#if $page.url.pathname === '/dashboard'}
+				<Button variant="ghost" size="icon" href="/dashboard/settings"
+					><Settings class="h-5 w-5" /></Button
+				>
+				<Button
+					on:click={async () => {
+						const presentationId = await createPresentation(
+							'Untitled Presentation',
+						)
+						goto(`/dashboard/editor/${presentationId}`)
+					}}
+				>
+					<PencilLine class="h-5 w-5 mr-2" />
+					Create</Button
+				>
+			{/if}
+		{/key}
 	</div>
 </nav>
