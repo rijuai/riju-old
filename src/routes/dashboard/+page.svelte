@@ -107,6 +107,7 @@
 												}}
 												><ExternalLink class="h-4 w-4 mr-2" />Open in new tab</DropdownMenu.Item
 											>
+											<DropdownMenu.Separator />
 											<DropdownMenu.Item
 												class="text-destructive"
 												on:click={async () => {
