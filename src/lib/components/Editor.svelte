@@ -119,7 +119,7 @@
 
 <!-- ** CONTEXT MENU ** -->
 <div
-	class="context-menu flex gap-1.5 p-1.5 bg-white border rounded-md shadow-md shadow-slate-400"
+	class="context-menu flex gap-1 p-1 bg-white border rounded shadow-md shadow-slate-400"
 	bind:this={contextMenu}
 >
 	{#if editor}
