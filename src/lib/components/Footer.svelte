@@ -1,4 +1,6 @@
-<footer class="flex justify-between py-4 bg-slate-80 border-t">
+<footer
+	class="max-w-6xl mx-auto flex justify-between py-3 px-4 bg-slate-80 border-t"
+>
 	<div class="text-sm text-muted-foreground">
 		Riju is built with love from India.
 	</div>
