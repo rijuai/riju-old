@@ -66,8 +66,8 @@ dependencies:
     specifier: ^2.0.5
     version: 2.0.5
   lucide-svelte:
-    specifier: ^0.297.0
-    version: 0.297.0(svelte@4.2.8)
+    specifier: ^0.298.0
+    version: 0.298.0(svelte@4.2.8)
   pexels:
     specifier: ^1.4.0
     version: 1.4.0
@@ -2783,8 +2783,8 @@ packages:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
 
-  /lucide-svelte@0.297.0(svelte@4.2.8):
-    resolution: {integrity: sha512-D2JouMIE5myXwkc3ODalWR/4QIJTb1VbZIoXyisMU/K2Ada7XBdQdNkYRI8sgfdCysf4JF79W0YjWNcMyXNH6Q==}
+  /lucide-svelte@0.298.0(svelte@4.2.8):
+    resolution: {integrity: sha512-7xYNSMY1z1QMjLe8GWToFtFh0lvTsrxdgEAXMite/Urn9tPD16Xk3597ibpgt9Ff7IBb/ArMc3y3ZKofZhs8fQ==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
