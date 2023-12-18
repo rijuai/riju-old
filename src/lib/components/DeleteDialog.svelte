@@ -1,18 +1,14 @@
 <script lang="ts">
-	import { goto } from '$app/navigation'
-	import { page } from '$app/stores'
 	import * as AlertDialog from '$lib/components/ui/alert-dialog'
-	import { Button, buttonVariants } from '$lib/components/ui/button'
-	import { deletePresentation } from '$lib/db/presentation'
-	import { editorOutput } from '$lib/stores/presentation'
-	import { Trash2 } from 'lucide-svelte'
-	import { onMount } from 'svelte'
+	import { buttonVariants } from '$lib/components/ui/button'
+	import {
+		deletePresentation,
+		getPresentationContent,
+	} from '$lib/db/presentation'
+	import type { JSONContent } from '@tiptap/core'
 
-	let presentationId: string
-
-	onMount(() => {
-		presentationId = $page.params.presentation_id
-	})
+	export let presentationId: string
+	let showLoader = false
 
 	const deleteImagesInR2 = async (objectKeys: string[]) => {
 		const result = await fetch('/api/image', {
@@ -24,10 +20,10 @@
 		})
 	}
 
-	const deleteImages = async () => {
+	const deleteImages = async (editorOutput: JSONContent) => {
 		const imagesToDelete: string[] = []
 
-		$editorOutput.forEach((item: Item) => {
+		editorOutput.forEach((item: Item) => {
 			if (item.type === 'image') {
 				const url = item.attrs.src
 				const path = url.split('/').pop() ?? ''
@@ -41,9 +37,7 @@
 </script>
 
 <AlertDialog.Root>
-	<AlertDialog.Trigger asChild let:builder>
-		<Button builders={[builder]} variant="ghost"><Trash2 /></Button>
-	</AlertDialog.Trigger>
+	<AlertDialog.Trigger>Delete</AlertDialog.Trigger>
 	<AlertDialog.Content>
 		<AlertDialog.Header>
 			<AlertDialog.Title>Are you absolutely sure?</AlertDialog.Title>
@@ -57,12 +51,13 @@
 			<AlertDialog.Action
 				class={buttonVariants({ variant: 'destructive' })}
 				on:click={async () => {
-					await deleteImages()
+					showLoader = true
+					let editorOutput = await getPresentationContent(presentationId)
+					// await deleteImages(editorOutput)
 
 					let result = await deletePresentation(presentationId)
 					if (result) {
 						console.log('Successfully deleted presentation')
-						goto('/dashboard')
 					}
 				}}>Delete</AlertDialog.Action
 			>
