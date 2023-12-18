@@ -1,11 +1,20 @@
+import { supabase } from '$lib/config/supabase'
 // See https://kit.svelte.dev/docs/types#app
+
+import type { Session } from '@supabase/supabase-js'
 
 // for information about these interfaces
 declare global {
 	namespace App {
 		// interface Error {}
-		// interface Locals {}
-		// interface PageData {}
+		interface Locals {
+			// supabase: import('@supabase/supabase-js').SupabaseClient
+			supabase: typeof supabase
+			getSession: () => Session | null
+		}
+		interface PageData {
+			session: Session | null
+		}
 		// interface Platform {}
 	}
 
@@ -24,19 +33,7 @@ declare global {
 
 	type ListItem = {
 		type: string
-		content: {
-			type: string
-			marks: Marks[]
-			text: string
-			content: {
-				text: string
-				marks: Marks[]
-			}[]
-		}[]
-	}
-
-	type Marks = {
-		type: string
+		content: Content
 	}
 
 	type Content = {
@@ -47,6 +44,10 @@ declare global {
 			text: string
 			marks: Marks[]
 		}[]
+	}
+
+	type Marks = {
+		type: string
 	}
 
 	type Presentations = {
@@ -63,5 +64,3 @@ declare global {
 		Convex = 'convex',
 	}
 }
-
-export {}
