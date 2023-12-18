@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '$lib/assets/css/editor.css'
+	import ContextMenu from '$lib/components/ContextMenu.svelte'
 	import EditorMenu from '$lib/components/EditorMenu.svelte'
 	import {
 		getPresentationContent,
@@ -19,7 +20,6 @@
 	import { Loader } from 'lucide-svelte'
 	import { onDestroy, onMount } from 'svelte'
 	import type { Json } from '../../schema'
-	import Contextmenu from './Contextmenu.svelte'
 
 	export let presentationId: string
 
@@ -123,7 +123,7 @@
 	bind:this={contextMenu}
 >
 	{#if editor}
-		<Contextmenu {editor} />
+		<ContextMenu {editor} />
 	{/if}
 </div>
 
