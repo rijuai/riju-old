@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import { page } from '$app/stores'
-	import FeedbackDialog from '$lib/components/FeedbackDialog.svelte'
 	import { Badge } from '$lib/components/ui/badge'
 	import { Button } from '$lib/components/ui/button'
 	import { createPresentation } from '$lib/db/presentation'
@@ -18,7 +17,6 @@
 		>
 	</Button>
 	<div class="flex gap-3">
-		<FeedbackDialog />
 		{#key $page.url.pathname}
 			{#if $page.url.pathname.includes('/editor')}
 				<Button

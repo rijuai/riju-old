@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
-	import FeedbackDialog from '$lib/components/FeedbackDialog.svelte'
 	import SharePopup from '$lib/components/SharePopup.svelte'
 	import ThemeSettingsPopup from '$lib/components/ThemeSettingsPopup.svelte'
 	import { Button } from '$lib/components/ui/button'
@@ -31,7 +30,6 @@
 >
 	<Button variant="link" class="text-2xl" href="/">Riju</Button>
 	<div class="flex gap-4">
-		<FeedbackDialog />
 		{#if isUserSignedIn}
 			<SharePopup {presentationId} />
 			<ThemeSettingsPopup {presentationId} />
