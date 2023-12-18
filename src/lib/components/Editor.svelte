@@ -1,7 +1,6 @@
 <script lang="ts">
 	import '$lib/assets/css/editor.css'
 	import EditorMenu from '$lib/components/EditorMenu.svelte'
-	import { Button } from '$lib/components/ui/button'
 	import {
 		getPresentationContent,
 		updatePresentation,
@@ -17,23 +16,19 @@
 	import { Placeholder } from '@tiptap/extension-placeholder'
 	import { Underline } from '@tiptap/extension-underline'
 	import { StarterKit } from '@tiptap/starter-kit'
-	import {
-		Bold,
-		Italic,
-		Loader,
-		Strikethrough,
-		UnderlineIcon,
-	} from 'lucide-svelte'
+	import { Loader } from 'lucide-svelte'
 	import { onDestroy, onMount } from 'svelte'
+	import type { Json } from '../../schema'
+	import Contextmenu from './Contextmenu.svelte'
 
 	export let presentationId: string
 
-	let element: HTMLDivElement,
-		contextMenu: HTMLElement,
-		editor: Editor,
-		presentationContent: string,
-		showLoader = true,
-		debounceTimer: NodeJS.Timeout
+	let element: HTMLDivElement
+	let contextMenu: HTMLElement
+	let editor: Editor
+	let presentationContent: Json
+	let showLoader = true
+	let debounceTimer: NodeJS.Timeout
 
 	onMount(async () => {
 		initializeEditor(element)
@@ -87,8 +82,11 @@
 				showLoader = false
 			},
 
-			onUpdate: () => {
+			onTransaction: () => {
 				editor = editor
+			},
+
+			onUpdate: () => {
 				$editorOutput = editor.getJSON().content!
 
 				let title = getTitle()
@@ -119,43 +117,14 @@
 	<EditorMenu {editor} />
 {/if}
 
-<!-- bubble menu -->
+<!-- ** CONTEXT MENU ** -->
 <div
-	class="context-menu flex gap-0.5 p-1 bg-white border rounded shadow-md shadow-slate-400"
+	class="context-menu flex gap-1.5 p-1.5 bg-white border rounded-md shadow-md shadow-slate-400"
 	bind:this={contextMenu}
 >
-	<Button
-		variant="ghost"
-		size="icon"
-		class="h-8 bg-white"
-		on:click={() => {
-			editor.chain().focus().toggleBold().run()
-		}}><Bold /></Button
-	>
-	<Button
-		variant="ghost"
-		size="icon"
-		class="h-8 bg-white"
-		on:click={() => {
-			editor.chain().focus().toggleItalic().run()
-		}}><Italic /></Button
-	>
-	<Button
-		variant="ghost"
-		size="icon"
-		class="h-8"
-		on:click={() => {
-			editor.chain().focus().toggleUnderline().run()
-		}}><UnderlineIcon /></Button
-	>
-	<Button
-		variant="ghost"
-		size="icon"
-		class="h-8 bg-white"
-		on:click={() => {
-			editor.chain().focus().toggleStrike().run()
-		}}><Strikethrough /></Button
-	>
+	{#if editor}
+		<Contextmenu {editor} />
+	{/if}
 </div>
 
 {#if showLoader}
