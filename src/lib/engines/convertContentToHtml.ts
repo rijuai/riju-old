@@ -8,7 +8,7 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 	let addSubSection = false
 	const images = []
 
-	content.forEach((item: Item) => {
+	for (const item of content) {
 		const itemType = item.type
 		count++
 
@@ -40,9 +40,9 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 				let blocksHtml = ''
 				blocks.push(temphtml)
 
-				blocks.forEach((block) => {
+				for (const block of blocks) {
 					blocksHtml += `<div>${block}</div>`
-				})
+				}
 
 				outputHtml += `<section><div class="grid grid-cols-2 gap-16">${blocksHtml}</div></section>`
 
@@ -54,7 +54,7 @@ export const convertContentToHtml = (content: JSONContent): HTMLContent => {
 
 			temphtml = ''
 		}
-	})
+	}
 
 	return outputHtml
 }
@@ -91,20 +91,22 @@ const getParagraph = (item: Item): string => {
 	return `<p>${text}</p>`
 }
 
-const getList = (item: Item | Content): string => {
+const getList = (item: ListItem): string => {
 	const listType = item.type === 'orderedList' ? 'ol' : 'ul'
 	let list = `<${listType}>`
 
-	item.content.forEach((listItem: ListItem) => {
+	for (const listItem of item.content) {
 		if (listItem.content[0].content !== undefined) {
-			listItem.content.forEach((content: Content) => {
+			for (const content of listItem.content) {
 				if (content.type === 'paragraph') {
 					let text = ''
-					content.content.forEach((element) => {
+					for (const element of content.content) {
 						if (element.marks !== undefined) {
 							text += applyMarks(element.text, element.marks)
-						} else text += element.text
-					})
+						} else {
+							text += element.text
+						}
+					}
 					list += `<li>${text}</li>`
 				} else if (
 					content.type === 'orderedList' ||
@@ -112,9 +114,9 @@ const getList = (item: Item | Content): string => {
 				) {
 					list += getList(content)
 				}
-			})
+			}
 		}
-	})
+	}
 	list += `</${listType}>`
 
 	return list
@@ -136,15 +138,15 @@ const applyMarks = (text: string, marks: Marks[]): string => {
 		if (mark.type === 'strike') openTags.push('<s>')
 	}
 
-	openTags.forEach((tag) => {
+	for (const tag of openTags) {
 		html += tag
-	})
+	}
 
 	html += text
 
-	openTags.reverse().forEach((tag) => {
+	for (const tag of openTags.reverse()) {
 		html += tag.replace('<', '</')
-	})
+	}
 
 	return html
 }
