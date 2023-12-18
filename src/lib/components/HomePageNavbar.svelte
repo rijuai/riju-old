@@ -3,7 +3,7 @@
 </script>
 
 <nav
-	class="sticky top-0 z-50 w-full py-2.5 px-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/70 border-b"
+	class="sticky top-0 z-50 w-full p-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/70 border-b"
 >
 	<div class="max-w-6xl mx-auto flex justify-between">
 		<Button variant="link" class="text-2xl font-semibold" href="/">Riju</Button>
