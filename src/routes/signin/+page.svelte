@@ -50,7 +50,7 @@
 			/>
 		</Card.Content>
 		<Card.Footer>
-			<p class="text-sm text-muted-foreground">
+			<p class="text-xs text-muted-foreground">
 				By clicking, you agree to the Riju <a
 					class="underline"
 					href="/docs/terms">Terms of Service</a
