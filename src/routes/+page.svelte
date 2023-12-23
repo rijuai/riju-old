@@ -56,7 +56,7 @@
 	description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
 
-<main class="mx-auto max-w-5xl px-4">
+<main class="mx-auto max-w-6xl px-4">
 	<HomePageNavbar />
 
 	<!-- ** HERO SECTION ** -->
@@ -152,7 +152,7 @@
 
 <style lang="postcss">
 	section {
-		@apply my-16 lg:my-28;
+		@apply my-16 lg:my-44;
 	}
 
 	h2 {
