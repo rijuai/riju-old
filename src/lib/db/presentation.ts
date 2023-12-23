@@ -36,7 +36,7 @@ export const getFullPresentation = async (
 ): Promise<{
 	content: Json
 	theme: Json
-	is_public: boolean | null
+	is_public: boolean
 } | null> => {
 	const { data } = await supabase
 		.from('presentations')
