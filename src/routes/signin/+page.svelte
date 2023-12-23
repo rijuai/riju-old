@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
-	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
 	import MetaTags from '$lib/components/MetaTags.svelte'
+	import { Button } from '$lib/components/ui/button'
 	import * as Card from '$lib/components/ui/card'
 	import { supabase } from '$lib/config/supabase'
 	import { isUserAuthenticated } from '$lib/db/auth'
@@ -19,9 +19,19 @@
 	description="Create a new account or Sign in if you are a existing user."
 />
 
-<HomePageNavbar />
+<!-- ** Navbar ** -->
+<nav class="fixed top-0 z-50 w-full p-2">
+	<div class="max-w-6xl mx-auto flex justify-between">
+		<Button variant="link" class="text-2xl font-semibold" href="/">Riju</Button>
+		<Button
+			variant="link"
+			class="text-base font-semibold text-muted-foreground"
+			href="/docs/contact">Contact</Button
+		>
+	</div>
+</nav>
 
-<section class="max-w-md mx-auto mt-16">
+<section class="max-w-md mx-auto h-screen flex justify-center items-center">
 	<Card.Root>
 		<Card.Header>
 			<Card.Title class="text-2xl">Create account / Sign in</Card.Title>
