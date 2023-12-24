@@ -5,11 +5,11 @@
 
 <MetaTags title="Riju | Privacy Policy" description="Privacy Policy" />
 
-<Card.Root class="prose">
+<Card.Root class="pros">
 	<Card.Header>
-		<Card.Title>Privacy Policy for Riju</Card.Title>
+		<Card.Title class="text-3xl">Privacy Policy for Riju</Card.Title>
 	</Card.Header>
-	<Card.Content>
+	<Card.Content class="prose">
 		<p>
 			At Riju, accessible from https://riju.page, one of our main priorities is
 			the privacy of our visitors. This Privacy Policy document contains types
