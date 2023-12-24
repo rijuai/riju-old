@@ -2,7 +2,6 @@
 	import { goto } from '$app/navigation'
 	import MetaTags from '$lib/components/MetaTags.svelte'
 	import { Button } from '$lib/components/ui/button'
-	import * as Card from '$lib/components/ui/card'
 	import { supabase } from '$lib/config/supabase'
 	import { isUserAuthenticated } from '$lib/db/auth'
 	import { ThemeSupa } from '@supabase/auth-ui-shared'
@@ -31,42 +30,37 @@
 	</div>
 </nav>
 
-<section class="max-w-md mx-auto h-screen flex justify-center items-center">
-	<Card.Root>
-		<Card.Header>
-			<Card.Title class="text-2xl">Create account / Sign in</Card.Title>
-			<Card.Description
-				>Tip: You can also sign in from this same page.</Card.Description
-			>
-		</Card.Header>
-		<Card.Content>
-			<Auth
-				supabaseClient={supabase}
-				view="magic_link"
-				providers={['google']}
-				redirectTo="https://riju.ai/dashboard"
-				showLinks={false}
-				appearance={{
-					theme: ThemeSupa,
-					variables: {
-						default: {
-							colors: {
-								brand: 'hsl(222.2 47.4% 11.2%)',
-								brandAccent: 'hsl(222.2 84% 4.9%)',
-							},
+<section
+	class="max-w-md mx-auto h-screen flex justify-center items-center px-4"
+>
+	<div class="w-full">
+		<h1 class="text-xl font-semibold">Create account / Sign in</h1>
+		<p class="text-muted-foreground mb-8">
+			Tip: You can also sign in from this same page.
+		</p>
+		<Auth
+			supabaseClient={supabase}
+			view="magic_link"
+			providers={['google']}
+			redirectTo="https://riju.ai/dashboard"
+			showLinks={false}
+			appearance={{
+				theme: ThemeSupa,
+				variables: {
+					default: {
+						colors: {
+							brand: 'hsl(222.2 47.4% 11.2%)',
+							brandAccent: 'hsl(222.2 84% 4.9%)',
 						},
 					},
-				}}
-			/>
-		</Card.Content>
-		<Card.Footer>
-			<p class="text-xs text-muted-foreground">
-				By clicking, you agree to the Riju <a
-					class="underline"
-					href="/docs/terms">Terms of Service</a
-				>
-				and <a class="underline" href="/docs/privacy">Privacy Policy</a>.
-			</p>
-		</Card.Footer>
-	</Card.Root>
+				},
+			}}
+		/>
+		<p class="text-xs text-muted-foreground">
+			By clicking, you agree to the Riju <a class="underline" href="/docs/terms"
+				>Terms of Service</a
+			>
+			and <a class="underline" href="/docs/privacy">Privacy Policy</a>.
+		</p>
+	</div>
 </section>
