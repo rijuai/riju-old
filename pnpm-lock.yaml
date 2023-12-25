@@ -9,8 +9,8 @@ dependencies:
     specifier: ^3.474.0
     version: 3.474.0
   '@aws-sdk/s3-request-presigner':
-    specifier: ^3.474.0
-    version: 3.474.0
+    specifier: ^3.478.0
+    version: 3.478.0
   '@supabase/auth-ui-shared':
     specifier: ^0.1.8
     version: 0.1.8(@supabase/supabase-js@2.39.0)
@@ -599,8 +599,8 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@aws-sdk/s3-request-presigner@3.474.0:
-    resolution: {integrity: sha512-+LRxblFirCLxezVTqgpwoHJsTnADXo4Dh98iBwlCuQ2HK4eXJmtmhbsVVYNO3ZkVbte4HLH5vbCZQwN8gMxrDg==}
+  /@aws-sdk/s3-request-presigner@3.478.0:
+    resolution: {integrity: sha512-Ra9ptlSZvMlmw+4zujuVhWRN4QxCpmNnnZPn8KHnll7Jmat6Fii7zMf9NUIJ5etLvTlY8y/yUEleRf9KXPBNlA==}
     engines: {node: '>=14.0.0'}
     dependencies:
       '@aws-sdk/signature-v4-multi-region': 3.474.0
