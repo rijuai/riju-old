@@ -6,7 +6,7 @@
 	import MetaTags from '$lib/components/MetaTags.svelte'
 	import { Button } from '$lib/components/ui/button'
 	import * as Card from '$lib/components/ui/card'
-	import { ChevronRight, Layout, Pointer, Rocket } from 'lucide-svelte'
+	import { ArrowRight, Layout, Pointer, Rocket } from 'lucide-svelte'
 
 	const steps = [
 		{
@@ -36,35 +36,27 @@
 
 <main class="mx-auto max-w-6xl px-4">
 	<!-- ** HERO SECTION ** -->
-	<section class="text-center max-w-4xl mx-auto">
-		<h1 class="text-muted-foreground">No drag-and-drop</h1>
+	<section class="text-center max-w-3xl mx-auto">
 		<h1 class="text-5xl leading-tight font-bold mb-4">
-			Super fast presentation creator
+			Create presentations in seconds
 		</h1>
 		<p
 			class="lg:px-12 font-normal text-muted-foreground text-xl leading-normal mb-8"
 		>
-			Riju is a super-simple & super-fast presentation builder that lets you
-			create stunning presentations in seconds.
+			Riju is a lightning-fast, user-friendly presentation builder which does
+			all the formatting, styling for you.
 		</p>
-
-		<div class="flex flex-col md:flex-row justify-center gap-4 mb-16">
+		<div class="flex flex-col md:flex-row justify-center gap-4 mb-2">
 			<Button size="lg" class="text-lg py-6" href="/signin"
-				>Get Started<ChevronRight class="ml-2" /></Button
+				>Get Started<ArrowRight class="ml-2" /></Button
 			>
 		</div>
+		<p class="text-sm text-muted-foreground">No credit card required</p>
 	</section>
 
 	<!-- ** DEMO VIDEO ** -->
 	<section class="max-w-4xl mx-auto">
-		<video
-			id="demo-video"
-			class="rounded-lg shadow-xl"
-			src={DemoVideo}
-			muted
-			loop
-			autoplay
-		/>
+		<video class="rounded-lg shadow-xl" src={DemoVideo} muted loop autoplay />
 	</section>
 
 	<!-- ** Cards ** -->
