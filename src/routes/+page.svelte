@@ -36,8 +36,8 @@
 
 <main class="mx-auto max-w-6xl px-4">
 	<!-- ** HERO SECTION ** -->
-	<section class="text-center max-w-3xl mx-auto">
-		<h1 class="text-5xl leading-tight font-bold mb-4">
+	<section class="text-center max-w-4xl mx-auto">
+		<h1 class="text-6xl leading-tight font-medium mb-4">
 			Create presentations in seconds
 		</h1>
 		<p
@@ -61,12 +61,7 @@
 
 	<!-- ** Cards ** -->
 	<section class="max-w-5xl mx-auto">
-		<h2 class="text-cente">Why Use Riju?</h2>
-		<p class="text-cente max-w-xl mx-aut text-muted-foreground mb-12">
-			Creating presentations can be a pain and takes a lot of time, thats why
-			Riju is designed to be super-fast and easy-to-use, so you can create
-			presentations in seconds.
-		</p>
+		<h2>Focus on the content, <br /> not the formatting</h2>
 
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 			<Card.Root>
@@ -130,14 +125,14 @@
 
 	<!-- ** FEATURED ** -->
 	<!-- <section>
-		<h3 class="text-center text-muted-foreground mb-8">Featured On</h3>
-		<div class="flex flex-co justify-center items-center gap-8 max-h">
+		<h2 class="text-center mb-12">Featured On</h2>
+		<div class="flex flex-col justify-center items-center gap-8 max-h">
 			<img
 				class="h-14 w-auto"
 				src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=427150&theme=light"
 				alt="Riju - Super&#0032;fast&#0032;&#0038;&#0032;easy&#0045;to&#0045;use&#0032;alternative&#0032;to&#0032;Microsoft&#0032;PowerPoint | Product Hunt"
 			/>
-			<img class="h-24" src={PaddleLaunchPadImage} alt="" />
+			<img class="h-32" src={PaddleLaunchPadImage} alt="" />
 		</div>
 	</section> -->
 
@@ -152,6 +147,6 @@
 	}
 
 	h2 {
-		@apply text-4xl font-bold mb-6;
+		@apply text-5xl font-medium leading-tight mb-12;
 	}
 </style>
