@@ -11,5 +11,6 @@
 				>Get Started<ChevronRight class="ml-2" /></Button
 			>
 		</div>
+		<p class="text-sm text-muted-foreground">No credit card required</p>
 	</div>
 </section>
