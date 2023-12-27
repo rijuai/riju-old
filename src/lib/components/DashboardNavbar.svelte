@@ -5,6 +5,8 @@
 	import { Button } from '$lib/components/ui/button'
 	import { createPresentation } from '$lib/db/presentation'
 	import { PencilLine, Play, Settings } from 'lucide-svelte'
+	import "/src/routes/dashboard/+page.svelte"
+	import "./EditorMenu.svelte"
 </script>
 
 <nav
@@ -20,6 +22,7 @@
 		{#key $page.url.pathname}
 			{#if $page.url.pathname.includes('/editor')}
 				<Button
+				id="present"
 					variant="secondary"
 					on:click={() => {
 						const presentationId = $page.params.presentation_id
@@ -34,7 +37,7 @@
 				<Button variant="ghost" size="icon" href="/dashboard/settings"
 					><Settings class="h-5 w-5" /></Button
 				>
-				<Button
+				<Button id="template-sections"
 					on:click={async () => {
 						const presentationId = await createPresentation(
 							'Untitled Presentation',
@@ -42,7 +45,7 @@
 						goto(`/dashboard/editor/${presentationId}`)
 					}}
 				>
-					<PencilLine class="h-5 w-5 mr-2" />
+					<PencilLine class="h-5 w-5 mr-2"  />
 					Create</Button
 				>
 			{/if}

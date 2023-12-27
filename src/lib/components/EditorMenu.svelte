@@ -1,136 +1,172 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button'
-	import * as Tooltip from '$lib/components/ui/tooltip'
-	import type { Editor } from '@tiptap/core'
-	import {
-		CaseSensitive,
-		Heading1,
-		Heading2,
-		Image,
-		List,
-		ListOrdered,
-		MoveHorizontal,
-		Plus,
-	} from 'lucide-svelte'
+  import { Button } from "$lib/components/ui/button";
+  import * as Tooltip from "$lib/components/ui/tooltip";
+  import type { Editor } from "@tiptap/core";
+  import "/src/routes/dashboard/+page.svelte";
+  import {
+    CaseSensitive,
+    Heading1,
+    Heading2,
+    Image,
+    List,
+    ListOrdered,
+    MoveHorizontal,
+    Plus,
+  } from "lucide-svelte";
+  import { onMount } from "svelte";
+  import { driver } from "driver.js";
 
-	export let editor: Editor
-	let fileInput: HTMLInputElement
+  	  const driverObj = driver({
+    showProgress: true,
+    showButtons: ["next", "previous"],
+    steps: [
+      {
+        element: "#menus",
+        popover: {
+          title: "Animated Tour Example",
+          description:
+            "Here is the code example showing animated tour. Let's walk you through it.",
+          side: "left",
+          align: "start",
+        },
+      },
+	   {
+        element: "#present",
+        popover: {
+          title: "Animated Tour Example",
+          description:
+            "Here is the code example showing animated tour. Let's walk you through it.",
+          side: "left",
+          align: "start",
+        },
+      },
+	 
+    ],
+  });
 
-	const handleImage = async (event: Event) => {
-		const target = event.target as HTMLInputElement
-		if (!target.files || target.files.length === 0) return
-		const file = target.files[0]
+  onMount(() => {
+    driverObj.drive();
+  });
 
-		const imageUrl = await uploadImageToR2(file)
+  export let editor: Editor;
+  let fileInput: HTMLInputElement;
 
-		editor
-			.chain()
-			.focus()
-			.setImage({ src: imageUrl })
-			.createParagraphNear()
-			.run()
-		fileInput.value = ''
-	}
+  const handleImage = async (event: Event) => {
+    const target = event.target as HTMLInputElement;
+    if (!target.files || target.files.length === 0) return;
+    const file = target.files[0];
 
-	const uploadImageToR2 = async (file: File): Promise<string> => {
-		const getPresignedUrlResponse = await fetch('/api/image', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				fileName: file.name,
-				fileType: file.type,
-			}),
-		})
+    const imageUrl = await uploadImageToR2(file);
 
-		if (!getPresignedUrlResponse.ok) console.log('Failed to get presigned URL')
+    editor
+      .chain()
+      .focus()
+      .setImage({ src: imageUrl })
+      .createParagraphNear()
+      .run();
+    fileInput.value = "";
+  };
 
-		const { presignedUrl, objectKey } = await getPresignedUrlResponse.json()
+  const uploadImageToR2 = async (file: File): Promise<string> => {
+    const getPresignedUrlResponse = await fetch("/api/image", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fileName: file.name,
+        fileType: file.type,
+      }),
+    });
 
-		await fetch(presignedUrl, {
-			method: 'PUT',
-			headers: {
-				'Content-Type': file.type,
-			},
-			body: file,
-		})
+    if (!getPresignedUrlResponse.ok) console.log("Failed to get presigned URL");
 
-		return `https://assets.riju.ai/${objectKey}`
-	}
+    const { presignedUrl, objectKey } = await getPresignedUrlResponse.json();
+
+    await fetch(presignedUrl, {
+      method: "PUT",
+      headers: {
+        "Content-Type": file.type,
+      },
+      body: file,
+    });
+
+    return `https://assets.riju.ai/${objectKey}`;
+  };
 </script>
 
 <div
-	class="menu z-50 flex flex-col gap-3 p-1.5 min-w-fit fixed left-0 top-1/2 transform -translate-y-1/2 bg-primary-foreground border rounded-r"
+  class="menu z-50 flex flex-col gap-3 p-1.5 min-w-fit fixed left-0 top-1/2 transform -translate-y-1/2 bg-primary-foreground border rounded-r"
+  id="menus"
 >
-	<Tooltip.Root openDelay={150}>
-		<Tooltip.Trigger>
-			<Button
-				variant="ghost"
-				on:click={async () => {
-					editor.chain().focus().enter().setHorizontalRule().run()
-				}}
-			>
-				<Plus class="h-5 w-5" />
-			</Button>
-		</Tooltip.Trigger>
-		<Tooltip.Content>
-			<p>New slide</p>
-		</Tooltip.Content>
-	</Tooltip.Root>
-	<Tooltip.Root openDelay={150}>
-		<Tooltip.Trigger>
-			<Button
-				variant="ghost"
-				on:click={async () => {
-					editor.chain().focus().enter().setSubSection().run()
-				}}
-			>
-				<MoveHorizontal class="h-5 w-5" />
-			</Button>
-		</Tooltip.Trigger>
-		<Tooltip.Content>
-			<p>Split Slide</p>
-		</Tooltip.Content>
-	</Tooltip.Root>
-	<Button
-		variant="ghost"
-		on:click={() => {
-			editor.chain().focus().toggleHeading({ level: 1 }).run()
-		}}><Heading1 class="h-5 w-5" /></Button
-	>
-	<Button
-		variant="ghost"
-		on:click={() => {
-			editor.chain().focus().toggleHeading({ level: 2 }).run()
-		}}><Heading2 class="h-5 w-5" /></Button
-	>
-	<Button
-		variant="ghost"
-		on:click={() => {
-			editor.chain().focus().setParagraph().run()
-		}}><CaseSensitive class="h-5 w-5" /></Button
-	>
-	<Button
-		variant="ghost"
-		on:click={() => {
-			editor.chain().focus().toggleBulletList().run()
-		}}><List class="h-5 w-5" /></Button
-	>
-	<Button
-		variant="ghost"
-		on:click={() => {
-			editor.chain().focus().toggleOrderedList().run()
-		}}><ListOrdered class="h-5 w-5" /></Button
-	>
-	<input
-		type="file"
-		id="imageInput"
-		style="display: none;"
-		bind:this={fileInput}
-		on:change={handleImage}
-	/>
-	<Button variant="ghost" on:click={() => fileInput.click()}
-		><Image class="h-5 w-5" /></Button
-	>
+  <Tooltip.Root openDelay={150}>
+    <Tooltip.Trigger>
+      <Button
+        variant="ghost"
+        on:click={async () => {
+          editor.chain().focus().enter().setHorizontalRule().run();
+        }}
+      >
+        <Plus class="h-5 w-5" />
+      </Button>
+    </Tooltip.Trigger>
+    <Tooltip.Content>
+      <p>New slide</p>
+    </Tooltip.Content>
+  </Tooltip.Root>
+  <Tooltip.Root openDelay={150}>
+    <Tooltip.Trigger>
+      <Button
+        variant="ghost"
+        on:click={async () => {
+          editor.chain().focus().enter().setSubSection().run();
+        }}
+      >
+        <MoveHorizontal class="h-5 w-5" />
+      </Button>
+    </Tooltip.Trigger>
+    <Tooltip.Content>
+      <p>Split Slide</p>
+    </Tooltip.Content>
+  </Tooltip.Root>
+  <Button
+    variant="ghost"
+    on:click={() => {
+      editor.chain().focus().toggleHeading({ level: 1 }).run();
+    }}><Heading1 class="h-5 w-5" /></Button
+  >
+  <Button
+    variant="ghost"
+    on:click={() => {
+      editor.chain().focus().toggleHeading({ level: 2 }).run();
+    }}><Heading2 class="h-5 w-5" /></Button
+  >
+  <Button
+    variant="ghost"
+    on:click={() => {
+      editor.chain().focus().setParagraph().run();
+    }}><CaseSensitive class="h-5 w-5" /></Button
+  >
+  <Button
+    variant="ghost"
+    on:click={() => {
+      editor.chain().focus().toggleBulletList().run();
+    }}><List class="h-5 w-5" /></Button
+  >
+  <Button
+    variant="ghost"
+    on:click={() => {
+      editor.chain().focus().toggleOrderedList().run();
+    }}><ListOrdered class="h-5 w-5" /></Button
+  >
+  <input
+    type="file"
+    id="imageInput"
+    style="display: none;"
+    bind:this={fileInput}
+    on:change={handleImage}
+  />
+  <Button variant="ghost" on:click={() => fileInput.click()}
+    ><Image class="h-5 w-5" /></Button
+  >
 </div>
