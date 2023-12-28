@@ -59,9 +59,6 @@ dependencies:
   cmdk-sv:
     specifier: ^0.0.12
     version: 0.0.12(svelte@4.2.8)
-  dayjs:
-    specifier: ^1.11.10
-    version: 1.11.10
   file-saver:
     specifier: ^2.0.5
     version: 2.0.5
@@ -2456,10 +2453,6 @@ packages:
 
   /dash-get@1.0.2:
     resolution: {integrity: sha512-4FbVrHDwfOASx7uQVxeiCTo7ggSdYZbqs8lH+WU6ViypPlDbe9y6IP5VVUDQBv9DcnyaiPT5XT0UWHgJ64zLeQ==}
-    dev: false
-
-  /dayjs@1.11.10:
-    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
     dev: false
 
   /debug@4.3.4:
