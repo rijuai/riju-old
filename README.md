@@ -10,7 +10,6 @@ Superfast presentation creator...
 3. Install the dependencies using
 ```pnpm install```
 4. Set the environment variables in ```.env.local```
-5. Install Biome VSCode extension
 
 ```env
 # Supabase
@@ -33,3 +32,4 @@ PEXELS_API_KEY = <pexels-key>
 LISTMONK_USERNAME = <listmonk-username>
 LISTMONK_PASSWORD = <listmonk-password>
 ```
+5. Install Biome VSCode extension
