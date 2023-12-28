@@ -1,16 +1,9 @@
 <script lang="ts">
-	import { goto } from '$app/navigation'
 	import MetaTags from '$lib/components/MetaTags.svelte'
 	import { Button } from '$lib/components/ui/button'
 	import { supabase } from '$lib/config/supabase'
-	import { isUserAuthenticated } from '$lib/db/auth'
 	import { ThemeSupa } from '@supabase/auth-ui-shared'
 	import { Auth } from '@supabase/auth-ui-svelte'
-	import { onMount } from 'svelte'
-
-	onMount(async () => {
-		if (await isUserAuthenticated()) goto('/dashboard')
-	})
 </script>
 
 <MetaTags
