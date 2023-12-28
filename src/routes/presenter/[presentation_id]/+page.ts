@@ -1,4 +1,3 @@
-export const ssr = false
 import { getFullPresentation } from '$lib/db/presentation'
 // ! DON'T PRE-RENDER THIS PAGE
 
@@ -11,7 +10,7 @@ export const load: PageLoad = async ({ params }) => {
 		await getFullPresentation(presentationId)
 	console.log(content)
 	return {
-		content,
+		content: content,
 		theme: theme,
 		isPublic: is_public,
 	}
