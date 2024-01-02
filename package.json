@@ -42,7 +42,7 @@
 		"@tiptap/starter-kit": "^2.1.13",
 		"@types/reveal.js": "^4.4.8",
 		"bits-ui": "^0.13.0",
-		"clsx": "^2.0.0",
+		"clsx": "^2.1.0",
 		"cmdk-sv": "^0.0.12",
 		"file-saver": "^2.0.5",
 		"lucide-svelte": "^0.298.0",
