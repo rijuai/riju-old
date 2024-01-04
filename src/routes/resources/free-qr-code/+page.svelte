@@ -9,8 +9,8 @@
 	import QRCode from 'qrcode'
 	import { onMount } from 'svelte'
 
-	let text = 'https://riju.ai',
-		canvasEl: HTMLCanvasElement
+	let text = 'https://riju.ai'
+	let canvasEl: HTMLCanvasElement
 
 	const getQrCode = (canvasEl: HTMLElement, string: string) => {
 		QRCode.toCanvas(canvasEl, string, {
