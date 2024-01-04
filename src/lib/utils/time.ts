@@ -1,3 +1,4 @@
-export const getCurrentTime = (): number => {
-	return Date.now()
+export const getCurrentTime = (): string => {
+	const currentTime = new Date().toISOString()
+	return currentTime
 }
