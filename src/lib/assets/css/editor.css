@@ -1,3 +1,3 @@
-.editor img {
+#editor img {
 	@apply max-h-96 mx-auto rounded;
 }

@@ -4,8 +4,12 @@
 	import HelpDialog from '$lib/components/HelpDialog.svelte'
 	import MetaTags from '$lib/components/MetaTags.svelte'
 	import { onMount } from 'svelte'
+	import type { PageData } from '../$types'
 
 	let presentationId: string
+	export let data: PageData
+	const { content } = data
+	console.log('COntent', content)
 
 	onMount(() => {
 		presentationId = $page.params.presentation_id
@@ -17,6 +21,6 @@
 	description="Create and edit presentations with Riju."
 />
 
-<Editor {presentationId} />
+<Editor {presentationId} presentationContent={content} />
 
 <HelpDialog />

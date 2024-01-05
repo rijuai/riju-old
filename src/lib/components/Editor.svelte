@@ -2,10 +2,7 @@
 	import '$lib/assets/css/editor.css'
 	import ContextMenu from '$lib/components/ContextMenu.svelte'
 	import EditorMenu from '$lib/components/EditorMenu.svelte'
-	import {
-		getPresentationContent,
-		updatePresentation,
-	} from '$lib/db/presentation'
+	import { updatePresentation } from '$lib/db/presentation'
 	import { SubSection } from '$lib/engines/subSection'
 	import { editorOutput } from '$lib/stores/presentation'
 	import { getCurrentTime } from '$lib/utils/time'
@@ -22,15 +19,16 @@
 	import type { Json } from '../../schema'
 
 	export let presentationId: string
+	export let presentationContent: Json
 
 	let element: HTMLDivElement
 	let contextMenu: HTMLElement
 	let editor: Editor
-	let presentationContent: Json
 	let showLoader = true
 	let debounceTimer: NodeJS.Timeout
 
 	onMount(async () => {
+		console.log('Presentation content', presentationContent)
 		initializeEditor(element)
 	})
 
@@ -71,10 +69,7 @@
 			],
 
 			onCreate: async () => {
-				presentationContent = await getPresentationContent(presentationId)
-				if (presentationContent) {
-					editor.commands.setContent(presentationContent)
-				}
+				editor.commands.setContent(presentationContent as Json[])
 
 				$editorOutput = editor.getJSON().content!
 				$editorOutput = $editorOutput
@@ -134,7 +129,8 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="editor p-2 min-h-screen mb-8 max-w-2xl mx-auto prose prose-sm prose-h1:font-medium prose-h2:font-medium prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg"
+	id="editor"
+	class="p-2 min-h-screen mb-8 max-w-3xl mx-auto prose prose-sm prose-h1:font-medium prose-h2:font-medium prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:text-lg"
 	class:hidden={showLoader}
 	bind:this={element}
 	on:click={() => {
