@@ -15,10 +15,9 @@ export const getPresentations = async (): Promise<
 
 export const createPresentation = async (
 	title: string,
-	content = [],
-	theme = {},
-	// biome-ignore lint/suspicious/noConfusingVoidType: <explanation>
-): Promise<string | void> => {
+	content: Json = [],
+	theme: Json = {},
+): Promise<string | null> => {
 	const { data, error } = await supabase
 		.from('presentations')
 		.insert({
@@ -28,7 +27,7 @@ export const createPresentation = async (
 		})
 		.select('id')
 
-	return data ? data[0].id : console.error(error)
+	return data ? data[0].id : null
 }
 
 export const getFullPresentation = async (

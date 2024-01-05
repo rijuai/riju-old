@@ -10,12 +10,11 @@
 		getPresentationContent,
 	} from '$lib/db/presentation'
 	import { templates } from '$lib/utils/templates'
-	import type { JSONContent } from '@tiptap/core'
 	import { ExternalLink, MoreHorizontal, Trash2 } from 'lucide-svelte'
 	import type { PageData } from './$types'
 
 	export let data: PageData
-	const presentations = data.presentations
+	const { presentations } = data
 
 	const deleteImagesInR2 = async (objectKeys: string[]) => {
 		const result = await fetch('/api/image', {
@@ -27,10 +26,12 @@
 		})
 	}
 
-	const deleteImages = async (editorOutput: JSONContent) => {
+	const deleteImages = async (editorOutput: any) => {
 		const imagesToDelete: string[] = []
 
-		editorOutput.forEach((item: Item) => {
+		if (!editorOutput) return
+
+		editorOutput.forEach((item: any) => {
 			if (item.type === 'image') {
 				const url = item.attrs.src
 				const path = url.split('/').pop() ?? ''
@@ -117,6 +118,7 @@
 													let result = await deletePresentation(id)
 													if (result) {
 														console.log('Successfully deleted presentation')
+
 														location.reload()
 													}
 												}}
