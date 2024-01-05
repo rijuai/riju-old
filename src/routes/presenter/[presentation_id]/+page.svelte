@@ -9,6 +9,7 @@
 		isPresentationPublic,
 		transitionType,
 	} from '$lib/stores/presentation'
+	import type { JSONContent } from '@tiptap/core'
 	import { Loader } from 'lucide-svelte'
 	import { onMount } from 'svelte'
 	import type { PageData } from './$types'
@@ -25,11 +26,17 @@
 			$currentTheme =
 				'background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);'
 		} else {
-			$currentTheme = theme.backgroundCss
-			$transitionType = theme.transitionType
+			if (
+				typeof theme === 'object' &&
+				'backgroundCss' in theme &&
+				'transitionType' in theme
+			) {
+				$currentTheme = theme.backgroundCss as string
+				$transitionType = theme.transitionType as any
+			}
 		}
 
-		htmlOutput = convertContentToHtml(content)
+		htmlOutput = convertContentToHtml(content as JSONContent[])
 	})
 </script>
 

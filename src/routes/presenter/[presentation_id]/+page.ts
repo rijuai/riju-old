@@ -3,15 +3,19 @@ import { getFullPresentation } from '$lib/db/presentation'
 
 import type { PageLoad } from './$types'
 
-export const load: PageLoad = async ({ params }) => {
-	console.log('load')
+export const load = (async ({ params }) => {
 	const presentationId = params.presentation_id
-	const { content, theme, is_public } =
-		await getFullPresentation(presentationId)
-	console.log(content)
+	const { content, theme, is_public } = (await getFullPresentation(
+		presentationId,
+	)) ?? {
+		content: [],
+		theme: null,
+		is_public: false,
+	}
+
 	return {
 		content: content,
 		theme: theme,
 		isPublic: is_public,
 	}
-}
+}) satisfies PageLoad
