@@ -3,7 +3,6 @@ import type { PageLoad } from './$types'
 
 export const load = (async ({ params }) => {
 	const presentationId = params.presentation_id
-	console.log(presentationId)
 	const { content } = await getPresentationContent(presentationId) ?? { content: null}
 
 	return {
