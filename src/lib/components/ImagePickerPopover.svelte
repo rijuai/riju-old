@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button'
+	import { Input } from '$lib/components/ui/input'
 	import * as Popover from '$lib/components/ui/popover'
 	import type { Editor } from '@tiptap/core'
 	import { Image, Search } from 'lucide-svelte'
 	import { onDestroy } from 'svelte'
-	import { Input } from './ui/input'
 
 	export let editor: Editor
 
@@ -33,7 +33,7 @@
 	}
 
 	const uploadImageToR2 = async (file: File): Promise<string> => {
-		const getPresignedUrlResponse = await fetch('/api/image', {
+		const getPresignedUrlResponse = await fetch('/api/r2', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
