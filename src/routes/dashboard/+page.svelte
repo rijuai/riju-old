@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import MetaTags from '$lib/components/MetaTags.svelte'
-	import Button from '$lib/components/ui/button/button.svelte'
+	import { Button } from '$lib/components/ui/button'
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu'
 	import * as Table from '$lib/components/ui/table'
 	import {
