@@ -1,5 +1,8 @@
 <script>
+	import AnimatedRoute from '$lib/components/AnimatedRoute.svelte'
 	import '../app.css'
 </script>
 
-<slot />
+<AnimatedRoute>
+	<slot />
+</AnimatedRoute>
