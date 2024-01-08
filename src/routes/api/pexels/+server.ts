@@ -11,7 +11,7 @@ export const GET: RequestHandler = async ({ url }) => {
 		photos: photos,
 	}, {
 		headers: {
-			'Access-Control-Allow-Origin': 'https://riju.ai/*'
+			'Access-Control-Allow-Origin': 'https://riju.ai'
 		}
 	})
 }
