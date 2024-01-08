@@ -63,8 +63,8 @@ dependencies:
     specifier: ^2.0.5
     version: 2.0.5
   lucide-svelte:
-    specifier: ^0.305.0
-    version: 0.305.0(svelte@4.2.8)
+    specifier: ^0.307.0
+    version: 0.307.0(svelte@4.2.8)
   pexels:
     specifier: ^1.4.0
     version: 1.4.0
@@ -2851,8 +2851,8 @@ packages:
     resolution: {integrity: sha512-/1clY/ui8CzjKFyjdvwPWJUYKiFVXG2I2cY0ssG7h4+hwk+XOIX7ZSG9Q7TW8TW3Kp3BUSqgFWBLgL4PJ+Blag==}
     engines: {node: 14 || >=16.14}
 
-  /lucide-svelte@0.305.0(svelte@4.2.8):
-    resolution: {integrity: sha512-8YIPW4nVxGl9xUWNd/u4UScswJkZ9OuAqT+8e2fwyVYCRDDXanGPzjJSarFNbLDhT6UZJxJQ7dsqzPsK4tDX4A==}
+  /lucide-svelte@0.307.0(svelte@4.2.8):
+    resolution: {integrity: sha512-9iGONh7UHEbA3xCTJlT5PYv9GuWrerX4429XWSoLTIjF9UnNCuOmYAu8sA72FmjehrwdJFbvHB+yT/HmCadL4A==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
