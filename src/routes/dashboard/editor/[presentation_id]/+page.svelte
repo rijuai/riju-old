@@ -9,7 +9,6 @@
 	let presentationId: string
 	export let data: PageData
 	const { content } = data
-	console.log('COntent', content)
 
 	onMount(() => {
 		presentationId = $page.params.presentation_id
