@@ -1,6 +1,4 @@
 import { getFullPresentation } from '$lib/db/presentation'
-// ! DON'T PRE-RENDER THIS PAGE
-
 import type { PageLoad } from './$types'
 
 export const load = (async ({ params }) => {
