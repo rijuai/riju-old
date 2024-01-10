@@ -7,24 +7,6 @@
 	import { Button } from '$lib/components/ui/button'
 	import * as Card from '$lib/components/ui/card'
 	import { ArrowRight, Layout, Pointer, Rocket } from 'lucide-svelte'
-
-	const steps = [
-		{
-			title: 'Step 1',
-			description:
-				'Write your content in the editor. Riju will automatically convert it into a well-structured and visually appealing presentation.',
-		},
-		{
-			title: 'Step 2',
-			description:
-				'Choose from over 100+ stunning themes. With a single click, you can switch themes, ensuring that your presentation aligns perfectly with your message and audience.',
-		},
-		{
-			title: 'Step 3',
-			description:
-				'Export your presentation as a PDF or share it with others via a link. You can also embed your presentation on your website or blog.',
-		},
-	]
 </script>
 
 <MetaTags
@@ -36,8 +18,8 @@
 
 <main class="mx-auto max-w-6xl px-4">
 	<!-- ** HERO SECTION ** -->
-	<section class="text-center max-w-4xl mx-auto">
-		<h1 class="text-6xl leading-tight font-medium mb-4">
+	<section class="text-center max-w-6xl mx-auto">
+		<h1 class="text-6xl leading-tight font-bold mb-4">
 			Create presentations in seconds
 		</h1>
 		<p
@@ -61,16 +43,18 @@
 
 	<!-- ** Cards ** -->
 	<section class="max-w-5xl mx-auto">
-		<h2>Focus on the content, <br /> not the formatting</h2>
+		<h2 class="font-bold">
+			Focus on the content, <br /> not on the formatting
+		</h2>
 
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 			<Card.Root>
 				<Card.Header>
 					<Rocket class="size-8 mb-2" />
-					<Card.Title class="tracking-tight font-medium"
+					<Card.Title class="tracking-tigh font-semibold text-2xl"
 						>Rapid presentation creation</Card.Title
 					>
-					<Card.Description class="text-base">
+					<Card.Description class="text-lg">
 						Riju allows users to create presentations in a matter of seconds.
 						Simply write your content, and Riju will automatically convert it
 						into a well-structured and visually appealing presentation.
@@ -80,7 +64,7 @@
 			<Card.Root>
 				<Card.Header>
 					<Pointer class="size-8 mb-2" />
-					<Card.Title class="tracking-tight font-medium"
+					<Card.Title class="text-xl font-medium"
 						>Effortless theme customization</Card.Title
 					>
 					<Card.Description class="text-base">
@@ -93,7 +77,7 @@
 			<Card.Root>
 				<Card.Header>
 					<Layout class="size-8 mb-2" />
-					<Card.Title class="tracking-tight font-medium"
+					<Card.Title class="text-xl font-medium"
 						>User-friendly interface</Card.Title
 					>
 					<Card.Description class="text-base">
