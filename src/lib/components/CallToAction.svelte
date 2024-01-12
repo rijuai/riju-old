@@ -5,7 +5,7 @@
 
 <section class="max-w-l mx-auto text-center py-32">
 	<div class="max-w-2xl mx-auto">
-		<h1 class="text-5xl font-medium mb-4">Presentations reimagined!</h1>
+		<h1 class="text-5xl font-bold mb-4">Presentations reimagined!</h1>
 		<p class="text-2xl text-muted-foreground mb-12">
 			Building presentations with Riju is as simple as one-two-three.
 		</p>
