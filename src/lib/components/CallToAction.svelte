@@ -5,8 +5,11 @@
 
 <section class="max-w-l mx-auto text-center py-32">
 	<div class="max-w-2xl mx-auto">
-		<h1 class="text-5xl font-medium mb-16">Presentations reimagined!</h1>
-		<div class="flex flex-col md:flex-row justify-center gap-4 mb-2">
+		<h1 class="text-5xl font-medium mb-4">Presentations reimagined!</h1>
+		<p class="text-2xl text-muted-foreground mb-12">
+			Building presentations with Riju is as simple as one-two-three.
+		</p>
+		<div class="flex flex-col md:flex-row justify-center gap-4 mb-3">
 			<Button size="lg" class="text-lg py-6" href="/signin"
 				>Get Started<ChevronRight class="ml-2" /></Button
 			>
