@@ -13,20 +13,19 @@
 	title="Super fast and easy-to-use alternative to Microsoft PowerPoint"
 	description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
-
 <HomePageNavbar />
 
 <main class="mx-auto max-w-6xl px-4">
-	<!-- ** HERO SECTION ** -->
-	<section class="text-center max-w-6xl mx-auto">
-		<h1 class="text-6xl leading-tight font-bold mb-4">
-			Create presentations in seconds
+	<!-- ** Hero ** -->
+	<section class="text-center max-w-4xl mx-auto">
+		<h1 class="text-6xl leading-tight font-bold mb-6 text-black">
+			The simplest way to create presentations
 		</h1>
 		<p
-			class="lg:px-12 font-normal text-muted-foreground text-xl leading-normal mb-8"
+			class="font-normal text-muted-foreground text-2xl leading-normal mb-12 mx-auto max-w-2xl"
 		>
-			Riju is a lightning-fast, user-friendly presentation builder which does
-			all the formatting, styling for you.
+			Say goodbye to boring presentations. Meet Riju — the free, intuitive
+			presentation builder you’ve been looking for.
 		</p>
 		<div class="flex flex-col md:flex-row justify-center gap-4 mb-2">
 			<Button size="lg" class="text-lg py-6" href="/signin"
@@ -36,55 +35,51 @@
 		<p class="text-sm text-muted-foreground">No credit card required</p>
 	</section>
 
-	<!-- ** DEMO VIDEO ** -->
-	<section class="max-w-4xl mx-auto">
+	<!-- ** Demo Video ** -->
+	<section class="max-w-5xl mx-auto">
 		<video class="rounded-lg shadow-xl" src={DemoVideo} muted loop autoplay />
 	</section>
 
 	<!-- ** Cards ** -->
 	<section class="max-w-5xl mx-auto">
-		<h2 class="font-bold">
+		<h2 class="mb-12">
 			Focus on the content, <br /> not on the formatting
 		</h2>
 
-		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 			<Card.Root>
 				<Card.Header>
 					<Rocket class="size-8 mb-2" />
-					<Card.Title class="tracking-tigh font-semibold text-2xl"
-						>Rapid presentation creation</Card.Title
-					>
-					<Card.Description class="text-lg">
-						Riju allows users to create presentations in a matter of seconds.
-						Simply write your content, and Riju will automatically convert it
-						into a well-structured and visually appealing presentation.
-					</Card.Description>
+					<Card.Title>Rapid presentation creation</Card.Title>
 				</Card.Header>
+				<Card.Content>
+					Simply write your content, and Riju will automatically convert it into
+					a well-structured and visually appealing presentation.
+				</Card.Content>
 			</Card.Root>
 			<Card.Root>
 				<Card.Header>
 					<Pointer class="size-8 mb-2" />
-					<Card.Title class="text-xl font-medium"
-						>Effortless theme customization</Card.Title
-					>
-					<Card.Description class="text-base">
-						Changing presentation themes has never been easier. With Riju, you
-						can switch themes with a single click, ensuring that your
-						presentation aligns perfectly with your message and audience.
-					</Card.Description>
+					<Card.Title>Effortless theme customization</Card.Title>
 				</Card.Header>
+				<Card.Content>
+					<p>
+						With Riju, you can switch themes with a single click, ensuring that
+						your presentation aligns perfectly with your message and audience.
+					</p>
+				</Card.Content>
 			</Card.Root>
 			<Card.Root>
 				<Card.Header>
 					<Layout class="size-8 mb-2" />
-					<Card.Title class="text-xl font-medium"
-						>User-friendly interface</Card.Title
-					>
-					<Card.Description class="text-base">
+					<Card.Title>User-friendly interface</Card.Title>
+				</Card.Header>
+				<Card.Content>
+					<p>
 						Our intuitive interface ensures that anyone, regardless of their
 						technical skills, can create captivating presentations effortlessly.
-					</Card.Description>
-				</Card.Header>
+					</p>
+				</Card.Content>
 			</Card.Root>
 		</div>
 	</section>
@@ -107,30 +102,12 @@
 		</div>
 	</section> -->
 
-	<!-- ** FEATURED ** -->
-	<!-- <section>
-		<h2 class="text-center mb-12">Featured On</h2>
-		<div class="flex flex-col justify-center items-center gap-8 max-h">
-			<img
-				class="h-14 w-auto"
-				src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=427150&theme=light"
-				alt="Riju - Super&#0032;fast&#0032;&#0038;&#0032;easy&#0045;to&#0045;use&#0032;alternative&#0032;to&#0032;Microsoft&#0032;PowerPoint | Product Hunt"
-			/>
-			<img class="h-32" src={PaddleLaunchPadImage} alt="" />
-		</div>
-	</section> -->
-
 	<CallToAction />
-
 	<Footer />
 </main>
 
 <style lang="postcss">
 	section {
 		@apply my-16 lg:my-44;
-	}
-
-	h2 {
-		@apply text-5xl font-medium leading-tight mb-12;
 	}
 </style>
