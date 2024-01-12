@@ -1,4 +1,6 @@
 import { getFullPresentation } from '$lib/db/presentation'
+import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
+import type { JSONContent } from '@tiptap/core'
 import type { PageLoad } from './$types'
 
 export const load = (async ({ params }) => {
@@ -11,9 +13,12 @@ export const load = (async ({ params }) => {
 		is_public: false,
 	}
 
+	const htmlOutput = convertContentToHtml(content as JSONContent[])
+
 	return {
-		content: content,
 		theme: theme,
 		isPublic: is_public,
+		htmlOutput: htmlOutput,
+		presentationId: presentationId,
 	}
 }) satisfies PageLoad
