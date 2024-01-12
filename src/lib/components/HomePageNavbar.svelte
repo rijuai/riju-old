@@ -13,9 +13,9 @@
 				href="https://giant-anise-fba.notion.site/Riju-Change-log-327736186a0c4a4b92621a104569917f"
 				class="hidden md:block">Change log</Button
 			>
-			<Button variant="ghost" href="/docs/pricing" class="hidden md:block"
+			<!-- <Button variant="ghost" href="/docs/pricing" class="hidden md:block"
 				>Pricing</Button
-			>
+			> -->
 			<Button variant="ghost" href="/docs/contact" class="hidden md:block"
 				>Contact</Button
 			>
