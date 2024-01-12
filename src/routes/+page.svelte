@@ -25,7 +25,7 @@
 			Say goodbye to boring presentations. Meet Riju — the free, intuitive
 			presentation builder you’ve been looking for.
 		</p>
-		<div class="flex flex-col md:flex-row justify-center gap-4 mb-2">
+		<div class="flex flex-col md:flex-row justify-center gap-4 mb-2.5">
 			<Button size="lg" class="text-lg py-6" href="/signin"
 				>Get Started<ArrowRight class="ml-2" /></Button
 			>
