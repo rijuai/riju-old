@@ -87,7 +87,7 @@
 
 	/* typography */
 	h1 {
-		@apply text-6xl font-bold;
+		@apply text-6xl font-bold leading-tight;
 	}
 
 	h2 {
