@@ -18,9 +18,7 @@
 <main class="mx-auto max-w-6xl px-4">
 	<!-- ** Hero ** -->
 	<section class="text-center max-w-4xl mx-auto">
-		<h1 class="text-6xl leading-tight font-bold mb-6 text-black">
-			The simplest way to create presentations
-		</h1>
+		<h1 class="mb-6 text-black">The simplest way to create presentations</h1>
 		<p
 			class="font-normal text-muted-foreground text-2xl leading-normal mb-12 mx-auto max-w-2xl"
 		>
