@@ -91,7 +91,7 @@
 	}
 
 	h2 {
-		@apply text-5xl font-bold;
+		@apply text-5xl font-bold leading-tight;
 	}
 
 	h3 {
