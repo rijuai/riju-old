@@ -7,8 +7,8 @@
 	import { Maximize, X } from 'lucide-svelte'
 	import { onMount } from 'svelte'
 
-	export let presentationId: string,
-		isUserSignedIn = false
+	export let presentationId: string
+	let isUserSignedIn = false
 
 	const showFullScreen = (element: Element) => {
 		const requestFullScreen =
