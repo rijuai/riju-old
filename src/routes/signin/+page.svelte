@@ -12,7 +12,9 @@
 />
 
 <!-- ** Navbar ** -->
-<nav class="fixed top-0 z-50 w-full left-1/2 transform -translate-x-1/2 p-2">
+<nav
+	class="fixed top-0 z-50 max-w-6xl mx-auto p-2 left-1/2 transform -translate-x-1/2"
+>
 	<div class="max-w-6xl mx-auto flex justify-between">
 		<Button variant="link" class="text-2xl font-semibold" href="/">Riju</Button>
 		<Button
