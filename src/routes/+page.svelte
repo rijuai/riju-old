@@ -15,7 +15,7 @@
 />
 <HomePageNavbar />
 
-<main class="mx-auto max-w-6xl px-4">
+<main class="mx-auto max-w-7xl">
 	<!-- ** Hero ** -->
 	<section class="text-center max-w-4xl mx-auto">
 		<h1 class="mb-6 text-black">The simplest way to create presentations</h1>
@@ -106,6 +106,6 @@
 
 <style lang="postcss">
 	section {
-		@apply my-16 lg:my-44;
+		@apply px-4 my-16 lg:my-44;
 	}
 </style>

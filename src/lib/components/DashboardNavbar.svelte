@@ -8,7 +8,7 @@
 </script>
 
 <nav
-	class="sticky top-0 z-10 w-full flex gap-1 justify-between items-center p-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b"
+	class="sticky top-0 z-10 max-w-7xl mx-auto flex gap-1 justify-between items-center p-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b"
 >
 	<Button variant="link" class="text-2xl" href="/dashboard"
 		>Riju
