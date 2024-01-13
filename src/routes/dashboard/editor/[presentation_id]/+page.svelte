@@ -13,6 +13,6 @@
 	description="Create and edit presentations with Riju."
 />
 
-<Editor {presentationId} presentationContent={content} />
+<Editor {presentationId} {content} />
 
 <HelpDialog />

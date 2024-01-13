@@ -19,7 +19,7 @@
 	import type { Json } from '../../schema'
 
 	export let presentationId: string
-	export let presentationContent: Json
+	export let content: Json
 
 	let element: HTMLDivElement
 	let contextMenu: HTMLElement
@@ -28,7 +28,6 @@
 	let debounceTimer: NodeJS.Timeout
 
 	onMount(async () => {
-		console.log('Presentation content', presentationContent)
 		initializeEditor(element)
 	})
 
@@ -69,7 +68,7 @@
 			],
 
 			onCreate: async () => {
-				editor.commands.setContent(presentationContent as Json[])
+				editor.commands.setContent(content as Json[])
 
 				$editorOutput = editor.getJSON().content!
 				$editorOutput = $editorOutput
