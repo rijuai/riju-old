@@ -12,15 +12,6 @@
 	$: {
 		updatePresentationPublicStatus(presentationId, $isPresentationPublic)
 	}
-
-	const getPageUrl = () => {
-		return String($page.url)
-	}
-
-	const copyUrlToClipboard = () => {
-		let url = getPageUrl()
-		navigator.clipboard.writeText(url)
-	}
 </script>
 
 <Popover.Root>
@@ -37,7 +28,10 @@
 							size="sm"
 							class="text-xs h-full px-1.5 py-0.5"
 							on:click={() => {
-								copyUrlToClipboard()
+								let url = $page.url
+
+								// copy to clipboard
+								navigator.clipboard.writeText(String(url))
 							}}>Copy URL</Button
 						>
 					{/if}
