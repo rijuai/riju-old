@@ -8,11 +8,11 @@
 	<div class="flex justify-between">
 		<Button variant="link" class="text-2xl font-semibold" href="/">Riju</Button>
 		<div class="flex gap-2 items-center">
-			<Button
+			<!-- <Button
 				variant="ghost"
 				href="https://giant-anise-fba.notion.site/Riju-Change-log-327736186a0c4a4b92621a104569917f"
 				class="hidden md:block">Change log</Button
-			>
+			> -->
 			<!-- <Button variant="ghost" href="/docs/pricing" class="hidden md:block"
 				>Pricing</Button
 			> -->
