@@ -3,8 +3,8 @@
 	import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
 </script>
 
-<HomePageNavbar />
-<main>
+<main class="max-w-7xl mx-auto">
+	<HomePageNavbar />
 	<slot />
 </main>
 <Footer />
