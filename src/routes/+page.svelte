@@ -13,9 +13,9 @@
 	title="Super fast and easy-to-use alternative to Microsoft PowerPoint"
 	description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
-<HomePageNavbar />
 
 <main class="mx-auto max-w-7xl">
+	<HomePageNavbar />
 	<!-- ** Hero ** -->
 	<section class="text-center max-w-4xl mx-auto">
 		<h1 class="mb-6 text-black">The simplest way to create presentations</h1>
