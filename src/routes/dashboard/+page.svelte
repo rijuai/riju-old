@@ -14,7 +14,7 @@
 	import type { PageData } from './$types'
 
 	export let data: PageData
-	const { presentations } = data
+	$: ({ presentations } = data)
 
 	const deleteImagesInR2 = async (objectKeys: string[]) => {
 		const result = await fetch('/api/r2', {
