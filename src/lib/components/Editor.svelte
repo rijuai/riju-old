@@ -129,7 +129,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	id="editor"
-	class="p-8 min-h-screen mb-8 max-w-4xl mx-auto prose prose-sm prose-h1:font-medium prose-h2:font-medium prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:text-lg border rounded-lg shadow-md"
+	class="p-12 min-h-screen mb-8 max-w-4xl mx-auto prose prose-sm prose-h1:font-medium prose-h2:font-medium prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:text-lg border rounded-lg shadow-md"
 	class:hidden={showLoader}
 	bind:this={element}
 	on:click={() => {
