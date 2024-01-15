@@ -27,8 +27,8 @@ dependencies:
     specifier: ^2.1.16
     version: 2.1.16(@tiptap/core@2.1.14)(@tiptap/pm@2.1.14)
   '@tiptap/extension-document':
-    specifier: ^2.1.14
-    version: 2.1.14(@tiptap/core@2.1.14)
+    specifier: ^2.1.16
+    version: 2.1.16(@tiptap/core@2.1.14)
   '@tiptap/extension-gapcursor':
     specifier: ^2.1.16
     version: 2.1.16(@tiptap/core@2.1.14)(@tiptap/pm@2.1.14)
@@ -2029,8 +2029,8 @@ packages:
       '@tiptap/core': 2.1.14(@tiptap/pm@2.1.14)
     dev: false
 
-  /@tiptap/extension-document@2.1.14(@tiptap/core@2.1.14):
-    resolution: {integrity: sha512-plOcTQBCysUyz8AXrkBhhAqa+ALyeGJPOku0L3lS6MCSAPM2/KRW/H4KXcrfW0G1lHKiJ4OkP8oHksxa6Id5zg==}
+  /@tiptap/extension-document@2.1.16(@tiptap/core@2.1.14):
+    resolution: {integrity: sha512-VSOrzGnpI9dJDffFn3ZjmPKYkH/YtYeDl6nqLu7TafRqyLMSEqxxxq/+Qs/7j8jbzq6osslY0sySckSulroIOg==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
@@ -2199,7 +2199,7 @@ packages:
       '@tiptap/extension-bullet-list': 2.1.14(@tiptap/core@2.1.14)
       '@tiptap/extension-code': 2.1.14(@tiptap/core@2.1.14)
       '@tiptap/extension-code-block': 2.1.14(@tiptap/core@2.1.14)(@tiptap/pm@2.1.14)
-      '@tiptap/extension-document': 2.1.14(@tiptap/core@2.1.14)
+      '@tiptap/extension-document': 2.1.16(@tiptap/core@2.1.14)
       '@tiptap/extension-dropcursor': 2.1.14(@tiptap/core@2.1.14)(@tiptap/pm@2.1.14)
       '@tiptap/extension-gapcursor': 2.1.16(@tiptap/core@2.1.14)(@tiptap/pm@2.1.14)
       '@tiptap/extension-hard-break': 2.1.14(@tiptap/core@2.1.14)
