@@ -57,8 +57,8 @@ dependencies:
     specifier: ^2.1.0
     version: 2.1.0
   cmdk-sv:
-    specifier: ^0.0.12
-    version: 0.0.12(svelte@4.2.8)
+    specifier: ^0.0.13
+    version: 0.0.13(svelte@4.2.8)
   file-saver:
     specifier: ^2.0.5
     version: 2.0.5
@@ -2406,8 +2406,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /cmdk-sv@0.0.12(svelte@4.2.8):
-    resolution: {integrity: sha512-d+eILSOb2W+/3U/j7xGTgGRrZkFB/z4Xlvj0ADrWhf34y9YLzJon3JCGP2hMil5IrVm0P/+IFIeCF5l3//kcjA==}
+  /cmdk-sv@0.0.13(svelte@4.2.8):
+    resolution: {integrity: sha512-WrYn0MMdVyzJx+KuOQy028/7mv+uMwO1cxVBM0uJ4KA+50PX792epsj8Yw3It8WfWR8Rae7siBCg54mIAlKsiw==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:

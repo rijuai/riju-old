@@ -43,7 +43,7 @@
 		"@types/reveal.js": "^4.4.8",
 		"bits-ui": "^0.13.5",
 		"clsx": "^2.1.0",
-		"cmdk-sv": "^0.0.12",
+		"cmdk-sv": "^0.0.13",
 		"file-saver": "^2.0.5",
 		"lucide-svelte": "^0.307.0",
 		"pexels": "^1.4.0",
