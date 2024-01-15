@@ -33,9 +33,7 @@
 	title="Riju | Present"
 	description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
-
 <PresenterNavbar {presentationId} />
-
 <Presenter {htmlOutput} />
 
 <!-- {#if htmlOutput === ''}
