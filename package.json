@@ -30,7 +30,7 @@
 		"@aws-sdk/s3-request-presigner": "^3.485.0",
 		"@supabase/auth-ui-shared": "^0.1.8",
 		"@supabase/auth-ui-svelte": "^0.2.9",
-		"@supabase/supabase-js": "^2.39.2",
+		"@supabase/supabase-js": "^2.39.3",
 		"@tiptap/core": "^2.1.14",
 		"@tiptap/extension-bubble-menu": "^2.1.14",
 		"@tiptap/extension-document": "^2.1.14",
