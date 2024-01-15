@@ -24,8 +24,8 @@ dependencies:
     specifier: ^2.1.14
     version: 2.1.14(@tiptap/pm@2.1.14)
   '@tiptap/extension-bubble-menu':
-    specifier: ^2.1.14
-    version: 2.1.14(@tiptap/core@2.1.14)(@tiptap/pm@2.1.14)
+    specifier: ^2.1.16
+    version: 2.1.16(@tiptap/core@2.1.14)(@tiptap/pm@2.1.14)
   '@tiptap/extension-document':
     specifier: ^2.1.14
     version: 2.1.14(@tiptap/core@2.1.14)
@@ -1991,8 +1991,8 @@ packages:
       '@tiptap/core': 2.1.14(@tiptap/pm@2.1.14)
     dev: false
 
-  /@tiptap/extension-bubble-menu@2.1.14(@tiptap/core@2.1.14)(@tiptap/pm@2.1.14):
-    resolution: {integrity: sha512-9+KsP2rCVymlSKXx7BhPF9xy7dj2/G7auu7qZ4AJzEbsLj1PMS8/pSjPUabCIN6z+9IeifOa2VKmXCnVfcpazw==}
+  /@tiptap/extension-bubble-menu@2.1.16(@tiptap/core@2.1.14)(@tiptap/pm@2.1.14):
+    resolution: {integrity: sha512-MwKCmu2kU7+Xln/BvlrolU2hCXgoCoTr4NXJ+3v8A9w7tIq8leADoWacfEee2t3VNnGdXw/Xjza+DAr77JWjGg==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
