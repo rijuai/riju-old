@@ -7,7 +7,6 @@
 		isPresentationPublic,
 		transitionType,
 	} from '$lib/stores/presentation'
-	import { Loader } from 'lucide-svelte'
 	import type { PageData } from './$types'
 
 	export let data: PageData
@@ -37,8 +36,8 @@
 
 <PresenterNavbar {presentationId} />
 
-{#if htmlOutput}
-	<Presenter {htmlOutput} />
-{:else}
-	<Loader class="fixed left-1/2 top-1/2 animate-spin" />
-{/if}
+<Presenter {htmlOutput} />
+
+<!-- {#if htmlOutput === ''}
+	<h1 class="fixed ">Error</h1>
+{/if} -->
