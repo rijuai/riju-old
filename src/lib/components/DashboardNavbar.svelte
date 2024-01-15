@@ -8,12 +8,12 @@
 </script>
 
 <nav
-	class="sticky px-2 py-3 top-0 z-50 max-w-7xl mx-auto flex gap-1 justify-between items-center bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+	class="sticky px-2 py-3 top-0 z-10 max-w-7xl mx-auto flex gap-1 justify-between items-center bg-white"
 >
 	<Button variant="link" class="text-2xl" href="/dashboard"
 		>Riju
 		<Badge variant="secondary" class="bg-amber-200 ml-2"
-			>Currently in alpha</Badge
+			>Beta</Badge
 		>
 	</Button>
 	<div class="flex gap-3">
