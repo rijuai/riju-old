@@ -3,7 +3,7 @@
 	import { ChevronRight } from 'lucide-svelte'
 </script>
 
-<section class="max-w-l mx-auto text-center py-32">
+<section class="max-w-l mx-auto text-center py-32 px-4">
 	<div class="max-w-2xl mx-auto">
 		<h2 class="mb-4">Presentations reimagined!</h2>
 		<p class="text-2xl text-muted-foreground mb-12">
