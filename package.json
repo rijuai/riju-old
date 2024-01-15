@@ -41,7 +41,7 @@
 		"@tiptap/pm": "^2.1.14",
 		"@tiptap/starter-kit": "^2.1.14",
 		"@types/reveal.js": "^4.4.8",
-		"bits-ui": "^0.13.5",
+		"bits-ui": "^0.14.0",
 		"clsx": "^2.1.0",
 		"cmdk-sv": "^0.0.13",
 		"file-saver": "^2.0.5",
