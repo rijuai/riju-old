@@ -21,14 +21,14 @@
 	export let presentationId: string
 	export let content: Json
 
-	let element: HTMLDivElement
+	let contentElement: HTMLDivElement
 	let contextMenu: HTMLElement
-	let editor: Editor
+	let contentEditor: Editor
 	let showLoader = true
 	let debounceTimer: NodeJS.Timeout
 
 	onMount(async () => {
-		initializeEditor(element)
+		initializeEditor(contentElement)
 	})
 
 	const CustomDocument = Document.extend({
@@ -36,7 +36,7 @@
 	})
 
 	const initializeEditor = (element: HTMLDivElement) => {
-		editor = new Editor({
+		contentEditor = new Editor({
 			element: element,
 			extensions: [
 				CustomDocument,
@@ -45,9 +45,7 @@
 				}),
 				Placeholder.configure({
 					placeholder: ({ node }) => {
-						if (node.type.name === 'heading') {
-							return 'What is the title?'
-						}
+						if (node.type.name === 'heading') return 'What is the title?'
 						return 'Write your content here...'
 					},
 				}),
@@ -68,20 +66,20 @@
 			],
 
 			onCreate: async () => {
-				editor.commands.setContent(content as Json[])
+				contentEditor.commands.setContent(content as Json[])
 
-				$editorOutput = editor.getJSON().content!
+				$editorOutput = contentEditor.getJSON().content!
 				$editorOutput = $editorOutput
 
 				showLoader = false
 			},
 
 			onTransaction: () => {
-				editor = editor
+				contentEditor = contentEditor
 			},
 
 			onUpdate: () => {
-				$editorOutput = editor.getJSON().content!
+				$editorOutput = contentEditor.getJSON().content!
 
 				let title = getTitle()
 				let currentTime = getCurrentTime()
@@ -97,27 +95,23 @@
 	}
 
 	const getTitle = () => {
-		const title = editor.getJSON().content![0].content![0].text ?? ''
+		const title = contentEditor.getJSON().content![0].content![0].text ?? ''
 
 		return title
 	}
 
 	onDestroy(() => {
-		if (editor) editor.destroy()
+		if (contentEditor) contentEditor.destroy()
 	})
 </script>
-
-{#if editor}
-	<EditorMenu {editor} />
-{/if}
 
 <!-- ** CONTEXT MENU ** -->
 <div
 	class="context-menu flex gap-1 p-1 bg-white border rounded shadow-md shadow-slate-400"
 	bind:this={contextMenu}
 >
-	{#if editor}
-		<ContextMenu {editor} />
+	{#if contentEditor}
+		<ContextMenu editor={contentEditor} />
 	{/if}
 </div>
 
@@ -125,17 +119,20 @@
 	<Loader class="fixed left-1/2 top-1/2 animate-spin" />
 {/if}
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<div
-	id="editor"
-	class="p-12 min-h-screen mb-8 max-w-4xl mx-auto prose prose-sm prose-h1:font-medium prose-h2:font-medium prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:text-lg border rounded-lg shadow-md"
-	class:hidden={showLoader}
-	bind:this={element}
-	on:click={() => {
-		editor?.commands.focus()
-	}}
-/>
+<div class="max-w-4xl mx-auto border rounded-lg shadow relative mb-8">
+	<EditorMenu editor={contentEditor} />
+	<!-- svelte-ignore a11y-no-static-element-interactions -->
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<div
+		id="editor"
+		class="Prosemirror p-12 min-h-screen min-w-full prose prose-sm prose-h1:font-medium prose-h2:font-medium prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:text-lg"
+		class:hidden={showLoader}
+		bind:this={contentElement}
+		on:click={() => {
+			contentEditor?.commands.focus()
+		}}
+	></div>
+</div>
 
 <style lang="postcss">
 	:global(.tiptap .is-empty::before) {
