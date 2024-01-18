@@ -35,7 +35,3 @@
 />
 <PresenterNavbar {presentationId} />
 <Presenter {htmlOutput} />
-
-<!-- {#if htmlOutput === ''}
-	<h1 class="fixed ">Error</h1>
-{/if} -->
