@@ -107,7 +107,7 @@
 
 <!-- ** CONTEXT MENU ** -->
 <div
-	class="context-menu flex gap-1 p-1 bg-white border rounded shadow-md shadow-slate-400"
+	class="context-menu flex gap-1 bg-white border border-slate-300 rounded-md shadow-lg shadow-slate-200"
 	bind:this={contextMenu}
 >
 	{#if contentEditor}
