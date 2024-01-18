@@ -89,7 +89,7 @@
 							on:click={() => goto(`/dashboard/editor/${id}`)}
 						>
 							<Table.Cell class="font-normal">{++index}</Table.Cell>
-							<Table.Cell>{title}</Table.Cell>
+							<Table.Cell class="text-ellipsis">{title}</Table.Cell>
 							<Table.Cell
 								class="text-right"
 								on:click={(e) => {
@@ -113,7 +113,7 @@
 												class="text-destructive"
 												on:click={async () => {
 													let editorOutput = await getPresentationContent(id)
-													await deleteImages(editorOutput)
+													await deleteImages(editorOutput?.content)
 
 													let result = await deletePresentation(id)
 													if (result) {
