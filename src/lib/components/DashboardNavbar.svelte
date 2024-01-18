@@ -8,7 +8,7 @@
 </script>
 
 <nav
-	class="sticky px-2 py-3 top-0 z-10 max-w-7xl mx-auto flex gap-1 justify-between items-center bg-white"
+	class="sticky px-2 py-3 top-0 z-10 flex gap-1 justify-between items-center bg-white"
 >
 	<Button variant="link" class="text-2xl" href="/dashboard"
 		>Riju
