@@ -3,8 +3,6 @@ import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
 import type { JSONContent } from '@tiptap/core'
 import type { PageLoad } from './$types'
 
-export const ssr = false
-
 export const load = (async ({ params }) => {
 	const presentationId = params.presentation_id
 	const { content, theme, is_public } = (await getFullPresentation(
