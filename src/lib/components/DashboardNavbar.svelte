@@ -7,16 +7,26 @@
 	import { PencilLine, Play, Settings } from 'lucide-svelte'
 </script>
 
+<!-- ** Tally forms script -->
+<svelte:head>
+	<script defer async src="https://tally.so/widgets/embed.js"></script>
+</svelte:head>
+
 <nav
 	class="sticky px-2 py-3 top-0 z-10 flex gap-1 justify-between items-center bg-white"
 >
 	<Button variant="link" class="text-2xl" href="/dashboard"
 		>Riju
-		<Badge variant="secondary" class="bg-amber-200 ml-2"
-			>Beta</Badge
-		>
+		<Badge variant="secondary" class="bg-amber-200 ml-2">Beta</Badge>
 	</Button>
 	<div class="flex gap-3">
+		<Button
+			variant="outline"
+			data-tally-open="wAvyoN"
+			data-tally-layout="modal"
+			data-tally-emoji-text="👋"
+			data-tally-emoji-animation="wave">Feedback</Button
+		>
 		{#key $page.url.pathname}
 			{#if $page.url.pathname.includes('/editor')}
 				<Button
