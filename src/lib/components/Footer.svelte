@@ -1,5 +1,5 @@
 <footer
-	class="max-w-6xl mx-auto flex flex-col sm:flex-row gap-4 justify-center sm:justify-between py-4 px-4 bg-slate-80 border-t"
+	class="max-w-7xl mx-auto flex flex-col sm:flex-row gap-4 justify-center sm:justify-between py-4 px-4 bg-slate-80 border-t"
 >
 	<div class="text-sm text-muted-foreground text-center">
 		Riju is built with love from India.
