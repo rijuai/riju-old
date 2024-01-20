@@ -7,12 +7,7 @@
 		{
 			name: 'Basic',
 			price: 0,
-			features: [
-				'Unlimited presentations',
-				'Unlimited slides',
-				'Basic themes',
-				'Share publicly',
-			],
+			features: ['2 Presentations', 'Basic themes'],
 			button_text: 'Get started',
 			button_href: '/signup',
 		},
@@ -21,13 +16,12 @@
 
 			price: 5,
 			features: [
-				'All in Basic plan',
-				'Unlimited themes',
+				'Unlimited presentations',
 				'AI generated themes',
+				'AI co-pilot for content generation',
+				'Pexels image library',
 				"No 'Made with Riju' branding",
-				'Unlimited collaborators',
-				'Workspaces',
-				'Unlimited uploads',
+				'Share publicly',
 			],
 		},
 	]
@@ -44,10 +38,10 @@
 			</div>
 		</div>
 		<div
-			class="mt-16 space-y-6 justify-center gap-6 sm:grid sm:grid-cols-2 sm:space-y-0 lg:grid-cols-2 max-w-4xl mx-auto"
+			class="mt-16 space-y-6 justify-center gap-8 sm:grid sm:grid-cols-2 sm:space-y-0 lg:grid-cols-2 max-w-4xl mx-auto"
 		>
 			{#each plans as { name, price, features }, index (name)}
-				<Card.Root>
+				<Card.Root class={index == 1 ? 'border-2 ring-sky-500' : 'asd'}>
 					<Card.Header>
 						<Card.Title>{name}</Card.Title>
 						<h4>${price}</h4>
@@ -76,5 +70,8 @@
 				</Card.Root>
 			{/each}
 		</div>
+		<p class="mt-8 text-center text-muted-foreground">
+			If you have feature requests, suggestions then email to namaste@riju.ai
+		</p>
 	</div>
 </section>
