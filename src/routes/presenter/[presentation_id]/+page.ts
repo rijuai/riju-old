@@ -4,6 +4,7 @@ import type { JSONContent } from '@tiptap/core'
 import type { PageLoad } from './$types'
 
 export const ssr = false
+export const prerender = true
 
 export const load = (async ({ params }) => {
 	const presentationId = params.presentation_id
