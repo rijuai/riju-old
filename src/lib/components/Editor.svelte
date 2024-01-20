@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '$lib/assets/css/editor.css'
 	import ContextMenu from '$lib/components/ContextMenu.svelte'
 	import EditorMenu from '$lib/components/EditorMenu.svelte'
 	import { updatePresentation } from '$lib/db/presentation'
@@ -142,5 +141,9 @@
 
 	:global(.context-menu svg) {
 		@apply h-4 w-4;
+	}
+
+	:global(#editor img) {
+		@apply max-h-96 mx-auto rounded;
 	}
 </style>
