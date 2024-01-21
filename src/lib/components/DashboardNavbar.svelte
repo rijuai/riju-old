@@ -21,6 +21,7 @@
 	</Button>
 	<div class="flex gap-3">
 		<Button
+			class="hidden lg:block"
 			variant="outline"
 			data-tally-open="wAvyoN"
 			data-tally-layout="modal"
