@@ -1,6 +1,6 @@
 export const templates = [
 	{
-		title: 'Business Plan Template',
+		title: 'Business Plan',
 		content: [
 			{
 				type: 'heading',
@@ -516,7 +516,7 @@ export const templates = [
 		],
 	},
 	{
-		title: 'Pitch Deck Template',
+		title: 'Pitch Deck',
 		content: [
 			{
 				type: 'heading',
@@ -1390,7 +1390,7 @@ export const templates = [
 		],
 	},
 	{
-		title: 'Blank Template',
+		title: 'Blank',
 		content: [],
 	},
 ]
