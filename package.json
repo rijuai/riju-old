@@ -6,6 +6,8 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
+		"format": "pnpm dlx @biomejs/biome format src/",
+		"lint": "pnpm dlx @biomejs/biome lint src/",
 		"check": "svelte-kit sync && svelte-check",
 		"check:watch": "svelte-kit sync && svelte-check --watch"
 	},
