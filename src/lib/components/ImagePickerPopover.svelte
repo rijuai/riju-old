@@ -83,7 +83,7 @@
 <Popover.Root>
 	<Popover.Trigger>
 		<Button variant="ghost" size="icon">
-			<Image class="h-5 w-5" />
+			<Image class="size-5" />
 		</Button>
 	</Popover.Trigger>
 	<Popover.Content class="max-h-96">
