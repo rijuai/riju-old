@@ -33,3 +33,14 @@ PEXELS_API_KEY = <pexels-key>
 LISTMONK_USERNAME = <listmonk-username>
 LISTMONK_PASSWORD = <listmonk-password>
 ```
+
+## Tech Stack
+
+- SvelteKit: Frontend, APIs
+- Supabase: Database, Auth
+- Cloudflare R2: Image Storage
+- Cloudflare Pages: Hosting
+- Cloudflare Workers: Serverless Functions
+- OpenAI: AI Image Generation
+- Pexels: Stock Images
+- Listmonk: Email Marketing
