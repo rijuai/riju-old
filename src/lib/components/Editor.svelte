@@ -118,7 +118,7 @@
 	<Loader class="fixed left-1/2 top-1/2 animate-spin" />
 {/if}
 
-<div class="max-w-4xl mx-auto border rounded-lg shadow relative mb-8">
+<div class="max-w-4xl mx-auto border rounded-lg shadow mb-8">
 	<EditorMenu editor={contentEditor} />
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
