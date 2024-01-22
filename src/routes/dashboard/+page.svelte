@@ -106,7 +106,7 @@
 												on:click={() => {
 													window.open(`/dashboard/editor/${id}`, '_blank')
 												}}
-												><ExternalLink class="h-4 w-4 mr-2" />Open in new tab</DropdownMenu.Item
+												><ExternalLink class="size-4 mr-3" />Open in new tab</DropdownMenu.Item
 											>
 											<DropdownMenu.Separator />
 											<DropdownMenu.Item
@@ -122,9 +122,7 @@
 														location.reload()
 													}
 												}}
-												><Trash2
-													class="h-4 w-4 mr-2"
-												/>Delete</DropdownMenu.Item
+												><Trash2 class="size-4 mr-3" />Delete</DropdownMenu.Item
 											>
 										</DropdownMenu.Group>
 									</DropdownMenu.Content>
