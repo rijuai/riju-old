@@ -38,12 +38,12 @@
 						goto(`/presenter/${presentationId}`)
 					}}
 				>
-					<Play class="h-5 w-5 mr-1" />Present
+					<Play class="size-4 mr-1" />Present
 				</Button>
 			{/if}
 			{#if $page.url.pathname === '/dashboard'}
 				<Button variant="ghost" size="icon" href="/dashboard/settings"
-					><Settings class="h-5 w-5" /></Button
+					><Settings class="size-4" /></Button
 				>
 				<Button
 					on:click={async () => {
@@ -53,7 +53,7 @@
 						goto(`/dashboard/editor/${presentationId}`)
 					}}
 				>
-					<PencilLine class="h-5 w-5 mr-2" />
+					<PencilLine class="size-4 mr-2" />
 					Create</Button
 				>
 			{/if}
