@@ -21,16 +21,32 @@
 	<Card.Header>
 		<Card.Title>Settings</Card.Title>
 	</Card.Header>
-	<Card.Content>
-		<Label>Email Address</Label>
-		<Input type="email" disabled bind:value={email} />
+	<Card.Content class="space-y-4">
+		<div>
+			<Label class="block mb-2">Email Address</Label>
+			<Input type="email" disabled bind:value={email} />
+			<p class="text-sm text-muted-foreground mt-1">
+				To change email address contact us.
+			</p>
+		</div>
+		<div class="flex text-sm">
+			Do you want to sign out? Then <a
+				class="ml-1 underline text-blue-500"
+				href="/"
+				on:click={async () => {
+					await signOut()
+					goto('/')
+				}}>click here</a
+			>.
+		</div>
 	</Card.Content>
-	<Card.Footer class="flex justify-end">
+	<Card.Footer class="flex justify-end gap-3">
 		<Button
-			on:click={async () => {
-				await signOut()
-				goto('/')
-			}}>Sign Out</Button
+			variant="outline"
+			on:click={() => {
+				goto('/dashboard')
+			}}>Cancel</Button
 		>
+		<Button>Save Changes</Button>
 	</Card.Footer>
 </Card.Root>
