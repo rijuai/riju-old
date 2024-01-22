@@ -1,5 +1,16 @@
-import { getPresentations } from '$lib/db/presentation'
+import { supabase } from '$lib/config/supabase'
 import type { PageLoad } from './$types'
+
+const getPresentations = async (): Promise<
+	{ id: string; title: string | null }[] | null
+> => {
+	const { data } = await supabase
+		.from('presentations')
+		.select('id, title')
+		.order('updated_at', { ascending: false })
+
+	return data ? data : null
+}
 
 export const load = (async () => {
 	const presentations = await getPresentations()

@@ -2,23 +2,12 @@ import { supabase } from '$lib/config/supabase'
 import type { JSONContent } from '@tiptap/core'
 import type { Json } from '../../schema'
 
-export const getPresentations = async (): Promise<
-	{ id: string; title: string | null }[] | null
-> => {
-	const { data } = await supabase
-		.from('presentations')
-		.select('id, title')
-		.order('updated_at', { ascending: false })
-
-	return data ? data : null
-}
-
 export const createPresentation = async (
 	title: string,
 	content: Json = [],
 	theme: Json = {},
 ): Promise<string | null> => {
-	const { data, error } = await supabase
+	const { data } = await supabase
 		.from('presentations')
 		.insert({
 			title: title,
@@ -48,7 +37,7 @@ export const getFullPresentation = async (
 export const getPresentationContent = async (
 	presentationId: string,
 ): Promise<{ content: Json } | null> => {
-	const { data, error } = await supabase
+	const { data } = await supabase
 		.from('presentations')
 		.select('content')
 		.eq('id', presentationId)
