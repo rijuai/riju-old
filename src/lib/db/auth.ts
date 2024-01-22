@@ -5,16 +5,3 @@ export const isUserAuthenticated = async (): Promise<boolean> => {
 
 	return user ? true : false
 }
-
-export const getUserEmail = async (): Promise<string | null> => {
-	const { data } = await supabase.auth.getSession()
-	const userEmail = data.session?.user.email
-
-	return userEmail ? userEmail : null
-}
-
-export const signOut = async (): Promise<boolean> => {
-	const { error } = await supabase.auth.signOut()
-
-	return error ? false : true
-}

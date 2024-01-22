@@ -5,10 +5,23 @@
 	import * as Card from '$lib/components/ui/card'
 	import { Input } from '$lib/components/ui/input'
 	import { Label } from '$lib/components/ui/label'
-	import { getUserEmail, signOut } from '$lib/db/auth'
+	import { supabase } from '$lib/config/supabase'
 	import { onMount } from 'svelte'
 
 	let email: string
+
+	const getUserEmail = async (): Promise<string | null> => {
+		const { data } = await supabase.auth.getSession()
+		const userEmail = data.session?.user.email
+
+		return userEmail ? userEmail : null
+	}
+
+	const signOut = async (): Promise<boolean> => {
+		const { error } = await supabase.auth.signOut()
+
+		return error ? false : true
+	}
 
 	onMount(async () => {
 		email = (await getUserEmail()) ?? ''
