@@ -9,7 +9,7 @@ export const templates = [
 				},
 				content: [
 					{
-						text: 'Business Plan Template',
+						text: 'Acme Consulting - Business Plan',
 						type: 'text',
 					},
 				],
@@ -525,7 +525,7 @@ export const templates = [
 				},
 				content: [
 					{
-						text: 'Pitch Deck Template',
+						text: 'XYZ Company - Pitch Deck',
 						type: 'text',
 					},
 				],
