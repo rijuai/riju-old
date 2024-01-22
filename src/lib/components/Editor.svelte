@@ -88,7 +88,7 @@
 				debounceTimer = setTimeout(() => {
 					console.log(`Saving presentation...`)
 					updatePresentation(presentationId, currentTime, title, $editorOutput)
-				}, 1000)
+				}, 500)
 			},
 		})
 	}
@@ -106,7 +106,7 @@
 
 <!-- ** CONTEXT MENU ** -->
 <div
-	class="context-menu flex gap-1 bg-white border border-slate-300 rounded-md shadow-lg shadow-slate-200"
+	class="context-menu flex bg-white border border-slate-300 rounded-md shadow-lg shadow-slate-200"
 	bind:this={contextMenu}
 >
 	{#if contentEditor}
