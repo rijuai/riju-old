@@ -32,7 +32,7 @@
 						editor.chain().focus().enter().setHorizontalRule().run()
 					}}
 				>
-					<Plus class="h-5 w-5" />
+					<Plus class="size-5" />
 				</Toggle>
 			</Tooltip.Trigger>
 			<Tooltip.Content>
@@ -48,7 +48,7 @@
 						editor.chain().focus().enter().setSubSection().run()
 					}}
 				>
-					<MoveHorizontal class="h-5 w-5" />
+					<MoveHorizontal class="size-5" />
 				</Button>
 			</Tooltip.Trigger>
 			<Tooltip.Content>
@@ -60,28 +60,28 @@
 			aria-label="toggle heading 1"
 			on:click={() => {
 				editor.chain().focus().toggleHeading({ level: 1 }).run()
-			}}><Heading1 class="h-5 w-5" /></Toggle
+			}}><Heading1 class="size-5" /></Toggle
 		>
 		<Toggle
 			size="default"
 			aria-label="toggle heading 2"
 			on:click={() => {
 				editor.chain().focus().toggleHeading({ level: 2 }).run()
-			}}><Heading2 class="h-5 w-5" /></Toggle
+			}}><Heading2 class="size-5" /></Toggle
 		>
 		<Toggle
 			size="default"
 			aria-label="toggle paragraph"
 			on:click={() => {
 				editor.chain().focus().setParagraph().run()
-			}}><CaseSensitive class="h-5 w-5" /></Toggle
+			}}><CaseSensitive class="size-5" /></Toggle
 		>
 		<Toggle
 			size="default"
 			aria-label="toggle bullet list"
 			on:click={() => {
 				editor.chain().focus().toggleBulletList().run()
-			}}><List /></Toggle
+			}}><List class="size-5" /></Toggle
 		>
 		<Toggle
 			size="default"
@@ -90,7 +90,7 @@
 				editor.chain().focus().toggleOrderedList().run()
 			}}
 		>
-			<ListOrdered />
+			<ListOrdered class="size-5" />
 		</Toggle>
 
 		<ImagePickerPopover {editor} />
