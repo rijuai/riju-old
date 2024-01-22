@@ -44,7 +44,7 @@
 		"bits-ui": "^0.15.1",
 		"clsx": "^2.1.0",
 		"cmdk-sv": "^0.0.13",
-		"lucide-svelte": "^0.309.0",
+		"lucide-svelte": "^0.314.0",
 		"pexels": "^1.4.0",
 		"reveal.js": "^5.0.4",
 		"tailwind-merge": "^2.2.0",
