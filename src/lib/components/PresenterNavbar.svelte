@@ -43,7 +43,7 @@
 				if (element !== null) {
 					showFullScreen(element)
 				}
-			}}><Maximize class="h-5 w-5" /></Button
+			}}><Maximize class="size-4" /></Button
 		>
 		{#if isUserSignedIn}
 			<Button
@@ -51,7 +51,7 @@
 				size="icon"
 				on:click={() => {
 					goto(`/dashboard/editor/${presentationId}`)
-				}}><X class="h-5 w-5" /></Button
+				}}><X class="size-4" /></Button
 			>
 		{/if}
 	</div>

@@ -43,7 +43,7 @@
 
 <Popover.Root>
 	<Popover.Trigger class="flex items-center gap-1.5"
-		><Sparkles class="h-5 w-5" />Theme</Popover.Trigger
+		><Sparkles class="size-4" />Theme</Popover.Trigger
 	>
 	<Popover.Content class="w-80">
 		<div class="flex flex-col gap-6">
