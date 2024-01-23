@@ -3,6 +3,7 @@
 	import { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui'
 
 	type $$Props = DropdownMenuPrimitive.SubContentProps
+	type $$Events = DropdownMenuPrimitive.SubContentEvents
 
 	let className: $$Props['class'] = undefined
 	export let transition: $$Props['transition'] = flyAndScale
