@@ -46,6 +46,7 @@
 		"cmdk-sv": "^0.0.13",
 		"lucide-svelte": "^0.314.0",
 		"pexels": "^1.4.0",
+		"radix-icons-svelte": "^1.2.1",
 		"reveal.js": "^5.0.4",
 		"tailwind-merge": "^2.2.1",
 		"tailwind-variants": "^0.1.20",

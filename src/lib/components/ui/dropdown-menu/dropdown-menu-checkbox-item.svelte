@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { cn } from '$lib/utils'
 	import { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui'
-	import { Check } from 'lucide-svelte'
+	import { Check } from 'radix-icons-svelte'
 
 	type $$Props = DropdownMenuPrimitive.CheckboxItemProps
 	type $$Events = DropdownMenuPrimitive.CheckboxItemEvents
