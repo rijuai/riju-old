@@ -44,17 +44,6 @@ export const updatePresentation = async (
 	return error ? false : true
 }
 
-export const deletePresentation = async (
-	presentationId: string,
-): Promise<boolean> => {
-	const { error } = await supabase
-		.from('presentations')
-		.delete()
-		.eq('id', presentationId)
-
-	return error ? false : true
-}
-
 export const savePresentationTheme = async (
 	presentationId: string,
 	theme: {

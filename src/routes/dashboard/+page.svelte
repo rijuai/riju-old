@@ -4,9 +4,9 @@
 	import { Button } from '$lib/components/ui/button'
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu'
 	import * as Table from '$lib/components/ui/table'
+	import { supabase } from '$lib/config/supabase'
 	import {
 		createPresentation,
-		deletePresentation,
 		getPresentationContent,
 	} from '$lib/db/presentation'
 	import { templates } from '$lib/utils/templates'
@@ -15,6 +15,17 @@
 
 	export let data: PageData
 	$: ({ presentations } = data)
+
+	const deletePresentation = async (
+		presentationId: string,
+	): Promise<boolean> => {
+		const { error } = await supabase
+			.from('presentations')
+			.delete()
+			.eq('id', presentationId)
+
+		return error ? false : true
+	}
 
 	const deleteImagesInR2 = async (objectKeys: string[]) => {
 		const result = await fetch('/api/r2', {
