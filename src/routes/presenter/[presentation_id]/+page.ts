@@ -1,9 +1,25 @@
-import { getFullPresentation } from '$lib/db/presentation'
+import { supabase } from '$lib/config/supabase'
 import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
 import type { JSONContent } from '@tiptap/core'
+import type { Json } from '../../../schema'
 import type { PageLoad } from './$types'
 
 export const ssr = false
+
+const getFullPresentation = async (
+	presentationId: string,
+): Promise<{
+	content: Json
+	theme: Json
+	is_public: boolean
+} | null> => {
+	const { data } = await supabase
+		.from('presentations')
+		.select('content, theme, is_public')
+		.eq('id', presentationId)
+
+	return data ? data[0] : null
+}
 
 export const load = (async ({ params }) => {
 	const presentationId = params.presentation_id

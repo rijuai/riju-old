@@ -19,21 +19,6 @@ export const createPresentation = async (
 	return data ? data[0].id : null
 }
 
-export const getFullPresentation = async (
-	presentationId: string,
-): Promise<{
-	content: Json
-	theme: Json
-	is_public: boolean
-} | null> => {
-	const { data } = await supabase
-		.from('presentations')
-		.select('content, theme, is_public')
-		.eq('id', presentationId)
-
-	return data ? data[0] : null
-}
-
 export const getPresentationContent = async (
 	presentationId: string,
 ): Promise<{ content: Json } | null> => {
