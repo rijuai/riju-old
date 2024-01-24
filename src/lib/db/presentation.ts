@@ -58,15 +58,3 @@ export const savePresentationTheme = async (
 
 	return error ? false : true
 }
-
-export const updatePresentationPublicStatus = async (
-	presentationId: string,
-	isPublic: boolean,
-): Promise<boolean> => {
-	const { error } = await supabase
-		.from('presentations')
-		.update({ is_public: isPublic })
-		.eq('id', presentationId)
-
-	return error ? false : true
-}

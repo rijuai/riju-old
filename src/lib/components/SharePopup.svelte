@@ -4,13 +4,25 @@
 	import Label from '$lib/components/ui/label/label.svelte'
 	import * as Popover from '$lib/components/ui/popover'
 	import { Switch } from '$lib/components/ui/switch'
-	import { updatePresentationPublicStatus } from '$lib/db/presentation'
+	import { supabase } from '$lib/config/supabase'
 	import { isPresentationPublic } from '$lib/stores/presentation'
 
 	export let presentationId: string
 
+	const updatePresentationVisibility = async (
+		presentationId: string,
+		isPublic: boolean,
+	): Promise<boolean> => {
+		const { error } = await supabase
+			.from('presentations')
+			.update({ is_public: isPublic })
+			.eq('id', presentationId)
+
+		return error ? false : true
+	}
+
 	$: {
-		updatePresentationPublicStatus(presentationId, $isPresentationPublic)
+		updatePresentationVisibility(presentationId, $isPresentationPublic)
 	}
 </script>
 
@@ -30,7 +42,7 @@
 							on:click={() => {
 								let url = $page.url
 
-								// copy to clipboard
+								/* ** copy to clipboard */
 								navigator.clipboard.writeText(String(url))
 							}}>Copy URL</Button
 						>
