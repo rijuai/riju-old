@@ -1,42 +1,42 @@
-import { supabase } from '$lib/config/supabase'
-import { convertContentToHtml } from '$lib/engines/convertContentToHtml'
-import type { JSONContent } from '@tiptap/core'
-import type { Json } from '../../../schema'
-import type { PageLoad } from './$types'
+import { supabase } from "$lib/config/supabase";
+import { convertContentToHtml } from "$lib/engines/convertContentToHtml";
+import type { JSONContent } from "@tiptap/core";
+import type { Json } from "../../../schema";
+import type { PageLoad } from "./$types";
 
-export const ssr = false
+export const ssr = false;
 
 const getFullPresentation = async (
-	presentationId: string,
+  presentationId: string,
 ): Promise<{
-	content: Json
-	theme: Json
-	is_public: boolean
+  content: Json;
+  theme: Json;
+  is_public: boolean;
 } | null> => {
-	const { data } = await supabase
-		.from('presentations')
-		.select('content, theme, is_public')
-		.eq('id', presentationId)
+  const { data } = await supabase
+    .from("presentations")
+    .select("content, theme, is_public")
+    .eq("id", presentationId);
 
-	return data ? data[0] : null
-}
+  return data ? data[0] : null;
+};
 
 export const load = (async ({ params }) => {
-	const presentationId = params.presentation_id
-	const { content, theme, is_public } = (await getFullPresentation(
-		presentationId,
-	)) ?? {
-		content: [],
-		theme: null,
-		is_public: false,
-	}
+  const presentationId = params.presentation_id;
+  const { content, theme, is_public } = (await getFullPresentation(
+    presentationId,
+  )) ?? {
+    content: [],
+    theme: null,
+    is_public: false,
+  };
 
-	const htmlOutput = convertContentToHtml(content as JSONContent[])
+  const htmlOutput = convertContentToHtml(content as JSONContent[]);
 
-	return {
-		theme: theme,
-		isPublic: is_public,
-		htmlOutput: htmlOutput,
-		presentationId: presentationId,
-	}
-}) satisfies PageLoad
+  return {
+    theme: theme,
+    isPublic: is_public,
+    htmlOutput: htmlOutput,
+    presentationId: presentationId,
+  };
+}) satisfies PageLoad;
