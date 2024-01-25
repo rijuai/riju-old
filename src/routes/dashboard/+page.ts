@@ -1,21 +1,21 @@
-import { supabase } from '$lib/config/supabase'
-import type { PageLoad } from './$types'
+import { supabase } from "$lib/config/supabase";
+import type { PageLoad } from "./$types";
 
 const getPresentations = async (): Promise<
-	{ id: string; title: string | null }[] | null
+  { id: string; title: string | null }[] | null
 > => {
-	const { data } = await supabase
-		.from('presentations')
-		.select('id, title')
-		.order('updated_at', { ascending: false })
+  const { data } = await supabase
+    .from("presentations")
+    .select("id, title")
+    .order("updated_at", { ascending: false });
 
-	return data ? data : null
-}
+  return data ? data : null;
+};
 
 export const load = (async () => {
-	const presentations = await getPresentations()
+  const presentations = await getPresentations();
 
-	return {
-		presentations,
-	}
-}) satisfies PageLoad
+  return {
+    presentations,
+  };
+}) satisfies PageLoad;

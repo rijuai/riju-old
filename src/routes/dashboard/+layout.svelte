@@ -1,12 +1,12 @@
 <script lang="ts">
-	import AuthCheck from '$lib/components/AuthCheck.svelte'
-	import DashboardNavbar from '$lib/components/DashboardNavbar.svelte'
+    import AuthCheck from "$lib/components/AuthCheck.svelte";
+    import DashboardNavbar from "$lib/components/DashboardNavbar.svelte";
 </script>
 
 <AuthCheck>
-	<DashboardNavbar />
+    <DashboardNavbar />
 
-	<main class="px-6 py-4">
-		<slot />
-	</main>
+    <main class="px-6 py-4">
+        <slot />
+    </main>
 </AuthCheck>
