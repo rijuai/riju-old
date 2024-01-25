@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ImagePicker from "$lib/components/ImagePicker.svelte";
+    import ImagePicker from "$lib/components/ImagePickerPopover.svelte";
     import { Button } from "$lib/components/ui/button";
     import { Toggle } from "$lib/components/ui/toggle";
     import * as Tooltip from "$lib/components/ui/tooltip";
