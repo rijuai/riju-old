@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ImagePickerPopover from "$lib/components/ImagePickerPopover.svelte";
+    import ImagePicker from "$lib/components/ImagePicker.svelte";
     import { Button } from "$lib/components/ui/button";
     import { Toggle } from "$lib/components/ui/toggle";
     import * as Tooltip from "$lib/components/ui/tooltip";
@@ -98,7 +98,7 @@
             <ListOrdered class="size-5" />
         </Toggle>
 
-        <ImagePickerPopover {editor} />
+        <ImagePicker {editor} />
     </div>
     <div class="flex gap-1">
         <Button
