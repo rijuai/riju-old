@@ -17,15 +17,13 @@
     if (theme === null) {
         $currentTheme =
             "background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);";
-    } else {
-        if (
-            typeof theme === "object" &&
-            "backgroundCss" in theme &&
-            "transitionType" in theme
-        ) {
-            $currentTheme = theme.backgroundCss as string;
-            $transitionType = theme.transitionType as any;
-        }
+    } else if (
+        typeof theme === "object" &&
+        "backgroundCss" in theme &&
+        "transitionType" in theme
+    ) {
+        $currentTheme = theme.backgroundCss as string;
+        $transitionType = theme.transitionType as any;
     }
 </script>
 
