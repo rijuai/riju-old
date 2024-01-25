@@ -1,11 +1,8 @@
 import type { JSONContent } from "@tiptap/core";
 import { readable, writable, type Writable } from "svelte/store";
 
-export const editorOutput = writable({} as JSONContent),
-  presentationId = writable(""),
-  presentationContent = writable({} as JSONContent),
-  presentationTheme = writable({}),
-  isPresentationPublic = writable(false);
+export const editorOutput = writable({} as JSONContent);
+export const isPresentationPublic = writable(false);
 
 enum TransitionType {
   None = "none",
