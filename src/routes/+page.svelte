@@ -7,6 +7,17 @@
     import { Button } from "$lib/components/ui/button";
     import * as Card from "$lib/components/ui/card";
     import { Layout, Pointer, Rocket, ArrowRight } from "lucide-svelte";
+    import DailyCompanyNewsLogo from "$lib/assets/images/featured/dailycompanynews-logo.png";
+    import OpenFutureLogo from "$lib/assets/images/featured/openfuture-logo.png";
+    import SubscribedFyiLogo from "$lib/assets/images/featured/subscribedfyi-inverted-logo.png";
+    import SuperbCrewLogo from "$lib/assets/images/featured/superbcrew-logo.png";
+
+    const featuredCompaniesLogos = [
+        OpenFutureLogo,
+        DailyCompanyNewsLogo,
+        SubscribedFyiLogo,
+        SuperbCrewLogo,
+    ];
 </script>
 
 <MetaTags
@@ -18,7 +29,7 @@
     <HomePageNavbar />
     <!-- Hero -->
     <section class="mx-auto max-w-4xl text-center">
-        <h1 class="mb-6 text-black">Pitch without headache</h1>
+        <h1 class="mb-6 text-black">Present without headache</h1>
         <p
             class="text-muted-foreground mx-auto mb-12 max-w-2xl text-2xl font-normal leading-normal"
         >
@@ -91,12 +102,24 @@
         </div>
     </section>
 
+    <!-- Featured -->
+    <section class="mx-auto max-w-4xl">
+        <h2 class="mb-16 text-center">Featured On</h2>
+        <div
+            class="flex flex-col items-center justify-center gap-12 lg:flex-row"
+        >
+            {#each featuredCompaniesLogos as logos}
+                <img class="h-16 w-auto" src={logos} alt="Company Logo" />
+            {/each}
+        </div>
+    </section>
+
     <CTA />
     <Footer />
 </main>
 
 <style lang="postcss">
     section {
-        @apply my-16 px-4 lg:my-44;
+        @apply my-16 px-4 lg:my-44 lg:px-8;
     }
 </style>
