@@ -16,7 +16,7 @@
 
 <main class="mx-auto max-w-7xl">
     <HomePageNavbar />
-    <!-- ** Hero ** -->
+    <!-- Hero -->
     <section class="mx-auto max-w-4xl text-center">
         <h1 class="mb-6 text-black">Pitch without headache</h1>
         <p
@@ -44,7 +44,7 @@
         />
     </section>
 
-    <!-- ** Cards ** -->
+    <!-- Cards -->
     <section class="mx-auto max-w-6xl">
         <h2 class="mb-12">
             Focus on the content, <br /> not on the formatting
