@@ -5,34 +5,34 @@
 .reveal p,
 .reveal ol li,
 .reveal ul li {
-	@apply text-left text-gray-900;
+    @apply text-left text-gray-900;
 }
 
 .reveal h1 {
-	@apply text-5xl mb-10;
+    @apply mb-10 text-5xl;
 }
 
 .reveal h2 {
-	@apply text-4xl mb-8;
+    @apply mb-8 text-4xl;
 }
 
 .reveal p {
-	@apply text-xl mb-4;
+    @apply mb-4 text-xl;
 }
 
 .reveal ol li,
 .reveal ul li {
-	@apply text-xl mb-6;
+    @apply mb-6 text-xl;
 }
 
 .reveal ol {
-	@apply list-decimal pl-8;
+    @apply list-decimal pl-8;
 }
 
 .reveal ul {
-	@apply list-disc pl-8;
+    @apply list-disc pl-8;
 }
 
 .reveal img {
-	@apply mx-auto mb-4 rounded-lg shadow;
+    @apply mx-auto mb-4 rounded-lg shadow;
 }
