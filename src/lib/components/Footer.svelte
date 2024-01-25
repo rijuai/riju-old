@@ -1,18 +1,18 @@
 <footer
-	class="max-w-7xl mx-auto flex flex-col sm:flex-row gap-4 justify-center sm:justify-between py-4 px-4 bg-slate-80 border-t"
+    class="bg-slate-80 mx-auto flex max-w-7xl flex-col justify-center gap-4 border-t px-4 py-4 sm:flex-row sm:justify-between"
 >
-	<div class="text-sm text-muted-foreground text-center">
-		Riju is built with love from India.
-	</div>
-	<div class="flex justify-center gap-6 text-sm text-muted-foreground">
-		<a href="/docs/contact">Contact</a>
-		<a href="/docs/privacy">Privacy Policy</a>
-		<a href="/docs/terms">Terms</a>
-	</div>
+    <div class="text-muted-foreground text-center text-sm">
+        Riju is built with love from India.
+    </div>
+    <div class="text-muted-foreground flex justify-center gap-6 text-sm">
+        <a href="/docs/contact">Contact</a>
+        <a href="/docs/privacy">Privacy Policy</a>
+        <a href="/docs/terms">Terms</a>
+    </div>
 </footer>
 
 <style lang="postcss">
-	a {
-		@apply hover:underline hover:underline-offset-2;
-	}
+    a {
+        @apply hover:underline hover:underline-offset-2;
+    }
 </style>

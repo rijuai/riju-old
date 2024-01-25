@@ -1,52 +1,52 @@
 <script lang="ts">
-	import '$lib/assets/css/presenter.css'
-	import WaterMark from '$lib/components/WaterMark.svelte'
-	import { currentTheme, transitionType } from '$lib/stores/presentation'
-	import Reveal from 'reveal.js'
-	import 'reveal.js/dist/reveal.css'
-	import { onDestroy, onMount } from 'svelte'
+    import "$lib/assets/css/presenter.css";
+    import WaterMark from "$lib/components/WaterMark.svelte";
+    import { currentTheme, transitionType } from "$lib/stores/presentation";
+    import Reveal from "reveal.js";
+    import "reveal.js/dist/reveal.css";
+    import { onDestroy, onMount } from "svelte";
 
-	export let htmlOutput: string
-	let reveal: Reveal.Api
+    export let htmlOutput: string;
+    let reveal: Reveal.Api;
 
-	onMount(async () => {
-		reveal = new Reveal()
+    onMount(async () => {
+        reveal = new Reveal();
 
-		reveal.initialize({
-			embedded: true,
-			controls: false,
-			overview: false,
-			progress: true,
-			history: false,
-			center: true,
-			transition: 'zoom',
-			autoAnimate: true,
-		})
-	})
+        reveal.initialize({
+            embedded: true,
+            controls: false,
+            overview: false,
+            progress: true,
+            history: false,
+            center: true,
+            transition: "zoom",
+            autoAnimate: true,
+        });
+    });
 
-	$: {
-		if (reveal) {
-			reveal.configure({
-				transition: $transitionType,
-			})
-		}
-	}
+    $: {
+        if (reveal) {
+            reveal.configure({
+                transition: $transitionType,
+            });
+        }
+    }
 
-	onDestroy(() => {
-		reveal.destroy()
-	})
+    onDestroy(() => {
+        reveal.destroy();
+    });
 </script>
 
 <div class="reveal" style={$currentTheme}>
-	<div class="slides">
-		{@html htmlOutput}
-	</div>
+    <div class="slides">
+        {@html htmlOutput}
+    </div>
 </div>
 
 <WaterMark text="Made in Riju.ai" />
 
 <style lang="postcss">
-	.reveal {
-		@apply h-screen w-full;
-	}
+    .reveal {
+        @apply h-screen w-full;
+    }
 </style>
