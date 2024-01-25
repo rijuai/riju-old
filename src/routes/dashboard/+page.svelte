@@ -89,86 +89,80 @@
         <h5 class="text-muted-foreground mb-4 font-semibold tracking-wide">
             Your presentations
         </h5>
-        <div class="mx-auto max-w-4xl">
-            <Table.Root>
-                <Table.Header>
-                    <Table.Row>
-                        <Table.Head class="w-[100px]">#</Table.Head>
-                        <Table.Head colspan={2}>Title</Table.Head>
-                    </Table.Row>
-                </Table.Header>
-                <Table.Body>
-                    {#each presentations as { id, title }, index}
-                        <Table.Row
-                            class="cursor-pointer"
-                            on:click={() => goto(`/dashboard/editor/${id}`)}
+        <Table.Root>
+            <Table.Header>
+                <Table.Row>
+                    <Table.Head>#</Table.Head>
+                    <Table.Head colspan={2}>Title</Table.Head>
+                </Table.Row>
+            </Table.Header>
+            <Table.Body>
+                {#each presentations as { id, title }, index}
+                    <Table.Row
+                        class="cursor-pointer"
+                        on:click={() => goto(`/dashboard/editor/${id}`)}
+                    >
+                        <Table.Cell class="font-normal">{++index}</Table.Cell>
+                        <Table.Cell class="text-ellipsis">{title}</Table.Cell>
+                        <Table.Cell
+                            class="text-right"
+                            on:click={(e) => {
+                                e.stopPropagation();
+                            }}
                         >
-                            <Table.Cell class="font-normal"
-                                >{++index}</Table.Cell
-                            >
-                            <Table.Cell class="text-ellipsis"
-                                >{title}</Table.Cell
-                            >
-                            <Table.Cell
-                                class="text-right"
-                                on:click={(e) => {
-                                    e.stopPropagation();
-                                }}
-                            >
-                                <DropdownMenu.Root>
-                                    <DropdownMenu.Trigger>
-                                        <MoreHorizontal class="h-4 w-4" />
-                                    </DropdownMenu.Trigger>
-                                    <DropdownMenu.Content>
-                                        <DropdownMenu.Group>
-                                            <DropdownMenu.Item
-                                                on:click={() => {
-                                                    window.open(
-                                                        `/dashboard/editor/${id}`,
-                                                        "_blank",
+                            <DropdownMenu.Root>
+                                <DropdownMenu.Trigger>
+                                    <MoreHorizontal class="h-4 w-4" />
+                                </DropdownMenu.Trigger>
+                                <DropdownMenu.Content>
+                                    <DropdownMenu.Group>
+                                        <DropdownMenu.Item
+                                            on:click={() => {
+                                                window.open(
+                                                    `/dashboard/editor/${id}`,
+                                                    "_blank",
+                                                );
+                                            }}
+                                            ><ExternalLink
+                                                class="mr-3 size-4"
+                                            />Open in new tab</DropdownMenu.Item
+                                        >
+                                        <DropdownMenu.Separator />
+                                        <DropdownMenu.Item
+                                            class="text-destructive"
+                                            on:click={async () => {
+                                                let editorOutput =
+                                                    await getPresentationContent(
+                                                        id,
                                                     );
-                                                }}
-                                                ><ExternalLink
-                                                    class="mr-3 size-4"
-                                                />Open in new tab</DropdownMenu.Item
-                                            >
-                                            <DropdownMenu.Separator />
-                                            <DropdownMenu.Item
-                                                class="text-destructive"
-                                                on:click={async () => {
-                                                    let editorOutput =
-                                                        await getPresentationContent(
-                                                            id,
-                                                        );
-                                                    await deleteImages(
-                                                        editorOutput?.content,
+                                                await deleteImages(
+                                                    editorOutput?.content,
+                                                );
+
+                                                let result =
+                                                    await deletePresentation(
+                                                        id,
+                                                    );
+                                                if (result) {
+                                                    console.log(
+                                                        "Successfully deleted presentation",
                                                     );
 
-                                                    let result =
-                                                        await deletePresentation(
-                                                            id,
-                                                        );
-                                                    if (result) {
-                                                        console.log(
-                                                            "Successfully deleted presentation",
-                                                        );
-
-                                                        location.reload();
-                                                    }
-                                                }}
-                                                ><Trash2
-                                                    class="mr-3 size-4"
-                                                />Delete</DropdownMenu.Item
-                                            >
-                                        </DropdownMenu.Group>
-                                    </DropdownMenu.Content>
-                                </DropdownMenu.Root>
-                            </Table.Cell>
-                        </Table.Row>
-                    {/each}
-                </Table.Body>
-            </Table.Root>
-        </div>
+                                                    location.reload();
+                                                }
+                                            }}
+                                            ><Trash2
+                                                class="mr-3 size-4"
+                                            />Delete</DropdownMenu.Item
+                                        >
+                                    </DropdownMenu.Group>
+                                </DropdownMenu.Content>
+                            </DropdownMenu.Root>
+                        </Table.Cell>
+                    </Table.Row>
+                {/each}
+            </Table.Body>
+        </Table.Root>
     {:else}
         <p class="text-center">No presentations to show.</p>
     {/if}
