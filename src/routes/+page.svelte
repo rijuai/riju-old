@@ -1,9 +1,4 @@
 <script lang="ts">
-    import ArrowRight from "$lib/assets/icons/arrow-right.svelte";
-    import DailyCompanyNewsLogo from "$lib/assets/images/featured/dailycompanynews-logo.png";
-    import OpenFutureLogo from "$lib/assets/images/featured/openfuture-logo.png";
-    import SubscribedFyiLogo from "$lib/assets/images/featured/subscribedfyi-inverted-logo.png";
-    import SuperbCrewLogo from "$lib/assets/images/featured/superbcrew-logo.png";
     import DemoVideo from "$lib/assets/videos/riju-demo-muted.mp4";
     import CTA from "$lib/components/CTA.svelte";
     import Footer from "$lib/components/Footer.svelte";
@@ -11,14 +6,7 @@
     import MetaTags from "$lib/components/MetaTags.svelte";
     import { Button } from "$lib/components/ui/button";
     import * as Card from "$lib/components/ui/card";
-    import { Layout, Pointer, Rocket } from "lucide-svelte";
-
-    const featuredCompaniesImages = [
-        OpenFutureLogo,
-        DailyCompanyNewsLogo,
-        SubscribedFyiLogo,
-        SuperbCrewLogo,
-    ];
+    import { Layout, Pointer, Rocket, ArrowRight } from "lucide-svelte";
 </script>
 
 <MetaTags
@@ -39,13 +27,13 @@
         </p>
         <div class="mb-2.5 flex flex-col justify-center gap-4 md:flex-row">
             <Button size="lg" class="py-6 text-lg" href="/signin"
-                >Get Started<ArrowRight /></Button
+                >Get Started<ArrowRight class="ml-2" /></Button
             >
         </div>
         <p class="text-muted-foreground text-sm">No credit card required</p>
     </section>
 
-    <!-- ** Demo Video ** -->
+    <!-- Demo Video -->
     <section class="mx-auto max-w-5xl">
         <video
             class="rounded-lg shadow-xl"
@@ -100,38 +88,6 @@
                     </p>
                 </Card.Content>
             </Card.Root>
-        </div>
-    </section>
-
-    <!-- ** How it works ** -->
-    <!-- <section>
-		<h2 class="text-center">How It Works?</h2>
-		<p class="text-center text-muted-foreground max-w-lg mx-auto mb-8">
-			Creating presentations in Riju is as easy as 1-2-3.
-		</p>
-		<div class="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-lg mx-auto">
-			{#each steps as { title, description }}
-				<Card.Root>
-					<Card.Header>
-						<Card.Title class="text-xl tracking-tight">{title}</Card.Title>
-						<Card.Description class="text-base">{description}</Card.Description>
-					</Card.Header>
-				</Card.Root>
-			{/each}
-		</div>
-	</section> -->
-
-    <!-- ** Featured -->
-    <section class="max-w mx-auto">
-        <h2 class="mb-16 text-center">Featured On</h2>
-        <div class="grid- grid items-center justify-center gap-12">
-            {#each featuredCompaniesImages as image}
-                <img
-                    class="h-16 w-auto opacity-75 grayscale"
-                    src={image}
-                    alt=""
-                />
-            {/each}
         </div>
     </section>
 
