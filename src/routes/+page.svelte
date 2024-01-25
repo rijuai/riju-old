@@ -1,5 +1,4 @@
 <script lang="ts">
-    import DemoVideo from "$lib/assets/videos/riju-demo-muted.mp4";
     import CTA from "$lib/components/CTA.svelte";
     import Footer from "$lib/components/Footer.svelte";
     import HomePageNavbar from "$lib/components/HomePageNavbar.svelte";
@@ -48,7 +47,7 @@
     <section class="mx-auto max-w-6xl">
         <video
             class="rounded-lg shadow-xl"
-            src={DemoVideo}
+            src="/videos/riju-demo-muted.mp4"
             muted
             loop
             autoplay
