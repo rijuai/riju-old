@@ -45,7 +45,7 @@
     </section>
 
     <!-- Demo Video -->
-    <section class="mx-auto max-w-5xl">
+    <section class="mx-auto max-w-6xl">
         <video
             class="rounded-lg shadow-xl"
             src={DemoVideo}
