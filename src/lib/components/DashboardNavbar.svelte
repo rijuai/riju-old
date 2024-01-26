@@ -7,7 +7,7 @@
     import { PencilLine, Play, Settings } from "lucide-svelte";
 </script>
 
-<!-- ** Tally forms script -->
+<!-- Tally forms script -->
 <svelte:head>
     <script defer async src="https://tally.so/widgets/embed.js"></script>
 </svelte:head>
