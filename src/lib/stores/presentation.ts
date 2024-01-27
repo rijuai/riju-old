@@ -4,15 +4,6 @@ import { readable, writable, type Writable } from "svelte/store";
 export const editorOutput = writable({} as JSONContent);
 export const isPresentationPublic = writable(false);
 
-enum TransitionType {
-  None = "none",
-  Slide = "slide",
-  Fade = "fade",
-  Zoom = "zoom",
-  Concave = "concave",
-  Convex = "convex",
-}
-
 // biome-ignore lint/style/useConst: <explanation>
 export let transitionType: Writable<TransitionType> = writable(
   TransitionType.Zoom,
