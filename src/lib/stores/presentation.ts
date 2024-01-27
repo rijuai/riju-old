@@ -1,6 +1,5 @@
 import type { JSONContent } from "@tiptap/core";
-import { readable, writable, type Writable } from "svelte/store";
-import type { TransitionType } from "../types";
+import { readable, writable } from "svelte/store";
 
 export const editorOutput = writable({} as JSONContent);
 export const isPresentationPublic = writable(false);
@@ -16,9 +15,7 @@ enum TransitionType {
 
 // biome-ignore lint/style/useConst: <explanation>
 export let transitionType = writable(TransitionType.Zoom);
-
 export const currentTheme = writable("background-color: #FFF6E0;");
-
 export const themes = readable([
   "background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);",
   "background: linear-gradient(90deg, rgba(135,206,235,1) 0%, rgba(240,248,255,1) 100%);",
