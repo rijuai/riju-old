@@ -1,5 +1,5 @@
 <script lang="ts">
-    import "$lib/assets/css/presenter.css";
+    import "./presenter.css";
     import WaterMark from "./WaterMark.svelte";
     import { currentTheme, transitionType } from "$lib/stores/presentation";
     import Reveal from "reveal.js";
