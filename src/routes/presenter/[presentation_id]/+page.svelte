@@ -1,7 +1,7 @@
 <script lang="ts">
     import MetaTags from "$lib/components/MetaTags.svelte";
-    import Presenter from "$lib/components/Presenter.svelte";
-    import PresenterNavbar from "$lib/components/PresenterNavbar.svelte";
+    import Presenter from "./Presenter.svelte";
+    import PresenterNavbar from "./PresenterNavbar.svelte";
     import {
         currentTheme,
         isPresentationPublic,

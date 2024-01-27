@@ -1,6 +1,6 @@
 <script lang="ts">
-    import AuthCheck from "$lib/components/AuthCheck.svelte";
-    import DashboardNavbar from "$lib/components/DashboardNavbar.svelte";
+    import AuthCheck from "./AuthCheck.svelte";
+    import DashboardNavbar from "./DashboardNavbar.svelte";
 </script>
 
 <AuthCheck>

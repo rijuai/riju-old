@@ -1,6 +1,6 @@
 <script lang="ts">
-    import ContextMenu from "$lib/components/ContextMenu.svelte";
-    import EditorMenu from "$lib/components/EditorMenu.svelte";
+    import ContextMenu from "./ContextMenu.svelte";
+    import EditorMenu from "./EditorMenu.svelte";
     import { updatePresentation } from "$lib/db/presentation";
     import { SubSection } from "$lib/engines/subSection";
     import { editorOutput } from "$lib/stores/presentation";
@@ -15,7 +15,7 @@
     import { StarterKit } from "@tiptap/starter-kit";
     import { Loader } from "lucide-svelte";
     import { onDestroy, onMount } from "svelte";
-    import type { Json } from "../../schema";
+    import type { Json } from "../../../../schema";
 
     export let presentationId: string;
     export let content: Json;

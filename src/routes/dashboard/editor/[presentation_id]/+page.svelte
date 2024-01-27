@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Editor from "$lib/components/Editor.svelte";
-    import HelpDialog from "$lib/components/HelpDialog.svelte";
+    import Editor from "./Editor.svelte";
+    import HelpDialog from "../../HelpDialog.svelte";
     import MetaTags from "$lib/components/MetaTags.svelte";
     import type { PageData } from "../$types";
 
