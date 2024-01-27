@@ -2,13 +2,7 @@
     import { Separator } from "$lib/components/ui/separator";
     import { Toggle } from "$lib/components/ui/toggle";
     import type { Editor } from "@tiptap/core";
-    import {
-        Bold,
-        Italic,
-        Sparkles,
-        Strikethrough,
-        UnderlineIcon,
-    } from "lucide-svelte";
+    import { Bold, Italic, Strikethrough, UnderlineIcon } from "lucide-svelte";
     import { onDestroy } from "svelte";
 
     export let editor: Editor;
