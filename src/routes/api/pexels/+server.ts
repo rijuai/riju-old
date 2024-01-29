@@ -4,7 +4,6 @@ import type { RequestHandler } from "@sveltejs/kit";
 import { API_ALLOWED_ORIGIN } from "$env/static/private";
 
 export const GET: RequestHandler = async ({ request }) => {
-  console.log(request.headers.get("host"));
   const origin = request.headers.get("host");
   if (!origin || origin !== API_ALLOWED_ORIGIN) {
     return new Response("Sorry, Forbidden", { status: 403 });
