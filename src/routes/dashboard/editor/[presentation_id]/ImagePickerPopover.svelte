@@ -5,14 +5,12 @@
     import { uploadToR2 } from "$lib/utils/uploadToR2";
     import type { Editor } from "@tiptap/core";
     import { Image, Search } from "lucide-svelte";
-    import { onDestroy } from "svelte";
 
     export let editor: Editor;
 
     let fileInput: HTMLInputElement;
 
     let showSearchView = false;
-    let showGenerateButton = false;
 
     let query = "";
     let images: any = [];
@@ -47,11 +45,6 @@
         console.log(photos.photos);
         images = photos.photos;
     };
-
-    onDestroy(() => {
-        showSearchView = false;
-        showGenerateButton = false;
-    });
 </script>
 
 <Popover.Root>
