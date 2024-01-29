@@ -1,7 +1,7 @@
 <script lang="ts">
     import MetaTags from "$lib/components/MetaTags.svelte";
     import Presenter from "./Presenter.svelte";
-    import PresenterNavbar from "./PresenterNavbar.svelte";
+    import Navbar from "./Navbar.svelte";
     import {
         currentTheme,
         isPresentationPublic,
@@ -31,5 +31,5 @@
     title="Riju | Present"
     description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
-<PresenterNavbar {presentationId} />
+<Navbar {presentationId} />
 <Presenter {htmlOutput} />
