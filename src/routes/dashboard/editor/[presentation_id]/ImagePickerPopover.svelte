@@ -2,6 +2,7 @@
     import { Button } from "$lib/components/ui/button";
     import { Input } from "$lib/components/ui/input";
     import * as Popover from "$lib/components/ui/popover";
+    import { uploadToR2 } from "$lib/utils/uploadToR2";
     import type { Editor } from "@tiptap/core";
     import { Image, Search } from "lucide-svelte";
     import { onDestroy } from "svelte";
@@ -21,7 +22,7 @@
         if (!target.files || target.files.length === 0) return;
         const file = target.files[0];
 
-        const imageUrl = await uploadImageToR2(file);
+        const { imageUrl } = await uploadToR2(file);
 
         editor
             .chain()
@@ -30,35 +31,6 @@
             .createParagraphNear()
             .run();
         fileInput.value = "";
-    };
-
-    const uploadImageToR2 = async (file: File): Promise<string> => {
-        const getPresignedUrlResponse = await fetch("/api/r2", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                fileName: file.name,
-                fileType: file.type,
-            }),
-        });
-
-        if (!getPresignedUrlResponse.ok)
-            console.log("Failed to get presigned URL");
-
-        const { presignedUrl, objectKey } =
-            await getPresignedUrlResponse.json();
-
-        await fetch(presignedUrl, {
-            method: "PUT",
-            headers: {
-                "Content-Type": file.type,
-            },
-            body: file,
-        });
-
-        return `https://assets.riju.ai/${objectKey}`;
     };
 
     const getImagesFromPexels = async (query: string) => {
@@ -70,21 +42,6 @@
         });
 
         if (!result.ok) console.log("Failed to get images from Pexels");
-
-        const { photos } = await result.json();
-        console.log(photos.photos);
-        images = photos.photos;
-    };
-
-    const getImagesFromAI = async (query: string) => {
-        const result = await fetch(`/api/ai?query=${query}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-
-        if (!result.ok) console.log("Failed to get images from AI");
 
         const { photos } = await result.json();
         console.log(photos.photos);
