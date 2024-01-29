@@ -1,20 +1,21 @@
 import { pexels } from "$lib/server/pexels";
 import { json } from "@sveltejs/kit";
-import type { RequestHandler } from "./$types";
+import type { RequestHandler } from "@sveltejs/kit";
+import { API_ALLOWED_ORIGIN } from "$env/static/private";
 
-export const GET: RequestHandler = async ({ url }) => {
+export const GET: RequestHandler = async ({ request }) => {
+  console.log(request.headers.get("host"));
+  const origin = request.headers.get("host");
+  if (!origin || origin !== API_ALLOWED_ORIGIN) {
+    return new Response("Sorry, Forbidden", { status: 403 });
+  }
+
+  const url = new URL(request.url);
   const query = url.searchParams.get("query") ?? "";
 
   const photos = await pexels.photos.search({ query, per_page: 5 });
 
-  return json(
-    {
-      photos: photos,
-    },
-    {
-      headers: {
-        "Access-Control-Allow-Origin": "https://riju.ai",
-      },
-    },
-  );
+  return json({
+    photos: photos,
+  });
 };
