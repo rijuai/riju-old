@@ -11,7 +11,7 @@
     description="Create a new account or Sign in if you are a existing user."
 />
 
-<!-- ** Navbar ** -->
+<!-- Navbar -->
 <nav
     class="fixed left-1/2 top-0 z-10 w-full -translate-x-1/2 transform px-2 py-3"
 >
