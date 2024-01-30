@@ -57,9 +57,7 @@
 
 <MetaTags title="Riju | Dashboard" description="Your presentations" />
 <div class="mx-auto w-full max-w-4xl">
-    <h5 class="text-muted-foreground mb-4 font-semibold tracking-wide">
-        Templates
-    </h5>
+    <h5 class="text-muted-foreground mb-4 font-medium">Templates</h5>
     <div class="mb-12 grid grid-cols-1 gap-4 md:grid-cols-4">
         {#each templates as { title, content }}
             <Button
@@ -86,7 +84,7 @@
         {/each}
     </div>
     {#if presentations && presentations.length > 0}
-        <h5 class="text-muted-foreground mb-4 font-semibold tracking-wide">
+        <h5 class="text-muted-foreground tracking-wid mb-4 font-medium">
             Your presentations
         </h5>
         <Table.Root>
