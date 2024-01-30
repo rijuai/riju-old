@@ -1,7 +1,7 @@
-import { supabase } from '$lib/config/supabase'
+import { supabase } from "$lib/config/supabase";
 
 export const isUserAuthenticated = async (): Promise<boolean> => {
-	const user = (await supabase.auth.getSession()).data.session?.user
+  const user = (await supabase.auth.getSession()).data.session?.user;
 
-	return user ? true : false
-}
+  return user ? true : false;
+};
