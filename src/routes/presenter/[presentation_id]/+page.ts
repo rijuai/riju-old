@@ -1,5 +1,5 @@
 import { supabase } from "$lib/config/supabase";
-import { convertContentToHtml } from "$lib/engines/convertContentToHtml";
+import { convertContentToHtml } from "./convertContentToHtml";
 import type { JSONContent } from "@tiptap/core";
 import type { PageLoad } from "./$types";
 
