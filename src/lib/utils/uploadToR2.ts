@@ -22,6 +22,6 @@ export const uploadToR2 = async (file: File) => {
   }
 
   return {
-    imageUrl: `https://assets.riju.ai/${objectKey}`,
+    url: `https://assets.riju.ai/${objectKey}`,
   };
 };
