@@ -1,10 +1,7 @@
 import { supabase } from "$lib/config/supabase";
-import type { Json } from "../../../../schema";
 import type { PageLoad } from "./$types";
 
-const getPresentationContent = async (
-  presentationId: string,
-): Promise<{ content: Json } | null> => {
+const getPresentationContent = async (presentationId: string) => {
   const { data } = await supabase
     .from("presentations")
     .select("content")
@@ -15,9 +12,7 @@ const getPresentationContent = async (
 
 export const load = (async ({ params }) => {
   const presentationId = params.presentation_id;
-  const { content } = (await getPresentationContent(presentationId)) ?? {
-    content: null,
-  };
+  const { content } = await getPresentationContent(presentationId);
 
   return {
     content: content,

@@ -2,7 +2,7 @@
     import Editor from "./Editor.svelte";
     import HelpDialog from "../../HelpDialog.svelte";
     import MetaTags from "$lib/components/MetaTags.svelte";
-    import type { PageData } from "../$types";
+    import type { PageData } from "./$types";
 
     export let data: PageData;
     const { content, presentationId } = data;

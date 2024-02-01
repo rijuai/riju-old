@@ -1,151 +1,112 @@
 <script lang="ts">
-    import ContextMenu from "./ContextMenu.svelte";
-    import EditorMenu from "./EditorMenu.svelte";
-    import { updatePresentation } from "$lib/db/presentation";
-    import { SubSection } from "$lib/engines/subSection";
-    import { editorOutput } from "$lib/stores/presentation";
-    import { getCurrentTime } from "$lib/utils/time";
-    import { Editor } from "@tiptap/core";
-    import { BubbleMenu } from "@tiptap/extension-bubble-menu";
-    import { Document } from "@tiptap/extension-document";
-    import { Gapcursor } from "@tiptap/extension-gapcursor";
-    import { Image } from "@tiptap/extension-image";
-    import { Placeholder } from "@tiptap/extension-placeholder";
-    import { Underline } from "@tiptap/extension-underline";
-    import { StarterKit } from "@tiptap/starter-kit";
-    import { Loader } from "lucide-svelte";
-    import { onDestroy, onMount } from "svelte";
-    import type { Json } from "../../../../schema";
+    import EditorJS, { type OutputData } from "@editorjs/editorjs";
+    import Header from "@editorjs/header";
+    import { supabase } from "$lib/config/supabase";
+    import NewSlide from "./newSlide";
+    import ImageTool from "@editorjs/image";
+    import NestedList from "@editorjs/nested-list";
+    import { uploadToR2 } from "$lib/utils/uploadToR2";
+    import { onMount } from "svelte";
 
     export let presentationId: string;
-    export let content: Json;
+    export let content: OutputData;
 
-    let contentElement: HTMLDivElement;
-    let contextMenu: HTMLElement;
-    let contentEditor: Editor;
-    let showLoader = true;
     let debounceTimer: NodeJS.Timeout;
 
+    const editor = new EditorJS({
+        placeholder: "Enter '/'  for commands",
+        holder: "editor",
+        onReady: async () => {
+            editor.render(content);
+        },
+        onChange: async () => {
+            const outputData = await editor.save();
+            const title = outputData.blocks[0].data.text;
+            const currentTime = new Date().toISOString();
+
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(async () => {
+                await updatePresentation(
+                    presentationId,
+                    currentTime,
+                    title,
+                    outputData,
+                );
+            }, 500);
+        },
+
+        tools: {
+            heading: {
+                class: Header,
+                config: {
+                    placeholder: "Enter a header",
+                    levels: [1, 2],
+                    defaultLevel: 1,
+                },
+                toolbox: [
+                    {
+                        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heading-1"><path d="M4 12h8"/><path d="M4 18V6"/><path d="M12 18V6"/><path d="m17 12 3-2v8"/></svg>`,
+                        title: "Heading 1",
+                        data: {
+                            level: 1,
+                        },
+                    },
+                    {
+                        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heading-2"><path d="M4 12h8"/><path d="M4 18V6"/><path d="M12 18V6"/><path d="M21 18h-4c0-4 4-3 4-6 0-1.5-2-2.5-4-1"/></svg>`,
+                        title: "Heading 2",
+                        data: {
+                            level: 2,
+                        },
+                    },
+                ],
+            },
+            nestedList: {
+                class: NestedList,
+                inlineToolbar: true,
+            },
+            newSlide: {
+                class: NewSlide,
+            },
+            image: {
+                class: ImageTool,
+                config: {
+                    uploader: {
+                        async uploadByFile(file: File) {
+                            const result = await uploadToR2(file);
+                            return {
+                                success: 1,
+                                file: {
+                                    url: result.url,
+                                },
+                            };
+                        },
+                    },
+                },
+            },
+        },
+    });
+
+    const updatePresentation = async (
+        presentationId: string,
+        updatedAt: string,
+        title: string,
+        content: JSON,
+    ) => {
+        const { error } = await supabase
+            .from("presentations")
+            .update({ title: title, content: content, updated_at: updatedAt })
+            .eq("id", presentationId);
+        console.log(error);
+
+        return error ? false : true;
+    };
+
     onMount(async () => {
-        initializeEditor(contentElement);
-    });
-
-    const CustomDocument = Document.extend({
-        content: "heading block*",
-    });
-
-    const initializeEditor = (element: HTMLDivElement) => {
-        contentEditor = new Editor({
-            element: element,
-            extensions: [
-                CustomDocument,
-                StarterKit.configure({
-                    document: false,
-                }),
-                Placeholder.configure({
-                    placeholder: ({ node }) => {
-                        if (node.type.name === "heading")
-                            return "What is the title?";
-                        return "Write your content here...";
-                    },
-                }),
-                Image,
-                Underline,
-                SubSection.configure({
-                    HTMLAttributes: {
-                        class: "border-b border-dashed w-1/4",
-                    },
-                }),
-                Gapcursor,
-                BubbleMenu.configure({
-                    element: contextMenu,
-                    tippyOptions: {
-                        offset: [0, 16],
-                    },
-                }),
-            ],
-
-            onCreate: async () => {
-                contentEditor.commands.setContent(content as Json[]);
-
-                $editorOutput = contentEditor.getJSON().content!;
-                $editorOutput = $editorOutput;
-
-                showLoader = false;
-            },
-
-            onTransaction: () => {
-                contentEditor = contentEditor;
-            },
-
-            onUpdate: () => {
-                $editorOutput = contentEditor.getJSON().content!;
-
-                let title = getTitle();
-                let currentTime = getCurrentTime();
-
-                /* debounce: saves the presentation after user stops typing for 500ms second */
-                clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(() => {
-                    updatePresentation(
-                        presentationId,
-                        currentTime,
-                        title,
-                        $editorOutput,
-                    );
-                }, 500);
-            },
-        });
-    };
-
-    const getTitle = () => {
-        const title =
-            contentEditor.getJSON().content![0].content![0].text ?? "";
-
-        return title;
-    };
-
-    onDestroy(() => {
-        if (contentEditor) contentEditor.destroy();
+        await editor.isReady;
     });
 </script>
 
-<!-- Context Menu -->
 <div
-    class="context-menu flex rounded-md border border-slate-300 bg-white shadow-lg shadow-slate-200"
-    bind:this={contextMenu}
->
-    {#if contentEditor}
-        <ContextMenu editor={contentEditor} />
-    {/if}
-</div>
-
-{#if showLoader}
-    <Loader class="fixed left-1/2 top-1/2 animate-spin" />
-{/if}
-
-<div class="mx-auto mb-8 max-w-4xl rounded-lg border shadow">
-    <EditorMenu editor={contentEditor} />
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <div
-        id="editor"
-        class="Prosemirror prose prose-sm prose-h1:font-medium prose-h2:font-medium prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:text-lg min-h-screen min-w-full p-12"
-        class:hidden={showLoader}
-        bind:this={contentElement}
-        on:click={() => {
-            contentEditor?.commands.focus();
-        }}
-    ></div>
-</div>
-
-<style lang="postcss">
-    :global(.tiptap .is-empty::before) {
-        @apply pointer-events-none float-left h-0 text-slate-400;
-        content: attr(data-placeholder);
-    }
-
-    :global(#editor img) {
-        @apply mx-auto max-h-96 rounded;
-    }
-</style>
+    class="prose prose-base prose-headings:font-medium mx-auto max-w-2xl"
+    id="editor"
+/>

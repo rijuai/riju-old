@@ -1,11 +1,10 @@
 import { supabase } from "$lib/config/supabase";
-import { convertContentToHtml } from "./convertContentToHtml";
-import type { JSONContent } from "@tiptap/core";
 import type { PageLoad } from "./$types";
+import { convertEditorJsContentToHtml } from "./converter";
 
 export const ssr = false;
 
-const getFullPresentation = async (presentationId: string) => {
+const getPresentationData = async (presentationId: string) => {
   const { data } = await supabase
     .from("presentations")
     .select("content, theme, is_public")
@@ -16,7 +15,7 @@ const getFullPresentation = async (presentationId: string) => {
 
 export const load = (async ({ params }) => {
   const presentationId = params.presentation_id;
-  const { content, theme, is_public } = (await getFullPresentation(
+  const { content, theme, is_public } = (await getPresentationData(
     presentationId,
   )) ?? {
     content: [],
@@ -24,7 +23,7 @@ export const load = (async ({ params }) => {
     is_public: false,
   };
 
-  const htmlOutput = convertContentToHtml(content as JSONContent[]);
+  const htmlOutput = convertEditorJsContentToHtml(content);
 
   return {
     theme: theme,

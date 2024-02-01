@@ -1,15 +1,10 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
     import MetaTags from "$lib/components/MetaTags.svelte";
-    import { Button } from "$lib/components/ui/button";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import * as Table from "$lib/components/ui/table";
     import { supabase } from "$lib/config/supabase";
-    import {
-        createPresentation,
-        getPresentationContent,
-    } from "$lib/db/presentation";
-    import { templates } from "$lib/utils/templates";
+    import { getPresentationContent } from "$lib/db/presentation";
     import { ExternalLink, MoreHorizontal, Trash2 } from "lucide-svelte";
     import type { PageData } from "./$types";
 
@@ -57,32 +52,6 @@
 
 <MetaTags title="Riju | Dashboard" description="Your presentations" />
 <div class="mx-auto w-full max-w-4xl">
-    <h5 class="text-muted-foreground mb-4 font-medium">Templates</h5>
-    <div class="mb-12 grid grid-cols-1 gap-4 md:grid-cols-4">
-        {#each templates as { title, content }}
-            <Button
-                variant="outline"
-                class="h-24"
-                on:click={async () => {
-                    const theme = {
-                        backgroundCss:
-                            "background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);",
-                        transitionType: "zoom",
-                    };
-
-                    const presentationId = await createPresentation(
-                        title,
-                        content,
-                        theme,
-                    );
-
-                    goto(`/dashboard/editor/${presentationId}`);
-                }}
-            >
-                {title}
-            </Button>
-        {/each}
-    </div>
     {#if presentations && presentations.length > 0}
         <h5 class="text-muted-foreground tracking-wid mb-4 font-medium">
             Your presentations
