@@ -7,13 +7,12 @@
     import { getPresentationContent } from "$lib/db/presentation";
     import { ExternalLink, MoreHorizontal, Trash2 } from "lucide-svelte";
     import type { PageData } from "./$types";
+    import type { OutputData } from "@editorjs/editorjs";
 
     export let data: PageData;
     $: ({ presentations } = data);
 
-    const deletePresentation = async (
-        presentationId: string,
-    ): Promise<boolean> => {
+    const deletePresentation = async (presentationId: string) => {
         const { error } = await supabase
             .from("presentations")
             .delete()
@@ -32,14 +31,15 @@
         });
     };
 
-    const deleteImages = async (editorOutput: any) => {
+    const deleteImages = async (editorOutput: OutputData) => {
         const imagesToDelete: string[] = [];
+        const blocks = editorOutput.blocks;
 
         if (!editorOutput) return;
 
-        editorOutput.forEach((item: any) => {
+        blocks.forEach((item: any) => {
             if (item.type === "image") {
-                const url = item.attrs.src;
+                const url = item.data.file.url;
                 const path = url.split("/").pop() ?? "";
 
                 imagesToDelete.push(path);
