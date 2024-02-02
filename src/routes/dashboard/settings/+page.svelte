@@ -1,7 +1,6 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
     import MetaTags from "$lib/components/MetaTags.svelte";
-    import { Button } from "$lib/components/ui/button";
     import * as Card from "$lib/components/ui/card";
     import { Input } from "$lib/components/ui/input";
     import { Label } from "$lib/components/ui/label";
