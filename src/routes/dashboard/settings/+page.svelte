@@ -10,7 +10,7 @@
 
     let email: string;
 
-    const getUserEmail = async (): Promise<string | null> => {
+    const getUserEmail = async () => {
         const { data } = await supabase.auth.getSession();
         const userEmail = data.session?.user.email;
 
@@ -30,16 +30,19 @@
 
 <MetaTags title="Riju | Settings" description="Settings" />
 
-<Card.Root class="mx-auto max-w-md">
+<Card.Root class="mx-auto max-w-lg">
     <Card.Header>
         <Card.Title>Settings</Card.Title>
     </Card.Header>
-    <Card.Content class="space-y-4">
+    <Card.Content class="space-y-8">
         <div>
-            <Label class="mb-2 block">Email Address</Label>
+            <Label class="mb-2 block">Email</Label>
             <Input type="email" disabled bind:value={email} />
             <p class="text-muted-foreground mt-1 text-sm">
-                To change email address contact us.
+                To change email address <a
+                    class="underline"
+                    href="/docs/contact">contact us</a
+                >.
             </p>
         </div>
         <div class="flex text-sm">
@@ -53,13 +56,4 @@
             >.
         </div>
     </Card.Content>
-    <Card.Footer class="flex justify-end gap-3">
-        <Button
-            variant="outline"
-            on:click={() => {
-                goto("/dashboard");
-            }}>Cancel</Button
-        >
-        <Button>Save Changes</Button>
-    </Card.Footer>
 </Card.Root>
