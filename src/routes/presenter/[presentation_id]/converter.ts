@@ -23,11 +23,6 @@ export const convertEditorJsContentToHtml = (content: OutputData): string => {
       tempHtml += getImage(block);
       images.push(getImage(block));
     }
-    // else if (blockType === "subSection") {
-    //   addSubSection = true;
-    //   blocks.push(tempHtml);
-    //   tempHtml = "";
-    // }
 
     if (blockType === "newSlide" || count === content.blocks.length) {
       if (addSubSection) {
