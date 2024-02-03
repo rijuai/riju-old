@@ -80,13 +80,6 @@ export const templates = [
         {
           id: "yV914ZKD4O",
           type: "image",
-          data: {
-            file: { url: "https://assets.riju.ai/1706955486681-5-png" },
-            caption: "",
-            withBorder: false,
-            stretched: false,
-            withBackground: false,
-          },
         },
         { id: "eDNnm-FAk7", type: "newSlide" },
         {
@@ -159,13 +152,6 @@ export const templates = [
         {
           id: "3YmNcUHFB5",
           type: "image",
-          data: {
-            file: { url: "https://assets.riju.ai/1706955784284-image-png" },
-            caption: "",
-            withBorder: false,
-            stretched: false,
-            withBackground: false,
-          },
         },
       ],
       version: "2.29.0",
@@ -255,15 +241,6 @@ export const templates = [
         },
         {
           id: "mOEGxoS-Ne",
-          data: {
-            file: {
-              url: "https://assets.riju.ai/1706957469848-pexels-andrea-piacquadio-733872-jpg",
-            },
-            caption: "",
-            stretched: false,
-            withBorder: false,
-            withBackground: false,
-          },
           type: "image",
         },
         {
@@ -272,15 +249,6 @@ export const templates = [
         },
         {
           id: "YJvBuqe32Z",
-          data: {
-            file: {
-              url: "https://assets.riju.ai/1706957477070-pexels-daniel-xavier-1239291-jpg",
-            },
-            caption: "",
-            stretched: false,
-            withBorder: false,
-            withBackground: false,
-          },
           type: "image",
         },
         {
@@ -316,15 +284,6 @@ export const templates = [
         },
         {
           id: "iLpjc4H9DZ",
-          data: {
-            file: {
-              url: "https://assets.riju.ai/1706958347309-untitled-design-jpg",
-            },
-            caption: "",
-            stretched: false,
-            withBorder: false,
-            withBackground: false,
-          },
           type: "image",
         },
         {
