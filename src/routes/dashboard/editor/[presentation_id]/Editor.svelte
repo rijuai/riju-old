@@ -7,6 +7,7 @@
     import NestedList from "@editorjs/nested-list";
     import { uploadToR2 } from "$lib/utils/uploadToR2";
     import { onMount } from "svelte";
+    import SplitSlide from "./splitSide";
 
     export let presentationId: string;
     export let content: OutputData;
@@ -66,6 +67,9 @@
             },
             newSlide: {
                 class: NewSlide,
+            },
+            splitSlide: {
+                class: SplitSlide,
             },
             image: {
                 class: ImageTool,

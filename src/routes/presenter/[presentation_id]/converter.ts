@@ -1,6 +1,7 @@
 import type { OutputData } from "@editorjs/editorjs";
 
 export const convertEditorJsContentToHtml = (content: OutputData): string => {
+  console.log("Converter Content", content);
   let outputHtml = "";
   let count = 0;
   let tempHtml = "";
@@ -20,8 +21,11 @@ export const convertEditorJsContentToHtml = (content: OutputData): string => {
     } else if (blockType === "nestedList") {
       tempHtml += getList(block);
     } else if (blockType === "image") {
-      tempHtml += getImage(block);
-      images.push(getImage(block));
+      tempHtml = `<div>${tempHtml}</div><div>${getImage(block)}</div>`;
+    } else if (blockType === "splitSlide") {
+      addSubSection = true;
+      blocks.push(tempHtml);
+      tempHtml = "";
     }
 
     if (blockType === "newSlide" || count === content.blocks.length) {
@@ -33,7 +37,7 @@ export const convertEditorJsContentToHtml = (content: OutputData): string => {
           blocksHtml += `<div>${blockHtml}</div>`;
         }
 
-        outputHtml += `<section><div class="grid grid-cols-2 gap-16">${blocksHtml}</div></section>`;
+        outputHtml += `<section><div class="grid grid-cols-2 gap-8">${blocksHtml}</div></section>`;
 
         addSubSection = false;
         blocks.length = 0;
@@ -94,5 +98,5 @@ const getImage = (block: any): string => {
 
   const src = block.data.file.url;
   const alt = block.data.caption ?? "image";
-  return `<img class="object-cover" src="${src}" alt="${alt}" />`;
+  return `<img class="r-stretc" src="${src}" alt="${alt}" />`;
 };
