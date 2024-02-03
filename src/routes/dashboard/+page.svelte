@@ -4,10 +4,15 @@
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import * as Table from "$lib/components/ui/table";
     import { supabase } from "$lib/config/supabase";
-    import { getPresentationContent } from "$lib/db/presentation";
+    import {
+        createPresentation,
+        getPresentationContent,
+    } from "$lib/db/presentation";
     import { ExternalLink, MoreHorizontal, Trash2 } from "lucide-svelte";
     import type { PageData } from "./$types";
     import type { OutputData } from "@editorjs/editorjs";
+    import { templates } from "./templates";
+    import Button from "$lib/components/ui/button/button.svelte";
 
     export let data: PageData;
     $: ({ presentations } = data);
@@ -51,9 +56,30 @@
 </script>
 
 <MetaTags title="Riju | Dashboard" description="Your presentations" />
-<div class="mx-auto w-full max-w-4xl">
+<div class="mx-auto w-full max-w-4xl space-y-8">
+    <!-- Templates -->
+    <div>
+        <h5 class="text-muted-foreground mb-4 font-medium">Templates</h5>
+        <div class="grid grid-cols-4 gap-4">
+            {#each templates as { name, theme, content }}
+                <Button
+                    variant="outline"
+                    class="p-12"
+                    on:click={async () => {
+                        const presentationId = await createPresentation(
+                            name,
+                            content,
+                            theme,
+                        );
+                        goto(`/dashboard/editor/${presentationId}`);
+                    }}>{name}</Button
+                >
+            {/each}
+        </div>
+    </div>
+
     {#if presentations && presentations.length > 0}
-        <h5 class="text-muted-foreground tracking-wid mb-4 font-medium">
+        <h5 class="text-muted-foreground mb-4 font-medium">
             Your presentations
         </h5>
         <Table.Root>
