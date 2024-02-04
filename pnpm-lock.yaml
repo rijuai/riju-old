@@ -47,9 +47,6 @@ dependencies:
   lucide-svelte:
     specifier: ^0.316.0
     version: 0.316.0(svelte@4.2.9)
-  pexels:
-    specifier: ^1.4.0
-    version: 1.4.0
   reveal.js:
     specifier: ^5.0.4
     version: 5.0.4
@@ -67,9 +64,6 @@ dependencies:
     version: 5.3.3
 
 devDependencies:
-  '@biomejs/biome':
-    specifier: 1.5.3
-    version: 1.5.3
   '@sveltejs/adapter-cloudflare':
     specifier: ^4.1.0
     version: 4.1.0(@sveltejs/kit@2.5.0)
@@ -758,94 +752,6 @@ packages:
     dependencies:
       regenerator-runtime: 0.14.1
     dev: false
-
-  /@biomejs/biome@1.5.3:
-    resolution: {integrity: sha512-yvZCa/g3akwTaAQ7PCwPWDCkZs3Qa5ONg/fgOUT9e6wAWsPftCjLQFPXBeGxPK30yZSSpgEmRCfpGTmVbUjGgg==}
-    engines: {node: '>=14.*'}
-    hasBin: true
-    requiresBuild: true
-    optionalDependencies:
-      '@biomejs/cli-darwin-arm64': 1.5.3
-      '@biomejs/cli-darwin-x64': 1.5.3
-      '@biomejs/cli-linux-arm64': 1.5.3
-      '@biomejs/cli-linux-arm64-musl': 1.5.3
-      '@biomejs/cli-linux-x64': 1.5.3
-      '@biomejs/cli-linux-x64-musl': 1.5.3
-      '@biomejs/cli-win32-arm64': 1.5.3
-      '@biomejs/cli-win32-x64': 1.5.3
-    dev: true
-
-  /@biomejs/cli-darwin-arm64@1.5.3:
-    resolution: {integrity: sha512-ImU7mh1HghEDyqNmxEZBoMPr8SxekkZuYcs+gynKlNW+TALQs7swkERiBLkG9NR0K1B3/2uVzlvYowXrmlW8hw==}
-    engines: {node: '>=14.*'}
-    cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@biomejs/cli-darwin-x64@1.5.3:
-    resolution: {integrity: sha512-vCdASqYnlpq/swErH7FD6nrFz0czFtK4k/iLgj0/+VmZVjineFPgevOb+Sr9vz0tk0GfdQO60bSpI74zU8M9Dw==}
-    engines: {node: '>=14.*'}
-    cpu: [x64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@biomejs/cli-linux-arm64-musl@1.5.3:
-    resolution: {integrity: sha512-DYuMizUYUBYfS0IHGjDrOP1RGipqWfMGEvNEJ398zdtmCKLXaUvTimiox5dvx4X15mBK5M2m8wgWUgOP1giUpQ==}
-    engines: {node: '>=14.*'}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@biomejs/cli-linux-arm64@1.5.3:
-    resolution: {integrity: sha512-cupBQv0sNF1OKqBfx7EDWMSsKwRrBUZfjXawT4s6hKV6ALq7p0QzWlxr/sDmbKMLOaLQtw2Qgu/77N9rm+f9Rg==}
-    engines: {node: '>=14.*'}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@biomejs/cli-linux-x64-musl@1.5.3:
-    resolution: {integrity: sha512-UUHiAnlDqr2Y/LpvshBFhUYMWkl2/Jn+bi3U6jKuav0qWbbBKU/ByHgR4+NBxpKBYoCtWxhnmatfH1bpPIuZMw==}
-    engines: {node: '>=14.*'}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@biomejs/cli-linux-x64@1.5.3:
-    resolution: {integrity: sha512-YQrSArQvcv4FYsk7Q91Yv4uuu5F8hJyORVcv3zsjCLGkjIjx2RhjYLpTL733SNL7v33GmOlZY0eFR1ko38tuUw==}
-    engines: {node: '>=14.*'}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@biomejs/cli-win32-arm64@1.5.3:
-    resolution: {integrity: sha512-HxatYH7vf/kX9nrD+pDYuV2GI9GV8EFo6cfKkahAecTuZLPxryHx1WEfJthp5eNsE0+09STGkKIKjirP0ufaZA==}
-    engines: {node: '>=14.*'}
-    cpu: [arm64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@biomejs/cli-win32-x64@1.5.3:
-    resolution: {integrity: sha512-fMvbSouZEASU7mZH8SIJSANDm5OqsjgtVXlbUqxwed6BP7uuHRSs396Aqwh2+VoW8fwTpp6ybIUoC9FrzB0kyA==}
-    engines: {node: '>=14.*'}
-    cpu: [x64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
 
   /@cloudflare/workers-types@4.20240129.0:
     resolution: {integrity: sha512-VyHbih/bqh/RN2FRxnXznG0bpBIg9RfSP1ldbAVnCXFinjOdv0zm2P/RWqOVN9+FgU5sanRltwwT7jGngxZy8w==}
@@ -2458,15 +2364,6 @@ packages:
   /isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  /isomorphic-fetch@3.0.0:
-    resolution: {integrity: sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==}
-    dependencies:
-      node-fetch: 2.7.0
-      whatwg-fetch: 3.6.20
-    transitivePeerDependencies:
-      - encoding
-    dev: false
-
   /jackspeak@2.3.6:
     resolution: {integrity: sha512-N3yCS/NegsOBokc8GAdM8UcmfsKiSS8cipheD/nivzr700H+nsMOxJjQnvwOcRYVuFkdH0wGUvW2WbXGmrZGbQ==}
     engines: {node: '>=14'}
@@ -2612,18 +2509,6 @@ packages:
     hasBin: true
     dev: false
 
-  /node-fetch@2.7.0:
-    resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
-    engines: {node: 4.x || >=6.0.0}
-    peerDependencies:
-      encoding: ^0.1.0
-    peerDependenciesMeta:
-      encoding:
-        optional: true
-    dependencies:
-      whatwg-url: 5.0.0
-    dev: false
-
   /node-releases@2.0.14:
     resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
     dev: true
@@ -2683,14 +2568,6 @@ packages:
       '@types/estree': 1.0.5
       estree-walker: 3.0.3
       is-reference: 3.0.2
-
-  /pexels@1.4.0:
-    resolution: {integrity: sha512-akpLySokCtw9JHGx7yMavOIAHGVP5721rLUONR/cFKjWkLjUXsHrJ5jndMKss9mx7AEMZRXs7loxEb+vLJf6kA==}
-    dependencies:
-      isomorphic-fetch: 3.0.0
-    transitivePeerDependencies:
-      - encoding
-    dev: false
 
   /picocolors@1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
@@ -3253,10 +3130,6 @@ packages:
 
   /webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
-    dev: false
-
-  /whatwg-fetch@3.6.20:
-    resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
     dev: false
 
   /whatwg-url@5.0.0:

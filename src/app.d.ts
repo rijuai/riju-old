@@ -1,14 +1,23 @@
 // See https://kit.svelte.dev/docs/types#app
 
-// for information about these interfaces
 declare global {
   namespace App {
     // interface Error {}
     // interface Locals {
-    // 	supabase: SupabaseClient
-    // 	getSession: () => Promise<Session | null>
     // }
     // interface PageData  {}
-    // interface Platform {}
+    // interface Platform {
+    // }
+  }
+
+  enum TransitionType {
+    None = "none",
+    Slide = "slide",
+    Fade = "fade",
+    Zoom = "zoom",
+    Concave = "concave",
+    Convex = "convex",
   }
 }
+
+export {};
