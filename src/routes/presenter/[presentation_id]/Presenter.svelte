@@ -1,6 +1,5 @@
 <script lang="ts">
     import "./presenter.css";
-    import WaterMark from "./WaterMark.svelte";
     import { currentTheme, transitionType } from "$lib/stores/presentation";
     import Reveal from "reveal.js";
     import "reveal.js/dist/reveal.css";
@@ -42,8 +41,6 @@
         {@html htmlOutput}
     </div>
 </div>
-
-<WaterMark text="Made in Riju.ai" />
 
 <style lang="postcss">
     .reveal {
