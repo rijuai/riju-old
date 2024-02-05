@@ -59,15 +59,6 @@
                             </ul>
                         </div>
                     </Card.Content>
-                    <Card.Footer>
-                        <Button
-                            class="w-full"
-                            href={name === "Pro"
-                                ? "/signin?utm_source=pricing&is_pro=true"
-                                : "/signin?utm_source=pricing"}
-                            >Get started</Button
-                        >
-                    </Card.Footer>
                 </Card.Root>
             {/each}
         </div>

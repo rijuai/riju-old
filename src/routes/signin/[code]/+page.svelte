@@ -4,6 +4,10 @@
     import { supabase } from "$lib/config/supabase";
     import { ThemeSupa } from "@supabase/auth-ui-shared";
     import { Auth } from "@supabase/auth-ui-svelte";
+    import type { PageData } from "./$types";
+
+    export let data: PageData;
+    const { code } = data;
 </script>
 
 <MetaTags
@@ -41,6 +45,10 @@
             providers={["google"]}
             redirectTo="https://riju.ai/dashboard"
             showLinks={false}
+            additionalData={{
+                from: "homepage",
+                appsumoCode: { data },
+            }}
             appearance={{
                 theme: ThemeSupa,
                 variables: {

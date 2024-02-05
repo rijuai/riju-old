@@ -37,13 +37,11 @@
             presentation builder you’ve been looking for.
         </p>
         <div class="mb-2.5 flex flex-col justify-center gap-4 md:flex-row">
-            <!-- <Button size="lg" class="py-6 text-lg" href="/signin"
-                >Get Started<ArrowRight class="ml-2" /></Button
+            <Button size="lg" class="py-6 text-lg" href="/docs/contact"
+                >Contact Us<ArrowRight class="ml-2" /></Button
             >
         </div>
         <p class="text-muted-foreground text-sm">No credit card required</p>
-        -->
-        </div>
     </section>
 
     <!-- Demo Video -->
