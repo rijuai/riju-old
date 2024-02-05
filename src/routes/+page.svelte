@@ -4,6 +4,7 @@
     import HomePageNavbar from "$lib/components/HomePageNavbar.svelte";
     import MetaTags from "$lib/components/MetaTags.svelte";
     import { Button } from "$lib/components/ui/button";
+    import DemoVideo from "$lib/assets/videos/riju-demo.mp4";
     import * as Card from "$lib/components/ui/card";
     import { Layout, Pointer, Rocket, ArrowRight } from "lucide-svelte";
     import DailyCompanyNewsLogo from "$lib/assets/images/featured/dailycompanynews-logo.png";
@@ -36,18 +37,20 @@
             presentation builder you’ve been looking for.
         </p>
         <div class="mb-2.5 flex flex-col justify-center gap-4 md:flex-row">
-            <Button size="lg" class="py-6 text-lg" href="/signin"
+            <!-- <Button size="lg" class="py-6 text-lg" href="/signin"
                 >Get Started<ArrowRight class="ml-2" /></Button
             >
         </div>
         <p class="text-muted-foreground text-sm">No credit card required</p>
+        -->
+        </div>
     </section>
 
     <!-- Demo Video -->
     <section class="mx-auto max-w-6xl">
         <video
             class="rounded-lg shadow-xl"
-            src="/videos/riju-demo-muted.mp4"
+            src={DemoVideo}
             muted
             loop
             autoplay
