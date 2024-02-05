@@ -42,9 +42,6 @@
                 </Button>
             {/if}
             {#if $page.url.pathname === "/dashboard"}
-                <Button variant="ghost" size="icon" href="/dashboard/settings"
-                    ><Settings class="size-4" /></Button
-                >
                 <Button
                     on:click={async () => {
                         const presentationId = await createPresentation(

@@ -16,7 +16,7 @@
         return userEmail ? userEmail : null;
     };
 
-    const signOut = async (): Promise<boolean> => {
+    const signOut = async () => {
         const { error } = await supabase.auth.signOut();
 
         return error ? false : true;
