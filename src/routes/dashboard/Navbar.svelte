@@ -4,7 +4,7 @@
     import { Badge } from "$lib/components/ui/badge";
     import { Button } from "$lib/components/ui/button";
     import { createPresentation } from "$lib/db/presentation";
-    import { PencilLine, Play, Settings } from "lucide-svelte";
+    import { PencilLine, Play } from "lucide-svelte";
 </script>
 
 <!-- Tally forms script -->
