@@ -38,6 +38,7 @@ LISTMONK_PASSWORD = <listmonk-password>
 
 - SvelteKit: Frontend, APIs
 - Supabase: Database, Auth
+- Database: Cloudflare D1
 - Cloudflare R2: Image Storage
 - Cloudflare Pages: Hosting
 - Cloudflare Workers: Serverless Functions
