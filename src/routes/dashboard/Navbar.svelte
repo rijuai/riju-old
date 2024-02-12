@@ -1,7 +1,6 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
     import { page } from "$app/stores";
-    import { Badge } from "$lib/components/ui/badge";
     import { Button } from "$lib/components/ui/button";
     import { createPresentation } from "$lib/db/presentation";
     import { PencilLine, Play } from "lucide-svelte";
@@ -15,10 +14,7 @@
 <nav
     class="sticky top-0 z-10 flex items-center justify-between gap-1 bg-white px-2 py-3"
 >
-    <Button variant="link" class="text-2xl" href="/dashboard"
-        >Riju
-        <Badge variant="secondary" class="ml-2 bg-amber-200">Beta</Badge>
-    </Button>
+    <Button variant="link" class="text-2xl" href="/dashboard">Riju</Button>
     <div class="flex gap-3">
         <Button
             class="hidden lg:block"
