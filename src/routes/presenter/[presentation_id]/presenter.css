@@ -13,7 +13,7 @@
 }
 
 .reveal h2 {
-    @apply mb-4 text-4xl;
+    @apply mb-6 text-4xl;
 }
 
 .reveal p {

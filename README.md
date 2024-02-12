@@ -18,8 +18,8 @@ PUBLIC_SUPABASE_URL = <your-local-supabase-url>
 PUBLIC_SUPABASE_ANON_KEY = <your-local-supabase-anon-key>
 
 # Cloudflare R2
+R2_API_URL = <r2-api-url>
 R2_ACCESS_KEY = <r2-cloud-access-key>
-R2_ACCOUNT_ID = <r2-cloud-account-id>
 R2_SECRET_KEY = <r2-cloud-secret-key>
 PUBLIC_R2_BUCKET_NAME = riju-user-assets
 
