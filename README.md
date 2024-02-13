@@ -39,6 +39,5 @@ LISTMONK_PASSWORD = <listmonk-password>
 - Cloudflare R2: Image Storage
 - Cloudflare Pages: Hosting
 - Cloudflare Workers: Serverless Functions
-- OpenAI: AI Image Generation
 - Pexels: Stock Images
 - Listmonk: Email Marketing
