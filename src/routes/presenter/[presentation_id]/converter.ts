@@ -37,7 +37,7 @@ export const convertEditorJsContentToHtml = (content: OutputData): string => {
           blocksHtml += `<div>${blockHtml}</div>`;
         }
 
-        outputHtml += `<section><div class="grid grid-cols-2 gap-8">${blocksHtml}</div></section>`;
+        outputHtml += `<section><div class="grid grid-cols-2 gap-12">${blocksHtml}</div></section>`;
 
         addSubSection = false;
         blocks.length = 0;
