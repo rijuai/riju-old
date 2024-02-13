@@ -78,6 +78,7 @@
         </div>
     </div>
 
+    <!-- Presentations -->
     {#if presentations && presentations.length > 0}
         <h5 class="text-muted-foreground mb-4 font-medium">
             Your presentations

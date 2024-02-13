@@ -13,7 +13,5 @@ const getPresentations = async () => {
 export const load = (async () => {
   const presentations = await getPresentations();
 
-  return {
-    presentations,
-  };
+  return { presentations };
 }) satisfies PageLoad;

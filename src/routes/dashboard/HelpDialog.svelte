@@ -11,7 +11,7 @@
 </script>
 
 <DropdownMenu.Root>
-    <DropdownMenu.Trigger class="fixed bottom-6 left-6 "
+    <DropdownMenu.Trigger class="fixed bottom-6 left-6"
         ><HelpCircle /></DropdownMenu.Trigger
     >
     <DropdownMenu.Content>
