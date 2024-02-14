@@ -16,9 +16,8 @@
             <Button variant="ghost" href="/docs/contact" class="hidden md:block"
                 >Contact</Button
             >
-            <Button variant="ghost" href="/signin" class="hidden md:block"
-                >Log in</Button
-            >
+            <Button variant="ghost" href="/signin">Log in</Button>
+            <Button variant="primary" href="/signup">Sign up</Button>
         </div>
     </div>
 </nav>
