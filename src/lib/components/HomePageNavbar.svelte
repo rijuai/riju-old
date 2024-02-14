@@ -17,7 +17,7 @@
                 >Contact</Button
             >
             <Button variant="ghost" href="/signin">Log in</Button>
-            <Button variant="primary" href="/signup">Sign up</Button>
+            <Button variant="default" href="/signin">Sign up</Button>
         </div>
     </div>
 </nav>
