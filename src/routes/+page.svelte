@@ -28,8 +28,10 @@
 <main class="mx-auto max-w-7xl">
     <HomePageNavbar />
     <!-- Hero -->
-    <section class="mx-auto max-w-4xl text-center">
-        <h1 class="mb-6 text-black">Present without headache</h1>
+    <div class="mx-auto max-w-6xl pt-20 text-center">
+        <h1 class="mb-6 font-serif text-6xl text-black">
+            Presentations without Headache
+        </h1>
         <p
             class="text-muted-foreground mx-auto mb-12 max-w-2xl text-2xl font-normal leading-normal"
         >
@@ -37,23 +39,23 @@
             presentation builder you’ve been looking for.
         </p>
         <div class="mb-2.5 flex flex-col justify-center gap-4 md:flex-row">
-            <Button size="lg" class="py-6 text-lg" href="/docs/contact"
-                >Contact Us<ArrowRight class="ml-2" /></Button
+            <Button size="lg" class="py-6 text-lg" href="/signin"
+                >Get Started<ArrowRight class="ml-2" /></Button
             >
         </div>
-        <p class="text-muted-foreground text-sm">No credit card required</p>
-    </section>
+        <p class="text-muted-foreground mb-20 text-sm">
+            No credit card required
+        </p>
 
-    <!-- Demo Video -->
-    <section class="mx-auto max-w-6xl">
+        <!-- Demo Video -->
         <video
-            class="rounded-lg shadow-xl"
+            class="rounded-lg border shadow-xl"
             src={DemoVideo}
             muted
             loop
             autoplay
         />
-    </section>
+    </div>
 
     <!-- Cards -->
     <section class="mx-auto max-w-6xl">

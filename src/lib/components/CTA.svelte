@@ -10,8 +10,8 @@
             Building presentations with Riju is as simple as one-two-three.
         </p>
         <div class="mb-3 flex flex-col justify-center gap-4 md:flex-row">
-            <Button size="lg" class="py-6 text-lg" href="/docs/contact"
-                >Contact Us<ChevronRight class="ml-2" /></Button
+            <Button size="lg" class="py-6 text-lg" href="/signin"
+                >Get Started<ChevronRight class="ml-2" /></Button
             >
         </div>
         <p class="text-muted-foreground text-sm">No credit card required</p>
