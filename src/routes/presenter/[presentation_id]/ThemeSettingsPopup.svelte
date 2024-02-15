@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Button from "$lib/components/ui/button/button.svelte";
-    import Label from "$lib/components/ui/label/label.svelte";
+    import { Button } from "$lib/components/ui/button";
+    import { Label } from "$lib/components/ui/label";
     import * as Popover from "$lib/components/ui/popover";
     import * as Select from "$lib/components/ui/select";
     import { savePresentationTheme } from "$lib/db/presentation";

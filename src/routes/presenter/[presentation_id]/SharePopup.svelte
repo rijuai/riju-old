@@ -1,7 +1,7 @@
 <script lang="ts">
     import { page } from "$app/stores";
     import { Button } from "$lib/components/ui/button";
-    import Label from "$lib/components/ui/label/label.svelte";
+    import { Label } from "$lib/components/ui/label";
     import * as Popover from "$lib/components/ui/popover";
     import { Switch } from "$lib/components/ui/switch";
     import { supabase } from "$lib/config/supabase";
@@ -12,7 +12,7 @@
     const updatePresentationVisibility = async (
         presentationId: string,
         isPublic: boolean,
-    ): Promise<boolean> => {
+    ) => {
         const { error } = await supabase
             .from("presentations")
             .update({ is_public: isPublic })
@@ -42,7 +42,7 @@
                             on:click={() => {
                                 let url = $page.url;
 
-                                /* ** copy to clipboard */
+                                /* Copy to clipboard */
                                 navigator.clipboard.writeText(String(url));
                             }}>Copy URL</Button
                         >
