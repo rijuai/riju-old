@@ -1,13 +1,11 @@
 import type { OutputData } from "@editorjs/editorjs";
 
 export const convertEditorJsContentToHtml = (content: OutputData): string => {
-  console.log("Converter Content", content);
   let outputHtml = "";
   let count = 0;
   let tempHtml = "";
   let blocks: string[] = [];
   let addSubSection = false;
-  let images = [];
 
   for (const block of content.blocks) {
     console.log(block);
