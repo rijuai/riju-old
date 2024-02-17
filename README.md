@@ -7,7 +7,6 @@ Superfast presentation creator...
 1. Clone the repo using
 ```git clone```
 2. Install PNPM
-3. Install Biome VSCode extension
 4. Install the dependencies using
 ```pnpm install```
 5. Set the environment variables in ```.env.local```
