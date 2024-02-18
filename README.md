@@ -24,10 +24,6 @@ PUBLIC_R2_BUCKET_NAME = riju-user-assets
 
 # Pexels
 PEXELS_API_KEY = <pexels-key>
-
-# Listmonk
-LISTMONK_USERNAME = <listmonk-username>
-LISTMONK_PASSWORD = <listmonk-password>
 ```
 
 ## Tech Stack
