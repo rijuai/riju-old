@@ -12,7 +12,6 @@ enum TransitionType {
   Convex = "convex",
 }
 
-// biome-ignore lint/style/useConst: <explanation>
 export let transitionType = writable(TransitionType.Zoom);
 export const currentTheme = writable("background-color: #FFF6E0;");
 export const themes = readable([
