@@ -87,13 +87,13 @@
         @apply outline-none;
     }
 
-    /* ** typography ** */
+    /* ** Typography ** */
     h1 {
-        @apply font-serif text-5xl font-bold lg:text-6xl lg:leading-tight;
+        @apply text-5xl font-bold lg:text-6xl lg:leading-tight;
     }
 
     h2 {
-        @apply font-serif text-4xl font-bold lg:text-5xl lg:leading-tight;
+        @apply text-4xl font-bold lg:text-5xl lg:leading-tight;
     }
 
     h3 {
