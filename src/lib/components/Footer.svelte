@@ -1,6 +1,6 @@
 <footer class="mx-auto flex justify-center border-t px-4 py-4">
     <div class="text-muted-foreground flex justify-center gap-8 text-xs">
-        <a href="/docs/contact">Contact</a>
+        <a href="/contact">Contact</a>
         <a href="/docs/privacy">Privacy Policy</a>
         <a href="/docs/terms">Terms</a>
     </div>
