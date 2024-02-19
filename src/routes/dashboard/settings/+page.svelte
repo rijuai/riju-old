@@ -33,7 +33,7 @@
             <p class="text-muted-foreground mt-1 text-sm">
                 To change email address <a
                     class="underline"
-                    href="/docs/contact">contact us</a
+                    href="/contact">contact us</a
                 >.
             </p>
         </div>
