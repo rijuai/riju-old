@@ -13,22 +13,21 @@ const getPresentationData = async (presentationId: string) => {
   return data ? data[0] : null;
 };
 
-export const load = (async ({ params }) => {
+export const load: PageLoad = async ({ params }) => {
   const presentationId = params.presentation_id;
-  const { content, theme, is_public } = (await getPresentationData(
-    presentationId,
-  )) ?? {
-    content: [],
-    theme: null,
-    is_public: false,
-  };
+  const presentationData = await getPresentationData(presentationId);
+  const {
+    content = [],
+    theme = null,
+    is_public: isPublic = false,
+  } = presentationData || {};
 
   const htmlOutput = convertEditorJsContentToHtml(content);
 
   return {
-    theme: theme,
-    isPublic: is_public,
-    htmlOutput: htmlOutput,
-    presentationId: presentationId,
+    theme,
+    isPublic,
+    htmlOutput,
+    presentationId,
   };
-}) satisfies PageLoad;
+};
