@@ -1,4 +1,6 @@
 <script lang="ts">
+    import Footer from "$lib/components/Footer.svelte";
+    import LayoutWrapper from "$lib/components/LayoutWrapper.svelte";
     import { Button } from "$lib/components/ui/button";
     import * as Card from "$lib/components/ui/card";
     import { Check } from "lucide-svelte";
@@ -27,9 +29,9 @@
     ];
 </script>
 
-<section class="py-14">
-    <div class="mx-auto max-w-screen-xl px-4 text-gray-600 md:px-8">
-        <div class="relative mx-auto max-w-xl sm:text-center">
+<LayoutWrapper>
+    <div class="mx-auto max-w-screen-xl text-gray-600">
+        <div class="mx-auto max-w-xl sm:text-center">
             <h3 class="text-3xl font-semibold text-gray-800 sm:text-4xl">
                 Pricing Plans
             </h3>
@@ -59,6 +61,11 @@
                             </ul>
                         </div>
                     </Card.Content>
+                    <Card.Footer>
+                        <Button href={index == 0 ? "/signup" : "/signin"}>
+                            {index == 0 ? "Get Started" : "Subscribe"}
+                        </Button>
+                    </Card.Footer>
                 </Card.Root>
             {/each}
         </div>
@@ -67,4 +74,4 @@
             namaste@riju.ai
         </p>
     </div>
-</section>
+</LayoutWrapper>

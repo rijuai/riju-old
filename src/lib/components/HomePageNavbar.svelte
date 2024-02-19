@@ -10,10 +10,10 @@
             >Riju</Button
         >
         <div class="flex items-center gap-2">
-            <Button variant="ghost" href="/docs/pricing" class="hidden md:block"
+            <Button variant="ghost" href="/pricing" class="hidden md:block"
                 >Pricing</Button
             >
-            <Button variant="ghost" href="/docs/contact" class="hidden md:block"
+            <Button variant="ghost" href="/contact" class="hidden md:block"
                 >Contact</Button
             >
             <Button variant="ghost" href="/signin">Log in</Button>
