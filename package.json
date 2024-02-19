@@ -31,7 +31,7 @@
     "@editorjs/nested-list": "^1.4.2",
     "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/auth-ui-svelte": "^0.2.9",
-    "@supabase/supabase-js": "^2.39.3",
+    "@supabase/supabase-js": "^2.39.6",
     "@types/reveal.js": "^4.4.8",
     "bits-ui": "^0.18.0",
     "clsx": "^2.1.0",
