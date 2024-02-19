@@ -10,10 +10,14 @@
         transitionType,
     } from "$lib/stores/presentation";
     import { Sparkles } from "lucide-svelte";
+    import { Check, ChevronsUpDown } from "lucide-svelte";
+    import * as Command from "$lib/components/ui/command";
+    import { cn } from "$lib/utils";
+    import { tick } from "svelte";
 
     export let presentationId: string;
 
-    let transitionTypes = [
+    const transitionTypes = [
         {
             label: "None",
             value: "none",
@@ -39,57 +43,141 @@
             value: "convex",
         },
     ];
+
+    const fonts = [
+        "Open Sans",
+        "Roboto",
+        "Raleway",
+        "Source Sans Pro",
+        "Lato",
+        "Kode Mono",
+        "Merriweather",
+        "Ubuntu",
+        "Noto Sans",
+        "Poppins",
+        "Inter",
+    ];
+    let open = false;
+    let value = "";
+
+    $: selectedFont = fonts.find((f) => f === value) ?? "Select a font";
+
+    // We want to refocus the trigger button when the user selects
+    // an item from the list so users can continue navigating the
+    // rest of the form with the keyboard.
+    const closeAndFocusTrigger = (triggerId: string) => {
+        open = false;
+        tick().then(() => {
+            document.getElementById(triggerId)?.focus();
+        });
+    };
+
+    /** Dynamic Font */
+    function getFontUrl(fontName: string) {
+        return `https://fonts.googleapis.com/css2?family=${fontName.replace(/ /g, "+")}:wght@400&display=swap`;
+    }
+
+    $: selectedFontUrl = getFontUrl(selectedFont);
+    $: document.querySelector(".reveal").style.fontFamily = selectedFont;
 </script>
+
+<svelte:head>
+    <link rel="stylesheet" href={selectedFontUrl} />
+</svelte:head>
 
 <Popover.Root>
     <Popover.Trigger class="flex items-center gap-1.5"
         ><Sparkles class="size-4" />Theme</Popover.Trigger
     >
-    <Popover.Content class="w-80">
-        <div class="flex flex-col gap-6">
-            <div class="grid grid-cols-2 items-center gap-3">
-                <Label>Theme</Label>
-                <Button
-                    variant="outline"
-                    size="sm"
-                    on:click={async () => {
-                        changeTheme();
-                        const response = await savePresentationTheme(
-                            presentationId,
-                            {
-                                backgroundCss: $currentTheme,
-                                transitionType: $transitionType,
-                            },
-                        );
-                        console.log(response);
-                        console.log($currentTheme);
-                    }}
-                    >Change
-                </Button>
-            </div>
-
-            <div class="grid grid-cols-2 items-center gap-3">
-                <Label>Tranisition Type</Label>
-                <Select.Root
-                    selected={$transitionType}
-                    onSelectedChange={async (value) => {
-                        $transitionType = value?.value;
-                        await savePresentationTheme(presentationId, {
+    <Popover.Content class="flex w-96 flex-col gap-8">
+        <div class="grid grid-cols-2 items-center gap-3">
+            <Label>Theme</Label>
+            <Button
+                variant="outline"
+                size="sm"
+                on:click={async () => {
+                    changeTheme();
+                    const response = await savePresentationTheme(
+                        presentationId,
+                        {
                             backgroundCss: $currentTheme,
                             transitionType: $transitionType,
-                        });
-                    }}
-                >
-                    <Select.Trigger>
-                        <Select.Value placeholder="Select" />
-                    </Select.Trigger>
-                    <Select.Content>
-                        {#each transitionTypes as { label, value }}
-                            <Select.Item {value}>{label}</Select.Item>
-                        {/each}
-                    </Select.Content>
-                </Select.Root>
-            </div>
+                        },
+                    );
+                }}
+                >Change
+            </Button>
+        </div>
+
+        <!-- Transition Type Selector -->
+        <div class="grid grid-cols-2 items-center gap-3">
+            <Label>Tranisition Type</Label>
+            <Select.Root
+                selected={$transitionType}
+                onSelectedChange={async (value) => {
+                    $transitionType = value?.value;
+                    await savePresentationTheme(presentationId, {
+                        backgroundCss: $currentTheme,
+                        transitionType: $transitionType,
+                    });
+                }}
+            >
+                <Select.Trigger>
+                    <Select.Value placeholder="Select" />
+                </Select.Trigger>
+                <Select.Content>
+                    {#each transitionTypes as { label, value }}
+                        <Select.Item {value}>{label}</Select.Item>
+                    {/each}
+                </Select.Content>
+            </Select.Root>
+        </div>
+
+        <!-- Font style combobox -->
+        <div class="grid grid-cols-2 items-center gap-3">
+            <Label>Font Style</Label>
+            <Popover.Root bind:open let:ids>
+                <Popover.Trigger asChild let:builder>
+                    <Button
+                        builders={[builder]}
+                        variant="outline"
+                        role="combobox"
+                        aria-expanded={open}
+                        class="justify-between"
+                    >
+                        {selectedFont}
+                        <ChevronsUpDown
+                            class="ml-2 h-4 w-4 shrink-0 opacity-50"
+                        />
+                    </Button>
+                </Popover.Trigger>
+                <Popover.Content class="w-48 p-0">
+                    <Command.Root>
+                        <Command.Input placeholder="Search framework..." />
+                        <Command.Empty>No framework found.</Command.Empty>
+                        <Command.Group>
+                            {#each fonts as font}
+                                <Command.Item
+                                    value={font}
+                                    onSelect={(currentValue) => {
+                                        value = currentValue;
+                                        closeAndFocusTrigger(ids.trigger);
+                                    }}
+                                >
+                                    <Check
+                                        class={cn(
+                                            "mr-2 h-4 w-4",
+                                            value !== font &&
+                                                "text-transparent",
+                                        )}
+                                    />
+                                    {font}
+                                </Command.Item>
+                            {/each}
+                        </Command.Group>
+                    </Command.Root>
+                </Popover.Content>
+            </Popover.Root>
 
             <!-- use this for new rows -->
             <!-- <div class="grid grid-cols-2 items-center gap-3" /> -->
