@@ -56,11 +56,12 @@
 </script>
 
 <MetaTags title="Riju | Dashboard" description="Your presentations" />
+
 <div class="mx-auto w-full max-w-4xl space-y-8">
     <!-- Templates -->
     <div>
         <h5 class="text-muted-foreground mb-4 font-medium">Templates</h5>
-        <div class="grid grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
             {#each templates as { name, theme, content }}
                 <Button
                     variant="outline"
