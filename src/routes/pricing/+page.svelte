@@ -62,7 +62,11 @@
                         </div>
                     </Card.Content>
                     <Card.Footer>
-                        <Button href={index == 0 ? "/signup" : "/signin"}>
+                        <Button
+                            href={index == 0
+                                ? "/signin?plan=free"
+                                : "/signin?plan=pro"}
+                        >
                             {index == 0 ? "Get Started" : "Subscribe"}
                         </Button>
                     </Card.Footer>
