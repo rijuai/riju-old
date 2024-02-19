@@ -12,7 +12,7 @@
     import SubscribedFyiLogo from "$lib/assets/images/featured/subscribedfyi-inverted-logo.png";
     import SuperbCrewLogo from "$lib/assets/images/featured/superbcrew-logo.png";
 
-    const featuredCompaniesLogos = [
+    const featuredCompaniesLogo = [
         OpenFutureLogo,
         DailyCompanyNewsLogo,
         SubscribedFyiLogo,
@@ -29,9 +29,7 @@
     <HomePageNavbar />
     <!-- Hero -->
     <div class="mx-auto max-w-6xl pt-20 text-center">
-        <h1 class="mb-6 font-serif text-6xl text-black">
-            Presentations without Headache
-        </h1>
+        <h1 class="text-6x mb-6 text-black">Presentations without Headache</h1>
         <p
             class="text-muted-foreground mx-auto mb-12 max-w-2xl text-2xl font-normal leading-normal"
         >
@@ -59,9 +57,7 @@
 
     <!-- Cards -->
     <section class="mx-auto max-w-6xl">
-        <h2 class="mb-12">
-            Focus on the content, <br /> not on the formatting
-        </h2>
+        <h2 class="mb-12">Focus on the content, not on the formatting</h2>
 
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
             <Card.Root>
@@ -110,7 +106,7 @@
         <div
             class="flex flex-col items-center justify-center gap-12 lg:flex-row"
         >
-            {#each featuredCompaniesLogos as logos}
+            {#each featuredCompaniesLogo as logos}
                 <img class="h-16 w-auto" src={logos} alt="Company Logo" />
             {/each}
         </div>
