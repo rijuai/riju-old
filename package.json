@@ -24,7 +24,7 @@
   "type": "module",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.511.0",
-    "@aws-sdk/s3-request-presigner": "^3.511.0",
+    "@aws-sdk/s3-request-presigner": "^3.515.0",
     "@editorjs/editorjs": "^2.29.0",
     "@editorjs/header": "^2.8.1",
     "@editorjs/image": "^2.9.0",
