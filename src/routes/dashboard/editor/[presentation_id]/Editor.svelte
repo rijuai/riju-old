@@ -8,6 +8,7 @@
     import { uploadToR2 } from "$lib/utils/uploadToR2";
     import { onMount } from "svelte";
     import SplitSlide from "./splitSide";
+    import CustomImage from "./CustomImage";
 
     export let presentationId: string;
     export let content: OutputData;
@@ -72,7 +73,7 @@
                 class: SplitSlide,
             },
             image: {
-                class: ImageTool,
+                class: CustomImage,
                 config: {
                     uploader: {
                         async uploadByFile(file: File) {
