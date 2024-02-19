@@ -1,58 +1,82 @@
 <script lang="ts">
     import Dashboard from "$lib/assets/images/docs/dashboard.png";
-    import Editor from "$lib/assets/images/docs/editor.png";
-    import CommandMenuImage from "$lib/assets/images/docs/command-menu.png";
+    import MetaTags from "$lib/components/MetaTags.svelte";
 </script>
 
-<div class="prose prose-xl mx-auto max-w-3xl">
-    <h1>How to get started with Riju?</h1>
+<MetaTags
+    title="Riju | Getting Started"
+    description="How to get started with Riju?"
+/>
+
+<div class="prose prose-xl mx-auto max-w-4xl px-4 py-8 lg:py-12">
+    <h1>How to get started with Riju? in under 5 minutes</h1>
 
     <section>
         <p>
-            This section shows you how you can easily get started with Riju and
-            also it explores all the features of Riju so that you can get most
-            out it
+            Riju uses blocks to create presentations. Like if you want to add a
+            Heading, then just click slash and select thr Heading 1 or Heading 2
+            option.
         </p>
     </section>
 
     <section>
-        <h2>Intuitive Dashboard</h2>
-        <img src={Dashboard} alt="Dashboard" />
+        <h2>Create a presentation</h2>
         <p>
-            The dashboard page is the first page you see when you log in to
-            Riju. It contains a list of all your presentations. You can create a
-            new presentation by clicking on the <strong>New Presentation</strong
-            > button on the top right corner of the page. You can also create presentations
-            much more quickly by using prebuilt templates.
+            In Riju you can create a presentation by two ways. You can create a
+            new presentation by choosing a preset templates [OR] by creating
+            from a blank presentation. To create just click on the "Create"
+            button on top right corner.
         </p>
+        <img class="h-96 w-full bg-slate-100" src="" alt="" />
     </section>
 
     <section>
-        <h2>Creating Presentations</h2>
-        <img src={Editor} alt="Editor" />
+        <h2>Just start typing</h2>
         <p>
-            To create a presentation in the editor, just add your content. To
-            add headings, images, lists just enter "/"(slash) OR click on the
-            "+"(plus) icon in the left of the line. This will open a menu where
-            you can add required action for your slide.
+            After that just start typing your content. By default the selected
+            text will appear as paragraph; if you want to change it to like
+            Heading, then just press "/"(Slash) [OR] click on the "+" icon on
+            the left.
         </p>
+        <img class="h-96 w-full bg-slate-100" src="" alt="" />
     </section>
 
     <section>
-        <h2>Command Menu</h2>
-        <img src={CommandMenuImage} alt="Command Menu" />
+        <h2>Everything is a block</h2>
         <p>
-            To add a heading just choose either Heading 1 OR Heading 2. For
-            adding a list just choose List, and for adding image choose Image
-            menu. For adding new slide, just add New Slide menu and to create a
-            split in the slide, use the Split Slide and add content below it,
-            and this content will be shown besides the above previous content.
+            Riju uses block based editing for providing much simpler and cleaner
+            UI. What it means is in Riju Editor, everthing is a block like a
+            text, heading, image, new slide, split slide, etc. is a block.
+        </p>
+        <p>
+            And you can customise the look and feel of your presentation by
+            using relevant blocks.
+        </p>
+        <img class="h-96 w-full bg-slate-100" src="" alt="" />
+        <h3>Currently available blocks,</h3>
+        <ul>
+            <li>Text</li>
+            <li>Heading 1</li>
+            <li>Heading 2</li>
+            <li>List</li>
+            <li>Image</li>
+            <li>New Slide</li>
+            <li>Split Slide</li>
+        </ul>
+        <img class="h-96 w-full bg-slate-100" src="" alt="" />
+    </section>
+
+    <section>
+        <h2>Autosave</h2>
+        <p>
+            Riju automatically saves your progress as you type, so you don't
+            have to worry about clicking save everytime.
         </p>
     </section>
 </div>
 
 <style lang="postcss">
     img {
-        @apply rounded-md border p-8 shadow-md;
+        @apply mx-auto rounded-md border p-8 shadow-md;
     }
 </style>
