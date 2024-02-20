@@ -3,7 +3,6 @@
     import Header from "@editorjs/header";
     import { supabase } from "$lib/config/supabase";
     import NewSlide from "./newSlide";
-    import ImageTool from "@editorjs/image";
     import NestedList from "@editorjs/nested-list";
     import { uploadToR2 } from "$lib/utils/uploadToR2";
     import { onMount } from "svelte";

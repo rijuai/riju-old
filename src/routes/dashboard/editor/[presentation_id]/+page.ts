@@ -15,7 +15,7 @@ export const load = (async ({ params }) => {
   const { content } = await getPresentationContent(presentationId);
 
   return {
-    content: content,
-    presentationId: presentationId,
+    content,
+    presentationId,
   };
 }) satisfies PageLoad;

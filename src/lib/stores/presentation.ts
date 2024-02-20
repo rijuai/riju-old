@@ -30,7 +30,7 @@ export const themes = readable([
   "background-image: linear-gradient(135deg, transparent 0%, transparent 2%,rgba(153, 243, 62,0.6) 2%, rgba(153, 243, 62,0.6) 21%,transparent 21%, transparent 85%,rgba(213, 250, 34,0.6) 85%, rgba(213, 250, 34,0.6) 100%),linear-gradient(45deg, transparent 0%, transparent 18%,rgba(153,243,62, 0.44) 18%, rgba(153,243,62, 0.44) 31%,rgb(255,255,255) 31%, rgb(255,255,255) 44%,transparent 44%, transparent 93%,rgb(173, 246, 53) 93%, rgb(173, 246, 53) 100%),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));",
 ]);
 
-export const getRandomNumber = (length: number): number => {
+export const getRandomNumber = (length: number) => {
   const previousNumbers = new Set<number>();
   const maxNumber = length;
 
