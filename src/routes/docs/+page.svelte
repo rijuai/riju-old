@@ -1,5 +1,8 @@
 <script lang="ts">
     import Dashboard from "$lib/assets/images/docs/dashboard.png";
+    import Editor from "$lib/assets/images/docs/editor.png";
+    import BlocksList from "$lib/assets/images/docs/blocks-list.png";
+    import Blocks from "$lib/assets/images/docs/blocks.png";
     import MetaTags from "$lib/components/MetaTags.svelte";
 </script>
 
@@ -8,8 +11,8 @@
     description="How to get started with Riju?"
 />
 
-<div class="prose prose-xl mx-auto max-w-4xl px-4 py-8 lg:py-12">
-    <h1>How to get started with Riju? in under 5 minutes</h1>
+<div class="prose mx-auto max-w-3xl px-4 py-8 lg:py-12">
+    <h1>Getting started with Riju</h1>
 
     <section>
         <p>
@@ -27,7 +30,7 @@
             from a blank presentation. To create just click on the "Create"
             button on top right corner.
         </p>
-        <img class="h-96 w-full bg-slate-100" src="" alt="" />
+        <img src={Dashboard} alt="Dashboard" />
     </section>
 
     <section>
@@ -38,7 +41,7 @@
             Heading, then just press "/"(Slash) [OR] click on the "+" icon on
             the left.
         </p>
-        <img class="h-96 w-full bg-slate-100" src="" alt="" />
+        <img src={Editor} alt="Editor" />
     </section>
 
     <section>
@@ -52,7 +55,7 @@
             And you can customise the look and feel of your presentation by
             using relevant blocks.
         </p>
-        <img class="h-96 w-full bg-slate-100" src="" alt="" />
+        <img src={BlocksList} alt="Blocks List" />
         <h3>Currently available blocks,</h3>
         <ul>
             <li>Text</li>
@@ -63,7 +66,7 @@
             <li>New Slide</li>
             <li>Split Slide</li>
         </ul>
-        <img class="h-96 w-full bg-slate-100" src="" alt="" />
+        <img src={Blocks} alt="Blocks" />
     </section>
 
     <section>
@@ -77,6 +80,6 @@
 
 <style lang="postcss">
     img {
-        @apply mx-auto rounded-md border p-8 shadow-md;
+        @apply mx-auto rounded-lg border p-4 shadow-lg;
     }
 </style>
