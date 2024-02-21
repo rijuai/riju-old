@@ -25,9 +25,7 @@
                 data-tally-emoji-text="👋"
                 data-tally-emoji-animation="wave">Feedback</DropdownMenu.Item
             >
-            <DropdownMenu.Item href="/docs/contact"
-                >Contact Us</DropdownMenu.Item
-            >
+            <DropdownMenu.Item href="/contact">Contact Us</DropdownMenu.Item>
             <DropdownMenu.Item
                 on:click={() => {
                     signOut();
