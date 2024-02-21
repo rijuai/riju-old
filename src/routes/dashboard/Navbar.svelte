@@ -3,7 +3,8 @@
     import { page } from "$app/stores";
     import { Button } from "$lib/components/ui/button";
     import { createPresentation } from "$lib/db/presentation";
-    import { PencilLine, Play } from "lucide-svelte";
+    import PencilLine from "lucide-svelte/icons/pencil-line";
+    import Play from "lucide-svelte/icons/play";
 </script>
 
 <!-- Tally forms script -->

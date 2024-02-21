@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { HelpCircle } from "lucide-svelte";
+    import HelpCircle from "lucide-svelte/icons/help-circle";
     import { supabase } from "$lib/config/supabase";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import { goto } from "$app/navigation";

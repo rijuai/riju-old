@@ -1,9 +1,8 @@
 <script lang="ts">
-    import Footer from "$lib/components/Footer.svelte";
     import LayoutWrapper from "$lib/components/LayoutWrapper.svelte";
     import { Button } from "$lib/components/ui/button";
     import * as Card from "$lib/components/ui/card";
-    import { Check } from "lucide-svelte";
+    import Check from "lucide-svelte/icons/check";
 
     let plans = [
         {

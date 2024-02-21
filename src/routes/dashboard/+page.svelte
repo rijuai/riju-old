@@ -8,7 +8,9 @@
         createPresentation,
         getPresentationContent,
     } from "$lib/db/presentation";
-    import { ExternalLink, MoreHorizontal, Trash2 } from "lucide-svelte";
+    import ExternalLink from "lucide-svelte/icons/external-link";
+    import MoreHorizontal from "lucide-svelte/icons/more-horizontal";
+    import Trash2 from "lucide-svelte/icons/trash-2";
     import type { PageData } from "./$types";
     import type { OutputData } from "@editorjs/editorjs";
     import { templates } from "./templates";

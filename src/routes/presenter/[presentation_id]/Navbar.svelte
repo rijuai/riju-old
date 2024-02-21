@@ -4,7 +4,8 @@
     import ThemeSettingsPopup from "./ThemeSettingsPopup.svelte";
     import { Button } from "$lib/components/ui/button";
     import { isUserAuthenticated } from "$lib/db/auth";
-    import { Maximize, X } from "lucide-svelte";
+    import X from "lucide-svelte/icons/x";
+    import Maximize from "lucide-svelte/icons/maximize";
     import { onMount } from "svelte";
 
     export let presentationId: string;

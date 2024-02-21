@@ -6,7 +6,10 @@
     import { Button } from "$lib/components/ui/button";
     import DemoVideo from "$lib/assets/videos/riju-demo.mp4";
     import * as Card from "$lib/components/ui/card";
-    import { Layout, Pointer, Rocket, ArrowRight } from "lucide-svelte";
+    import Layout from "lucide-svelte/icons/layout-grid";
+    import Pointer from "lucide-svelte/icons/pointer";
+    import Rocket from "lucide-svelte/icons/rocket";
+    import ArrowRight from "lucide-svelte/icons/arrow-right";
     import DailyCompanyNewsLogo from "$lib/assets/images/featured/dailycompanynews-logo.png";
     import OpenFutureLogo from "$lib/assets/images/featured/openfuture-logo.png";
     import SubscribedFyiLogo from "$lib/assets/images/featured/subscribedfyi-inverted-logo.png";

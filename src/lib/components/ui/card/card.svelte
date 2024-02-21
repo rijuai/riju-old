@@ -1,19 +1,19 @@
 <script lang="ts">
-	import { cn } from '$lib/utils'
-	import type { HTMLAttributes } from 'svelte/elements'
+    import type { HTMLAttributes } from "svelte/elements";
+    import { cn } from "$lib/utils";
 
-	type $$Props = HTMLAttributes<HTMLDivElement>
+    type $$Props = HTMLAttributes<HTMLDivElement>;
 
-	let className: $$Props['class'] = undefined
-	export { className as class }
+    let className: $$Props["class"] = undefined;
+    export { className as class };
 </script>
 
 <div
-	class={cn(
-		'rounded-lg border bg-card text-card-foreground shadow-sm',
-		className,
-	)}
-	{...$$restProps}
+    class={cn(
+        "bg-card text-card-foreground rounded-lg border shadow-sm",
+        className,
+    )}
+    {...$$restProps}
 >
-	<slot />
+    <slot />
 </div>

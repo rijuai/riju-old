@@ -31,9 +31,8 @@
             <Label class="mb-2 block">Email</Label>
             <Input type="email" disabled bind:value={email} />
             <p class="text-muted-foreground mt-1 text-sm">
-                To change email address <a
-                    class="underline"
-                    href="/contact">contact us</a
+                To change email address <a class="underline" href="/contact"
+                    >contact us</a
                 >.
             </p>
         </div>
