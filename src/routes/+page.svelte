@@ -24,7 +24,7 @@
 </script>
 
 <MetaTags
-    title="Super fast and easy-to-use alternative to Microsoft PowerPoint"
+    title="Riju | Presentation Builder"
     description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
 
