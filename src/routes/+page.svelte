@@ -28,7 +28,7 @@
     description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
 
-<main class="mx-auto max-w-7xl">
+<main class="mx-auto max-w-7xl px-4">
     <HomePageNavbar />
     <!-- Hero -->
     <div class="mx-auto max-w-6xl pt-20 text-center">
