@@ -5,6 +5,8 @@
 
 <main class="mx-auto max-w-7xl">
     <HomePageNavbar />
-    <slot />
+    <div class="py-8">
+        <slot />
+    </div>
 </main>
 <Footer />
