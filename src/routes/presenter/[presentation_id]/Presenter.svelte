@@ -44,6 +44,6 @@
 
 <style lang="postcss">
     .reveal {
-        @apply h-screen w-full;
+        @apply h-screen;
     }
 </style>
