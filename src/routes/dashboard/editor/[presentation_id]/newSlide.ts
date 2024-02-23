@@ -9,10 +9,11 @@ class NewSlide {
   render() {
     const div = document.createElement("div");
     const paragraph = document.createElement("p");
+    paragraph.className = "text-sm text-gray-500";
     paragraph.textContent = "New Slide";
 
     div.className =
-      "w-full flex items-center justify-center before:flex-1 before:border after:flex-1 after:border py-4";
+      "w-full flex gap-2 items-center justify-center before:flex-1 before:border after:flex-1 after:border py-4";
 
     div.appendChild(paragraph);
 
