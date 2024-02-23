@@ -44,6 +44,6 @@
 
 <style lang="postcss">
     .reveal {
-        @apply h-screen;
+        @apply aspect-video h-screen;
     }
 </style>
