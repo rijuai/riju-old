@@ -9,8 +9,9 @@
         currentTheme,
         transitionType,
     } from "$lib/stores/presentation";
-    import { Sparkles } from "lucide-svelte";
-    import { Check, ChevronsUpDown } from "lucide-svelte";
+    import Sparkles from "lucide-svelte/icons/sparkles";
+    import Check from "lucide-svelte/icons/check";
+    import ChevronsUpDown from "lucide-svelte/icons/chevrons-up-down";
     import * as Command from "$lib/components/ui/command";
     import { cn } from "$lib/utils";
     import { tick } from "svelte";
