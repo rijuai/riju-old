@@ -15,6 +15,9 @@
             <Button variant="ghost" href="/pricing" class="hidden md:block"
                 >Pricing</Button
             >
+            <Button variant="ghost" href="/docs/roadmap" class="hidden md:block"
+                >Roadmap</Button
+            >
             <Button variant="ghost" href="/contact" class="hidden md:block"
                 >Contact</Button
             >
