@@ -26,6 +26,11 @@
             description: "Add a custom logo watermark to your presentations.",
             status: FeatureStatus["planned"],
         },
+        {
+            title: "Make Split Slide block more simple and intuitive",
+            description: "Make the split block appear beside the other block.",
+            status: FeatureStatus["planned"],
+        },
     ];
 </script>
 
