@@ -80,6 +80,7 @@
     }
 
     body {
+        font-family: "Inter", sans-serif;
         @apply bg-background text-foreground;
     }
 
