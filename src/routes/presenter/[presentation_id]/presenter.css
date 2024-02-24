@@ -1,38 +1,40 @@
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal p,
-.reveal ol li,
-.reveal ul li {
-    @apply text-left text-gray-900;
-}
+.reveal {
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    ol li,
+    ul li {
+        @apply text-left text-gray-900;
+    }
 
-.reveal h1 {
-    @apply mb-8 text-5xl;
-}
+    h1 {
+        @apply mb-8 text-5xl;
+    }
 
-.reveal h2 {
-    @apply mb-6 text-4xl;
-}
+    h2 {
+        @apply mb-6 text-4xl;
+    }
 
-.reveal p {
-    @apply mb-4 text-lg;
-}
+    p {
+        @apply mb-4 text-lg;
+    }
 
-.reveal ol li,
-.reveal ul li {
-    @apply mb-4 text-lg;
-}
+    ol li,
+    ul li {
+        @apply mb-4 text-lg;
+    }
 
-.reveal ol {
-    @apply list-decimal pl-8;
-}
+    ol {
+        @apply list-decimal pl-8;
+    }
 
-.reveal ul {
-    @apply list-disc pl-8;
-}
+    ul {
+        @apply list-disc pl-8;
+    }
 
-.reveal img {
-    @apply mx-auto my-4 rounded-lg shadow;
+    img {
+        @apply mx-auto my-4 rounded-lg shadow;
+    }
 }
