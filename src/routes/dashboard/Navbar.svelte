@@ -13,7 +13,7 @@
 </svelte:head>
 
 <nav
-    class="sticky top-0 z-10 flex items-center justify-between gap-1 bg-white px-2 py-3"
+    class="sticky top-0 z-10 flex items-center justify-between gap-1 bg-white p-2"
 >
     <Button variant="link" class="text-2xl" href="/dashboard">Riju</Button>
     <div class="flex gap-3">
