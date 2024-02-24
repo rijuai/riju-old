@@ -1,14 +1,12 @@
 <script lang="ts">
     import { Button } from "$lib/components/ui/button";
-    import Star from "lucide-svelte/icons/star";
 </script>
 
 <nav
-    class="bg-background/95 supports-[backdrop-filter]:bg-background/70 sticky top-0 z-50 px-2 py-3 backdrop-blur"
+    class="bg-background/95 supports-[backdrop-filter]:bg-background/70 sticky top-0 z-50 p-2 backdrop-blur"
 >
     <div class="flex justify-between">
         <a class="flex items-center gap-2 text-2xl font-semibold" href="/">
-            <Star class="size-6" />
             Riju</a
         >
         <div class="flex items-center gap-2">
