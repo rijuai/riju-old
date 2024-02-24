@@ -1,5 +1,5 @@
 <footer class="mx-auto flex justify-center border-t px-4 py-4">
-    <div class="text-muted-foreground flex justify-center gap-8 text-xs">
+    <div class="text-muted-foreground flex justify-center gap-12 text-sm">
         <a href="/contact">Contact</a>
         <a href="/docs/roadmap">Roadmap</a>
         <a href="/docs/privacy">Privacy Policy</a>

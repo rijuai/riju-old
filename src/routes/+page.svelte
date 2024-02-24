@@ -30,9 +30,10 @@
 
 <main class="mx-auto max-w-7xl px-4">
     <HomePageNavbar />
+
     <!-- Hero -->
-    <div class="mx-auto max-w-6xl pt-20 text-center">
-        <h1 class="text-6x mb-6 text-black">Presentations without Headache</h1>
+    <div class="mx-auto max-w-6xl pt-12 text-center">
+        <h1 class="mb-6">Presentations without <u>Headache</u></h1>
         <p
             class="text-muted-foreground mx-auto mb-12 max-w-2xl text-2xl font-normal leading-normal"
         >
@@ -57,6 +58,20 @@
             autoplay
         />
     </div>
+
+    <!-- Featured -->
+    <section class="mx-auto max-w-4xl">
+        <h4 class="text-muted-foregroun mb-12 text-center">
+            Featured on major websites
+        </h4>
+        <div
+            class="flex flex-col items-center justify-center gap-12 lg:flex-row"
+        >
+            {#each featuredCompaniesLogo as logos}
+                <img class="h-12 w-auto" src={logos} alt="Company Logo" />
+            {/each}
+        </div>
+    </section>
 
     <!-- Cards -->
     <section class="mx-auto max-w-6xl">
@@ -100,18 +115,6 @@
                     </p>
                 </Card.Content>
             </Card.Root>
-        </div>
-    </section>
-
-    <!-- Featured -->
-    <section class="mx-auto max-w-4xl">
-        <h2 class="mb-16 text-center">Featured On</h2>
-        <div
-            class="flex flex-col items-center justify-center gap-12 lg:flex-row"
-        >
-            {#each featuredCompaniesLogo as logos}
-                <img class="h-16 w-auto" src={logos} alt="Company Logo" />
-            {/each}
         </div>
     </section>
 

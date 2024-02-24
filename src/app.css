@@ -102,15 +102,15 @@
     }
 
     h4 {
-        @apply text-xl font-bold lg:text-2xl;
+        @apply text-xl font-semibold lg:text-2xl;
     }
 
     h5 {
-        @apply text-lg font-bold lg:text-xl;
+        @apply text-lg font-semibold lg:text-xl;
     }
 
     h6 {
-        @apply text-base font-bold lg:text-lg;
+        @apply text-base font-semibold lg:text-lg;
     }
 
     p {
