@@ -1,6 +1,6 @@
 import type { OutputData } from "@editorjs/editorjs";
 
-export const convertEditorJsContentToHtml = (content: OutputData): string => {
+export const convertEditorJsContentToHtml = (content: OutputData) => {
   let outputHtml = "";
   let count = 0;
   let tempHtml = "";
@@ -40,7 +40,7 @@ export const convertEditorJsContentToHtml = (content: OutputData): string => {
         addSubSection = false;
         blocks.length = 0;
       } else {
-        outputHtml += `<section>${tempHtml}</section>`;
+        outputHtml += `<section class="">${tempHtml}</section>`;
       }
 
       tempHtml = "";
@@ -50,7 +50,7 @@ export const convertEditorJsContentToHtml = (content: OutputData): string => {
   return outputHtml;
 };
 
-const getHeading = (block: any): string => {
+const getHeading = (block: any) => {
   if (!block.data || !block.data.text) return "";
 
   const level = block.data.level;
@@ -59,7 +59,7 @@ const getHeading = (block: any): string => {
   return `<h${level}>${text}</h${level}>`;
 };
 
-const getParagraph = (block: any): string => {
+const getParagraph = (block: any) => {
   if (!block.data || !block.data.text) return "";
 
   let text = block.data.text;
@@ -67,22 +67,21 @@ const getParagraph = (block: any): string => {
   return `<p>${text}</p>`;
 };
 
-const getList = (block: any): string => {
+const getList = (block: any) => {
   if (!block.data || !block.data.items) return "";
 
   let listItems = (items: any[]): string => {
-    return items
-      .map((item) => {
-        if (typeof item === "object" && item.content) {
-          let nestedListHtml =
-            item.items && item.items.length > 0
-              ? `<ul>${listItems(item.items)}</ul>`
-              : "";
-          return `<li>${item.content}${nestedListHtml}</li>`;
-        }
-        return "";
-      })
-      .join("");
+    let itemsHtml = "";
+    for (const item of items) {
+      if (typeof item === "object" && item.content) {
+        let nestedListHtml =
+          item.items && item.items.length > 0
+            ? `<ul>${listItems(item.items)}</ul>`
+            : "";
+        itemsHtml += `<li>${item.content}${nestedListHtml}</li>`;
+      }
+    }
+    return itemsHtml;
   };
 
   const style = block.data.style === "ordered" ? "ol" : "ul";
@@ -91,10 +90,10 @@ const getList = (block: any): string => {
   return list;
 };
 
-const getImage = (block: any): string => {
+const getImage = (block: any) => {
   if (!block.data || !block.data.file) return "";
 
   const src = block.data.file.url;
   const alt = block.data.caption ?? "image";
-  return `<img class="r-stretc" src="${src}" alt="${alt}" />`;
+  return `<img class="" src="${src}" alt="${alt}" />`;
 };
