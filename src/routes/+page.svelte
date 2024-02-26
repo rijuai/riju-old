@@ -28,11 +28,11 @@
     description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
 
-<main class="mx-auto max-w-7xl px-4">
+<main class="mx-auto max-w-6xl px-4">
     <HomePageNavbar />
 
     <!-- Hero -->
-    <div class="mx-auto max-w-6xl pt-12 text-center">
+    <div class="pt-12 text-center">
         <h1 class="mb-6">Presentations without <u>Headache</u></h1>
         <p
             class="text-muted-foreground mx-auto mb-12 max-w-2xl text-2xl font-normal leading-normal"
@@ -51,7 +51,7 @@
 
         <!-- Demo Video -->
         <video
-            class="rounded-lg border shadow-xl"
+            class="mx-auto max-w-5xl rounded-lg border shadow-xl"
             src={DemoVideo}
             muted
             loop
@@ -60,28 +60,25 @@
     </div>
 
     <!-- Featured -->
-    <section class="mx-auto max-w-4xl">
-        <h4 class="text-muted-foregroun mb-12 text-center">
-            Featured on major websites
-        </h4>
+    <section>
+        <h4 class="mb-12 text-center">Featured on major websites</h4>
         <div
             class="flex flex-col items-center justify-center gap-12 lg:flex-row"
         >
             {#each featuredCompaniesLogo as logos}
-                <img class="h-12 w-auto" src={logos} alt="Company Logo" />
+                <img class="h-12 w-auto" src={logos} alt="Featured companies" />
             {/each}
         </div>
     </section>
 
     <!-- Cards -->
-    <section class="mx-auto max-w-6xl">
-        <h2 class="mb-12">Focus on the content, not on the formatting</h2>
-
+    <section>
+        <h2 class="mb-12">Simple but powerful</h2>
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
             <Card.Root>
                 <Card.Header>
                     <Rocket class="mb-2 size-8" />
-                    <Card.Title>Rapid presentation creation</Card.Title>
+                    <Card.Title>Just start typing...</Card.Title>
                 </Card.Header>
                 <Card.Content>
                     Simply write your content, and Riju will automatically
