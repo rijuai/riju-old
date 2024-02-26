@@ -45,8 +45,8 @@ dependencies:
     specifier: ^0.0.13
     version: 0.0.13(svelte@4.2.11)
   lucide-svelte:
-    specifier: ^0.331.0
-    version: 0.331.0(svelte@4.2.11)
+    specifier: ^0.340.0
+    version: 0.340.0(svelte@4.2.11)
   reveal.js:
     specifier: ^5.0.4
     version: 5.0.4
@@ -2428,8 +2428,8 @@ packages:
     resolution: {integrity: sha512-2bIM8x+VAf6JT4bKAljS1qUWgMsqZRPGJS6FSahIMPVvctcNhyVp7AJu7quxOW9jwkryBReKZY5tY5JYv2n/7Q==}
     engines: {node: 14 || >=16.14}
 
-  /lucide-svelte@0.331.0(svelte@4.2.11):
-    resolution: {integrity: sha512-QlXeBFJ2ipe5Fgt7qKx1v37FLuA9zFa+68tASm5tGgz+ocNdMkXDxSIsED2SegEZCuuiFW+UAckD2H+susexrQ==}
+  /lucide-svelte@0.340.0(svelte@4.2.11):
+    resolution: {integrity: sha512-1l/kRheTpjXVQnahgLLYNu7PF37MUe69FqMG5/T23AnjCuhJCh+malVwKWaJp46AVTgNQOboSakvfdTC81r1eA==}
     peerDependencies:
       svelte: ^3 || ^4 || ^5.0.0-next.42
     dependencies:
