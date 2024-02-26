@@ -7,15 +7,18 @@
     import DemoVideo from "$lib/assets/videos/riju-demo.mp4";
     import * as Card from "$lib/components/ui/card";
     import Layout from "lucide-svelte/icons/layout-grid";
-    import Pointer from "lucide-svelte/icons/pointer";
-    import Rocket from "lucide-svelte/icons/rocket";
     import ArrowRight from "lucide-svelte/icons/arrow-right";
     import DailyCompanyNewsLogo from "$lib/assets/images/featured/dailycompanynews-logo.png";
     import OpenFutureLogo from "$lib/assets/images/featured/openfuture-logo.png";
     import SubscribedFyiLogo from "$lib/assets/images/featured/subscribedfyi-inverted-logo.png";
     import SuperbCrewLogo from "$lib/assets/images/featured/superbcrew-logo.png";
+    import PaddleLaunchpadLogo from "$lib/assets/images/featured/paddle-launchpad-finalist-sm.webp";
+    import ProductHunterLogo from "$lib/assets/images/featured/product-hunt-logo.png";
+    import Sparkles from "lucide-svelte/icons/sparkles";
+    import Text from "lucide-svelte/icons/text";
 
     const featuredCompaniesLogo = [
+        ProductHunterLogo,
         OpenFutureLogo,
         DailyCompanyNewsLogo,
         SubscribedFyiLogo,
@@ -28,30 +31,26 @@
     description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
 
-<main class="mx-auto max-w-6xl px-4">
+<main class="mx-auto max-w-5xl px-4">
     <HomePageNavbar />
 
     <!-- Hero -->
-    <div class="pt-12 text-center">
+    <div class="pt-16 text-center">
         <h1 class="mb-6">Presentations without <u>Headache</u></h1>
-        <p
-            class="text-muted-foreground mx-auto mb-12 max-w-2xl text-2xl font-normal leading-normal"
-        >
+        <p class="text-muted-foreground mx-auto mb-16 max-w-2xl text-xl">
             Say goodbye to boring presentations. Meet Riju — the free, intuitive
             presentation builder you’ve been looking for.
         </p>
-        <div class="mb-2.5 flex flex-col justify-center gap-4 md:flex-row">
-            <Button size="lg" class="py-6 text-lg" href="/signin"
-                >Get Started<ArrowRight class="ml-2" /></Button
+        <div class="mb-20 space-y-2">
+            <Button size="lg" class="font-semibold" href="/signin"
+                >Get Started<ArrowRight class="ml-2 size-5" /></Button
             >
+            <p class="text-muted-foreground text-sm">No credit card required</p>
         </div>
-        <p class="text-muted-foreground mb-20 text-sm">
-            No credit card required
-        </p>
 
         <!-- Demo Video -->
         <video
-            class="mx-auto max-w-5xl rounded-lg border shadow-xl"
+            class="mx-auto rounded-lg border shadow-xl"
             src={DemoVideo}
             muted
             loop
@@ -74,21 +73,21 @@
     <!-- Cards -->
     <section>
         <h2 class="mb-12">Simple but powerful</h2>
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
             <Card.Root>
                 <Card.Header>
-                    <Rocket class="mb-2 size-8" />
+                    <Text class="mb-2" />
                     <Card.Title>Just start typing...</Card.Title>
                 </Card.Header>
                 <Card.Content>
-                    Simply write your content, and Riju will automatically
-                    convert it into a well-structured and visually appealing
-                    presentation.
+                    Riju is a new type of online presentation maker that works
+                    like a text document. Just start typing on the page and
+                    insert blocks same as Notion.
                 </Card.Content>
             </Card.Root>
             <Card.Root>
                 <Card.Header>
-                    <Pointer class="mb-2 size-8" />
+                    <Sparkles class="mb-2" />
                     <Card.Title>Effortless theme customization</Card.Title>
                 </Card.Header>
                 <Card.Content>
@@ -99,10 +98,10 @@
                     </p>
                 </Card.Content>
             </Card.Root>
-            <Card.Root>
+            <Card.Root class="md:col-span-2">
                 <Card.Header>
-                    <Layout class="mb-2 size-8" />
-                    <Card.Title>User-friendly interface</Card.Title>
+                    <Layout class="mb-2" />
+                    <Card.Title>Super simple UI</Card.Title>
                 </Card.Header>
                 <Card.Content>
                     <p>
@@ -114,6 +113,8 @@
             </Card.Root>
         </div>
     </section>
+
+    <section></section>
 
     <CTA />
     <Footer />
