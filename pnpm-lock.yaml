@@ -33,8 +33,8 @@ dependencies:
     specifier: ^2.39.7
     version: 2.39.7
   '@types/reveal.js':
-    specifier: ^4.4.8
-    version: 4.4.8
+    specifier: ^5.0.1
+    version: 5.0.1
   bits-ui:
     specifier: ^0.18.1
     version: 0.18.1(svelte@4.2.11)
@@ -1882,8 +1882,8 @@ packages:
     resolution: {integrity: sha512-Sk/uYFOBAB7mb74XcpizmH0KOR2Pv3D2Hmrh1Dmy5BmK3MpdSa5kqZcg6EKBdklU0bFXX9gCfzvpnyUehrPIuA==}
     dev: true
 
-  /@types/reveal.js@4.4.8:
-    resolution: {integrity: sha512-ADWVEgRLNVRE+J5yGjFDogsAaeVz+FKRVgvpLk1tgNewocXQd6wuKSknfamCVgZyUY9/IgOlkNKh9a2iIaconA==}
+  /@types/reveal.js@5.0.1:
+    resolution: {integrity: sha512-SrfaT84af/yfobaYH2Bz5uLmyyhgSZ5i4vXC7JM3AmJMbeUW/d/DTXuudj70Ddd8rcQxiwD52XWxdjO+xnDrPw==}
     dev: false
 
   /@types/ws@8.5.10:
