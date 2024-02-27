@@ -20,7 +20,7 @@
                 >Contact</Button
             >
             <Button variant="ghost" href="/signin">Log in</Button>
-            <Button variant="default" href="/signin">Sign up</Button>
+            <Button href="/signin">Sign up</Button>
         </div>
     </div>
 </nav>
