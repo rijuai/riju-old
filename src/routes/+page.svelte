@@ -12,7 +12,6 @@
     import OpenFutureLogo from "$lib/assets/images/featured/openfuture-logo.png";
     import SubscribedFyiLogo from "$lib/assets/images/featured/subscribedfyi-inverted-logo.png";
     import SuperbCrewLogo from "$lib/assets/images/featured/superbcrew-logo.png";
-    import PaddleLaunchpadLogo from "$lib/assets/images/featured/paddle-launchpad-finalist-sm.webp";
     import ProductHunterLogo from "$lib/assets/images/featured/product-hunt-logo.png";
     import Sparkles from "lucide-svelte/icons/sparkles";
     import Text from "lucide-svelte/icons/text";
@@ -31,9 +30,9 @@
     description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
 
-<main class="mx-auto max-w-5xl px-4">
-    <HomePageNavbar />
+<HomePageNavbar />
 
+<main class="mx-auto max-w-5xl px-4">
     <!-- Hero -->
     <div class="pt-16 text-center">
         <h1 class="mb-6">Presentations without <u>Headache</u></h1>
@@ -77,18 +76,20 @@
             <Card.Root>
                 <Card.Header>
                     <Text class="mb-2" />
-                    <Card.Title>Just start typing...</Card.Title>
+                    <Card.Title tag="h4">Just start typing...</Card.Title>
                 </Card.Header>
                 <Card.Content>
                     Riju is a new type of online presentation maker that works
                     like a text document. Just start typing on the page and
-                    insert blocks same as Notion.
+                    insert blocks as needed.
                 </Card.Content>
             </Card.Root>
             <Card.Root>
                 <Card.Header>
                     <Sparkles class="mb-2" />
-                    <Card.Title>Effortless theme customization</Card.Title>
+                    <Card.Title tag="h4"
+                        >Effortless theme customization</Card.Title
+                    >
                 </Card.Header>
                 <Card.Content>
                     <p>
@@ -101,7 +102,7 @@
             <Card.Root class="md:col-span-2">
                 <Card.Header>
                     <Layout class="mb-2" />
-                    <Card.Title>Super simple UI</Card.Title>
+                    <Card.Title tag="h4">Super simple UI</Card.Title>
                 </Card.Header>
                 <Card.Content>
                     <p>
