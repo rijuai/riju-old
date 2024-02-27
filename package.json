@@ -1,6 +1,6 @@
 {
   "name": "riju",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": true,
   "scripts": {
     "dev": "vite dev",
@@ -30,8 +30,6 @@
     "@editorjs/image": "^2.9.0",
     "@editorjs/nested-list": "^1.4.2",
     "@editorjs/table": "^2.3.0",
-    "@supabase/auth-ui-shared": "^0.1.8",
-    "@supabase/auth-ui-svelte": "^0.2.9",
     "@supabase/supabase-js": "^2.39.7",
     "@types/reveal.js": "^5.0.1",
     "bits-ui": "^0.18.3",
@@ -39,6 +37,7 @@
     "cmdk-sv": "^0.0.13",
     "lucide-svelte": "^0.340.0",
     "reveal.js": "^5.0.5",
+    "svelte-radix": "^1.0.1",
     "tailwind-merge": "^2.2.1",
     "tailwind-variants": "^0.2.0",
     "tslib": "^2.6.2",

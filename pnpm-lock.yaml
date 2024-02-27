@@ -26,12 +26,6 @@ dependencies:
   '@editorjs/table':
     specifier: ^2.3.0
     version: 2.3.0
-  '@supabase/auth-ui-shared':
-    specifier: ^0.1.8
-    version: 0.1.8(@supabase/supabase-js@2.39.7)
-  '@supabase/auth-ui-svelte':
-    specifier: ^0.2.9
-    version: 0.2.9(@supabase/supabase-js@2.39.7)
   '@supabase/supabase-js':
     specifier: ^2.39.7
     version: 2.39.7
@@ -53,6 +47,9 @@ dependencies:
   reveal.js:
     specifier: ^5.0.5
     version: 5.0.5
+  svelte-radix:
+    specifier: ^1.0.1
+    version: 1.0.1(svelte@4.2.12)
   tailwind-merge:
     specifier: ^2.2.1
     version: 2.2.1
@@ -1698,29 +1695,6 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@stitches/core@1.2.8:
-    resolution: {integrity: sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==}
-    dev: false
-
-  /@supabase/auth-ui-shared@0.1.8(@supabase/supabase-js@2.39.7):
-    resolution: {integrity: sha512-ouQ0DjKcEFg+0gZigFIEgu01V3e6riGZPzgVD0MJsCBNsMsiDT74+GgCEIElMUpTGkwSja3xLwdFRFgMNFKcjg==}
-    peerDependencies:
-      '@supabase/supabase-js': ^2.21.0
-    dependencies:
-      '@supabase/supabase-js': 2.39.7
-    dev: false
-
-  /@supabase/auth-ui-svelte@0.2.9(@supabase/supabase-js@2.39.7):
-    resolution: {integrity: sha512-oc+SRS7ykc5FCssoqT0IiK5KF/obwnWko5ePaaMTDwUEQOavv+O8/poAh2lRTKRJCqJMqOOpMS/lUE6pHcma3g==}
-    peerDependencies:
-      '@supabase/supabase-js': ^2.21.0
-    dependencies:
-      '@stitches/core': 1.2.8
-      '@supabase/auth-ui-shared': 0.1.8(@supabase/supabase-js@2.39.7)
-      '@supabase/supabase-js': 2.39.7
-      svelte: 3.59.2
-    dev: false
-
   /@supabase/functions-js@2.1.5:
     resolution: {integrity: sha512-BNzC5XhCzzCaggJ8s53DP+WeHHGT/NfTsx2wUSSGKR2/ikLFQTBCDzMvGz/PxYMqRko/LwncQtKXGOYp1PkPaw==}
     dependencies:
@@ -2958,9 +2932,12 @@ packages:
       typescript: 5.3.3
     dev: true
 
-  /svelte@3.59.2:
-    resolution: {integrity: sha512-vzSyuGr3eEoAtT/A6bmajosJZIUWySzY2CzB3w2pgPvnkUjGqlDnsNnA0PMO+mMAhuyMul6C2uuZzY6ELSkzyA==}
-    engines: {node: '>= 8'}
+  /svelte-radix@1.0.1(svelte@4.2.12):
+    resolution: {integrity: sha512-X9RE04aygpS5klJALPdkyqeOSKigVJQDy6nycUOmycqV+7ZOQxKvzrwklMi1o8AhTUTn2QExlBVygJbYZoL58A==}
+    peerDependencies:
+      svelte: ^3.54.0 || ^4.0.0 || ^5.0.0
+    dependencies:
+      svelte: 4.2.12
     dev: false
 
   /svelte@4.2.12:
