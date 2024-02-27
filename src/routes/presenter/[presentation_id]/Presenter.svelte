@@ -1,6 +1,6 @@
 <script lang="ts">
     import "./presenter.css";
-    import { currentTheme, transitionType } from "$lib/stores/presentation";
+    import { currentTheme, transitionType } from "./store";
     import Reveal from "reveal.js";
     import "reveal.js/dist/reveal.css";
     import { onDestroy, onMount } from "svelte";

@@ -4,11 +4,7 @@
     import * as Popover from "$lib/components/ui/popover";
     import * as Select from "$lib/components/ui/select";
     import { savePresentationTheme } from "$lib/db/presentation";
-    import {
-        changeTheme,
-        currentTheme,
-        transitionType,
-    } from "$lib/stores/presentation";
+    import { changeTheme, currentTheme, transitionType } from "./store";
     import Sparkles from "lucide-svelte/icons/sparkles";
     import Check from "lucide-svelte/icons/check";
     import ChevronsUpDown from "lucide-svelte/icons/chevrons-up-down";

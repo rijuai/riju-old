@@ -5,7 +5,7 @@
     import * as Popover from "$lib/components/ui/popover";
     import { Switch } from "$lib/components/ui/switch";
     import { supabase } from "$lib/config/supabase";
-    import { isPresentationPublic } from "$lib/stores/presentation";
+    import { isPresentationPublic } from "./store";
 
     export let presentationId: string;
 

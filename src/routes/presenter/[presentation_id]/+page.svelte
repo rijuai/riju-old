@@ -6,7 +6,7 @@
         currentTheme,
         isPresentationPublic,
         transitionType,
-    } from "$lib/stores/presentation";
+    } from "./store";
     import type { PageData } from "./$types";
 
     export let data: PageData;
