@@ -20,6 +20,8 @@ export const convertEditorJsContentToHtml = (content: OutputData) => {
       tempHtml += getList(block);
     } else if (blockType === "image") {
       tempHtml = `<div>${tempHtml}</div><div>${getImage(block)}</div>`;
+    } else if (blockType === "table") {
+      tempHtml += getTable(block);
     } else if (blockType === "splitSlide") {
       addSubSection = true;
       blocks.push(tempHtml);
@@ -96,4 +98,33 @@ const getImage = (block: any) => {
   const src = block.data.file.url;
   const alt = block.data.caption ?? "image";
   return `<img class="" src="${src}" alt="${alt}" />`;
+};
+
+const getTable = (block: any) => {
+  if (!block.data || !block.data.content) return "";
+
+  let tableHtml = "<table>";
+
+  // Check if there is a header configuration and output the header row
+  if (block.data.withHeadings) {
+    tableHtml += "<thead><tr>";
+    for (const header of block.data.content[0]) {
+      tableHtml += `<th>${header}</th>`;
+    }
+    tableHtml += "</tr></thead>";
+    // Remove the header row from the content
+    block.data.content.shift();
+  }
+
+  tableHtml += "<tbody>";
+  for (const row of block.data.content) {
+    tableHtml += "<tr>";
+    for (const cell of row) {
+      tableHtml += `<td>${cell}</td>`;
+    }
+    tableHtml += "</tr>";
+  }
+  tableHtml += "</tbody></table>";
+
+  return tableHtml;
 };

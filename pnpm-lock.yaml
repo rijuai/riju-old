@@ -23,6 +23,9 @@ dependencies:
   '@editorjs/nested-list':
     specifier: ^1.4.2
     version: 1.4.2
+  '@editorjs/table':
+    specifier: ^2.3.0
+    version: 2.3.0
   '@supabase/auth-ui-shared':
     specifier: ^0.1.8
     version: 0.1.8(@supabase/supabase-js@2.39.7)
@@ -806,6 +809,12 @@ packages:
     resolution: {integrity: sha512-qb1dAoJ+bihqmlR3822TC2GuIxEjTCLTZsZVWNces3uJIZ+W4019G3IJKBt/MOOgz4Evzad/RvUEKwPCPe6YOQ==}
     dependencies:
       '@codexteam/icons': 0.0.2
+    dev: false
+
+  /@editorjs/table@2.3.0:
+    resolution: {integrity: sha512-/dKE6A5FkukX/FpvIyQGsewwXglZk8YbXpEp9vkB6Ec4ETLeGJMxObCcYqbXqVod+IU/a1tFH+j3lsD8ASD41g==}
+    dependencies:
+      '@codexteam/icons': 0.0.6
     dev: false
 
   /@esbuild/aix-ppc64@0.19.12:

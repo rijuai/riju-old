@@ -37,4 +37,24 @@
     img {
         @apply mx-auto my-4 rounded-lg shadow;
     }
+
+    table {
+        @apply my-8 w-full border-collapse rounded-xl border text-left text-sm;
+
+        thead {
+            @apply rounded-t-lg;
+
+            th {
+                @apply border-b border-gray-200 bg-white/35 px-4 py-2 backdrop-blur-xl;
+            }
+        }
+
+        tbody td {
+            @apply border-b bg-slate-100 bg-white/25 px-4 py-2 backdrop-blur-lg;
+        }
+
+        tbody tr:last-child td {
+            @apply border-b-0;
+        }
+    }
 }

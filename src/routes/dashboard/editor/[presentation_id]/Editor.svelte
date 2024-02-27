@@ -8,6 +8,7 @@
     import { onMount } from "svelte";
     import SplitSlide from "./splitSide";
     import CustomImage from "./CustomImage";
+    import Table from "@editorjs/table";
 
     export let presentationId: string;
     export let content: OutputData;
@@ -86,6 +87,9 @@
                         },
                     },
                 },
+            },
+            table: {
+                class: Table,
             },
         },
     });
