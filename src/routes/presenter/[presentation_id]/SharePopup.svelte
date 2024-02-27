@@ -42,7 +42,7 @@
                             on:click={() => {
                                 let url = $page.url;
 
-                                /* Copy to clipboard */
+                                /* Copy URL to clipboard */
                                 navigator.clipboard.writeText(String(url));
                             }}>Copy URL</Button
                         >
