@@ -3,7 +3,7 @@
 </script>
 
 <nav
-    class="bg-background/95 supports-[backdrop-filter]:bg-background/70 container sticky top-0 z-50 mx-auto py-2 backdrop-blur"
+    class="bg-background/95 supports-[backdrop-filter]:bg-background/70 sticky top-0 z-50 mx-auto px-4 py-2 backdrop-blur"
 >
     <div class="flex justify-between">
         <a class="flex items-center gap-2 text-2xl font-semibold" href="/">
