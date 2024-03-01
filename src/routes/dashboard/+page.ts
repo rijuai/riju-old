@@ -1,17 +1,12 @@
-import { supabase } from "$lib/config/supabase";
 import type { PageLoad } from "./$types";
+import pb from "$lib/pocketbase";
 
-const getPresentations = async () => {
-  const { data } = await supabase
-    .from("presentations")
-    .select("id, title")
-    .order("updated_at", { ascending: false });
+export const load: PageLoad = async () => {
+  const presentations = await pb.collection("presentations").getFullList({
+    sort: "-updated",
+  });
 
-  return data ? data : null;
+  return {
+    presentations: presentations,
+  };
 };
-
-export const load = (async () => {
-  const presentations = await getPresentations();
-
-  return { presentations };
-}) satisfies PageLoad;

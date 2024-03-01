@@ -1,7 +1,6 @@
 <script lang="ts">
     import EditorJS, { type OutputData } from "@editorjs/editorjs";
     import Header from "@editorjs/header";
-    import { supabase } from "$lib/config/supabase";
     import NewSlide from "./newSlide";
     import NestedList from "@editorjs/nested-list";
     import { uploadToR2 } from "$lib/utils/uploadToR2";
@@ -9,6 +8,7 @@
     import SplitSlide from "./splitSide";
     import CustomImage from "./CustomImage";
     import Table from "@editorjs/table";
+    import pb from "$lib/pocketbase";
 
     export let presentationId: string;
     export let content: OutputData;
@@ -24,16 +24,17 @@
         onChange: async () => {
             const outputData = await editor.save();
             const title = outputData.blocks[0].data.text;
-            const currentTime = new Date().toISOString();
 
             clearTimeout(debounceTimer);
             debounceTimer = setTimeout(async () => {
-                await updatePresentation(
-                    presentationId,
-                    currentTime,
-                    title,
-                    outputData,
-                );
+                const data = {
+                    title: title,
+                    content: outputData,
+                };
+
+                const record = await pb
+                    .collection("presentations")
+                    .update(presentationId, data);
             }, 500);
         },
 
@@ -93,21 +94,6 @@
             },
         },
     });
-
-    const updatePresentation = async (
-        presentationId: string,
-        updatedAt: string,
-        title: string,
-        content: JSON,
-    ) => {
-        const { error } = await supabase
-            .from("presentations")
-            .update({ title: title, content: content, updated_at: updatedAt })
-            .eq("id", presentationId);
-        console.log(error);
-
-        return error ? false : true;
-    };
 
     onMount(async () => {
         await editor.isReady;

@@ -1,6 +1,6 @@
 export const templates = [
   {
-    name: "Project Demo",
+    title: "Project Demo",
     theme: {
       backgroundCss:
         "background-image: repeating-linear-gradient(45deg, rgb(249, 249, 249) 0px, rgb(249, 249, 249) 109px,rgb(234, 234, 234) 109px, rgb(234, 234, 234) 218px,rgb(242, 242, 242) 218px, rgb(242, 242, 242) 327px);",
@@ -158,7 +158,7 @@ export const templates = [
     },
   },
   {
-    name: "Pitch Deck",
+    title: "Pitch Deck",
     theme: {
       backgroundCss:
         "background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);",
@@ -427,7 +427,7 @@ export const templates = [
     },
   },
   {
-    name: "Company Info",
+    title: "Company Info",
     theme: {
       backgroundCss:
         "background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);",
@@ -592,6 +592,6 @@ export const templates = [
     },
   },
   {
-    name: "Blank",
+    title: "Blank",
   },
 ];

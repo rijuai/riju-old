@@ -3,7 +3,6 @@
     import { Label } from "$lib/components/ui/label";
     import * as Popover from "$lib/components/ui/popover";
     import * as Select from "$lib/components/ui/select";
-    import { savePresentationTheme } from "$lib/db/presentation";
     import { changeTheme, currentTheme, transitionType } from "./store";
     import Sparkles from "lucide-svelte/icons/sparkles";
     import Check from "lucide-svelte/icons/check";
@@ -11,6 +10,7 @@
     import * as Command from "$lib/components/ui/command";
     import { cn } from "$lib/utils";
     import { tick } from "svelte";
+    import pb from "$lib/pocketbase";
 
     export let presentationId: string;
 
@@ -75,7 +75,10 @@
     }
 
     $: selectedFontUrl = getFontUrl(selectedFont);
-    $: document.querySelector(".reveal").style.fontFamily = selectedFont;
+    // $: {
+    //     const element = document.getElementsByClassName("reveal");
+    //     element.style.fontFamily = selectedFont;
+    // }
 </script>
 
 <svelte:head>
@@ -94,13 +97,17 @@
                 size="sm"
                 on:click={async () => {
                     changeTheme();
-                    const response = await savePresentationTheme(
-                        presentationId,
-                        {
+
+                    const data = {
+                        theme: {
                             backgroundCss: $currentTheme,
                             transitionType: $transitionType,
                         },
-                    );
+                    };
+
+                    const record = await pb
+                        .collection("presentations")
+                        .update(presentationId, data);
                 }}
                 >Change
             </Button>
@@ -113,10 +120,17 @@
                 selected={$transitionType}
                 onSelectedChange={async (value) => {
                     $transitionType = value?.value;
-                    await savePresentationTheme(presentationId, {
-                        backgroundCss: $currentTheme,
-                        transitionType: $transitionType,
-                    });
+
+                    const data = {
+                        theme: {
+                            backgroundCss: $currentTheme,
+                            transitionType: $transitionType,
+                        },
+                    };
+
+                    const record = await pb
+                        .collection("presentations")
+                        .update(presentationId, data);
                 }}
             >
                 <Select.Trigger>

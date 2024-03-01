@@ -3,7 +3,6 @@
     import SharePopup from "./SharePopup.svelte";
     import ThemeSettingsPopup from "./ThemeSettingsPopup.svelte";
     import { Button } from "$lib/components/ui/button";
-    import { isUserAuthenticated } from "$lib/db/auth";
     import X from "lucide-svelte/icons/x";
     import Maximize from "lucide-svelte/icons/maximize";
     import { onMount } from "svelte";
@@ -22,7 +21,7 @@
     };
 
     onMount(async () => {
-        isUserSignedIn = await isUserAuthenticated();
+        // isUserSignedIn = await isUserAuthenticated();
     });
 </script>
 
@@ -31,10 +30,10 @@
 >
     <Button variant="link" class="text-2xl" href="/">Riju</Button>
     <div class="flex gap-4">
-        {#if isUserSignedIn}
-            <SharePopup {presentationId} />
-            <ThemeSettingsPopup {presentationId} />
-        {/if}
+        <!-- {#if isUserSignedIn} -->
+        <SharePopup {presentationId} />
+        <ThemeSettingsPopup {presentationId} />
+        <!-- {/if} -->
         <Button
             variant="ghost"
             size="icon"
@@ -46,14 +45,14 @@
                 }
             }}><Maximize class="size-4" /></Button
         >
-        {#if isUserSignedIn}
-            <Button
-                variant="ghost"
-                size="icon"
-                on:click={() => {
-                    goto(`/dashboard/editor/${presentationId}`);
-                }}><X class="size-4" /></Button
-            >
-        {/if}
+        <!-- {#if isUserSignedIn} -->
+        <Button
+            variant="ghost"
+            size="icon"
+            on:click={() => {
+                goto(`/dashboard/editor/${presentationId}`);
+            }}><X class="size-4" /></Button
+        >
+        <!-- {/if} -->
     </div>
 </nav>

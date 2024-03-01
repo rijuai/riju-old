@@ -2,9 +2,10 @@
     import { goto } from "$app/navigation";
     import { page } from "$app/stores";
     import { Button } from "$lib/components/ui/button";
-    import { createPresentation } from "$lib/db/presentation";
     import PencilLine from "lucide-svelte/icons/pencil-line";
     import Play from "lucide-svelte/icons/play";
+    import pb from "$lib/pocketbase";
+    import { userId } from "$lib/stores/user";
 </script>
 
 <!-- Tally forms script -->
@@ -41,10 +42,16 @@
             {#if $page.url.pathname === "/dashboard"}
                 <Button
                     on:click={async () => {
-                        const presentationId = await createPresentation(
-                            "Untitled Presentation",
-                        );
-                        goto(`/dashboard/editor/${presentationId}`);
+                        const data = {
+                            title: "Untitled Presentation",
+                            user_id: $userId,
+                        };
+
+                        const { id } = await pb
+                            .collection("presentations")
+                            .create(data);
+
+                        goto(`/dashboard/editor/${id}`);
                     }}
                 >
                     <PencilLine class="mr-2 size-4" />

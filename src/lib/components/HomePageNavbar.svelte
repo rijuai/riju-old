@@ -10,9 +10,6 @@
             Riju</a
         >
         <div class="flex items-center gap-2">
-            <Button variant="ghost" href="/pricing" class="hidden md:block"
-                >Pricing</Button
-            >
             <Button variant="ghost" href="/docs/roadmap" class="hidden md:block"
                 >Roadmap</Button
             >

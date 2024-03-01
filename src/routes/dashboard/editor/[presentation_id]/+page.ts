@@ -1,21 +1,16 @@
-import { supabase } from "$lib/config/supabase";
+import pb from "$lib/pocketbase";
 import type { PageLoad } from "./$types";
 
-const getPresentationContent = async (presentationId: string) => {
-  const { data } = await supabase
-    .from("presentations")
-    .select("content")
-    .eq("id", presentationId);
-
-  return data ? data[0] : null;
-};
-
-export const load = (async ({ params }) => {
-  const presentationId = params.presentation_id;
-  const { content } = await getPresentationContent(presentationId);
+export const load: PageLoad = async ({ params }) => {
+  const { presentation_id } = params;
+  const { content } = await pb
+    .collection("presentations")
+    .getOne(presentation_id, {
+      expand: "title,content",
+    });
 
   return {
     content,
-    presentationId,
+    presentationId: presentation_id,
   };
-}) satisfies PageLoad;
+};

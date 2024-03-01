@@ -1,13 +1,7 @@
 <script lang="ts">
     import HelpCircle from "lucide-svelte/icons/help-circle";
-    import { supabase } from "$lib/config/supabase";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
-    import { goto } from "$app/navigation";
-
-    const signOut = async () => {
-        await supabase.auth.signOut();
-        goto("/");
-    };
+    import pb from "$lib/pocketbase";
 </script>
 
 <DropdownMenu.Root>
@@ -28,7 +22,7 @@
             <DropdownMenu.Item href="/contact">Contact Us</DropdownMenu.Item>
             <DropdownMenu.Item
                 on:click={() => {
-                    signOut();
+                    pb.authStore.clear();
                 }}>Sign Out</DropdownMenu.Item
             >
         </DropdownMenu.Group>

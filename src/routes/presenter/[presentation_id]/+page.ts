@@ -1,33 +1,22 @@
-import { supabase } from "$lib/config/supabase";
+import pb from "$lib/pocketbase";
 import type { PageLoad } from "./$types";
 import { convertEditorJsContentToHtml } from "./converter";
 
 export const ssr = false;
 
-const getPresentationData = async (presentationId: string) => {
-  const { data } = await supabase
-    .from("presentations")
-    .select("content, theme, is_public")
-    .eq("id", presentationId);
-
-  return data ? data[0] : null;
-};
-
 export const load: PageLoad = async ({ params }) => {
   const presentationId = params.presentation_id;
-  const presentationData = await getPresentationData(presentationId);
-  const {
-    content = [],
-    theme = null,
-    is_public: isPublic = false,
-  } = presentationData || {};
+
+  const { theme, is_public, id, content } = await pb
+    .collection("presentations")
+    .getOne(presentationId);
 
   const htmlOutput = convertEditorJsContentToHtml(content);
 
   return {
     theme,
-    isPublic,
+    isPublic: is_public,
     htmlOutput,
-    presentationId,
+    presentationId: id,
   };
 };

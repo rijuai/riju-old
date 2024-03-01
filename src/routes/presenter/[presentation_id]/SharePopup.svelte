@@ -4,7 +4,7 @@
     import { Label } from "$lib/components/ui/label";
     import * as Popover from "$lib/components/ui/popover";
     import { Switch } from "$lib/components/ui/switch";
-    import { supabase } from "$lib/config/supabase";
+    import pb from "$lib/pocketbase";
     import { isPresentationPublic } from "./store";
 
     export let presentationId: string;
@@ -13,12 +13,13 @@
         presentationId: string,
         isPublic: boolean,
     ) => {
-        const { error } = await supabase
-            .from("presentations")
-            .update({ is_public: isPublic })
-            .eq("id", presentationId);
+        const data = {
+            is_public: isPublic,
+        };
 
-        return error ? false : true;
+        const record = await pb
+            .collection("presentations")
+            .update(presentationId, data);
     };
 
     $: {

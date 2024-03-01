@@ -3,20 +3,21 @@
     import * as Card from "$lib/components/ui/card";
     import { Input } from "$lib/components/ui/input";
     import { Label } from "$lib/components/ui/label";
-    import { supabase } from "$lib/config/supabase";
+    import pb from "$lib/pocketbase";
     import { onMount } from "svelte";
 
     let email: string;
 
     const getUserEmail = async () => {
-        const { data } = await supabase.auth.getSession();
-        const userEmail = data.session?.user.email;
+        const record = await pb.collection("users").getOne("RECORD_ID", {
+            expand: "relField1,relField2.subRelField",
+        });
 
-        return userEmail ? userEmail : null;
+        // return userEmail ? userEmail : null;
     };
 
     onMount(async () => {
-        email = (await getUserEmail()) ?? "";
+        // email = (await getUserEmail()) ?? "";
     });
 </script>
 

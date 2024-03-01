@@ -3,11 +3,6 @@
     import MetaTags from "$lib/components/MetaTags.svelte";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import * as Table from "$lib/components/ui/table";
-    import { supabase } from "$lib/config/supabase";
-    import {
-        createPresentation,
-        getPresentationContent,
-    } from "$lib/db/presentation";
     import ExternalLink from "lucide-svelte/icons/external-link";
     import MoreHorizontal from "lucide-svelte/icons/more-horizontal";
     import Trash2 from "lucide-svelte/icons/trash-2";
@@ -15,17 +10,15 @@
     import type { OutputData } from "@editorjs/editorjs";
     import { templates } from "./templates";
     import Button from "$lib/components/ui/button/button.svelte";
+    import pb from "$lib/pocketbase";
+    import { userId } from "$lib/stores/user";
 
     export let data: PageData;
     $: ({ presentations } = data);
+    $: console.log(presentations);
 
-    const deletePresentation = async (presentationId: string) => {
-        const { error } = await supabase
-            .from("presentations")
-            .delete()
-            .eq("id", presentationId);
-
-        return error ? false : true;
+    const deletePresentation = async (id: string) => {
+        await pb.collection("presentations").delete(id);
     };
 
     const deleteImagesInR2 = async (objectKeys: string[]) => {
@@ -64,18 +57,24 @@
     <div>
         <h4 class="text-muted-foreground mb-4 font-medium">Templates</h4>
         <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {#each templates as { name, theme, content }}
+            {#each templates as { title, theme, content }}
                 <Button
                     variant="outline"
                     class="p-12"
                     on:click={async () => {
-                        const presentationId = await createPresentation(
-                            name,
-                            content,
-                            theme,
-                        );
-                        goto(`/dashboard/editor/${presentationId}`);
-                    }}>{name}</Button
+                        const data = {
+                            content: content,
+                            user_id: $userId,
+                            theme: theme,
+                            title: title,
+                        };
+
+                        const { id } = await pb
+                            .collection("presentations")
+                            .create(data);
+
+                        goto(`/dashboard/editor/${id}`);
+                    }}>{title}</Button
                 >
             {/each}
         </div>
@@ -122,24 +121,13 @@
                                             class="text-destructive"
                                             on:click={async () => {
                                                 let editorOutput =
-                                                    await getPresentationContent(
-                                                        id,
-                                                    );
+                                                    deletePresentation(id);
+
                                                 await deleteImages(
                                                     editorOutput?.content,
                                                 );
 
-                                                let result =
-                                                    await deletePresentation(
-                                                        id,
-                                                    );
-                                                if (result) {
-                                                    console.log(
-                                                        "Successfully deleted presentation",
-                                                    );
-
-                                                    location.reload();
-                                                }
+                                                location.reload();
                                             }}
                                             ><Trash2
                                                 class="mr-3 size-4"
