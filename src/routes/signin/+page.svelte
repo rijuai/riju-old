@@ -4,9 +4,14 @@
     import pb from "$lib/pocketbase";
 
     const signIn = async () => {
+        let w = window.open();
+
         const authData = await pb.collection("users").authWithOAuth2({
             provider: "google",
             redirectUrl: "https://riju.ai/dashboard",
+            urlCallback: (url) => {
+                w.location.href = url;
+            },
         });
     };
 </script>
