@@ -44,7 +44,7 @@
                     on:click={async () => {
                         const data = {
                             title: "Untitled Presentation",
-                            user_id: $userId,
+                            creator: $userId,
                         };
 
                         const { id } = await pb

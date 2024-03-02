@@ -15,7 +15,6 @@
 
     export let data: PageData;
     $: ({ presentations } = data);
-    $: console.log(presentations);
 
     const deletePresentation = async (id: string) => {
         await pb.collection("presentations").delete(id);
@@ -64,7 +63,7 @@
                     on:click={async () => {
                         const data = {
                             content: content,
-                            user_id: $userId,
+                            creator: $userId,
                             theme: theme,
                             title: title,
                         };

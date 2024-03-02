@@ -6,7 +6,7 @@ export const load: PageLoad = async ({ params }) => {
   const { content } = await pb
     .collection("presentations")
     .getOne(presentation_id, {
-      expand: "title,content",
+      expand: "content",
     });
 
   return {
