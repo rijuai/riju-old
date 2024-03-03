@@ -44,7 +44,9 @@
             <Button size="lg" class="font-semibold" href="/signin"
                 >Get Started<ArrowRight class="ml-2 size-5" /></Button
             >
-            <p class="text-muted-foreground text-sm">No credit card required</p>
+            <p class="text-muted-foreground text-sm">
+                No credit card required. Fully free.
+            </p>
         </div>
 
         <!-- Demo Video -->
