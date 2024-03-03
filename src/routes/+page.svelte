@@ -15,6 +15,7 @@
     import ProductHunterLogo from "$lib/assets/images/featured/product-hunt-logo.png";
     import Sparkles from "lucide-svelte/icons/sparkles";
     import Text from "lucide-svelte/icons/text";
+    import { IndianRupee } from "lucide-svelte";
 
     const featuredCompaniesLogo = [
         ProductHunterLogo,
@@ -101,7 +102,7 @@
                     </p>
                 </Card.Content>
             </Card.Root>
-            <Card.Root class="md:col-span-2">
+            <Card.Root>
                 <Card.Header>
                     <Layout class="mb-2" />
                     <Card.Title tag="h4">Super simple UI</Card.Title>
@@ -111,6 +112,18 @@
                         Our intuitive interface ensures that anyone, regardless
                         of their technical skills, can create captivating
                         presentations effortlessly.
+                    </p>
+                </Card.Content>
+            </Card.Root>
+            <Card.Root>
+                <Card.Header>
+                    <IndianRupee class="mb-2" />
+                    <Card.Title tag="h4">Fully free</Card.Title>
+                </Card.Header>
+                <Card.Content>
+                    <p>
+                        Riju is completely free to use. You can create unlimited
+                        presentations without any restrictions.
                     </p>
                 </Card.Content>
             </Card.Root>
