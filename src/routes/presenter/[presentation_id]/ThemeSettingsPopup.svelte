@@ -75,10 +75,12 @@
     }
 
     $: selectedFontUrl = getFontUrl(selectedFont);
-    // $: {
-    //     const element = document.getElementsByClassName("reveal");
-    //     element.style.fontFamily = selectedFont;
-    // }
+    $: {
+        const element = document.querySelector(".reveal");
+        if (element) {
+            element.style.fontFamily = selectedFont;
+        }
+    }
 </script>
 
 <svelte:head>
