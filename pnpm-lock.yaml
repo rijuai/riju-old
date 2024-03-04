@@ -30,14 +30,14 @@ dependencies:
     specifier: ^5.0.1
     version: 5.0.1
   bits-ui:
-    specifier: ^0.19.2
-    version: 0.19.2(svelte@4.2.12)
+    specifier: ^0.19.3
+    version: 0.19.3(svelte@4.2.12)
   clsx:
     specifier: ^2.1.0
     version: 2.1.0
   cmdk-sv:
-    specifier: ^0.0.14
-    version: 0.0.14(svelte@4.2.12)
+    specifier: ^0.0.15
+    version: 0.0.15(svelte@4.2.12)
   lucide-svelte:
     specifier: ^0.344.0
     version: 0.344.0(svelte@4.2.12)
@@ -1871,8 +1871,8 @@ packages:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
 
-  /bits-ui@0.19.2(svelte@4.2.12):
-    resolution: {integrity: sha512-cB5TZPztgd3t93BM4v3M81ve9xWPML9Mb5Db8j8NcSiZaIYEc7At7LB2GX/YCl+AkFI53R8QUa4STbIcBB5isQ==}
+  /bits-ui@0.19.3(svelte@4.2.12):
+    resolution: {integrity: sha512-0qqZ1bwE4ZmTnzTdsl4mYEbHY5f0NVgxhddIqscLjJZx4ltkVKDXxBwEusbE2NToqKtXNNrU0wy7sLusdzdhcg==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:
@@ -1961,8 +1961,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /cmdk-sv@0.0.14(svelte@4.2.12):
-    resolution: {integrity: sha512-6S0dTwOpW8K1v49eoUUwhi99zHaujoJKaJqNfzXzn8+hczS6Skl9tHsketRFymQpdlTWOi8gPbMSl3LUyYpZkw==}
+  /cmdk-sv@0.0.15(svelte@4.2.12):
+    resolution: {integrity: sha512-WDEGJwjW30XZnfNXONeh7kQtmPF6e4UTNrDXQCiAWuafDu9odY3qhQpfNrq4pb5mqaZeKQgVtx+4LIojUv7GJw==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:
