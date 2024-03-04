@@ -37,7 +37,7 @@
     "lucide-svelte": "^0.340.0",
     "pocketbase": "^0.21.1",
     "reveal.js": "^5.0.5",
-    "svelte-radix": "^1.0.1",
+    "svelte-radix": "^1.0.3",
     "tailwind-merge": "^2.2.1",
     "tailwind-variants": "^0.2.0",
     "tslib": "^2.6.2",
