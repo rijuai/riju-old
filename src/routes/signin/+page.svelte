@@ -2,17 +2,20 @@
     import MetaTags from "$lib/components/MetaTags.svelte";
     import { Button } from "$lib/components/ui/button";
     import pb from "$lib/pocketbase";
+    import { onDestroy, onMount } from "svelte";
 
     const signIn = async () => {
         let w = window.open();
 
         const authData = await pb.collection("users").authWithOAuth2({
             provider: "google",
-            redirectUrl: "https://riju.ai/dashboard",
+            redirectUrl: "/auth/callback/google",
             urlCallback: (url) => {
                 w.location.href = url;
             },
         });
+
+        if (authData.record.verified) window.location.href = "/dashboard";
     };
 </script>
 
