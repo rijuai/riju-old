@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Badge from "$lib/components/ui/badge/badge.svelte";
     import "./presenter.css";
     import { currentTheme, transitionType } from "./store";
     import Reveal from "reveal.js";
@@ -36,10 +37,15 @@
     });
 </script>
 
-<div class="reveal" style={$currentTheme}>
+<div class="reveal relative" style={$currentTheme}>
     <div class="slides">
         {@html htmlOutput}
     </div>
+
+    <!-- Watermark -->
+    <Badge class="absolute bottom-4 right-4 text-base font-medium"
+        >Made with Riju</Badge
+    >
 </div>
 
 <style lang="postcss">
