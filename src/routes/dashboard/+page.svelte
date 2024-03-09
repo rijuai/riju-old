@@ -71,7 +71,6 @@
                         const { id } = await pb
                             .collection("presentations")
                             .create(data);
-
                         goto(`/dashboard/editor/${id}`);
                     }}>{title}</Button
                 >
