@@ -28,7 +28,7 @@
 </script>
 
 <Popover.Root>
-    <Popover.Trigger>Share</Popover.Trigger>
+    <Popover.Trigger class="text-sm">Share</Popover.Trigger>
     <Popover.Content class="w-fi">
         <div class="flex flex-col gap-6">
             <div class="grid grid-cols-2 items-center gap-2">
