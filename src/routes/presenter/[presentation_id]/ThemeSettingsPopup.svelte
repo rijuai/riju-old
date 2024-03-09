@@ -88,7 +88,7 @@
 </svelte:head>
 
 <Popover.Root>
-    <Popover.Trigger class="flex items-center gap-1.5"
+    <Popover.Trigger class="flex items-center gap-1.5 text-sm"
         ><Sparkles class="size-4" />Theme</Popover.Trigger
     >
     <Popover.Content class="flex w-96 flex-col gap-8">
