@@ -28,7 +28,7 @@
 <nav
     class="fixed top-0 z-10 flex w-full items-center justify-between bg-transparent p-2"
 >
-    <Button variant="link" class="text-2xl" href="/">Riju</Button>
+    <Button variant="link" class="text-xl" href="/">Riju</Button>
     <div class="flex gap-4">
         <!-- {#if isUserSignedIn} -->
         <SharePopup {presentationId} />
