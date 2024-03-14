@@ -16,7 +16,7 @@
 <nav
     class="sticky top-0 z-10 flex items-center justify-between gap-1 bg-white p-2"
 >
-    <Button variant="link" class="text-2xl" href="/dashboard">Riju</Button>
+    <Button variant="link" class="text-xl" href="/dashboard">Riju</Button>
     <div class="flex gap-3">
         <Button
             class="hidden lg:block"
