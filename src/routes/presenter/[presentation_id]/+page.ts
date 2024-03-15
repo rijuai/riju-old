@@ -7,9 +7,11 @@ export const ssr = false;
 export const load: PageLoad = async ({ params }) => {
   const presentationId = params.presentation_id;
 
-  const { theme, is_public, id, content } = await pb
+  const { id, content, theme, is_public } = await pb
     .collection("presentations")
-    .getOne(presentationId);
+    .getOne(presentationId, {
+      fields: "id, content, theme, is_public",
+    });
 
   const htmlOutput = convertEditorJsContentToHtml(content);
 
