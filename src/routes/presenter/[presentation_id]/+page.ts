@@ -10,7 +10,7 @@ export const load: PageLoad = async ({ params }) => {
   const { id, content, theme, is_public } = await pb
     .collection("presentations")
     .getOne(presentationId, {
-      fields: "id, content, theme, is_public",
+      fields: "id,content,theme,is_public",
     });
 
   const htmlOutput = convertEditorJsContentToHtml(content);
