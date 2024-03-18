@@ -13,7 +13,7 @@
             title: "Add table block",
             description:
                 "Add a table block to your page to display data in a structured way.",
-            status: FeatureStatus["in-progress"],
+            status: FeatureStatus["completed"],
         },
         {
             title: "Add chart block",
@@ -51,7 +51,7 @@
                     <Card.Description>{description}</Card.Description>
                 </Card.Header>
                 <Card.Content>
-                    <Badge>{FeatureStatus[status]}</Badge>
+                    <Badge class="capitalize">{FeatureStatus[status]}</Badge>
                 </Card.Content>
             </Card.Root>
         {/each}
