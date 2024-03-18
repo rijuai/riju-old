@@ -100,7 +100,4 @@
     });
 </script>
 
-<div
-    class="prose prose-base prose-headings:font-medium prose-h1:text-3xl prose-h2:text-2xl mx-auto max-w-2xl"
-    id="editor"
-/>
+<div class="mx-auto max-w-2xl" id="editor" />
