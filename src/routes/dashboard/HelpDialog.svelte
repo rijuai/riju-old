@@ -1,12 +1,12 @@
 <script lang="ts">
-    import HelpCircle from "lucide-svelte/icons/help-circle";
+    import CircleHelp from "lucide-svelte/icons/circle-help";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import pb from "$lib/pocketbase";
 </script>
 
 <DropdownMenu.Root>
     <DropdownMenu.Trigger class="fixed bottom-6 left-6"
-        ><HelpCircle /></DropdownMenu.Trigger
+        ><CircleHelp /></DropdownMenu.Trigger
     >
     <DropdownMenu.Content>
         <DropdownMenu.Group>

@@ -4,7 +4,7 @@
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import * as Table from "$lib/components/ui/table";
     import ExternalLink from "lucide-svelte/icons/external-link";
-    import MoreHorizontal from "lucide-svelte/icons/more-horizontal";
+    import Ellipsis from "lucide-svelte/icons/ellipsis";
     import Trash2 from "lucide-svelte/icons/trash-2";
     import type { PageData } from "./$types";
     import type { OutputData } from "@editorjs/editorjs";
@@ -99,7 +99,7 @@
                         >
                             <DropdownMenu.Root>
                                 <DropdownMenu.Trigger>
-                                    <MoreHorizontal class="h-4 w-4" />
+                                    <Ellipsis class="h-4 w-4" />
                                 </DropdownMenu.Trigger>
                                 <DropdownMenu.Content>
                                     <DropdownMenu.Group>
