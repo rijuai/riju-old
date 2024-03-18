@@ -7,10 +7,10 @@ export const ssr = false;
 export const load: PageLoad = async ({ params }) => {
   const presentationId = params.presentation_id;
 
-  const { id, content, theme, is_public } = await pb
+  const { content, theme, is_public } = await pb
     .collection("presentations")
     .getOne(presentationId, {
-      fields: "id,content,theme,is_public",
+      fields: "content,theme,is_public",
     });
 
   const htmlOutput = convertEditorJsContentToHtml(content);
@@ -19,6 +19,6 @@ export const load: PageLoad = async ({ params }) => {
     theme,
     isPublic: is_public,
     htmlOutput,
-    presentationId: id,
+    presentationId: presentationId,
   };
 };
