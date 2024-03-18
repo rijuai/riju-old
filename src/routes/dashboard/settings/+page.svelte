@@ -5,19 +5,22 @@
     import { Label } from "$lib/components/ui/label";
     import pb from "$lib/pocketbase";
     import { onMount } from "svelte";
+    import { userId } from "$lib/stores/user";
 
     let email: string;
 
     const getUserEmail = async () => {
-        const record = await pb.collection("users").getOne("RECORD_ID", {
-            expand: "relField1,relField2.subRelField",
-        });
+        const { email } = await pb
+            .collection("users")
+            .getOne($userId as string, {
+                fields: "email",
+            });
 
-        // return userEmail ? userEmail : null;
+        return email;
     };
 
     onMount(async () => {
-        // email = (await getUserEmail()) ?? "";
+        email = await getUserEmail();
     });
 </script>
 
