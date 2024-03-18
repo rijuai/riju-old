@@ -42,6 +42,7 @@
         <Input type="email" placeholder="Email" bind:value={email} />
         <Input type="password" placeholder="Password" bind:value={password} />
         <Button
+            type="submit"
             class="w-full"
             on:click={async () => {
                 await signInUsingEmailAndPassword();
