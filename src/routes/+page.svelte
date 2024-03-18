@@ -42,7 +42,7 @@
             presentation builder you’ve been looking for.
         </p>
         <div class="mb-20 space-y-2">
-            <Button size="lg" class="font-semibold" href="/signin"
+            <Button size="lg" class="font-semibold" href="/signup"
                 >Get Started<ArrowRight class="ml-2 size-5" /></Button
             >
             <p class="text-muted-foreground text-sm">
