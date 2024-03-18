@@ -3,7 +3,6 @@
     import MetaTags from "$lib/components/MetaTags.svelte";
     import { Button } from "$lib/components/ui/button";
     import Input from "$lib/components/ui/input/input.svelte";
-    import Separator from "$lib/components/ui/separator/separator.svelte";
     import pb from "$lib/pocketbase";
     import { onMount } from "svelte";
 
