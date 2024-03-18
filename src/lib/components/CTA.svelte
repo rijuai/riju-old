@@ -10,7 +10,7 @@
             Building presentations with Riju is as simple as one-two-three.
         </p>
         <div class="space-y-4">
-            <Button href="/login"
+            <Button href="/signup"
                 >Get Started<ChevronRight class="ml-2 size-4" /></Button
             >
             <p class="text-muted-foreground text-sm">
