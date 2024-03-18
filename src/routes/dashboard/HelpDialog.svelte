@@ -11,7 +11,7 @@
     <DropdownMenu.Content>
         <DropdownMenu.Group>
             <DropdownMenu.Item href="/dashboard/settings"
-                >Account</DropdownMenu.Item
+                >Settings</DropdownMenu.Item
             >
             <DropdownMenu.Item
                 data-tally-open="wAvyoN"
