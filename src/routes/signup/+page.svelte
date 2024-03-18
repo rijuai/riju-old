@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { goto } from "$app/navigation";
     import { page } from "$app/stores";
     import MetaTags from "$lib/components/MetaTags.svelte";
     import { Button } from "$lib/components/ui/button";
@@ -29,6 +30,8 @@
 
         /** Send verification email */
         await pb.collection("users").requestVerification(email);
+
+        goto("/dashboard");
     };
 </script>
 
