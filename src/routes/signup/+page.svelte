@@ -28,6 +28,8 @@
 
         const authData = await pb.collection("users").create(data);
 
+        await pb.collection("users").authWithPassword(email, password);
+
         /** Send verification email */
         await pb.collection("users").requestVerification(email);
 

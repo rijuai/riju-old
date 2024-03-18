@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { goto } from "$app/navigation";
     import MetaTags from "$lib/components/MetaTags.svelte";
     import Button from "$lib/components/ui/button/button.svelte";
     import Input from "$lib/components/ui/input/input.svelte";
@@ -11,6 +12,10 @@
         const authData = await pb
             .collection("users")
             .authWithPassword(email, password);
+
+        if (pb.authStore.isValid) {
+            goto("/dashboard");
+        }
     };
 </script>
 
