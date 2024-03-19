@@ -20,8 +20,8 @@
 </script>
 
 <MetaTags
-    title="Riju | Sign in"
-    description="Create a new account or Sign in if you are a existing user."
+    title="Riju | Login"
+    description="Sign in if you are a existing user."
 />
 
 <!-- Navbar -->
@@ -48,8 +48,6 @@
                 await signInUsingEmailAndPassword();
             }}>Continue</Button
         >
-        <!-- <p>OR</p>
-        <Button variant="destructive" class="w-full">Google</Button> -->
         <p class="text-muted-foreground text-xs">
             By clicking, you agree to Riju <a
                 class="underline"
