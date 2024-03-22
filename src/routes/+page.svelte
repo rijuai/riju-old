@@ -15,7 +15,7 @@
     import ProductHunterLogo from "$lib/assets/images/featured/product-hunt-logo.png";
     import Sparkles from "lucide-svelte/icons/sparkles";
     import Text from "lucide-svelte/icons/text";
-    import { IndianRupee } from "lucide-svelte";
+    import IndianRupee from "lucide-svelte/icons/indian-rupee";
 
     const featuredCompaniesLogo = [
         ProductHunterLogo,
