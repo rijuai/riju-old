@@ -12,8 +12,8 @@ dependencies:
     specifier: ^3.540.0
     version: 3.540.0
   '@editorjs/editorjs':
-    specifier: ^2.29.0
-    version: 2.29.0
+    specifier: ^2.29.1
+    version: 2.29.1
   '@editorjs/header':
     specifier: ^2.8.1
     version: 2.8.1
@@ -843,8 +843,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@editorjs/editorjs@2.29.0:
-    resolution: {integrity: sha512-w2BVboSHokMBd/cAOZn0UU328o3gSZ8XUvFPA2e9+ciIGKILiRSPB70kkNdmhHkuNS3q2px+vdaIFaywBl7wGA==}
+  /@editorjs/editorjs@2.29.1:
+    resolution: {integrity: sha512-WRT2pCfikMsvySQJqpCU21LfTZaPuxUWsDO8aFGrPx4MKzOR9D+Ur4mNb3jq0FXx2EMqvIWfTyFixJxtjGHTyQ==}
     dev: false
 
   /@editorjs/header@2.8.1:
