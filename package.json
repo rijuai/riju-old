@@ -33,7 +33,7 @@
     "@types/reveal.js": "^5.0.1",
     "bits-ui": "^0.20.1",
     "clsx": "^2.1.0",
-    "cmdk-sv": "^0.0.15",
+    "cmdk-sv": "^0.0.16",
     "lucide-svelte": "^0.360.0",
     "pocketbase": "^0.21.1",
     "reveal.js": "^5.0.5",
