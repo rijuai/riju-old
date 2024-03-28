@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { goto } from "$app/navigation";
+    import { goto, invalidateAll } from "$app/navigation";
     import MetaTags from "$lib/components/MetaTags.svelte";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import * as Table from "$lib/components/ui/table";
@@ -18,6 +18,7 @@
 
     const deletePresentation = async (id: string) => {
         await pb.collection("presentations").delete(id);
+        invalidateAll();
     };
 
     const deleteImagesInR2 = async (objectKeys: string[]) => {
@@ -54,7 +55,7 @@
 <div class="mx-auto w-full max-w-4xl space-y-8">
     <!-- Templates -->
     <div>
-        <h4 class="text-muted-foreground mb-4 font-medium">Templates</h4>
+        <h4 class="mb-4 font-medium text-muted-foreground">Templates</h4>
         <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
             {#each templates as { title, theme, content }}
                 <Button
@@ -80,7 +81,7 @@
 
     <!-- Presentations -->
     {#if presentations && presentations.length > 0}
-        <h4 class="text-muted-foreground mb-4 font-medium">
+        <h4 class="mb-4 font-medium text-muted-foreground">
             Your presentations
         </h4>
         <Table.Root>
