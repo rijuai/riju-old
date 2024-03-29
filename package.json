@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-cloudflare": "^4.2.0",
-    "@sveltejs/kit": "^2.5.4",
+    "@sveltejs/kit": "^2.5.5",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "@tailwindcss/typography": "^0.5.12",
     "autoprefixer": "^10.4.19",
@@ -33,7 +33,7 @@
     "@types/reveal.js": "^5.0.2",
     "bits-ui": "^0.21.1",
     "clsx": "^2.1.0",
-    "cmdk-sv": "^0.0.16",
+    "cmdk-sv": "^0.0.17",
     "lucide-svelte": "^0.363.0",
     "pocketbase": "^0.21.1",
     "reveal.js": "^5.0.5",
