@@ -9,7 +9,8 @@ dependencies:
     specifier: ^3.556.0
     version: 3.569.0
   '@aws-sdk/s3-request-presigner':
-    specifier: ^3.556.0
+dependabot/npm_and_yarn/pocketbase-0.21.2
+    specifier: ^3.569.0
     version: 3.569.0
   '@editorjs/editorjs':
     specifier: ^2.29.1
@@ -42,6 +43,7 @@ dependencies:
     specifier: ^0.365.0
     version: 0.365.0(svelte@4.2.15)
   pocketbase:
+    dependabot/npm_and_yarn/pocketbase-0.21.2
     specifier: ^0.21.2
     version: 0.21.2
   reveal.js:
