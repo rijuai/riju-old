@@ -36,7 +36,7 @@
     "bits-ui": "^0.21.10",
     "clsx": "^2.1.1",
     "cmdk-sv": "^0.0.17",
-    "lucide-svelte": "^0.378.0",
+    "lucide-svelte": "^0.379.0",
     "pocketbase": "^0.21.2",
     "reveal.js": "^5.1.0",
     "svelte-radix": "^1.1.0",
