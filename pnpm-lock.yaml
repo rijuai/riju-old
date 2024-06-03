@@ -42,8 +42,8 @@ dependencies:
     specifier: ^0.379.0
     version: 0.379.0(svelte@4.2.17)
   pocketbase:
-    specifier: ^0.21.2
-    version: 0.21.2
+    specifier: ^0.21.3
+    version: 0.21.3
   reveal.js:
     specifier: ^5.1.0
     version: 5.1.0
@@ -3065,8 +3065,8 @@ packages:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
 
-  /pocketbase@0.21.2:
-    resolution: {integrity: sha512-XZdgU9dEv3TPjexDRHy5feYrZrJhWqxTki8ClFGpsnC51G3Qkwoa/U7CVG72jYcLDP3p0HiEhRUUevnlryWkHA==}
+  /pocketbase@0.21.3:
+    resolution: {integrity: sha512-bsQRZ1mj4dhPJ4P5iSrDqWQtBX2NtuBkf6IOZwTv27zZOw6zrISgo963i5JD/99qKKD5aMSMDPGk1BE9ZyI7Cg==}
     dev: false
 
   /postcss-import@15.1.0(postcss@8.4.38):
