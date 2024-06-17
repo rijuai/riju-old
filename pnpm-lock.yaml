@@ -68,8 +68,8 @@ devDependencies:
     specifier: 1.8.0
     version: 1.8.0
   '@sveltejs/adapter-cloudflare':
-    specifier: ^4.4.0
-    version: 4.4.0(@sveltejs/kit@2.5.16)(wrangler@3.57.1)
+    specifier: ^4.4.1
+    version: 4.4.1(@sveltejs/kit@2.5.16)(wrangler@3.57.1)
   '@sveltejs/kit':
     specifier: ^2.5.16
     version: 2.5.16(@sveltejs/vite-plugin-svelte@3.1.1)(svelte@4.2.17)(vite@5.2.13)
@@ -2098,8 +2098,8 @@ packages:
       tslib: 2.6.3
     dev: false
 
-  /@sveltejs/adapter-cloudflare@4.4.0(@sveltejs/kit@2.5.16)(wrangler@3.57.1):
-    resolution: {integrity: sha512-sh2kSapbQq3QJFOYcva4MtdzZStoAq2Lr93heGFCR924/OywnW2/Ru7/sxByXW806kvLgStZO+hKZh3Va8WVjw==}
+  /@sveltejs/adapter-cloudflare@4.4.1(@sveltejs/kit@2.5.16)(wrangler@3.57.1):
+    resolution: {integrity: sha512-CICRNK+zZBF6bcsEA3h82mCohkLf1NcSp/ClcxgYt1yuiWTG4fQO10XE9nCOEU9Azob6JWMmRvVLjJAXCLKjeQ==}
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
       wrangler: ^3.28.4
@@ -2378,7 +2378,7 @@ packages:
     resolution: {integrity: sha512-XKxXAC3HVPv7r674zP0VC3RTXz+/JKhfyw94ljvF80yynK6VkTnqE3jMuN8b3dUVmmc43TjyxjW4KTsmB3c86g==}
     dependencies:
       debug: 4.3.4
-      tslib: 2.6.2
+      tslib: 2.6.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3595,13 +3595,8 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: false
 
-  /tslib@2.6.2:
-    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
-    dev: true
-
   /tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
-    dev: false
 
   /typescript@5.4.5:
     resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
