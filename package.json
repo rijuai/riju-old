@@ -11,7 +11,7 @@
     "biome": "biome check --apply ./src/"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.8.2",
+    "@biomejs/biome": "1.8.3",
     "@sveltejs/adapter-cloudflare": "^4.5.0",
     "@sveltejs/kit": "^2.5.18",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
