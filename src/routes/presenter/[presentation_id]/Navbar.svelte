@@ -1,28 +1,28 @@
 <script lang="ts">
-    import { goto } from "$app/navigation";
-    import SharePopup from "./SharePopup.svelte";
-    import ThemeSettingsPopup from "./ThemeSettingsPopup.svelte";
-    import { Button } from "$lib/components/ui/button";
-    import X from "lucide-svelte/icons/x";
-    import Maximize from "lucide-svelte/icons/maximize";
-    import { onMount } from "svelte";
+import { goto } from "$app/navigation";
+import { Button } from "$lib/components/ui/button";
+import Maximize from "lucide-svelte/icons/maximize";
+import X from "lucide-svelte/icons/x";
+import { onMount } from "svelte";
+import SharePopup from "./SharePopup.svelte";
+import ThemeSettingsPopup from "./ThemeSettingsPopup.svelte";
 
-    export let presentationId: string;
-    let isUserSignedIn = false;
+export let presentationId: string;
+const isUserSignedIn = false;
 
-    const showFullScreen = (element: Element) => {
-        const requestFullScreen =
-            element.requestFullscreen ||
-            (element as any).mozRequestFullScreen ||
-            (element as any).webkitRequestFullScreen ||
-            (element as any).msRequestFullscreen;
+const showFullScreen = (element: Element) => {
+	const requestFullScreen =
+		element.requestFullscreen ||
+		(element as any).mozRequestFullScreen ||
+		(element as any).webkitRequestFullScreen ||
+		(element as any).msRequestFullscreen;
 
-        requestFullScreen.call(element);
-    };
+	requestFullScreen.call(element);
+};
 
-    onMount(async () => {
-        // isUserSignedIn = await isUserAuthenticated();
-    });
+onMount(async () => {
+	// isUserSignedIn = await isUserAuthenticated();
+});
 </script>
 
 <nav

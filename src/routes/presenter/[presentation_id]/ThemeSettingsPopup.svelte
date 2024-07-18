@@ -1,86 +1,86 @@
 <script lang="ts">
-    import { Button } from "$lib/components/ui/button";
-    import { Label } from "$lib/components/ui/label";
-    import * as Popover from "$lib/components/ui/popover";
-    import * as Select from "$lib/components/ui/select";
-    import { changeTheme, currentTheme, transitionType } from "./store";
-    import Sparkles from "lucide-svelte/icons/sparkles";
-    import Check from "lucide-svelte/icons/check";
-    import ChevronsUpDown from "lucide-svelte/icons/chevrons-up-down";
-    import * as Command from "$lib/components/ui/command";
-    import { cn } from "$lib/utils";
-    import { tick } from "svelte";
-    import pb from "$lib/pocketbase";
+import { Button } from "$lib/components/ui/button";
+import * as Command from "$lib/components/ui/command";
+import { Label } from "$lib/components/ui/label";
+import * as Popover from "$lib/components/ui/popover";
+import * as Select from "$lib/components/ui/select";
+import pb from "$lib/pocketbase";
+import { cn } from "$lib/utils";
+import Check from "lucide-svelte/icons/check";
+import ChevronsUpDown from "lucide-svelte/icons/chevrons-up-down";
+import Sparkles from "lucide-svelte/icons/sparkles";
+import { tick } from "svelte";
+import { changeTheme, currentTheme, transitionType } from "./store";
 
-    export let presentationId: string;
+export let presentationId: string;
 
-    const transitionTypes = [
-        {
-            label: "None",
-            value: "none",
-        },
-        {
-            label: "Slide",
-            value: "slide",
-        },
-        {
-            label: "Fade",
-            value: "fade",
-        },
-        {
-            label: "Zoom",
-            value: "zoom",
-        },
-        {
-            label: "Concave",
-            value: "concave",
-        },
-        {
-            label: "Convex",
-            value: "convex",
-        },
-    ];
+const transitionTypes = [
+	{
+		label: "None",
+		value: "none",
+	},
+	{
+		label: "Slide",
+		value: "slide",
+	},
+	{
+		label: "Fade",
+		value: "fade",
+	},
+	{
+		label: "Zoom",
+		value: "zoom",
+	},
+	{
+		label: "Concave",
+		value: "concave",
+	},
+	{
+		label: "Convex",
+		value: "convex",
+	},
+];
 
-    const fonts = [
-        "Open Sans",
-        "Roboto",
-        "Raleway",
-        "Source Sans Pro",
-        "Lato",
-        "Kode Mono",
-        "Merriweather",
-        "Ubuntu",
-        "Noto Sans",
-        "Poppins",
-        "Inter",
-    ];
-    let open = false;
-    let value = "";
+const fonts = [
+	"Open Sans",
+	"Roboto",
+	"Raleway",
+	"Source Sans Pro",
+	"Lato",
+	"Kode Mono",
+	"Merriweather",
+	"Ubuntu",
+	"Noto Sans",
+	"Poppins",
+	"Inter",
+];
+let open = false;
+const value = "";
 
-    $: selectedFont = fonts.find((f) => f === value) ?? "Select a font";
+$: selectedFont = fonts.find((f) => f === value) ?? "Select a font";
 
-    // We want to refocus the trigger button when the user selects
-    // an item from the list so users can continue navigating the
-    // rest of the form with the keyboard.
-    const closeAndFocusTrigger = (triggerId: string) => {
-        open = false;
-        tick().then(() => {
-            document.getElementById(triggerId)?.focus();
-        });
-    };
+// We want to refocus the trigger button when the user selects
+// an item from the list so users can continue navigating the
+// rest of the form with the keyboard.
+const closeAndFocusTrigger = (triggerId: string) => {
+	open = false;
+	tick().then(() => {
+		document.getElementById(triggerId)?.focus();
+	});
+};
 
-    /** Dynamic Font */
-    function getFontUrl(fontName: string) {
-        return `https://fonts.googleapis.com/css2?family=${fontName.replace(/ /g, "+")}:wght@400&display=swap`;
-    }
+/** Dynamic Font */
+function getFontUrl(fontName: string) {
+	return `https://fonts.googleapis.com/css2?family=${fontName.replace(/ /g, "+")}:wght@400&display=swap`;
+}
 
-    $: selectedFontUrl = getFontUrl(selectedFont);
-    $: {
-        const element = document.querySelector(".reveal");
-        if (element) {
-            element.style.fontFamily = selectedFont;
-        }
-    }
+$: selectedFontUrl = getFontUrl(selectedFont);
+$: {
+	const element = document.querySelector(".reveal");
+	if (element) {
+		element.style.fontFamily = selectedFont;
+	}
+}
 </script>
 
 <svelte:head>

@@ -1,7 +1,7 @@
 <script lang="ts">
-    import CircleHelp from "lucide-svelte/icons/circle-help";
-    import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
-    import pb from "$lib/pocketbase";
+import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
+import pb from "$lib/pocketbase";
+import CircleHelp from "lucide-svelte/icons/circle-help";
 </script>
 
 <DropdownMenu.Root>

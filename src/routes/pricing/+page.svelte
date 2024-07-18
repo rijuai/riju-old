@@ -1,5 +1,5 @@
 <script lang="ts">
-    import HomePageNavbar from "$lib/components/HomePageNavbar.svelte";
+import HomePageNavbar from "$lib/components/HomePageNavbar.svelte";
 </script>
 
 <HomePageNavbar />

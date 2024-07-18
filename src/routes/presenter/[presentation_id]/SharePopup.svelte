@@ -1,30 +1,30 @@
 <script lang="ts">
-    import { page } from "$app/stores";
-    import { Button } from "$lib/components/ui/button";
-    import { Label } from "$lib/components/ui/label";
-    import * as Popover from "$lib/components/ui/popover";
-    import { Switch } from "$lib/components/ui/switch";
-    import pb from "$lib/pocketbase";
-    import { isPresentationPublic } from "./store";
+import { page } from "$app/stores";
+import { Button } from "$lib/components/ui/button";
+import { Label } from "$lib/components/ui/label";
+import * as Popover from "$lib/components/ui/popover";
+import { Switch } from "$lib/components/ui/switch";
+import pb from "$lib/pocketbase";
+import { isPresentationPublic } from "./store";
 
-    export let presentationId: string;
+export let presentationId: string;
 
-    const updatePresentationVisibility = async (
-        presentationId: string,
-        isPublic: boolean,
-    ) => {
-        const data = {
-            is_public: isPublic,
-        };
+const updatePresentationVisibility = async (
+	presentationId: string,
+	isPublic: boolean,
+) => {
+	const data = {
+		is_public: isPublic,
+	};
 
-        const record = await pb
-            .collection("presentations")
-            .update(presentationId, data);
-    };
+	const record = await pb
+		.collection("presentations")
+		.update(presentationId, data);
+};
 
-    $: {
-        updatePresentationVisibility(presentationId, $isPresentationPublic);
-    }
+$: {
+	updatePresentationVisibility(presentationId, $isPresentationPublic);
+}
 </script>
 
 <Popover.Root>

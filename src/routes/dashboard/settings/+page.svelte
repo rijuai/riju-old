@@ -1,27 +1,25 @@
 <script lang="ts">
-    import MetaTags from "$lib/components/MetaTags.svelte";
-    import * as Card from "$lib/components/ui/card";
-    import { Input } from "$lib/components/ui/input";
-    import { Label } from "$lib/components/ui/label";
-    import pb from "$lib/pocketbase";
-    import { onMount } from "svelte";
-    import { userId } from "$lib/stores/user";
+import MetaTags from "$lib/components/MetaTags.svelte";
+import * as Card from "$lib/components/ui/card";
+import { Input } from "$lib/components/ui/input";
+import { Label } from "$lib/components/ui/label";
+import pb from "$lib/pocketbase";
+import { userId } from "$lib/stores/user";
+import { onMount } from "svelte";
 
-    let email: string;
+let email: string;
 
-    const getUserEmail = async () => {
-        const { email } = await pb
-            .collection("users")
-            .getOne($userId as string, {
-                fields: "email",
-            });
+const getUserEmail = async () => {
+	const { email } = await pb.collection("users").getOne($userId as string, {
+		fields: "email",
+	});
 
-        return email;
-    };
+	return email;
+};
 
-    onMount(async () => {
-        email = await getUserEmail();
-    });
+onMount(async () => {
+	email = await getUserEmail();
+});
 </script>
 
 <MetaTags title="Riju | Settings" description="Settings" />

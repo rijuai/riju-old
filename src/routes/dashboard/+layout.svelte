@@ -1,7 +1,7 @@
 <script lang="ts">
-    import AuthCheck from "./AuthCheck.svelte";
-    import HelpDialog from "./HelpDialog.svelte";
-    import Navbar from "./Navbar.svelte";
+import AuthCheck from "./AuthCheck.svelte";
+import HelpDialog from "./HelpDialog.svelte";
+import Navbar from "./Navbar.svelte";
 </script>
 
 <AuthCheck>
