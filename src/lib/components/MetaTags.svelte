@@ -1,16 +1,16 @@
 <script lang="ts">
-import { page } from "$app/stores";
-import { onMount } from "svelte";
+import { page } from '$app/stores'
+import { onMount } from 'svelte'
 
 export let title: string,
 	description: string,
-	keywords = "";
+	keywords = ''
 
-let url: string;
+let url: string
 
 onMount(() => {
-	url = String($page.url);
-});
+	url = String($page.url)
+})
 </script>
 
 <svelte:head>

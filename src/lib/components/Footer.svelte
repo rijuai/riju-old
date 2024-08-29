@@ -8,7 +8,7 @@
 </footer>
 
 <style lang="postcss">
-	a {
-		@apply hover:underline hover:underline-offset-2;
-	}
+a {
+	@apply hover:underline hover:underline-offset-2;
+}
 </style>
