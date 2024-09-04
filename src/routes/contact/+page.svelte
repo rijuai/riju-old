@@ -1,7 +1,7 @@
 <script>
-import LayoutWrapper from "$lib/components/LayoutWrapper.svelte";
-import MetaTags from "$lib/components/MetaTags.svelte";
-import * as Card from "$lib/components/ui/card";
+import LayoutWrapper from "$lib/components/LayoutWrapper.svelte"
+import MetaTags from "$lib/components/MetaTags.svelte"
+import * as Card from "$lib/components/ui/card"
 </script>
 
 <MetaTags

@@ -1,22 +1,22 @@
 <script lang="ts">
-import { goto } from "$app/navigation";
-import MetaTags from "$lib/components/MetaTags.svelte";
-import Button from "$lib/components/ui/button/button.svelte";
-import Input from "$lib/components/ui/input/input.svelte";
-import pb from "$lib/pocketbase";
+import { goto } from "$app/navigation"
+import MetaTags from "$lib/components/MetaTags.svelte"
+import Button from "$lib/components/ui/button/button.svelte"
+import Input from "$lib/components/ui/input/input.svelte"
+import pb from "$lib/pocketbase"
 
-let email: string;
-let password: string;
+let email: string
+let password: string
 
 const signInUsingEmailAndPassword = async () => {
 	const authData = await pb
 		.collection("users")
-		.authWithPassword(email, password);
+		.authWithPassword(email, password)
 
 	if (pb.authStore.isValid) {
-		goto("/dashboard");
+		goto("/dashboard")
 	}
-};
+}
 </script>
 
 <MetaTags

@@ -1,6 +1,6 @@
 <script lang="ts">
-import Badge from "$lib/components/ui/badge/badge.svelte";
-import * as Card from "$lib/components/ui/card";
+import Badge from "$lib/components/ui/badge/badge.svelte"
+import * as Card from "$lib/components/ui/card"
 
 enum FeatureStatus {
 	planned = 0,
@@ -31,7 +31,7 @@ const features = [
 		description: "Make the split block appear beside the other block.",
 		status: FeatureStatus["planned"],
 	},
-];
+]
 </script>
 
 <main class="mx-auto max-w-xl">

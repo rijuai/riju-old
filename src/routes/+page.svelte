@@ -1,21 +1,21 @@
 <script lang="ts">
-import DailyCompanyNewsLogo from "$lib/assets/images/featured/dailycompanynews-logo.png";
-import OpenFutureLogo from "$lib/assets/images/featured/openfuture-logo.png";
-import ProductHunterLogo from "$lib/assets/images/featured/product-hunt-logo.png";
-import SubscribedFyiLogo from "$lib/assets/images/featured/subscribedfyi-inverted-logo.png";
-import SuperbCrewLogo from "$lib/assets/images/featured/superbcrew-logo.png";
-import DemoVideo from "$lib/assets/videos/riju-demo.mp4";
-import CTA from "$lib/components/CTA.svelte";
-import Footer from "$lib/components/Footer.svelte";
-import HomePageNavbar from "$lib/components/HomePageNavbar.svelte";
-import MetaTags from "$lib/components/MetaTags.svelte";
-import { Button } from "$lib/components/ui/button";
-import * as Card from "$lib/components/ui/card";
-import ArrowRight from "lucide-svelte/icons/arrow-right";
-import IndianRupee from "lucide-svelte/icons/indian-rupee";
-import Layout from "lucide-svelte/icons/layout-grid";
-import Sparkles from "lucide-svelte/icons/sparkles";
-import Text from "lucide-svelte/icons/text";
+import DailyCompanyNewsLogo from "$lib/assets/images/featured/dailycompanynews-logo.png"
+import OpenFutureLogo from "$lib/assets/images/featured/openfuture-logo.png"
+import ProductHunterLogo from "$lib/assets/images/featured/product-hunt-logo.png"
+import SubscribedFyiLogo from "$lib/assets/images/featured/subscribedfyi-inverted-logo.png"
+import SuperbCrewLogo from "$lib/assets/images/featured/superbcrew-logo.png"
+import DemoVideo from "$lib/assets/videos/riju-demo.mp4"
+import CTA from "$lib/components/CTA.svelte"
+import Footer from "$lib/components/Footer.svelte"
+import HomePageNavbar from "$lib/components/HomePageNavbar.svelte"
+import MetaTags from "$lib/components/MetaTags.svelte"
+import { Button } from "$lib/components/ui/button"
+import * as Card from "$lib/components/ui/card"
+import ArrowRight from "lucide-svelte/icons/arrow-right"
+import IndianRupee from "lucide-svelte/icons/indian-rupee"
+import Layout from "lucide-svelte/icons/layout-grid"
+import Sparkles from "lucide-svelte/icons/sparkles"
+import Text from "lucide-svelte/icons/text"
 
 const featuredCompaniesLogo = [
 	ProductHunterLogo,
@@ -23,7 +23,7 @@ const featuredCompaniesLogo = [
 	DailyCompanyNewsLogo,
 	SubscribedFyiLogo,
 	SuperbCrewLogo,
-];
+]
 </script>
 
 <MetaTags

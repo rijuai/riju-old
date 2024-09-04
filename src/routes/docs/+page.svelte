@@ -1,9 +1,9 @@
 <script lang="ts">
-import BlocksList from "$lib/assets/images/docs/blocks-list.png";
-import Blocks from "$lib/assets/images/docs/blocks.png";
-import Dashboard from "$lib/assets/images/docs/dashboard.png";
-import Editor from "$lib/assets/images/docs/editor.png";
-import MetaTags from "$lib/components/MetaTags.svelte";
+import BlocksList from "$lib/assets/images/docs/blocks-list.png"
+import Blocks from "$lib/assets/images/docs/blocks.png"
+import Dashboard from "$lib/assets/images/docs/dashboard.png"
+import Editor from "$lib/assets/images/docs/editor.png"
+import MetaTags from "$lib/components/MetaTags.svelte"
 </script>
 
 <MetaTags

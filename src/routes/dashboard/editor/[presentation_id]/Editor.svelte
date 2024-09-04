@@ -1,41 +1,41 @@
 <script lang="ts">
-import pb from "$lib/pocketbase";
-import { uploadToR2 } from "$lib/utils/uploadToR2";
-import EditorJS, { type OutputData } from "@editorjs/editorjs";
-import Header from "@editorjs/header";
-import NestedList from "@editorjs/nested-list";
-import Table from "@editorjs/table";
-import { onMount } from "svelte";
-import CustomImage from "./CustomImage";
-import NewSlide from "./newSlide";
-import SplitSlide from "./splitSide";
+import pb from "$lib/pocketbase"
+import { uploadToR2 } from "$lib/utils/uploadToR2"
+import EditorJS, { type OutputData } from "@editorjs/editorjs"
+import Header from "@editorjs/header"
+import NestedList from "@editorjs/nested-list"
+import Table from "@editorjs/table"
+import { onMount } from "svelte"
+import CustomImage from "./CustomImage"
+import NewSlide from "./newSlide"
+import SplitSlide from "./splitSide"
 
-export let presentationId: string;
-export let content: OutputData;
+export let presentationId: string
+export let content: OutputData
 
-let debounceTimer: NodeJS.Timeout;
+let debounceTimer: NodeJS.Timeout
 
 const editor = new EditorJS({
 	placeholder: "Enter '/'  for commands",
 	holder: "editor",
 	onReady: async () => {
-		editor.render(content);
+		editor.render(content)
 	},
 	onChange: async () => {
-		const outputData = await editor.save();
-		const title = outputData.blocks[0].data.text;
+		const outputData = await editor.save()
+		const title = outputData.blocks[0].data.text
 
-		clearTimeout(debounceTimer);
+		clearTimeout(debounceTimer)
 		debounceTimer = setTimeout(async () => {
 			const data = {
 				title: title,
 				content: outputData,
-			};
+			}
 
 			const record = await pb
 				.collection("presentations")
-				.update(presentationId, data);
-		}, 500);
+				.update(presentationId, data)
+		}, 500)
 	},
 
 	tools: {
@@ -78,13 +78,13 @@ const editor = new EditorJS({
 			config: {
 				uploader: {
 					async uploadByFile(file: File) {
-						const result = await uploadToR2(file);
+						const result = await uploadToR2(file)
 						return {
 							success: 1,
 							file: {
 								url: result.url,
 							},
-						};
+						}
 					},
 				},
 			},
@@ -93,11 +93,11 @@ const editor = new EditorJS({
 			class: Table,
 		},
 	},
-});
+})
 
 onMount(async () => {
-	await editor.isReady;
-});
+	await editor.isReady
+})
 </script>
 
 <div class="mx-auto max-w-2xl" id="editor" />
