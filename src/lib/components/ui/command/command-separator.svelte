@@ -1,13 +1,10 @@
 <script lang="ts">
-import { cn } from "$lib/utils";
-import type { Command as CommandPrimitive } from "cmdk-sv";
+	import { Command as CommandPrimitive } from "cmdk-sv";
+	import { cn } from "$lib/utils.js";
 
-type $$Props = CommandPrimitive.SeparatorProps;
-const className: string | undefined | null = undefined;
-export { className as class };
+	type $$Props = CommandPrimitive.SeparatorProps;
+	let className: string | undefined | null = undefined;
+	export { className as class };
 </script>
 
-<CommandPrimitive.Separator
-    class={cn("bg-border -mx-1 h-px", className)}
-    {...$$restProps}
-/>
+<CommandPrimitive.Separator class={cn("bg-border -mx-1 h-px", className)} {...$$restProps} />

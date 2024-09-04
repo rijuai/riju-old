@@ -1,26 +1,26 @@
 <script lang="ts">
-import { cn, flyAndScale } from "$lib/utils";
-import type { DropdownMenu as DropdownMenuPrimitive } from "bits-ui";
+	import { DropdownMenu as DropdownMenuPrimitive } from "bits-ui";
+	import { cn, flyAndScale } from "$lib/utils.js";
 
-type $$Props = DropdownMenuPrimitive.ContentProps;
+	type $$Props = DropdownMenuPrimitive.ContentProps;
 
-const className: $$Props["class"] = undefined;
-export const sideOffset: $$Props["sideOffset"] = 4;
-export const transition: $$Props["transition"] = flyAndScale;
-export const transitionConfig: $$Props["transitionConfig"] = undefined;
-export { className as class };
+	let className: $$Props["class"] = undefined;
+	export let sideOffset: $$Props["sideOffset"] = 4;
+	export let transition: $$Props["transition"] = flyAndScale;
+	export let transitionConfig: $$Props["transitionConfig"] = undefined;
+	export { className as class };
 </script>
 
 <DropdownMenuPrimitive.Content
-    {transition}
-    {transitionConfig}
-    {sideOffset}
-    class={cn(
-        "bg-popover text-popover-foreground z-50 min-w-[8rem] rounded-md border p-1 shadow-md focus:outline-none",
-        className,
-    )}
-    {...$$restProps}
-    on:keydown
+	{transition}
+	{transitionConfig}
+	{sideOffset}
+	class={cn(
+		"bg-popover text-popover-foreground z-50 min-w-[8rem] rounded-md border p-1 shadow-md focus:outline-none",
+		className
+	)}
+	{...$$restProps}
+	on:keydown
 >
-    <slot />
+	<slot />
 </DropdownMenuPrimitive.Content>
