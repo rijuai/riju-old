@@ -9,7 +9,7 @@ Superfast presentation creator...
 2. Install PNPM.
 3. Install the dependencies using
    `pnpm install`
-4. Set the environment variables in `.env.local` according to `.env.example`.
+4. Set the environment variables in `.env` according to `.env.example`.
 
 ## Tech Stack
 
