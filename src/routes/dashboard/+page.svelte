@@ -37,14 +37,14 @@ const deleteImages = async (editorOutput: OutputData) => {
 
 	if (!editorOutput) return
 
-	blocks.forEach((item: any) => {
+	for (const item of blocks) {
 		if (item.type === "image") {
 			const url = item.data.file.url
 			const path = url.split("/").pop() ?? ""
 
 			imagesToDelete.push(path)
 		}
-	})
+	}
 
 	await deleteImagesInR2(imagesToDelete)
 }
