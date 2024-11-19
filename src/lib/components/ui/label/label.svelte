@@ -1,19 +1,21 @@
 <script lang="ts">
-import { cn } from "$lib/utils";
-import type { Label as LabelPrimitive } from "bits-ui";
+import { cn } from "$lib/utils.js"
+import { Label as LabelPrimitive } from "bits-ui"
 
-type $$Props = LabelPrimitive.Props;
+type $$Props = LabelPrimitive.Props
+type $$Events = LabelPrimitive.Events
 
-const className: $$Props["class"] = undefined;
-export { className as class };
+let className: $$Props["class"] = undefined
+export { className as class }
 </script>
 
 <LabelPrimitive.Root
-    class={cn(
-        "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
-        className,
-    )}
-    {...$$restProps}
+	class={cn(
+		"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+		className
+	)}
+	{...$$restProps}
+	on:mousedown
 >
-    <slot />
+	<slot />
 </LabelPrimitive.Root>

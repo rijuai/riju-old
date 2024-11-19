@@ -594,4 +594,4 @@ export const templates = [
 	{
 		title: "Blank",
 	},
-];
+]

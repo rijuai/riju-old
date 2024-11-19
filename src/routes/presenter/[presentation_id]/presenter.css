@@ -1,60 +1,60 @@
 .reveal {
-    h1,
-    h2,
-    h3,
-    h4,
-    p,
-    ol li,
-    ul li {
-        @apply text-left text-gray-900;
-    }
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	ol li,
+	ul li {
+		@apply text-left text-gray-900;
+	}
 
-    h1 {
-        @apply mb-8 text-5xl;
-    }
+	h1 {
+		@apply mb-8 text-5xl;
+	}
 
-    h2 {
-        @apply mb-6 text-4xl;
-    }
+	h2 {
+		@apply mb-6 text-4xl;
+	}
 
-    p {
-        @apply mb-4 text-lg;
-    }
+	p {
+		@apply mb-4 text-lg;
+	}
 
-    ol li,
-    ul li {
-        @apply mb-4 text-lg;
-    }
+	ol li,
+	ul li {
+		@apply mb-4 text-lg;
+	}
 
-    ol {
-        @apply list-decimal pl-8;
-    }
+	ol {
+		@apply list-decimal pl-8;
+	}
 
-    ul {
-        @apply list-disc pl-8;
-    }
+	ul {
+		@apply list-disc pl-8;
+	}
 
-    img {
-        @apply mx-auto my-4 rounded-lg shadow;
-    }
+	img {
+		@apply mx-auto my-4 rounded-lg shadow;
+	}
 
-    table {
-        @apply my-8 w-full border-collapse rounded-xl border text-left text-sm;
+	table {
+		@apply my-8 w-full border-collapse rounded-xl border text-left text-sm;
 
-        thead {
-            @apply rounded-t-lg;
+		thead {
+			@apply rounded-t-lg;
 
-            th {
-                @apply border-b border-gray-200 bg-white/35 px-4 py-2 backdrop-blur-xl;
-            }
-        }
+			th {
+				@apply border-b border-gray-200 bg-white/35 px-4 py-2 backdrop-blur-xl;
+			}
+		}
 
-        tbody td {
-            @apply border-b bg-slate-100 bg-white/25 px-4 py-2 backdrop-blur-lg;
-        }
+		tbody td {
+			@apply border-b bg-slate-100 bg-white/25 px-4 py-2 backdrop-blur-lg;
+		}
 
-        tbody tr:last-child td {
-            @apply border-b-0;
-        }
-    }
+		tbody tr:last-child td {
+			@apply border-b-0;
+		}
+	}
 }

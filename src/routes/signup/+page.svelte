@@ -1,11 +1,11 @@
 <script lang="ts">
-import { goto } from '$app/navigation'
-import { page } from '$app/stores'
-import MetaTags from '$lib/components/MetaTags.svelte'
-import { Button } from '$lib/components/ui/button'
-import Input from '$lib/components/ui/input/input.svelte'
-import pb from '$lib/pocketbase'
-import { onMount } from 'svelte'
+import { goto } from "$app/navigation"
+import { page } from "$app/stores"
+import MetaTags from "$lib/components/MetaTags.svelte"
+import { Button } from "$lib/components/ui/button"
+import Input from "$lib/components/ui/input/input.svelte"
+import pb from "$lib/pocketbase"
+import { onMount } from "svelte"
 
 let fullName: string
 let email: string
@@ -13,7 +13,7 @@ let password: string
 let referralCode: string
 
 onMount(() => {
-	referralCode = String($page.url.searchParams.get('referralCode'))
+	referralCode = String($page.url.searchParams.get("referralCode"))
 	console.log(referralCode)
 })
 
@@ -26,14 +26,14 @@ const signUpUsingEmailAndPassword = async () => {
 		referralCode: referralCode,
 	}
 
-	const authData = await pb.collection('users').create(data)
+	const authData = await pb.collection("users").create(data)
 
-	await pb.collection('users').authWithPassword(email, password)
+	await pb.collection("users").authWithPassword(email, password)
 
 	/** Send verification email */
-	await pb.collection('users').requestVerification(email)
+	await pb.collection("users").requestVerification(email)
 
-	goto('/dashboard')
+	goto("/dashboard")
 }
 </script>
 

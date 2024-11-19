@@ -12,7 +12,8 @@ class SplitSlide {
 		paragraph.className = "text-sm text-gray-500"
 		paragraph.textContent = "Split Slide"
 
-		div.className = "w-full flex items-center justify-center gap-2 before:flex-1 before:border before:border-dashed after:flex-1 after:border after:border-dashed py-4"
+		div.className =
+			"w-full flex items-center justify-center gap-2 before:flex-1 before:border before:border-dashed after:flex-1 after:border after:border-dashed py-4"
 
 		div.appendChild(paragraph)
 
