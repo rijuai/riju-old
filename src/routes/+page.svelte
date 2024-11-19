@@ -57,7 +57,7 @@ const featuredCompaniesLogo = [
 			muted
 			loop
 			autoplay
-		/>
+		></video>
 	</div>
 
 	<!-- Featured -->

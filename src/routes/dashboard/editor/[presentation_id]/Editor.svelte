@@ -100,4 +100,4 @@ onMount(async () => {
 })
 </script>
 
-<div class="mx-auto max-w-2xl" id="editor" />
+<div class="mx-auto max-w-2xl" id="editor"></div>
