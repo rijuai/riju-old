@@ -19,7 +19,7 @@ if (theme === null) {
 	'transitionType' in theme
 ) {
 	$currentTheme = theme.backgroundCss as string
-	$transitionType = theme.transitionType as any
+	$transitionType = theme.transitionType as TransitionType
 }
 </script>
 
