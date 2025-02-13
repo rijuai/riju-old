@@ -8,7 +8,7 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check",
 		"check:watch": "svelte-kit sync && svelte-check --watch",
-		"biome": "biome check --apply ./src/"
+		"check:biome": "biome check --apply ./src/"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
