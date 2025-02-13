@@ -1,6 +1,6 @@
 <script>
-import Footer from "./Footer.svelte"
-import HomePageNavbar from "./HomePageNavbar.svelte"
+import Footer from './Footer.svelte'
+import HomePageNavbar from './HomePageNavbar.svelte'
 </script>
 
 <HomePageNavbar />

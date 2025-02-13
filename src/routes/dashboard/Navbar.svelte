@@ -1,11 +1,11 @@
 <script lang="ts">
-import { goto } from "$app/navigation"
-import { page } from "$app/stores"
-import { Button } from "$lib/components/ui/button"
-import pb from "$lib/pocketbase"
-import { userId } from "$lib/stores/user"
-import PencilLine from "lucide-svelte/icons/pencil-line"
-import Play from "lucide-svelte/icons/play"
+import { goto } from '$app/navigation'
+import { page } from '$app/stores'
+import { Button } from '$lib/components/ui/button'
+import pb from '$lib/pocketbase'
+import { userId } from '$lib/stores/user'
+import PencilLine from 'lucide-svelte/icons/pencil-line'
+import Play from 'lucide-svelte/icons/play'
 </script>
 
 <!-- Tally forms script -->

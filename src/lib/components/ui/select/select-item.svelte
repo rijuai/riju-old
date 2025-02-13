@@ -1,15 +1,15 @@
 <script lang="ts">
-import { cn } from "$lib/utils.js"
-import { Select as SelectPrimitive } from "bits-ui"
-import Check from "lucide-svelte/icons/check"
+import { cn } from '$lib/utils.js'
+import { Select as SelectPrimitive } from 'bits-ui'
+import Check from 'lucide-svelte/icons/check'
 
 type $$Props = SelectPrimitive.ItemProps
 type $$Events = SelectPrimitive.ItemEvents
 
-let className: $$Props["class"] = undefined
-export let value: $$Props["value"]
-export let label: $$Props["label"] = undefined
-export let disabled: $$Props["disabled"] = undefined
+let className: $$Props['class'] = undefined
+export let value: $$Props['value']
+export let label: $$Props['label'] = undefined
+export let disabled: $$Props['disabled'] = undefined
 export { className as class }
 </script>
 

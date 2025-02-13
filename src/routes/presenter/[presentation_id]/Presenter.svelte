@@ -1,10 +1,10 @@
 <script lang="ts">
-import Badge from "$lib/components/ui/badge/badge.svelte"
-import "./presenter.css"
-import Reveal from "reveal.js"
-import { currentTheme, transitionType } from "./store"
-import "reveal.js/dist/reveal.css"
-import { onDestroy, onMount } from "svelte"
+import Badge from '$lib/components/ui/badge/badge.svelte'
+import './presenter.css'
+import Reveal from 'reveal.js'
+import { currentTheme, transitionType } from './store'
+import 'reveal.js/dist/reveal.css'
+import { onDestroy, onMount } from 'svelte'
 
 export let htmlOutput: string
 let reveal: Reveal.Api
@@ -19,7 +19,7 @@ onMount(async () => {
 		progress: true,
 		history: false,
 		center: true,
-		transition: "zoom",
+		transition: 'zoom',
 		autoAnimate: true,
 	})
 })

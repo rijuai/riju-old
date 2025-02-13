@@ -1,40 +1,40 @@
 <script lang="ts">
-import Badge from "$lib/components/ui/badge/badge.svelte"
-import * as Card from "$lib/components/ui/card"
+import Badge from '$lib/components/ui/badge/badge.svelte'
+import * as Card from '$lib/components/ui/card'
 
 const FeatureStatus = {
 	planned: 0,
-	"in-progress": 1,
+	'in-progress': 1,
 	completed: 2,
-} as const;
+} as const
 
-type FeatureStatusType = typeof FeatureStatus[keyof typeof FeatureStatus];
+type FeatureStatusType = (typeof FeatureStatus)[keyof typeof FeatureStatus]
 
 const features: Array<{
-	title: string;
-	description: string;
-	status: FeatureStatusType;
+	title: string
+	description: string
+	status: FeatureStatusType
 }> = [
 	{
-		title: "Add table block",
+		title: 'Add table block',
 		description:
-			"Add a table block to your page to display data in a structured way.",
+			'Add a table block to your page to display data in a structured way.',
 		status: FeatureStatus.completed,
 	},
 	{
-		title: "Add chart block",
+		title: 'Add chart block',
 		description:
-			"Add a chart block to your page to display data in a visual way.",
+			'Add a chart block to your page to display data in a visual way.',
 		status: FeatureStatus.planned,
 	},
 	{
-		title: "Custom logo watermark",
-		description: "Add a custom logo watermark to your presentations.",
+		title: 'Custom logo watermark',
+		description: 'Add a custom logo watermark to your presentations.',
 		status: FeatureStatus.planned,
 	},
 	{
-		title: "Make Split Slide block more simple and intuitive",
-		description: "Make the split block appear beside the other block.",
+		title: 'Make Split Slide block more simple and intuitive',
+		description: 'Make the split block appear beside the other block.',
 		status: FeatureStatus.planned,
 	},
 ]

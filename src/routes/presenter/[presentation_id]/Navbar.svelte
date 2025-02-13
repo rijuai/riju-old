@@ -1,11 +1,11 @@
 <script lang="ts">
-import { goto } from "$app/navigation"
-import { Button } from "$lib/components/ui/button"
-import Maximize from "lucide-svelte/icons/maximize"
-import X from "lucide-svelte/icons/x"
-import { onMount } from "svelte"
-import SharePopup from "./SharePopup.svelte"
-import ThemeSettingsPopup from "./ThemeSettingsPopup.svelte"
+import { goto } from '$app/navigation'
+import { Button } from '$lib/components/ui/button'
+import Maximize from 'lucide-svelte/icons/maximize'
+import X from 'lucide-svelte/icons/x'
+import { onMount } from 'svelte'
+import SharePopup from './SharePopup.svelte'
+import ThemeSettingsPopup from './ThemeSettingsPopup.svelte'
 
 export let presentationId: string
 const isUserSignedIn = false

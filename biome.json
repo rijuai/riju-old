@@ -11,14 +11,13 @@
 	},
 	"javascript": {
 		"formatter": {
-			"semicolons": "asNeeded"
+			"semicolons": "asNeeded",
+			"quoteStyle": "single"
 		}
 	},
 	"overrides": [
 		{
-			"include": [
-				"*.svelte"
-			],
+			"include": ["*.svelte"],
 			"linter": {
 				"rules": {
 					"style": {

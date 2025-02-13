@@ -1,18 +1,18 @@
 <script lang="ts">
-import { goto } from "$app/navigation"
-import { page } from "$app/stores"
-import MetaTags from "$lib/components/MetaTags.svelte"
-import { Button } from "$lib/components/ui/button"
-import Input from "$lib/components/ui/input/input.svelte"
-import pb from "$lib/pocketbase"
+import { goto } from '$app/navigation'
+import { page } from '$app/stores'
+import MetaTags from '$lib/components/MetaTags.svelte'
+import { Button } from '$lib/components/ui/button'
+import Input from '$lib/components/ui/input/input.svelte'
+import pb from '$lib/pocketbase'
 
-let fullName = $state("")
-let email = $state("")
-let password = $state("")
-let referralCode = $state("")
+let fullName = $state('')
+let email = $state('')
+let password = $state('')
+let referralCode = $state('')
 
 $effect(() => {
-	referralCode = String($page.url.searchParams.get("referralCode"))
+	referralCode = String($page.url.searchParams.get('referralCode'))
 	console.log(referralCode)
 })
 
@@ -25,11 +25,11 @@ const signUpUsingEmailAndPassword = async () => {
 		referralCode,
 	}
 
-	await pb.collection("users").create(data)
-	await pb.collection("users").authWithPassword(email, password)
-	await pb.collection("users").requestVerification(email)
+	await pb.collection('users').create(data)
+	await pb.collection('users').authWithPassword(email, password)
+	await pb.collection('users').requestVerification(email)
 
-	goto("/dashboard")
+	goto('/dashboard')
 }
 </script>
 

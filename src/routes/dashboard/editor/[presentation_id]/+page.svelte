@@ -1,7 +1,7 @@
 <script lang="ts">
-import MetaTags from "$lib/components/MetaTags.svelte"
-import type { PageData } from "./$types"
-import Editor from "./Editor.svelte"
+import MetaTags from '$lib/components/MetaTags.svelte'
+import type { PageData } from './$types'
+import Editor from './Editor.svelte'
 
 export let data: PageData
 const { content, presentationId } = data

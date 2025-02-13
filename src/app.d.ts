@@ -9,12 +9,12 @@ declare global {
 	}
 
 	enum TransitionType {
-		None = "none",
-		Slide = "slide",
-		Fade = "fade",
-		Zoom = "zoom",
-		Concave = "concave",
-		Convex = "convex",
+		None = 'none',
+		Slide = 'slide',
+		Fade = 'fade',
+		Zoom = 'zoom',
+		Concave = 'concave',
+		Convex = 'convex',
 	}
 }
 

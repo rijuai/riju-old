@@ -1,6 +1,6 @@
 <script lang="ts">
-import { Button } from "$lib/components/ui/button"
-import ChevronRight from "lucide-svelte/icons/chevron-right"
+import { Button } from '$lib/components/ui/button'
+import ChevronRight from 'lucide-svelte/icons/chevron-right'
 </script>
 
 <section class="px-4 py-32 text-center">

@@ -1,8 +1,8 @@
 <script lang="ts">
-import { goto } from "$app/navigation"
-import pb from "$lib/pocketbase"
-import { userId } from "$lib/stores/user"
-import { onDestroy } from "svelte"
+import { goto } from '$app/navigation'
+import pb from '$lib/pocketbase'
+import { userId } from '$lib/stores/user'
+import { onDestroy } from 'svelte'
 
 let isUserAuthenticated = false
 
@@ -11,7 +11,7 @@ const removeListener = pb.authStore.onChange((token, model) => {
 		$userId = pb.authStore.model?.id
 		isUserAuthenticated = true
 	} else {
-		goto("/")
+		goto('/')
 	}
 }, true)
 

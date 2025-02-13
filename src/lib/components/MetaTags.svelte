@@ -1,10 +1,10 @@
 <script lang="ts">
-import { page } from "$app/stores"
-import { onMount } from "svelte"
+import { page } from '$app/stores'
+import { onMount } from 'svelte'
 
 export let title: string,
 	description: string,
-	keywords = ""
+	keywords = ''
 
 let url: string
 

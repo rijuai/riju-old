@@ -1,6 +1,6 @@
 <script>
-import MetaTags from "$lib/components/MetaTags.svelte"
-import * as Card from "$lib/components/ui/card"
+import MetaTags from '$lib/components/MetaTags.svelte'
+import * as Card from '$lib/components/ui/card'
 </script>
 
 <MetaTags title="Riju | Privacy Policy" description="Privacy Policy" />

@@ -1,31 +1,31 @@
 <script lang="ts">
-import { goto, invalidateAll } from "$app/navigation"
-import MetaTags from "$lib/components/MetaTags.svelte"
-import Button from "$lib/components/ui/button/button.svelte"
-import * as DropdownMenu from "$lib/components/ui/dropdown-menu"
-import * as Table from "$lib/components/ui/table"
-import pb from "$lib/pocketbase"
-import { userId } from "$lib/stores/user"
-import type { OutputData } from "@editorjs/editorjs"
-import Ellipsis from "lucide-svelte/icons/ellipsis"
-import ExternalLink from "lucide-svelte/icons/external-link"
-import Trash2 from "lucide-svelte/icons/trash-2"
-import type { PageData } from "./$types"
-import { templates } from "./templates"
+import { goto, invalidateAll } from '$app/navigation'
+import MetaTags from '$lib/components/MetaTags.svelte'
+import Button from '$lib/components/ui/button/button.svelte'
+import * as DropdownMenu from '$lib/components/ui/dropdown-menu'
+import * as Table from '$lib/components/ui/table'
+import pb from '$lib/pocketbase'
+import { userId } from '$lib/stores/user'
+import type { OutputData } from '@editorjs/editorjs'
+import Ellipsis from 'lucide-svelte/icons/ellipsis'
+import ExternalLink from 'lucide-svelte/icons/external-link'
+import Trash2 from 'lucide-svelte/icons/trash-2'
+import type { PageData } from './$types'
+import { templates } from './templates'
 
 export let data: PageData
 $: ({ presentations } = data)
 
 const deletePresentation = async (id: string) => {
-	await pb.collection("presentations").delete(id)
+	await pb.collection('presentations').delete(id)
 	invalidateAll()
 }
 
 const deleteImagesInR2 = async (objectKeys: string[]) => {
-	const result = await fetch("/api/r2", {
-		method: "DELETE",
+	const result = await fetch('/api/r2', {
+		method: 'DELETE',
 		headers: {
-			"Content-Type": "application/json",
+			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({ objectKeys }),
 	})
@@ -38,9 +38,9 @@ const deleteImages = async (editorOutput: OutputData) => {
 	if (!editorOutput) return
 
 	for (const item of blocks) {
-		if (item.type === "image") {
+		if (item.type === 'image') {
 			const url = item.data.file.url
-			const path = url.split("/").pop() ?? ""
+			const path = url.split('/').pop() ?? ''
 
 			imagesToDelete.push(path)
 		}
