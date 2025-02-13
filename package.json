@@ -38,6 +38,7 @@
 		"@editorjs/image": "^2.10.1",
 		"@editorjs/nested-list": "^1.4.3",
 		"@editorjs/table": "^2.4.3",
+		"@tailwindcss/postcss": "^4.0.6",
 		"@types/reveal.js": "^5.0.4",
 		"pocketbase": "^0.25.0",
 		"reveal.js": "^5.1.0",
