@@ -15,6 +15,5 @@ Superfast presentation creator...
 
 - SvelteKit: Frontend, APIs
 - Pocketbase: Database, Auth
-- Cloudflare R2: Image Storage
-- Cloudflare Pages: Hosting
-- Cloudflare Workers: Serverless Functions
+- Image Storage: Cloudflare R2
+- Hosting: Coolify on Hetzner
