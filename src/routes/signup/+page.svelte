@@ -1,6 +1,6 @@
 <script lang="ts">
 import { goto } from '$app/navigation'
-import { page } from '$app/stores'
+import { page } from '$app/state'
 import MetaTags from '$lib/components/MetaTags.svelte'
 import { Button } from '$lib/components/ui/button'
 import Input from '$lib/components/ui/input/input.svelte'
