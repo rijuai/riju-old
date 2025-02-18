@@ -1,6 +1,6 @@
 <script lang="ts">
-import Footer from '$lib/components/Footer.svelte'
 import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
+
 interface Props {
 	children?: import('svelte').Snippet
 }
@@ -16,4 +16,3 @@ let { children }: Props = $props()
     </div>
 </main>
 
-<Footer />
