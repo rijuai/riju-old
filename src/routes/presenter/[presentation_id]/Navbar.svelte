@@ -3,7 +3,6 @@ import { goto } from '$app/navigation'
 import { Button } from '$lib/components/ui/button'
 import Maximize from 'lucide-svelte/icons/maximize'
 import X from 'lucide-svelte/icons/x'
-import { onMount } from 'svelte'
 import SharePopup from './SharePopup.svelte'
 import ThemeSettingsPopup from './ThemeSettingsPopup.svelte'
 
@@ -12,7 +11,6 @@ interface Props {
 }
 
 let { presentationId }: Props = $props()
-const isUserSignedIn = false
 
 const showFullScreen = (element: Element) => {
 	const requestFullScreen =
@@ -23,10 +21,6 @@ const showFullScreen = (element: Element) => {
 
 	requestFullScreen.call(element)
 }
-
-onMount(async () => {
-	// isUserSignedIn = await isUserAuthenticated();
-})
 </script>
 
 <nav
@@ -34,10 +28,8 @@ onMount(async () => {
 >
     <Button variant="link" class="text-xl" href="/">Riju</Button>
     <div class="flex gap-4">
-        <!-- {#if isUserSignedIn} -->
         <SharePopup {presentationId} />
         <ThemeSettingsPopup {presentationId} />
-        <!-- {/if} -->
         <Button
             variant="ghost"
             size="icon"
@@ -49,7 +41,6 @@ onMount(async () => {
                 }
             }}><Maximize class="size-4" /></Button
         >
-        <!-- {#if isUserSignedIn} -->
         <Button
             variant="ghost"
             size="icon"
@@ -57,6 +48,5 @@ onMount(async () => {
                 goto(`/dashboard/editor/${presentationId}`);
             }}><X class="size-4" /></Button
         >
-        <!-- {/if} -->
     </div>
 </nav>
