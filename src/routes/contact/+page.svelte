@@ -17,7 +17,7 @@ import * as Card from '$lib/components/ui/card'
 		<Card.Content>
 			<p>
 				If you have any queries or want to contact us just send us an email at
-				namaste@riju.ai
+				iamvvv0@icloud.com
 			</p>
 		</Card.Content>
 	</Card.Root>
