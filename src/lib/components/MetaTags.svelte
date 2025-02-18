@@ -2,7 +2,7 @@
 import { page } from '$app/state'
 
 let { title, description = '', keywords = '' } = $props()
-let url: string = $derived(String(page.url))
+let url: string = $state(String(page.url))
 </script>
 
 <svelte:head>
