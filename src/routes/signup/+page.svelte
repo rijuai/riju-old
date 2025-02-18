@@ -9,20 +9,13 @@ import pb from '$lib/pocketbase'
 let fullName = $state('')
 let email = $state('')
 let password = $state('')
-let referralCode = $state('')
-
-$effect(() => {
-	referralCode = String($page.url.searchParams.get('referralCode'))
-	console.log(referralCode)
-})
 
 const signUpUsingEmailAndPassword = async () => {
 	const data = {
 		name: fullName,
 		email,
 		password,
-		passwordConfirm: password,
-		referralCode,
+		passwordConfirm: password
 	}
 
 	await pb.collection('users').create(data)
