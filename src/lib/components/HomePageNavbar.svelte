@@ -8,9 +8,6 @@ import { Button } from '$lib/components/ui/button'
 	<div class="flex justify-between">
 		<a class="text-xl font-semibold" href="/"> Riju</a>
 		<div class="flex items-center gap-2">
-			<Button variant="link" href="/docs/roadmap" class="hidden md:block"
-				>Roadmap</Button
-			>
 			<Button variant="link" href="/contact" class="hidden md:block"
 				>Contact</Button
 			>
