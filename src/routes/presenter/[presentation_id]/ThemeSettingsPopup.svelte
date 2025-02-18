@@ -55,7 +55,6 @@ const fonts = [
 	'Inter'
 ]
 let open = false
-// biome-ignore lint/style/useConst: <explanation>
 let value = ''
 
 $: selectedFont = fonts.find((f) => f === value) ?? 'Select a font'
