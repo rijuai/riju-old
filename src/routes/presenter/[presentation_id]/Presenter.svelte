@@ -1,5 +1,4 @@
 <script lang="ts">
-import { run } from 'svelte/legacy'
 
 import Badge from '$lib/components/ui/badge/badge.svelte'
 import './presenter.css'
@@ -13,7 +12,7 @@ interface Props {
 }
 
 let { htmlOutput }: Props = $props()
-let reveal: Reveal.Api = $state()
+let reveal: Reveal.Api = $state(Reveal)
 
 onMount(async () => {
 	reveal = new Reveal()
@@ -30,7 +29,7 @@ onMount(async () => {
 	})
 })
 
-run(() => {
+$effect.pre(() => {
 	if (reveal) {
 		reveal.configure({
 			transition: $transitionType
