@@ -13,11 +13,11 @@ import Trash2 from 'lucide-svelte/icons/trash-2'
 import type { PageData } from './$types'
 import { templates } from './templates'
 
-	interface Props {
-		data: PageData;
-	}
+interface Props {
+	data: PageData
+}
 
-	let { data }: Props = $props();
+let { data }: Props = $props()
 let { presentations } = $derived(data)
 
 const deletePresentation = async (id: string) => {

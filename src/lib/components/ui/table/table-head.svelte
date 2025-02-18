@@ -4,14 +4,13 @@ import type { HTMLThAttributes } from 'svelte/elements'
 
 type $$Props = HTMLThAttributes
 
-	interface Props {
-		class?: $$Props['class'];
-		children?: import('svelte').Snippet;
-		[key: string]: any
-	}
+interface Props {
+	class?: $$Props['class']
+	children?: import('svelte').Snippet
+	[key: string]: any
+}
 
-	let { class: className = undefined, children, ...rest }: Props = $props();
-
+let { class: className = undefined, children, ...rest }: Props = $props()
 </script>
 
 <th

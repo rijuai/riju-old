@@ -4,14 +4,13 @@ import { Dialog as DialogPrimitive } from 'bits-ui'
 
 type $$Props = DialogPrimitive.TitleProps
 
-	interface Props {
-		class?: $$Props['class'];
-		children?: import('svelte').Snippet;
-		[key: string]: any
-	}
+interface Props {
+	class?: $$Props['class']
+	children?: import('svelte').Snippet
+	[key: string]: any
+}
 
-	let { class: className = undefined, children, ...rest }: Props = $props();
-
+let { class: className = undefined, children, ...rest }: Props = $props()
 </script>
 
 <DialogPrimitive.Title

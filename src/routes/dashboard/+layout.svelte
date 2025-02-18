@@ -2,11 +2,11 @@
 import AuthCheck from './AuthCheck.svelte'
 import HelpDialog from './HelpDialog.svelte'
 import Navbar from './Navbar.svelte'
-    interface Props {
-        children?: import('svelte').Snippet;
-    }
+interface Props {
+	children?: import('svelte').Snippet
+}
 
-    let { children }: Props = $props();
+let { children }: Props = $props()
 </script>
 
 <AuthCheck>

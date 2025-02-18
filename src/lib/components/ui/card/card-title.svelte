@@ -7,15 +7,19 @@ type $$Props = HTMLAttributes<HTMLHeadingElement> & {
 	tag?: HeadingLevel
 }
 
-	interface Props {
-		class?: $$Props['class'];
-		tag?: $$Props['tag'];
-		children?: import('svelte').Snippet;
-		[key: string]: any
-	}
+interface Props {
+	class?: $$Props['class']
+	tag?: $$Props['tag']
+	children?: import('svelte').Snippet
+	[key: string]: any
+}
 
-	let { class: className = undefined, tag = 'h3', children, ...rest }: Props = $props();
-
+let {
+	class: className = undefined,
+	tag = 'h3',
+	children,
+	...rest
+}: Props = $props()
 </script>
 
 <svelte:element

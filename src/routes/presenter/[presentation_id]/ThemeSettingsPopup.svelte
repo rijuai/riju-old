@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 import { Button } from '$lib/components/ui/button'
 import * as Command from '$lib/components/ui/command'
 import { Label } from '$lib/components/ui/label'
@@ -14,11 +12,11 @@ import Sparkles from 'lucide-svelte/icons/sparkles'
 import { tick } from 'svelte'
 import { changeTheme, currentTheme, transitionType } from './store'
 
-	interface Props {
-		presentationId: string;
-	}
+interface Props {
+	presentationId: string
+}
 
-	let { presentationId }: Props = $props();
+let { presentationId }: Props = $props()
 
 const transitionTypes = [
 	{
@@ -81,12 +79,12 @@ function getFontUrl(fontName: string) {
 }
 
 let selectedFontUrl = $derived(getFontUrl(selectedFont))
-run(() => {
+$effect.pre(() => {
 	const element = document.querySelector('.reveal') as HTMLElement
 	if (element) {
 		element.style.fontFamily = selectedFont
 	}
-});
+})
 </script>
 
 <svelte:head>

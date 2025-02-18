@@ -5,14 +5,17 @@ import { Switch as SwitchPrimitive } from 'bits-ui'
 type $$Props = SwitchPrimitive.Props
 type $$Events = SwitchPrimitive.Events
 
-	interface Props {
-		class?: $$Props['class'];
-		checked?: $$Props['checked'];
-		[key: string]: any
-	}
+interface Props {
+	class?: $$Props['class']
+	checked?: $$Props['checked']
+	[key: string]: any
+}
 
-	let { class: className = undefined, checked = $bindable(undefined), ...rest }: Props = $props();
-
+let {
+	class: className = undefined,
+	checked = $bindable(undefined),
+	...rest
+}: Props = $props()
 </script>
 
 <SwitchPrimitive.Root

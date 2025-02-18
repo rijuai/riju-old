@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { createBubbler, passive } from 'svelte/legacy';
+import { createBubbler, passive } from 'svelte/legacy'
 
-	const bubble = createBubbler();
+const bubble = createBubbler()
 import { cn } from '$lib/utils.js'
 import type { HTMLInputAttributes } from 'svelte/elements'
 import type { InputEvents } from './index.js'
@@ -9,19 +9,22 @@ import type { InputEvents } from './index.js'
 type $$Props = HTMLInputAttributes
 type $$Events = InputEvents
 
-
-
 // Workaround for https://github.com/sveltejs/svelte/issues/9305
 
-	interface Props {
-		class?: $$Props['class'];
-		value?: $$Props['value'];
-		// Fixed in Svelte 5, but not backported to 4.x.
-		readonly?: $$Props['readonly'];
-		[key: string]: any
-	}
+interface Props {
+	class?: $$Props['class']
+	value?: $$Props['value']
+	// Fixed in Svelte 5, but not backported to 4.x.
+	readonly?: $$Props['readonly']
+	[key: string]: any
+}
 
-	let { class: className = undefined, value = $bindable(undefined), readonly = undefined, ...rest }: Props = $props();
+let {
+	class: className = undefined,
+	value = $bindable(undefined),
+	readonly = undefined,
+	...rest
+}: Props = $props()
 </script>
 
 <input

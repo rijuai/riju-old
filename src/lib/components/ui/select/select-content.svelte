@@ -6,33 +6,31 @@ import { scale } from 'svelte/transition'
 type $$Props = SelectPrimitive.ContentProps
 type $$Events = SelectPrimitive.ContentEvents
 
+interface Props {
+	sideOffset?: $$Props['sideOffset']
+	inTransition?: $$Props['inTransition']
+	inTransitionConfig?: $$Props['inTransitionConfig']
+	outTransition?: $$Props['outTransition']
+	outTransitionConfig?: $$Props['outTransitionConfig']
+	class?: $$Props['class']
+	children?: import('svelte').Snippet
+	[key: string]: any
+}
 
-	interface Props {
-		sideOffset?: $$Props['sideOffset'];
-		inTransition?: $$Props['inTransition'];
-		inTransitionConfig?: $$Props['inTransitionConfig'];
-		outTransition?: $$Props['outTransition'];
-		outTransitionConfig?: $$Props['outTransitionConfig'];
-		class?: $$Props['class'];
-		children?: import('svelte').Snippet;
-		[key: string]: any
-	}
-
-	let {
-		sideOffset = 4,
-		inTransition = flyAndScale,
-		inTransitionConfig = undefined,
-		outTransition = scale,
-		outTransitionConfig = {
-	start: 0.95,
-	opacity: 0,
-	duration: 50
-},
-		class: className = undefined,
-		children,
-		...rest
-	}: Props = $props();
-
+let {
+	sideOffset = 4,
+	inTransition = flyAndScale,
+	inTransitionConfig = undefined,
+	outTransition = scale,
+	outTransitionConfig = {
+		start: 0.95,
+		opacity: 0,
+		duration: 50
+	},
+	class: className = undefined,
+	children,
+	...rest
+}: Props = $props()
 </script>
 
 <SelectPrimitive.Content

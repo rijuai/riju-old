@@ -6,14 +6,19 @@ import Command from './command.svelte'
 
 type $$Props = DialogPrimitive.Props & CommandPrimitive.CommandProps
 
-	interface Props {
-		open?: $$Props['open'];
-		value?: $$Props['value'];
-		children?: import('svelte').Snippet;
-		[key: string]: any
-	}
+interface Props {
+	open?: $$Props['open']
+	value?: $$Props['value']
+	children?: import('svelte').Snippet
+	[key: string]: any
+}
 
-	let { open = $bindable(false), value = $bindable(undefined), children, ...rest }: Props = $props();
+let {
+	open = $bindable(false),
+	value = $bindable(undefined),
+	children,
+	...rest
+}: Props = $props()
 </script>
 
 <Dialog.Root bind:open {...rest}>

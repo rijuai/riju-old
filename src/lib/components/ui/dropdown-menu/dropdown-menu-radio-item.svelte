@@ -6,15 +6,14 @@ import Circle from 'lucide-svelte/icons/circle'
 type $$Props = DropdownMenuPrimitive.RadioItemProps
 type $$Events = DropdownMenuPrimitive.RadioItemEvents
 
-	interface Props {
-		class?: $$Props['class'];
-		value: $$Props['value'];
-		children?: import('svelte').Snippet;
-		[key: string]: any
-	}
+interface Props {
+	class?: $$Props['class']
+	value: $$Props['value']
+	children?: import('svelte').Snippet
+	[key: string]: any
+}
 
-	let { class: className = undefined, value, children, ...rest }: Props = $props();
-
+let { class: className = undefined, value, children, ...rest }: Props = $props()
 </script>
 
 <DropdownMenuPrimitive.RadioItem

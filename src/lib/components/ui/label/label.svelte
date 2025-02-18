@@ -5,14 +5,13 @@ import { Label as LabelPrimitive } from 'bits-ui'
 type $$Props = LabelPrimitive.Props
 type $$Events = LabelPrimitive.Events
 
-	interface Props {
-		class?: $$Props['class'];
-		children?: import('svelte').Snippet;
-		[key: string]: any
-	}
+interface Props {
+	class?: $$Props['class']
+	children?: import('svelte').Snippet
+	[key: string]: any
+}
 
-	let { class: className = undefined, children, ...rest }: Props = $props();
-
+let { class: className = undefined, children, ...rest }: Props = $props()
 </script>
 
 <LabelPrimitive.Root

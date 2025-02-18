@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
+import { run } from 'svelte/legacy'
 
 import Badge from '$lib/components/ui/badge/badge.svelte'
 import './presenter.css'
@@ -8,11 +8,11 @@ import { currentTheme, transitionType } from './store'
 import 'reveal.js/dist/reveal.css'
 import { onDestroy, onMount } from 'svelte'
 
-	interface Props {
-		htmlOutput: string;
-	}
+interface Props {
+	htmlOutput: string
+}
 
-	let { htmlOutput }: Props = $props();
+let { htmlOutput }: Props = $props()
 let reveal: Reveal.Api = $state()
 
 onMount(async () => {
@@ -36,7 +36,7 @@ run(() => {
 			transition: $transitionType
 		})
 	}
-});
+})
 
 onDestroy(() => {
 	reveal.destroy()

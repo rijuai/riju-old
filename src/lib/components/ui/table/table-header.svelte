@@ -1,20 +1,19 @@
 <script lang="ts">
-	import { createBubbler } from 'svelte/legacy';
+import { createBubbler } from 'svelte/legacy'
 
-	const bubble = createBubbler();
+const bubble = createBubbler()
 import { cn } from '$lib/utils.js'
 import type { HTMLAttributes } from 'svelte/elements'
 
 type $$Props = HTMLAttributes<HTMLTableSectionElement>
 
-	interface Props {
-		class?: $$Props['class'];
-		children?: import('svelte').Snippet;
-		[key: string]: any
-	}
+interface Props {
+	class?: $$Props['class']
+	children?: import('svelte').Snippet
+	[key: string]: any
+}
 
-	let { class: className = undefined, children, ...rest }: Props = $props();
-
+let { class: className = undefined, children, ...rest }: Props = $props()
 </script>
 
 <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->

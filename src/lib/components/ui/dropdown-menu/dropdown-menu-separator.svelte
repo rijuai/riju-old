@@ -4,13 +4,12 @@ import { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui'
 
 type $$Props = DropdownMenuPrimitive.SeparatorProps
 
-	interface Props {
-		class?: $$Props['class'];
-		[key: string]: any
-	}
+interface Props {
+	class?: $$Props['class']
+	[key: string]: any
+}
 
-	let { class: className = undefined, ...rest }: Props = $props();
-
+let { class: className = undefined, ...rest }: Props = $props()
 </script>
 
 <DropdownMenuPrimitive.Separator

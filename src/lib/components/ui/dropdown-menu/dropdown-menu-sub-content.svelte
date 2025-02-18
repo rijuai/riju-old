@@ -5,25 +5,24 @@ import { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui'
 type $$Props = DropdownMenuPrimitive.SubContentProps
 type $$Events = DropdownMenuPrimitive.SubContentEvents
 
-	interface Props {
-		class?: $$Props['class'];
-		transition?: $$Props['transition'];
-		transitionConfig?: $$Props['transitionConfig'];
-		children?: import('svelte').Snippet;
-		[key: string]: any
-	}
+interface Props {
+	class?: $$Props['class']
+	transition?: $$Props['transition']
+	transitionConfig?: $$Props['transitionConfig']
+	children?: import('svelte').Snippet
+	[key: string]: any
+}
 
-	let {
-		class: className = undefined,
-		transition = flyAndScale,
-		transitionConfig = {
-	x: -10,
-	y: 0
-},
-		children,
-		...rest
-	}: Props = $props();
-
+let {
+	class: className = undefined,
+	transition = flyAndScale,
+	transitionConfig = {
+		x: -10,
+		y: 0
+	},
+	children,
+	...rest
+}: Props = $props()
 </script>
 
 <DropdownMenuPrimitive.SubContent

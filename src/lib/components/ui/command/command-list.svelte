@@ -3,14 +3,13 @@ import { cn } from '$lib/utils.js'
 import { Command as CommandPrimitive } from 'cmdk-sv'
 
 type $$Props = CommandPrimitive.ListProps
-	interface Props {
-		class?: string | undefined | null;
-		children?: import('svelte').Snippet;
-		[key: string]: any
-	}
+interface Props {
+	class?: string | undefined | null
+	children?: import('svelte').Snippet
+	[key: string]: any
+}
 
-	let { class: className = undefined, children, ...rest }: Props = $props();
-
+let { class: className = undefined, children, ...rest }: Props = $props()
 </script>
 
 <CommandPrimitive.List

@@ -6,24 +6,23 @@ import * as Dialog from './index.js'
 
 type $$Props = DialogPrimitive.ContentProps
 
-	interface Props {
-		class?: $$Props['class'];
-		transition?: $$Props['transition'];
-		transitionConfig?: $$Props['transitionConfig'];
-		children?: import('svelte').Snippet;
-		[key: string]: any
-	}
+interface Props {
+	class?: $$Props['class']
+	transition?: $$Props['transition']
+	transitionConfig?: $$Props['transitionConfig']
+	children?: import('svelte').Snippet
+	[key: string]: any
+}
 
-	let {
-		class: className = undefined,
-		transition = flyAndScale,
-		transitionConfig = {
-	duration: 200
-},
-		children,
-		...rest
-	}: Props = $props();
-
+let {
+	class: className = undefined,
+	transition = flyAndScale,
+	transitionConfig = {
+		duration: 200
+	},
+	children,
+	...rest
+}: Props = $props()
 </script>
 
 <Dialog.Portal>

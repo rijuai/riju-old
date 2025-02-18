@@ -6,24 +6,23 @@ import Check from 'lucide-svelte/icons/check'
 type $$Props = SelectPrimitive.ItemProps
 type $$Events = SelectPrimitive.ItemEvents
 
-	interface Props {
-		class?: $$Props['class'];
-		value: $$Props['value'];
-		label?: $$Props['label'];
-		disabled?: $$Props['disabled'];
-		children?: import('svelte').Snippet;
-		[key: string]: any
-	}
+interface Props {
+	class?: $$Props['class']
+	value: $$Props['value']
+	label?: $$Props['label']
+	disabled?: $$Props['disabled']
+	children?: import('svelte').Snippet
+	[key: string]: any
+}
 
-	let {
-		class: className = undefined,
-		value,
-		label = undefined,
-		disabled = undefined,
-		children,
-		...rest
-	}: Props = $props();
-
+let {
+	class: className = undefined,
+	value,
+	label = undefined,
+	disabled = undefined,
+	children,
+	...rest
+}: Props = $props()
 </script>
 
 <SelectPrimitive.Item

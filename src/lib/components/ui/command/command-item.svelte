@@ -4,18 +4,21 @@ import { Command as CommandPrimitive } from 'cmdk-sv'
 
 type $$Props = CommandPrimitive.ItemProps
 
+interface Props {
+	asChild?: boolean
+	class?: string | undefined | null
+	children?: import('svelte').Snippet<[any]>
+	[key: string]: any
+}
 
-	interface Props {
-		asChild?: boolean;
-		class?: string | undefined | null;
-		children?: import('svelte').Snippet<[any]>;
-		[key: string]: any
-	}
+let {
+	asChild = false,
+	class: className = undefined,
+	children,
+	...rest
+}: Props = $props()
 
-	let { asChild = false, class: className = undefined, children, ...rest }: Props = $props();
-
-
-	const children_render = $derived(children);
+const children_render = $derived(children)
 </script>
 
 <CommandPrimitive.Item

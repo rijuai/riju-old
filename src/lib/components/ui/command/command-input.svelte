@@ -5,14 +5,17 @@ import Search from 'lucide-svelte/icons/search'
 
 type $$Props = CommandPrimitive.InputProps
 
+interface Props {
+	class?: string | undefined | null
+	value?: string
+	[key: string]: any
+}
 
-	interface Props {
-		class?: string | undefined | null;
-		value?: string;
-		[key: string]: any
-	}
-
-	let { class: className = undefined, value = $bindable(''), ...rest }: Props = $props();
+let {
+	class: className = undefined,
+	value = $bindable(''),
+	...rest
+}: Props = $props()
 </script>
 
 <div class="flex items-center border-b px-2" data-cmdk-input-wrapper="">

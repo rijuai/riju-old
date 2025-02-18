@@ -4,14 +4,13 @@ import type { HTMLAttributes } from 'svelte/elements'
 
 type $$Props = HTMLAttributes<HTMLSpanElement>
 
-	interface Props {
-		class?: string | undefined | null;
-		children?: import('svelte').Snippet;
-		[key: string]: any
-	}
+interface Props {
+	class?: string | undefined | null
+	children?: import('svelte').Snippet
+	[key: string]: any
+}
 
-	let { class: className = undefined, children, ...rest }: Props = $props();
-
+let { class: className = undefined, children, ...rest }: Props = $props()
 </script>
 
 <span
