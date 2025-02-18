@@ -7,11 +7,11 @@ import pb from '$lib/pocketbase'
 import { userId } from '$lib/stores/user'
 import { onMount } from 'svelte'
 
-let email: string
+let email: string = $state('')
 
 const getUserEmail = async () => {
 	const { email } = await pb.collection('users').getOne($userId as string, {
-		fields: 'email',
+		fields: 'email'
 	})
 
 	return email

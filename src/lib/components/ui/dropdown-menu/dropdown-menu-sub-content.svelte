@@ -5,13 +5,24 @@ import { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui'
 type $$Props = DropdownMenuPrimitive.SubContentProps
 type $$Events = DropdownMenuPrimitive.SubContentEvents
 
-let className: $$Props['class'] = undefined
-export let transition: $$Props['transition'] = flyAndScale
-export let transitionConfig: $$Props['transitionConfig'] = {
-	x: -10,
-	y: 0,
+interface Props {
+	class?: $$Props['class']
+	transition?: $$Props['transition']
+	transitionConfig?: $$Props['transitionConfig']
+	children?: import('svelte').Snippet
+	[key: string]: any
 }
-export { className as class }
+
+let {
+	class: className = undefined,
+	transition = flyAndScale,
+	transitionConfig = {
+		x: -10,
+		y: 0
+	},
+	children,
+	...rest
+}: Props = $props()
 </script>
 
 <DropdownMenuPrimitive.SubContent
@@ -21,10 +32,10 @@ export { className as class }
 		"bg-popover text-popover-foreground z-50 min-w-[8rem] rounded-md border p-1 shadow-lg focus:outline-none",
 		className
 	)}
-	{...$$restProps}
+	{...rest}
 	on:keydown
 	on:focusout
 	on:pointermove
 >
-	<slot />
+	{@render children?.()}
 </DropdownMenuPrimitive.SubContent>

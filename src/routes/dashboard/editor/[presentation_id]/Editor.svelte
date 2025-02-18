@@ -10,8 +10,12 @@ import CustomImage from './CustomImage'
 import NewSlide from './newSlide'
 import SplitSlide from './splitSide'
 
-export let presentationId: string
-export let content: OutputData
+interface Props {
+	presentationId: string
+	content: OutputData
+}
+
+let { presentationId, content }: Props = $props()
 
 let debounceTimer: NodeJS.Timeout
 
@@ -29,7 +33,7 @@ const editor = new EditorJS({
 		debounceTimer = setTimeout(async () => {
 			const data = {
 				title: title,
-				content: outputData,
+				content: outputData
 			}
 
 			const record = await pb
@@ -44,34 +48,34 @@ const editor = new EditorJS({
 			config: {
 				placeholder: 'Enter a header',
 				levels: [1, 2],
-				defaultLevel: 1,
+				defaultLevel: 1
 			},
 			toolbox: [
 				{
 					icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heading-1"><path d="M4 12h8"/><path d="M4 18V6"/><path d="M12 18V6"/><path d="m17 12 3-2v8"/></svg>`,
 					title: 'Heading 1',
 					data: {
-						level: 1,
-					},
+						level: 1
+					}
 				},
 				{
 					icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heading-2"><path d="M4 12h8"/><path d="M4 18V6"/><path d="M12 18V6"/><path d="M21 18h-4c0-4 4-3 4-6 0-1.5-2-2.5-4-1"/></svg>`,
 					title: 'Heading 2',
 					data: {
-						level: 2,
-					},
-				},
-			],
+						level: 2
+					}
+				}
+			]
 		},
 		nestedList: {
 			class: NestedList,
-			inlineToolbar: true,
+			inlineToolbar: true
 		},
 		newSlide: {
-			class: NewSlide,
+			class: NewSlide
 		},
 		splitSlide: {
-			class: SplitSlide,
+			class: SplitSlide
 		},
 		image: {
 			class: CustomImage,
@@ -82,17 +86,17 @@ const editor = new EditorJS({
 						return {
 							success: 1,
 							file: {
-								url: result.url,
-							},
+								url: result.url
+							}
 						}
-					},
-				},
-			},
+					}
+				}
+			}
 		},
 		table: {
-			class: Table,
-		},
-	},
+			class: Table
+		}
+	}
 })
 
 onMount(async () => {

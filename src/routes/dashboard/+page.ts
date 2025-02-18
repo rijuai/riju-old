@@ -4,10 +4,10 @@ import type { PageLoad } from './$types'
 export const load: PageLoad = async () => {
 	const presentations = await pb.collection('presentations').getFullList({
 		fields: 'id,title',
-		sort: '-updated',
+		sort: '-updated'
 	})
 
 	return {
-		presentations: presentations,
+		presentations: presentations
 	}
 }

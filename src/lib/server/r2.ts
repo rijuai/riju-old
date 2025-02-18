@@ -6,8 +6,8 @@ const S3 = new S3Client({
 	endpoint: R2_ENDPOINT,
 	credentials: {
 		accessKeyId: R2_ACCESS_KEY,
-		secretAccessKey: R2_SECRET_KEY,
-	},
+		secretAccessKey: R2_SECRET_KEY
+	}
 })
 
 export { S3 }

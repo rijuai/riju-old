@@ -1,4 +1,6 @@
 <script lang="ts">
+import { run } from 'svelte/legacy'
+
 import { page } from '$app/stores'
 import { Button } from '$lib/components/ui/button'
 import { Label } from '$lib/components/ui/label'
@@ -7,14 +9,18 @@ import { Switch } from '$lib/components/ui/switch'
 import pb from '$lib/pocketbase'
 import { isPresentationPublic } from './store'
 
-export let presentationId: string
+interface Props {
+	presentationId: string
+}
+
+let { presentationId }: Props = $props()
 
 const updatePresentationVisibility = async (
 	presentationId: string,
-	isPublic: boolean,
+	isPublic: boolean
 ) => {
 	const data = {
-		is_public: isPublic,
+		is_public: isPublic
 	}
 
 	const record = await pb
@@ -22,9 +28,9 @@ const updatePresentationVisibility = async (
 		.update(presentationId, data)
 }
 
-$: {
+run(() => {
 	updatePresentationVisibility(presentationId, $isPresentationPublic)
-}
+})
 </script>
 
 <Popover.Root>

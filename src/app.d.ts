@@ -14,8 +14,8 @@ declare global {
 		Fade = 'fade',
 		Zoom = 'zoom',
 		Concave = 'concave',
-		Convex = 'convex',
+		Convex = 'convex'
 	}
 }
 
-export type { }
+export type {}

@@ -12,33 +12,37 @@ import Sparkles from 'lucide-svelte/icons/sparkles'
 import { tick } from 'svelte'
 import { changeTheme, currentTheme, transitionType } from './store'
 
-export let presentationId: string
+interface Props {
+	presentationId: string
+}
+
+let { presentationId }: Props = $props()
 
 const transitionTypes = [
 	{
 		label: 'None',
-		value: 'none',
+		value: 'none'
 	},
 	{
 		label: 'Slide',
-		value: 'slide',
+		value: 'slide'
 	},
 	{
 		label: 'Fade',
-		value: 'fade',
+		value: 'fade'
 	},
 	{
 		label: 'Zoom',
-		value: 'zoom',
+		value: 'zoom'
 	},
 	{
 		label: 'Concave',
-		value: 'concave',
+		value: 'concave'
 	},
 	{
 		label: 'Convex',
-		value: 'convex',
-	},
+		value: 'convex'
+	}
 ]
 
 const fonts = [
@@ -52,13 +56,12 @@ const fonts = [
 	'Ubuntu',
 	'Noto Sans',
 	'Poppins',
-	'Inter',
+	'Inter'
 ]
-let open = false
-// biome-ignore lint/style/useConst: <explanation>
-let value = ''
+let open = $state(false)
+let value = $state('')
 
-$: selectedFont = fonts.find((f) => f === value) ?? 'Select a font'
+let selectedFont = $derived(fonts.find((f) => f === value) ?? 'Select a font')
 
 // We want to refocus the trigger button when the user selects
 // an item from the list so users can continue navigating the
@@ -75,13 +78,13 @@ function getFontUrl(fontName: string) {
 	return `https://fonts.googleapis.com/css2?family=${fontName.replace(/ /g, '+')}:wght@400&display=swap`
 }
 
-$: selectedFontUrl = getFontUrl(selectedFont)
-$: {
+let selectedFontUrl = $derived(getFontUrl(selectedFont))
+$effect.pre(() => {
 	const element = document.querySelector('.reveal') as HTMLElement
 	if (element) {
 		element.style.fontFamily = selectedFont
 	}
-}
+})
 </script>
 
 <svelte:head>
@@ -150,45 +153,49 @@ $: {
 		<!-- Font style combobox -->
 		<div class="grid grid-cols-2 items-center gap-3">
 			<Label>Font Style</Label>
-			<Popover.Root bind:open let:ids>
-				<Popover.Trigger asChild let:builder>
-					<Button
-						builders={[builder]}
-						variant="outline"
-						role="combobox"
-						aria-expanded={open}
-						class="justify-between"
-					>
-						{selectedFont}
-						<ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
-					</Button>
-				</Popover.Trigger>
-				<Popover.Content class="w-48 p-0">
-					<Command.Root>
-						<Command.Input placeholder="Search framework..." />
-						<Command.Empty>No framework found.</Command.Empty>
-						<Command.Group>
-							{#each fonts as font}
-								<Command.Item
-									value={font}
-									onSelect={(currentValue) => {
-										value = currentValue
-										closeAndFocusTrigger(ids.trigger)
-									}}
-								>
-									<Check
-										class={cn(
-											'mr-2 h-4 w-4',
-											value !== font && 'text-transparent',
-										)}
-									/>
-									{font}
-								</Command.Item>
-							{/each}
-						</Command.Group>
-					</Command.Root>
-				</Popover.Content>
-			</Popover.Root>
+			<Popover.Root bind:open >
+				{#snippet children({ ids })}
+								<Popover.Trigger asChild >
+						{#snippet children({ builder })}
+										<Button
+								builders={[builder]}
+								variant="outline"
+								role="combobox"
+								aria-expanded={open}
+								class="justify-between"
+							>
+								{selectedFont}
+								<ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
+							</Button>
+															{/snippet}
+								</Popover.Trigger>
+					<Popover.Content class="w-48 p-0">
+						<Command.Root>
+							<Command.Input placeholder="Search framework..." />
+							<Command.Empty>No framework found.</Command.Empty>
+							<Command.Group>
+								{#each fonts as font}
+									<Command.Item
+										value={font}
+										onSelect={(currentValue) => {
+											value = currentValue
+											closeAndFocusTrigger(ids.trigger)
+										}}
+									>
+										<Check
+											class={cn(
+												'mr-2 h-4 w-4',
+												value !== font && 'text-transparent',
+											)}
+										/>
+										{font}
+									</Command.Item>
+								{/each}
+							</Command.Group>
+						</Command.Root>
+					</Popover.Content>
+											{/snippet}
+						</Popover.Root>
 
 			<!-- use this for new rows -->
 			<!-- <div class="grid grid-cols-2 items-center gap-3" /> -->

@@ -1,6 +1,6 @@
 <script lang="ts">
 import { goto } from '$app/navigation'
-import { page } from '$app/stores'
+import { page } from '$app/state'
 import { Button } from '$lib/components/ui/button'
 import pb from '$lib/pocketbase'
 import { userId } from '$lib/stores/user'
@@ -26,12 +26,12 @@ import Play from 'lucide-svelte/icons/play'
 			data-tally-emoji-text="👋"
 			data-tally-emoji-animation="wave">Feedback</Button
 		>
-		{#key $page.url.pathname}
-			{#if $page.url.pathname.includes('/editor')}
+		{#key page.url.pathname}
+			{#if page.url.pathname.includes('/editor')}
 				<Button
 					variant="secondary"
 					on:click={() => {
-						const presentationId = $page.params.presentation_id
+						const presentationId = page.params.presentation_id
 
 						goto(`/presenter/${presentationId}`)
 					}}
@@ -39,7 +39,7 @@ import Play from 'lucide-svelte/icons/play'
 					<Play class="mr-1 size-4" />Present
 				</Button>
 			{/if}
-			{#if $page.url.pathname === '/dashboard'}
+			{#if page.url.pathname === '/dashboard'}
 				<Button
 					on:click={async () => {
 						const data = {

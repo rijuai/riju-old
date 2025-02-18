@@ -2,7 +2,7 @@ export const uploadToR2 = async (file: File) => {
 	const presignedUrlResponse = await fetch('/api/r2', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify({ fileName: file.name, fileType: file.type }),
+		body: JSON.stringify({ fileName: file.name, fileType: file.type })
 	})
 
 	if (!presignedUrlResponse.ok) {
@@ -14,7 +14,7 @@ export const uploadToR2 = async (file: File) => {
 	const uploadResponse = await fetch(presignedUrl, {
 		method: 'PUT',
 		headers: { 'Content-Type': file.type },
-		body: file,
+		body: file
 	})
 
 	if (!uploadResponse.ok) {
@@ -22,6 +22,6 @@ export const uploadToR2 = async (file: File) => {
 	}
 
 	return {
-		url: `https://assets.riju.ai/${objectKey}`,
+		url: `https://assets.riju.ai/${objectKey}`
 	}
 }

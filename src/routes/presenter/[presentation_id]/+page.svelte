@@ -5,7 +5,11 @@ import Navbar from './Navbar.svelte'
 import Presenter from './Presenter.svelte'
 import { currentTheme, isPresentationPublic, transitionType } from './store'
 
-export let data: PageData
+interface Props {
+	data: PageData
+}
+
+let { data }: Props = $props()
 
 const { theme, isPublic, htmlOutput, presentationId } = data
 $isPresentationPublic = isPublic

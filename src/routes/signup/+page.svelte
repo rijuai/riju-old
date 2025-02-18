@@ -1,6 +1,6 @@
 <script lang="ts">
 import { goto } from '$app/navigation'
-import { page } from '$app/stores'
+import { page } from '$app/state'
 import MetaTags from '$lib/components/MetaTags.svelte'
 import { Button } from '$lib/components/ui/button'
 import Input from '$lib/components/ui/input/input.svelte'
@@ -9,20 +9,13 @@ import pb from '$lib/pocketbase'
 let fullName = $state('')
 let email = $state('')
 let password = $state('')
-let referralCode = $state('')
-
-$effect(() => {
-	referralCode = String($page.url.searchParams.get('referralCode'))
-	console.log(referralCode)
-})
 
 const signUpUsingEmailAndPassword = async () => {
 	const data = {
 		name: fullName,
 		email,
 		password,
-		passwordConfirm: password,
-		referralCode,
+		passwordConfirm: password
 	}
 
 	await pb.collection('users').create(data)

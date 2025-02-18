@@ -6,11 +6,11 @@ export const load: PageLoad = async ({ params }) => {
 	const { content } = await pb
 		.collection('presentations')
 		.getOne(presentation_id, {
-			fields: 'content',
+			fields: 'content'
 		})
 
 	return {
 		content,
-		presentationId: presentation_id,
+		presentationId: presentation_id
 	}
 }

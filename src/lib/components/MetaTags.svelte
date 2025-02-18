@@ -1,16 +1,8 @@
 <script lang="ts">
-import { page } from '$app/stores'
-import { onMount } from 'svelte'
+import { page } from '$app/state'
 
-export let title: string,
-	description: string,
-	keywords = ''
-
-let url: string
-
-onMount(() => {
-	url = String($page.url)
-})
+let { title, description = '', keywords = '' } = $props()
+let url: string = $derived(String(page.url))
 </script>
 
 <svelte:head>

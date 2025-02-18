@@ -3,7 +3,11 @@ import MetaTags from '$lib/components/MetaTags.svelte'
 import type { PageData } from './$types'
 import Editor from './Editor.svelte'
 
-export let data: PageData
+interface Props {
+	data: PageData
+}
+
+let { data }: Props = $props()
 const { content, presentationId } = data
 </script>
 
