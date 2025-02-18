@@ -3,8 +3,13 @@ import { goto } from '$app/navigation'
 import pb from '$lib/pocketbase'
 import { userId } from '$lib/stores/user'
 import { onDestroy } from 'svelte'
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
 
-let isUserAuthenticated = false
+	let { children }: Props = $props();
+
+let isUserAuthenticated = $state(false)
 
 const removeListener = pb.authStore.onChange((token, model) => {
 	if (pb.authStore.isValid) {
@@ -21,5 +26,5 @@ onDestroy(() => {
 </script>
 
 {#if isUserAuthenticated}
-	<slot />
+	{@render children?.()}
 {/if}

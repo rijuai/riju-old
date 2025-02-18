@@ -10,8 +10,12 @@ import CustomImage from './CustomImage'
 import NewSlide from './newSlide'
 import SplitSlide from './splitSide'
 
-export let presentationId: string
-export let content: OutputData
+	interface Props {
+		presentationId: string;
+		content: OutputData;
+	}
+
+	let { presentationId, content }: Props = $props();
 
 let debounceTimer: NodeJS.Timeout
 

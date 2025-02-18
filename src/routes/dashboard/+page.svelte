@@ -13,8 +13,12 @@ import Trash2 from 'lucide-svelte/icons/trash-2'
 import type { PageData } from './$types'
 import { templates } from './templates'
 
-export let data: PageData
-$: ({ presentations } = data)
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
+let { presentations } = $derived(data)
 
 const deletePresentation = async (id: string) => {
 	await pb.collection('presentations').delete(id)

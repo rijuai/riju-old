@@ -7,7 +7,11 @@ import { onMount } from 'svelte'
 import SharePopup from './SharePopup.svelte'
 import ThemeSettingsPopup from './ThemeSettingsPopup.svelte'
 
-export let presentationId: string
+    interface Props {
+        presentationId: string;
+    }
+
+    let { presentationId }: Props = $props();
 const isUserSignedIn = false
 
 const showFullScreen = (element: Element) => {
