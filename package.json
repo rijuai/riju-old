@@ -13,7 +13,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@sveltejs/adapter-node": "^5.2.12",
-		"@sveltejs/kit": "^2.17.1",
+		"@sveltejs/kit": "^2.17.2",
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"@tailwindcss/typography": "^0.5.16",
 		"autoprefixer": "^10.4.20",
@@ -22,7 +22,7 @@
 		"cmdk-sv": "^0.0.18",
 		"lucide-svelte": "^0.469.0",
 		"postcss": "^8.5.2",
-		"svelte": "^5.20.0",
+		"svelte": "^5.20.1",
 		"svelte-check": "^4.1.4",
 		"tailwind-merge": "^2.6.0",
 		"tailwind-variants": "^0.3.1",
@@ -31,8 +31,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@aws-sdk/client-s3": "^3.744.0",
-		"@aws-sdk/s3-request-presigner": "^3.744.0",
+		"@aws-sdk/client-s3": "^3.750.0",
+		"@aws-sdk/s3-request-presigner": "^3.750.0",
 		"@editorjs/editorjs": "^2.30.8",
 		"@editorjs/header": "^2.8.8",
 		"@editorjs/image": "^2.10.2",
