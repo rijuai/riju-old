@@ -1,7 +1,7 @@
 <script lang="ts">
 import { page } from '$app/state'
 
-let {title, description, keywords} = $props()
+let {title, description = "", keywords = ""} = $props()
 let url: string = $derived(String(page.url))
 
 </script>
