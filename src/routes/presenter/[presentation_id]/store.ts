@@ -9,7 +9,7 @@ enum TransitionType {
 	Fade = 'fade',
 	Zoom = 'zoom',
 	Concave = 'concave',
-	Convex = 'convex',
+	Convex = 'convex'
 }
 
 export const transitionType = writable(TransitionType.Zoom)
@@ -27,7 +27,7 @@ export const themes = readable([
 	'background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);',
 	'background-image: repeating-linear-gradient(45deg, rgb(249, 249, 249) 0px, rgb(249, 249, 249) 109px,rgb(234, 234, 234) 109px, rgb(234, 234, 234) 218px,rgb(242, 242, 242) 218px, rgb(242, 242, 242) 327px);',
 	'background-image: repeating-linear-gradient(90deg, rgb(224, 224, 224) 0px, rgb(224, 224, 224) 75px,rgb(237, 237, 237) 75px, rgb(237, 237, 237) 150px,rgb(249, 249, 249) 150px, rgb(249, 249, 249) 225px,rgb(232, 232, 232) 225px, rgb(232, 232, 232) 300px,rgb(228, 228, 228) 300px, rgb(228, 228, 228) 375px,rgb(245, 245, 245) 375px, rgb(245, 245, 245) 450px,rgb(220, 220, 220) 450px, rgb(220, 220, 220) 525px,rgb(241, 241, 241) 525px, rgb(241, 241, 241) 600px);',
-	'background-image: linear-gradient(135deg, transparent 0%, transparent 2%,rgba(153, 243, 62,0.6) 2%, rgba(153, 243, 62,0.6) 21%,transparent 21%, transparent 85%,rgba(213, 250, 34,0.6) 85%, rgba(213, 250, 34,0.6) 100%),linear-gradient(45deg, transparent 0%, transparent 18%,rgba(153,243,62, 0.44) 18%, rgba(153,243,62, 0.44) 31%,rgb(255,255,255) 31%, rgb(255,255,255) 44%,transparent 44%, transparent 93%,rgb(173, 246, 53) 93%, rgb(173, 246, 53) 100%),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));',
+	'background-image: linear-gradient(135deg, transparent 0%, transparent 2%,rgba(153, 243, 62,0.6) 2%, rgba(153, 243, 62,0.6) 21%,transparent 21%, transparent 85%,rgba(213, 250, 34,0.6) 85%, rgba(213, 250, 34,0.6) 100%),linear-gradient(45deg, transparent 0%, transparent 18%,rgba(153,243,62, 0.44) 18%, rgba(153,243,62, 0.44) 31%,rgb(255,255,255) 31%, rgb(255,255,255) 44%,transparent 44%, transparent 93%,rgb(173, 246, 53) 93%, rgb(173, 246, 53) 100%),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));'
 ])
 
 export const getRandomNumber = (length: number) => {

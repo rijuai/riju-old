@@ -17,28 +17,28 @@ export let presentationId: string
 const transitionTypes = [
 	{
 		label: 'None',
-		value: 'none',
+		value: 'none'
 	},
 	{
 		label: 'Slide',
-		value: 'slide',
+		value: 'slide'
 	},
 	{
 		label: 'Fade',
-		value: 'fade',
+		value: 'fade'
 	},
 	{
 		label: 'Zoom',
-		value: 'zoom',
+		value: 'zoom'
 	},
 	{
 		label: 'Concave',
-		value: 'concave',
+		value: 'concave'
 	},
 	{
 		label: 'Convex',
-		value: 'convex',
-	},
+		value: 'convex'
+	}
 ]
 
 const fonts = [
@@ -52,7 +52,7 @@ const fonts = [
 	'Ubuntu',
 	'Noto Sans',
 	'Poppins',
-	'Inter',
+	'Inter'
 ]
 let open = false
 // biome-ignore lint/style/useConst: <explanation>

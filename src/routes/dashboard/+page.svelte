@@ -25,9 +25,9 @@ const deleteImagesInR2 = async (objectKeys: string[]) => {
 	const result = await fetch('/api/r2', {
 		method: 'DELETE',
 		headers: {
-			'Content-Type': 'application/json',
+			'Content-Type': 'application/json'
 		},
-		body: JSON.stringify({ objectKeys }),
+		body: JSON.stringify({ objectKeys })
 	})
 }
 

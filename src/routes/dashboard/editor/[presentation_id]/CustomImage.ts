@@ -10,7 +10,7 @@ class CustomImage extends Image {
 
 		fetch('/api/r2', {
 			method: 'DELETE',
-			body: JSON.stringify({ objectKeys: [path.pathname] }),
+			body: JSON.stringify({ objectKeys: [path.pathname] })
 		})
 
 		console.log('DELETED IMAGE DATA', path)

@@ -22,7 +22,7 @@ const featuredCompaniesLogo = [
 	OpenFutureLogo,
 	DailyCompanyNewsLogo,
 	SubscribedFyiLogo,
-	SuperbCrewLogo,
+	SuperbCrewLogo
 ]
 </script>
 

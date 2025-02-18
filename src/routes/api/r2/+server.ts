@@ -30,7 +30,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	}
 
 	const objectKey = `${slugifyString(Date.now().toString())}-${slugifyString(
-		fileName,
+		fileName
 	)}`
 
 	const presignedUrl = await getSignedUrl(
@@ -39,11 +39,11 @@ export const POST: RequestHandler = async ({ request }) => {
 			Bucket: PUBLIC_R2_BUCKET_NAME,
 			Key: objectKey,
 			ContentType: fileType,
-			ACL: 'public-read',
+			ACL: 'public-read'
 		}),
 		{
-			expiresIn: 60 * 5, // 5 minutes
-		},
+			expiresIn: 60 * 5 // 5 minutes
+		}
 	)
 
 	return json({ presignedUrl, objectKey })
@@ -56,7 +56,7 @@ export const DELETE: RequestHandler = async ({ request }) => {
 		if (!objectKeys || !Array.isArray(objectKeys)) {
 			return json(
 				{ message: 'Missing or invalid objectKeys parameter.' },
-				{ status: 400 },
+				{ status: 400 }
 			)
 		}
 
@@ -64,8 +64,8 @@ export const DELETE: RequestHandler = async ({ request }) => {
 			Bucket: PUBLIC_R2_BUCKET_NAME,
 			Delete: {
 				Objects: objectKeys.map((Key) => ({ Key })),
-				Quiet: false,
-			},
+				Quiet: false
+			}
 		}
 
 		const command = new DeleteObjectsCommand(deleteParams)

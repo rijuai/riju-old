@@ -20,14 +20,14 @@ onMount(async () => {
 		history: false,
 		center: true,
 		transition: 'zoom',
-		autoAnimate: true,
+		autoAnimate: true
 	})
 })
 
 $: {
 	if (reveal) {
 		reveal.configure({
-			transition: $transitionType,
+			transition: $transitionType
 		})
 	}
 }

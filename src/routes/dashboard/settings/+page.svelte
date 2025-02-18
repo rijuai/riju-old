@@ -11,7 +11,7 @@ let email: string
 
 const getUserEmail = async () => {
 	const { email } = await pb.collection('users').getOne($userId as string, {
-		fields: 'email',
+		fields: 'email'
 	})
 
 	return email

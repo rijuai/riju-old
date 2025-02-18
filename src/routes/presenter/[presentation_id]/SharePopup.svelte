@@ -11,10 +11,10 @@ export let presentationId: string
 
 const updatePresentationVisibility = async (
 	presentationId: string,
-	isPublic: boolean,
+	isPublic: boolean
 ) => {
 	const data = {
-		is_public: isPublic,
+		is_public: isPublic
 	}
 
 	const record = await pb
