@@ -1,5 +1,4 @@
 <script>
-import Footer from './Footer.svelte'
 import HomePageNavbar from './HomePageNavbar.svelte'
 
 let { children } = $props()
@@ -10,5 +9,4 @@ let { children } = $props()
 	<div class="px-4 py-12 md:py-16">
 		{@render children()}
 	</div>
-	<Footer />
 </main>

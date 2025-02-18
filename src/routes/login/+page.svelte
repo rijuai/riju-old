@@ -45,12 +45,5 @@ const signInUsingEmailAndPassword = async () => {
 		>
 			Continue
 		</Button>
-		<p class="text-muted-foreground text-xs">
-			By clicking, you agree to Riju <a class="underline" href="/docs/terms">Terms of Service</a>
-			and <a class="underline" href="/docs/privacy">Privacy Policy</a>.
-		</p>
-		<p class="text-center text-sm">
-			Don't have an account <a class="underline" href="/signup">Create an account</a>
-		</p>
 	</div>
 </section>
