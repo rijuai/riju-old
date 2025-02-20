@@ -30,9 +30,8 @@ const featuredCompaniesLogo = [
 	description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
 
-<HomePageNavbar />
-
-<main class="mx-auto max-w-5xl px-4">
+<main class="mx-auto max-w-4xl px-4">
+	<HomePageNavbar />
 	<!-- Hero -->
 	<div class="pt-16 text-center">
 		<h1 class="mb-6">Presentations without <u>Headache</u></h1>

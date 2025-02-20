@@ -10,12 +10,7 @@ import CustomImage from './CustomImage'
 import NewSlide from './newSlide'
 import SplitSlide from './splitSide'
 
-interface Props {
-	presentationId: string
-	content: OutputData
-}
-
-let { presentationId, content }: Props = $props()
+let { presentationId, content } = $props()
 
 let debounceTimer: NodeJS.Timeout
 

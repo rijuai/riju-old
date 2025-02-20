@@ -2,19 +2,16 @@
 import AuthCheck from './AuthCheck.svelte'
 import HelpDialog from './HelpDialog.svelte'
 import Navbar from './Navbar.svelte'
-interface Props {
-	children?: import('svelte').Snippet
-}
 
-let { children }: Props = $props()
+let { children } = $props()
 </script>
 
 <AuthCheck>
-    <Navbar />
+    <main class="px-6 py-4 max-w-3xl mx-auto">
+        <Navbar />
 
-    <main class="px-6 py-4">
-        {@render children?.()}
-    </main>
+        {@render children()}
 
     <HelpDialog />
+    </main>
 </AuthCheck>
