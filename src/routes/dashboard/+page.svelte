@@ -3,7 +3,6 @@ import { goto, invalidateAll } from '$app/navigation'
 import MetaTags from '$lib/components/MetaTags.svelte'
 import * as DropdownMenu from '$lib/components/ui/dropdown-menu'
 import * as Table from '$lib/components/ui/table'
-import Textarea from '$lib/components/ui/textarea/textarea.svelte'
 import pb from '$lib/pocketbase'
 import type { OutputData } from '@editorjs/editorjs'
 import Ellipsis from 'lucide-svelte/icons/ellipsis'
@@ -50,7 +49,6 @@ const deleteImages = async (editorOutput: OutputData) => {
 <MetaTags title="Riju | Dashboard" description="Your presentations" />
 
 <h4 class="text-lg mb-4 font-medium text-muted-foreground mt-12	">Generate</h4>
-<Textarea class="mt-4 mb-4" placeholder="Enter the presentations content..." rows={6}>A</Textarea>
 
 <div class="mx-auto w-full max-w-3xl space-y-8">
 	<!-- Templates -->
