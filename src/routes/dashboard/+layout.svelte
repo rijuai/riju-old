@@ -7,7 +7,7 @@ let { children } = $props()
 </script>
 
 <AuthCheck>
-    <main class="px-6 py-4 max-w-3xl mx-auto">
+    <main class="mx-auto max-w-2xl px-6 py-4">
         <Navbar />
 
         {@render children()}
