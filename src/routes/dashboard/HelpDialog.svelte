@@ -6,7 +6,7 @@ import CircleHelp from 'lucide-svelte/icons/circle-help'
 
 <DropdownMenu.Root>
 	<DropdownMenu.Trigger class="fixed bottom-6 left-6"
-		><CircleHelp /></DropdownMenu.Trigger
+		><CircleHelp class="size-8" /></DropdownMenu.Trigger
 	>
 	<DropdownMenu.Content>
 		<DropdownMenu.Group>
