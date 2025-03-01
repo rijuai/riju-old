@@ -23,6 +23,33 @@ const featuredCompaniesLogo = [
 	SubscribedFyiLogo,
 	SuperbCrewLogo
 ]
+
+const cards = [
+	{
+		icon: Text,
+		title: 'Just start typing...',
+		content:
+			'Riju is a new type of online presentation maker that works like a text document. Just start typing on the page and insert blocks as needed.'
+	},
+	{
+		icon: Sparkles,
+		title: 'Effortless theme customization',
+		content:
+			'With Riju, you can switch themes with a single click, ensuring that your presentation aligns perfectly with your message and audience.'
+	},
+	{
+		icon: Layout,
+		title: 'Super simple UI',
+		content:
+			'Our intuitive interface ensures that anyone, regardless of their technical skills, can create captivating presentations effortlessly.'
+	},
+	{
+		icon: IndianRupee,
+		title: 'Fully free',
+		content:
+			'Riju is completely free to use. You can create unlimited presentations without any restrictions.'
+	}
+]
 </script>
 
 <MetaTags
@@ -32,20 +59,18 @@ const featuredCompaniesLogo = [
 
 <main class="mx-auto max-w-4xl px-4">
 	<HomePageNavbar />
+
 	<!-- Hero -->
 	<div class="pt-16 text-center">
-		<h1 class="mb-6">Presentations without <u>Headache</u></h1>
+		<h1 class="mb-6">Presentations in Seconds</h1>
 		<p class="text-muted-foreground mx-auto mb-16 max-w-2xl text-xl">
-			Say goodbye to boring presentations. Meet Riju — the free, intuitive
-			presentation builder you’ve been looking for.
+			Say goodbye to boring presentations. Meet Riju — the intuitive
+			presentation builder you've been looking for.
 		</p>
 		<div class="mb-20 space-y-2">
 			<Button size="lg" class="font-semibold" href="/signup"
 				>Get Started<ArrowRight class="ml-2 size-5" /></Button
 			>
-			<p class="text-muted-foreground text-sm">
-				No credit card required. Fully free.
-			</p>
 		</div>
 
 		<!-- Demo Video -->
@@ -72,56 +97,19 @@ const featuredCompaniesLogo = [
 	<section>
 		<h2 class="mb-12">Simple but powerful</h2>
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-			<Card.Root>
-				<Card.Header>
-					<Text class="mb-2" />
-					<Card.Title tag="h4">Just start typing...</Card.Title>
-				</Card.Header>
-				<Card.Content>
-					Riju is a new type of online presentation maker that works like a text
-					document. Just start typing on the page and insert blocks as needed.
-				</Card.Content>
-			</Card.Root>
-			<Card.Root>
-				<Card.Header>
-					<Sparkles class="mb-2" />
-					<Card.Title tag="h4">Effortless theme customization</Card.Title>
-				</Card.Header>
-				<Card.Content>
-					<p>
-						With Riju, you can switch themes with a single click, ensuring that
-						your presentation aligns perfectly with your message and audience.
-					</p>
-				</Card.Content>
-			</Card.Root>
-			<Card.Root>
-				<Card.Header>
-					<Layout class="mb-2" />
-					<Card.Title tag="h4">Super simple UI</Card.Title>
-				</Card.Header>
-				<Card.Content>
-					<p>
-						Our intuitive interface ensures that anyone, regardless of their
-						technical skills, can create captivating presentations effortlessly.
-					</p>
-				</Card.Content>
-			</Card.Root>
-			<Card.Root>
-				<Card.Header>
-					<IndianRupee class="mb-2" />
-					<Card.Title tag="h4">Fully free</Card.Title>
-				</Card.Header>
-				<Card.Content>
-					<p>
-						Riju is completely free to use. You can create unlimited
-						presentations without any restrictions.
-					</p>
-				</Card.Content>
-			</Card.Root>
+			{#each cards as card}
+				<Card.Root>
+					<Card.Header>
+						<svelte:component this={card.icon} class="mb-2" />
+						<Card.Title tag="h4">{card.title}</Card.Title>
+					</Card.Header>
+					<Card.Content>
+						<p>{card.content}</p>
+					</Card.Content>
+				</Card.Root>
+			{/each}
 		</div>
 	</section>
-
-	<section></section>
 
 	<CTA />
 </main>

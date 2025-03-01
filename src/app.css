@@ -96,7 +96,8 @@
 		@apply leading-7 [&:not(:first-child)]:mt-6;
 	}
 
-	ul, ol {
+	ul,
+	ol {
 		@apply my-6 ml-6;
 	}
 
