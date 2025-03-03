@@ -19,7 +19,6 @@ import Play from 'lucide-svelte/icons/play'
 		<Button variant="link" href="/docs">Docs</Button>
 		<!-- Feedback button -->
 		<Button
-			class="hidden lg:block"
 			variant="outline"
 			data-tally-open="wAvyoN"
 			data-tally-layout="modal"
