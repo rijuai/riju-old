@@ -1,0 +1,51 @@
+Privacy Policy for Riju  
+Last Updated: 3rd March, 2025
+
+1. Introduction  
+Riju ("we," "us," or "our"), located at 126, 2nd Cross, Bengaluru 560019, Karnataka, India, operates the AI-powered presentation software platform Riju ("Service"). This Privacy Policy explains how we collect, use, share, and protect your personal data. By using Riju, you agree to this policy.  
+
+2. Data We Collect  
+- Account Information: Name, email address, and password (or third-party login details via Google).  
+- User Content: Presentations, files, and inputs created/uploaded to Riju.  
+- Payment Data: Subscription payment details (processed securely by third-party providers like Stripe/Razorpay). We do not store credit card numbers.  
+- Technical Data: IP address, device type, browser, usage patterns, and cookies (see Section 6).  
+
+3. How We Use Your Data
+- To provide, maintain, and improve the Service.  
+- To process payments and communicate about subscriptions.  
+- To respond to support requests and legal inquiries.  
+- For security, fraud prevention, and compliance with laws.  
+
+4. Data Sharing  
+- Third-Party Services: We share data with payment processors (e.g., Stripe, Razorpay), cloud hosting providers (e.g., AWS, Google Cloud), and analytics tools (e.g., Google Analytics).  
+- Legal Compliance: We may disclose data if required by law or to protect our rights.  
+
+5. Data Security  
+We implement safeguards like encryption and access controls. However, no system is 100% secure.  
+
+6. Cookies and Tracking  
+We use cookies to authenticate users and analyze Service performance. You can disable cookies via browser settings.  
+
+7. Data Retention  
+We retain your data only as long as necessary to fulfill legal, operational, or contractual obligations.  
+
+8. Your Rights  
+You may request to access, correct, or delete your data by emailing namaste@riju.ai.  
+
+9. International Data Transfers  
+Data may be transferred outside India (e.g., EU/US). We ensure compliance with applicable laws.  
+
+10. Children’s Privacy  
+Riju is not intended for users under 18. We do not knowingly collect data from minors.  
+
+11. Updates to This Policy  
+We may update this policy. Changes take effect when posted here. Users will be notified via email or in-app alerts.  
+
+12. Contact Us  
+For questions or requests, contact:  
+Email: namaste@riju.ai  
+Address:  
+Riju  
+126, 2nd Cross  
+Bengaluru 560019  
+Karnataka, India
