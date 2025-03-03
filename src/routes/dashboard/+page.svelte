@@ -88,25 +88,27 @@ onDestroy(() => {
 	<h3 class="mt-4 mb-4 text-muted-foreground">Generate</h3>
 	<!-- Preview section -->
 	{#if files.length > 0}
-    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-2.5">
+    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-2.5">
       {#each files as file, index}
-        <div class="relative border border-gray-200 p-2 rounded">
+        <div class="relative border aspect-square p-1 rounded-md">
           {#if isImage(file)}
             <img 
               src={getPreviewUrl(file)} 
               alt={file.name} 
-              class="h-14 w-auto object-cover"
+              class="w-full h-full object-cover absolute inset-0"
             />
           {:else if file.type === 'application/pdf'}
-            <div class="flex items-center justify-center h-24 bg-gray-100 break-all p-2 text-center">
-              <span>📄 {file.name}</span>
+            <div class="flex items-center justify-center h-full w-full bg-gray-100">
+              <p class="text-xs px-1 max-w-full overflow-hidden text-ellipsis">
+                📄 {file.name.length > 25 ? file.name.substring(0, 25) + '...' : file.name}
+              </p>
             </div>
           {/if}
           <Button 
             variant="secondary"
-			size="sm"
+            size="icon"
             onclick={() => removeFile(index)}
-            class="absolute top-0 right-0 flex items-center justify-center"
+            class="absolute top-0 right-0 z-10"
           >
             ×
           </Button>
