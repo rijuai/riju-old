@@ -101,7 +101,7 @@ $effect.pre(() => {
 			<Button
 				variant="outline"
 				size="sm"
-				on:click={async () => {
+				onclick={async () => {
 					changeTheme()
 
 					const data = {

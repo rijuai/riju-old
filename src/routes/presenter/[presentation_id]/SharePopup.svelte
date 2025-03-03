@@ -46,7 +46,7 @@ run(() => {
                             variant="outline"
                             size="sm"
                             class="h-full px-1.5 py-0.5 text-xs"
-                            on:click={() => {
+                            onclick={() => {
                                 let url = $page.url;
 
                                 /* Copy URL to clipboard */

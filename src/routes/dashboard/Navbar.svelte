@@ -29,7 +29,7 @@ import Play from 'lucide-svelte/icons/play'
 			{#if page.url.pathname.includes('/editor')}
 				<Button
 					variant="secondary"
-					on:click={() => {
+					onclick={() => {
 						const presentationId = page.params.presentation_id
 
 						goto(`/presenter/${presentationId}`)
@@ -40,7 +40,7 @@ import Play from 'lucide-svelte/icons/play'
 			{/if}
 			<!-- {#if page.url.pathname === '/dashboard'}
 				<Button
-					on:click={async () => {
+					onclick={async () => {
 						const data = {
 							title: 'Untitled Presentation',
 							creator: $userId,

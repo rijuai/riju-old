@@ -19,7 +19,7 @@ import CircleHelp from 'lucide-svelte/icons/circle-help'
 			>
 			<DropdownMenu.Item href="/contact">Contact Us</DropdownMenu.Item>
 			<DropdownMenu.Item
-				on:click={() => {
+				onclick={() => {
 					pb.authStore.clear()
 				}}>Sign Out</DropdownMenu.Item
 			>
