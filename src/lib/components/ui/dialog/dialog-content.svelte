@@ -1,6 +1,6 @@
 <script lang="ts">
 import { cn, flyAndScale } from '$lib/utils.js'
-import { Dialog as DialogPrimitive } from 'bits-ui'
+import type { Dialog as DialogPrimitive } from 'bits-ui'
 import X from 'lucide-svelte/icons/x'
 import * as Dialog from './index.js'
 

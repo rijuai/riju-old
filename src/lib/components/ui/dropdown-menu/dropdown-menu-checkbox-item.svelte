@@ -1,6 +1,6 @@
 <script lang="ts">
 import { cn } from '$lib/utils.js'
-import { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui'
+import type { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui'
 import Check from 'lucide-svelte/icons/check'
 
 type $$Props = DropdownMenuPrimitive.CheckboxItemProps

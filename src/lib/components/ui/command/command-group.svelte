@@ -1,6 +1,6 @@
 <script lang="ts">
 import { cn } from '$lib/utils.js'
-import { Command as CommandPrimitive } from 'cmdk-sv'
+import type { Command as CommandPrimitive } from 'cmdk-sv'
 type $$Props = CommandPrimitive.GroupProps
 
 interface Props {
