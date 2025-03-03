@@ -1,29 +1,20 @@
 <script lang="ts">
 import { cn } from '$lib/utils.js'
-import type { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui'
+// biome-ignore lint/style/useImportType: <explanation>
+import { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui'
 
 type $$Props = DropdownMenuPrimitive.LabelProps & {
 	inset?: boolean
 }
 
-interface Props {
-	class?: $$Props['class']
-	inset?: $$Props['inset']
-	children?: import('svelte').Snippet
-	[key: string]: any
-}
-
-let {
-	class: className = undefined,
-	inset = undefined,
-	children,
-	...rest
-}: Props = $props()
+let className: $$Props['class'] = undefined
+export let inset: $$Props['inset'] = undefined
+export { className as class }
 </script>
 
 <DropdownMenuPrimitive.Label
 	class={cn("px-2 py-1.5 text-sm font-semibold", inset && "pl-8", className)}
-	{...rest}
+	{...$$restProps}
 >
-	{@render children?.()}
+	<slot />
 </DropdownMenuPrimitive.Label>

@@ -1,6 +1,7 @@
 <script lang="ts">
 import { cn } from '$lib/utils.js'
-import type { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui'
+// biome-ignore lint/style/useImportType: <explanation>
+import { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui'
 import ChevronRight from 'lucide-svelte/icons/chevron-right'
 
 type $$Props = DropdownMenuPrimitive.SubTriggerProps & {
@@ -8,19 +9,9 @@ type $$Props = DropdownMenuPrimitive.SubTriggerProps & {
 }
 type $$Events = DropdownMenuPrimitive.SubTriggerEvents
 
-interface Props {
-	class?: $$Props['class']
-	inset?: $$Props['inset']
-	children?: import('svelte').Snippet
-	[key: string]: any
-}
-
-let {
-	class: className = undefined,
-	inset = undefined,
-	children,
-	...rest
-}: Props = $props()
+let className: $$Props['class'] = undefined
+export let inset: $$Props['inset'] = undefined
+export { className as class }
 </script>
 
 <DropdownMenuPrimitive.SubTrigger
@@ -29,7 +20,7 @@ let {
 		inset && "pl-8",
 		className
 	)}
-	{...rest}
+	{...$$restProps}
 	on:click
 	on:keydown
 	on:focusin
@@ -37,6 +28,6 @@ let {
 	on:pointerleave
 	on:pointermove
 >
-	{@render children?.()}
+	<slot />
 	<ChevronRight class="ml-auto h-4 w-4" />
 </DropdownMenuPrimitive.SubTrigger>

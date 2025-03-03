@@ -4,15 +4,10 @@ import type { HTMLAttributes } from 'svelte/elements'
 
 type $$Props = HTMLAttributes<HTMLSpanElement>
 
-interface Props {
-	class?: $$Props['class']
-	children?: import('svelte').Snippet
-	[key: string]: any
-}
-
-let { class: className = undefined, children, ...rest }: Props = $props()
+let className: $$Props['class'] = undefined
+export { className as class }
 </script>
 
-<span class={cn("ml-auto text-xs tracking-widest opacity-60", className)} {...rest}>
-	{@render children?.()}
+<span class={cn("ml-auto text-xs tracking-widest opacity-60", className)} {...$$restProps}>
+	<slot />
 </span>
