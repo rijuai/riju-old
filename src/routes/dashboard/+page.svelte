@@ -11,6 +11,7 @@ import Ellipsis from 'lucide-svelte/icons/ellipsis'
 import ExternalLink from 'lucide-svelte/icons/external-link'
 import FileIcon from 'lucide-svelte/icons/file'
 import Trash2 from 'lucide-svelte/icons/trash-2'
+import XIcon from 'lucide-svelte/icons/x'
 import { onDestroy } from 'svelte'
 
 let { data } = $props()
@@ -88,36 +89,34 @@ onDestroy(() => {
 	<h3 class="mt-4 mb-4 text-muted-foreground">Generate</h3>
 	<!-- Preview section -->
 	{#if files.length > 0}
-    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-2.5">
+    <div class="mt-4 grid grid-cols-1 md:grid-cols-6 gap-4 mb-2.5">
       {#each files as file, index}
-        <div class="relative border aspect-square p-1 rounded-md">
+        <div class="relative border aspect-square h-24 w-auto p-2 rounded-md">
           {#if isImage(file)}
             <img 
               src={getPreviewUrl(file)} 
               alt={file.name} 
-              class="w-full h-full object-cover absolute inset-0"
+              class="w-full h-full object-cover absolute inset-0 rounded-md"
             />
           {:else if file.type === 'application/pdf'}
-            <div class="flex items-center justify-center h-full w-full bg-gray-100">
-              <p class="text-xs px-1 max-w-full overflow-hidden text-ellipsis">
-                📄 {file.name.length > 25 ? file.name.substring(0, 25) + '...' : file.name}
-              </p>
+            <div class="flex items-center justify-center text-xs text-ellipsis">
+                {file.name.length > 25 ? file.name.substring(0, 25) + '...' : file.name}
             </div>
           {/if}
           <Button 
-            variant="secondary"
+            variant="outline"
             size="icon"
             onclick={() => removeFile(index)}
             class="absolute top-0 right-0 z-10"
           >
-            ×
+            <XIcon class="size-4" />
           </Button>
         </div>
       {/each}
     </div>
   {/if}
 
-<Textarea class="mb-2.5" placeholder="Enter your prompt here" rows={8} />
+<Textarea class="mb-2.5 text-base" placeholder="Enter your prompt here" rows={8} />
 <div class="flex justify-between gap-2 mb-12">
 	<input
     type="file"
