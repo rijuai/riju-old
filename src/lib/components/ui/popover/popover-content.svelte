@@ -1,6 +1,6 @@
 <script lang="ts">
 import { cn, flyAndScale } from '$lib/utils.js'
-import { Popover as PopoverPrimitive } from 'bits-ui'
+import type { Popover as PopoverPrimitive } from 'bits-ui'
 
 type $$Props = PopoverPrimitive.ContentProps
 interface Props {

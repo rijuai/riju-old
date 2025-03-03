@@ -41,7 +41,7 @@ const signInUsingEmailAndPassword = async () => {
 		<Button
 			type="submit"
 			class="w-full"
-			on:click={signInUsingEmailAndPassword}
+			onclick={signInUsingEmailAndPassword}
 		>
 			Continue
 		</Button>

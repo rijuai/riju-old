@@ -33,7 +33,7 @@ const showFullScreen = (element: Element) => {
         <Button
             variant="ghost"
             size="icon"
-            on:click={() => {
+            onclick={() => {
                 let element = document.querySelector(".reveal");
 
                 if (element !== null) {
@@ -44,7 +44,7 @@ const showFullScreen = (element: Element) => {
         <Button
             variant="ghost"
             size="icon"
-            on:click={() => {
+            onclick={() => {
                 goto(`/dashboard/editor/${presentationId}`);
             }}><X class="size-4" /></Button
         >

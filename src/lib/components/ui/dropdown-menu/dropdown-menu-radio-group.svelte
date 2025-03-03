@@ -1,17 +1,12 @@
 <script lang="ts">
+// biome-ignore lint/style/useImportType: <explanation>
 import { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui'
 
 type $$Props = DropdownMenuPrimitive.RadioGroupProps
 
-interface Props {
-	value?: $$Props['value']
-	children?: import('svelte').Snippet
-	[key: string]: any
-}
-
-let { value = $bindable(undefined), children, ...rest }: Props = $props()
+export let value: $$Props['value'] = undefined
 </script>
 
-<DropdownMenuPrimitive.RadioGroup {...rest} bind:value>
-	{@render children?.()}
+<DropdownMenuPrimitive.RadioGroup {...$$restProps} bind:value>
+	<slot />
 </DropdownMenuPrimitive.RadioGroup>

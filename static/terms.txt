@@ -1,0 +1,56 @@
+Terms and Conditions for Riju  
+Last Updated: 3rd, March 2025. 
+
+1. Introduction  
+Welcome to Riju ("Service"), an AI-powered presentation software platform operated by Riju ("Company," "we," "us," or "our"), located at 126, 2nd Cross, Bengaluru 560019, Karnataka, India. By accessing or using Riju, you ("User," "you") agree to comply with these Terms and Conditions ("Terms").  
+
+2. Service Description  
+Riju provides AI-driven tools to create, edit, and manage presentations. The Service is offered on a subscription basis, with plans billed monthly or annually.  
+
+3. Eligibility  
+You must be at least 18 years old to use Riju. By registering, you confirm you meet this requirement.  
+
+4. Account Registration  
+To use Riju, you must create an account via:  
+- Email and password, or  
+- Third-party services (e.g., Google).  
+You are responsible for maintaining account security and confidentiality. Notify us immediately of unauthorized use.  
+
+5. Subscription and Payment  
+- Fees: Subscription fees are listed on our pricing page. Payments are processed through third-party providers (e.g., Stripe).  
+- Auto-Renewal: Subscriptions renew automatically unless canceled before the billing cycle.  
+- 30-Day Refund: Users may request a full refund within 30 days of purchase. Refunds are processed at our discretion.  
+- Failed Payments: Accounts may be suspended for failed payments.  
+
+6. Intellectual Property  
+- Ownership: Riju retains all rights to the software, UI, and content we create.  
+- User Content: You own data/uploads but grant Riju a non-exclusive license to host and process it for Service delivery.  
+
+7. Privacy  
+Your use of Riju is governed by our Privacy Policy (https://riju.ai/privacy-policy), which complies with applicable data laws (e.g., India's IT Act, GDPR).  
+
+8. Termination  
+We may suspend/terminate accounts for:  
+- Violations of these Terms,  
+- Non-payment, or  
+- Illegal/abusive activity.  
+Users may cancel subscriptions via account settings.  
+
+9. Limitation of Liability  
+Riju is provided "as-is." We are not liable for indirect, incidental, or consequential damages arising from your use of the Service.  
+
+10. Governing Law  
+These Terms are governed by the laws of Karnataka, India. Disputes will be resolved in courts located in Bengaluru.  
+
+11. Third-Party Services  
+Riju integrates with third-party tools (e.g., Google). Their terms and privacy policies apply to your use.  
+
+12. Changes to Terms  
+We may update these Terms. Continued use after changes constitutes acceptance. Notifications will be sent via email or in-app alerts.  
+
+Contact Us  
+For questions, contact us at namaste@riju.ai or:  
+Riju  
+126, 2nd Cross  
+Bengaluru 560019  
+Karnataka, India

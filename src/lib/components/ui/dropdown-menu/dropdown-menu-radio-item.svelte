@@ -1,19 +1,15 @@
 <script lang="ts">
 import { cn } from '$lib/utils.js'
+// biome-ignore lint/style/useImportType: <explanation>
 import { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui'
 import Circle from 'lucide-svelte/icons/circle'
 
 type $$Props = DropdownMenuPrimitive.RadioItemProps
 type $$Events = DropdownMenuPrimitive.RadioItemEvents
 
-interface Props {
-	class?: $$Props['class']
-	value: $$Props['value']
-	children?: import('svelte').Snippet
-	[key: string]: any
-}
-
-let { class: className = undefined, value, children, ...rest }: Props = $props()
+let className: $$Props['class'] = undefined
+export let value: $$Props['value']
+export { className as class }
 </script>
 
 <DropdownMenuPrimitive.RadioItem
@@ -22,7 +18,7 @@ let { class: className = undefined, value, children, ...rest }: Props = $props()
 		className
 	)}
 	{value}
-	{...rest}
+	{...$$restProps}
 	on:click
 	on:keydown
 	on:focusin
@@ -36,5 +32,5 @@ let { class: className = undefined, value, children, ...rest }: Props = $props()
 			<Circle class="h-2 w-2 fill-current" />
 		</DropdownMenuPrimitive.RadioIndicator>
 	</span>
-	{@render children?.()}
+	<slot />
 </DropdownMenuPrimitive.RadioItem>

@@ -40,6 +40,6 @@ const signUpUsingEmailAndPassword = async () => {
 		<Input type="text" placeholder="Full name" bind:value={fullName} />
 		<Input type="email" placeholder="Email" bind:value={email} />
 		<Input type="password" placeholder="Password" bind:value={password} />
-		<Button class="w-full" on:click={signUpUsingEmailAndPassword}>Continue</Button>
+		<Button class="w-full" onclick={signUpUsingEmailAndPassword}>Continue</Button>
 	</div>
 </section>

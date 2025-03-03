@@ -2,9 +2,6 @@
 import { goto } from '$app/navigation'
 import { page } from '$app/state'
 import { Button } from '$lib/components/ui/button'
-import pb from '$lib/pocketbase'
-import { userId } from '$lib/stores/user'
-import PencilLine from 'lucide-svelte/icons/pencil-line'
 import Play from 'lucide-svelte/icons/play'
 </script>
 
@@ -14,12 +11,14 @@ import Play from 'lucide-svelte/icons/play'
 </svelte:head>
 
 <nav
-	class="sticky top-0 z-10 flex items-center justify-between gap-1 bg-white p-2"
+	class="sticky top-0 z-10 flex items-center justify-between gap-1 bg-white"
 >
-	<Button variant="link" class="text-xl" href="/dashboard">Riju</Button>
-	<div class="flex gap-3">
+	<a class="text-xl" href="/dashboard">Riju</a>
+	<div class="flex gap-2">
+		<Button variant="link" href="/support">Support</Button>
+		<Button variant="link" href="/docs">Docs</Button>
+		<!-- Feedback button -->
 		<Button
-			class="hidden lg:block"
 			variant="outline"
 			data-tally-open="wAvyoN"
 			data-tally-layout="modal"
@@ -30,7 +29,7 @@ import Play from 'lucide-svelte/icons/play'
 			{#if page.url.pathname.includes('/editor')}
 				<Button
 					variant="secondary"
-					on:click={() => {
+					onclick={() => {
 						const presentationId = page.params.presentation_id
 
 						goto(`/presenter/${presentationId}`)
@@ -39,9 +38,9 @@ import Play from 'lucide-svelte/icons/play'
 					<Play class="mr-1 size-4" />Present
 				</Button>
 			{/if}
-			{#if page.url.pathname === '/dashboard'}
+			<!-- {#if page.url.pathname === '/dashboard'}
 				<Button
-					on:click={async () => {
+					onclick={async () => {
 						const data = {
 							title: 'Untitled Presentation',
 							creator: $userId,
@@ -55,7 +54,7 @@ import Play from 'lucide-svelte/icons/play'
 					<PencilLine class="mr-2 size-4" />
 					Create</Button
 				>
-			{/if}
+			{/if} -->
 		{/key}
 	</div>
 </nav>

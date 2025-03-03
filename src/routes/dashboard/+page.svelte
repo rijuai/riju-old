@@ -1,16 +1,23 @@
 <script lang="ts">
 import { goto, invalidateAll } from '$app/navigation'
 import MetaTags from '$lib/components/MetaTags.svelte'
+import Button from '$lib/components/ui/button/button.svelte'
 import * as DropdownMenu from '$lib/components/ui/dropdown-menu'
 import * as Table from '$lib/components/ui/table'
+import { Textarea } from '$lib/components/ui/textarea'
 import pb from '$lib/pocketbase'
 import type { OutputData } from '@editorjs/editorjs'
 import Ellipsis from 'lucide-svelte/icons/ellipsis'
 import ExternalLink from 'lucide-svelte/icons/external-link'
+import FileIcon from 'lucide-svelte/icons/file'
 import Trash2 from 'lucide-svelte/icons/trash-2'
+import XIcon from 'lucide-svelte/icons/x'
+import { onDestroy } from 'svelte'
 
 let { data } = $props()
 let { presentations } = $derived(data)
+let files = $state<File[]>([])
+let fileInput: HTMLInputElement | null = null
 
 const deletePresentation = async (id: string) => {
 	await pb.collection('presentations').delete(id)
@@ -44,51 +51,104 @@ const deleteImages = async (editorOutput: OutputData) => {
 
 	await deleteImagesInR2(imagesToDelete)
 }
+
+const handleFiles = (event: Event) => {
+	const target = event.target as HTMLInputElement
+	const newFiles = Array.from(target.files || [])
+	files = [...files, ...newFiles]
+}
+
+const removeFile = (index: number) => {
+	files = files.filter((_, i) => i !== index)
+}
+
+const triggerFileInput = () => {
+	fileInput?.click()
+}
+
+const isImage = (file: File) => {
+	return file.type.startsWith('image/')
+}
+
+const getPreviewUrl = (file: File) => {
+	return URL.createObjectURL(file)
+}
+
+onDestroy(() => {
+	for (const file of files) {
+		if (isImage(file)) {
+			URL.revokeObjectURL(getPreviewUrl(file))
+		}
+	}
+})
 </script>
 
 <MetaTags title="Riju | Dashboard" description="Your presentations" />
 
-<h4 class="text-lg mb-4 font-medium text-muted-foreground mt-12	">Generate</h4>
+<section>
+	<h3 class="mt-4 mb-4 text-muted-foreground">Generate</h3>
+	<!-- Preview section -->
+	{#if files.length > 0}
+    <div class="mt-4 grid grid-cols-1 md:grid-cols-6 gap-4 mb-2.5">
+      {#each files as file, index}
+        <div class="relative border aspect-square h-24 w-auto p-2 rounded-md">
+          {#if isImage(file)}
+            <img 
+              src={getPreviewUrl(file)} 
+              alt={file.name} 
+              class="w-full h-full object-cover absolute inset-0 rounded-md"
+            />
+          {:else if file.type === 'application/pdf'}
+            <div class="flex items-center justify-center text-xs text-ellipsis">
+                {file.name.length > 25 ? file.name.substring(0, 25) + '...' : file.name}
+            </div>
+          {/if}
+          <Button 
+            variant="outline"
+            size="icon"
+            onclick={() => removeFile(index)}
+            class="absolute top-0 right-0 z-10"
+          >
+            <XIcon class="size-4" />
+          </Button>
+        </div>
+      {/each}
+    </div>
+  {/if}
+
+<Textarea class="mb-2.5 text-base" placeholder="Enter your prompt here" rows={8} />
+<div class="flex justify-between gap-2 mb-12">
+	<input
+    type="file"
+    bind:this={fileInput}
+    onchange={handleFiles}
+    multiple
+    accept="image/*,application/pdf"
+    style="display: none"
+  />
+
+  <!-- Upload button -->
+	<Button variant="outline" class="self-center" onclick={triggerFileInput}><FileIcon class="size-4 mr-2" />Files</Button>
+
+	<Button class="self-center">Generate</Button>
+</div>
+</section>
 
 <div class="mx-auto w-full max-w-3xl space-y-8">
-	<!-- Templates -->
-	<!-- <div>
-		<h4 class="mb-4 font-medium text-muted-foreground">Templates</h4>
-		<div class="grid grid-cols-2 gap-4 md:grid-cols-4">
-			{#each templates as { title, theme, content }}
-				<Button
-					variant="outline"
-					class="p-12"
-					on:click={async () => {
-						const data = {
-							content: content,
-							creator: $userId,
-							theme: theme,
-							title: title,
-						}
-
-						const { id } = await pb.collection('presentations').create(data)
-						goto(`/dashboard/editor/${id}`)
-					}}>{title}</Button
-				>
-			{/each}
-		</div>
-	</div> -->
-
 	<!-- Presentations -->
 	{#if presentations && presentations.length > 0}
-		<h4 class="text-lg font-medium text-muted-foreground">Your presentations</h4>
+		<h3 class="text-muted-foreground">Your presentations</h3>
 		<Table.Root>
 			<Table.Body>
 				{#each presentations as { id, title } (id)}
 					<Table.Row
 						class="cursor-pointer"
-						on:click={() => goto(`/dashboard/editor/${id}`)}
+						onclick={() => goto(`/dashboard/editor/${id}`)}
 					>
 						<Table.Cell class="text-ellipsis">{title}</Table.Cell>
 						<Table.Cell
 							class="py-3 text-right"
-							on:click={(e) => {
+							onclick={(e: Event) => {
 								e.stopPropagation()
 							}}
 						>
@@ -99,21 +159,19 @@ const deleteImages = async (editorOutput: OutputData) => {
 								<DropdownMenu.Content>
 									<DropdownMenu.Group>
 										<DropdownMenu.Item
-											on:click={() => {
+											onclick={(e: Event) => {
+												e.stopPropagation()
 												window.open(`/dashboard/editor/${id}`, '_blank')
 											}}
-											><ExternalLink class="mr-3 size-4" />Open in new tab</DropdownMenu.Item
+											><ExternalLink class="mr-4 size-4" />Open in new tab</DropdownMenu.Item
 										>
 										<DropdownMenu.Separator />
 										<DropdownMenu.Item
 											class="text-destructive"
-											on:click={async () => {
-												let editorOutput = deletePresentation(id)
-
-												await deleteImages(editorOutput?.content)
-
+											onclick={async () => {
+												let editorOutput = await deletePresentation(id)
 												location.reload()
-											}}><Trash2 class="mr-3 size-4" />Delete</DropdownMenu.Item
+											}}><Trash2 class="mr-4 size-4" />Delete</DropdownMenu.Item
 										>
 									</DropdownMenu.Group>
 								</DropdownMenu.Content>
@@ -124,6 +182,6 @@ const deleteImages = async (editorOutput: OutputData) => {
 			</Table.Body>
 		</Table.Root>
 	{:else}
-		<p class="text-center">No presentations to show.</p>
+		<p class="text-center">No presentations to show</p>
 	{/if}
 </div>

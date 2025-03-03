@@ -1,5 +1,6 @@
 <script lang="ts">
 import { cn } from '$lib/utils.js'
+// biome-ignore lint/style/useImportType: <explanation>
 import { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui'
 
 type $$Props = DropdownMenuPrimitive.ItemProps & {
@@ -7,19 +8,9 @@ type $$Props = DropdownMenuPrimitive.ItemProps & {
 }
 type $$Events = DropdownMenuPrimitive.ItemEvents
 
-interface Props {
-	class?: $$Props['class']
-	inset?: $$Props['inset']
-	children?: import('svelte').Snippet
-	[key: string]: any
-}
-
-let {
-	class: className = undefined,
-	inset = undefined,
-	children,
-	...rest
-}: Props = $props()
+let className: $$Props['class'] = undefined
+export let inset: $$Props['inset'] = undefined
+export { className as class }
 </script>
 
 <DropdownMenuPrimitive.Item
@@ -28,7 +19,7 @@ let {
 		inset && "pl-8",
 		className
 	)}
-	{...rest}
+	{...$$restProps}
 	on:click
 	on:keydown
 	on:focusin
@@ -37,5 +28,5 @@ let {
 	on:pointerleave
 	on:pointermove
 >
-	{@render children?.()}
+	<slot />
 </DropdownMenuPrimitive.Item>
