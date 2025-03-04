@@ -3,24 +3,30 @@ import { goto } from '$app/navigation'
 import MetaTags from '$lib/components/MetaTags.svelte'
 import { Button } from '$lib/components/ui/button'
 import Input from '$lib/components/ui/input/input.svelte'
-import pb from '$lib/pocketbase'
+import supabase from '$lib/supabase'
 
 let fullName = $state('')
 let email = $state('')
 let password = $state('')
 
 const signUpUsingEmailAndPassword = async () => {
-	const data = {
-		name: fullName,
+	// Create a new user with Supabase
+	const { data, error } = await supabase.auth.signUp({
 		email,
 		password,
-		passwordConfirm: password
+		options: {
+			data: {
+				name: fullName
+			}
+		}
+	})
+
+	if (error) {
+		console.error('Error during signup:', error.message)
+		return
 	}
 
-	await pb.collection('users').create(data)
-	await pb.collection('users').authWithPassword(email, password)
-	await pb.collection('users').requestVerification(email)
-
+	// After successful signup, redirect to dashboard
 	goto('/dashboard')
 }
 </script>
