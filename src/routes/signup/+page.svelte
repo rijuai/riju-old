@@ -8,26 +8,52 @@ import supabase from '$lib/supabase'
 let fullName = $state('')
 let email = $state('')
 let password = $state('')
+let errorMessage = $state('')
+let isLoading = $state(false)
 
 const signUpUsingEmailAndPassword = async () => {
-	// Create a new user with Supabase
-	const { data, error } = await supabase.auth.signUp({
-		email,
-		password,
-		options: {
-			data: {
-				name: fullName
-			}
+	try {
+		isLoading = true
+		errorMessage = ''
+
+		// Basic validation
+		if (!fullName || !email || !password) {
+			errorMessage = 'Please fill in all fields'
+			isLoading = false
+			return
 		}
-	})
 
-	if (error) {
-		console.error('Error during signup:', error.message)
-		return
+		if (password.length < 6) {
+			errorMessage = 'Password must be at least 6 characters'
+			isLoading = false
+			return
+		}
+
+		// Create a new user with Supabase
+		const { data, error } = await supabase.auth.signUp({
+			email,
+			password,
+			options: {
+				data: {
+					name: fullName
+				}
+			}
+		})
+
+		if (error) {
+			console.error('Error during signup:', error.message)
+			errorMessage = error.message || 'Failed to create account'
+			isLoading = false
+			return
+		}
+
+		// After successful signup, redirect to dashboard
+		goto('/dashboard')
+	} catch (err) {
+		console.error('Unexpected error during signup:', err)
+		errorMessage = 'An unexpected error occurred'
+		isLoading = false
 	}
-
-	// After successful signup, redirect to dashboard
-	goto('/dashboard')
 }
 </script>
 
@@ -46,6 +72,17 @@ const signUpUsingEmailAndPassword = async () => {
 		<Input type="text" placeholder="Full name" bind:value={fullName} />
 		<Input type="email" placeholder="Email" bind:value={email} />
 		<Input type="password" placeholder="Password" bind:value={password} />
-		<Button class="w-full" onclick={signUpUsingEmailAndPassword}>Continue</Button>
+		
+		{#if errorMessage}
+			<p class="text-red-500 text-sm">{errorMessage}</p>
+		{/if}
+		
+		<Button 
+			class="w-full" 
+			onclick={signUpUsingEmailAndPassword}
+			disabled={isLoading}
+		>
+			{isLoading ? 'Creating account...' : 'Continue'}
+		</Button>
 	</div>
 </section>

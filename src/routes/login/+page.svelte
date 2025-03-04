@@ -7,20 +7,39 @@ import supabase from '$lib/supabase'
 
 let email = $state('')
 let password = $state('')
+let errorMessage = $state('')
+let isLoading = $state(false)
 
 const signInUsingEmailAndPassword = async () => {
-	const { data, error } = await supabase.auth.signInWithPassword({
-		email,
-		password
-	})
+	try {
+		isLoading = true
+		errorMessage = ''
 
-	if (error) {
-		console.error('Error during login:', error.message)
-		return
+		if (!email || !password) {
+			errorMessage = 'Please fill in all fields'
+			isLoading = false
+			return
+		}
+
+		const { data, error } = await supabase.auth.signInWithPassword({
+			email,
+			password
+		})
+
+		if (error) {
+			console.error('Error during login:', error.message)
+			errorMessage = error.message || 'Failed to sign in'
+			isLoading = false
+			return
+		}
+
+		// After successful login, redirect to dashboard
+		goto('/dashboard')
+	} catch (err) {
+		console.error('Unexpected error during login:', err)
+		errorMessage = 'An unexpected error occurred'
+		isLoading = false
 	}
-
-	// After successful login, redirect to dashboard
-	goto('/dashboard')
 }
 </script>
 
@@ -45,12 +64,18 @@ const signInUsingEmailAndPassword = async () => {
 		<h2>Login</h2>
 		<Input type="email" placeholder="Email" bind:value={email} />
 		<Input type="password" placeholder="Password" bind:value={password} />
+		
+		{#if errorMessage}
+			<p class="text-red-500 text-sm">{errorMessage}</p>
+		{/if}
+		
 		<Button
 			type="submit"
 			class="w-full"
 			onclick={signInUsingEmailAndPassword}
+			disabled={isLoading}
 		>
-			Continue
+			{isLoading ? 'Signing in...' : 'Continue'}
 		</Button>
 	</div>
 </section>
