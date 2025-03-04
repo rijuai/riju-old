@@ -8,6 +8,7 @@ type $$Events = LabelPrimitive.Events
 interface Props {
 	class?: $$Props['class']
 	children?: import('svelte').Snippet
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	[key: string]: any
 }
 
