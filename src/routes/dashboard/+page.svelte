@@ -16,6 +16,8 @@ import { onDestroy } from 'svelte'
 
 let { data } = $props()
 let { presentations } = $derived(data)
+
+let prompt = $state('')
 let files = $state<File[]>([])
 let fileInput: HTMLInputElement | null = null
 
@@ -74,6 +76,10 @@ const getPreviewUrl = (file: File) => {
 	return URL.createObjectURL(file)
 }
 
+const generatePresentation = async () => {
+	console.log(prompt)
+}
+
 onDestroy(() => {
 	for (const file of files) {
 		if (isImage(file)) {
@@ -91,7 +97,7 @@ onDestroy(() => {
 	{#if files.length > 0}
     <div class="mt-4 grid grid-cols-1 md:grid-cols-6 gap-4 mb-2.5">
       {#each files as file, index}
-        <div class="relative border aspect-square h-24 w-auto p-2 rounded-md">
+        <div class="relative border aspect-squar h-16 w-auto p-2 rounded-md">
           {#if isImage(file)}
             <img 
               src={getPreviewUrl(file)} 
@@ -116,21 +122,21 @@ onDestroy(() => {
     </div>
   {/if}
 
-<Textarea class="mb-2.5 text-base" placeholder="Enter your prompt here" rows={8} />
+	<Textarea class="mb-2.5 text-base" placeholder="Enter your prompt here" rows={8} bind:value={prompt} />
 <div class="flex justify-between gap-2 mb-12">
 	<input
+	class="hidden"
     type="file"
     bind:this={fileInput}
     onchange={handleFiles}
     multiple
     accept="image/*,application/pdf"
-    style="display: none"
   />
 
   <!-- Upload button -->
 	<Button variant="outline" class="self-center" onclick={triggerFileInput}><FileIcon class="size-4 mr-2" />Files</Button>
 
-	<Button class="self-center">Generate</Button>
+	<Button onclick={generatePresentation}>Generate</Button>
 </div>
 </section>
 
