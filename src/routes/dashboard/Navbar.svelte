@@ -38,23 +38,6 @@ import Play from 'lucide-svelte/icons/play'
 					<Play class="mr-1 size-4" />Present
 				</Button>
 			{/if}
-			<!-- {#if page.url.pathname === '/dashboard'}
-				<Button
-					onclick={async () => {
-						const data = {
-							title: 'Untitled Presentation',
-							creator: $userId,
-						}
-
-						const { id } = await pb.collection('presentations').create(data)
-
-						goto(`/dashboard/editor/${id}`)
-					}}
-				>
-					<PencilLine class="mr-2 size-4" />
-					Create</Button
-				>
-			{/if} -->
 		{/key}
 	</div>
 </nav>
