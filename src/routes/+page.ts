@@ -1,10 +1,11 @@
-import pb from '$lib/pocketbase'
+import supabase from '$lib/supabase'
 import { redirect } from '@sveltejs/kit'
 import type { PageLoad } from './$types'
 
 export const ssr = false
 
 export const load: PageLoad = async () => {
-	const isUserAuthenticated = pb.authStore.isValid
-	if (isUserAuthenticated) redirect(302, '/dashboard')
+	const { data } = await supabase.auth.getSession()
+	const isUserAuthenticated = !!data.session
+	if (isUserAuthenticated) redirect(307, '/dashboard')
 }
