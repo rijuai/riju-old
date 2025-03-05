@@ -5,7 +5,7 @@ import Button from '$lib/components/ui/button/button.svelte'
 import * as DropdownMenu from '$lib/components/ui/dropdown-menu'
 import * as Table from '$lib/components/ui/table'
 import { Textarea } from '$lib/components/ui/textarea'
-import pb from '$lib/pocketbase'
+import supabase from '$lib/supabase.js'
 import type { OutputData } from '@editorjs/editorjs'
 import Ellipsis from 'lucide-svelte/icons/ellipsis'
 import ExternalLink from 'lucide-svelte/icons/external-link'
@@ -22,7 +22,7 @@ let files = $state<File[]>([])
 let fileInput: HTMLInputElement | null = null
 
 const deletePresentation = async (id: string) => {
-	await pb.collection('presentations').delete(id)
+	await supabase.from('presentations').delete().eq('id', id)
 	invalidateAll()
 }
 
