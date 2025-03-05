@@ -5,7 +5,7 @@ import Button from '$lib/components/ui/button/button.svelte'
 import * as DropdownMenu from '$lib/components/ui/dropdown-menu'
 import * as Table from '$lib/components/ui/table'
 import { Textarea } from '$lib/components/ui/textarea'
-import pb from '$lib/pocketbase'
+import supabase from '$lib/supabase.js'
 import type { OutputData } from '@editorjs/editorjs'
 import Ellipsis from 'lucide-svelte/icons/ellipsis'
 import ExternalLink from 'lucide-svelte/icons/external-link'
@@ -16,22 +16,14 @@ import { onDestroy } from 'svelte'
 
 let { data } = $props()
 let { presentations } = $derived(data)
+
+let prompt = $state('')
 let files = $state<File[]>([])
 let fileInput: HTMLInputElement | null = null
 
 const deletePresentation = async (id: string) => {
-	await pb.collection('presentations').delete(id)
+	await supabase.from('presentations').delete().eq('id', id)
 	invalidateAll()
-}
-
-const deleteImagesInR2 = async (objectKeys: string[]) => {
-	const result = await fetch('/api/r2', {
-		method: 'DELETE',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({ objectKeys })
-	})
 }
 
 const deleteImages = async (editorOutput: OutputData) => {
@@ -48,8 +40,6 @@ const deleteImages = async (editorOutput: OutputData) => {
 			imagesToDelete.push(path)
 		}
 	}
-
-	await deleteImagesInR2(imagesToDelete)
 }
 
 const handleFiles = (event: Event) => {
@@ -74,6 +64,10 @@ const getPreviewUrl = (file: File) => {
 	return URL.createObjectURL(file)
 }
 
+const generatePresentation = async () => {
+	console.log(prompt)
+}
+
 onDestroy(() => {
 	for (const file of files) {
 		if (isImage(file)) {
@@ -91,7 +85,7 @@ onDestroy(() => {
 	{#if files.length > 0}
     <div class="mt-4 grid grid-cols-1 md:grid-cols-6 gap-4 mb-2.5">
       {#each files as file, index}
-        <div class="relative border aspect-square h-24 w-auto p-2 rounded-md">
+        <div class="relative border aspect-squar h-16 w-auto p-2 rounded-md">
           {#if isImage(file)}
             <img 
               src={getPreviewUrl(file)} 
@@ -116,21 +110,21 @@ onDestroy(() => {
     </div>
   {/if}
 
-<Textarea class="mb-2.5 text-base" placeholder="Enter your prompt here" rows={8} />
+	<Textarea class="mb-2.5 text-base" placeholder="Enter your prompt here" rows={8} bind:value={prompt} />
 <div class="flex justify-between gap-2 mb-12">
 	<input
+	class="hidden"
     type="file"
     bind:this={fileInput}
     onchange={handleFiles}
     multiple
     accept="image/*,application/pdf"
-    style="display: none"
   />
 
   <!-- Upload button -->
 	<Button variant="outline" class="self-center" onclick={triggerFileInput}><FileIcon class="size-4 mr-2" />Files</Button>
 
-	<Button class="self-center">Generate</Button>
+	<Button onclick={generatePresentation}>Generate</Button>
 </div>
 </section>
 

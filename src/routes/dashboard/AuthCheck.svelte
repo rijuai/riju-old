@@ -1,23 +1,41 @@
 <script lang="ts">
-import { goto } from '$app/navigation'
-import pb from '$lib/pocketbase'
-import { userId } from '$lib/stores/user'
-import { onDestroy } from 'svelte'
+import supabase from '$lib/supabase'
+import { redirect } from '@sveltejs/kit'
+import { onMount } from 'svelte'
 
 let { children } = $props()
 let isUserAuthenticated = $state(false)
+let subscription: { unsubscribe: () => void } | null = null
 
-const removeListener = pb.authStore.onChange(() => {
-	if (pb.authStore.isValid) {
-		$userId = pb.authStore.record?.id ?? null
+// Check initial session
+const checkSession = async () => {
+	const { data } = await supabase.auth.getSession()
+
+	if (data.session) {
 		isUserAuthenticated = true
 	} else {
-		goto('/')
+		redirect(307, '/')
 	}
-}, true)
+}
 
-onDestroy(() => {
-	removeListener()
+onMount(() => {
+	// Initial session check
+	checkSession()
+
+	// Setup auth listener (non-async)
+	const authListener = supabase.auth.onAuthStateChange((event, session) => {
+		if (session) {
+			isUserAuthenticated = true
+		} else {
+			redirect(307, '/')
+		}
+	})
+
+	subscription = authListener.data.subscription
+
+	return () => {
+		if (subscription) subscription.unsubscribe()
+	}
 })
 </script>
 

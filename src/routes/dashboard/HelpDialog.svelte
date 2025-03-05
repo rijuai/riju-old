@@ -1,7 +1,16 @@
 <script lang="ts">
+import { goto } from '$app/navigation'
 import * as DropdownMenu from '$lib/components/ui/dropdown-menu'
-import pb from '$lib/pocketbase'
+import { signOut } from '$lib/stores/auth'
 import CircleHelp from 'lucide-svelte/icons/circle-help'
+
+const handleSignOut = async () => {
+	const success = await signOut()
+	if (success) {
+		// Redirect to home page after successful logout
+		goto('/')
+	}
+}
 </script>
 
 <DropdownMenu.Root>
@@ -19,9 +28,7 @@ import CircleHelp from 'lucide-svelte/icons/circle-help'
 			>
 			<DropdownMenu.Item href="/contact">Contact Us</DropdownMenu.Item>
 			<DropdownMenu.Item
-				onclick={() => {
-					pb.authStore.clear()
-				}}>Sign Out</DropdownMenu.Item
+				onclick={handleSignOut}>Sign Out</DropdownMenu.Item
 			>
 		</DropdownMenu.Group>
 	</DropdownMenu.Content>

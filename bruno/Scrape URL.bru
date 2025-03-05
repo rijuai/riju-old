@@ -1,0 +1,17 @@
+meta {
+  name: Scrape URL
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{URL}}/api/scrape
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "url": "https://supabase.com/docs/guides/storage/cdn/smart-cdn#cache-duration"
+  }
+}

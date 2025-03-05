@@ -4,7 +4,7 @@ import * as Command from '$lib/components/ui/command'
 import { Label } from '$lib/components/ui/label'
 import * as Popover from '$lib/components/ui/popover'
 import * as Select from '$lib/components/ui/select'
-import pb from '$lib/pocketbase'
+import supabase from '$lib/supabase'
 import { cn } from '$lib/utils'
 import Check from 'lucide-svelte/icons/check'
 import ChevronsUpDown from 'lucide-svelte/icons/chevrons-up-down'
@@ -111,9 +111,10 @@ $effect.pre(() => {
 						},
 					}
 
-					const record = await pb
-						.collection('presentations')
-						.update(presentationId, data)
+					const record = await supabase
+						.from('presentations')
+						.update(data)
+						.eq('id', presentationId)
 				}}
 				>Change
 			</Button>
@@ -134,9 +135,10 @@ $effect.pre(() => {
 						},
 					}
 
-					const record = await pb
-						.collection('presentations')
-						.update(presentationId, data)
+					const record = await supabase
+						.from('presentations')
+						.update(data)
+						.eq('id', presentationId)
 				}}
 			>
 				<Select.Trigger>

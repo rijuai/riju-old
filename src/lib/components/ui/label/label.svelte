@@ -1,6 +1,6 @@
 <script lang="ts">
 import { cn } from '$lib/utils.js'
-import type { Label as LabelPrimitive } from 'bits-ui'
+import { Label as LabelPrimitive } from 'bits-ui'
 
 type $$Props = LabelPrimitive.Props
 type $$Events = LabelPrimitive.Events
@@ -8,6 +8,7 @@ type $$Events = LabelPrimitive.Events
 interface Props {
 	class?: $$Props['class']
 	children?: import('svelte').Snippet
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	[key: string]: any
 }
 

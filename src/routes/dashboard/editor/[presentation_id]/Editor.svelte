@@ -1,6 +1,5 @@
 <script lang="ts">
-import pb from '$lib/pocketbase'
-import { uploadToR2 } from '$lib/utils/uploadToR2'
+import supabase from '$lib/supabase'
 import EditorJS, { type OutputData } from '@editorjs/editorjs'
 import Header from '@editorjs/header'
 import NestedList from '@editorjs/nested-list'
@@ -9,7 +8,6 @@ import { onMount } from 'svelte'
 import CustomImage from './CustomImage'
 import NewSlide from './newSlide'
 import SplitSlide from './splitSide'
-
 let { presentationId, content } = $props()
 
 let debounceTimer: NodeJS.Timeout
@@ -31,9 +29,10 @@ const editor = new EditorJS({
 				content: outputData
 			}
 
-			const record = await pb
-				.collection('presentations')
-				.update(presentationId, data)
+			const record = await supabase
+				.from('presentations')
+				.update(data)
+				.eq('id', presentationId)
 		}, 500)
 	},
 
@@ -77,11 +76,13 @@ const editor = new EditorJS({
 			config: {
 				uploader: {
 					async uploadByFile(file: File) {
-						const result = await uploadToR2(file)
+						const { data, error } = await supabase.storage
+							.from('images')
+							.upload(file.name, file)
 						return {
 							success: 1,
 							file: {
-								url: result.url
+								url: data?.fullPath
 							}
 						}
 					}

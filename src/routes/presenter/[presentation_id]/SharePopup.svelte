@@ -6,7 +6,7 @@ import { Button } from '$lib/components/ui/button'
 import { Label } from '$lib/components/ui/label'
 import * as Popover from '$lib/components/ui/popover'
 import { Switch } from '$lib/components/ui/switch'
-import pb from '$lib/pocketbase'
+import supabase from '$lib/supabase'
 import { isPresentationPublic } from './store'
 
 interface Props {
@@ -23,9 +23,10 @@ const updatePresentationVisibility = async (
 		is_public: isPublic
 	}
 
-	const record = await pb
-		.collection('presentations')
-		.update(presentationId, data)
+	const record = await supabase
+		.from('presentations')
+		.update(data)
+		.eq('id', presentationId)
 }
 
 run(() => {

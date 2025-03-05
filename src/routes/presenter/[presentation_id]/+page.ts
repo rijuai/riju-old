@@ -1,4 +1,4 @@
-import pb from '$lib/pocketbase'
+import supabase from '$lib/supabase'
 import type { PageLoad } from './$types'
 import { convertEditorJsContentToHtml } from './converter'
 
@@ -7,11 +7,13 @@ export const ssr = false
 export const load: PageLoad = async ({ params }) => {
 	const presentationId = params.presentation_id
 
-	const { content, theme, is_public } = await pb
-		.collection('presentations')
-		.getOne(presentationId, {
-			fields: 'content,theme,is_public'
-		})
+	const {
+		data: { content, theme, is_public }
+	} = await supabase
+		.from('presentations')
+		.select('content,theme,is_public')
+		.eq('id', presentationId)
+		.single()
 
 	const htmlOutput = convertEditorJsContentToHtml(content)
 
