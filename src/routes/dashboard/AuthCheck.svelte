@@ -1,8 +1,7 @@
 <script lang="ts">
-import { user } from '$lib/stores/auth'
 import supabase from '$lib/supabase'
 import { redirect } from '@sveltejs/kit'
-import { onDestroy, onMount } from 'svelte'
+import { onMount } from 'svelte'
 
 let { children } = $props()
 let isUserAuthenticated = $state(false)
