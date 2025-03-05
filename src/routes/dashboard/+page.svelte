@@ -26,16 +26,6 @@ const deletePresentation = async (id: string) => {
 	invalidateAll()
 }
 
-const deleteImagesInR2 = async (objectKeys: string[]) => {
-	const result = await fetch('/api/r2', {
-		method: 'DELETE',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({ objectKeys })
-	})
-}
-
 const deleteImages = async (editorOutput: OutputData) => {
 	const imagesToDelete: string[] = []
 	const blocks = editorOutput.blocks
@@ -50,8 +40,6 @@ const deleteImages = async (editorOutput: OutputData) => {
 			imagesToDelete.push(path)
 		}
 	}
-
-	await deleteImagesInR2(imagesToDelete)
 }
 
 const handleFiles = (event: Event) => {
