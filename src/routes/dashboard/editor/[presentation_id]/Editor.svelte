@@ -1,5 +1,4 @@
 <script lang="ts">
-import { uploadToR2 } from '$lib/utils/uploadToR2'
 import EditorJS, { type OutputData } from '@editorjs/editorjs'
 import Header from '@editorjs/header'
 import NestedList from '@editorjs/nested-list'
@@ -77,11 +76,11 @@ const editor = new EditorJS({
 			config: {
 				uploader: {
 					async uploadByFile(file: File) {
-						const result = await uploadToR2(file)
+						const { data, error } = await supabase.storage.from('images').upload(file.name, file)
 						return {
 							success: 1,
 							file: {
-								url: result.url
+								url: data?.fullPath
 							}
 						}
 					}
