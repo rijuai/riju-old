@@ -1,13 +1,13 @@
-import pb from '$lib/pocketbase'
+import supabase from '$lib/supabase'
 import type { PageLoad } from './$types'
 
 export const load: PageLoad = async ({ params }) => {
 	const { presentation_id } = params
-	const { content } = await pb
-		.collection('presentations')
-		.getOne(presentation_id, {
-			fields: 'content'
-		})
+	const { data: { content } } = await supabase
+		.from('presentations')
+		.select('content')
+		.eq('id', presentation_id)
+		.single()
 
 	return {
 		content,

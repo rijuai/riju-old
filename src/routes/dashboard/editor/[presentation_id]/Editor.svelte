@@ -1,5 +1,4 @@
 <script lang="ts">
-import pb from '$lib/pocketbase'
 import { uploadToR2 } from '$lib/utils/uploadToR2'
 import EditorJS, { type OutputData } from '@editorjs/editorjs'
 import Header from '@editorjs/header'
@@ -9,7 +8,7 @@ import { onMount } from 'svelte'
 import CustomImage from './CustomImage'
 import NewSlide from './newSlide'
 import SplitSlide from './splitSide'
-
+import supabase from '$lib/supabase'
 let { presentationId, content } = $props()
 
 let debounceTimer: NodeJS.Timeout
@@ -31,9 +30,10 @@ const editor = new EditorJS({
 				content: outputData
 			}
 
-			const record = await pb
-				.collection('presentations')
-				.update(presentationId, data)
+			const record = await supabase
+				.from('presentations')
+				.update(data)
+				.eq('id', presentationId)
 		}, 500)
 	},
 
