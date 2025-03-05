@@ -1,4 +1,5 @@
 <script lang="ts">
+import supabase from '$lib/supabase'
 import EditorJS, { type OutputData } from '@editorjs/editorjs'
 import Header from '@editorjs/header'
 import NestedList from '@editorjs/nested-list'
@@ -7,7 +8,6 @@ import { onMount } from 'svelte'
 import CustomImage from './CustomImage'
 import NewSlide from './newSlide'
 import SplitSlide from './splitSide'
-import supabase from '$lib/supabase'
 let { presentationId, content } = $props()
 
 let debounceTimer: NodeJS.Timeout
@@ -76,7 +76,9 @@ const editor = new EditorJS({
 			config: {
 				uploader: {
 					async uploadByFile(file: File) {
-						const { data, error } = await supabase.storage.from('images').upload(file.name, file)
+						const { data, error } = await supabase.storage
+							.from('images')
+							.upload(file.name, file)
 						return {
 							success: 1,
 							file: {

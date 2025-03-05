@@ -7,7 +7,9 @@ export const ssr = false
 export const load: PageLoad = async ({ params }) => {
 	const presentationId = params.presentation_id
 
-	const { data: { content, theme, is_public } } = await supabase
+	const {
+		data: { content, theme, is_public }
+	} = await supabase
 		.from('presentations')
 		.select('content,theme,is_public')
 		.eq('id', presentationId)
