@@ -5,10 +5,8 @@ import { onMount } from 'svelte'
 
 let { children } = $props()
 
-// Initialize auth when the app loads
 onMount(() => {
-	// Start the auth listener
-	  initAuth()
+	initAuth()
 })
 </script>
 
