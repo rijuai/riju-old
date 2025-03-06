@@ -1,7 +1,5 @@
 <script lang="ts">
-import { run } from 'svelte/legacy'
-
-import { page } from '$app/stores'
+import { page } from '$app/state'
 import { Button } from '$lib/components/ui/button'
 import { Label } from '$lib/components/ui/label'
 import * as Popover from '$lib/components/ui/popover'
@@ -29,7 +27,7 @@ const updatePresentationVisibility = async (
 		.eq('id', presentationId)
 }
 
-run(() => {
+$effect.pre(() => {
 	updatePresentationVisibility(presentationId, $isPresentationPublic)
 })
 </script>
