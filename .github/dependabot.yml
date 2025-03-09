@@ -8,8 +8,6 @@ updates:
       time: "09:00"
       timezone: "UTC"
     versioning-strategy: "auto"
-    # Use pnpm as the package manager
-    package-manager: "pnpm"
     # Create pull requests for version updates
     open-pull-requests-limit: 10
     # Assign labels to pull requests
