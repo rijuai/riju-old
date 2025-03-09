@@ -8,6 +8,7 @@ import { Button } from '$lib/components/ui/button'
 	<div class="flex justify-between">
 		<a class="text-2xl font-semibold" href="/">Riju</a>
 		<div class="flex items-center gap-4">
+			<Button variant="ghost" href="/pricing">Pricing</Button>
 			<Button variant="ghost" href="/login">Log in</Button>
 			<Button href="/signup">Sign up</Button>
 		</div>

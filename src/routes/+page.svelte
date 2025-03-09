@@ -6,6 +6,7 @@ import SubscribedFyiLogo from '$lib/assets/images/featured/subscribedfyi-inverte
 import SuperbCrewLogo from '$lib/assets/images/featured/superbcrew-logo.png'
 import DemoVideo from '$lib/assets/videos/riju-demo.mp4'
 import CTA from '$lib/components/CTA.svelte'
+import Footer from '$lib/components/Footer.svelte'
 import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
 import MetaTags from '$lib/components/MetaTags.svelte'
 import { Button } from '$lib/components/ui/button'
@@ -112,6 +113,8 @@ const cards = [
 	</section>
 
 	<CTA />
+
+	<Footer />
 </main>
 
 <style lang="postcss">

@@ -1,4 +1,5 @@
 <script lang="ts">
+import Footer from '$lib/components/Footer.svelte'
 import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
 import MetaTags from '$lib/components/MetaTags.svelte'
 import { Badge } from '$lib/components/ui/badge'
@@ -97,4 +98,6 @@ import { Check } from 'lucide-svelte'
 			<Button variant="outline" size="lg" disabled>Contact Sales</Button>
 		</div>
 	</div>
+
+	<Footer />
 </div> 
