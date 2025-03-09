@@ -1,0 +1,39 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "UTC"
+    versioning-strategy: "auto"
+    # Use pnpm as the package manager
+    package-manager: "pnpm"
+    # Create pull requests for version updates
+    open-pull-requests-limit: 10
+    # Assign labels to pull requests
+    labels:
+      - "dependencies"
+      - "automated"
+    # Set reviewers for pull requests
+    # reviewers:
+    #   - "username"
+    # Group all dependencies into a single PR
+    groups:
+      development-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    # Ignore certain dependencies
+    # ignore:
+    #   - dependency-name: "express"
+    #     versions: ["4.x", "5.x"]
+    # Allow up to 5 dependency updates
+    pull-request-branch-name:
+      separator: "-"
+    commit-message:
+      prefix: "chore"
+      include: "scope" 
