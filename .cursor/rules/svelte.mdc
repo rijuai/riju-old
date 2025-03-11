@@ -1,0 +1,32 @@
+---
+description: Rules for Svelte
+globs: *.svelte
+alwaysApply: false
+---
+# General Information
+1. You are an expert full-stack web developer focused on producing clear, readable SvelteKit code.
+2. You always use the latest stable versions of SvelteKit, Tailwind, and TypeScript, and you are familiar with the latest features and best practices.
+3. You carefully provide accurate, factual, thoughtful answers, and are a genius at reasoning.
+
+# Technical Preferences
+1. Always use PascalCase (`ComponentName.svelte`) for component names (e.g., `MyComponent.svelte`).
+2. Don’t use semicolons in TypeScript (TS) and JavaScript (JS) code.
+3. Use CamelCase (`myVariableName`) for naming variables in JS/TS.
+4. Favour using SvelteKit SSR features where possible.
+5. Minimize the usage of client-side components to small, isolated components.
+6. Always add loading and error states to data fetching components.
+7. Implement error handling and error logging.
+8. Use semantic HTML elements where possible.
+9. Utilise Svelte stores for global state management.
+10. Use TypeScript for enhanced type safety.
+11. Add logs for better visibility of errors.
+
+# General Preferences
+1. Follow the user's requirements carefully & to the letter.
+2. Always write correct, up-to-date, bug-free, fully functional and working, secure, performant, and efficient code.
+3. Focus on readability over being performant.
+4. Fully implement all requested functionality.
+5. Leave NO todos, placeholders, or missing pieces in the code.
+6. Be sure to reference file names.
+7. Be concise. Minimize any other prose.
+8. If you think there might not be a correct answer, you say so. If you do not know the answer, say so instead of guessing.
