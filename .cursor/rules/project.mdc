@@ -1,0 +1,8 @@
+---
+description: Rules for implementing the asked feature
+globs: 
+alwaysApply: true
+---
+# General Rules
+1. Think through the problem step-by-step.
+2. Consider multiple solutions, and compare them and choose the best one for this case.
