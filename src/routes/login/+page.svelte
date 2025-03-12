@@ -1,47 +1,47 @@
 <script lang="ts">
-	import { goto } from "$app/navigation";
-	import MetaTags from "$lib/components/MetaTags.svelte";
-	import Button from "$lib/components/ui/button/button.svelte";
-	import Input from "$lib/components/ui/input/input.svelte";
-	import supabase from "$lib/supabase";
+import { goto } from '$app/navigation'
+import MetaTags from '$lib/components/MetaTags.svelte'
+import Button from '$lib/components/ui/button/button.svelte'
+import Input from '$lib/components/ui/input/input.svelte'
+import supabase from '$lib/supabase'
 
-	let email = $state("");
-	let password = $state("");
-	let errorMessage = $state("");
-	let isLoading = $state(false);
+let email = $state('')
+let password = $state('')
+let errorMessage = $state('')
+let isLoading = $state(false)
 
-	const signInUsingEmailAndPassword = async (event: SubmitEvent) => {
-		event.preventDefault();
-		try {
-			isLoading = true;
-			errorMessage = "";
+const signInUsingEmailAndPassword = async (event: SubmitEvent) => {
+	event.preventDefault()
+	try {
+		isLoading = true
+		errorMessage = ''
 
-			if (!email || !password) {
-				errorMessage = "Please fill in all fields";
-				isLoading = false;
-				return;
-			}
-
-			const { data, error } = await supabase.auth.signInWithPassword({
-				email,
-				password,
-			});
-
-			if (error) {
-				console.error("Error during login:", error.message);
-				errorMessage = error.message || "Failed to sign in";
-				isLoading = false;
-				return;
-			}
-
-			// After successful login, redirect to dashboard
-			goto("/dashboard");
-		} catch (err) {
-			console.error("Unexpected error during login:", err);
-			errorMessage = "An unexpected error occurred";
-			isLoading = false;
+		if (!email || !password) {
+			errorMessage = 'Please fill in all fields'
+			isLoading = false
+			return
 		}
-	};
+
+		const { data, error } = await supabase.auth.signInWithPassword({
+			email,
+			password
+		})
+
+		if (error) {
+			console.error('Error during login:', error.message)
+			errorMessage = error.message || 'Failed to sign in'
+			isLoading = false
+			return
+		}
+
+		// After successful login, redirect to dashboard
+		goto('/dashboard')
+	} catch (err) {
+		console.error('Unexpected error during login:', err)
+		errorMessage = 'An unexpected error occurred'
+		isLoading = false
+	}
+}
 </script>
 
 <MetaTags

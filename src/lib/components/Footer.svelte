@@ -7,17 +7,25 @@
 		<div class="flex flex-col md:flex-row justify-between items-center">
 			<div class="mb-4 md:mb-0">
 				<a href="/" class="text-xl font-semibold">Riju</a>
-				<p class="text-muted-foreground text-sm mt-1">© {new Date().getFullYear()} Riju. All rights reserved.</p>
+				<p class="text-muted-foreground text-sm mt-1">
+					© {new Date().getFullYear()} Riju. All rights reserved.
+				</p>
 			</div>
-			
+
 			<div class="flex gap-6">
-				<a href="/terms.txt" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+				<a
+					href="/terms.txt"
+					class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+				>
 					Terms of Service
 				</a>
-				<a href="/privacy.txt" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+				<a
+					href="/privacy.txt"
+					class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+				>
 					Privacy Policy
 				</a>
 			</div>
 		</div>
 	</div>
-</footer> 
+</footer>
