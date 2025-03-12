@@ -10,7 +10,7 @@ alwaysApply: false
 
 # Technical Preferences
 1. Always use PascalCase (`ComponentName.svelte`) for component names (e.g., `MyComponent.svelte`).
-2. Don’t use semicolons in TypeScript (TS) and JavaScript (JS) code.
+2. Omit semicolons at end of line in TypeScript (TS) and JavaScript (JS) code.
 3. Use CamelCase (`myVariableName`) for naming variables in JS/TS.
 4. Favour using SvelteKit SSR features where possible.
 5. Minimize the usage of client-side components to small, isolated components.
