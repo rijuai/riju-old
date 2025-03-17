@@ -1,6 +1,6 @@
 <script lang="ts">
 import Footer from '$lib/components/Footer.svelte'
-import HomePageNavbar from '$lib/components/HomePageNavbar.svelte'
+import HomePageNavbar from '../HomePageNavbar.svelte'
 import MetaTags from '$lib/components/MetaTags.svelte'
 import { Badge } from '$lib/components/ui/badge'
 import { Button } from '$lib/components/ui/button'

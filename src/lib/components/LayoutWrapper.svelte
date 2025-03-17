@@ -1,5 +1,5 @@
 <script>
-import HomePageNavbar from './HomePageNavbar.svelte'
+import HomePageNavbar from '../../routes/HomePageNavbar.svelte'
 
 let { children } = $props()
 </script>
