@@ -3,7 +3,10 @@ import { goto } from '$app/navigation'
 import MetaTags from '$lib/components/MetaTags.svelte'
 import Button from '$lib/components/ui/button/button.svelte'
 import Input from '$lib/components/ui/input/input.svelte'
+import { Label } from '$lib/components/ui/label/index.js'
 import supabase from '$lib/supabase'
+import Loader from 'lucide-svelte/icons/loader'
+import Navbar from './Navbar.svelte'
 
 let email = $state('')
 let password = $state('')
@@ -49,35 +52,32 @@ const signInUsingEmailAndPassword = async (event: SubmitEvent) => {
 	description="Sign in if you are a existing user."
 />
 
-<nav
-	class="fixed left-1/2 top-0 z-10 w-full -translate-x-1/2 transform px-4 py-2"
->
-	<div class="flex justify-between">
-		<Button variant="link" class="text-xl" href="/">Riju</Button>
-		<Button variant="link" href="/contact">Contact</Button>
-	</div>
-</nav>
+<Navbar />
 
 <section
-	class="mx-auto flex h-screen max-w-md items-center justify-center px-4"
+	class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm"
 >
-	<div class="space-y-6">
-		<h2>Login</h2>
-		<form onsubmit={signInUsingEmailAndPassword} class="space-y-6">
-			<Input type="email" placeholder="Email" bind:value={email} />
-			<Input
-				type="password"
-				placeholder="Password"
-				bind:value={password}
-			/>
+	<form class="p-6 space-y-6" onsubmit={signInUsingEmailAndPassword}>
+		<h2>Create / Login</h2>
+		
+		<div class="space-y-4">
+			<Label for="email">Email</Label>
+			<Input type="email" required bind:value={email} />
+
+			<Label for="password">Password</Label>
+			<Input type="password" required bind:value={password} />
 
 			{#if errorMessage}
 				<p class="text-red-500 text-sm">{errorMessage}</p>
 			{/if}
+		</div>
 
-			<Button type="submit" class="w-full" disabled={isLoading}>
-				{isLoading ? "Signing in..." : "Continue"}
-			</Button>
-		</form>
-	</div>
+		<Button class="w-full" type="submit" disabled={isLoading}>
+			{#if isLoading}
+				<Loader class="h-4 w-4 animate-spin mr-2" />
+			{:else}
+				Continue
+			{/if}
+		</Button>
+	</form>
 </section>
