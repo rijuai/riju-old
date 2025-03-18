@@ -18,7 +18,6 @@ alwaysApply: false
 5. Use functional programming
     1. Prefer const over let/var.
     2. Avoid side effects.
-    3. 
 6. Use descriptive names like userData instead of usrDt.
 7. Avoid any: Use explicit types or unknown with type guards.
 8. Type Inference: Leverage TypeScript’s inference where possible.
