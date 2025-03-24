@@ -26,22 +26,6 @@ const deletePresentation = async (id: string) => {
 	invalidateAll()
 }
 
-const deleteImages = async (editorOutput: OutputData) => {
-	const imagesToDelete: string[] = []
-	const blocks = editorOutput.blocks
-
-	if (!editorOutput) return
-
-	for (const item of blocks) {
-		if (item.type === 'image') {
-			const url = item.data.file.url
-			const path = url.split('/').pop() ?? ''
-
-			imagesToDelete.push(path)
-		}
-	}
-}
-
 const handleFiles = (event: Event) => {
 	const target = event.target as HTMLInputElement
 	const newFiles = Array.from(target.files || [])
