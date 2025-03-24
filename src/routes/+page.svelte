@@ -101,7 +101,7 @@ const cards = [
 			{#each cards as card}
 				<Card.Root>
 					<Card.Header>
-						<svelte:component this={card.icon} class="mb-2" />
+						<card.icon class="mb-2" />
 						<Card.Title tag="h4">{card.title}</Card.Title>
 					</Card.Header>
 					<Card.Content>
