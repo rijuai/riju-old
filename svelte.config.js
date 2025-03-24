@@ -3,12 +3,12 @@ import adapter from "@sveltejs/adapter-node";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
 const config = {
-	preprocess: [vitePreprocess(), mdsvex({ layout: "./src/lib/components/BlogLayout.svelte" })],
+	preprocess: [vitePreprocess(), mdsvex({ layout: "./src/routes/blog/BlogLayout.svelte" })],
 	kit: {
 		adapter: adapter(),
 		alias: { $lib: "./src/lib" }
 	},
-	extensions: [".svelte", ".svx"]
+	extensions: [".svelte", ".svx", "md"]
 };
 
 export default config;
