@@ -16,9 +16,9 @@ alwaysApply: false
 3. Don't use trailing commas.
 4. Limit lines to 80-100 characters for readability.
 5. Use functional programming
-    1. Prefer const over let/var.
-    2. Avoid side effects.
-6. Use descriptive names like userData instead of usrDt.
-7. Avoid any: Use explicit types or unknown with type guards.
-8. Type Inference: Leverage TypeScript’s inference where possible.
+6. Prefer const over let/var.
+7. Avoid side effects.
+9. Use descriptive names like userData instead of usrDt.
+9. Avoid any: Use explicit types or unknown with type guards.
+10. Type Inference: Leverage TypeScript’s inference where possible.
 
