@@ -1,3 +1,5 @@
+import type { SvelteComponent } from 'svelte'
+
 export interface PostMetadata {
     title: string
     description?: string
@@ -9,5 +11,5 @@ export interface PostMetadata {
 
 export interface Post {
     metadata: PostMetadata
-    default: any
+    default: typeof SvelteComponent
 } 
