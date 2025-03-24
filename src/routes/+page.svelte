@@ -63,7 +63,7 @@ const cards = [
 
 	<!-- Hero -->
 	<div class="pt-16 text-center">
-		<h1 class="mb-6">Presentations in Seconds</h1>
+		<h1>Presentation in a Minute</h1>
 		<p class="text-muted-foreground mx-auto mb-16 max-w-2xl text-xl">
 			Say goodbye to boring presentations. Meet Riju — the intuitive
 			presentation builder you've been looking for.
