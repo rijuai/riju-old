@@ -9,9 +9,19 @@ type $$Props = DropdownMenuPrimitive.SubTriggerProps & {
 }
 type $$Events = DropdownMenuPrimitive.SubTriggerEvents
 
-let className: $$Props['class'] = undefined
-export let inset: $$Props['inset'] = undefined
-export { className as class }
+interface Props {
+	class?: $$Props['class']
+	inset?: $$Props['inset']
+	children?: import('svelte').Snippet
+	[key: string]: any
+}
+
+let {
+	class: className = undefined,
+	inset = undefined,
+	children,
+	...rest
+}: Props = $props()
 </script>
 
 <DropdownMenuPrimitive.SubTrigger
@@ -20,7 +30,7 @@ export { className as class }
 		inset && "pl-8",
 		className
 	)}
-	{...$$restProps}
+	{...rest}
 	on:click
 	on:keydown
 	on:focusin
@@ -28,6 +38,6 @@ export { className as class }
 	on:pointerleave
 	on:pointermove
 >
-	<slot />
+	{@render children?.()}
 	<ChevronRight class="ml-auto h-4 w-4" />
 </DropdownMenuPrimitive.SubTrigger>
