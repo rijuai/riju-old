@@ -64,7 +64,7 @@ onDestroy(() => {
 <MetaTags title="Riju | Dashboard" description="Your presentations" />
 
 <section>
-	<h3 class="mt-4 mb-4 text-muted-foreground">Generate</h3>
+	<h4 class="mt-4 mb-4 text-muted-foreground">Generate</h4>
 	<!-- Preview section -->
 	{#if files.length > 0}
     <div class="mt-4 grid grid-cols-1 md:grid-cols-6 gap-4 mb-2.5">
@@ -115,7 +115,7 @@ onDestroy(() => {
 <div class="mx-auto w-full max-w-3xl space-y-8">
 	<!-- Presentations -->
 	{#if presentations && presentations.length > 0}
-		<h3 class="text-muted-foreground">Your presentations</h3>
+		<h4 class="text-muted-foreground">Your presentations</h4>
 		<Table.Root>
 			<Table.Body>
 				{#each presentations as { id, title } (id)}
