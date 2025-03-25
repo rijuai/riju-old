@@ -15,7 +15,7 @@ const handleSignOut = async () => {
 
 <DropdownMenu.Root>
 	<DropdownMenu.Trigger class="fixed bottom-6 left-6"
-		><CircleHelp class="size-8" /></DropdownMenu.Trigger
+		><CircleHelp class="size-10" /></DropdownMenu.Trigger
 	>
 	<DropdownMenu.Content>
 		<DropdownMenu.Group>
