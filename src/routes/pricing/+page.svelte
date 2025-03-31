@@ -1,11 +1,11 @@
 <script lang="ts">
-import Footer from '$lib/components/Footer.svelte'
-import MetaTags from '$lib/components/MetaTags.svelte'
-import { Badge } from '$lib/components/ui/badge'
-import { Button } from '$lib/components/ui/button'
-import * as Card from '$lib/components/ui/card'
-import Check from 'lucide-svelte/icons/check'
-import HomePageNavbar from '../HomePageNavbar.svelte'
+    import Footer from "$lib/components/Footer.svelte";
+    import MetaTags from "$lib/components/MetaTags.svelte";
+    import { Badge } from "$lib/components/ui/badge";
+    import { Button } from "$lib/components/ui/button";
+    import * as Card from "$lib/components/ui/card";
+    import Check from "lucide-svelte/icons/check";
+    import HomePageNavbar from "../HomePageNavbar.svelte";
 </script>
 
 <MetaTags
@@ -19,8 +19,7 @@ import HomePageNavbar from '../HomePageNavbar.svelte'
     <div class="py-16 text-center">
         <h1>Simple, Transparent Pricing</h1>
         <p class="mt-4 mx-auto max-w-2xl text-xl text-muted-foreground">
-            Everything you need to create stunning presentations at an
-            affordable price.
+            Everything you need to create stunning presentations for free.
         </p>
     </div>
 
@@ -29,8 +28,7 @@ import HomePageNavbar from '../HomePageNavbar.svelte'
             <Card.Header class="text-center pb-8 bg-primary/5">
                 <Card.Title class="text-3xl font-bold">Pro Plan</Card.Title>
                 <div class="mt-4">
-                    <span class="text-5xl font-bold">$25</span>
-                    <span class="text-muted-foreground ml-2">/month</span>
+                    <span class="text-5xl font-bold">Free</span>
                 </div>
                 <Card.Description class="mt-4 text-base">
                     Perfect for professionals and teams
@@ -92,7 +90,7 @@ import HomePageNavbar from '../HomePageNavbar.svelte'
             <Card.Footer class="flex flex-col space-y-4 px-6 pb-8 pt-6">
                 <Button size="lg" class="w-full" disabled>Get Started</Button>
                 <p class="text-center text-sm text-muted-foreground">
-                    No credit card required to start. Cancel anytime.
+                    No credit card required. Free forever.
                 </p>
             </Card.Footer>
         </Card.Root>
