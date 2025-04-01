@@ -6,7 +6,6 @@ import * as DropdownMenu from '$lib/components/ui/dropdown-menu'
 import * as Table from '$lib/components/ui/table'
 import { Textarea } from '$lib/components/ui/textarea'
 import supabase from '$lib/supabase.js'
-import type { OutputData } from '@editorjs/editorjs'
 import Ellipsis from 'lucide-svelte/icons/ellipsis'
 import ExternalLink from 'lucide-svelte/icons/external-link'
 import FileIcon from 'lucide-svelte/icons/file'
@@ -64,102 +63,126 @@ onDestroy(() => {
 <MetaTags title="Riju | Dashboard" description="Your presentations" />
 
 <section>
-	<h4 class="mt-4 mb-4 text-muted-foreground">Generate</h4>
-	<!-- Preview section -->
-	{#if files.length > 0}
-    <div class="mt-4 grid grid-cols-1 md:grid-cols-6 gap-4 mb-2.5">
-      {#each files as file, index}
-        <div class="relative border aspect-squar h-16 w-auto p-2 rounded-md">
-          {#if isImage(file)}
-            <img 
-              src={getPreviewUrl(file)} 
-              alt={file.name} 
-              class="w-full h-full object-cover absolute inset-0 rounded-md"
-            />
-          {:else if file.type === 'application/pdf'}
-            <div class="flex items-center justify-center text-xs text-ellipsis">
-                {file.name.length > 25 ? file.name.substring(0, 25) + '...' : file.name}
-            </div>
-          {/if}
-          <Button 
-            variant="outline"
-            size="icon"
-            onclick={() => removeFile(index)}
-            class="absolute top-0 right-0 z-10"
-          >
-            <XIcon class="size-4" />
-          </Button>
+    <h4 class="mt-4 mb-4 text-muted-foreground">Generate</h4>
+    <!-- Preview section -->
+    {#if files.length > 0}
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-6 gap-4 mb-2.5">
+            {#each files as file, index}
+                <div
+                    class="relative border aspect-squar h-16 w-auto p-2 rounded-md"
+                >
+                    {#if isImage(file)}
+                        <img
+                            src={getPreviewUrl(file)}
+                            alt={file.name}
+                            class="w-full h-full object-cover absolute inset-0 rounded-md"
+                        />
+                    {:else if file.type === "application/pdf"}
+                        <div
+                            class="flex items-center justify-center text-xs text-ellipsis"
+                        >
+                            {file.name.length > 25
+                                ? file.name.substring(0, 25) + "..."
+                                : file.name}
+                        </div>
+                    {/if}
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        onclick={() => removeFile(index)}
+                        class="absolute top-0 right-0 z-10"
+                    >
+                        <XIcon class="size-4" />
+                    </Button>
+                </div>
+            {/each}
         </div>
-      {/each}
+    {/if}
+
+    <Textarea
+        class="mb-2.5 text-base"
+        placeholder="Enter your prompt here"
+        rows={8}
+        bind:value={prompt}
+    />
+    <div class="flex justify-between gap-2 mb-12">
+        <input
+            class="hidden"
+            type="file"
+            bind:this={fileInput}
+            onchange={handleFiles}
+            multiple
+            accept="image/*,application/pdf"
+        />
+
+        <!-- Upload button -->
+        <Button variant="outline" class="self-center" onclick={triggerFileInput}
+            ><FileIcon class="size-4 mr-2" />Files</Button
+        >
+
+        <Button onclick={generatePresentation}>Generate</Button>
     </div>
-  {/if}
-
-	<Textarea class="mb-2.5 text-base" placeholder="Enter your prompt here" rows={8} bind:value={prompt} />
-<div class="flex justify-between gap-2 mb-12">
-	<input
-	class="hidden"
-    type="file"
-    bind:this={fileInput}
-    onchange={handleFiles}
-    multiple
-    accept="image/*,application/pdf"
-  />
-
-  <!-- Upload button -->
-	<Button variant="outline" class="self-center" onclick={triggerFileInput}><FileIcon class="size-4 mr-2" />Files</Button>
-
-	<Button onclick={generatePresentation}>Generate</Button>
-</div>
 </section>
 
 <div class="mx-auto w-full max-w-3xl space-y-8">
-	<!-- Presentations -->
-	{#if presentations && presentations.length > 0}
-		<h4 class="text-muted-foreground">Your presentations</h4>
-		<Table.Root>
-			<Table.Body>
-				{#each presentations as { id, title } (id)}
-					<Table.Row
-						class="cursor-pointer"
-						onclick={() => goto(`/dashboard/editor/${id}`)}
-					>
-						<Table.Cell class="text-ellipsis">{title}</Table.Cell>
-						<Table.Cell
-							class="py-3 text-right"
-							onclick={(e: Event) => {
-								e.stopPropagation()
-							}}
-						>
-							<DropdownMenu.Root>
-								<DropdownMenu.Trigger>
-									<Ellipsis class="size-4" />
-								</DropdownMenu.Trigger>
-								<DropdownMenu.Content>
-									<DropdownMenu.Group>
-										<DropdownMenu.Item
-											onclick={(e: Event) => {
-												e.stopPropagation()
-												window.open(`/dashboard/editor/${id}`, '_blank')
-											}}
-											><ExternalLink class="mr-4 size-4" />Open in new tab</DropdownMenu.Item
-										>
-										<DropdownMenu.Separator />
-										<DropdownMenu.Item
-											class="text-destructive"
-											onclick={async () => {
-												let editorOutput = await deletePresentation(id)
-												location.reload()
-											}}><Trash2 class="mr-4 size-4" />Delete</DropdownMenu.Item
-										>
-									</DropdownMenu.Group>
-								</DropdownMenu.Content>
-							</DropdownMenu.Root>
-						</Table.Cell>
-					</Table.Row>
-				{/each}
-			</Table.Body>
-		</Table.Root>
-	{:else}
-		<p class="text-center">No presentations to show</p>
-	{/if}
+    <!-- Presentations -->
+    {#if presentations && presentations.length > 0}
+        <h4 class="text-muted-foreground">Your presentations</h4>
+        <Table.Root>
+            <Table.Body>
+                {#each presentations as { id, title } (id)}
+                    <Table.Row
+                        class="cursor-pointer"
+                        onclick={() => goto(`/dashboard/editor/${id}`)}
+                    >
+                        <Table.Cell class="text-ellipsis">{title}</Table.Cell>
+                        <Table.Cell
+                            class="py-3 text-right"
+                            onclick={(e: Event) => {
+                                e.stopPropagation();
+                            }}
+                        >
+                            <DropdownMenu.Root>
+                                <DropdownMenu.Trigger>
+                                    <Ellipsis class="size-4" />
+                                </DropdownMenu.Trigger>
+                                <DropdownMenu.Content>
+                                    <DropdownMenu.Group>
+                                        <DropdownMenu.Item
+                                            onclick={(e: Event) => {
+                                                e.stopPropagation();
+                                                window.open(
+                                                    `/dashboard/editor/${id}`,
+                                                    "_blank",
+                                                );
+                                            }}
+                                            ><ExternalLink
+                                                class="mr-4 size-4"
+                                            />Open in new tab</DropdownMenu.Item
+                                        >
+                                        <DropdownMenu.Separator />
+                                        <DropdownMenu.Item
+                                            class="text-destructive"
+                                            onclick={async () => {
+                                                let editorOutput =
+                                                    await deletePresentation(
+                                                        id,
+                                                    );
+                                                location.reload();
+                                            }}
+                                            ><Trash2
+                                                class="mr-4 size-4"
+                                            />Delete</DropdownMenu.Item
+                                        >
+                                    </DropdownMenu.Group>
+                                </DropdownMenu.Content>
+                            </DropdownMenu.Root>
+                        </Table.Cell>
+                    </Table.Row>
+                {/each}
+            </Table.Body>
+        </Table.Root>
+    {:else}
+        <p class="text-center">No presentations to show</p>
+    {/if}
 </div>
