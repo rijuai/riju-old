@@ -1,16 +1,16 @@
 <script lang="ts">
-    import { enhance } from "$app/forms";
-    import { page } from "$app/state";
+import { enhance } from '$app/forms'
+import { page } from '$app/state'
 
-    let loading = false;
+let loading = false
 
-    function handleSubmit() {
-        loading = true;
-        return async ({ update }) => {
-            await update();
-            loading = false;
-        };
-    }
+function handleSubmit() {
+	loading = true
+	return async ({ update }) => {
+		await update()
+		loading = false
+	}
+}
 </script>
 
 <div class="scraper-container">
