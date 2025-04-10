@@ -11,7 +11,7 @@ const config = {
 		adapter: adapter(),
 		alias: { $lib: './src/lib' }
 	},
-	extensions: ['.svelte', '.svx']
+	extensions: ['.svelte', '.svx', '.md']
 }
 
 export default config
