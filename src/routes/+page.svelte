@@ -54,71 +54,73 @@ const cards = [
 </script>
 
 <MetaTags
-	title="Riju | Presentation Builder"
-	description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
+    title="Riju | Presentation Builder"
+    description="Create presentations in seconds. Riju turns your words into stunning presentations. Our smart tech blends beauty and impact, perfect for impressing clients or inspiring students."
 />
 
 <main class="mx-auto max-w-4xl px-4">
-	<HomePageNavbar />
+    <HomePageNavbar />
 
-	<!-- Hero -->
-	<div class="pt-16 text-center">
-		<h1>Presentation in a Minute</h1>
-		<p class="text-muted-foreground mx-auto mb-16 max-w-2xl text-xl">
-			Say goodbye to boring presentations. Meet Riju — the intuitive
-			presentation builder you've been looking for.
-		</p>
-		<div class="mb-20 space-y-2">
-			<Button size="lg" class="font-semibold" href="/signup"
-				>Get Started<ArrowRight class="ml-2 size-5" /></Button
-			>
-		</div>
+    <!-- Hero -->
+    <div class="pt-16 text-center">
+        <h1>Presentation in under a Minute</h1>
+        <p class="text-muted-foreground mx-auto mb-16 max-w-2xl text-xl">
+            Say goodbye to boring presentations. Meet Riju — the intuitive
+            presentation builder you've been looking for.
+        </p>
+        <div class="mb-20 space-y-2">
+            <Button size="lg" class="font-semibold" href="/signup"
+                >Get Started<ArrowRight class="ml-2 size-5" /></Button
+            >
+        </div>
 
-		<!-- Demo Video -->
-		<video
-			class="mx-auto rounded-lg border shadow-xl"
-			src={DemoVideo}
-			muted
-			loop
-			autoplay
-		></video>
-	</div>
+        <!-- Demo Video -->
+        <video
+            class="mx-auto rounded-lg border shadow-xl"
+            src={DemoVideo}
+            muted
+            loop
+            autoplay
+        ></video>
+    </div>
 
-	<!-- Featured -->
-	<section>
-		<h4 class="mb-12 text-center">Featured on major websites</h4>
-		<div class="flex flex-col items-center justify-center gap-12 lg:flex-row">
-			{#each featuredCompaniesLogo as logos}
-				<img class="h-12 w-auto" src={logos} alt="Featured companies" />
-			{/each}
-		</div>
-	</section>
+    <!-- Featured -->
+    <section>
+        <h4 class="mb-12 text-center">Featured on</h4>
+        <div
+            class="flex flex-col items-center justify-center gap-12 lg:flex-row"
+        >
+            {#each featuredCompaniesLogo as logos}
+                <img class="h-12 w-auto" src={logos} alt="Featured companies" />
+            {/each}
+        </div>
+    </section>
 
-	<!-- Cards -->
-	<section>
-		<h2 class="mb-12">Simple but powerful</h2>
-		<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-			{#each cards as card}
-				<Card.Root>
-					<Card.Header>
-						<card.icon class="mb-2" />
-						<Card.Title tag="h4">{card.title}</Card.Title>
-					</Card.Header>
-					<Card.Content>
-						<p>{card.content}</p>
-					</Card.Content>
-				</Card.Root>
-			{/each}
-		</div>
-	</section>
+    <!-- Cards -->
+    <section>
+        <h2 class="mb-12">Simple but powerful</h2>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {#each cards as card}
+                <Card.Root>
+                    <Card.Header>
+                        <card.icon class="mb-2" />
+                        <Card.Title tag="h4">{card.title}</Card.Title>
+                    </Card.Header>
+                    <Card.Content>
+                        <p>{card.content}</p>
+                    </Card.Content>
+                </Card.Root>
+            {/each}
+        </div>
+    </section>
 
-	<CTA />
+    <CTA />
 
-	<Footer />
+    <Footer />
 </main>
 
 <style lang="postcss">
-section {
-	@apply my-16 px-4 lg:my-44 lg:px-8;
-}
+    section {
+        @apply my-16 px-4 lg:my-44 lg:px-8;
+    }
 </style>
