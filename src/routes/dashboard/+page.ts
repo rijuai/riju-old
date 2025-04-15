@@ -3,7 +3,6 @@ import type { PageLoad } from './$types'
 
 export const load: PageLoad = async () => {
 	try {
-		// Example of fetching data from Supabase
 		const { data: presentations, error } = await supabase
 			.from('presentations')
 			.select('id, title')
