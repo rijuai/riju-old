@@ -1,5 +1,13 @@
-import { fail } from '@sveltejs/kit'
+import { googleAI } from '$lib/server/config/gemini.js'
+import { fail, redirect } from '@sveltejs/kit'
 import * as cheerio from 'cheerio'
+import type { PageLoad } from '../$types.js'
+
+export const load: PageLoad = async () => {
+	return {
+		text: ''
+	}
+}
 
 export const actions = {
 	scrape: async ({ request }: { request: Request }) => {
@@ -123,19 +131,12 @@ export const actions = {
 			// Get file metadata
 			const fileName = uploadedFile.name
 			const fileType = uploadedFile.type
-			const fileSize = uploadedFile.size
 
-			// Read file content as text
-			const fileContent = await uploadedFile.text()
-
-			console.log('File Info', fileName, fileType, fileSize)
+			console.log('File Info', fileName, fileType)
 
 			return {
 				success: true,
-				fileName,
-				fileType,
-				fileSize,
-				fileContent
+				fileName
 			}
 		} catch (error) {
 			console.error('File upload error:', error)
@@ -147,5 +148,38 @@ export const actions = {
 		}
 	},
 
-	generateOutline: async ({ request }: { request: Request }) => {}
+	generateSummary: async ({ request }: { request: Request }) => {
+		try {
+			const formData = await request.formData()
+			const text = formData.get('text')?.toString()
+
+			const result = await generateSummary(text as string)
+
+			console.log(result)
+
+			return {
+				text: result
+			}
+		} catch {
+			console.log('error')
+		}
+	}
 }
+
+const generateSummary = async (text: string) => {
+	const response = await googleAI.models.generateContent({
+		model: 'gemini-1.5-flash',
+		contents: [
+			{
+				parts: [
+					{
+						text: `Please summarize the following text in 2-3 sentences: ${text}`
+					}
+				]
+			}
+		]
+	})
+
+	return response.text
+}
+
