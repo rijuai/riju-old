@@ -6,10 +6,10 @@ import * as DropdownMenu from '$lib/components/ui/dropdown-menu'
 import * as Table from '$lib/components/ui/table'
 import { Textarea } from '$lib/components/ui/textarea'
 import supabase from '$lib/supabase.js'
-import Ellipsis from 'lucide-svelte/icons/ellipsis'
-import ExternalLink from 'lucide-svelte/icons/external-link'
+import EllipsisIcon from 'lucide-svelte/icons/ellipsis'
+import ExternalLinkIcon from 'lucide-svelte/icons/external-link'
 import FileIcon from 'lucide-svelte/icons/file'
-import Trash2 from 'lucide-svelte/icons/trash-2'
+import Trash2Icon from 'lucide-svelte/icons/trash-2'
 import XIcon from 'lucide-svelte/icons/x'
 import { onDestroy } from 'svelte'
 
@@ -144,7 +144,7 @@ onDestroy(() => {
                         >
                             <DropdownMenu.Root>
                                 <DropdownMenu.Trigger>
-                                    <Ellipsis class="size-4" />
+                                    <EllipsisIcon class="size-4" />
                                 </DropdownMenu.Trigger>
                                 <DropdownMenu.Content>
                                     <DropdownMenu.Group>
@@ -156,7 +156,7 @@ onDestroy(() => {
                                                     "_blank",
                                                 );
                                             }}
-                                            ><ExternalLink
+                                            ><ExternalLinkIcon
                                                 class="mr-4 size-4"
                                             />Open in new tab</DropdownMenu.Item
                                         >
@@ -170,7 +170,7 @@ onDestroy(() => {
                                                     );
                                                 location.reload();
                                             }}
-                                            ><Trash2
+                                            ><Trash2Icon
                                                 class="mr-4 size-4"
                                             />Delete</DropdownMenu.Item
                                         >
