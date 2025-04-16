@@ -2,26 +2,26 @@
 import * as Card from '$lib/components/ui/card'
 import Footer from '$lib/components/Footer.svelte'
 import MetaTags from '$lib/components/MetaTags.svelte'
-import Sparkles from 'lucide-svelte/icons/sparkles'
-import FileText from 'lucide-svelte/icons/file-text'
-import Image from 'lucide-svelte/icons/image'
+import SparklesIcon from 'lucide-svelte/icons/sparkles'
+import FileTextIcon from 'lucide-svelte/icons/file-text'
+import ImageIcon from 'lucide-svelte/icons/image'
 import { Badge } from '$lib/components/ui/badge'
 
 const features = [
 	{
-		icon: FileText,
+		icon: FileTextIcon,
 		title: 'Just Type Your Prompt',
 		content:
 			'Simply describe what you want in your presentation. No need to worry about design or formatting.'
 	},
 	{
-		icon: Image,
+		icon: ImageIcon,
 		title: 'Upload Your Files',
 		content:
 			'Add your images, documents, or data. Our AI will intelligently incorporate them into your slides.'
 	},
 	{
-		icon: Sparkles,
+		icon: SparklesIcon,
 		title: 'AI-Powered Generation',
 		content:
 			'Watch as our AI instantly creates professional slides with perfect layouts and stunning visuals.'
