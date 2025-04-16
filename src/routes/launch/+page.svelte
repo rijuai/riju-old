@@ -6,6 +6,7 @@ import SparklesIcon from 'lucide-svelte/icons/sparkles'
 import FileTextIcon from 'lucide-svelte/icons/file-text'
 import ImageIcon from 'lucide-svelte/icons/image'
 import { Badge } from '$lib/components/ui/badge'
+import Button from '$lib/components/ui/button/button.svelte'
 
 const features = [
 	{
@@ -34,10 +35,21 @@ const features = [
     description="Create stunning presentations in minutes, not hours. Join our waitlist and get 25% off at launch!"
 />
 
+<nav
+	class="bg-background/95 supports-[backdrop-filter]:bg-background/70 sticky top-0 z-50 mx-auto py-2 backdrop-blur"
+>
+	<div class="flex justify-between max-w-4xl mx-auto px-4 py-2">
+		<a class="text-2xl font-semibold" href="/">Riju</a>
+		<div class="flex items-center gap-4">
+      <Button href="#form">Signup</Button>
+		</div>
+	</div>
+</nav>
+
 <main class="min-h-screen bg-background">
     <div class="mx-auto max-w-6xl px-4 py-8">
         <!-- Hero Section -->
-        <div class="text-center">
+        <div class="text-center" id="form">
             <Badge variant="secondary" class="mb-4">Early Access - 25% Off</Badge>
             <h1 class="mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">
                 Create Presentations<br />in Minutes, Not Hours
