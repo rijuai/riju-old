@@ -10,11 +10,11 @@ onMount(() => {
 })
 </script>
 
-<div class="bg-yellow-300 text-slate-800 font-semibold p-3 text-center text-sm">
+<!-- <div class="bg-yellow-300 text-slate-800 font-semibold p-3 text-center text-sm">
     Currently Riju is in Alpha. Give your feedback -> <a
         class="underline"
         href="https://tally.so/r/wAvyoN">click here</a
     > (We're always listening).
-</div>
+</div> -->
 
 {@render children()}
