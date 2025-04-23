@@ -64,6 +64,31 @@ onDestroy(() => {
 
 <section>
     <h4 class="mt-4 mb-4 text-muted-foreground">Generate</h4>
+
+    <Textarea
+        class="mb-2.5 text-base"
+        placeholder="Enter your prompt here"
+        rows={8}
+        bind:value={prompt}
+    />
+    <div class="flex justify-between gap-2 mb-4">
+        <input
+            class="hidden"
+            type="file"
+            bind:this={fileInput}
+            onchange={handleFiles}
+            multiple
+            accept="image/*,application/pdf"
+        />
+
+        <!-- Upload button -->
+        <Button variant="outline" class="self-center" onclick={triggerFileInput}
+            ><FileIcon class="size-4 mr-2" />Files</Button
+        >
+
+        <Button onclick={generatePresentation}>Generate</Button>
+    </div>
+
     <!-- Preview section -->
     {#if files.length > 0}
         <div class="mt-4 grid grid-cols-1 md:grid-cols-6 gap-4 mb-2.5">
@@ -98,33 +123,9 @@ onDestroy(() => {
             {/each}
         </div>
     {/if}
-
-    <Textarea
-        class="mb-2.5 text-base"
-        placeholder="Enter your prompt here"
-        rows={8}
-        bind:value={prompt}
-    />
-    <div class="flex justify-between gap-2 mb-12">
-        <input
-            class="hidden"
-            type="file"
-            bind:this={fileInput}
-            onchange={handleFiles}
-            multiple
-            accept="image/*,application/pdf"
-        />
-
-        <!-- Upload button -->
-        <Button variant="outline" class="self-center" onclick={triggerFileInput}
-            ><FileIcon class="size-4 mr-2" />Files</Button
-        >
-
-        <Button onclick={generatePresentation}>Generate</Button>
-    </div>
 </section>
 
-<div class="mx-auto w-full max-w-3xl space-y-8">
+<div class="mx-auto w-full max-w-3xl space-y-8 mt-12">
     <!-- Presentations -->
     {#if presentations && presentations.length > 0}
         <h4 class="text-muted-foreground">Your presentations</h4>
