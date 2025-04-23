@@ -63,7 +63,7 @@ onDestroy(() => {
 <MetaTags title="Riju | Dashboard" description="Your presentations" />
 
 <section>
-    <h4 class="mt-4 mb-4 text-muted-foreground">Generate</h4>
+    <h3 class="mt-4 mb-4 text-muted-foreground">Generate</h3>
 
     <Textarea
         class="mb-2.5 text-base"
@@ -123,12 +123,11 @@ onDestroy(() => {
             {/each}
         </div>
     {/if}
-</section>
 
-<div class="mx-auto w-full max-w-3xl space-y-8 mt-12">
+    <div class="mx-auto w-full max-w-3xl space-y-8 mt-12">
     <!-- Presentations -->
     {#if presentations && presentations.length > 0}
-        <h4 class="text-muted-foreground">Your presentations</h4>
+        <h3 class="text-muted-foreground">Your presentations</h3>
         <Table.Root>
             <Table.Body>
                 {#each presentations as { id, title } (id)}
@@ -187,3 +186,6 @@ onDestroy(() => {
         <p class="text-center">No presentations to show</p>
     {/if}
 </div>
+</section>
+
+
