@@ -7,6 +7,7 @@ export const load: PageLoad = async () => {
 			.from('presentations')
 			.select('id, title')
 			.order('updated_at', { ascending: false })
+			.limit(10)
 
 		if (error) {
 			console.error('Error fetching presentations:', error.message)
