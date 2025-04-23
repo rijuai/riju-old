@@ -12,6 +12,6 @@ let { children } = $props()
 
         {@render children()}
 
-    <HelpDialog />
+        <HelpDialog />
     </main>
 </AuthCheck>
