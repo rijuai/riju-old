@@ -13,7 +13,13 @@ import Trash2Icon from 'lucide-svelte/icons/trash-2'
 import XIcon from 'lucide-svelte/icons/x'
 import { onDestroy } from 'svelte'
 
-let { data } = $props()
+let {
+	data,
+	form
+}: {
+	data: { presentations: { id: string; title: string }[] }
+	form?: Record<string, unknown>
+} = $props()
 let { presentations } = $derived(data)
 
 let prompt = $state('')
@@ -47,10 +53,6 @@ const getPreviewUrl = (file: File) => {
 	return URL.createObjectURL(file)
 }
 
-const generatePresentation = async () => {
-	console.log(prompt)
-}
-
 onDestroy(() => {
 	for (const file of files) {
 		if (isImage(file)) {
@@ -71,10 +73,12 @@ onDestroy(() => {
         rows={8}
         bind:value={prompt}
     />
+    <form method="POST" enctype="multipart/form-data">
     <div class="flex justify-between gap-2 mb-4">
         <input
             class="hidden"
             type="file"
+            name="files"
             bind:this={fileInput}
             onchange={handleFiles}
             multiple
@@ -82,12 +86,19 @@ onDestroy(() => {
         />
 
         <!-- Upload button -->
-        <Button variant="outline" class="self-center" onclick={triggerFileInput}
-            ><FileIcon class="size-4 mr-2" />Files</Button
-        >
+        <Button variant="outline" class="self-center" onclick={triggerFileInput} type="button">
+            <FileIcon class="size-4 mr-2" />Files
+        </Button>
 
-        <Button onclick={generatePresentation}>Generate</Button>
+        <Button type="submit">Generate</Button>
     </div>
+    {#if form?.error}
+        <div class="text-red-500 text-sm mb-2">{form.error}</div>
+    {/if}
+    {#if form?.success}
+        <div class="text-green-500 text-sm mb-2">Upload successful!</div>
+    {/if}
+    </form>
 
     <!-- Preview section -->
     {#if files.length > 0}
