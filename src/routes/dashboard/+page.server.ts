@@ -62,7 +62,7 @@ const processImage = async (image: File) => {
                 data: base64
             }
         },
-        { text: 'Describe this image in detail.' }
+        { text: 'Describe this image in short sentences. Do not use any formatting or markdown. NOT leave any information out. Make sure to include all details.' }
     ]
 
     const response = await gemini.models.generateContent({
