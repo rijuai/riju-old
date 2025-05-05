@@ -18,9 +18,9 @@ export const actions: Actions = {
         }
 
         if (file.type === 'application/pdf') {
-            await processPDF(file)
+            processPDF(file)
         } else if (file.type.startsWith('image/')) {
-            await processImage(file)
+            processImage(file)
         } else {
             return { error: 'Unsupported file type' }
         }
@@ -49,6 +49,8 @@ const processPDF = async (pdf: File) => {
     })
 
     console.log('Gemini PDF output:', response.text)
+
+    return response.text
 }
 
 const processImage = async (image: File) => {
@@ -71,6 +73,7 @@ const processImage = async (image: File) => {
     })
 
     console.log('Gemini image output:', response.text)
+    return response.text
 }
 
 const generateContent = async (text: string) => {
