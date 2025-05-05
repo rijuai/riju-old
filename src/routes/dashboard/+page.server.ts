@@ -52,10 +52,25 @@ const processPDF = async (pdf: File) => {
 }
 
 const processImage = async (image: File) => {
-    const imageData = await image.arrayBuffer()
-    const imageText = await image.text()
+    const imageBuffer = await image.arrayBuffer()
+    const base64 = Buffer.from(imageBuffer).toString('base64')
 
-    console.log(imageText)
+    const contents = [
+        {
+            inlineData: {
+                mimeType: image.type,
+                data: base64
+            }
+        },
+        { text: 'Describe this image in detail.' }
+    ]
+
+    const response = await gemini.models.generateContent({
+        model: 'gemini-2.0-flash',
+        contents
+    })
+
+    console.log('Gemini image output:', response.text)
 }
 
 const generateContent = async (text: string) => {
