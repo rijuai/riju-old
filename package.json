@@ -20,7 +20,7 @@
 		"bits-ui": "^1.4.8",
 		"clsx": "^2.1.1",
 		"cmdk-sv": "^0.0.19",
-		"lucide-svelte": "^0.507.0",
+		"lucide-svelte": "^0.509.0",
 		"mdsvex": "^0.12.6",
 		"postcss": "^8.5.3",
 		"svelte": "^5.28.2",
