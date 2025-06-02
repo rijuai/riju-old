@@ -37,7 +37,7 @@
 		"@editorjs/image": "^2.10.2",
 		"@editorjs/nested-list": "^1.4.3",
 		"@editorjs/table": "^2.4.5",
-		"@supabase/supabase-js": "^2.49.5",
+		"@supabase/supabase-js": "^2.49.8",
 		"@tailwindcss/postcss": "^4.1.7",
 		"@types/reveal.js": "^5.0.5",
 		"reveal.js": "^5.2.1",
