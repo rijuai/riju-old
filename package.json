@@ -17,7 +17,7 @@
 		"@sveltejs/vite-plugin-svelte": "^5.1.0",
 		"@tailwindcss/typography": "^0.5.16",
 		"autoprefixer": "^10.4.21",
-		"bits-ui": "^1.8.0",
+		"bits-ui": "^2.8.10",
 		"clsx": "^2.1.1",
 		"cmdk-sv": "^0.0.19",
 		"lucide-svelte": "^0.511.0",
